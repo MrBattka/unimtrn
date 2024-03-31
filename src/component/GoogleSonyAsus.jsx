@@ -18,6 +18,10 @@ const GoogleSonyAsus = ({ el }) => {
       return Number(el.Стоимость) + 300;
     } else if (
       el.Товар.indexOf("Google") != -1 ||
+      el.Товар.indexOf("Pixel") != -1 ||
+      el.Товар.indexOf("Xperia") != -1 ||
+      el.Товар.indexOf("ROG") != -1 ||
+      el.Товар.indexOf("Rog") != -1 ||
       el.Товар.indexOf("Sony") != -1
     ) {
       return Number(el.Стоимость) + 400;
@@ -64,6 +68,10 @@ const GoogleSonyAsus = ({ el }) => {
                         (el.Товар.indexOf("Asus") != -1 ||
                           el.Товар.indexOf("ZenFone") != -1 ||
                           el.Товар.indexOf("Google") != -1 ||
+                          el.Товар.indexOf("Pixel") != -1 ||
+                          el.Товар.indexOf("Xperia") != -1 ||
+                          el.Товар.indexOf("ROG") != -1 ||
+                          el.Товар.indexOf("Rog") != -1 ||
                           el.Товар.indexOf("Sony") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
