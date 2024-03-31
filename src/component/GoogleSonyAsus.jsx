@@ -6,11 +6,13 @@ const GoogleSonyAsus = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
+  let rog = /Rog/gi
   let wiFi = /wifi/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    return fixGb.replace(wiFi, "Wi-Fi");
+    const fixRog = fixGb.replace(rog, "ROG")
+    return fixRog.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
