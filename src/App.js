@@ -7,6 +7,8 @@ import Samsung from "./component/Samsung";
 import Xiaomi from "./component/Xiaomi";
 import icon from "./source/icon/icon.png";
 import GameConsoles from "./component/GameConsoles";
+import GarminGoProDji from "./component/GarminGoproDji";
+import GoogleSonyAsus from "./component/GoogleSonyAsus";
 
 const App = () => {
   const [el, setEl] = useState([]);
@@ -71,7 +73,9 @@ const App = () => {
         <Dyson el={el} />
         <Samsung el={el} />
         <Xiaomi el={el} />
-        <GameConsoles el={el} /> 
+        <GameConsoles el={el} />
+        <GarminGoProDji el={el} />
+        <GoogleSonyAsus el={el} />
       </div>
     </div>
   );

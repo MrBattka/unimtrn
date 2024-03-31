@@ -47,7 +47,7 @@ const Samsung = ({ el }) => {
       el.Товар.indexOf("S23") != -1 ||
       el.Товар.indexOf("S24") != -1 ||
       el.Товар.indexOf("Z Flip") != -1 ||
-      (el.Товар.indexOf("Z Fold") != -1) | (el.Товар.indexOf("Z Fold") != -1)
+      el.Товар.indexOf("Z Fold") != -1
     ) {
       return Number(el.Стоимость) + 500;
     } else if (el.Товар.indexOf("Tab S") != -1) {
