@@ -6,6 +6,7 @@ import { read, utils, writeFile } from "xlsx";
 import Samsung from "./component/Samsung";
 import Xiaomi from "./component/Xiaomi";
 import icon from "./source/icon/icon.png";
+import GameConsoles from "./component/GameConsoles";
 
 const App = () => {
   const [el, setEl] = useState([]);
@@ -70,6 +71,7 @@ const App = () => {
         <Dyson el={el} />
         <Samsung el={el} />
         <Xiaomi el={el} />
+        <GameConsoles el={el} /> 
       </div>
     </div>
   );
