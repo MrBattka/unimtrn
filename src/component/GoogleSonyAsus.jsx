@@ -7,12 +7,14 @@ const GoogleSonyAsus = ({ el }) => {
 
   let gb = /Gb/gi;
   let rog = /Rog/gi
+  let zenFone = /Asus ZenFone/gi
   let wiFi = /wifi/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixRog = fixGb.replace(rog, "ROG")
-    return fixRog.replace(wiFi, "Wi-Fi");
+    const fixZenFone = fixRog.replace(zenFone, "ZenFone")
+    return fixZenFone.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
@@ -23,8 +25,7 @@ const GoogleSonyAsus = ({ el }) => {
       el.Товар.indexOf("Pixel") != -1 ||
       el.Товар.indexOf("Xperia") != -1 ||
       el.Товар.indexOf("ROG") != -1 ||
-      el.Товар.indexOf("Rog") != -1 ||
-      el.Товар.indexOf("Sony") != -1
+      el.Товар.indexOf("Rog") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else {
@@ -73,8 +74,7 @@ const GoogleSonyAsus = ({ el }) => {
                           el.Товар.indexOf("Pixel") != -1 ||
                           el.Товар.indexOf("Xperia") != -1 ||
                           el.Товар.indexOf("ROG") != -1 ||
-                          el.Товар.indexOf("Rog") != -1 ||
-                          el.Товар.indexOf("Sony") != -1) &&
+                          el.Товар.indexOf("Rog") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
