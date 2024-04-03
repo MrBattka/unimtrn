@@ -38,6 +38,7 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("AirPods") != -1 ||
       el.Товар.indexOf("Airpods") != -1 ||
       el.Товар.indexOf("Air Pods") != -1 ||
+      el.Товар.indexOf("Pencil") != -1 ||
       el.Товар.indexOf("HomePod") != -1
     ) {
       return Number(el.Стоимость) + 100;
@@ -76,6 +77,8 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("15 128") != -1 ||
       el.Товар.indexOf("15 256") != -1 ||
       el.Товар.indexOf("15 512") != -1 ||
+      el.Товар.indexOf("iPad 9") != -1 ||
+      el.Товар.indexOf("iPad 10") != -1 ||
       el.Товар.indexOf("iPad Mini 6") != -1 ||
       el.Товар.indexOf("iPad Air 5") != -1 ||
       el.Товар.indexOf("iPad Pro 11") != -1 ||
@@ -120,7 +123,7 @@ const Apple = ({ el }) => {
       <div>
         {el.length > 1 && (
           <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Apple ▲" : "Apple ▼"}
+            {isOpen ? "Apple ▲" : "Apple ▼"}
           </span>
         )}
       </div>
@@ -178,6 +181,8 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("15 128") != -1 ||
                           el.Товар.indexOf("15 256") != -1 ||
                           el.Товар.indexOf("15 512") != -1 ||
+                          el.Товар.indexOf("iPad 9") != -1 ||
+                          el.Товар.indexOf("iPad 10") != -1 ||
                           el.Товар.indexOf("iPad Mini 6") != -1 ||
                           el.Товар.indexOf("iPad Air 5") != -1 ||
                           el.Товар.indexOf("iPad Pro 11") != -1 ||

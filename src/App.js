@@ -9,6 +9,10 @@ import icon from "./source/icon/icon.png";
 import GameConsoles from "./component/GameConsoles";
 import GarminGoProDji from "./component/GarminGoproDji";
 import GoogleSonyAsus from "./component/GoogleSonyAsus";
+import OtherProduct from "./component/OtherProduct";
+import OnePlusZTETecno from "./component/OnePlusZTETecno";
+import AcerMSIMotorolaNothingPhone from "./component/AcerMSIMotorolaNothingPhone";
+import AGMBeatsFujifilm from "./component/AGMBeatsFujifilm";
 
 const App = () => {
   const [el, setEl] = useState([]);
@@ -51,6 +55,9 @@ const App = () => {
               <div className="col-md-6">
                 <div className="input-group">
                   <div className="custom-file">
+                    <label for="inputGroupFile" class="custom-file-upload">
+                      Custom Upload
+                    </label>
                     <input
                       type="file"
                       name="file"
@@ -76,6 +83,10 @@ const App = () => {
         <GameConsoles el={el} />
         <GarminGoProDji el={el} />
         <GoogleSonyAsus el={el} />
+        <OnePlusZTETecno el={el} />
+        <AcerMSIMotorolaNothingPhone el={el} />
+        <AGMBeatsFujifilm el={el} />
+        <OtherProduct el={el} />
       </div>
     </div>
   );

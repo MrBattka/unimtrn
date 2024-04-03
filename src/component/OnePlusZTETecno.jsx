@@ -2,33 +2,41 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
 
-const GoogleSonyAsus = ({ el }) => {
+const OnePlusZTETecno = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
-  let rog = /Rog/gi;
-  let zenFone = /Asus ZenFone/gi;
+  let tecno = /T.Tecno/gi;
+  let nubia = /Nubia/gi;
+  let realme = /T.Realme/gi;
+  let redMagic = /RedMagic/gi;
   let wiFi = /wifi/gi;
+
+  console.log(el);
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    const fixRog = fixGb.replace(rog, "ROG");
-    const fixZenFone = fixRog.replace(zenFone, "ZenFone");
-    return fixZenFone.replace(wiFi, "Wi-Fi");
+    const fixTecno = fixGb.replace(tecno, "Tecno");
+    const fixRealme = fixTecno.replace(realme, "Realme");
+    const fixNubia = fixRealme.replace(nubia, "ZTE Nubia");
+    const fixRedMagic = fixNubia.replace(redMagic, "ZTE RedMagic");
+    return fixRedMagic.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
     if (el.Товар.indexOf("Asus") != -1 || el.Товар.indexOf("ZenFone") != -1) {
       return Number(el.Стоимость) + 300;
     } else if (
-      el.Товар.indexOf("Google") != -1 ||
-      el.Товар.indexOf("Pixel") != -1 ||
-      el.Товар.indexOf("Xperia") != -1 ||
-      el.Товар.indexOf("ROG") != -1 ||
-      el.Товар.indexOf("Rog") != -1 ||
-      el.Товар.indexOf("Sony Wireless") != -1
+      el.Товар.indexOf("OnePlus") != -1 ||
+      el.Товар.indexOf("RedMagic") != -1 ||
+      el.Товар.indexOf("Nubia") != -1
     ) {
-      return Number(el.Стоимость) + 400;
+      return Number(el.Стоимость) + 500;
+    } else if (
+      el.Товар.indexOf("Tecno") != -1 ||
+      el.Товар.indexOf("Realme") != -1
+    ) {
+      return Number(el.Стоимость) + 300;
     } else {
       return `${el.Стоимость} 🟥 `;
     }
@@ -40,7 +48,9 @@ const GoogleSonyAsus = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Google / Sony / Asus ▲" : "Google / Sony / Asus ▼"}
+              {isOpen
+                ? "OnePlus / ZTE / Tecno / Realme ▲"
+                : "OnePlus / ZTE / Tecno / Realme ▼"}
             </span>
           )}
         </div>
@@ -69,14 +79,11 @@ const GoogleSonyAsus = ({ el }) => {
                         el.Товар.indexOf("Silicon") == -1 &&
                         el.Товар.indexOf("Grip Case") == -1 &&
                         el !== "Товар" &&
-                        (el.Товар.indexOf("Asus") != -1 ||
-                          el.Товар.indexOf("ZenFone") != -1 ||
-                          el.Товар.indexOf("Google") != -1 ||
-                          el.Товар.indexOf("Pixel") != -1 ||
-                          el.Товар.indexOf("Xperia") != -1 ||
-                          el.Товар.indexOf("ROG") != -1 ||
-                          el.Товар.indexOf("Rog") != -1 ||
-                          el.Товар.indexOf("Sony Wireless") != -1) &&
+                        (el.Товар.indexOf("OnePlus") != -1 ||
+                          el.Товар.indexOf("RedMagic") != -1 ||
+                          el.Товар.indexOf("Tecno") != -1 ||
+                          el.Товар.indexOf("Nubia") != -1 ||
+                          el.Товар.indexOf("Realme") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
@@ -92,4 +99,4 @@ const GoogleSonyAsus = ({ el }) => {
   );
 };
 
-export default GoogleSonyAsus;
+export default OnePlusZTETecno;

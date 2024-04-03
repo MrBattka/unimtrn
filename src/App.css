@@ -4,6 +4,27 @@ body {
 
 .App {}
 
+input {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #4F5D6D;
+  padding: 0 4px 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.custom-file-upload:hover {
+  background-color: #d5d5d5;
+  box-shadow: 2px 2px 2px #4F5D6D;
+}
+
+.custom-file-upload:active {
+  background-color: #d5d5d5;
+  box-shadow: none;
+}
+
 .flexbox {
   display: flex;
 }
