@@ -7,24 +7,33 @@ const Apple = ({ el }) => {
 
   let gb = /Gb/gi;
   let aws9 = /AW Series 9/gi;
-  let aw9 = /AW  9/gi;
+  let aw9Space = /AW  9/gi;
+  let aw9 = /AW 9/gi;
   let awu2 = /AW Ultra 2/gi;
   let awSE = /AW SE/gi;
   let apple = /Apple /gi;
   let mb = /MB /gi;
   let ipad = /🇺🇸 \(2022\)/gi;
+  let aws8Spaces = /AW  8/gi;
   let aws8 = /AW 8/gi;
   let airPods = /Airpods/gi;
   let proMax = /ProMax/gi;
   let wiFi = /wifi/gi;
+  let watchS8 = /Watch S8/gi;
+  let IPad9 = /IPad 9/gi;
+  
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    const fixWiFi = fixGb.replace(wiFi, "Wi-Fi");
-    const fixAWS9 = fixWiFi.replace(aws9, "S9");
+    const fixIPad9 = fixGb.Товар.replace(IPad9, "iPad 9");
+    const fixWatchS8 = fixIPad9.Товар.replace(watchS8, "S8");
+    const fixWiFi = fixWatchS8.replace(wiFi, "Wi-Fi");
+    const fixAWS9Space = fixWiFi.replace(aws9Space, "S9");
+    const fixAWS9 = fixAWS9Space.replace(aw9, "S9");
     const fixAW9 = fixAWS9.replace(aw9, "S9");
     const fixAW8 = fixAW9.replace(aws8, "S8");
-    const fixAWU2 = fixAW8.replace(awu2, "Ultra 2");
+    const fixAW8Space = fixAW8.replace(aws8Space, "S8");
+    const fixAWU2 = fixAW8Space.replace(awu2, "Ultra 2");
     const fixAWSE = fixAWU2.replace(awSE, "SE");
     const fixApple = fixAWSE.replace(apple, "");
     const fixmb = fixApple.replace(mb, "");
@@ -50,7 +59,8 @@ const Apple = ({ el }) => {
     } else if (
       el.Товар.indexOf("iPad 9") != -1 ||
       el.Товар.indexOf("iPad 10") != -1 ||
-      el.Товар.indexOf("iPad 9") != -1
+      el.Товар.indexOf("iPad 9") != -1 ||
+      el.Товар.indexOf("IPad 9") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else if (
@@ -60,6 +70,7 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("11 128") != -1 ||
       el.Товар.indexOf("12 64") != -1 ||
       el.Товар.indexOf("12 128") != -1 ||
+      el.Товар.indexOf("12 256") != -1 ||
       el.Товар.indexOf("12 Pro Max") != -1 ||
       el.Товар.indexOf("13 128") != -1 ||
       el.Товар.indexOf("13 256") != -1 ||
@@ -77,8 +88,6 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("15 128") != -1 ||
       el.Товар.indexOf("15 256") != -1 ||
       el.Товар.indexOf("15 512") != -1 ||
-      el.Товар.indexOf("iPad 9") != -1 ||
-      el.Товар.indexOf("iPad 10") != -1 ||
       el.Товар.indexOf("iPad Mini 6") != -1 ||
       el.Товар.indexOf("iPad Air 5") != -1 ||
       el.Товар.indexOf("iPad Pro 11") != -1 ||
@@ -88,7 +97,8 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("AW  9") != -1 ||
       el.Товар.indexOf("AW Series 8") != -1 ||
       el.Товар.indexOf("AW 8") != -1 ||
-      el.Товар.indexOf("AW  8") != -1
+      el.Товар.indexOf("AW  8") != -1 ||
+      el.Товар.indexOf("Watch S8") != -1
     ) {
       return Number(el.Стоимость) + 500;
     } else if (
@@ -208,7 +218,9 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("Macbook") != -1 ||
                           el.Товар.indexOf("Book ") != -1 ||
                           el.Товар.indexOf("MB") != -1 ||
-                          el.Товар.indexOf("Vision Pro") != -1) &&
+                          el.Товар.indexOf("Vision Pro") != -1 ||
+                          el.Товар.indexOf("Watch S8") != -1 ||
+                          el.Товар.indexOf("IPad 9") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
