@@ -152,11 +152,14 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Fujifilm") == -1 &&
                         el.Товар.indexOf("Beats") == -1 &&
                         el.Товар.indexOf("AGM") == -1 &&
+                        el.Товар.indexOf("Blackview") == -1 &&
+                        el.Товар.indexOf("Insta ") == -1 &&
                         el.Товар.indexOf("Sony Wireless") == -1 &&
                         el.Товар.indexOf("Acer") == -1 &&
                         el.Товар.indexOf("MSI") == -1 &&
                         el.Товар.indexOf("Motorola") == -1 &&
                         el.Товар.indexOf("Nothing Phone") == -1 &&
+                        el.Товар.indexOf("Nothing Ear") == -1 &&
                         el.Товар.indexOf("Realme") == -1 &&
                         el.Товар.indexOf("OnePlus") == -1 &&
                         el.Товар.indexOf("RedMagic") == -1 &&
@@ -177,8 +180,10 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("A15") == -1 &&
                         el.Товар.indexOf("A25") == -1 &&
                         el.Товар.indexOf("A24") == -1 &&
+                        el.Товар.indexOf("A25") == -1 &&
                         el.Товар.indexOf("A54") == -1 &&
                         el.Товар.indexOf("A34") == -1 &&
+                        el.Товар.indexOf("A35") == -1 &&
                         el.Товар.indexOf("M34") == -1 &&
                         el.Товар.indexOf("M54") == -1 &&
                         el.Товар.indexOf("A55") == -1 &&
@@ -198,6 +203,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("DJL ") == -1 &&
                         el.Товар.indexOf("DJI ") == -1 &&
                         el.Товар.indexOf("Garmin") == -1 &&
+                        el.Товар.indexOf("JBL") == -1 &&
                         el.Товар.indexOf("GoPro") == -1 &&
                         el.Товар.indexOf("Nintendo") == -1 &&
                         el.Товар.indexOf("Oculus") == -1 &&
@@ -208,6 +214,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Pico") == -1 &&
                         el.Товар.indexOf("Steam") == -1 &&
                         el.Товар.indexOf("Airwrap ") == -1 &&
+                        el.Товар.indexOf("Heapdphone") == -1 &&
                         el.Товар.indexOf("V1") == -1 &&
                         el.Товар.indexOf("Vented") == -1 &&
                         el.Товар.indexOf("HD0") == -1 &&
@@ -227,10 +234,14 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("SE (2023) Gen") == -1 &&
                         el.Товар.indexOf("SE 2") == -1 &&
                         el.Товар.indexOf("SE 3") == -1 &&
+                        el.Товар.indexOf("SE 64") == -1 &&
+                        el.Товар.indexOf("SE 128") == -1 &&
+                        el.Товар.indexOf("SE 256") == -1 &&
                         el.Товар.indexOf("11 64") == -1 &&
                         el.Товар.indexOf("11 128") == -1 &&
                         el.Товар.indexOf("12 64") == -1 &&
                         el.Товар.indexOf("12 128") == -1 &&
+                        el.Товар.indexOf("12 256") == -1 &&
                         el.Товар.indexOf("12 Pro Max") == -1 &&
                         el.Товар.indexOf("13 128") == -1 &&
                         el.Товар.indexOf("13 256") == -1 &&
@@ -249,6 +260,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("15 256") == -1 &&
                         el.Товар.indexOf("15 512") == -1 &&
                         el.Товар.indexOf("iPad 9") == -1 &&
+                        el.Товар.indexOf("IPad 9") == -1 &&
                         el.Товар.indexOf("iPad 10") == -1 &&
                         el.Товар.indexOf("iPad Mini 6") == -1 &&
                         el.Товар.indexOf("iPad Air 5") == -1 &&
@@ -259,6 +271,8 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("AW Series 8") == -1 &&
                         el.Товар.indexOf("AW 8") == -1 &&
                         el.Товар.indexOf("AW  8") == -1 &&
+                        el.Товар.indexOf("Watch S8") == -1 &&
+                        el.Товар.indexOf("Watch S9") == -1 &&
                         el.Товар.indexOf("Mac") == -1 &&
                         el.Товар.indexOf("15 Plus 128") == -1 &&
                         el.Товар.indexOf("15 Plus 256") == -1 &&
@@ -270,6 +284,8 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("15 ProMax 256") == -1 &&
                         el.Товар.indexOf("15 ProMax 512") == -1 &&
                         el.Товар.indexOf("15 ProMax 1Tb") == -1 &&
+                        el.Товар.indexOf("15 Pro Max 1TB") == -1 &&
+                        el.Товар.indexOf("15 Pro Max 1Tb") == -1 &&
                         el.Товар.indexOf("iPad Pro 12.9") == -1 &&
                         el.Товар.indexOf("Ultra 2") == -1 &&
                         el.Товар.indexOf("Macbook") == -1 &&

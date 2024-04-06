@@ -18,7 +18,11 @@ const AGMBeatsFujifilm = ({ el }) => {
   const newPrice = (el) => {
     if (el.Товар.indexOf("Fujifilm") != -1 || el.Товар.indexOf("Beats") != -1) {
       return Number(el.Стоимость) + 200;
-    } else if (el.Товар.indexOf("AGM") != -1) {
+    } else if (
+      el.Товар.indexOf("AGM") != -1 ||
+      el.Товар.indexOf("Blackview") != -1 ||
+      el.Товар.indexOf("Insta ") != -1
+    ) {
       return Number(el.Стоимость) + 300;
     } else {
       return `${el.Стоимость} 🟥 `;
@@ -31,7 +35,9 @@ const AGMBeatsFujifilm = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "AGM / Beats / Fujifilm ▲" : "AGM / Beats / Fujifilm ▼"}
+              {isOpen
+                ? "AGM / Beats / Fujifilm / Blackview / Insta ▲"
+                : "AGM / Beats / Fujifilm / Blackview / Insta ▼"}
             </span>
           )}
         </div>
@@ -62,7 +68,9 @@ const AGMBeatsFujifilm = ({ el }) => {
                         el !== "Товар" &&
                         (el.Товар.indexOf("Fujifilm") != -1 ||
                           el.Товар.indexOf("Beats") != -1 ||
-                          el.Товар.indexOf("AGM") != -1) &&
+                          el.Товар.indexOf("Blackview") != -1 ||
+                          el.Товар.indexOf("AGM") != -1 ||
+                          el.Товар.indexOf("Insta ") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

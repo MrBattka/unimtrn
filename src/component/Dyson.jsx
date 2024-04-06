@@ -25,7 +25,8 @@ const Dyson = ({ el }) => {
       el.Товар.indexOf("RB0") != -1 ||
       el.Товар.indexOf("HT0") != -1 ||
       el.Товар.indexOf("HS0") != -1 ||
-      el.Товар.indexOf("Designed") != -1
+      el.Товар.indexOf("Designed") != -1 ||
+      el.Товар.indexOf("Heapdphone") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else {
@@ -78,7 +79,8 @@ const Dyson = ({ el }) => {
                           el.Товар.indexOf("RB0") != -1 ||
                           el.Товар.indexOf("HT0") != -1 ||
                           el.Товар.indexOf("HS0") != -1 ||
-                          el.Товар.indexOf("Designed") != -1) &&
+                          el.Товар.indexOf("Designed") != -1 ||
+                          el.Товар.indexOf("Heapdphone") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

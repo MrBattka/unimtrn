@@ -12,8 +12,6 @@ const OnePlusZTETecno = ({ el }) => {
   let redMagic = /RedMagic/gi;
   let wiFi = /wifi/gi;
 
-  console.log(el);
-
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixTecno = fixGb.replace(tecno, "Tecno");

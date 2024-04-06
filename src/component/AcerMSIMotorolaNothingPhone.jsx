@@ -14,6 +14,9 @@ const AcerMSIMotorolaNothingPhone = ({ el }) => {
   };
 
   const newPrice = (el) => {
+    if (el.Товар.indexOf("Nothing Ear") != -1) {
+      return Number(el.Стоимость) + 200;
+    }
     if (
       el.Товар.indexOf("Acer") != -1 ||
       el.Товар.indexOf("MSI") != -1 ||
@@ -66,7 +69,8 @@ const AcerMSIMotorolaNothingPhone = ({ el }) => {
                         (el.Товар.indexOf("Acer") != -1 ||
                           el.Товар.indexOf("MSI") != -1 ||
                           el.Товар.indexOf("Motorola") != -1 ||
-                          el.Товар.indexOf("Nothing Phone") != -1) &&
+                          el.Товар.indexOf("Nothing Phone") != -1 ||
+                          el.Товар.indexOf("Nothing Ear") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

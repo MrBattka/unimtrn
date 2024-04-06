@@ -14,7 +14,9 @@ const GarminGoProDji = ({ el }) => {
   };
 
   const newPrice = (el) => {
-    if (
+    if (el.Товар.indexOf("JBL") != -1) {
+      return Number(el.Стоимость) + 200;
+    } else if (
       el.Товар.indexOf("DJL ") != -1 ||
       el.Товар.indexOf("DJI ") != -1 ||
       el.Товар.indexOf("Garmin") != -1
@@ -33,7 +35,7 @@ const GarminGoProDji = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Garmin / GoPro / DJI ▲" : "Garmin / GoPro / DJI ▼"}
+              {isOpen ? "Garmin / GoPro / DJI / JBL ▲" : "Garmin / GoPro / DJI / JBL ▼"}
             </span>
           )}
         </div>
@@ -65,7 +67,8 @@ const GarminGoProDji = ({ el }) => {
                         (el.Товар.indexOf("DJL ") != -1 ||
                           el.Товар.indexOf("DJI ") != -1 ||
                           el.Товар.indexOf("Garmin") != -1 ||
-                          el.Товар.indexOf("GoPro") != -1) &&
+                          el.Товар.indexOf("GoPro") != -1 ||
+                          el.Товар.indexOf("JBL") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
