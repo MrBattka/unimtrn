@@ -7,18 +7,14 @@ const OnePlusZTETecno = ({ el }) => {
 
   let gb = /Gb/gi;
   let tecno = /T.Tecno/gi;
-  let nubia = /Nubia/gi;
   let realme = /T.Realme/gi;
-  let redMagic = /RedMagic/gi;
   let wiFi = /wifi/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixTecno = fixGb.replace(tecno, "Tecno");
     const fixRealme = fixTecno.replace(realme, "Realme");
-    const fixNubia = fixRealme.replace(nubia, "ZTE Nubia");
-    const fixRedMagic = fixNubia.replace(redMagic, "ZTE RedMagic");
-    return fixRedMagic.replace(wiFi, "Wi-Fi");
+    return fixRealme.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {

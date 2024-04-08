@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
 
-const GoogleSonyAsus = ({ el }) => {
+const GoogleSonyAsusLenovo = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
   let rog = /Rog/gi;
+  let sony = /Sony Xperia/gi;
   let zenFone = /Asus ZenFone/gi;
   let wiFi = /wifi/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    const fixRog = fixGb.replace(rog, "ROG");
+    const fixSony = fixGb.replace(sony, "Xperia");
+    const fixRog = fixSony.replace(rog, "ROG");
     const fixZenFone = fixRog.replace(zenFone, "ZenFone");
     return fixZenFone.replace(wiFi, "Wi-Fi");
   };
@@ -26,7 +28,9 @@ const GoogleSonyAsus = ({ el }) => {
       el.Товар.indexOf("Xperia") != -1 ||
       el.Товар.indexOf("ROG") != -1 ||
       el.Товар.indexOf("Rog") != -1 ||
-      el.Товар.indexOf("Sony Wireless") != -1
+      el.Товар.indexOf("Sony Wireless") != -1 ||
+      el.Товар.indexOf("Wireless") != -1 ||
+      el.Товар.indexOf("Lenovo") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else {
@@ -40,7 +44,7 @@ const GoogleSonyAsus = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Google / Sony / Asus ▲" : "Google / Sony / Asus ▼"}
+              {isOpen ? "Google / Sony / Asus / Lenovo ▲" : "Google / Sony / Asus / Lenovo ▼"}
             </span>
           )}
         </div>
@@ -76,7 +80,9 @@ const GoogleSonyAsus = ({ el }) => {
                           el.Товар.indexOf("Xperia") != -1 ||
                           el.Товар.indexOf("ROG") != -1 ||
                           el.Товар.indexOf("Rog") != -1 ||
-                          el.Товар.indexOf("Sony Wireless") != -1) &&
+                          el.Товар.indexOf("Sony Wireless") != -1 ||
+                          el.Товар.indexOf("Wireless") != -1 ||
+                          el.Товар.indexOf("Lenovo") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
@@ -92,4 +98,4 @@ const GoogleSonyAsus = ({ el }) => {
   );
 };
 
-export default GoogleSonyAsus;
+export default GoogleSonyAsusLenovo;

@@ -149,17 +149,25 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Silicon") == -1 &&
                         el.Товар.indexOf("Grip Case") == -1 &&
                         el !== "Товар" &&
+                        el.Товар.indexOf("Oppo") == -1 &&
+                        el.Товар.indexOf("HUAWEI") == -1 &&
+                        el.Товар.indexOf("Huawei") == -1 &&
+                        el.Товар.indexOf("Marshall") == -1 &&
+                        el.Товар.indexOf("Blackview") == -1 &&
+                        el.Товар.indexOf("infinix") == -1 &&
                         el.Товар.indexOf("Fujifilm") == -1 &&
                         el.Товар.indexOf("Beats") == -1 &&
                         el.Товар.indexOf("AGM") == -1 &&
                         el.Товар.indexOf("Blackview") == -1 &&
                         el.Товар.indexOf("Insta ") == -1 &&
                         el.Товар.indexOf("Sony Wireless") == -1 &&
+                        el.Товар.indexOf("Wireless") == -1 &&
                         el.Товар.indexOf("Acer") == -1 &&
                         el.Товар.indexOf("MSI") == -1 &&
                         el.Товар.indexOf("Motorola") == -1 &&
                         el.Товар.indexOf("Nothing Phone") == -1 &&
                         el.Товар.indexOf("Nothing Ear") == -1 &&
+                        el.Товар.indexOf("Nothing ear") == -1 &&
                         el.Товар.indexOf("Realme") == -1 &&
                         el.Товар.indexOf("OnePlus") == -1 &&
                         el.Товар.indexOf("RedMagic") == -1 &&
@@ -175,6 +183,8 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Poco") == -1 &&
                         el.Товар.indexOf("POCO") == -1 &&
                         el.Товар.indexOf("Galaxy") == -1 &&
+                        el.Товар.indexOf("Watch") == -1 &&
+                        el.Товар.indexOf("Tab S") == -1 &&
                         el.Товар.indexOf("A05s") == -1 &&
                         el.Товар.indexOf("A05") == -1 &&
                         el.Товар.indexOf("A15") == -1 &&
@@ -194,6 +204,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Z Flip") == -1 &&
                         el.Товар.indexOf("Z Fold") == -1 &&
                         el.Товар.indexOf("Asus") == -1 &&
+                        el.Товар.indexOf("Lenovo") == -1 &&
                         el.Товар.indexOf("ZenFone") == -1 &&
                         el.Товар.indexOf("Google") == -1 &&
                         el.Товар.indexOf("Pixel") == -1 &&
@@ -262,9 +273,9 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("iPad 9") == -1 &&
                         el.Товар.indexOf("IPad 9") == -1 &&
                         el.Товар.indexOf("iPad 10") == -1 &&
-                        el.Товар.indexOf("iPad Mini 6") == -1 &&
-                        el.Товар.indexOf("iPad Air 5") == -1 &&
-                        el.Товар.indexOf("iPad Pro 11") == -1 &&
+                        el.Товар.indexOf("iPad Mini") == -1 &&
+                        el.Товар.indexOf("iPad Air") == -1 &&
+                        el.Товар.indexOf("iPad Pro") == -1 &&
                         el.Товар.indexOf("AW Series 9") == -1 &&
                         el.Товар.indexOf("AW 9") == -1 &&
                         el.Товар.indexOf("AW  9") == -1 &&
@@ -292,6 +303,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Book ") == -1 &&
                         el.Товар.indexOf("MB") == -1 &&
                         el.Товар.indexOf("Vision Pro") == -1 &&
+                        el.Товар.indexOf("Magic Keyboard") == -1 &&
                         returnFixPrice(el, fixName(el)) + el.Стоимость}
                     </div>
                   ))

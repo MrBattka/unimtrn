@@ -6,15 +6,20 @@ const AcerMSIMotorolaNothingPhone = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
+  let ear = /Nothing ear/gi;
   let wiFi = /wifi/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    return fixGb.replace(wiFi, "Wi-Fi");
+    const fixEar = fixGb.replace(ear, "Nothing Ear");
+    return fixEar.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
-    if (el.Товар.indexOf("Nothing Ear") != -1) {
+    if (
+      el.Товар.indexOf("Nothing Ear") != -1 ||
+      el.Товар.indexOf("Nothing ear") != -1
+    ) {
       return Number(el.Стоимость) + 200;
     }
     if (
@@ -70,7 +75,8 @@ const AcerMSIMotorolaNothingPhone = ({ el }) => {
                           el.Товар.indexOf("MSI") != -1 ||
                           el.Товар.indexOf("Motorola") != -1 ||
                           el.Товар.indexOf("Nothing Phone") != -1 ||
-                          el.Товар.indexOf("Nothing Ear") != -1) &&
+                          el.Товар.indexOf("Nothing Ear") != -1 ||
+                          el.Товар.indexOf("Nothing ear") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

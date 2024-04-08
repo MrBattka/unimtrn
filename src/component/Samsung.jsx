@@ -7,11 +7,15 @@ const Samsung = ({ el }) => {
 
   let gb = /Gb/gi;
   let zFlip = /Z flip/gi;
+  let galaxyWatch = /Galaxy Watch/gi;
+  let classik = /Classik/gi;
   let wiFi = /wifi/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    const fixWiFi = fixGb.replace(wiFi, "Wi-Fi");
+    const fixGalaxyWatch = fixGb.replace(galaxyWatch, "Watch");
+    const fixClassik = fixGalaxyWatch.replace(classik, "Classic");
+    const fixWiFi = fixClassik.replace(wiFi, "Wi-Fi");
     return fixWiFi.replace(zFlip, "Z Flip");
   };
 
@@ -37,7 +41,7 @@ const Samsung = ({ el }) => {
     ) {
       return Number(el.Стоимость) + 300;
     } else if (
-      el.Товар.indexOf("Watch") != -1 ||
+      el.Товар.indexOf("Watch 6") != -1 ||
       el.Товар.indexOf("Tab A") != -1
     ) {
       return Number(el.Стоимость) + 400;
@@ -47,7 +51,8 @@ const Samsung = ({ el }) => {
       el.Товар.indexOf("S23") != -1 ||
       el.Товар.indexOf("S24") != -1 ||
       el.Товар.indexOf("Z Flip") != -1 ||
-      el.Товар.indexOf("Z Fold") != -1
+      el.Товар.indexOf("Z Fold") != -1 ||
+      el.Товар.indexOf("Tab S") != -1
     ) {
       return Number(el.Стоимость) + 500;
     } else if (el.Товар.indexOf("Tab S") != -1) {
@@ -108,7 +113,9 @@ const Samsung = ({ el }) => {
                           el.Товар.indexOf("S23") != -1 ||
                           el.Товар.indexOf("S24") != -1 ||
                           el.Товар.indexOf("Z Flip") != -1 ||
-                          el.Товар.indexOf("Z Fold") != -1) &&
+                          el.Товар.indexOf("Z Fold") != -1 ||
+                          el.Товар.indexOf("Watch 6") != -1 ||
+                          el.Товар.indexOf("Tab S") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

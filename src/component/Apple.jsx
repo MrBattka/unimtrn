@@ -68,7 +68,8 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("iPad 9") != -1 ||
       el.Товар.indexOf("iPad 10") != -1 ||
       el.Товар.indexOf("iPad 9") != -1 ||
-      el.Товар.indexOf("IPad 9") != -1
+      el.Товар.indexOf("IPad 9") != -1 ||
+      el.Товар.indexOf("Magic Keyboard") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else if (
@@ -99,9 +100,9 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("15 128") != -1 ||
       el.Товар.indexOf("15 256") != -1 ||
       el.Товар.indexOf("15 512") != -1 ||
-      el.Товар.indexOf("iPad Mini 6") != -1 ||
-      el.Товар.indexOf("iPad Air 5") != -1 ||
-      el.Товар.indexOf("iPad Pro 11") != -1 ||
+      el.Товар.indexOf("iPad Mini") != -1 ||
+      el.Товар.indexOf("iPad Air") != -1 ||
+      el.Товар.indexOf("iPad Pro") != -1 ||
       el.Товар.indexOf("AW Series 9") != -1 ||
       el.Товар.indexOf("Mac") != -1 ||
       el.Товар.indexOf("AW 9") != -1 ||
@@ -212,7 +213,7 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("iPad 10") != -1 ||
                           el.Товар.indexOf("iPad Mini 6") != -1 ||
                           el.Товар.indexOf("iPad Air 5") != -1 ||
-                          el.Товар.indexOf("iPad Pro 11") != -1 ||
+                          el.Товар.indexOf("iPad Pro") != -1 ||
                           el.Товар.indexOf("AW Series 9") != -1 ||
                           el.Товар.indexOf("AW 9") != -1 ||
                           el.Товар.indexOf("AW  9") != -1 ||
@@ -240,7 +241,8 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("Vision Pro") != -1 ||
                           el.Товар.indexOf("Watch S8") != -1 ||
                           el.Товар.indexOf("Watch S9") != -1 ||
-                          el.Товар.indexOf("IPad 9") != -1) &&
+                          el.Товар.indexOf("IPad 9") != -1 ||
+                          el.Товар.indexOf("Magic Keyboard") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

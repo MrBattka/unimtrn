@@ -2,29 +2,31 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
 
-const GarminGoProDji = ({ el }) => {
+const HuaweiInfinixMarshallOppo = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
-  let watchGarmin = /Watch Garmin/gi;
   let wiFi = /wifi/gi;
+  let huawei = /HUAWEI/gi;
+  let infinix = /T.infinix/gi;
 
   const fixName = (el) => {
-    const fixGb = el.Товар.replace(gb, "");
-    const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
-    return fixWatchGarmin.replace(wiFi, "Wi-Fi");
+    const fixHuawei = el.Товар.replace(huawei, "Huawei");
+    const fixInfinix = fixHuawei.replace(infinix, "Infinix");
+    const fixGb = fixInfinix.replace(gb, "");
+    return fixGb.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
-    if (el.Товар.indexOf("JBL") != -1) {
-      return Number(el.Стоимость) + 200;
-    } else if (
-      el.Товар.indexOf("DJL ") != -1 ||
-      el.Товар.indexOf("DJI ") != -1 ||
-      el.Товар.indexOf("Garmin") != -1
+    if (
+      el.Товар.indexOf("HUAWEI") != -1 ||
+      el.Товар.indexOf("Huawei") != -1 ||
+      el.Товар.indexOf("Marshall") != -1 ||
+      el.Товар.indexOf("Blackview") != -1 ||
+      el.Товар.indexOf("infinix") != -1
     ) {
-      return Number(el.Стоимость) + 400;
-    } else if (el.Товар.indexOf("GoPro") != -1) {
+      return Number(el.Стоимость) + 200;
+    } else if (el.Товар.indexOf("Oppo") != -1) {
       return Number(el.Стоимость) + 500;
     } else {
       return `${el.Стоимость} 🟥 `;
@@ -37,7 +39,9 @@ const GarminGoProDji = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Garmin / GoPro / DJI / JBL ▲" : "Garmin / GoPro / DJI / JBL ▼"}
+              {isOpen
+                ? "Huawei / Infinix / Marshall / Oppo ▲"
+                : "Huawei / Infinix / Marshall / Oppo ▼"}
             </span>
           )}
         </div>
@@ -66,11 +70,12 @@ const GarminGoProDji = ({ el }) => {
                         el.Товар.indexOf("Silicon") == -1 &&
                         el.Товар.indexOf("Grip Case") == -1 &&
                         el !== "Товар" &&
-                        (el.Товар.indexOf("DJL ") != -1 ||
-                          el.Товар.indexOf("DJI ") != -1 ||
-                          el.Товар.indexOf("Garmin") != -1 ||
-                          el.Товар.indexOf("GoPro") != -1 ||
-                          el.Товар.indexOf("JBL") != -1) &&
+                        (el.Товар.indexOf("HUAWEI") != -1 ||
+                          el.Товар.indexOf("Huawei") != -1 ||
+                          el.Товар.indexOf("Marshall") != -1 ||
+                          el.Товар.indexOf("Blackview") != -1 ||
+                          el.Товар.indexOf("infinix") != -1 ||
+                          el.Товар.indexOf("Oppo") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
@@ -86,4 +91,4 @@ const GarminGoProDji = ({ el }) => {
   );
 };
 
-export default GarminGoProDji;
+export default HuaweiInfinixMarshallOppo;

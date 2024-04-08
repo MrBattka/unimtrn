@@ -1,18 +1,19 @@
-import "./App.css";
-import Apple from "./component/Apple";
-import Dyson from "./component/Dyson";
 import React, { useState } from "react";
 import { read, utils, writeFile } from "xlsx";
+import "./App.css";
+import AGMBeatsFujifilm from "./component/AGMBeatsFujifilm";
+import AcerMSIMotorolaNothingPhone from "./component/AcerMSIMotorolaNothingPhone";
+import Apple from "./component/Apple";
+import Dyson from "./component/Dyson";
+import GameConsoles from "./component/GameConsoles";
+import GarminGoProDji from "./component/GarminGoproDji";
+import GoogleSonyAsusLenovo from "./component/GoogleSonyAsusLenovo";
+import HuaweiInfinixMarshallOppo from "./component/HuaweiInfinixMarshallOppo";
+import OnePlusZTETecno from "./component/OnePlusZTETecno";
+import OtherProduct from "./component/OtherProduct";
 import Samsung from "./component/Samsung";
 import Xiaomi from "./component/Xiaomi";
 import icon from "./source/icon/icon.png";
-import GameConsoles from "./component/GameConsoles";
-import GarminGoProDji from "./component/GarminGoproDji";
-import GoogleSonyAsus from "./component/GoogleSonyAsus";
-import OtherProduct from "./component/OtherProduct";
-import OnePlusZTETecno from "./component/OnePlusZTETecno";
-import AcerMSIMotorolaNothingPhone from "./component/AcerMSIMotorolaNothingPhone";
-import AGMBeatsFujifilm from "./component/AGMBeatsFujifilm";
 
 const App = () => {
   const [el, setEl] = useState([]);
@@ -82,10 +83,11 @@ const App = () => {
         <Xiaomi el={el} />
         <GameConsoles el={el} />
         <GarminGoProDji el={el} />
-        <GoogleSonyAsus el={el} />
+        <GoogleSonyAsusLenovo el={el} />
         <OnePlusZTETecno el={el} />
         <AcerMSIMotorolaNothingPhone el={el} />
         <AGMBeatsFujifilm el={el} />
+        <HuaweiInfinixMarshallOppo el={el} />
         <OtherProduct el={el} />
       </div>
     </div>
