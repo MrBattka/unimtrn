@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
+import { baseFix } from "../helpers/baseFix";
 
 const AGMBeatsFujifilm = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,19 +54,7 @@ const AGMBeatsFujifilm = ({ el }) => {
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
-                      {el[0] !== "(" &&
-                        el.Товар.indexOf("MagEZ Case") == -1 &&
-                        el.Товар.indexOf("PITAKA") == -1 &&
-                        el.Товар.indexOf("USB-C 25W") == -1 &&
-                        el.Товар.indexOf("Кабель") == -1 &&
-                        el.Товар.indexOf("Charge Cable") == -1 &&
-                        el.Товар.indexOf("20W") == -1 &&
-                        el.Товар.indexOf("USB-С Lightning") == -1 &&
-                        el.Товар.indexOf("Муляж") == -1 &&
-                        el.Товар.indexOf("кожа") == -1 &&
-                        el.Товар.indexOf("Silicon") == -1 &&
-                        el.Товар.indexOf("Grip Case") == -1 &&
-                        el !== "Товар" &&
+                      {baseFix(el) &&
                         (el.Товар.indexOf("Fujifilm") != -1 ||
                           el.Товар.indexOf("Beats") != -1 ||
                           el.Товар.indexOf("Blackview") != -1 ||

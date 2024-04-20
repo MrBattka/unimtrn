@@ -70,6 +70,7 @@ const AcerMSIMotorolaNothingPhone = ({ el }) => {
                         el.Товар.indexOf("кожа") == -1 &&
                         el.Товар.indexOf("Silicon") == -1 &&
                         el.Товар.indexOf("Grip Case") == -1 &&
+                        el.Товар.indexOf("Sult Case") == -1 &&
                         el !== "Товар" &&
                         (el.Товар.indexOf("Acer") != -1 ||
                           el.Товар.indexOf("MSI") != -1 ||

@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
+import { baseFix } from "../helpers/baseFix";
 
 const GameConsoles = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
+  let playstation = /Playstation/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    return fixGb.replace(wiFi, "Wi-Fi");
+    const fixPlaystation = fixGb.replace(playstation, "PlayStation");
+    return fixPlaystation.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
@@ -52,19 +55,7 @@ const GameConsoles = ({ el }) => {
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
-                      {el[0] !== "(" &&
-                        el.Товар.indexOf("MagEZ Case") == -1 &&
-                        el.Товар.indexOf("PITAKA") == -1 &&
-                        el.Товар.indexOf("USB-C 25W") == -1 &&
-                        el.Товар.indexOf("Кабель") == -1 &&
-                        el.Товар.indexOf("Charge Cable") == -1 &&
-                        el.Товар.indexOf("20W") == -1 &&
-                        el.Товар.indexOf("USB-С Lightning") == -1 &&
-                        el.Товар.indexOf("Муляж") == -1 &&
-                        el.Товар.indexOf("кожа") == -1 &&
-                        el.Товар.indexOf("Silicon") == -1 &&
-                        el.Товар.indexOf("Grip Case") == -1 &&
-                        el !== "Товар" &&
+                      {baseFix(el) &&
                         (el.Товар.indexOf("Nintendo") != -1 ||
                           el.Товар.indexOf("Oculus") != -1 ||
                           el.Товар.indexOf("Playstation") != -1 ||

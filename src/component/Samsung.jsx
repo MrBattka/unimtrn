@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
+import { baseFix } from "../helpers/baseFix";
 
 const Samsung = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,12 +11,20 @@ const Samsung = ({ el }) => {
   let galaxyWatch = /Galaxy Watch/gi;
   let classik = /Classik/gi;
   let wiFi = /wifi/gi;
+  let s21 = /Samsung S21/gi;
+  let s22 = /Samsung S22/gi;
+  let s23 = /Samsung S23/gi;
+  let s24 = /Samsung S24/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixGalaxyWatch = fixGb.replace(galaxyWatch, "Watch");
     const fixClassik = fixGalaxyWatch.replace(classik, "Classic");
-    const fixWiFi = fixClassik.replace(wiFi, "Wi-Fi");
+    const fixS21 = fixClassik.replace(s21, "S21");
+    const fixS22 = fixS21.replace(s22, "S22");
+    const fixS23 = fixS22.replace(s23, "S23");
+    const fixS24 = fixS23.replace(s24, "S24");
+    const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
     return fixWiFi.replace(zFlip, "Z Flip");
   };
 
@@ -84,19 +93,7 @@ const Samsung = ({ el }) => {
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
-                      {el[0] !== "(" &&
-                        el.Товар.indexOf("MagEZ Case") == -1 &&
-                        el.Товар.indexOf("PITAKA") == -1 &&
-                        el.Товар.indexOf("USB-C 25W") == -1 &&
-                        el.Товар.indexOf("Кабель") == -1 &&
-                        el.Товар.indexOf("Charge Cable") == -1 &&
-                        el.Товар.indexOf("20W") == -1 &&
-                        el.Товар.indexOf("USB-С Lightning") == -1 &&
-                        el.Товар.indexOf("Муляж") == -1 &&
-                        el.Товар.indexOf("кожа") == -1 &&
-                        el.Товар.indexOf("Silicon") == -1 &&
-                        el.Товар.indexOf("Grip Case") == -1 &&
-                        el !== "Товар" &&
+                      {baseFix(el) &&
                         (el.Товар.indexOf("Galaxy") != -1 ||
                           el.Товар.indexOf("A05s") != -1 ||
                           el.Товар.indexOf("A05") != -1 ||

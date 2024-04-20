@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
+import { baseFix } from "../helpers/baseFix";
 
 const OtherProduct = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -136,19 +137,7 @@ const OtherProduct = ({ el }) => {
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
-                      {el[0] !== "(" &&
-                        el.Товар.indexOf("MagEZ Case") == -1 &&
-                        el.Товар.indexOf("PITAKA") == -1 &&
-                        el.Товар.indexOf("USB-C 25W") == -1 &&
-                        el.Товар.indexOf("Кабель") == -1 &&
-                        el.Товар.indexOf("Charge Cable") == -1 &&
-                        el.Товар.indexOf("20W") == -1 &&
-                        el.Товар.indexOf("USB-С Lightning") == -1 &&
-                        el.Товар.indexOf("Муляж") == -1 &&
-                        el.Товар.indexOf("кожа") == -1 &&
-                        el.Товар.indexOf("Silicon") == -1 &&
-                        el.Товар.indexOf("Grip Case") == -1 &&
-                        el !== "Товар" &&
+                      {baseFix(el) &&
                         el.Товар.indexOf("Oppo") == -1 &&
                         el.Товар.indexOf("HUAWEI") == -1 &&
                         el.Товар.indexOf("Huawei") == -1 &&
@@ -216,6 +205,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Garmin") == -1 &&
                         el.Товар.indexOf("JBL") == -1 &&
                         el.Товар.indexOf("GoPro") == -1 &&
+                        el.Товар.indexOf("RayBan") == -1 &&
                         el.Товар.indexOf("Nintendo") == -1 &&
                         el.Товар.indexOf("Oculus") == -1 &&
                         el.Товар.indexOf("Playstation") == -1 &&

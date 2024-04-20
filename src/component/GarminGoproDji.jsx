@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
+import { baseFix } from "../helpers/baseFix";
 
 const GarminGoProDji = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +9,13 @@ const GarminGoProDji = ({ el }) => {
   let gb = /Gb/gi;
   let watchGarmin = /Watch Garmin/gi;
   let wiFi = /wifi/gi;
+  let sunglases = /Sunglases/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
-    return fixWatchGarmin.replace(wiFi, "Wi-Fi");
+    const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
+    return fixSunglases.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
@@ -24,7 +27,10 @@ const GarminGoProDji = ({ el }) => {
       el.Товар.indexOf("Garmin") != -1
     ) {
       return Number(el.Стоимость) + 400;
-    } else if (el.Товар.indexOf("GoPro") != -1) {
+    } else if (
+      el.Товар.indexOf("GoPro") != -1 ||
+      el.Товар.indexOf("RayBan") != -1
+    ) {
       return Number(el.Стоимость) + 500;
     } else {
       return `${el.Стоимость} 🟥 `;
@@ -37,7 +43,9 @@ const GarminGoProDji = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Garmin / GoPro / DJI / JBL ▲" : "Garmin / GoPro / DJI / JBL ▼"}
+              {isOpen
+                ? "Garmin / GoPro / DJI / JBL ▲"
+                : "Garmin / GoPro / DJI / JBL ▼"}
             </span>
           )}
         </div>
@@ -53,24 +61,13 @@ const GarminGoProDji = ({ el }) => {
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
-                      {el[0] !== "(" &&
-                        el.Товар.indexOf("MagEZ Case") == -1 &&
-                        el.Товар.indexOf("PITAKA") == -1 &&
-                        el.Товар.indexOf("USB-C 25W") == -1 &&
-                        el.Товар.indexOf("Кабель") == -1 &&
-                        el.Товар.indexOf("Charge Cable") == -1 &&
-                        el.Товар.indexOf("20W") == -1 &&
-                        el.Товар.indexOf("USB-С Lightning") == -1 &&
-                        el.Товар.indexOf("Муляж") == -1 &&
-                        el.Товар.indexOf("кожа") == -1 &&
-                        el.Товар.indexOf("Silicon") == -1 &&
-                        el.Товар.indexOf("Grip Case") == -1 &&
-                        el !== "Товар" &&
+                      {baseFix(el) &&
                         (el.Товар.indexOf("DJL ") != -1 ||
                           el.Товар.indexOf("DJI ") != -1 ||
                           el.Товар.indexOf("Garmin") != -1 ||
                           el.Товар.indexOf("GoPro") != -1 ||
-                          el.Товар.indexOf("JBL") != -1) &&
+                          el.Товар.indexOf("JBL") != -1 ||
+                          el.Товар.indexOf("RayBan") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

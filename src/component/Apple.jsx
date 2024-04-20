@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../helpers/fixPrice";
 import style from "./styles.module.css";
+import { baseFix } from "../helpers/baseFix";
 
 const Apple = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,9 @@ const Apple = ({ el }) => {
   let wiFi = /wifi/gi;
   let watchS8 = /Watch S8/gi;
   let IPad9 = /IPad 9/gi;
+  let fixFlagJp = /🇺🇸🇯🇵 \(2022\)/gi;
+  let fixFlagUs = /🇺🇸🇯🇵🇦🇺 \(2022\)/gi;
+  let fixFlagAu = /🇺🇸🇦🇺 \(2022\)/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -40,15 +44,12 @@ const Apple = ({ el }) => {
     const fixApple = fixAWSE.replace(apple, "");
     const fixmb = fixApple.replace(mb, "");
     const fixIpad = fixmb.replace(ipad, "(2022) 🇺🇸");
-    const fixAirPods = fixIpad.replace(airPods, "AirPods");
+    const fixIpadUs = fixIpad.replace(fixFlagUs, "(2022)🇺🇸🇯🇵🇦🇺");
+    const fixIpadJp = fixIpadUs.replace(fixFlagJp, "(2022)🇺🇸🇯🇵");
+    const fixIpadAu = fixIpadJp.replace(fixFlagAu, "(2022)🇺🇸🇦🇺");
+    const fixAirPods = fixIpadAu.replace(airPods, "AirPods");
     return fixAirPods.replace(proMax, "Pro Max");
   };
-
-  // const test = (el) => {
-  //   const result = [];
-  //   result.push([...result, el])
-  //   console.log(result);
-  // }
 
   const newPrice = (el) => {
     if (
@@ -162,19 +163,7 @@ const Apple = ({ el }) => {
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
-                      {el[0] !== "(" &&
-                        el.Товар.indexOf("MagEZ Case") == -1 &&
-                        el.Товар.indexOf("PITAKA") == -1 &&
-                        el.Товар.indexOf("USB-C 25W") == -1 &&
-                        el.Товар.indexOf("Кабель") == -1 &&
-                        el.Товар.indexOf("Charge Cable") == -1 &&
-                        el.Товар.indexOf("20W") == -1 &&
-                        el.Товар.indexOf("USB-С Lightning") == -1 &&
-                        el.Товар.indexOf("Муляж") == -1 &&
-                        el.Товар.indexOf("кожа") == -1 &&
-                        el.Товар.indexOf("Silicon") == -1 &&
-                        el.Товар.indexOf("Grip Case") == -1 &&
-                        el !== "Товар" &&
+                      {baseFix(el) &&
                         (el.Товар.indexOf("AirPods") != -1 ||
                           el.Товар.indexOf("Airpods") != -1 ||
                           el.Товар.indexOf("Air Pods") != -1 ||
