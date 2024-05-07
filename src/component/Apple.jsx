@@ -53,9 +53,15 @@ const Apple = ({ el }) => {
 
   const newPrice = (el) => {
     if (
-      el.Товар.indexOf("AirPods") != -1 ||
-      el.Товар.indexOf("Airpods") != -1 ||
-      el.Товар.indexOf("Air Pods") != -1 ||
+      el.Товар.indexOf("AirPods Pro") != -1 ||
+      el.Товар.indexOf("Airpods Pro") != -1 ||
+      el.Товар.indexOf("Air Pods Pro") != -1 ||
+      el.Товар.indexOf("Air Pods 2") != -1 ||
+      el.Товар.indexOf("AirPods 2") != -1 ||
+      el.Товар.indexOf("Airpods 2") != -1 ||
+      el.Товар.indexOf("Air Pods 3") != -1 ||
+      el.Товар.indexOf("AirPods 3") != -1 ||
+      el.Товар.indexOf("Airpods 3") != -1 ||
       el.Товар.indexOf("Pencil") != -1 ||
       el.Товар.indexOf("HomePod") != -1
     ) {
@@ -111,7 +117,10 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("AW Series 8") != -1 ||
       el.Товар.indexOf("AW 8") != -1 ||
       el.Товар.indexOf("AW  8") != -1 ||
-      el.Товар.indexOf("Watch S8") != -1
+      el.Товар.indexOf("Watch S8") != -1 ||
+      el.Товар.indexOf("AirPods Max") != -1  ||
+      el.Товар.indexOf("Air Pods Max") != -1 ||
+      el.Товар.indexOf("Airpods Max") != -1 
     ) {
       return Number(el.Стоимость) + 500;
     } else if (
