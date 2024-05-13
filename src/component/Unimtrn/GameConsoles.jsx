@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../helpers/fixPrice";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../helpers/baseFix";
+import { baseFix } from "../../helpers/baseFix";
 
 const GameConsoles = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);

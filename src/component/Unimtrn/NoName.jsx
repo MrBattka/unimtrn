@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../helpers/fixPrice";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../helpers/baseFix";
+import { baseFix } from "../../helpers/baseFix";
 
-const AGMBeatsFujifilm = ({ el }) => {
+const NoName = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
@@ -17,14 +17,25 @@ const AGMBeatsFujifilm = ({ el }) => {
   };
 
   const newPrice = (el) => {
-    if (el.Товар.indexOf("Fujifilm") != -1 || el.Товар.indexOf("Beats") != -1) {
-      return Number(el.Стоимость) + 200;
-    } else if (
+    if (
       el.Товар.indexOf("AGM") != -1 ||
       el.Товар.indexOf("Blackview") != -1 ||
-      el.Товар.indexOf("Insta ") != -1
+      el.Товар.indexOf("Insta ") != -1 ||
+      el.Товар.indexOf("HUAWEI") != -1 ||
+      el.Товар.indexOf("Huawei") != -1 ||
+      el.Товар.indexOf("Fujifilm") != -1 ||
+      el.Товар.indexOf("Beats") != -1 ||
+      el.Товар.indexOf("infinix") != -1 ||
+      el.Товар.indexOf("Tecno") != -1 ||
+      el.Товар.indexOf("Realme") != -1
     ) {
       return Number(el.Стоимость) + 300;
+    } else if (
+      el.Товар.indexOf("RayBan") != -1 ||
+      el.Товар.indexOf("Oppo") != -1 ||
+      el.Товар.indexOf("Motorola") != -1
+    ) {
+      return Number(el.Стоимость) + 500;
     } else {
       return `${el.Стоимость} 🟥 `;
     }
@@ -37,8 +48,8 @@ const AGMBeatsFujifilm = ({ el }) => {
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
               {isOpen
-                ? "AGM / Beats / Fujifilm / Blackview / Insta ▲"
-                : "AGM / Beats / Fujifilm / Blackview / Insta ▼"}
+                ? "No name ▲"
+                : "No name ▼"}
             </span>
           )}
         </div>
@@ -59,7 +70,15 @@ const AGMBeatsFujifilm = ({ el }) => {
                           el.Товар.indexOf("Beats") != -1 ||
                           el.Товар.indexOf("Blackview") != -1 ||
                           el.Товар.indexOf("AGM") != -1 ||
-                          el.Товар.indexOf("Insta ") != -1) &&
+                          el.Товар.indexOf("Insta ") != -1 ||
+                          el.Товар.indexOf("RayBan") != -1 ||
+                          el.Товар.indexOf("infinix") != -1 ||
+                          el.Товар.indexOf("Oppo") != -1 ||
+                          el.Товар.indexOf("HUAWEI") != -1 ||
+                          el.Товар.indexOf("Huawei") != -1 ||
+                          el.Товар.indexOf("Realme") != -1 ||
+                          el.Товар.indexOf("Tecno") != -1 ||
+                          el.Товар.indexOf("Motorola") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
@@ -75,4 +94,4 @@ const AGMBeatsFujifilm = ({ el }) => {
   );
 };
 
-export default AGMBeatsFujifilm;
+export default NoName;

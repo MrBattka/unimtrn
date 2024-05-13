@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../helpers/fixPrice";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../helpers/baseFix";
+import { baseFix } from "../../helpers/baseFix";
 
 const Dyson = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ const Dyson = ({ el }) => {
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
-    return fixHeapdphone.replace(wiFi, "Wi-Fi")
+    return fixHeapdphone.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {

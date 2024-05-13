@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../helpers/fixPrice";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../helpers/baseFix";
+import { baseFix } from "../../helpers/baseFix";
 
 const GoogleSonyAsusLenovo = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +30,16 @@ const GoogleSonyAsusLenovo = ({ el }) => {
       el.Товар.indexOf("ROG") != -1 ||
       el.Товар.indexOf("Rog") != -1 ||
       el.Товар.indexOf("Sony Wireless") != -1 ||
-      el.Товар.indexOf("Wireless WH") != -1 ||
-      el.Товар.indexOf("Lenovo") != -1
+      el.Товар.indexOf("Wireless WH") != -1
     ) {
       return Number(el.Стоимость) + 400;
+    } else if (
+      el.Товар.indexOf("Acer") != -1 ||
+      el.Товар.indexOf("MSI") != -1 ||
+      el.Товар.indexOf("Asus") != -1 ||
+      el.Товар.indexOf("Lenovo") != -1
+    ) {
+      return Number(el.Стоимость) + 500;
     } else {
       return `${el.Стоимость} 🟥 `;
     }
@@ -73,6 +79,10 @@ const GoogleSonyAsusLenovo = ({ el }) => {
                           el.Товар.indexOf("Rog") != -1 ||
                           el.Товар.indexOf("Sony Wireless") != -1 ||
                           el.Товар.indexOf("Wireless WH") != -1 ||
+                          el.Товар.indexOf("Lenovo") != -1 ||
+                          el.Товар.indexOf("Acer") != -1 ||
+                          el.Товар.indexOf("MSI") != -1 ||
+                          el.Товар.indexOf("Asus") != -1 ||
                           el.Товар.indexOf("Lenovo") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../helpers/fixPrice";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../helpers/baseFix";
+import { baseFix } from "../../helpers/baseFix";
 
 const Apple = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,6 +80,7 @@ const Apple = ({ el }) => {
     ) {
       return Number(el.Стоимость) + 400;
     } else if (
+      el.Товар.indexOf("SE (2022) Gen") != -1 ||
       el.Товар.indexOf("SE 2") != -1 ||
       el.Товар.indexOf("SE 3") != -1 ||
       el.Товар.indexOf("SE 64") != -1 ||
@@ -118,9 +119,9 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("AW 8") != -1 ||
       el.Товар.indexOf("AW  8") != -1 ||
       el.Товар.indexOf("Watch S8") != -1 ||
-      el.Товар.indexOf("AirPods Max") != -1  ||
+      el.Товар.indexOf("AirPods Max") != -1 ||
       el.Товар.indexOf("Air Pods Max") != -1 ||
-      el.Товар.indexOf("Airpods Max") != -1 
+      el.Товар.indexOf("Airpods Max") != -1
     ) {
       return Number(el.Стоимость) + 500;
     } else if (
@@ -180,6 +181,7 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("HomePod") != -1 ||
                           el.Товар.indexOf("Watch SE") != -1 ||
                           el.Товар.indexOf("SE (2023) Gen") != -1 ||
+                          el.Товар.indexOf("SE (2022) Gen") != -1 ||
                           el.Товар.indexOf("SE 2") != -1 ||
                           el.Товар.indexOf("SE 3") != -1 ||
                           el.Товар.indexOf("SE 64") != -1 ||

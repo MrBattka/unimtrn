@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { read, utils, writeFile } from "xlsx";
 import "./App.css";
-import AGMBeatsFujifilm from "./component/AGMBeatsFujifilm";
-import AcerMSIMotorolaNothingPhone from "./component/AcerMSIMotorolaNothingPhone";
-import Apple from "./component/Apple";
-import Dyson from "./component/Dyson";
-import GameConsoles from "./component/GameConsoles";
-import GarminGoProDji from "./component/GarminGoproDji";
-import GoogleSonyAsusLenovo from "./component/GoogleSonyAsusLenovo";
-import HuaweiInfinixMarshallOppo from "./component/HuaweiInfinixMarshallOppo";
-import OnePlusZTETecno from "./component/OnePlusZTETecno";
-import OtherProduct from "./component/OtherProduct";
-import Samsung from "./component/Samsung";
-import Xiaomi from "./component/Xiaomi";
+import AppleHi from "./component/Hi/AppleHi";
+import Apple from "./component/Unimtrn/Apple";
+import Dyson from "./component/Unimtrn/Dyson";
+import GameConsoles from "./component/Unimtrn/GameConsoles";
+import GarminGoProDji from "./component/Unimtrn/GarminGoproDji";
+import GoogleSonyAsusLenovo from "./component/Unimtrn/GoogleSonyAsusLenovo";
+import NoName from "./component/Unimtrn/NoName";
+import OnePlusZTETecno from "./component/Unimtrn/OnePlusZTENothing";
+import OtherProduct from "./component/Unimtrn/OtherProduct";
+import Samsung from "./component/Unimtrn/Samsung";
+import Xiaomi from "./component/Unimtrn/Xiaomi";
 import icon from "./source/icon/icon.png";
 
 const App = () => {
@@ -77,18 +76,19 @@ const App = () => {
         </div>
       </div>
       <div className="wrapper_cat">
-        <Apple el={el} />
+        {/* Metr */}
         <Dyson el={el} />
-        <Samsung el={el} />
-        <Xiaomi el={el} />
-        <GameConsoles el={el} />
         <GarminGoProDji el={el} />
+        <NoName el={el} />
         <GoogleSonyAsusLenovo el={el} />
         <OnePlusZTETecno el={el} />
-        <AcerMSIMotorolaNothingPhone el={el} />
-        <AGMBeatsFujifilm el={el} />
-        <HuaweiInfinixMarshallOppo el={el} />
+        <GameConsoles el={el} />
+        <Samsung el={el} />
+        <Xiaomi el={el} />
+        <Apple el={el} />
         <OtherProduct el={el} />
+        {/* Hi */}
+        {/* <AppleHi el={el} /> */}
       </div>
     </div>
   );
