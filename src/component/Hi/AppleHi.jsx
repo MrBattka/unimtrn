@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { baseFixHi } from "../../helpers/baseFix";
 import { returnFixPriceHi } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 
@@ -6,7 +7,13 @@ const AppleHi = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [result, setResult] = useState([]);
 
-  console.log(result);
+  console.log(
+    el.map((hi) => {
+      if (typeof hi.Hi === "string") {
+        return hi.Hi;
+      }
+    })
+  );
 
   let gb = /Gb/gi;
   let aws9 = /AW Series 9/gi;
@@ -27,8 +34,9 @@ const AppleHi = ({ el }) => {
   let fixFlagJp = /🇺🇸🇯🇵 \(2022\)/gi;
   let fixFlagUs = /🇺🇸🇯🇵🇦🇺 \(2022\)/gi;
   let fixFlagAu = /🇺🇸🇦🇺 \(2022\)/gi;
-  let carDelivery = /🏎/gi
-  let headphones = /🎧/gi
+  let carDelivery = /🏎/gi;
+  let headphones = /🎧/gi;
+  let laptop = /💻/gi;
 
   const fixName = (el) => {
     // console.log(typeof el.Hi);
@@ -50,9 +58,10 @@ const AppleHi = ({ el }) => {
     const fixIpadJp = fixIpadUs.replace(fixFlagJp, "(2022)🇺🇸🇯🇵");
     const fixIpadAu = fixIpadJp.replace(fixFlagAu, "(2022)🇺🇸🇦🇺");
     const fixAirPods = fixIpadAu.replace(airPods, "AirPods");
-    const fixCarDelivery = fixAirPods.replace(carDelivery, "")
-    const fixHeadphones = fixCarDelivery.replace(headphones, "")
-    return fixHeadphones.replace(proMax, "Pro Max");
+    const fixCarDelivery = fixAirPods.replace(carDelivery, "");
+    const fixHeadphones = fixCarDelivery.replace(headphones, "");
+    const fixLaptop = fixHeadphones.replace(laptop, "");
+    return fixLaptop.replace(proMax, "Pro Max");
   };
 
   const newPrice = (el) => {
@@ -177,6 +186,7 @@ const AppleHi = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {typeof el.Hi === "string" &&
+                        baseFixHi(el) &&
                         (el.Hi.indexOf("AirPods") != -1 ||
                           el.Hi.indexOf("Airpods") != -1 ||
                           el.Hi.indexOf("Air Pods") != -1 ||
@@ -248,8 +258,7 @@ const AppleHi = ({ el }) => {
                           el.Hi.indexOf("MINI 6") != -1 ||
                           el.Hi.indexOf("Air 13") != -1 ||
                           el.Hi.indexOf("Air 15") != -1 ||
-                          el.Hi.indexOf("Pro 13") != -1
-                        ) &&
+                          el.Hi.indexOf("Pro 13") != -1) &&
                         typeof el.Hi === "string" &&
                         returnFixPriceHi(el, fixName(el))}
                     </div>

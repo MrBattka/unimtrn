@@ -157,6 +157,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Nothing Phone") == -1 &&
                         el.Товар.indexOf("Nothing Ear") == -1 &&
                         el.Товар.indexOf("Nothing ear") == -1 &&
+                        el.Товар.indexOf("Nothing CMF") == -1 &&
                         el.Товар.indexOf("Realme") == -1 &&
                         el.Товар.indexOf("OnePlus") == -1 &&
                         el.Товар.indexOf("RedMagic") == -1 &&
@@ -202,6 +203,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Rog") == -1 &&
                         el.Товар.indexOf("DJL ") == -1 &&
                         el.Товар.indexOf("DJI ") == -1 &&
+                        el.Товар.indexOf("Dji ") == -1 &&
                         el.Товар.indexOf("Garmin") == -1 &&
                         el.Товар.indexOf("JBL") == -1 &&
                         el.Товар.indexOf("GoPro") == -1 &&
@@ -233,6 +235,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("HomePod") == -1 &&
                         el.Товар.indexOf("Watch SE") == -1 &&
                         el.Товар.indexOf("SE (2023) Gen") == -1 &&
+                        el.Товар.indexOf("SE (2022) Gen") == -1 &&
                         el.Товар.indexOf("SE 2") == -1 &&
                         el.Товар.indexOf("SE 3") == -1 &&
                         el.Товар.indexOf("SE 64") == -1 &&

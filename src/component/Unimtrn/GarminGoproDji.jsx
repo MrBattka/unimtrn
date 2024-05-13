@@ -10,12 +10,14 @@ const GarminGoProDji = ({ el }) => {
   let watchGarmin = /Watch Garmin/gi;
   let wiFi = /wifi/gi;
   let sunglases = /Sunglases/gi;
+  let dji = /Dji/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
     const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
-    return fixSunglases.replace(wiFi, "Wi-Fi");
+    const fixDji = fixSunglases.replace(dji, "DJI");
+    return fixDji.replace(wiFi, "Wi-Fi");
   };
 
   const newPrice = (el) => {
@@ -65,6 +67,8 @@ const GarminGoProDji = ({ el }) => {
                       {baseFix(el) &&
                         (el.Товар.indexOf("DJL ") != -1 ||
                           el.Товар.indexOf("DJI ") != -1 ||
+                          el.Товар.indexOf("DJi ") != -1 ||
+                          el.Товар.indexOf("Dji ") != -1 ||
                           el.Товар.indexOf("Garmin") != -1 ||
                           el.Товар.indexOf("GoPro") != -1 ||
                           el.Товар.indexOf("JBL") != -1 ||

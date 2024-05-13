@@ -22,7 +22,7 @@ const OnePlusZTENothing = ({ el }) => {
     if (
       el.Товар.indexOf("Nothing Ear") != -1 ||
       el.Товар.indexOf("Nothing ear") != -1 ||
-      el.Товар.indexOf("Nothing") != -1
+      el.Товар.indexOf("Nothing CMF") != -1
     ) {
       return Number(el.Стоимость) + 200;
     } else if (
@@ -70,7 +70,7 @@ const OnePlusZTENothing = ({ el }) => {
                           el.Товар.indexOf("RedMagic") != -1 ||
                           el.Товар.indexOf("Nubia") != -1 ||
                           el.Товар.indexOf("Nothing Phone") != -1 ||
-                          el.Товар.indexOf("Nothing") != -1 ||
+                          el.Товар.indexOf("Nothing CMF") != -1 ||
                           el.Товар.indexOf("Nothing Ear") != -1 ||
                           el.Товар.indexOf("Nothing ear") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
