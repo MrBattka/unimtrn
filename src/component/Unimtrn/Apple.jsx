@@ -28,6 +28,11 @@ const Apple = ({ el }) => {
   let fixFlagJp = /🇺🇸🇯🇵 \(2022\)/gi;
   let fixFlagUs = /🇺🇸🇯🇵🇦🇺 \(2022\)/gi;
   let fixFlagAu = /🇺🇸🇦🇺 \(2022\)/gi;
+  let air13 = /13.6 M/gi;
+  let air15 = /15 M/gi;
+  let MGN63 = /M1 256 Gold MGND3/gi;
+  let MGN93 = /M1 256 Silver MGN93/gi;
+  let MGND3 = /M1 256 Space Grey MGN63/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -48,7 +53,12 @@ const Apple = ({ el }) => {
     const fixIpadJp = fixIpadUs.replace(fixFlagJp, "(2022)🇺🇸🇯🇵");
     const fixIpadAu = fixIpadJp.replace(fixFlagAu, "(2022)🇺🇸🇦🇺");
     const fixAirPods = fixIpadAu.replace(airPods, "AirPods");
-    return fixAirPods.replace(proMax, "Pro Max");
+    const fixAir13 = fixAirPods.replace(air13, "Air 13.6 M");
+    const fixAir15 = fixAir13.replace(air15, "Air 15 M");
+    const fixMGN63 = fixAir15.replace(MGN63, "Air M1 256 Gold MGND3");
+    const fixMGN93 = fixMGN63.replace(MGN93, "Air M1 256 Silver MGN93");
+    const fixMGND3 = fixMGN93.replace(MGND3, "Air M1 256 Space Grey MGN63");
+    return fixMGND3.replace(proMax, "Pro Max");
   };
 
   const newPrice = (el) => {
@@ -76,7 +86,8 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("iPad 10") != -1 ||
       el.Товар.indexOf("iPad 9") != -1 ||
       el.Товар.indexOf("IPad 9") != -1 ||
-      el.Товар.indexOf("Magic Keyboard") != -1
+      el.Товар.indexOf("Magic Keyboard") != -1 ||
+      el.Товар.indexOf("Magic Mouse") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else if (
@@ -145,6 +156,9 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("Macbook") != -1 ||
       el.Товар.indexOf("Book ") != -1 ||
       el.Товар.indexOf("MB") != -1 ||
+      el.Товар.indexOf("13.6 M") != -1 ||
+      el.Товар.indexOf("15 M") != -1 ||
+      el.Товар.indexOf("MGN") != -1 ||
       el.Товар.indexOf("Vision Pro") != -1
     ) {
       return Number(el.Стоимость) + 1000;
@@ -238,11 +252,15 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("Macbook") != -1 ||
                           el.Товар.indexOf("Book ") != -1 ||
                           el.Товар.indexOf("MB") != -1 ||
+                          el.Товар.indexOf("13.6 M") != -1 ||
+                          el.Товар.indexOf("15 M") != -1 ||
+                          el.Товар.indexOf("MGN") != -1 ||
                           el.Товар.indexOf("Vision Pro") != -1 ||
                           el.Товар.indexOf("Watch S8") != -1 ||
                           el.Товар.indexOf("Watch S9") != -1 ||
                           el.Товар.indexOf("IPad 9") != -1 ||
-                          el.Товар.indexOf("Magic Keyboard") != -1) &&
+                          el.Товар.indexOf("Magic Keyboard") != -1 ||
+                          el.Товар.indexOf("Magic Mouse") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

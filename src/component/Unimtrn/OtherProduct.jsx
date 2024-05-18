@@ -138,6 +138,7 @@ const OtherProduct = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
+                        el.Товар.indexOf("Polaroid") == -1 &&
                         el.Товар.indexOf("Oppo") == -1 &&
                         el.Товар.indexOf("HUAWEI") == -1 &&
                         el.Товар.indexOf("Huawei") == -1 &&
@@ -278,6 +279,9 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Watch S8") == -1 &&
                         el.Товар.indexOf("Watch S9") == -1 &&
                         el.Товар.indexOf("Mac") == -1 &&
+                        el.Товар.indexOf("13.6 M") == -1 &&
+                        el.Товар.indexOf("15 M") == -1 &&
+                        el.Товар.indexOf("MGN") == -1 &&
                         el.Товар.indexOf("15 Plus 128") == -1 &&
                         el.Товар.indexOf("15 Plus 256") == -1 &&
                         el.Товар.indexOf("15 Plus 512") == -1 &&
@@ -297,6 +301,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("MB") == -1 &&
                         el.Товар.indexOf("Vision Pro") == -1 &&
                         el.Товар.indexOf("Magic Keyboard") == -1 &&
+                        el.Товар.indexOf("Magic Mouse") == -1 &&
                         returnFixPrice(el, fixName(el)) + el.Стоимость}
                     </div>
                   ))
