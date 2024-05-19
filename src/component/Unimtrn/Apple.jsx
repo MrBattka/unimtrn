@@ -97,6 +97,7 @@ const Apple = ({ el }) => {
       el.Товар.indexOf("SE 64") != -1 ||
       el.Товар.indexOf("SE 128") != -1 ||
       el.Товар.indexOf("SE 256") != -1 ||
+      el.Товар.indexOf("XR 64") != -1 ||
       el.Товар.indexOf("11 64") != -1 ||
       el.Товар.indexOf("11 128") != -1 ||
       el.Товар.indexOf("12 64") != -1 ||
@@ -201,6 +202,7 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("SE 64") != -1 ||
                           el.Товар.indexOf("SE 128") != -1 ||
                           el.Товар.indexOf("SE 256") != -1 ||
+                          el.Товар.indexOf("XR 64") != -1 ||
                           el.Товар.indexOf("11 64") != -1 ||
                           el.Товар.indexOf("11 128") != -1 ||
                           el.Товар.indexOf("12 64") != -1 ||
