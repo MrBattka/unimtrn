@@ -30,6 +30,8 @@ const Apple = ({ el }) => {
   let fixFlagAu = /🇺🇸🇦🇺 \(2022\)/gi;
   let air13 = /13.6 M/gi;
   let air15 = /15 M/gi;
+  let airAir13 = /Air 13.6/gi;
+  let airAir15 = /Air 15/gi;
   let MGN63 = /M1 256 Gold MGND3/gi;
   let MGN93 = /M1 256 Silver MGN93/gi;
   let MGND3 = /M1 256 Space Grey MGN63/gi;
@@ -55,7 +57,9 @@ const Apple = ({ el }) => {
     const fixAirPods = fixIpadAu.replace(airPods, "AirPods");
     const fixAir13 = fixAirPods.replace(air13, "Air 13.6 M");
     const fixAir15 = fixAir13.replace(air15, "Air 15 M");
-    const fixMGN63 = fixAir15.replace(MGN63, "Air M1 256 Gold MGND3");
+    const fixAirAir13 = fixAir15.replace(airAir13, "13.6");
+    const fixAirAir15 = fixAirAir13.replace(airAir15, "15");
+    const fixMGN63 = fixAirAir15.replace(MGN63, "Air M1 256 Gold MGND3");
     const fixMGN93 = fixMGN63.replace(MGN93, "Air M1 256 Silver MGN93");
     const fixMGND3 = fixMGN93.replace(MGND3, "Air M1 256 Space Grey MGN63");
     return fixMGND3.replace(proMax, "Pro Max");
