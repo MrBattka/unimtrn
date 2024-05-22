@@ -15,6 +15,7 @@ const Samsung = ({ el }) => {
   let s22 = /Samsung S22/gi;
   let s23 = /Samsung S23/gi;
   let s24 = /Samsung S24/gi;
+  let a550 = /A550/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -25,7 +26,8 @@ const Samsung = ({ el }) => {
     const fixS23 = fixS22.replace(s23, "S23");
     const fixS24 = fixS23.replace(s24, "S24");
     const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
-    return fixWiFi.replace(zFlip, "Z Flip");
+    const fixA550 = fixWiFi.replace(a550, "A55");
+    return fixA550.replace(zFlip, "Z Flip");
   };
 
   const newPrice = (el) => {
@@ -46,6 +48,7 @@ const Samsung = ({ el }) => {
       el.Товар.indexOf("M34 ") != -1 ||
       el.Товар.indexOf("M54 ") != -1 ||
       el.Товар.indexOf("A55 ") != -1 ||
+      el.Товар.indexOf("A550 ") != -1 ||
       el.Товар.indexOf("Galaxy Watch") != -1
     ) {
       return Number(el.Стоимость) + 300;
@@ -94,7 +97,8 @@ const Samsung = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Galaxy") != -1 ||
+                        (el.Товар.indexOf("Galaxy Buds") != -1 ||
+                          el.Товар.indexOf("Galaxy Smart Tag") != -1 ||
                           el.Товар.indexOf("A05s") != -1 ||
                           el.Товар.indexOf("A05") != -1 ||
                           el.Товар.indexOf("A15") != -1 ||

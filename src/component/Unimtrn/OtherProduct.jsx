@@ -34,89 +34,6 @@ const OtherProduct = ({ el }) => {
     return fixAirPods.replace(proMax, "Pro Max");
   };
 
-  const newPrice = (el) => {
-    if (
-      el.Товар.indexOf("AirPods") == -1 ||
-      el.Товар.indexOf("Airpods") == -1 ||
-      el.Товар.indexOf("Air Pods") == -1 ||
-      el.Товар.indexOf("Pencil") == -1 ||
-      el.Товар.indexOf("HomePod") == -1
-    ) {
-      return Number(el.Стоимость) + 100;
-    } else if (
-      el.Товар.indexOf("Watch SE") == -1 ||
-      el.Товар.indexOf("SE (2023) Gen") == -1
-    ) {
-      return Number(el.Стоимость) + 300;
-    } else if (
-      el.Товар.indexOf("iPad 9") == -1 ||
-      el.Товар.indexOf("iPad 10") == -1 ||
-      el.Товар.indexOf("iPad 9") == -1
-    ) {
-      return Number(el.Стоимость) + 400;
-    } else if (
-      el.Товар.indexOf("SE 2") == -1 ||
-      el.Товар.indexOf("SE 3") == -1 ||
-      el.Товар.indexOf("11 64") == -1 ||
-      el.Товар.indexOf("11 128") == -1 ||
-      el.Товар.indexOf("12 64") == -1 ||
-      el.Товар.indexOf("12 128") == -1 ||
-      el.Товар.indexOf("12 Pro Max") == -1 ||
-      el.Товар.indexOf("13 128") == -1 ||
-      el.Товар.indexOf("13 256") == -1 ||
-      el.Товар.indexOf("13 512") == -1 ||
-      el.Товар.indexOf("14 128") == -1 ||
-      el.Товар.indexOf("14 256") == -1 ||
-      el.Товар.indexOf("14 512") == -1 ||
-      el.Товар.indexOf("14 Plus") == -1 ||
-      el.Товар.indexOf("14 Pro 128") == -1 ||
-      el.Товар.indexOf("14 Pro 256") == -1 ||
-      el.Товар.indexOf("14 Pro 512") == -1 ||
-      el.Товар.indexOf("14 Pro 1Tb") == -1 ||
-      el.Товар.indexOf("14 Pro 1TB") == -1 ||
-      el.Товар.indexOf("14 ProMax") == -1 ||
-      el.Товар.indexOf("15 128") == -1 ||
-      el.Товар.indexOf("15 256") == -1 ||
-      el.Товар.indexOf("15 512") == -1 ||
-      el.Товар.indexOf("iPad Mini 6") == -1 ||
-      el.Товар.indexOf("iPad Air 5") == -1 ||
-      el.Товар.indexOf("iPad Pro 11") == -1 ||
-      el.Товар.indexOf("AW Series 9") == -1 ||
-      el.Товар.indexOf("Mac") == -1 ||
-      el.Товар.indexOf("AW 9") == -1 ||
-      el.Товар.indexOf("AW  9") == -1 ||
-      el.Товар.indexOf("AW Series 8") == -1 ||
-      el.Товар.indexOf("AW 8") == -1 ||
-      el.Товар.indexOf("AW  8") == -1
-    ) {
-      return Number(el.Стоимость) + 500;
-    } else if (
-      el.Товар.indexOf("15 Plus 128") == -1 ||
-      el.Товар.indexOf("15 Plus 256") == -1 ||
-      el.Товар.indexOf("15 Plus 512") == -1 ||
-      el.Товар.indexOf("15 Pro 128") == -1 ||
-      el.Товар.indexOf("15 Pro 256") == -1 ||
-      el.Товар.indexOf("15 Pro 512") == -1 ||
-      el.Товар.indexOf("15 Pro 1Tb") == -1 ||
-      el.Товар.indexOf("15 ProMax 256") == -1 ||
-      el.Товар.indexOf("15 ProMax 512") == -1 ||
-      el.Товар.indexOf("15 ProMax 1Tb") == -1 ||
-      el.Товар.indexOf("iPad Pro 12.9") == -1 ||
-      el.Товар.indexOf("Ultra 2") == -1
-    ) {
-      return Number(el.Стоимость) + 600;
-    } else if (
-      el.Товар.indexOf("Macbook") == -1 ||
-      el.Товар.indexOf("Book ") == -1 ||
-      el.Товар.indexOf("MB") == -1 ||
-      el.Товар.indexOf("Vision Pro") == -1
-    ) {
-      return Number(el.Стоимость) + 1000;
-    } else {
-      return `${el.Стоимость} 🟥 `;
-    }
-  };
-
   return (
     <div>
       <div>
@@ -229,6 +146,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("HT0") == -1 &&
                         el.Товар.indexOf("HS0") == -1 &&
                         el.Товар.indexOf("Designed") == -1 &&
+                        el.Товар.indexOf("PH04") == -1 &&
                         el.Товар.indexOf("AirPods") == -1 &&
                         el.Товар.indexOf("Airpods") == -1 &&
                         el.Товар.indexOf("Air Pods") == -1 &&

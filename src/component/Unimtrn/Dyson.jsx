@@ -9,19 +9,6 @@ const Dyson = ({ el }) => {
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
   let heapdphone = /Heapdphone/gi;
-  let arr = [];
-  // const fixName = (el) => {
-  //   const returnFixName = el.map((e) => {
-  //     const fixGb = e.Товар.replace(gb, "");
-  //     const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
-  //     return arr.push(fixHeapdphone.replace(wiFi, "Wi-Fi"));
-  //   });
-  //   return returnFixName;
-  //   // const fixGb = el.Товар.replace(gb, "");
-  //   // const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
-  //   // return arr.push(fixHeapdphone.replace(wiFi, "Wi-Fi"));
-  // };
-  // // console.log(arr);
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -42,7 +29,8 @@ const Dyson = ({ el }) => {
       el.Товар.indexOf("HT0") != -1 ||
       el.Товар.indexOf("HS0") != -1 ||
       el.Товар.indexOf("Designed") != -1 ||
-      el.Товар.indexOf("Heapdphone") != -1
+      el.Товар.indexOf("Heapdphone") != -1 ||
+      el.Товар.indexOf("PH04") != -1
     ) {
       return Number(el.Стоимость) + 400;
     } else {
@@ -70,28 +58,6 @@ const Dyson = ({ el }) => {
               </thead>
               <tbody>
                 {el.length ? (
-                  // fixName(el).map((el, index) => {
-                  //   console.log(returnFixPrice(el, arr) + "return fix");
-                  //   return (
-                  //     <div key={index}>
-                  //       {/* {baseFix(el) &&
-                  //         (el.indexOf("Airwrap ") != -1
-                  //           // el.Товар.indexOf("V1") != -1 ||
-                  //           // el.Товар.indexOf("Vented") != -1 ||
-                  //           // el.Товар.indexOf("HD0") != -1 ||
-                  //           // el.Товар.indexOf("HD1") != -1 ||
-                  //           // el.Товар.indexOf("Gen5 Detect") != -1 ||
-                  //           // el.Товар.indexOf("Gen 5 Detect") != -1 ||
-                  //           // el.Товар.indexOf("RB0") != -1 ||
-                  //           // el.Товар.indexOf("HT0") != -1 ||
-                  //           // el.Товар.indexOf("HS0") != -1 ||
-                  //           // el.Товар.indexOf("Designed") != -1 ||
-                  //           // el.Товар.indexOf("Heapdphone") != -1
-                  //           ) &&
-                  //         returnFixPrice(el, arr) + newPrice(el)} */}
-                  //     </div>
-                  //   );
-                  // })
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
@@ -106,7 +72,8 @@ const Dyson = ({ el }) => {
                           el.Товар.indexOf("HT0") != -1 ||
                           el.Товар.indexOf("HS0") != -1 ||
                           el.Товар.indexOf("Designed") != -1 ||
-                          el.Товар.indexOf("Heapdphone") != -1) &&
+                          el.Товар.indexOf("Heapdphone") != -1 ||
+                          el.Товар.indexOf("PH04") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
