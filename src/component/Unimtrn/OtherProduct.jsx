@@ -81,6 +81,8 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("OnePlus") == -1 &&
                         el.Товар.indexOf("RedMagic") == -1 &&
                         el.Товар.indexOf("Tecno") == -1 &&
+                        el.Товар.indexOf("Camon ") == -1 &&
+                        el.Товар.indexOf("Spark ") == -1 &&
                         el.Товар.indexOf("Nubia") == -1 &&
                         el.Товар.indexOf("Redmi Buds") == -1 &&
                         el.Товар.indexOf("Redmi Note") == -1 &&

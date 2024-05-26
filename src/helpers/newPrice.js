@@ -54,7 +54,9 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Mi ") != -1 ||
     el.Товар.indexOf("MI ") != -1 ||
     el.Товар.indexOf("Poco") != -1 ||
-    el.Товар.indexOf("POCO") != -1
+    el.Товар.indexOf("POCO") != -1 ||
+    el.Товар.indexOf("Camon ") != -1 ||
+    el.Товар.indexOf("Spark ") != -1
   ) {
     return Number(el.Стоимость) + 300;
   } else if (
