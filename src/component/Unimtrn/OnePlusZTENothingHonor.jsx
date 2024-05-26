@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { newPrice } from "../../helpers/newPrice";
 
-const OnePlusZTENothing = ({ el }) => {
+const OnePlusZTENothingHonor = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let gb = /Gb/gi;
@@ -18,29 +19,6 @@ const OnePlusZTENothing = ({ el }) => {
     return fixRealme.replace(wiFi, "Wi-Fi");
   };
 
-  const newPrice = (el) => {
-    if (
-      el.Товар.indexOf("Nothing Ear") != -1 ||
-      el.Товар.indexOf("Nothing ear") != -1 ||
-      el.Товар.indexOf("Nothing CMF") != -1
-    ) {
-      return Number(el.Стоимость) + 200;
-    } else if (
-      el.Товар.indexOf("ZenFone") != -1
-    ) {
-      return Number(el.Стоимость) + 300;
-    } else if (
-      el.Товар.indexOf("OnePlus") != -1 ||
-      el.Товар.indexOf("RedMagic") != -1 ||
-      el.Товар.indexOf("Nubia") != -1 ||
-      el.Товар.indexOf("Nothing Phone") != -1
-    ) {
-      return Number(el.Стоимость) + 500;
-    } else {
-      return `${el.Стоимость} 🟥 `;
-    }
-  };
-
   return (
     <div>
       <div>
@@ -48,8 +26,8 @@ const OnePlusZTENothing = ({ el }) => {
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
               {isOpen
-                ? "OnePlus / ZTE / Nothing ▲"
-                : "OnePlus / ZTE / Nothing ▼"}
+                ? "OnePlus / ZTE / Nothing / Honor ▲"
+                : "OnePlus / ZTE / Nothing / Honor ▼"}
             </span>
           )}
         </div>
@@ -72,7 +50,8 @@ const OnePlusZTENothing = ({ el }) => {
                           el.Товар.indexOf("Nothing Phone") != -1 ||
                           el.Товар.indexOf("Nothing CMF") != -1 ||
                           el.Товар.indexOf("Nothing Ear") != -1 ||
-                          el.Товар.indexOf("Nothing ear") != -1) &&
+                          el.Товар.indexOf("Nothing ear") != -1 ||
+                          el.Товар.indexOf("Honor") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
@@ -88,4 +67,4 @@ const OnePlusZTENothing = ({ el }) => {
   );
 };
 
-export default OnePlusZTENothing;
+export default OnePlusZTENothingHonor;

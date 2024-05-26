@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { newPrice } from "../../helpers/newPrice";
 
 const Dyson = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,28 +15,6 @@ const Dyson = ({ el }) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
     return fixHeapdphone.replace(wiFi, "Wi-Fi");
-  };
-
-  const newPrice = (el) => {
-    if (
-      el.Товар.indexOf("Airwrap ") != -1 ||
-      el.Товар.indexOf("V1") != -1 ||
-      el.Товар.indexOf("Vented") != -1 ||
-      el.Товар.indexOf("HD0") != -1 ||
-      el.Товар.indexOf("HD1") != -1 ||
-      el.Товар.indexOf("Gen5 Detect") != -1 ||
-      el.Товар.indexOf("Gen 5 Detect") != -1 ||
-      el.Товар.indexOf("RB0") != -1 ||
-      el.Товар.indexOf("HT0") != -1 ||
-      el.Товар.indexOf("HS0") != -1 ||
-      el.Товар.indexOf("Designed") != -1 ||
-      el.Товар.indexOf("Heapdphone") != -1 ||
-      el.Товар.indexOf("PH04") != -1
-    ) {
-      return Number(el.Стоимость) + 400;
-    } else {
-      return `${el.Стоимость} 🟥 `;
-    }
   };
 
   return (

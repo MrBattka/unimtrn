@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { newPrice } from "../../helpers/newPrice";
 
 const GarminGoProDji = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,26 +19,6 @@ const GarminGoProDji = ({ el }) => {
     const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
     const fixDji = fixSunglases.replace(dji, "DJI");
     return fixDji.replace(wiFi, "Wi-Fi");
-  };
-
-  const newPrice = (el) => {
-    if (el.Товар.indexOf("JBL") != -1 || el.Товар.indexOf("Marshall") != -1) {
-      return Number(el.Стоимость) + 200;
-    } else if (
-      el.Товар.indexOf("DJL ") != -1 ||
-      el.Товар.indexOf("DJI ") != -1 ||
-      el.Товар.indexOf("Dji ") != -1 ||
-      el.Товар.indexOf("DJi ") != -1 ||
-      el.Товар.indexOf("Garmin") != -1
-    ) {
-      return Number(el.Стоимость) + 400;
-    } else if (
-      el.Товар.indexOf("GoPro") != -1
-    ) {
-      return Number(el.Стоимость) + 500;
-    } else {
-      return `${el.Стоимость} 🟥 `;
-    }
   };
 
   return (

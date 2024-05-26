@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { newPrice } from "../../helpers/newPrice";
 
 const Xiaomi = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,28 +13,6 @@ const Xiaomi = ({ el }) => {
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     return fixGb.replace(wiFi, "Wi-Fi");
-  };
-
-  const newPrice = (el) => {
-    if (el.Товар.indexOf("Redmi Buds") != -1) {
-      return Number(el.Стоимость) + 100;
-    } else if (
-      el.Товар.indexOf("Mi ") != -1 ||
-      el.Товар.indexOf("MI ") != -1 ||
-      el.Товар.indexOf("Poco") != -1 ||
-      el.Товар.indexOf("POCO") != -1
-    ) {
-      return Number(el.Стоимость) + 300;
-    } else if (
-      el.Товар.indexOf("Redmi Note") != -1 ||
-      el.Товар.indexOf("Redmi") != -1 ||
-      el.Товар.indexOf("Note") != -1 ||
-      el.Товар.indexOf("Watch") != -1
-    ) {
-      return Number(el.Стоимость) + 400;
-    } else {
-      return `${el.Стоимость} 🟥 `;
-    }
   };
 
   return (

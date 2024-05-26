@@ -76,6 +76,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Nothing Ear") == -1 &&
                         el.Товар.indexOf("Nothing ear") == -1 &&
                         el.Товар.indexOf("Nothing CMF") == -1 &&
+                        el.Товар.indexOf("Honor") == -1 &&
                         el.Товар.indexOf("Realme") == -1 &&
                         el.Товар.indexOf("OnePlus") == -1 &&
                         el.Товар.indexOf("RedMagic") == -1 &&

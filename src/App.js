@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { read, utils, writeFile } from "xlsx";
 import "./App.css";
-import AppleHi from "./component/Hi/AppleHi";
 import Apple from "./component/Unimtrn/Apple";
 import Dyson from "./component/Unimtrn/Dyson";
 import GameConsoles from "./component/Unimtrn/GameConsoles";
 import GarminGoProDji from "./component/Unimtrn/GarminGoproDji";
 import GoogleSonyAsusLenovo from "./component/Unimtrn/GoogleSonyAsusLenovo";
 import NoName from "./component/Unimtrn/NoName";
-import OnePlusZTETecno from "./component/Unimtrn/OnePlusZTENothing";
+import OnePlusZTENothingHonor from "./component/Unimtrn/OnePlusZTENothingHonor";
 import OtherProduct from "./component/Unimtrn/OtherProduct";
 import Samsung from "./component/Unimtrn/Samsung";
 import Xiaomi from "./component/Unimtrn/Xiaomi";
@@ -81,7 +80,7 @@ const App = () => {
         <GarminGoProDji el={el} />
         <NoName el={el} />
         <GoogleSonyAsusLenovo el={el} />
-        <OnePlusZTETecno el={el} />
+        <OnePlusZTENothingHonor el={el} />
         <GameConsoles el={el} />
         <Samsung el={el} />
         <Xiaomi el={el} />

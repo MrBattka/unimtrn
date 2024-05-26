@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { newPrice } from "../../helpers/newPrice";
 
 const NoName = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,32 +15,6 @@ const NoName = ({ el }) => {
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     return fixGb.replace(wiFi, "Wi-Fi");
-  };
-
-  const newPrice = (el) => {
-    if (
-      el.Товар.indexOf("AGM") != -1 ||
-      el.Товар.indexOf("Blackview") != -1 ||
-      el.Товар.indexOf("Insta ") != -1 ||
-      el.Товар.indexOf("HUAWEI") != -1 ||
-      el.Товар.indexOf("Huawei") != -1 ||
-      el.Товар.indexOf("Fujifilm") != -1 ||
-      el.Товар.indexOf("Beats") != -1 ||
-      el.Товар.indexOf("infinix") != -1 ||
-      el.Товар.indexOf("Tecno") != -1 ||
-      el.Товар.indexOf("Realme") != -1 ||
-      el.Товар.indexOf("Polaroid") != -1
-    ) {
-      return Number(el.Стоимость) + 300;
-    } else if (
-      el.Товар.indexOf("RayBan") != -1 ||
-      el.Товар.indexOf("Oppo") != -1 ||
-      el.Товар.indexOf("Motorola") != -1
-    ) {
-      return Number(el.Стоимость) + 500;
-    } else {
-      return `${el.Стоимость} 🟥 `;
-    }
   };
 
   return (
