@@ -9,10 +9,14 @@ const Xiaomi = ({ el }) => {
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
+  let poco = /Poco/gi;
+  let poco1 = /poco/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
-    return fixGb.replace(wiFi, "Wi-Fi");
+    const fixPoco = fixGb.replace(poco, "POCO");
+    const fixPoco1 = fixPoco.replace(poco1, "POCO");
+    return fixPoco1.replace(wiFi, "Wi-Fi");
   };
 
   return (
