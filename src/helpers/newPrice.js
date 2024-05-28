@@ -20,7 +20,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("HomePod") != -1 ||
     el.Товар.indexOf("Redmi Buds") != -1
   ) {
-    return Number(el.Стоимость) + 200;
+    return Number(el.Стоимость) + 400;
   } else if (
     el.Товар.indexOf("Watch SE") != -1 ||
     el.Товар.indexOf("SE (2023) Gen") != -1 ||
@@ -58,7 +58,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Camon ") != -1 ||
     el.Товар.indexOf("Spark ") != -1
   ) {
-    return Number(el.Стоимость) + 300;
+    return Number(el.Стоимость) + 500;
   } else if (
     el.Товар.indexOf("iPad 9") != -1 ||
     el.Товар.indexOf("iPad 10") != -1 ||
@@ -106,7 +106,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Note") != -1 ||
     el.Товар.indexOf("Watch") != -1
   ) {
-    return Number(el.Стоимость) + 400;
+    return Number(el.Стоимость) + 600;
   } else if (
     el.Товар.indexOf("SE (2022) Gen") != -1 ||
     el.Товар.indexOf("SE 2") != -1 ||
@@ -171,7 +171,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Z Flip") != -1 ||
     el.Товар.indexOf("Z Fold") != -1
   ) {
-    return Number(el.Стоимость) + 500;
+    return Number(el.Стоимость) + 700;
   } else if (
     el.Товар.indexOf("15 Plus 128") != -1 ||
     el.Товар.indexOf("15 Plus 256") != -1 ||
@@ -189,7 +189,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Ultra 2") != -1 ||
     el.Товар.indexOf("Tab S") != -1
   ) {
-    return Number(el.Стоимость) + 600;
+    return Number(el.Стоимость) + 800;
   } else if (
     el.Товар.indexOf("Macbook") != -1 ||
     el.Товар.indexOf("Book ") != -1 ||
@@ -199,7 +199,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("MGN") != -1 ||
     el.Товар.indexOf("Vision Pro") != -1
   ) {
-    return Number(el.Стоимость) + 1000;
+    return Number(el.Стоимость) + 1200;
   } else {
     return `${el.Стоимость} 🟥 `;
   }
