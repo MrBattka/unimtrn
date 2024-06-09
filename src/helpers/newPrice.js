@@ -187,6 +187,9 @@ export const newPrice = (el) => {
     el.Товар.indexOf("15 ProMax 256") != -1 ||
     el.Товар.indexOf("15 ProMax 512") != -1 ||
     el.Товар.indexOf("15 ProMax 1Tb") != -1 ||
+    el.Товар.indexOf("15 Pro Max 256") != -1 ||
+    el.Товар.indexOf("15 Pro Max 512") != -1 ||
+    el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
     el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
     el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
     el.Товар.indexOf("iPad Pro 12.9") != -1 ||
