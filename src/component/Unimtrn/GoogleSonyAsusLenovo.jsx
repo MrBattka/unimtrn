@@ -12,12 +12,14 @@ const GoogleSonyAsusLenovo = ({ el }) => {
   let sony = /Sony Xperia/gi;
   let zenFone = /Asus ZenFone/gi;
   let wiFi = /wifi/gi;
+  let google = /Google /gi
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixSony = fixGb.replace(sony, "Xperia");
     const fixRog = fixSony.replace(rog, "ROG");
-    const fixZenFone = fixRog.replace(zenFone, "ZenFone");
+    const fixGoogle = fixRog.replace(google, "");
+    const fixZenFone = fixGoogle.replace(zenFone, "ZenFone");
     return fixZenFone.replace(wiFi, "Wi-Fi");
   };
 
