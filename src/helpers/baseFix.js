@@ -13,6 +13,14 @@ export const baseFix = (el) => {
     el.Товар?.indexOf("Silicon") == -1 &&
     el.Товар?.indexOf("Grip Case") == -1 &&
     el.Товар?.indexOf("Sult Case") == -1 &&
+    el.Товар?.indexOf("Docking Station") == -1 &&
+    el.Товар?.indexOf("Doсking Station") == -1 &&
+    el.Товар?.indexOf("Power Bank") == -1 &&
+    el.Товар?.indexOf("Magez") == -1 &&
+    el.Товар?.indexOf("Transparent") == -1 &&
+    el.Товар?.indexOf("Transpаrent") == -1 &&
+    el.Товар?.indexOf("Power Adapter") == -1 &&
+    el.Товар?.indexOf("Travel Bag") == -1 &&
     el !== "Товар"
   );
 };

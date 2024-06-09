@@ -10,11 +10,13 @@ const Dyson = ({ el }) => {
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
   let heapdphone = /Heapdphone/gi;
+  let dyson = /Dyson/gi
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
-    return fixHeapdphone.replace(wiFi, "Wi-Fi");
+    const fixDyson = fixHeapdphone.replace(dyson, "");
+    return fixDyson.replace(wiFi, "Wi-Fi");
   };
 
   return (
@@ -52,7 +54,11 @@ const Dyson = ({ el }) => {
                           el.Товар.indexOf("HS0") != -1 ||
                           el.Товар.indexOf("Designed") != -1 ||
                           el.Товар.indexOf("Heapdphone") != -1 ||
-                          el.Товар.indexOf("PH04") != -1) &&
+                          el.Товар.indexOf("PH04") != -1 ||
+                          el.Товар.indexOf("Wash G1 ") != -1 ||
+                          el.Товар.indexOf("Paddle Brush") != -1 ||
+                          el.Товар.indexOf("Supersonic Hair") != -1 ||
+                          el.Товар.indexOf("Air Purifier") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
