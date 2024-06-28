@@ -40,6 +40,7 @@ const OnePlusZTENothingHonor = ({ el }) => {
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
               <tbody>
+              <div><b>Nothing Phone (2) 12/256 White - 46500</b></div>
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
