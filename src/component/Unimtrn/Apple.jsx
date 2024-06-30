@@ -96,6 +96,9 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("SE (2023) Gen") != -1 ||
                           el.Товар.indexOf("SE (2022) Gen") != -1 ||
                           el.Товар.indexOf("SE 2") != -1 ||
+                          el.Товар.indexOf("SE (2022) 64") != -1 ||
+                          el.Товар.indexOf("SE (2022) 128") != -1 ||
+                          el.Товар.indexOf("SE (2022) 256") != -1 ||
                           el.Товар.indexOf("SE 3") != -1 ||
                           el.Товар.indexOf("SE 64") != -1 ||
                           el.Товар.indexOf("SE 128") != -1 ||

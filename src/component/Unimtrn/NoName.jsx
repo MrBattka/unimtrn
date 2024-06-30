@@ -59,7 +59,8 @@ const NoName = ({ el }) => {
                           el.Товар.indexOf("Camon ") != -1 ||
                           el.Товар.indexOf("Spark ") != -1 ||
                           el.Товар.indexOf("Polaroid") != -1 ||
-                          el.Товар.indexOf("Motorola") != -1) &&
+                          el.Товар.indexOf("Motorola") != -1 ||
+                          el.Товар.indexOf("Sonos") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

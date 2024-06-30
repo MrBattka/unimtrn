@@ -55,7 +55,7 @@ const App = () => {
                 <div className="input-group">
                   <div className="custom-file">
                     <label for="inputGroupFile" class="custom-file-upload">
-                      Custom Upload
+                      Select File...
                     </label>
                     <input
                       type="file"
