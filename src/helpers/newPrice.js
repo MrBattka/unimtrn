@@ -18,12 +18,56 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Airpods 3") != -1 ||
     el.Товар.indexOf("Pencil") != -1 ||
     el.Товар.indexOf("HomePod") != -1 ||
-    el.Товар.indexOf("Redmi Buds") != -1
-  ) {
-    return Number(el.Стоимость) + 600;
-  } else if (
-    el.Товар.indexOf("Watch SE") != -1 ||
+    el.Товар.indexOf("Redmi Buds") != -1 ||
+    el.Товар.indexOf("A05s ") != -1 ||
+    el.Товар.indexOf("A05 ") != -1 ||
+    el.Товар.indexOf("A15 ") != -1 ||
+    el.Товар.indexOf("A25 ") != -1 ||
+    el.Товар.indexOf("A24 ") != -1 ||
+    el.Товар.indexOf("A54 ") != -1 ||
+    el.Товар.indexOf("A35 ") != -1 ||
+    el.Товар.indexOf("A34 ") != -1 ||
+    el.Товар.indexOf("M34 ") != -1 ||
+    el.Товар.indexOf("Galaxy Watch") != -1 ||
+    el.Товар.indexOf("Poco") != -1 ||
+    el.Товар.indexOf("POCO") != -1 ||
+    el.Товар.indexOf("Camon ") != -1 ||
+    el.Товар.indexOf("Spark ") != -1 ||
+    el.Товар.indexOf("Magic Keyboard") != -1 ||
+    el.Товар.indexOf("Magic Mouse") != -1 ||
+    el.Товар.indexOf("DJL ") != -1 ||
+    el.Товар.indexOf("DJI ") != -1 ||
+    el.Товар.indexOf("Dji ") != -1 ||
+    el.Товар.indexOf("DJi ") != -1 ||
+    el.Товар.indexOf("Sony Wireless") != -1 ||
+    el.Товар.indexOf("Wireless WH") != -1 ||
+    el.Товар.indexOf("Watch 6") != -1 ||
+    el.Товар.indexOf("Tab A") != -1 ||
+    el.Товар.indexOf("Redmi Note") != -1 ||
+    el.Товар.indexOf("Redmi") != -1 ||
+    el.Товар.indexOf("Note") != -1 ||
+    el.Товар.indexOf("Watch") != -1 ||
+    el.Товар.indexOf("AirPods Max") != -1 ||
+    el.Товар.indexOf("Air Pods Max") != -1 ||
+    el.Товар.indexOf("Airpods Max") != -1 ||
+    el.Товар.indexOf("GoPro") != -1 ||
+    el.Товар.indexOf("XR 64") != -1 ||
+    el.Товар.indexOf("SE (2022) Gen") != -1 ||
     el.Товар.indexOf("SE (2023) Gen") != -1 ||
+    el.Товар.indexOf("Watch SE") != -1 
+  ) {
+    return el.Стоимость ? Number(el.Стоимость) + 300 : Number(el.Cтоимость) + 300
+  } else if (
+    el.Товар.indexOf("SE (2022) 64") != -1 ||
+    el.Товар.indexOf("SE (2022) 128") != -1 ||
+    el.Товар.indexOf("SE (2022) 256") != -1 ||
+    el.Товар.indexOf("SE 2") != -1 ||
+    el.Товар.indexOf("SE 3") != -1 ||
+    el.Товар.indexOf("SE 64") != -1 ||
+    el.Товар.indexOf("SE 128") != -1 ||
+    el.Товар.indexOf("SE 256") != -1 ||
+    el.Товар.indexOf("11 64") != -1 ||
+    el.Товар.indexOf("11 128") != -1 ||
     el.Товар.indexOf("Asus") != -1 ||
     el.Товар.indexOf("ZenFone") != -1 ||
     el.Товар.indexOf("AGM") != -1 ||
@@ -38,35 +82,19 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Realme") != -1 ||
     el.Товар.indexOf("Polaroid") != -1 ||
     el.Товар.indexOf("ZenFone") != -1 ||
-    el.Товар.indexOf("A05s ") != -1 ||
-    el.Товар.indexOf("A05 ") != -1 ||
-    el.Товар.indexOf("A15 ") != -1 ||
-    el.Товар.indexOf("A25 ") != -1 ||
-    el.Товар.indexOf("A24 ") != -1 ||
-    el.Товар.indexOf("A54 ") != -1 ||
-    el.Товар.indexOf("A35 ") != -1 ||
-    el.Товар.indexOf("A34 ") != -1 ||
-    el.Товар.indexOf("M34 ") != -1 ||
     el.Товар.indexOf("M54 ") != -1 ||
     el.Товар.indexOf("A55 ") != -1 ||
     el.Товар.indexOf("A550 ") != -1 ||
-    el.Товар.indexOf("Galaxy Watch") != -1 ||
     el.Товар.indexOf("Mi ") != -1 ||
     el.Товар.indexOf("MI ") != -1 ||
-    el.Товар.indexOf("Poco") != -1 ||
-    el.Товар.indexOf("POCO") != -1 ||
-    el.Товар.indexOf("Camon ") != -1 ||
-    el.Товар.indexOf("Spark ") != -1 ||
     el.Товар.indexOf("Sonos") != -1
   ) {
-    return Number(el.Стоимость) + 700;
+    return el.Стоимость ? Number(el.Стоимость) + 700 : Number(el.Cтоимость) + 700
   } else if (
     el.Товар.indexOf("iPad 9") != -1 ||
     el.Товар.indexOf("iPad 10") != -1 ||
     el.Товар.indexOf("iPad 9") != -1 ||
     el.Товар.indexOf("IPad 9") != -1 ||
-    el.Товар.indexOf("Magic Keyboard") != -1 ||
-    el.Товар.indexOf("Magic Mouse") != -1 ||
     el.Товар.indexOf("Airwrap ") != -1 ||
     el.Товар.indexOf("V1") != -1 ||
     el.Товар.indexOf("Vented") != -1 ||
@@ -92,39 +120,15 @@ export const newPrice = (el) => {
     el.Товар.indexOf("PS5") != -1 ||
     el.Товар.indexOf("Pico") != -1 ||
     el.Товар.indexOf("Steam") != -1 ||
-    el.Товар.indexOf("DJL ") != -1 ||
-    el.Товар.indexOf("DJI ") != -1 ||
-    el.Товар.indexOf("Dji ") != -1 ||
-    el.Товар.indexOf("DJi ") != -1 ||
     el.Товар.indexOf("Garmin") != -1 ||
     el.Товар.indexOf("Google") != -1 ||
     el.Товар.indexOf("Pixel") != -1 ||
     el.Товар.indexOf("Xperia") != -1 ||
     el.Товар.indexOf("ROG") != -1 ||
-    el.Товар.indexOf("Rog") != -1 ||
-    el.Товар.indexOf("Sony Wireless") != -1 ||
-    el.Товар.indexOf("Wireless WH") != -1 ||
-    el.Товар.indexOf("Watch 6") != -1 ||
-    el.Товар.indexOf("Tab A") != -1 ||
-    el.Товар.indexOf("Redmi Note") != -1 ||
-    el.Товар.indexOf("Redmi") != -1 ||
-    el.Товар.indexOf("Note") != -1 ||
-    el.Товар.indexOf("Watch") != -1
+    el.Товар.indexOf("Rog") != -1 
   ) {
-    return Number(el.Стоимость) + 800;
+    return el.Стоимость ? Number(el.Стоимость) + 800 : Number(el.Cтоимость) + 800
   } else if (
-    el.Товар.indexOf("SE (2022) Gen") != -1 ||
-    el.Товар.indexOf("SE (2022) 64") != -1 ||
-    el.Товар.indexOf("SE (2022) 128") != -1 ||
-    el.Товар.indexOf("SE (2022) 256") != -1 ||
-    el.Товар.indexOf("SE 2") != -1 ||
-    el.Товар.indexOf("SE 3") != -1 ||
-    el.Товар.indexOf("SE 64") != -1 ||
-    el.Товар.indexOf("SE 128") != -1 ||
-    el.Товар.indexOf("SE 256") != -1 ||
-    el.Товар.indexOf("XR 64") != -1 ||
-    el.Товар.indexOf("11 64") != -1 ||
-    el.Товар.indexOf("11 128") != -1 ||
     el.Товар.indexOf("12 64") != -1 ||
     el.Товар.indexOf("12 128") != -1 ||
     el.Товар.indexOf("12 256") != -1 ||
@@ -156,10 +160,6 @@ export const newPrice = (el) => {
     el.Товар.indexOf("AW 8") != -1 ||
     el.Товар.indexOf("AW  8") != -1 ||
     el.Товар.indexOf("Watch S8") != -1 ||
-    el.Товар.indexOf("AirPods Max") != -1 ||
-    el.Товар.indexOf("Air Pods Max") != -1 ||
-    el.Товар.indexOf("Airpods Max") != -1 ||
-    el.Товар.indexOf("GoPro") != -1 ||
     el.Товар.indexOf("Acer") != -1 ||
     el.Товар.indexOf("MSI") != -1 ||
     el.Товар.indexOf("Asus") != -1 ||
@@ -179,7 +179,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Z Flip") != -1 ||
     el.Товар.indexOf("Z Fold") != -1
   ) {
-    return Number(el.Стоимость) + 900;
+    return el.Стоимость ? Number(el.Стоимость) + 900 : Number(el.Cтоимость) + 900
   } else if (
     el.Товар.indexOf("15 Plus 128") != -1 ||
     el.Товар.indexOf("15 Plus 256") != -1 ||
@@ -200,7 +200,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Ultra 2") != -1 ||
     el.Товар.indexOf("Tab S") != -1
   ) {
-    return Number(el.Стоимость) + 1000;
+    return el.Стоимость ? Number(el.Стоимость) + 1000 : Number(el.Cтоимость) + 1000
   } else if (
     el.Товар.indexOf("Macbook") != -1 ||
     el.Товар.indexOf("Book ") != -1 ||
@@ -211,8 +211,8 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Vision Pro") != -1 ||
     el.Товар.indexOf("Microsoft") != -1
   ) {
-    return Number(el.Стоимость) + 1400;
+    return el.Стоимость ? Number(el.Стоимость) + 1500 : Number(el.Cтоимость) + 1500
   } else {
-    return `${el.Стоимость} 🟥 `;
+    return el.Стоимость ? `${el.Стоимость} 🟥 Без наценки ` : `${el.Cтоимость} 🟥 Без наценки `;
   }
 };

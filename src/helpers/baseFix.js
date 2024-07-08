@@ -21,6 +21,7 @@ export const baseFix = (el) => {
     el.Товар?.indexOf("Transpаrent") == -1 &&
     el.Товар?.indexOf("Power Adapter") == -1 &&
     el.Товар?.indexOf("Travel Bag") == -1 &&
+    el.Товар?.indexOf("Folio") == -1 &&
     el !== "Товар"
   );
 };

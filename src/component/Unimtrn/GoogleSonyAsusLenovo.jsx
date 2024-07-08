@@ -13,6 +13,7 @@ const GoogleSonyAsusLenovo = ({ el }) => {
   let zenFone = /Asus ZenFone/gi;
   let wiFi = /wifi/gi;
   let google = /Google /gi
+  let asus = /Asus /gi
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -20,7 +21,8 @@ const GoogleSonyAsusLenovo = ({ el }) => {
     const fixRog = fixSony.replace(rog, "ROG");
     const fixGoogle = fixRog.replace(google, "");
     const fixZenFone = fixGoogle.replace(zenFone, "ZenFone");
-    return fixZenFone.replace(wiFi, "Wi-Fi");
+    const fixAsus = fixZenFone.replace(asus, "");
+    return fixAsus.replace(wiFi, "Wi-Fi");
   };
 
   return (
@@ -44,7 +46,6 @@ const GoogleSonyAsusLenovo = ({ el }) => {
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
               <tbody>
-                <div><b>Pixel 6A 6/128 Chalk - 24100</b></div>
                 <div><b>Pixel 7 8/128 Obsidian - 33500</b></div>
                 {el.length ? (
                   el.map((el, index) => (
