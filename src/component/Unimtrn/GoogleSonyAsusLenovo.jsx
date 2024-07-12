@@ -46,7 +46,6 @@ const GoogleSonyAsusLenovo = ({ el }) => {
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
               <tbody>
-                <div><b>Pixel 7 8/128 Obsidian - 33500</b></div>
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>

@@ -10,13 +10,15 @@ const NoName = ({ el }) => {
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
   let glasses = /glases/gi;
+  let huawei = /HUAWEI/gi
 
   console.log(el);
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
     const fixGlasses = fixGb.replace(glasses, "glasses");
-    return fixGlasses.replace(wiFi, "Wi-Fi");
+    const fixHuawei = fixGlasses.replace(huawei, "Huawei");
+    return fixHuawei.replace(wiFi, "Wi-Fi");
   };
 
   return (
