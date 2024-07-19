@@ -28,6 +28,9 @@ export const newPrice = (el) => {
     el.Товар.indexOf("A35 ") != -1 ||
     el.Товар.indexOf("A34 ") != -1 ||
     el.Товар.indexOf("M34 ") != -1 ||
+    el.Товар.indexOf("M54 ") != -1 ||
+    el.Товар.indexOf("A55 ") != -1 ||
+    el.Товар.indexOf("A550 ") != -1 ||
     el.Товар.indexOf("Galaxy Watch") != -1 ||
     el.Товар.indexOf("Poco") != -1 ||
     el.Товар.indexOf("POCO") != -1 ||
@@ -47,16 +50,26 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Redmi") != -1 ||
     el.Товар.indexOf("Note") != -1 ||
     el.Товар.indexOf("Watch") != -1 ||
-    el.Товар.indexOf("AirPods Max") != -1 ||
-    el.Товар.indexOf("Air Pods Max") != -1 ||
-    el.Товар.indexOf("Airpods Max") != -1 ||
-    el.Товар.indexOf("GoPro") != -1 ||
-    el.Товар.indexOf("XR 64") != -1 ||
     el.Товар.indexOf("SE (2022) Gen") != -1 ||
     el.Товар.indexOf("SE (2023) Gen") != -1 ||
-    el.Товар.indexOf("Watch SE") != -1 
+    el.Товар.indexOf("Watch SE") != -1 ||
+    el.Товар.indexOf("RayBan") != -1 ||
+    el.Товар.indexOf("GoPro") != -1 ||
+    el.Товар.indexOf("Oppo") != -1 ||
+    el.Товар.indexOf("AGM") != -1 ||
+    el.Товар.indexOf("Blackview") != -1 ||
+    el.Товар.indexOf("Insta ") != -1 ||
+    el.Товар.indexOf("HUAWEI") != -1 ||
+    el.Товар.indexOf("Huawei") != -1 ||
+    el.Товар.indexOf("Fujifilm") != -1 ||
+    el.Товар.indexOf("Beats") != -1 ||
+    el.Товар.indexOf("infinix") != -1 ||
+    el.Товар.indexOf("Tecno") != -1 ||
+    el.Товар.indexOf("Realme") != -1 ||
+    el.Товар.indexOf("Polaroid") != -1 ||
+    el.Товар.indexOf("Sonos") != -1 
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 300 : Number(el.Cтоимость) + 300
+    return el.Стоимость ? Number(el.Стоимость) + 100 : Number(el.Cтоимость) + 100
   } else if (
     el.Товар.indexOf("SE (2022) 64") != -1 ||
     el.Товар.indexOf("SE (2022) 128") != -1 ||
@@ -70,31 +83,12 @@ export const newPrice = (el) => {
     el.Товар.indexOf("11 128") != -1 ||
     el.Товар.indexOf("Asus") != -1 ||
     el.Товар.indexOf("ZenFone") != -1 ||
-    el.Товар.indexOf("AGM") != -1 ||
-    el.Товар.indexOf("Blackview") != -1 ||
-    el.Товар.indexOf("Insta ") != -1 ||
-    el.Товар.indexOf("HUAWEI") != -1 ||
-    el.Товар.indexOf("Huawei") != -1 ||
-    el.Товар.indexOf("Fujifilm") != -1 ||
-    el.Товар.indexOf("Beats") != -1 ||
-    el.Товар.indexOf("infinix") != -1 ||
-    el.Товар.indexOf("Tecno") != -1 ||
-    el.Товар.indexOf("Realme") != -1 ||
-    el.Товар.indexOf("Polaroid") != -1 ||
     el.Товар.indexOf("ZenFone") != -1 ||
-    el.Товар.indexOf("M54 ") != -1 ||
-    el.Товар.indexOf("A55 ") != -1 ||
-    el.Товар.indexOf("A550 ") != -1 ||
     el.Товар.indexOf("Mi ") != -1 ||
     el.Товар.indexOf("MI ") != -1 ||
-    el.Товар.indexOf("Sonos") != -1
-  ) {
-    return el.Стоимость ? Number(el.Стоимость) + 700 : Number(el.Cтоимость) + 700
-  } else if (
-    el.Товар.indexOf("iPad 9") != -1 ||
-    el.Товар.indexOf("iPad 10") != -1 ||
-    el.Товар.indexOf("iPad 9") != -1 ||
-    el.Товар.indexOf("IPad 9") != -1 ||
+    el.Товар.indexOf("AirPods Max") != -1 ||
+    el.Товар.indexOf("Air Pods Max") != -1 ||
+    el.Товар.indexOf("Airpods Max") != -1 ||
     el.Товар.indexOf("Airwrap ") != -1 ||
     el.Товар.indexOf("V1") != -1 ||
     el.Товар.indexOf("Vented") != -1 ||
@@ -125,10 +119,21 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Pixel") != -1 ||
     el.Товар.indexOf("Xperia") != -1 ||
     el.Товар.indexOf("ROG") != -1 ||
-    el.Товар.indexOf("Rog") != -1 
+    el.Товар.indexOf("Rog") != -1 ||
+    el.Товар.indexOf("Acer") != -1 ||
+    el.Товар.indexOf("MSI") != -1 ||
+    el.Товар.indexOf("Asus") != -1 ||
+    el.Товар.indexOf("Lenovo") != -1 ||
+    el.Товар.indexOf("Motorola") != -1 ||
+    el.Товар.indexOf("OnePlus") != -1 ||
+    el.Товар.indexOf("RedMagic") != -1 ||
+    el.Товар.indexOf("Nubia") != -1 ||
+    el.Товар.indexOf("Nothing Phone") != -1 ||
+    el.Товар.indexOf("Honor") != -1 
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 800 : Number(el.Cтоимость) + 800
+    return el.Стоимость ? Number(el.Стоимость) + 200 : Number(el.Cтоимость) + 200
   } else if (
+    el.Товар.indexOf("XR 64") != -1 ||
     el.Товар.indexOf("12 64") != -1 ||
     el.Товар.indexOf("12 128") != -1 ||
     el.Товар.indexOf("12 256") != -1 ||
@@ -149,38 +154,6 @@ export const newPrice = (el) => {
     el.Товар.indexOf("15 128") != -1 ||
     el.Товар.indexOf("15 256") != -1 ||
     el.Товар.indexOf("15 512") != -1 ||
-    el.Товар.indexOf("iPad Mini") != -1 ||
-    el.Товар.indexOf("iPad Air") != -1 ||
-    el.Товар.indexOf("iPad Pro") != -1 ||
-    el.Товар.indexOf("AW Series 9") != -1 ||
-    el.Товар.indexOf("Mac") != -1 ||
-    el.Товар.indexOf("AW 9") != -1 ||
-    el.Товар.indexOf("AW  9") != -1 ||
-    el.Товар.indexOf("AW Series 8") != -1 ||
-    el.Товар.indexOf("AW 8") != -1 ||
-    el.Товар.indexOf("AW  8") != -1 ||
-    el.Товар.indexOf("Watch S8") != -1 ||
-    el.Товар.indexOf("Acer") != -1 ||
-    el.Товар.indexOf("MSI") != -1 ||
-    el.Товар.indexOf("Asus") != -1 ||
-    el.Товар.indexOf("Lenovo") != -1 ||
-    el.Товар.indexOf("RayBan") != -1 ||
-    el.Товар.indexOf("Oppo") != -1 ||
-    el.Товар.indexOf("Motorola") != -1 ||
-    el.Товар.indexOf("OnePlus") != -1 ||
-    el.Товар.indexOf("RedMagic") != -1 ||
-    el.Товар.indexOf("Nubia") != -1 ||
-    el.Товар.indexOf("Nothing Phone") != -1 ||
-    el.Товар.indexOf("Honor") != -1 ||
-    el.Товар.indexOf("S21") != -1 ||
-    el.Товар.indexOf("S22") != -1 ||
-    el.Товар.indexOf("S23") != -1 ||
-    el.Товар.indexOf("S24") != -1 ||
-    el.Товар.indexOf("Z Flip") != -1 ||
-    el.Товар.indexOf("Z Fold") != -1
-  ) {
-    return el.Стоимость ? Number(el.Стоимость) + 900 : Number(el.Cтоимость) + 900
-  } else if (
     el.Товар.indexOf("15 Plus 128") != -1 ||
     el.Товар.indexOf("15 Plus 256") != -1 ||
     el.Товар.indexOf("15 Plus 512") != -1 ||
@@ -196,22 +169,43 @@ export const newPrice = (el) => {
     el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
     el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
     el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
-    el.Товар.indexOf("iPad Pro 12.9") != -1 ||
+    el.Товар.indexOf("AW 9") != -1 ||
+    el.Товар.indexOf("AW  9") != -1 ||
+    el.Товар.indexOf("AW Series 8") != -1 ||
+    el.Товар.indexOf("AW 8") != -1 ||
+    el.Товар.indexOf("AW  8") != -1 ||
+    el.Товар.indexOf("Watch S8") != -1 ||
+    el.Товар.indexOf("AW Series 9") != -1 ||
     el.Товар.indexOf("Ultra 2") != -1 ||
-    el.Товар.indexOf("Tab S") != -1
+    el.Товар.indexOf("S21") != -1 ||
+    el.Товар.indexOf("S22") != -1 ||
+    el.Товар.indexOf("S23") != -1 ||
+    el.Товар.indexOf("S24") != -1 ||
+    el.Товар.indexOf("Z Flip") != -1 ||
+    el.Товар.indexOf("Z Fold") != -1 ||
+    el.Товар.indexOf("Tab S") != -1 ||
+    el.Товар.indexOf("Microsoft") != -1
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 1000 : Number(el.Cтоимость) + 1000
+    return el.Стоимость ? Number(el.Стоимость) + 300 : Number(el.Cтоимость) + 300
   } else if (
+    el.Товар.indexOf("iPad 9") != -1 ||
+    el.Товар.indexOf("iPad 10") != -1 ||
+    el.Товар.indexOf("iPad 9") != -1 ||
+    el.Товар.indexOf("IPad 9") != -1 ||
+    el.Товар.indexOf("iPad Mini") != -1 ||
+    el.Товар.indexOf("iPad Air") != -1 ||
+    el.Товар.indexOf("iPad Pro") != -1 ||
+    el.Товар.indexOf("iPad Pro 12.9") != -1 ||
+    el.Товар.indexOf("Mac") != -1 ||
     el.Товар.indexOf("Macbook") != -1 ||
     el.Товар.indexOf("Book ") != -1 ||
     el.Товар.indexOf("MB") != -1 ||
     el.Товар.indexOf("13.6 M") != -1 ||
     el.Товар.indexOf("15 M") != -1 ||
     el.Товар.indexOf("MGN") != -1 ||
-    el.Товар.indexOf("Vision Pro") != -1 ||
-    el.Товар.indexOf("Microsoft") != -1
+    el.Товар.indexOf("Vision Pro") != -1 
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 1500 : Number(el.Cтоимость) + 1500
+    return el.Стоимость ? Number(el.Стоимость) + 400 : Number(el.Cтоимость) + 400
   } else {
     return el.Стоимость ? `${el.Стоимость} 🟥 Без наценки ` : `${el.Cтоимость} 🟥 Без наценки `;
   }

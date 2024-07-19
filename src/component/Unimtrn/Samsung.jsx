@@ -63,6 +63,7 @@ const Samsung = ({ el }) => {
                           el.Товар.indexOf("A24") != -1 ||
                           el.Товар.indexOf("A54") != -1 ||
                           el.Товар.indexOf("A34") != -1 ||
+                          el.Товар.indexOf("A35 ") != -1 ||
                           el.Товар.indexOf("M34") != -1 ||
                           el.Товар.indexOf("M54") != -1 ||
                           el.Товар.indexOf("A55") != -1 ||
