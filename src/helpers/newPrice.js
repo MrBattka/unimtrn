@@ -102,6 +102,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Designed") != -1 ||
     el.Товар.indexOf("Heapdphone") != -1 ||
     el.Товар.indexOf("PH04") != -1 ||
+    el.Товар.indexOf("Vacuum Cleaner Micro") != -1 ||
     el.Товар.indexOf("Wash G1 ") != -1 ||
     el.Товар.indexOf("Paddle Brush") != -1 ||
     el.Товар.indexOf("Supersonic Hair") != -1 ||

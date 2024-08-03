@@ -58,7 +58,8 @@ const Dyson = ({ el }) => {
                           el.Товар.indexOf("Wash G1 ") != -1 ||
                           el.Товар.indexOf("Paddle Brush") != -1 ||
                           el.Товар.indexOf("Supersonic Hair") != -1 ||
-                          el.Товар.indexOf("Air Purifier") != -1) &&
+                          el.Товар.indexOf("Air Purifier") != -1 ||
+                          el.Товар.indexOf("Vacuum Cleaner Micro") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
