@@ -59,12 +59,7 @@ const GoogleSonyAsusLenovo = ({ el }) => {
                           el.Товар.indexOf("Rog") != -1 ||
                           el.Товар.indexOf("Sony Wireless") != -1 ||
                           el.Товар.indexOf("Wireless WH") != -1 ||
-                          el.Товар.indexOf("Lenovo") != -1 ||
-                          el.Товар.indexOf("Acer") != -1 ||
-                          el.Товар.indexOf("MSI") != -1 ||
-                          el.Товар.indexOf("Asus") != -1 ||
-                          el.Товар.indexOf("Lenovo") != -1 ||
-                          el.Товар.indexOf("Microsoft") != -1) &&
+                          el.Товар.indexOf("Asus") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

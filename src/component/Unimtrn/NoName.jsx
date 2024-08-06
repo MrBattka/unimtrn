@@ -10,7 +10,7 @@ const NoName = ({ el }) => {
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
   let glasses = /glases/gi;
-  let huawei = /HUAWEI/gi
+  let huawei = /HUAWEI/gi;
 
   console.log(el);
 
@@ -27,9 +27,7 @@ const NoName = ({ el }) => {
         <div>
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen
-                ? "No name ▲"
-                : "No name ▼"}
+              {isOpen ? "No name ▲" : "No name ▼"}
             </span>
           )}
         </div>
@@ -46,12 +44,9 @@ const NoName = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Fujifilm") != -1 ||
-                          el.Товар.indexOf("Beats") != -1 ||
+                        (el.Товар.indexOf("Beats") != -1 ||
                           el.Товар.indexOf("Blackview") != -1 ||
                           el.Товар.indexOf("AGM") != -1 ||
-                          el.Товар.indexOf("Insta ") != -1 ||
-                          el.Товар.indexOf("RayBan") != -1 ||
                           el.Товар.indexOf("infinix") != -1 ||
                           el.Товар.indexOf("Oppo") != -1 ||
                           el.Товар.indexOf("HUAWEI") != -1 ||
@@ -59,10 +54,7 @@ const NoName = ({ el }) => {
                           el.Товар.indexOf("Realme") != -1 ||
                           el.Товар.indexOf("Tecno") != -1 ||
                           el.Товар.indexOf("Camon ") != -1 ||
-                          el.Товар.indexOf("Spark ") != -1 ||
-                          el.Товар.indexOf("Polaroid") != -1 ||
-                          el.Товар.indexOf("Motorola") != -1 ||
-                          el.Товар.indexOf("Sonos") != -1) &&
+                          el.Товар.indexOf("Spark ") != -1) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))

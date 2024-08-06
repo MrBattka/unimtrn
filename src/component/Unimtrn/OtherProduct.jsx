@@ -55,24 +55,17 @@ const OtherProduct = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Sonos") == -1 &&
-                        el.Товар.indexOf("Polaroid") == -1 &&
                         el.Товар.indexOf("Oppo") == -1 &&
                         el.Товар.indexOf("HUAWEI") == -1 &&
                         el.Товар.indexOf("Huawei") == -1 &&
                         el.Товар.indexOf("Marshall") == -1 &&
                         el.Товар.indexOf("Blackview") == -1 &&
                         el.Товар.indexOf("infinix") == -1 &&
-                        el.Товар.indexOf("Fujifilm") == -1 &&
                         el.Товар.indexOf("Beats") == -1 &&
                         el.Товар.indexOf("AGM") == -1 &&
                         el.Товар.indexOf("Blackview") == -1 &&
-                        el.Товар.indexOf("Insta ") == -1 &&
                         el.Товар.indexOf("Sony Wireless") == -1 &&
                         el.Товар.indexOf("Wireless") == -1 &&
-                        el.Товар.indexOf("Acer") == -1 &&
-                        el.Товар.indexOf("MSI") == -1 &&
-                        el.Товар.indexOf("Motorola") == -1 &&
                         el.Товар.indexOf("Nothing Phone") == -1 &&
                         el.Товар.indexOf("Nothing Ear") == -1 &&
                         el.Товар.indexOf("Nothing ear") == -1 &&
@@ -116,7 +109,6 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Z Flip") == -1 &&
                         el.Товар.indexOf("Z Fold") == -1 &&
                         el.Товар.indexOf("Asus") == -1 &&
-                        el.Товар.indexOf("Lenovo") == -1 &&
                         el.Товар.indexOf("ZenFone") == -1 &&
                         el.Товар.indexOf("Google") == -1 &&
                         el.Товар.indexOf("Pixel") == -1 &&
@@ -129,7 +121,6 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Garmin") == -1 &&
                         el.Товар.indexOf("JBL") == -1 &&
                         el.Товар.indexOf("GoPro") == -1 &&
-                        el.Товар.indexOf("RayBan") == -1 &&
                         el.Товар.indexOf("Nintendo") == -1 &&
                         el.Товар.indexOf("Oculus") == -1 &&
                         el.Товар.indexOf("Playstation") == -1 &&
@@ -236,7 +227,6 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Vision Pro") == -1 &&
                         el.Товар.indexOf("Magic Keyboard") == -1 &&
                         el.Товар.indexOf("Magic Mouse") == -1 &&
-                        el.Товар.indexOf("Microsoft") == -1 &&
                         returnFixPrice(el, fixName(el)) + el.Стоимость}
                     </div>
                   ))
