@@ -46,13 +46,8 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Wireless WH") != -1 ||
     el.Товар.indexOf("Watch 6") != -1 ||
     el.Товар.indexOf("Tab A") != -1 ||
-    el.Товар.indexOf("Redmi Note") != -1 ||
     el.Товар.indexOf("Redmi") != -1 ||
-    el.Товар.indexOf("Note") != -1 ||
     el.Товар.indexOf("Watch") != -1 ||
-    el.Товар.indexOf("SE (2022) Gen") != -1 ||
-    el.Товар.indexOf("SE (2023) Gen") != -1 ||
-    el.Товар.indexOf("Watch SE") != -1 ||
     el.Товар.indexOf("RayBan") != -1 ||
     el.Товар.indexOf("GoPro") != -1 ||
     el.Товар.indexOf("Oppo") != -1 ||
@@ -69,8 +64,12 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Polaroid") != -1 ||
     el.Товар.indexOf("Sonos") != -1 
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 100 : Number(el.Cтоимость) + 100
+    return el.Стоимость ? Number(el.Стоимость) + 300 : Number(el.Cтоимость) + 300
   } else if (
+    el.Товар.indexOf("SE (2022) Gen") != -1 ||
+    el.Товар.indexOf("SE (2023) Gen") != -1 ||
+    el.Товар.indexOf("Watch SE") != -1 ||
+    el.Товар.indexOf("Note") != -1 ||
     el.Товар.indexOf("SE (2022) 64") != -1 ||
     el.Товар.indexOf("SE (2022) 128") != -1 ||
     el.Товар.indexOf("SE (2022) 256") != -1 ||
@@ -130,9 +129,10 @@ export const newPrice = (el) => {
     el.Товар.indexOf("RedMagic") != -1 ||
     el.Товар.indexOf("Nubia") != -1 ||
     el.Товар.indexOf("Nothing Phone") != -1 ||
-    el.Товар.indexOf("Honor") != -1 
+    el.Товар.indexOf("Honor") != -1 ||
+    el.Товар.indexOf("Redmi Note") != -1 
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 200 : Number(el.Cтоимость) + 200
+    return el.Стоимость ? Number(el.Стоимость) + 400 : Number(el.Cтоимость) + 400
   } else if (
     el.Товар.indexOf("XR 64") != -1 ||
     el.Товар.indexOf("12 64") != -1 ||
@@ -187,7 +187,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Tab S") != -1 ||
     el.Товар.indexOf("Microsoft") != -1
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 300 : Number(el.Cтоимость) + 300
+    return el.Стоимость ? Number(el.Стоимость) + 500 : Number(el.Cтоимость) + 500
   } else if (
     el.Товар.indexOf("iPad 9") != -1 ||
     el.Товар.indexOf("iPad 10") != -1 ||
@@ -206,7 +206,7 @@ export const newPrice = (el) => {
     el.Товар.indexOf("MGN") != -1 ||
     el.Товар.indexOf("Vision Pro") != -1 
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 400 : Number(el.Cтоимость) + 400
+    return el.Стоимость ? Number(el.Стоимость) + 1000 : Number(el.Cтоимость) + 1000
   } else {
     return el.Стоимость ? `${el.Стоимость} 🟥 Без наценки ` : `${el.Cтоимость} 🟥 Без наценки `;
   }
