@@ -3,6 +3,7 @@ import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
+import { copyTable } from "../../helpers/copy";
 
 const GameConsoles = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,13 @@ const GameConsoles = ({ el }) => {
               <thead>
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
+              <h4
+                onClick={() => {
+                  copyTable();
+                }}
+              >
+                ❐ Copy
+              </h4>
               <tbody>
                 {el.length ? (
                   el.map((el, index) => (

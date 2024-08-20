@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
+import style from "./styles.module.css";
+import { copyTable } from "../../helpers/copy";
 
 const Apple = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [result, setResult] = useState([]);
-
-  console.log(result);
 
   let gb = /Gb/gi;
   let aws9 = /AW Series 9/gi;
@@ -82,6 +81,13 @@ const Apple = ({ el }) => {
               <thead>
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
+              <h4
+                onClick={() => {
+                  copyTable();
+                }}
+              >
+                ❐ Copy
+              </h4>
               <tbody>
                 {el.length ? (
                   el.map((el, index) => (

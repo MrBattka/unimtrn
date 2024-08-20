@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
+import { copyTable } from "../../helpers/copy";
 
 const OtherProduct = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +51,13 @@ const OtherProduct = ({ el }) => {
               <thead>
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
+              <h4
+                onClick={() => {
+                  copyTable();
+                }}
+              >
+                ❐ Copy
+              </h4>
               <tbody>
                 {el.length ? (
                   el.map((el, index) => (
