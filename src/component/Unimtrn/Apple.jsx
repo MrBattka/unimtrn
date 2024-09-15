@@ -4,10 +4,48 @@ import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
 import style from "./styles.module.css";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
 
 const Apple = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [result, setResult] = useState([]);
+  const [isOpeniPhone, setIsOpeniPhone] = useState(false)
+  const [isXR, setIsXR] = useState(false);
+  const [isSE, setIsSE] = useState(false);
+  const [is11, setIs11] = useState(false);
+  const [is12, setIs12] = useState(false);
+  const [is13Mini, setIs13Mini] = useState(false);
+  const [is13, setIs13] = useState(false);
+  const [is14, setIs14] = useState(false);
+  const [is14Pro, setIs14Pro] = useState(false);
+  const [is15, setIs15] = useState(false);
+  const [is15Plus, setIs15Plus] = useState(false);
+  const [is15Pro, setIs15Pro] = useState(false);
+  const [is15ProMax, setIs15ProMax] = useState(false);
+
+  const [isOpenAirPods, setIsOpenAirPods] = useState(false)
+  const [isAirPods, setIsAirPods] = useState(false);
+  const [isAirPodsMax, setIsAirPodsMax] = useState(false);
+  const [isPencil, setIsPencil] = useState(false);
+  const [isMagic, setIsMagic] = useState(false);
+
+  const [isOpenWatch, setIsOpenWatch] = useState(false)
+  const [isSEWatch, setIsSEWatch] = useState(false);
+  const [isS8, setIsS8] = useState(false);
+  const [isS9, setIsS9] = useState(false);
+  const [isUltra, setIsUltra] = useState(false);
+
+  const [isOpeniPad, setIsOpeniPad] = useState(false)
+  const [isiPad9, setIsiPad9] = useState(false);
+  const [isiPad10, setIsiPad10] = useState(false);
+  const [isiPadAir, setIsiPadAir] = useState(false);
+  const [isiPadMini, setIsiPadMini] = useState(false);
+  const [isiPadPro11, setIsiPadPro11] = useState(false);
+  const [isiPadPro12, setIsiPadPro12] = useState(false);
+  const [isiPadPro13, setIsiPadPro13] = useState(false);
+
+  const [isOpenMacBook, setIsOpenMacBook] = useState(false)
+  const [isiMac, setIsiMac] = useState(false);
+  const [isMacBook, setIsMacBook] = useState(false);
 
   let gb = /Gb/gi;
   let aws9 = /AW Series 9/gi;
@@ -81,86 +119,26 @@ const Apple = ({ el }) => {
               <thead>
                 <tr>{/* <th scope="col">Товар</th> */}</tr>
               </thead>
-              <h4
-                onClick={() => {
-                  copyTable();
-                }}
-              >
-                ❐ Copy
-              </h4>
-              <tbody>
-                {el.length ? (
+              <div>
+                {/* {el.length ? (
                   el.map((el, index) => (
-                    <div key={index}>
-                      {baseFix(el) &&
-                        (el.Товар.indexOf("AirPods") != -1 ||
-                          el.Товар.indexOf("Airpods") != -1 ||
-                          el.Товар.indexOf("Air Pods") != -1 ||
-                          el.Товар.indexOf("Pencil") != -1 ||
+                    <div key={index}> */}
+                {/* {baseFix(el) &&
+                           ||
                           el.Товар.indexOf("HomePod") != -1 ||
-                          el.Товар.indexOf("Watch SE") != -1 ||
-                          el.Товар.indexOf("SE (2023) Gen") != -1 ||
-                          el.Товар.indexOf("SE (2022) Gen") != -1 ||
-                          el.Товар.indexOf("SE 2") != -1 ||
-                          el.Товар.indexOf("SE (2022) 64") != -1 ||
-                          el.Товар.indexOf("SE (2022) 128") != -1 ||
-                          el.Товар.indexOf("SE (2022) 256") != -1 ||
-                          el.Товар.indexOf("SE 3") != -1 ||
-                          el.Товар.indexOf("SE 64") != -1 ||
-                          el.Товар.indexOf("SE 128") != -1 ||
-                          el.Товар.indexOf("SE 256") != -1 ||
-                          el.Товар.indexOf("XR 64") != -1 ||
-                          el.Товар.indexOf("11 64") != -1 ||
-                          el.Товар.indexOf("11 128") != -1 ||
-                          el.Товар.indexOf("12 64") != -1 ||
-                          el.Товар.indexOf("12 128") != -1 ||
-                          el.Товар.indexOf("12 256") != -1 ||
-                          el.Товар.indexOf("12 Pro Max") != -1 ||
-                          el.Товар.indexOf("13 128") != -1 ||
-                          el.Товар.indexOf("13 256") != -1 ||
-                          el.Товар.indexOf("13 512") != -1 ||
-                          el.Товар.indexOf("14 128") != -1 ||
-                          el.Товар.indexOf("14 256") != -1 ||
-                          el.Товар.indexOf("14 512") != -1 ||
-                          el.Товар.indexOf("14 Plus") != -1 ||
-                          el.Товар.indexOf("14 Pro 128") != -1 ||
-                          el.Товар.indexOf("14 Pro 256") != -1 ||
-                          el.Товар.indexOf("14 Pro 512") != -1 ||
-                          el.Товар.indexOf("14 Pro 1Tb") != -1 ||
-                          el.Товар.indexOf("14 Pro 1TB") != -1 ||
-                          el.Товар.indexOf("14 ProMax") != -1 ||
-                          el.Товар.indexOf("15 128") != -1 ||
-                          el.Товар.indexOf("15 256") != -1 ||
-                          el.Товар.indexOf("15 512") != -1 ||
+                           ||
+                      
                           el.Товар.indexOf("iPad 9") != -1 ||
                           el.Товар.indexOf("iPad 10") != -1 ||
                           el.Товар.indexOf("iPad Mini 6") != -1 ||
                           el.Товар.indexOf("iPad Air 5") != -1 ||
                           el.Товар.indexOf("iPad Pro") != -1 ||
-                          el.Товар.indexOf("AW Series 9") != -1 ||
-                          el.Товар.indexOf("AW 9") != -1 ||
-                          el.Товар.indexOf("AW  9") != -1 ||
-                          el.Товар.indexOf("AW Series 8") != -1 ||
-                          el.Товар.indexOf("AW 8") != -1 ||
-                          el.Товар.indexOf("AW  8") != -1 ||
+                           ||
+                           ||
                           el.Товар.indexOf("Mac") != -1 ||
-                          el.Товар.indexOf("15 Plus 128") != -1 ||
-                          el.Товар.indexOf("15 Plus 256") != -1 ||
-                          el.Товар.indexOf("15 Plus 512") != -1 ||
-                          el.Товар.indexOf("15 Pro 128") != -1 ||
-                          el.Товар.indexOf("15 Pro 256") != -1 ||
-                          el.Товар.indexOf("15 Pro 512") != -1 ||
-                          el.Товар.indexOf("15 Pro 1Tb") != -1 ||
-                          el.Товар.indexOf("15 ProMax 256") != -1 ||
-                          el.Товар.indexOf("15 ProMax 512") != -1 ||
-                          el.Товар.indexOf("15 ProMax 1Tb") != -1 ||
-                          el.Товар.indexOf("15 Pro Max 256") != -1 ||
-                          el.Товар.indexOf("15 Pro Max 512") != -1 ||
-                          el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
-                          el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
-                          el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
+                          
                           el.Товар.indexOf("iPad Pro 12.9") != -1 ||
-                          el.Товар.indexOf("Ultra 2") != -1 ||
+                           ||
                           el.Товар.indexOf("Macbook") != -1 ||
                           el.Товар.indexOf("Book ") != -1 ||
                           el.Товар.indexOf("MB") != -1 ||
@@ -168,18 +146,580 @@ const Apple = ({ el }) => {
                           el.Товар.indexOf("15 M") != -1 ||
                           el.Товар.indexOf("MGN") != -1 ||
                           el.Товар.indexOf("Vision Pro") != -1 ||
-                          el.Товар.indexOf("Watch S8") != -1 ||
-                          el.Товар.indexOf("Watch S9") != -1 ||
+                          
                           el.Товар.indexOf("IPad 9") != -1 ||
-                          el.Товар.indexOf("Magic Keyboard") != -1 ||
-                          el.Товар.indexOf("Magic Mouse") != -1) &&
+                          ) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
                 ) : (
                   <tr></tr>
-                )}
-              </tbody>
+                )} */}
+
+                <div className={style.titlecategory} onClick={() => setIsOpenAirPods(!isOpenAirPods)}>
+                  {isOpenAirPods ? "AirPods ▲" : "AirPods ▼"}
+                </div>
+                {isOpenAirPods && <div className={style.category}>
+                  <h4
+                    onClick={() => {
+                      copyTable();
+                    }}
+                  >
+                    ❐ Copy
+                  </h4>
+                  <tbody>
+                    {isAirPods && <div>🎧AirPods</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("AirPods") != -1 ||
+                              el.Товар.indexOf("Airpods") != -1 ||
+                              el.Товар.indexOf("Air Pods") != -1) &&
+                            el.Товар.indexOf("AirPods Max") == -1 &&
+                            (isAirPods || setIsAirPods(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isAirPodsMax && <br />}
+                    {isAirPodsMax && <div>🎧AirPods Max</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("AirPods Max") != -1) &&
+                            (isAirPodsMax || setIsAirPodsMax(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isPencil && <br />}
+                    {isPencil && <div>✏️Pencil</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Pencil") != -1) &&
+                            (isPencil || setIsPencil(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isMagic && <br />}
+                    {isMagic && <div>🖱️Magic⌨️</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Magic Keyboard") != -1 ||
+                              el.Товар.indexOf("Magic Mouse") != -1) &&
+                            (isMagic || setIsMagic(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+                    <Footer />
+                  </tbody>
+                </div>}
+
+                <div className={style.titlecategory} onClick={() => setIsOpeniPhone(!isOpeniPhone)}>
+                  {isOpeniPhone ? "iPhone ▲" : "iPhone ▼"}
+                </div>
+                {isOpeniPhone && <div className={style.category}>
+                  <h4
+                    onClick={() => {
+                      copyTable();
+                    }}
+                  >
+                    ❐ Copy
+                  </h4>
+                  <tbody>
+                    {isXR && <div>📱iPhone XR</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("XR 64") != -1 ||
+                              el.Товар.indexOf("XR 128") != -1) &&
+                            (isXR || setIsXR(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isSE && <br />}
+                    {isSE && <div>📱iPhone SE</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("SE 3") != -1 ||
+                              el.Товар.indexOf("SE 64") != -1 ||
+                              el.Товар.indexOf("SE 128") != -1 ||
+                              el.Товар.indexOf("SE 256") != -1) &&
+                            (isSE || setIsSE(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is11 && <br />}
+                    {is11 && <div>📱iPhone 11</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("11 64") != -1 ||
+                              el.Товар.indexOf("11 128") != -1) &&
+                            (is11 || setIs11(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is12 && <br />}
+                    {is12 && <div>📱iPhone 12</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("12 64") != -1 ||
+                              el.Товар.indexOf("12 128") != -1 ||
+                              el.Товар.indexOf("12 256") != -1 ||
+                              el.Товар.indexOf("12 Pro Max") != -1) &&
+                            (is12 || setIs12(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is13Mini && <br />}
+                    {is13Mini && <div>📱iPhone 13 Mini</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("13 Mini 128") != -1 ||
+                              el.Товар.indexOf("13 Mini 256") != -1 ||
+                              el.Товар.indexOf("13 Mini 512") != -1) &&
+                            (is13Mini || setIs13Mini(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is13 && <br />}
+                    {is13 && <div>📱iPhone 13</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("13 128") != -1 ||
+                              el.Товар.indexOf("13 256") != -1 ||
+                              el.Товар.indexOf("13 512") != -1) &&
+                            (is13 || setIs13(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is14 && <br />}
+                    {is14 && <div>📱iPhone 14</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("14 128") != -1 ||
+                              el.Товар.indexOf("14 256") != -1 ||
+                              el.Товар.indexOf("14 512") != -1 ||
+                              el.Товар.indexOf("14 Plus") != -1) &&
+                            (is14 || setIs14(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is14Pro && <br />}
+                    {is14Pro && <div>📱iPhone 14</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("14 Pro 128") != -1 ||
+                              el.Товар.indexOf("14 Pro 256") != -1 ||
+                              el.Товар.indexOf("14 Pro 512") != -1 ||
+                              el.Товар.indexOf("14 Pro 1TB") != -1) &&
+                            (is14Pro || setIs14Pro(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is15 && <br />}
+                    {is15 && <div>📱iPhone 15</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("15 128") != -1 ||
+                              el.Товар.indexOf("15 256") != -1 ||
+                              el.Товар.indexOf("15 512") != -1) &&
+                            (is15 || setIs15(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is15Plus && <br />}
+                    {is15Plus && <div>📱iPhone 15 Plus</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("15 Plus 128") != -1 ||
+                              el.Товар.indexOf("15 Plus 256") != -1 ||
+                              el.Товар.indexOf("15 Plus 512") != -1) &&
+                            (is15Plus || setIs15Plus(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {is15Pro && <br />}
+                    {is15Pro && <div>📱iPhone 15 Pro</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("15 Pro 128") != -1 ||
+                              el.Товар.indexOf("15 Pro 256") != -1 ||
+                              el.Товар.indexOf("15 Pro 512") != -1 ||
+                              el.Товар.indexOf("15 Pro 1Tb") != -1) &&
+                            (is15Pro || setIs15Pro(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+
+                    {is15ProMax && <br />}
+                    {is15ProMax && <div>📱iPhone 15 Pro Max</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("15 ProMax 256") != -1 ||
+                              el.Товар.indexOf("15 ProMax 512") != -1 ||
+                              el.Товар.indexOf("15 ProMax 1Tb") != -1 ||
+                              el.Товар.indexOf("15 Pro Max 256") != -1 ||
+                              el.Товар.indexOf("15 Pro Max 512") != -1 ||
+                              el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
+                              el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
+                              el.Товар.indexOf("15 Pro Max 1Tb") != -1) &&
+                            (is15ProMax || setIs15ProMax(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+                    <Footer />
+                  </tbody>
+                </div>}
+
+                <div className={style.titlecategory} onClick={() => setIsOpenWatch(!isOpenWatch)}>
+                  {isOpenWatch ? "AW ▲" : "AW ▼"}
+                </div>
+                {isOpenWatch && <div className={style.category}>
+                  <h4
+                    onClick={() => {
+                      copyTable();
+                    }}
+                  >
+                    ❐ Copy
+                  </h4>
+                  <tbody>
+                    {isSEWatch && <div>⌚AW SE</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Watch SE") != -1 ||
+                              el.Товар.indexOf("SE (2023) Gen") != -1 ||
+                              el.Товар.indexOf("SE (2022) Gen") != -1 ||
+                              el.Товар.indexOf("SE 2") != -1 ||
+                              el.Товар.indexOf("SE (2022) 64") != -1 ||
+                              el.Товар.indexOf("SE (2022) 128") != -1 ||
+                              el.Товар.indexOf("SE (2022) 256") != -1) &&
+                            (isSEWatch || setIsSEWatch(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isS8 && <br />}
+                    {isS8 && <div>⌚AW S8</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Watch S8") != -1 ||
+                              el.Товар.indexOf("AW Series 8") != -1 ||
+                              el.Товар.indexOf("AW 8") != -1 ||
+                              el.Товар.indexOf("AW  8") != -1) &&
+                            (isS8 || setIsS8(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isS9 && <br />}
+                    {isS9 && <div>⌚AW S9</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Watch S9") != -1 ||
+                              el.Товар.indexOf("AW Series 9") != -1 ||
+                              el.Товар.indexOf("AW 9") != -1 ||
+                              el.Товар.indexOf("AW  9") != -1) &&
+                            (isS9 || setIsS9(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isUltra && <br />}
+                    {isUltra && <div>⌚AW Ultra</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Ultra 2") != -1) &&
+                            (isUltra || setIsUltra(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+                    <Footer />
+                  </tbody>
+                </div>}
+
+                <div className={style.titlecategory} onClick={() => setIsOpeniPad(!isOpeniPad)}>
+                  {isOpeniPad ? "iPad ▲" : "iPad ▼"}
+                </div>
+                {isOpeniPad && <div className={style.category}>
+                  <h4
+                    onClick={() => {
+                      copyTable();
+                    }}
+                  >
+                    ❐ Copy
+                  </h4>
+                  <tbody>
+                    {isiPad9 && <div>📟iPad 9</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad 9") != -1 ||
+                              el.Товар.indexOf("IPad 9") != -1) &&
+                            (isiPad9 || setIsiPad9(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isiPad10 && <br />}
+                    {isiPad10 && <div>📟iPad 10</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad 10") != -1 ||
+                              el.Товар.indexOf("IPad 10") != -1) &&
+                            (isiPad10 || setIsiPad10(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isiPadMini && <br />}
+                    {isiPadMini && <div>📟iPad Mini</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad Mini 6") != -1) &&
+                            (isiPadMini || setIsiPadMini(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isiPadAir && <br />}
+                    {isiPadAir && <div>📟iPad Air</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad Air 5") != -1) &&
+                            (isiPadAir || setIsiPadAir(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isiPadPro11 && <br />}
+                    {isiPadPro11 && <div>📟iPad Pro 11</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad Pro 11") != -1) &&
+                            (isiPadPro11 || setIsiPadPro11(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isiPadPro12 && <br />}
+                    {isiPadPro12 && <div>📟iPad Pro 12</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad Pro 12") != -1) &&
+                            (isiPadPro12 || setIsiPadPro12(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isiPadPro13 && <br />}
+                    {isiPadPro13 && <div>📟iPad Pro 13</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iPad Pro 13") != -1) &&
+                            (isiPadPro13 || setIsiPadPro13(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+                    <Footer />
+                  </tbody>
+                </div>}
+
+                <div className={style.titlecategory} onClick={() => setIsOpenMacBook(!isOpenMacBook)}>
+                  {isOpenMacBook ? "MacBook ▲" : "MacBook ▼"}
+                </div>
+                {isOpenMacBook && <div className={style.category}>
+                  <h4
+                    onClick={() => {
+                      copyTable();
+                    }}
+                  >
+                    ❐ Copy
+                  </h4>
+                  <tbody>
+                    {isiMac && <br />}
+                    {isiMac && <div>🖥️iMac</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("iMac") != -1) &&
+                            (isiMac || setIsiMac(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    {isMacBook && <br />}
+                    {isMacBook && <div>💻MacBook</div>}
+                    {el.length ? (
+                      el.map((el, index) => (
+                        <div key={index}>
+                          {baseFix(el) &&
+                            (el.Товар.indexOf("Macbook") != -1 ||
+                              el.Товар.indexOf("Book ") != -1 ||
+                              el.Товар.indexOf("MB") != -1 ||
+                              el.Товар.indexOf("13.6 M") != -1 ||
+                              el.Товар.indexOf("15 M") != -1 ||
+                              el.Товар.indexOf("MGN") != -1) &&
+                            (isMacBook || setIsMacBook(true)) &&
+                            returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        </div>
+                      ))
+                    ) : (
+                      <tr></tr>
+                    )}
+
+                    <Footer />
+                  </tbody>
+                </div>}
+
+              </div>
             </table>
           </div>
         </div>

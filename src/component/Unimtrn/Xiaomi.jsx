@@ -4,9 +4,14 @@ import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
 
 const Xiaomi = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOther, setIsOther] = useState(false);
+  const [isRedmi, setIsRedmi] = useState(false);
+  const [isMi, setIsMi] = useState(false);
+  const [isPoco, setIsPoco] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -46,25 +51,76 @@ const Xiaomi = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
+
+                {isOther && <div>👉Xiaomi</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         (el.Товар.indexOf("Redmi Buds") != -1 ||
-                          el.Товар.indexOf("Redmi Note") != -1 ||
-                          el.Товар.indexOf("Redmi") != -1 ||
-                          el.Товар.indexOf("Note") != -1 ||
                           el.Товар.indexOf("Mi Watch") != -1 ||
-                          el.Товар.indexOf("Mi ") != -1 ||
-                          el.Товар.indexOf("MI ") != -1 ||
-                          el.Товар.indexOf("Poco") != -1 ||
-                          el.Товар.indexOf("POCO") != -1) &&
+                          el.Товар.indexOf("Mi Portable") != -1) &&
+                        (isOther || setIsOther(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
                 ) : (
                   <tr></tr>
                 )}
+
+                {isRedmi && <br />}
+                {isRedmi && <div>📱Redmi</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Redmi Note") != -1 ||
+                          el.Товар.indexOf("Note") != -1 ||
+                          el.Товар.indexOf("Redmi") != -1) &&
+                          el.Товар.indexOf("Redmi Buds") == -1 &&
+                        (isRedmi || setIsRedmi(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isMi && <br />}
+                {isMi && <div>📱Mi</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Mi ") != -1 ||
+                          el.Товар.indexOf("MI ") != -1) &&
+                          el.Товар.indexOf("Mi Watch") == -1 &&
+                          el.Товар.indexOf("Mi Portable ") == -1 &&
+                          el.Товар.indexOf("HDMI") == -1 &&
+                        (isMi || setIsMi(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isPoco && <br />}
+                {isPoco && <div>📱Poco</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Poco") != -1 ||
+                          el.Товар.indexOf("POCO") != -1) &&
+                        (isPoco || setIsPoco(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                <Footer />
               </tbody>
             </table>
           </div>

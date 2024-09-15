@@ -4,9 +4,16 @@ import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
 
 const GameConsoles = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isNintendo, setIsNintendo] = useState(false);
+  const [isOculus, setIsOculus] = useState(false);
+  const [isPlayStation, setIsPlayStation] = useState(false);
+  const [isXbox, setIsXbox] = useState(false);
+  const [isPico, setIsPico] = useState(false);
+  const [isSteam, setIsSteam] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -44,24 +51,98 @@ const GameConsoles = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
+
+                {isNintendo && <div>🕹️Nintendo</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Nintendo") != -1 ||
-                          el.Товар.indexOf("Oculus") != -1 ||
-                          el.Товар.indexOf("Playstation") != -1 ||
-                          el.Товар.indexOf("PlayStation") != -1 ||
-                          el.Товар.indexOf("Xbox") != -1 ||
-                          el.Товар.indexOf("PS5") != -1 ||
-                          el.Товар.indexOf("Pico") != -1 ||
-                          el.Товар.indexOf("Steam") != -1) &&
+                        (el.Товар.indexOf("Nintendo") != -1) &&
+                        (isNintendo || setIsNintendo(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
                 ) : (
                   <tr></tr>
                 )}
+
+                {isOculus && <br />}
+                {isOculus && <div>🥽Oculus</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Oculus") != -1) &&
+                        (isOculus || setIsOculus(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isPico && <br />}
+                {isPico && <div>🥽Pico</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Pico") != -1) &&
+                        (isPico || setIsPico(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isPlayStation && <br />}
+                {isPlayStation && <div>🎮PlayStation</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("PlayStation") != -1 ||
+                          el.Товар.indexOf("Playstation") != -1 ||
+                          el.Товар.indexOf("PS5") != -1) &&
+                        (isPlayStation || setIsPlayStation(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isXbox && <br />}
+                {isXbox && <div>🎮Xbox</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Xbox") != -1) &&
+                        (isXbox || setIsXbox(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isSteam && <br />}
+                {isSteam && <div>🕹️Steam</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Steam") != -1) &&
+                        (isSteam || setIsSteam(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                <Footer />
               </tbody>
             </table>
           </div>

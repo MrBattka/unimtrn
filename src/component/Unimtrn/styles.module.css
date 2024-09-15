@@ -5,6 +5,19 @@
     display: block;
 }
 
+.titlecategory {
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    display: block;
+}
+
+.category {
+    display: inline-block;
+    margin-left: 20px;
+}
+
 .row {
     max-height: 70vh;
     overflow: auto;

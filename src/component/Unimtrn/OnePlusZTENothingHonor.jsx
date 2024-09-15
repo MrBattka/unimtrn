@@ -4,9 +4,14 @@ import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
 
 const OnePlusZTENothingHonor = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOnePlus, setIsOnePlus] = useState(false);
+  const [isZTE, setIsZTE] = useState(false);
+  const [isNothing, setIsNothing] = useState(false);
+  const [isHonor, setIsHonor] = useState(false);
 
   let gb = /Gb/gi;
   let tecno = /T.Tecno/gi;
@@ -48,24 +53,71 @@ const OnePlusZTENothingHonor = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
+
+                {isOnePlus && <br />}
+                {isOnePlus && <div>📱OnePlus</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("OnePlus") != -1 ||
-                          el.Товар.indexOf("RedMagic") != -1 ||
-                          el.Товар.indexOf("Nubia") != -1 ||
-                          el.Товар.indexOf("Nothing Phone") != -1 ||
-                          el.Товар.indexOf("Nothing CMF") != -1 ||
-                          el.Товар.indexOf("Nothing Ear") != -1 ||
-                          el.Товар.indexOf("Nothing ear") != -1 ||
-                          el.Товар.indexOf("Honor") != -1) &&
+                        (el.Товар.indexOf("OnePlus") != -1) &&
+                        (isOnePlus || setIsOnePlus(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
                 ) : (
                   <tr></tr>
                 )}
+
+                {isZTE && <br />}
+                {isZTE && <div>📱ZTE</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("RedMagic") != -1 ||
+                          el.Товар.indexOf("Nubia") != -1) &&
+                        (isZTE || setIsZTE(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isNothing && <br />}
+                {isNothing && <div>📱Nothing</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Nothing Phone") != -1 ||
+                          el.Товар.indexOf("Nothing CMF") != -1 ||
+                          el.Товар.indexOf("Nothing Ear") != -1 ||
+                          el.Товар.indexOf("Nothing ear") != -1) &&
+                        (isNothing || setIsNothing(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isHonor && <br />}
+                {isHonor && <div>📱Honor</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Honor") != -1) &&
+                        (isHonor || setIsHonor(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                <Footer />
               </tbody>
             </table>
           </div>

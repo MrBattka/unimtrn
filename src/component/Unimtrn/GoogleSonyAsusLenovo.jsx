@@ -4,9 +4,13 @@ import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
 
 const GoogleSonyAsusLenovo = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAsus, setIsAsus] = useState(false);
+  const [isGoogle, setIsGoogle] = useState(false);
+  const [isSony, setIsSony] = useState(false);
 
   let gb = /Gb/gi;
   let rog = /Rog/gi;
@@ -33,8 +37,8 @@ const GoogleSonyAsusLenovo = ({ el }) => {
           {el.length > 1 && (
             <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
               {isOpen
-                ? "Google / Sony / Asus / Lenovo ▲"
-                : "Google / Sony / Asus / Lenovo ▼"}
+                ? "Google / Sony / Asus ▲"
+                : "Google / Sony / Asus ▼"}
             </span>
           )}
         </div>
@@ -54,26 +58,57 @@ const GoogleSonyAsusLenovo = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
+                {isAsus && <div>📱Asus</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         (el.Товар.indexOf("Asus") != -1 ||
                           el.Товар.indexOf("ZenFone") != -1 ||
-                          el.Товар.indexOf("Google") != -1 ||
-                          el.Товар.indexOf("Pixel") != -1 ||
-                          el.Товар.indexOf("Xperia") != -1 ||
                           el.Товар.indexOf("ROG") != -1 ||
                           el.Товар.indexOf("Rog") != -1 ||
-                          el.Товар.indexOf("Sony Wireless") != -1 ||
-                          el.Товар.indexOf("Wireless WH") != -1 ||
                           el.Товар.indexOf("Asus") != -1) &&
+                        (isAsus || setIsAsus(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
                 ) : (
                   <tr></tr>
                 )}
+
+                {isGoogle && <br />}
+                {isGoogle && <div>📱Google</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Google") != -1 ||
+                          el.Товар.indexOf("Pixel") != -1) &&
+                        (isGoogle || setIsGoogle(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isSony && <br />}
+                {isSony && <div>📱Sony</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Sony Wireless") != -1 ||
+                          el.Товар.indexOf("Wireless WH") != -1 ||
+                          el.Товар.indexOf("Xperia") != -1) &&
+                        (isSony || setIsSony(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                <Footer />
               </tbody>
             </table>
           </div>

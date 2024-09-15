@@ -4,9 +4,18 @@ import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
+import Product from "../Common/Product";
 
 const Dyson = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const dysonData = ['Airwrap ', 'V1', "HS0"]
+  
+  const dysonName = '✂Dyson🪒'
+
+
+  
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -46,6 +55,8 @@ const Dyson = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
+                
+                <div>✂Dyson🪒</div>
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
@@ -74,6 +85,13 @@ const Dyson = ({ el }) => {
                 ) : (
                   <tr></tr>
                 )}
+                {/* <Product el={el} dysonName={dysonName} data={dysonData}
+                  returnFixPrice={returnFixPrice} fixName={fixName} newPrice={newPrice}
+                  baseFix={baseFix} /> */}
+                <div>🇪🇺 - Наша вилка</div>
+                <div>🇦🇪🇮🇳🇨🇳🇬🇧🇭🇰 - Не наша вилка</div>
+                <Footer />
+
               </tbody>
             </table>
           </div>

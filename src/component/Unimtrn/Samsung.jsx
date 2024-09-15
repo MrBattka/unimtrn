@@ -4,9 +4,14 @@ import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import Footer from "./Footer";
 
 const Samsung = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOther, setIsOther] = useState(false);
+  const [isPhones, setIsPhones] = useState(false);
+  const [isWatch, setIsWatch] = useState(false);
+  const [isTab, setIsTab] = useState(false);
 
   let gb = /Gb/gi;
   let zFlip = /Z flip/gi;
@@ -58,13 +63,44 @@ const Samsung = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
+
+                {isOther && <div>👉Samsung</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         (el.Товар.indexOf("Galaxy Buds") != -1 ||
-                          el.Товар.indexOf("Galaxy Smart Tag") != -1 ||
-                          el.Товар.indexOf("A05s") != -1 ||
+                          el.Товар.indexOf("Galaxy Smart Tag") != -1) &&
+                        (isOther || setIsOther(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isWatch && <br />}
+                {isWatch && <div>⌚Watch</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Watch 6") != -1) &&
+                        (isWatch || setIsWatch(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isPhones && <br />}
+                {isPhones && <div>📱Phones</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("A05s") != -1 ||
                           el.Товар.indexOf("A05") != -1 ||
                           el.Товар.indexOf("A15") != -1 ||
                           el.Товар.indexOf("A25") != -1 ||
@@ -80,15 +116,30 @@ const Samsung = ({ el }) => {
                           el.Товар.indexOf("S23") != -1 ||
                           el.Товар.indexOf("S24") != -1 ||
                           el.Товар.indexOf("Z Flip") != -1 ||
-                          el.Товар.indexOf("Z Fold") != -1 ||
-                          el.Товар.indexOf("Watch 6") != -1 ||
-                          el.Товар.indexOf("Tab S") != -1) &&
+                          el.Товар.indexOf("Z Fold") != -1) &&
+                        (isPhones || setIsPhones(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
                   ))
                 ) : (
                   <tr></tr>
                 )}
+
+                {isTab && <br />}
+                {isTab && <div>📟Tab</div>}
+                {el.length ? (
+                  el.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.Товар.indexOf("Tab S") != -1) &&
+                        (isTab || setIsTab(true)) &&
+                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                <Footer />
               </tbody>
             </table>
           </div>
