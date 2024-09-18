@@ -103,11 +103,20 @@ const Apple = ({ el }) => {
     return fixMGND3.replace(proMax, "Pro Max");
   };
 
+  const closedSubMenu = () => {
+    setIsOpen(!isOpen)
+    setIsOpeniPhone(false)
+    setIsOpenAirPods(false)
+    setIsOpenWatch(false)
+    setIsOpeniPad(false)
+    setIsOpenMacBook(false)
+  }
+
   return (
     <div>
       <div>
         {el.length > 1 && (
-          <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+          <span className={style.title} onClick={() => closedSubMenu()}>
             {isOpen ? "Apple ▲" : "Apple ▼"}
           </span>
         )}

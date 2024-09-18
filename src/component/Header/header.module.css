@@ -1,0 +1,49 @@
+.wrapper {
+    position: absolute;
+    margin-left: 44vw; 
+    margin-top: 20px;   
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+}
+
+li:first-child {
+    
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+}
+
+.button {
+    width: 140px;
+    margin-right: 40px;
+    text-decoration: underline;
+    border-radius: 6px;
+}
+
+.button_active_1 {
+    width: 110px;
+    margin-right: 40px;
+    text-decoration: underline;
+    background: linear-gradient(rgb(255, 255, 255), rgba(255, 0, 47, 0.726));
+    border-radius: 6px;
+}
+
+.button_active_2 {
+    width: 110px;
+    margin-right: 40px;
+    text-decoration: underline;
+    background: linear-gradient(rgb(255, 255, 255), rgba(38, 0, 255, 0.726));
+    border-radius: 6px;
+}

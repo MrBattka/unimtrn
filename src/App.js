@@ -1,17 +1,10 @@
 import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { read, utils, writeFile } from "xlsx";
 import "./App.css";
-import Apple from "./component/Unimtrn/Apple";
-import Dyson from "./component/Unimtrn/Dyson";
-import GameConsoles from "./component/Unimtrn/GameConsoles";
-import GarminGoProDji from "./component/Unimtrn/GarminGoproDji";
-import GoogleSonyAsusLenovo from "./component/Unimtrn/GoogleSonyAsusLenovo";
-import NoName from "./component/Unimtrn/NoName";
-import OnePlusZTENothingHonor from "./component/Unimtrn/OnePlusZTENothingHonor";
-import OtherProduct from "./component/Unimtrn/OtherProduct";
-import Samsung from "./component/Unimtrn/Samsung";
-import Xiaomi from "./component/Unimtrn/Xiaomi";
+import IndexPriceForOrder from "./component/Unimtrn/IndexPriceForOrder";
 import icon from "./source/icon/icon.png";
+import Header from "./component/Header/Header";
 
 const App = () => {
   const [el, setEl] = useState([]);
@@ -45,51 +38,21 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <div className="flexbox">
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+
         <img className="img" src={icon} alt="Not found" />
-        <div className="wrapper_control">
-          <div className="col-sm-6 offset-3">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="input-group">
-                  <div className="custom-file">
-                    <label for="inputGroupFile" class="custom-file-upload">
-                      Select File...
-                    </label>
-                    <input
-                      type="file"
-                      name="file"
-                      className="custom-file-input"
-                      id="inputGroupFile"
-                      required
-                      onChange={handleImport}
-                      accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="wrapper_cat">
+
         {/* Metr */}
-        <Dyson el={el} />
-        <GarminGoProDji el={el} />
-        <NoName el={el} />
-        <GoogleSonyAsusLenovo el={el} />
-        <OnePlusZTENothingHonor el={el} />
-        <GameConsoles el={el} />
-        <Samsung el={el} />
-        <Xiaomi el={el} />
-        <Apple el={el} />
-        <OtherProduct el={el} />
-        {/* Hi */}
-        {/* <AppleHi el={el} /> */}
+
+        <Routes>
+          <Route path="/" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
+          <Route path="/unimtrn" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
+          <Route path="/price-for-order" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 };
 

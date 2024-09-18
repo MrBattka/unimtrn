@@ -52,7 +52,7 @@ const Xiaomi = ({ el }) => {
               </h4>
               <tbody>
 
-                {isOther && <div>👉Xiaomi</div>}
+                <div>👉Xiaomi</div>
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
