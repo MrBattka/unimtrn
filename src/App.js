@@ -5,6 +5,7 @@ import "./App.css";
 import IndexPriceForOrder from "./component/Unimtrn/IndexPriceForOrder";
 import icon from "./source/icon/icon.png";
 import Header from "./component/Header/Header";
+import IndexFromBase from "./component/PriceFromBase/IndexPriceFromBase";
 
 const App = () => {
   const [el, setEl] = useState([]);
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
           <Route path="/unimtrn" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
           <Route path="/price-for-order" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
+          <Route path="/price-from-base" element={<IndexFromBase el={el} handleImport={handleImport} />} />
         </Routes>
       </div>
     </BrowserRouter>
