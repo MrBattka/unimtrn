@@ -47,3 +47,13 @@ a {
     background: linear-gradient(rgb(255, 255, 255), rgba(38, 0, 255, 0.726));
     border-radius: 6px;
 }
+
+.wrapper_refresh {
+    justify-content: space-between;
+    margin-left: 400px;
+}
+
+.refresh {
+    font-size: 30px;
+    color: red;
+}
