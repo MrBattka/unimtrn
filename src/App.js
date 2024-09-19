@@ -9,8 +9,9 @@ import IndexFromBase from "./component/PriceFromBase/IndexPriceFromBase";
 
 const App = () => {
   const [el, setEl] = useState([]);
+  const [fullList, setFullList] = useState([]);
 
-  const handleImport = ($event) => {
+  const handleImportForOrder = ($event) => {
     const files = $event.target.files;
     if (files.length) {
       const file = files[0];
@@ -28,14 +29,24 @@ const App = () => {
     }
   };
 
-  const handleExport = () => {
-    const headings = [["Товар"]];
-    const wb = utils.book_new();
-    const ws = utils.json_to_sheet([]);
-    utils.sheet_add_aoa(ws, headings);
-    utils.sheet_add_json(ws, el, { origin: "A2", skipHeader: true });
-    utils.book_append_sheet(wb, ws, "Report");
-    writeFile(wb, "Movie Report.xlsx");
+
+
+  const handleImportFromBase = ($event) => {
+    const files = $event.target.files;
+    if (files.length) {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const wb = read(event.target.result);
+        const sheets = wb.SheetNames;
+
+        if (sheets.length) {
+          const rows = utils.sheet_to_json(wb.Sheets[sheets[0]]);
+          setFullList(rows);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
   };
 
   return (
@@ -48,10 +59,10 @@ const App = () => {
         {/* Metr */}
 
         <Routes>
-          <Route path="/" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
-          <Route path="/unimtrn" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
-          <Route path="/price-for-order" element={<IndexPriceForOrder el={el} handleImport={handleImport} />} />
-          <Route path="/price-from-base" element={<IndexFromBase el={el} handleImport={handleImport} />} />
+          <Route path="/" element={<IndexPriceForOrder el={el} handleImport={handleImportForOrder} />} />
+          <Route path="/unimtrn" element={<IndexPriceForOrder el={el} handleImport={handleImportForOrder} />} />
+          <Route path="/price-for-order" element={<IndexPriceForOrder el={el} handleImport={handleImportForOrder} />} />
+          <Route path="/price-from-base" element={<IndexFromBase el={el} handleImportFromBase={handleImportFromBase} fullList={fullList} />} />
         </Routes>
       </div>
     </BrowserRouter>

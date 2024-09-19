@@ -8,36 +8,8 @@ import Samsung from "./Samsung";
 import Used from "./Used";
 import XiaomiYandexJBL from "./XiaomiYandexJBL";
 
-const IndexFromBase = () => {
-  const [fullList, setFullList] = useState([]);
-
-  const handleImport = ($event) => {
-    const files = $event.target.files;
-    if (files.length) {
-      const file = files[0];
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const wb = read(event.target.result);
-        const sheets = wb.SheetNames;
-
-        if (sheets.length) {
-          const rows = utils.sheet_to_json(wb.Sheets[sheets[0]]);
-          setFullList(rows);
-        }
-      };
-      reader.readAsArrayBuffer(file);
-    }
-  };
-
-  const handleExport = () => {
-    const headings = [["Товар"]];
-    const wb = utils.book_new();
-    const ws = utils.json_to_sheet([]);
-    utils.sheet_add_aoa(ws, headings);
-    utils.sheet_add_json(ws, fullList, { origin: "A2", skipHeader: true });
-    utils.book_append_sheet(wb, ws, "Report");
-    writeFile(wb, "Movie Report.xlsx");
-  };
+const IndexFromBase = ({ handleImportFromBase, fullList }) => {
+  
 
   return (
     <div className={style.wrapper}>
@@ -57,7 +29,7 @@ const IndexFromBase = () => {
                       className={style.custom_file_input}
                       id="inputGroupFile"
                       required
-                      onChange={handleImport}
+                      onChange={handleImportFromBase}
                       accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
                     />
                   </div>
