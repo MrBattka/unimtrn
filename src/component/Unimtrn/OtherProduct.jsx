@@ -194,6 +194,24 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("15 128") == -1 &&
                         el.Товар.indexOf("15 256") == -1 &&
                         el.Товар.indexOf("15 512") == -1 &&
+                        el.Товар.indexOf("16 128") == -1 &&
+                        el.Товар.indexOf("16 256") == -1 &&
+                        el.Товар.indexOf("16 512") == -1 &&
+                        el.Товар.indexOf("16 Plus 128") == -1 &&
+                        el.Товар.indexOf("16 Plus 256") == -1 &&
+                        el.Товар.indexOf("16 Plus 512") == -1 &&
+                        el.Товар.indexOf("16 Pro 128") == -1 &&
+                        el.Товар.indexOf("16 Pro 256") == -1 &&
+                        el.Товар.indexOf("16 Pro 512") == -1 &&
+                        el.Товар.indexOf("16 Pro 1Tb") == -1 &&
+                        el.Товар.indexOf("16 ProMax 256") == -1 &&
+                        el.Товар.indexOf("16 ProMax 512") == -1 &&
+                        el.Товар.indexOf("16 ProMax 1Tb") == -1 &&
+                        el.Товар.indexOf("16 Pro Max 256") == -1 &&
+                        el.Товар.indexOf("16 Pro Max 512") == -1 &&
+                        el.Товар.indexOf("16 Pro Max 1Tb") == -1 &&
+                        el.Товар.indexOf("16 Pro Max 1TB") == -1 &&
+                        el.Товар.indexOf("16 Pro Max 1Tb") == -1 &&
                         el.Товар.indexOf("iPad 9") == -1 &&
                         el.Товар.indexOf("IPad 9") == -1 &&
                         el.Товар.indexOf("iPad 10") == -1 &&
