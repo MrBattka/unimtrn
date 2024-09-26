@@ -21,6 +21,10 @@ const Apple = ({ el }) => {
   const [is15Plus, setIs15Plus] = useState(false);
   const [is15Pro, setIs15Pro] = useState(false);
   const [is15ProMax, setIs15ProMax] = useState(false);
+  const [is16, setIs16] = useState(false);
+  const [is16Plus, setIs16Plus] = useState(false);
+  const [is16Pro, setIs16Pro] = useState(false);
+  const [is16ProMax, setIs16ProMax] = useState(false);
 
   const [isOpenAirPods, setIsOpenAirPods] = useState(false);
   const [isAirPods, setIsAirPods] = useState(false);
@@ -100,7 +104,8 @@ const Apple = ({ el }) => {
     const fixMGN63 = fixAirAir15.replace(MGN63, "Air M1 256 Gold MGND3");
     const fixMGN93 = fixMGN63.replace(MGN93, "Air M1 256 Silver MGN93");
     const fixMGND3 = fixMGN93.replace(MGND3, "Air M1 256 Space Grey MGN63");
-    return fixMGND3.replace(proMax, "Pro Max");
+    const fixGongkong = fixMGND3.replace("Гонконг", "");
+    return fixGongkong.replace(proMax, "Pro Max");
   };
 
   const closedSubMenu = () => {
@@ -350,7 +355,7 @@ const Apple = ({ el }) => {
                       )}
 
                       {is14Pro && <br />}
-                      {is14Pro && <div>📱iPhone 14</div>}
+                      {is14Pro && <div>📱iPhone 14 Pro</div>}
                       {el.length ? (
                         el.map((el, index) => (
                           <div key={index}>
@@ -434,6 +439,77 @@ const Apple = ({ el }) => {
                                 el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
                                 el.Товар.indexOf("15 Pro Max 1Tb") != -1) &&
                               (is15ProMax || setIs15ProMax(true)) &&
+                              returnFixPrice(el, fixName(el)) + newPrice(el)}
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
+                      {is16 && <br />}
+                      {is16 && <div>📱iPhone 16🔥</div>}
+                      {el.length ? (
+                        el.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.Товар.indexOf("16 128") != -1 ||
+                                el.Товар.indexOf("16 256") != -1 ||
+                                el.Товар.indexOf("16 512") != -1) &&
+                              (is16 || setIs16(true)) &&
+                              returnFixPrice(el, fixName(el)) + newPrice(el)}
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16Plus && <br />}
+                      {is16Plus && <div>📱iPhone 16 Plus🔥</div>}
+                      {el.length ? (
+                        el.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.Товар.indexOf("16 Plus 128") != -1 ||
+                                el.Товар.indexOf("16 Plus 256") != -1 ||
+                                el.Товар.indexOf("16 Plus 512") != -1) &&
+                              (is16Plus || setIs16Plus(true)) &&
+                              returnFixPrice(el, fixName(el)) + newPrice(el)}
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16Pro && <br />}
+                      {is16Pro && <div>📱iPhone 16 Pro🔥</div>}
+                      {el.length ? (
+                        el.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.Товар.indexOf("16 Pro 128") != -1 ||
+                                el.Товар.indexOf("16 Pro 256") != -1 ||
+                                el.Товар.indexOf("16 Pro 512") != -1 ||
+                                el.Товар.indexOf("16 Pro 1Tb") != -1) &&
+                              (is16Pro || setIs16Pro(true)) &&
+                              returnFixPrice(el, fixName(el)) + newPrice(el)}
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16ProMax && <br />}
+                      {is16ProMax && <div>📱iPhone 16 Pro Max🔥</div>}
+                      {el.length ? (
+                        el.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.Товар.indexOf("16 ProMax 256") != -1 ||
+                                el.Товар.indexOf("16 ProMax 512") != -1 ||
+                                el.Товар.indexOf("16 ProMax 1Tb") != -1 ||
+                                el.Товар.indexOf("16 Pro Max 256") != -1 ||
+                                el.Товар.indexOf("16 Pro Max 512") != -1 ||
+                                el.Товар.indexOf("16 Pro Max 1Tb") != -1 ||
+                                el.Товар.indexOf("16 Pro Max 1TB") != -1 ||
+                                el.Товар.indexOf("16 Pro Max 1Tb") != -1) &&
+                              (is16ProMax || setIs16ProMax(true)) &&
                               returnFixPrice(el, fixName(el)) + newPrice(el)}
                           </div>
                         ))

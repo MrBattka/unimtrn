@@ -62,9 +62,11 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Tecno") != -1 ||
     el.Товар.indexOf("Realme") != -1 ||
     el.Товар.indexOf("Polaroid") != -1 ||
-    el.Товар.indexOf("Sonos") != -1 
+    el.Товар.indexOf("Sonos") != -1
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 300 : Number(el.Cтоимость) + 300
+    return el.Стоимость
+      ? Number(el.Стоимость) + 300
+      : Number(el.Cтоимость) + 300;
   } else if (
     el.Товар.indexOf("SE (2022) Gen") != -1 ||
     el.Товар.indexOf("SE (2023) Gen") != -1 ||
@@ -130,9 +132,11 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Nubia") != -1 ||
     el.Товар.indexOf("Nothing Phone") != -1 ||
     el.Товар.indexOf("Honor") != -1 ||
-    el.Товар.indexOf("Redmi Note") != -1 
+    el.Товар.indexOf("Redmi Note") != -1
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 400 : Number(el.Cтоимость) + 400
+    return el.Стоимость
+      ? Number(el.Стоимость) + 400
+      : Number(el.Cтоимость) + 400;
   } else if (
     el.Товар.indexOf("XR 64") != -1 ||
     el.Товар.indexOf("12 64") != -1 ||
@@ -187,7 +191,9 @@ export const newPrice = (el) => {
     el.Товар.indexOf("Tab S") != -1 ||
     el.Товар.indexOf("Microsoft") != -1
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 500 : Number(el.Cтоимость) + 500
+    return el.Стоимость
+      ? Number(el.Стоимость) + 500
+      : Number(el.Cтоимость) + 500;
   } else if (
     el.Товар.indexOf("iPad 9") != -1 ||
     el.Товар.indexOf("iPad 10") != -1 ||
@@ -204,10 +210,43 @@ export const newPrice = (el) => {
     el.Товар.indexOf("13.6 M") != -1 ||
     el.Товар.indexOf("15 M") != -1 ||
     el.Товар.indexOf("MGN") != -1 ||
-    el.Товар.indexOf("Vision Pro") != -1 
+    el.Товар.indexOf("Vision Pro") != -1 ||
+    el.Товар.indexOf("16 Pro 128") != -1
   ) {
-    return el.Стоимость ? Number(el.Стоимость) + 1000 : Number(el.Cтоимость) + 1000
+    return el.Стоимость
+      ? Number(el.Стоимость) + 1000
+      : Number(el.Cтоимость) + 1000;
+  } else if (
+    el.Товар.indexOf("16 128") != -1 ||
+    el.Товар.indexOf("16 256") != -1 ||
+    el.Товар.indexOf("16 512") != -1 ||
+    el.Товар.indexOf("16 Plus 128") != -1 ||
+    el.Товар.indexOf("16 Plus 256") != -1 ||
+    el.Товар.indexOf("16 Plus 512") != -1 ||
+    el.Товар.indexOf("16 Pro 128") != -1 ||
+    el.Товар.indexOf("16 Pro 256") != -1 ||
+    el.Товар.indexOf("16 Pro 512") != -1 ||
+    el.Товар.indexOf("16 Pro 1Tb") != -1
+  ) {
+    return el.Стоимость
+      ? Number(el.Стоимость) + 2000
+      : Number(el.Cтоимость) + 2000;
+  } else if (
+    el.Товар.indexOf("16 ProMax 256") != -1 ||
+    el.Товар.indexOf("16 ProMax 512") != -1 ||
+    el.Товар.indexOf("16 ProMax 1Tb") != -1 ||
+    el.Товар.indexOf("16 Pro Max 256") != -1 ||
+    el.Товар.indexOf("16 Pro Max 512") != -1 ||
+    el.Товар.indexOf("16 Pro Max 1Tb") != -1 ||
+    el.Товар.indexOf("16 Pro Max 1TB") != -1 ||
+    el.Товар.indexOf("16 Pro Max 1Tb") != -1
+  ) {
+    return el.Стоимость
+      ? Number(el.Стоимость) + 2500
+      : Number(el.Cтоимость) + 2500;
   } else {
-    return el.Стоимость ? `${el.Стоимость} 🟥 Без наценки ` : `${el.Cтоимость} 🟥 Без наценки `;
+    return el.Стоимость
+      ? `${el.Стоимость} 🟥 Без наценки `
+      : `${el.Cтоимость} 🟥 Без наценки `;
   }
 };
