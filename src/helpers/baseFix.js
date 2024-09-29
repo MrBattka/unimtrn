@@ -26,6 +26,15 @@ export const baseFix = (el) => {
     el.Товар?.indexOf("Cooling Fans") == -1 &&
     el.Товар?.indexOf("Protective Standing") == -1 &&
     el.Товар?.indexOf("Folio") == -1 &&
+    el.Товар?.indexOf("царапин") == -1 &&
+    el.Товар?.indexOf("ремонт") == -1 &&
+    el.Товар?.indexOf("потертости") == -1 &&
+    el.Товар?.indexOf("скол") == -1 &&
+    el.Товар?.indexOf("пятна") == -1 &&
+    el.Товар?.indexOf("замена") == -1 &&
+    el.Товар?.indexOf("пиксель") == -1 &&
+    el.Товар?.indexOf("на экране") == -1 &&
+    el.Товар?.indexOf("мятый") == -1 &&
     el !== "Товар"
   );
 };

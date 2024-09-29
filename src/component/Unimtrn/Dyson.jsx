@@ -85,9 +85,7 @@ const Dyson = ({ el }) => {
                 ) : (
                   <tr></tr>
                 )}
-                {/* <Product el={el} dysonName={dysonName} data={dysonData}
-                  returnFixPrice={returnFixPrice} fixName={fixName} newPrice={newPrice}
-                  baseFix={baseFix} /> */}
+                <br />
                 <div>🇪🇺 - Наша вилка</div>
                 <div>🇦🇪🇮🇳🇨🇳🇬🇧🇭🇰 - Не наша вилка</div>
                 <Footer />
