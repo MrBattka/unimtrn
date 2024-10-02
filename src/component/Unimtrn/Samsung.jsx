@@ -102,6 +102,7 @@ const Samsung = ({ el }) => {
                       {baseFix(el) &&
                         (el.Товар.indexOf("A05s") != -1 ||
                           el.Товар.indexOf("A05") != -1 ||
+                          el.Товар.indexOf("A06") != -1 ||
                           el.Товар.indexOf("A15") != -1 ||
                           el.Товар.indexOf("A25") != -1 ||
                           el.Товар.indexOf("A24") != -1 ||
