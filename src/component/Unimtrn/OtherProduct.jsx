@@ -253,6 +253,7 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("Vision Pro") == -1 &&
                         el.Товар.indexOf("Magic Keyboard") == -1 &&
                         el.Товар.indexOf("Magic Mouse") == -1 &&
+                        el.Товар.indexOf("iPad Air 11") == -1 &&
                         returnFixPrice(el, fixName(el)) + el.Стоимость}
                     </div>
                   ))

@@ -211,7 +211,8 @@ export const newPrice = (el) => {
     el.Товар.indexOf("15 M") != -1 ||
     el.Товар.indexOf("MGN") != -1 ||
     el.Товар.indexOf("Vision Pro") != -1 ||
-    el.Товар.indexOf("16 Pro 128") != -1
+    el.Товар.indexOf("16 Pro 128") != -1 ||
+    el.Товар.indexOf("iPad Air 11") != -1
   ) {
     return el.Стоимость
       ? Number(el.Стоимость) + 1000

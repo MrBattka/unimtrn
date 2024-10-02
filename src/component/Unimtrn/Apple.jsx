@@ -680,7 +680,8 @@ const Apple = ({ el }) => {
                         el.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              el.Товар.indexOf("iPad Air 5") != -1 &&
+                              (el.Товар.indexOf("iPad Air 5") != -1 ||
+                                el.Товар.indexOf("iPad Air 11") != -1) &&
                               (isiPadAir || setIsiPadAir(true)) &&
                               returnFixPrice(el, fixName(el)) + newPrice(el)}
                           </div>
