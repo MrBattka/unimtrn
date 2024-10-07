@@ -256,6 +256,11 @@ const OtherProduct = ({ el }) => {
                         el.Товар.indexOf("iPad Air 11") == -1 &&
                         el.Товар.indexOf("IPad Air 11") == -1 &&
                         el.Товар.indexOf("A06") == -1 &&
+                        el.Товар.indexOf("Watch S10") == -1 &&
+                        el.Товар.indexOf("AW Series 10") == -1 &&
+                        el.Товар.indexOf("AW 10") == -1 &&
+                        el.Товар.indexOf("AW  10") == -1 &&
+                        el.Товар.indexOf("SE 4") == -1 &&
                         returnFixPrice(el, fixName(el)) + el.Стоимость}
                     </div>
                   ))

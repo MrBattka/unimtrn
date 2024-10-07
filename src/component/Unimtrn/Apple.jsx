@@ -37,6 +37,8 @@ const Apple = ({ el }) => {
   const [isS8, setIsS8] = useState(false);
   const [isS9, setIsS9] = useState(false);
   const [isUltra, setIsUltra] = useState(false);
+  const [isS10, setIsS10] = useState(false);
+  const [isUltra2024, setIsUltra2024] = useState(false);
 
   const [isOpeniPad, setIsOpeniPad] = useState(false);
   const [isiPad9, setIsiPad9] = useState(false);
@@ -546,6 +548,7 @@ const Apple = ({ el }) => {
                                 el.Товар.indexOf("SE (2023) Gen") != -1 ||
                                 el.Товар.indexOf("SE (2022) Gen") != -1 ||
                                 el.Товар.indexOf("SE 2") != -1 ||
+                                el.Товар.indexOf("SE 4") != -1 ||
                                 el.Товар.indexOf("SE (2022) 64") != -1 ||
                                 el.Товар.indexOf("SE (2022) 128") != -1 ||
                                 el.Товар.indexOf("SE (2022) 256") != -1) &&
@@ -593,6 +596,24 @@ const Apple = ({ el }) => {
                         <tr></tr>
                       )}
 
+                      {isS10 && <br />}
+                      {isS10 && <div>⌚AW S10</div>}
+                      {el.length ? (
+                        el.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.Товар.indexOf("Watch S10") != -1 ||
+                                el.Товар.indexOf("AW Series 10") != -1 ||
+                                el.Товар.indexOf("AW 10") != -1 ||
+                                el.Товар.indexOf("AW  10") != -1) &&
+                              (isS10 || setIsS10(true)) &&
+                              returnFixPrice(el, fixName(el)) + newPrice(el)}
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
                       {isUltra && <br />}
                       {isUltra && <div>⌚AW Ultra</div>}
                       {el.length ? (
@@ -600,7 +621,24 @@ const Apple = ({ el }) => {
                           <div key={index}>
                             {baseFix(el) &&
                               el.Товар.indexOf("Ultra 2") != -1 &&
+                              el.Товар.indexOf("2024") == 1 &&
                               (isUltra || setIsUltra(true)) &&
+                              returnFixPrice(el, fixName(el)) + newPrice(el)}
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
+                      {isUltra2024 && <br />}
+                      {isUltra2024 && <div>⌚AW Ultra 2024</div>}
+                      {el.length ? (
+                        el.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.Товар.indexOf("Ultra 2 2024") != -1 ||
+                                el.Товар.indexOf("Ultra 2 (2024)") != -1) &&
+                              (isUltra2024 || setIsUltra2024(true)) &&
                               returnFixPrice(el, fixName(el)) + newPrice(el)}
                           </div>
                         ))
