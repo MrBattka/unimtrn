@@ -71,6 +71,7 @@ export const newPrice = (el) => {
   } else if (
     el.Товар.indexOf("SE (2022) Gen") != -1 ||
     el.Товар.indexOf("SE (2023) Gen") != -1 ||
+    el.Товар.indexOf("SE 4") == -1 ||
     el.Товар.indexOf("Watch SE") != -1 ||
     el.Товар.indexOf("Note") != -1 ||
     el.Товар.indexOf("SE (2022) 64") != -1 ||
@@ -229,7 +230,11 @@ export const newPrice = (el) => {
     el.Товар.indexOf("16 Pro 128") != -1 ||
     el.Товар.indexOf("16 Pro 256") != -1 ||
     el.Товар.indexOf("16 Pro 512") != -1 ||
-    el.Товар.indexOf("16 Pro 1Tb") != -1
+    el.Товар.indexOf("16 Pro 1Tb") != -1 ||
+    el.Товар.indexOf("Watch S10") == -1 ||
+    el.Товар.indexOf("AW Series 10") == -1 ||
+    el.Товар.indexOf("AW 10") == -1 ||
+    el.Товар.indexOf("AW  10") == -1
   ) {
     return el.Стоимость
       ? Number(el.Стоимость) + 2000
