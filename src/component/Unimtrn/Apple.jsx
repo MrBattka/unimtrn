@@ -79,6 +79,7 @@ const Apple = ({ el }) => {
   let MGN63 = /M1 256 Gold MGND3/gi;
   let MGN93 = /M1 256 Silver MGN93/gi;
   let MGND3 = /M1 256 Space Grey MGN63/gi;
+  let airpodspro = /pro 2 ucb-c/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -107,7 +108,11 @@ const Apple = ({ el }) => {
     const fixMGN93 = fixMGN63.replace(MGN93, "Air M1 256 Silver MGN93");
     const fixMGND3 = fixMGN93.replace(MGND3, "Air M1 256 Space Grey MGN63");
     const fixGongkong = fixMGND3.replace("Гонконг", "");
-    return fixGongkong.replace(proMax, "Pro Max");
+    const fixairpodspro = fixGongkong.replace(airpodspro, "Pro 2 USB-C");
+    const fixStick = fixairpodspro.replace("!", "");
+    const fixAW10 = fixStick.replace("AW 10", "S10");
+
+    return fixAW10.replace(proMax, "Pro Max");
   };
 
   const closedSubMenu = () => {
@@ -155,6 +160,7 @@ const Apple = ({ el }) => {
                           <div key={index}>
                             {baseFix(el) &&
                               (el.Товар.indexOf("AirPods") != -1 ||
+                              el.Товар.indexOf("airpods") != -1 ||
                                 el.Товар.indexOf("Airpods") != -1 ||
                                 el.Товар.indexOf("Air Pods") != -1) &&
                               el.Товар.indexOf("AirPods Max") == -1 &&
@@ -735,6 +741,7 @@ const Apple = ({ el }) => {
                         el.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
+                            el.Товар.indexOf("Magic Keyboard") == -1 &&
                               el.Товар.indexOf("iPad Pro 11") != -1 &&
                               (isiPadPro11 || setIsiPadPro11(true)) &&
                               returnFixPrice(el, fixName(el)) + newPrice(el)}
@@ -766,6 +773,7 @@ const Apple = ({ el }) => {
                           <div key={index}>
                             {baseFix(el) &&
                               el.Товар.indexOf("iPad Pro 13") != -1 &&
+                              el.Товар.indexOf("Magic Keyboard") == -1 &&
                               (isiPadPro13 || setIsiPadPro13(true)) &&
                               returnFixPrice(el, fixName(el)) + newPrice(el)}
                           </div>
