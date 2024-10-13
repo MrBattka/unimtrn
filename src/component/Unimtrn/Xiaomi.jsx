@@ -12,6 +12,7 @@ const Xiaomi = ({ el }) => {
   const [isRedmi, setIsRedmi] = useState(false);
   const [isMi, setIsMi] = useState(false);
   const [isPoco, setIsPoco] = useState(false);
+  const [isProduct, setIsProduct] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -25,12 +26,44 @@ const Xiaomi = ({ el }) => {
     return fixPoco1.replace(wiFi, "Wi-Fi");
   };
 
+  const checkIsProduct = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          el.Товар.indexOf("Mi Watch") == -1 &&
+          el.Товар.indexOf("Mi Portable ") == -1 &&
+          el.Товар.indexOf("HDMI") == -1 &&
+          (el.Товар.indexOf("Redmi Buds") != -1 ||
+            el.Товар.indexOf("Mi Watch") != -1 ||
+            el.Товар.indexOf("Mi Portable") != -1 ||
+            el.Товар.indexOf("Redmi Note") != -1 ||
+            el.Товар.indexOf("Note") != -1 ||
+            el.Товар.indexOf("Redmi") != -1 ||
+            el.Товар.indexOf("Mi ") != -1 ||
+            el.Товар.indexOf("MI ") != -1 ||
+            el.Товар.indexOf("Poco") != -1 ||
+            el.Товар.indexOf("POCO") != -1) &&
+          (isProduct || setIsProduct(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+            <span
+              className={
+                checkIsProduct(el) && !isProduct
+                  ? style.titleNotFound
+                  : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? "Xiaomi ▲" : "Xiaomi ▼"}
             </span>
           )}
@@ -51,7 +84,6 @@ const Xiaomi = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
-
                 <div>👉Xiaomi</div>
                 {el.length ? (
                   el.map((el, index) => (
@@ -77,7 +109,7 @@ const Xiaomi = ({ el }) => {
                         (el.Товар.indexOf("Redmi Note") != -1 ||
                           el.Товар.indexOf("Note") != -1 ||
                           el.Товар.indexOf("Redmi") != -1) &&
-                          el.Товар.indexOf("Redmi Buds") == -1 &&
+                        el.Товар.indexOf("Redmi Buds") == -1 &&
                         (isRedmi || setIsRedmi(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -94,9 +126,9 @@ const Xiaomi = ({ el }) => {
                       {baseFix(el) &&
                         (el.Товар.indexOf("Mi ") != -1 ||
                           el.Товар.indexOf("MI ") != -1) &&
-                          el.Товар.indexOf("Mi Watch") == -1 &&
-                          el.Товар.indexOf("Mi Portable ") == -1 &&
-                          el.Товар.indexOf("HDMI") == -1 &&
+                        el.Товар.indexOf("Mi Watch") == -1 &&
+                        el.Товар.indexOf("Mi Portable ") == -1 &&
+                        el.Товар.indexOf("HDMI") == -1 &&
                         (isMi || setIsMi(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>

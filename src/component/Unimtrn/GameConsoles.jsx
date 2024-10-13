@@ -14,6 +14,7 @@ const GameConsoles = ({ el }) => {
   const [isXbox, setIsXbox] = useState(false);
   const [isPico, setIsPico] = useState(false);
   const [isSteam, setIsSteam] = useState(false);
+  const [isConsoles, setIsConsoles] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -25,12 +26,39 @@ const GameConsoles = ({ el }) => {
     return fixPlaystation.replace(wiFi, "Wi-Fi");
   };
 
+  const checkIsConsoles = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("PlayStation") != -1 ||
+            el.Товар.indexOf("Playstation") != -1 ||
+            el.Товар.indexOf("PS5") != -1 ||
+            el.Товар.indexOf("Nintendo") != -1 ||
+            el.Товар.indexOf("Oculus") != -1 ||
+            el.Товар.indexOf("Pico") != -1 ||
+            el.Товар.indexOf("Xbox") != -1 ||
+            el.Товар.indexOf("Steam") != -1) &&
+          (isConsoles || setIsConsoles(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+            <span
+              className={
+                checkIsConsoles(el) && !isConsoles
+                  ? style.titleNotFound
+                  : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? "Игровые приставки ▲" : "Игровые приставки ▼"}
             </span>
           )}
@@ -51,13 +79,12 @@ const GameConsoles = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
-
                 {isNintendo && <div>🕹️Nintendo</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Nintendo") != -1) &&
+                        el.Товар.indexOf("Nintendo") != -1 &&
                         (isNintendo || setIsNintendo(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -72,7 +99,7 @@ const GameConsoles = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Oculus") != -1) &&
+                        el.Товар.indexOf("Oculus") != -1 &&
                         (isOculus || setIsOculus(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -87,7 +114,7 @@ const GameConsoles = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Pico") != -1) &&
+                        el.Товар.indexOf("Pico") != -1 &&
                         (isPico || setIsPico(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -119,7 +146,7 @@ const GameConsoles = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Xbox") != -1) &&
+                        el.Товар.indexOf("Xbox") != -1 &&
                         (isXbox || setIsXbox(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -134,7 +161,7 @@ const GameConsoles = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Steam") != -1) &&
+                        el.Товар.indexOf("Steam") != -1 &&
                         (isSteam || setIsSteam(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>

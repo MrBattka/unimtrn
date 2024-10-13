@@ -12,6 +12,7 @@ const Samsung = ({ el }) => {
   const [isPhones, setIsPhones] = useState(false);
   const [isWatch, setIsWatch] = useState(false);
   const [isTab, setIsTab] = useState(false);
+  const [isProduct, setIsProduct] = useState(false);
 
   let gb = /Gb/gi;
   let zFlip = /Z flip/gi;
@@ -37,12 +38,53 @@ const Samsung = ({ el }) => {
     return fixA550.replace(zFlip, "Z Flip");
   };
 
+  const checkIsProduct = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("Galaxy Buds") != -1 ||
+            el.Товар.indexOf("Galaxy Smart Tag") != -1 ||
+            el.Товар.indexOf("Watch 6") != -1 ||
+            el.Товар.indexOf("A05s") != -1 ||
+            el.Товар.indexOf("A05") != -1 ||
+            el.Товар.indexOf("A06") != -1 ||
+            el.Товар.indexOf("A15") != -1 ||
+            el.Товар.indexOf("A25") != -1 ||
+            el.Товар.indexOf("A24") != -1 ||
+            el.Товар.indexOf("A54") != -1 ||
+            el.Товар.indexOf("A34") != -1 ||
+            el.Товар.indexOf("A35 ") != -1 ||
+            el.Товар.indexOf("M34") != -1 ||
+            el.Товар.indexOf("M54") != -1 ||
+            el.Товар.indexOf("A55") != -1 ||
+            el.Товар.indexOf("S21") != -1 ||
+            el.Товар.indexOf("S22") != -1 ||
+            el.Товар.indexOf("S23") != -1 ||
+            el.Товар.indexOf("S24") != -1 ||
+            el.Товар.indexOf("Z Flip") != -1 ||
+            el.Товар.indexOf("Z Fold") != -1 ||
+            el.Товар.indexOf("Tab S") != -1) &&
+          (isProduct || setIsProduct(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+            <span
+              className={
+                checkIsProduct(el) && !isProduct
+                  ? style.titleNotFound
+                  : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? "Samsung ▲" : "Samsung ▼"}
             </span>
           )}
@@ -63,7 +105,6 @@ const Samsung = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
-
                 {isOther && <div>👉Samsung</div>}
                 {el.length ? (
                   el.map((el, index) => (
@@ -85,7 +126,7 @@ const Samsung = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Watch 6") != -1) &&
+                        el.Товар.indexOf("Watch 6") != -1 &&
                         (isWatch || setIsWatch(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -132,7 +173,7 @@ const Samsung = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Tab S") != -1) &&
+                        el.Товар.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>

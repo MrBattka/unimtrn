@@ -53,6 +53,13 @@ const Apple = ({ el }) => {
   const [isiMac, setIsiMac] = useState(false);
   const [isMacBook, setIsMacBook] = useState(false);
 
+  const [isProduct, setIsProduct] = useState(false);
+  const [isProductiPhone, setIsProductiPhone] = useState(false);
+  const [isProductAirPods, setIsProductAirPods] = useState(false);
+  const [isProductAW, setIsProductAW] = useState(false);
+  const [isProductiPad, setIsProductiPad] = useState(false);
+  const [isProductMac, setIsProductMac] = useState(false);
+
   let gb = /Gb/gi;
   let aws9 = /AW Series 9/gi;
   let aw9Space = /AW  9/gi;
@@ -124,11 +131,312 @@ const Apple = ({ el }) => {
     setIsOpenMacBook(false);
   };
 
+  const checkIsProductiPhone = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("XR 64") != -1 ||
+            el.Товар.indexOf("XR 128") != -1 ||
+            el.Товар.indexOf("SE 3") != -1 ||
+            el.Товар.indexOf("SE 64") != -1 ||
+            el.Товар.indexOf("SE 128") != -1 ||
+            el.Товар.indexOf("SE 256") != -1 ||
+            el.Товар.indexOf("11 64") != -1 ||
+            el.Товар.indexOf("11 128") != -1 ||
+            el.Товар.indexOf("12 64") != -1 ||
+            el.Товар.indexOf("12 128") != -1 ||
+            el.Товар.indexOf("12 256") != -1 ||
+            el.Товар.indexOf("12 Pro Max") != -1 ||
+            el.Товар.indexOf("13 Mini 128") != -1 ||
+            el.Товар.indexOf("13 Mini 256") != -1 ||
+            el.Товар.indexOf("13 Mini 512") != -1 ||
+            el.Товар.indexOf("14 128") != -1 ||
+            el.Товар.indexOf("14 256") != -1 ||
+            el.Товар.indexOf("14 512") != -1 ||
+            el.Товар.indexOf("14 Plus") != -1 ||
+            el.Товар.indexOf("14 Pro 128") != -1 ||
+            el.Товар.indexOf("14 Pro 256") != -1 ||
+            el.Товар.indexOf("14 Pro 512") != -1 ||
+            el.Товар.indexOf("14 Pro 1TB") != -1 ||
+            el.Товар.indexOf("14 ProMax 256") != -1 ||
+            el.Товар.indexOf("14 ProMax 512") != -1 ||
+            el.Товар.indexOf("14 ProMax 1Tb") != -1 ||
+            el.Товар.indexOf("14 Pro Max 256") != -1 ||
+            el.Товар.indexOf("14 Pro Max 512") != -1 ||
+            el.Товар.indexOf("14 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("14 Pro Max 1TB") != -1 ||
+            el.Товар.indexOf("14 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("15 128") != -1 ||
+            el.Товар.indexOf("15 256") != -1 ||
+            el.Товар.indexOf("15 512") != -1 ||
+            el.Товар.indexOf("15 Plus 128") != -1 ||
+            el.Товар.indexOf("15 Plus 256") != -1 ||
+            el.Товар.indexOf("15 Plus 512") != -1 ||
+            el.Товар.indexOf("15 Pro 128") != -1 ||
+            el.Товар.indexOf("15 Pro 256") != -1 ||
+            el.Товар.indexOf("15 Pro 512") != -1 ||
+            el.Товар.indexOf("15 Pro 1Tb") != -1 ||
+            el.Товар.indexOf("15 ProMax 256") != -1 ||
+            el.Товар.indexOf("15 ProMax 512") != -1 ||
+            el.Товар.indexOf("15 ProMax 1Tb") != -1 ||
+            el.Товар.indexOf("15 Pro Max 256") != -1 ||
+            el.Товар.indexOf("15 Pro Max 512") != -1 ||
+            el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
+            el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("16 128") != -1 ||
+            el.Товар.indexOf("16 256") != -1 ||
+            el.Товар.indexOf("16 512") != -1 ||
+            el.Товар.indexOf("16 Plus 128") != -1 ||
+            el.Товар.indexOf("16 Plus 256") != -1 ||
+            el.Товар.indexOf("16 Plus 512") != -1 ||
+            el.Товар.indexOf("16 Pro 128") != -1 ||
+            el.Товар.indexOf("16 Pro 256") != -1 ||
+            el.Товар.indexOf("16 Pro 512") != -1 ||
+            el.Товар.indexOf("16 Pro 1Tb") != -1 ||
+            el.Товар.indexOf("16 ProMax 256") != -1 ||
+            el.Товар.indexOf("16 ProMax 512") != -1 ||
+            el.Товар.indexOf("16 ProMax 1Tb") != -1 ||
+            el.Товар.indexOf("16 Pro Max 256") != -1 ||
+            el.Товар.indexOf("16 Pro Max 512") != -1 ||
+            el.Товар.indexOf("16 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("16 Pro Max 1TB") != -1 ||
+            el.Товар.indexOf("16 Pro Max 1Tb") != -1) &&
+          (isProductiPhone || setIsProductiPhone(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
+  const checkIsProductAirPods = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("AirPods") != -1 ||
+            el.Товар.indexOf("airpods") != -1 ||
+            el.Товар.indexOf("Airpods") != -1 ||
+            el.Товар.indexOf("Air Pods") != -1 ||
+            el.Товар.indexOf("Pencil") != -1 ||
+            el.Товар.indexOf("Magic Keyboard") != -1 ||
+            el.Товар.indexOf("Magic Mouse") != -1) &&
+          (isProductAirPods || setIsProductAirPods(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
+  const checkIsProductAW = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("Watch SE") != -1 ||
+            el.Товар.indexOf("SE (2023) Gen") != -1 ||
+            el.Товар.indexOf("SE (2022) Gen") != -1 ||
+            el.Товар.indexOf("SE 2") != -1 ||
+            el.Товар.indexOf("SE 4") != -1 ||
+            el.Товар.indexOf("SE (2022) 64") != -1 ||
+            el.Товар.indexOf("SE (2022) 128") != -1 ||
+            el.Товар.indexOf("SE (2022) 256") != -1 ||
+            el.Товар.indexOf("Watch S8") != -1 ||
+            el.Товар.indexOf("AW Series 8") != -1 ||
+            el.Товар.indexOf("AW 8") != -1 ||
+            el.Товар.indexOf("AW  8") != -1 ||
+            el.Товар.indexOf("Watch S9") != -1 ||
+            el.Товар.indexOf("AW Series 9") != -1 ||
+            el.Товар.indexOf("AW 9") != -1 ||
+            el.Товар.indexOf("AW  9") != -1 ||
+            el.Товар.indexOf("Watch S10") != -1 ||
+            el.Товар.indexOf("AW Series 10") != -1 ||
+            el.Товар.indexOf("AW 10") != -1 ||
+            el.Товар.indexOf("AW  10") != -1 ||
+            el.Товар.indexOf("Ultra 2") != -1) &&
+          (isProductAW || setIsProductAW(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
+  const checkIsProductiPad = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("iPad 9") != -1 ||
+            el.Товар.indexOf("IPad 9") != -1 ||
+            el.Товар.indexOf("iPad 10") != -1 ||
+            el.Товар.indexOf("IPad 10") != -1 ||
+            el.Товар.indexOf("iPad Mini 6") != -1 ||
+            el.Товар.indexOf("iPad Air 5") != -1 ||
+            el.Товар.indexOf("iPad Air 11") != -1 ||
+            el.Товар.indexOf("IPad Air 11") != -1 ||
+            el.Товар.indexOf("iPad Pro 1") != -1) &&
+          (isProductiPad || setIsProductiPad(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
+  const checkIsProductMac = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("iMac") != -1 ||
+            el.Товар.indexOf("Macbook") != -1 ||
+            el.Товар.indexOf("Book ") != -1 ||
+            el.Товар.indexOf("MB") != -1 ||
+            el.Товар.indexOf("13.6 M") != -1 ||
+            el.Товар.indexOf("15 M") != -1 ||
+            el.Товар.indexOf("MGN") != -1) &&
+          (isProductMac || setIsProductMac(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
+  const checkIsProduct = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("AirPods") != -1 ||
+            el.Товар.indexOf("airpods") != -1 ||
+            el.Товар.indexOf("Airpods") != -1 ||
+            el.Товар.indexOf("Air Pods") != -1 ||
+            el.Товар.indexOf("Pencil") != -1 ||
+            el.Товар.indexOf("Magic Keyboard") != -1 ||
+            el.Товар.indexOf("Magic Mouse") != -1 ||
+            el.Товар.indexOf("XR 64") != -1 ||
+            el.Товар.indexOf("XR 128") != -1 ||
+            el.Товар.indexOf("SE 3") != -1 ||
+            el.Товар.indexOf("SE 64") != -1 ||
+            el.Товар.indexOf("SE 128") != -1 ||
+            el.Товар.indexOf("SE 256") != -1 ||
+            el.Товар.indexOf("11 64") != -1 ||
+            el.Товар.indexOf("11 128") != -1 ||
+            el.Товар.indexOf("12 64") != -1 ||
+            el.Товар.indexOf("12 128") != -1 ||
+            el.Товар.indexOf("12 256") != -1 ||
+            el.Товар.indexOf("12 Pro Max") != -1 ||
+            el.Товар.indexOf("13 Mini 128") != -1 ||
+            el.Товар.indexOf("13 Mini 256") != -1 ||
+            el.Товар.indexOf("13 Mini 512") != -1 ||
+            el.Товар.indexOf("14 128") != -1 ||
+            el.Товар.indexOf("14 256") != -1 ||
+            el.Товар.indexOf("14 512") != -1 ||
+            el.Товар.indexOf("14 Plus") != -1 ||
+            el.Товар.indexOf("14 Pro 128") != -1 ||
+            el.Товар.indexOf("14 Pro 256") != -1 ||
+            el.Товар.indexOf("14 Pro 512") != -1 ||
+            el.Товар.indexOf("14 Pro 1TB") != -1 ||
+            el.Товар.indexOf("14 ProMax 256") != -1 ||
+            el.Товар.indexOf("14 ProMax 512") != -1 ||
+            el.Товар.indexOf("14 ProMax 1Tb") != -1 ||
+            el.Товар.indexOf("14 Pro Max 256") != -1 ||
+            el.Товар.indexOf("14 Pro Max 512") != -1 ||
+            el.Товар.indexOf("14 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("14 Pro Max 1TB") != -1 ||
+            el.Товар.indexOf("14 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("15 128") != -1 ||
+            el.Товар.indexOf("15 256") != -1 ||
+            el.Товар.indexOf("15 512") != -1 ||
+            el.Товар.indexOf("15 Plus 128") != -1 ||
+            el.Товар.indexOf("15 Plus 256") != -1 ||
+            el.Товар.indexOf("15 Plus 512") != -1 ||
+            el.Товар.indexOf("15 Pro 128") != -1 ||
+            el.Товар.indexOf("15 Pro 256") != -1 ||
+            el.Товар.indexOf("15 Pro 512") != -1 ||
+            el.Товар.indexOf("15 Pro 1Tb") != -1 ||
+            el.Товар.indexOf("15 ProMax 256") != -1 ||
+            el.Товар.indexOf("15 ProMax 512") != -1 ||
+            el.Товар.indexOf("15 ProMax 1Tb") != -1 ||
+            el.Товар.indexOf("15 Pro Max 256") != -1 ||
+            el.Товар.indexOf("15 Pro Max 512") != -1 ||
+            el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("15 Pro Max 1TB") != -1 ||
+            el.Товар.indexOf("15 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("16 128") != -1 ||
+            el.Товар.indexOf("16 256") != -1 ||
+            el.Товар.indexOf("16 512") != -1 ||
+            el.Товар.indexOf("16 Plus 128") != -1 ||
+            el.Товар.indexOf("16 Plus 256") != -1 ||
+            el.Товар.indexOf("16 Plus 512") != -1 ||
+            el.Товар.indexOf("16 Pro 128") != -1 ||
+            el.Товар.indexOf("16 Pro 256") != -1 ||
+            el.Товар.indexOf("16 Pro 512") != -1 ||
+            el.Товар.indexOf("16 Pro 1Tb") != -1 ||
+            el.Товар.indexOf("16 ProMax 256") != -1 ||
+            el.Товар.indexOf("16 ProMax 512") != -1 ||
+            el.Товар.indexOf("16 ProMax 1Tb") != -1 ||
+            el.Товар.indexOf("16 Pro Max 256") != -1 ||
+            el.Товар.indexOf("16 Pro Max 512") != -1 ||
+            el.Товар.indexOf("16 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("16 Pro Max 1TB") != -1 ||
+            el.Товар.indexOf("16 Pro Max 1Tb") != -1 ||
+            el.Товар.indexOf("Watch SE") != -1 ||
+            el.Товар.indexOf("SE (2023) Gen") != -1 ||
+            el.Товар.indexOf("SE (2022) Gen") != -1 ||
+            el.Товар.indexOf("SE 2") != -1 ||
+            el.Товар.indexOf("SE 4") != -1 ||
+            el.Товар.indexOf("SE (2022) 64") != -1 ||
+            el.Товар.indexOf("SE (2022) 128") != -1 ||
+            el.Товар.indexOf("SE (2022) 256") != -1 ||
+            el.Товар.indexOf("Watch S8") != -1 ||
+            el.Товар.indexOf("AW Series 8") != -1 ||
+            el.Товар.indexOf("AW 8") != -1 ||
+            el.Товар.indexOf("AW  8") != -1 ||
+            el.Товар.indexOf("Watch S9") != -1 ||
+            el.Товар.indexOf("AW Series 9") != -1 ||
+            el.Товар.indexOf("AW 9") != -1 ||
+            el.Товар.indexOf("AW  9") != -1 ||
+            el.Товар.indexOf("Watch S10") != -1 ||
+            el.Товар.indexOf("AW Series 10") != -1 ||
+            el.Товар.indexOf("AW 10") != -1 ||
+            el.Товар.indexOf("AW  10") != -1 ||
+            el.Товар.indexOf("Ultra 2") != -1 ||
+            el.Товар.indexOf("iPad 9") != -1 ||
+            el.Товар.indexOf("IPad 9") != -1 ||
+            el.Товар.indexOf("iPad 10") != -1 ||
+            el.Товар.indexOf("IPad 10") != -1 ||
+            el.Товар.indexOf("iPad Mini 6") != -1 ||
+            el.Товар.indexOf("iPad Air 5") != -1 ||
+            el.Товар.indexOf("iPad Air 11") != -1 ||
+            el.Товар.indexOf("IPad Air 11") != -1 ||
+            el.Товар.indexOf("iPad Pro 1") != -1 ||
+            el.Товар.indexOf("iMac") != -1 ||
+            el.Товар.indexOf("Macbook") != -1 ||
+            el.Товар.indexOf("Book ") != -1 ||
+            el.Товар.indexOf("MB") != -1 ||
+            el.Товар.indexOf("13.6 M") != -1 ||
+            el.Товар.indexOf("15 M") != -1 ||
+            el.Товар.indexOf("MGN") != -1) &&
+          (isProduct || setIsProduct(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         {el.length > 1 && (
-          <span className={style.title} onClick={() => closedSubMenu()}>
+          <span
+            className={
+              checkIsProduct(el) && !isProduct
+                ? style.titleNotFound
+                : style.title
+            }
+            onClick={() => closedSubMenu()}
+          >
             {isOpen ? "Apple ▲" : "Apple ▼"}
           </span>
         )}
@@ -139,7 +447,11 @@ const Apple = ({ el }) => {
             <table className="table">
               <div>
                 <div
-                  className={style.titlecategory}
+                  className={
+                    checkIsProductAirPods(el) && !isProductAirPods
+                      ? style.titleCategoryNotFound
+                      : style.titlecategory
+                  }
                   onClick={() => setIsOpenAirPods(!isOpenAirPods)}
                 >
                   {isOpenAirPods ? "AirPods ▲" : "AirPods ▼"}
@@ -160,7 +472,7 @@ const Apple = ({ el }) => {
                           <div key={index}>
                             {baseFix(el) &&
                               (el.Товар.indexOf("AirPods") != -1 ||
-                              el.Товар.indexOf("airpods") != -1 ||
+                                el.Товар.indexOf("airpods") != -1 ||
                                 el.Товар.indexOf("Airpods") != -1 ||
                                 el.Товар.indexOf("Air Pods") != -1) &&
                               el.Товар.indexOf("AirPods Max") == -1 &&
@@ -223,7 +535,11 @@ const Apple = ({ el }) => {
                 )}
 
                 <div
-                  className={style.titlecategory}
+                  className={
+                    checkIsProductiPhone(el) && !isProductiPhone
+                      ? style.titleCategoryNotFound
+                      : style.titlecategory
+                  }
                   onClick={() => setIsOpeniPhone(!isOpeniPhone)}
                 >
                   {isOpeniPhone ? "iPhone ▲" : "iPhone ▼"}
@@ -530,7 +846,11 @@ const Apple = ({ el }) => {
                 )}
 
                 <div
-                  className={style.titlecategory}
+                  className={
+                    checkIsProductAW(el) && !isProductAW
+                      ? style.titleCategoryNotFound
+                      : style.titlecategory
+                  }
                   onClick={() => setIsOpenWatch(!isOpenWatch)}
                 >
                   {isOpenWatch ? "AW ▲" : "AW ▼"}
@@ -657,7 +977,11 @@ const Apple = ({ el }) => {
                 )}
 
                 <div
-                  className={style.titlecategory}
+                  className={
+                    checkIsProductiPad(el) && !isProductiPad
+                      ? style.titleCategoryNotFound
+                      : style.titlecategory
+                  }
                   onClick={() => setIsOpeniPad(!isOpeniPad)}
                 >
                   {isOpeniPad ? "iPad ▲" : "iPad ▼"}
@@ -741,7 +1065,7 @@ const Apple = ({ el }) => {
                         el.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                            el.Товар.indexOf("Magic Keyboard") == -1 &&
+                              el.Товар.indexOf("Magic Keyboard") == -1 &&
                               el.Товар.indexOf("iPad Pro 11") != -1 &&
                               (isiPadPro11 || setIsiPadPro11(true)) &&
                               returnFixPrice(el, fixName(el)) + newPrice(el)}
@@ -787,7 +1111,11 @@ const Apple = ({ el }) => {
                 )}
 
                 <div
-                  className={style.titlecategory}
+                  className={
+                    checkIsProductMac(el) && !isProductMac
+                      ? style.titleCategoryNotFound
+                      : style.titlecategory
+                  }
                   onClick={() => setIsOpenMacBook(!isOpenMacBook)}
                 >
                   {isOpenMacBook ? "MacBook ▲" : "MacBook ▼"}

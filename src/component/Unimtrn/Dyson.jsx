@@ -9,18 +9,12 @@ import Product from "../Common/Product";
 
 const Dyson = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const dysonData = ['Airwrap ', 'V1', "HS0"]
-  
-  const dysonName = '✂Dyson🪒'
-
-
-  
+  const [isDyson, setIsDyson] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
   let heapdphone = /Heapdphone/gi;
-  let dyson = /Dyson/gi
+  let dyson = /Dyson/gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -29,12 +23,47 @@ const Dyson = ({ el }) => {
     return fixDyson.replace(wiFi, "Wi-Fi");
   };
 
+  const checkIsDyson = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("Airwrap ") != -1 ||
+            el.Товар.indexOf("V1") != -1 ||
+            el.Товар.indexOf("Vented") != -1 ||
+            el.Товар.indexOf("HD0") != -1 ||
+            el.Товар.indexOf("HD1") != -1 ||
+            el.Товар.indexOf("Gen5 Detect") != -1 ||
+            el.Товар.indexOf("Gen 5 Detect") != -1 ||
+            el.Товар.indexOf("RB0") != -1 ||
+            el.Товар.indexOf("HT0") != -1 ||
+            el.Товар.indexOf("HS0") != -1 ||
+            el.Товар.indexOf("Designed") != -1 ||
+            el.Товар.indexOf("Heapdphone") != -1 ||
+            el.Товар.indexOf("PH04") != -1 ||
+            el.Товар.indexOf("Wash G1 ") != -1 ||
+            el.Товар.indexOf("Paddle Brush") != -1 ||
+            el.Товар.indexOf("Supersonic Hair") != -1 ||
+            el.Товар.indexOf("Air Purifier") != -1 ||
+            el.Товар.indexOf("Vacuum Cleaner Micro") != -1) &&
+          (isDyson || setIsDyson(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+            <span
+              className={
+                checkIsDyson(el) && !isDyson ? style.titleNotFound : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? "Dyson ▲" : "Dyson ▼"}
             </span>
           )}
@@ -55,8 +84,7 @@ const Dyson = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                
-                <div>✂Dyson🪒</div>
+                {isDyson && <div>✂Dyson🪒</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
@@ -89,7 +117,6 @@ const Dyson = ({ el }) => {
                 <div>🇪🇺 - Наша вилка</div>
                 <div>🇦🇪🇮🇳🇨🇳🇬🇧🇭🇰 - Не наша вилка</div>
                 <Footer />
-
               </tbody>
             </table>
           </div>

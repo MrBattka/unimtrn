@@ -16,6 +16,7 @@ const NoName = ({ el }) => {
   const [isHuawei, setIsHuawei] = useState(false);
   const [isRealme, setIsRealme] = useState(false);
   const [isTecno, setIsTecno] = useState(false);
+  const [isProduct, setIsProduct] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -31,12 +32,42 @@ const NoName = ({ el }) => {
     return fixHuawei.replace(wiFi, "Wi-Fi");
   };
 
+  const checkIsProduct = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("Beats") != -1 ||
+            el.Товар.indexOf("Blackview") != -1 ||
+            el.Товар.indexOf("AGM") != -1 ||
+            el.Товар.indexOf("infinix") != -1 ||
+            el.Товар.indexOf("Oppo") != -1 ||
+            el.Товар.indexOf("Huawei") != -1 ||
+            el.Товар.indexOf("HUAWEI") != -1 ||
+            el.Товар.indexOf("Realme") != -1 ||
+            el.Товар.indexOf("Tecno") != -1 ||
+            el.Товар.indexOf("Camon ") != -1 ||
+            el.Товар.indexOf("Spark ") != -1) &&
+          (isProduct || setIsProduct(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+            <span
+              className={
+                checkIsProduct(el) && !isProduct
+                  ? style.titleNotFound
+                  : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? "No name ▲" : "No name ▼"}
             </span>
           )}
@@ -57,13 +88,12 @@ const NoName = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
-
                 {isBeats && <div>🎧Beats</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Beats") != -1) &&
+                        el.Товар.indexOf("Beats") != -1 &&
                         (isBeats || setIsBeats(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -78,7 +108,7 @@ const NoName = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Blackview") != -1) &&
+                        el.Товар.indexOf("Blackview") != -1 &&
                         (isBlackview || setIsBlackview(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -93,7 +123,7 @@ const NoName = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("AGM") != -1) &&
+                        el.Товар.indexOf("AGM") != -1 &&
                         (isAGM || setIsAGM(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -108,7 +138,7 @@ const NoName = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("infinix") != -1) &&
+                        el.Товар.indexOf("infinix") != -1 &&
                         (isInfinix || setIsInfinix(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -123,7 +153,7 @@ const NoName = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Oppo") != -1) &&
+                        el.Товар.indexOf("Oppo") != -1 &&
                         (isOppo || setIsOppo(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -154,7 +184,7 @@ const NoName = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Realme") != -1) &&
+                        el.Товар.indexOf("Realme") != -1 &&
                         (isRealme || setIsRealme(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>

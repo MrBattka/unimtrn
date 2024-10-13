@@ -11,14 +11,15 @@ const GoogleSonyAsusLenovo = ({ el }) => {
   const [isAsus, setIsAsus] = useState(false);
   const [isGoogle, setIsGoogle] = useState(false);
   const [isSony, setIsSony] = useState(false);
+  const [isProduct, setIsProduct] = useState(false);
 
   let gb = /Gb/gi;
   let rog = /Rog/gi;
   let sony = /Sony Xperia/gi;
   let zenFone = /Asus ZenFone/gi;
   let wiFi = /wifi/gi;
-  let google = /Google /gi
-  let asus = /Asus /gi
+  let google = /Google /gi;
+  let asus = /Asus /gi;
 
   const fixName = (el) => {
     const fixGb = el.Товар.replace(gb, "");
@@ -30,15 +31,42 @@ const GoogleSonyAsusLenovo = ({ el }) => {
     return fixAsus.replace(wiFi, "Wi-Fi");
   };
 
+  const checkIsProduct = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("Asus") != -1 ||
+            el.Товар.indexOf("ZenFone") != -1 ||
+            el.Товар.indexOf("ROG") != -1 ||
+            el.Товар.indexOf("Rog") != -1 ||
+            el.Товар.indexOf("Asus") != -1 ||
+            el.Товар.indexOf("Google") != -1 ||
+            el.Товар.indexOf("Pixel") != -1 ||
+            el.Товар.indexOf("Sony Wireless") != -1 ||
+            el.Товар.indexOf("Wireless WH") != -1 ||
+            el.Товар.indexOf("Xperia") != -1) &&
+          (isProduct || setIsProduct(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
-              {isOpen
-                ? "Google / Sony / Asus ▲"
-                : "Google / Sony / Asus ▼"}
+            <span
+              className={
+                checkIsProduct(el) && !isProduct
+                  ? style.titleNotFound
+                  : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? "Google / Sony / Asus ▲" : "Google / Sony / Asus ▼"}
             </span>
           )}
         </div>

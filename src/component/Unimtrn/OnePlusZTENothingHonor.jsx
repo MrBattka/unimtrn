@@ -12,6 +12,7 @@ const OnePlusZTENothingHonor = ({ el }) => {
   const [isZTE, setIsZTE] = useState(false);
   const [isNothing, setIsNothing] = useState(false);
   const [isHonor, setIsHonor] = useState(false);
+  const [isProduct, setIsProduct] = useState(false);
 
   let gb = /Gb/gi;
   let tecno = /T.Tecno/gi;
@@ -25,12 +26,39 @@ const OnePlusZTENothingHonor = ({ el }) => {
     return fixRealme.replace(wiFi, "Wi-Fi");
   };
 
+  const checkIsProduct = (el) => {
+    return (
+      el.length &&
+      el.map(
+        (el, index) =>
+          baseFix(el) &&
+          (el.Товар.indexOf("OnePlus") != -1 ||
+            el.Товар.indexOf("RedMagic") != -1 ||
+            el.Товар.indexOf("Nubia") != -1 ||
+            el.Товар.indexOf("Nothing Phone") != -1 ||
+            el.Товар.indexOf("Nothing CMF") != -1 ||
+            el.Товар.indexOf("Nothing Ear") != -1 ||
+            el.Товар.indexOf("Nothing ear") != -1 ||
+            el.Товар.indexOf("Honor") != -1) &&
+          (isProduct || setIsProduct(true)) &&
+          returnFixPrice(el, fixName(el)) + newPrice(el)
+      )
+    );
+  };
+
   return (
     <div>
       <div>
         <div>
           {el.length > 1 && (
-            <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+            <span
+              className={
+                checkIsProduct(el) && !isProduct
+                  ? style.titleNotFound
+                  : style.title
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen
                 ? "OnePlus / ZTE / Nothing / Honor ▲"
                 : "OnePlus / ZTE / Nothing / Honor ▼"}
@@ -53,14 +81,13 @@ const OnePlusZTENothingHonor = ({ el }) => {
                 ❐ Copy
               </h4>
               <tbody>
-
                 {isOnePlus && <br />}
                 {isOnePlus && <div>📱OnePlus</div>}
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("OnePlus") != -1) &&
+                        el.Товар.indexOf("OnePlus") != -1 &&
                         (isOnePlus || setIsOnePlus(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
@@ -109,7 +136,7 @@ const OnePlusZTENothingHonor = ({ el }) => {
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Honor") != -1) &&
+                        el.Товар.indexOf("Honor") != -1 &&
                         (isHonor || setIsHonor(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
