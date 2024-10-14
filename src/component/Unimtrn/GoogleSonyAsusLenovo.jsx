@@ -106,12 +106,14 @@ const GoogleSonyAsusLenovo = ({ el }) => {
 
                 {isGoogle && <br />}
                 {isGoogle && <div>📱Google</div>}
+                Pixel 8 8/256 Obsidian 🇯🇵53500
                 {el.length ? (
                   el.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         (el.Товар.indexOf("Google") != -1 ||
                           el.Товар.indexOf("Pixel") != -1) &&
+                          el.Товар.indexOf("Pixel 8 8/256 Obsidian") == -1 &&
                         (isGoogle || setIsGoogle(true)) &&
                         returnFixPrice(el, fixName(el)) + newPrice(el)}
                     </div>
