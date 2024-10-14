@@ -71,7 +71,6 @@ export const newPrice = (el) => {
   } else if (
     el.Товар.indexOf("SE (2022) Gen") != -1 ||
     el.Товар.indexOf("SE (2023) Gen") != -1 ||
-    el.Товар.indexOf("SE 4") == -1 ||
     el.Товар.indexOf("Watch SE") != -1 ||
     el.Товар.indexOf("Note") != -1 ||
     el.Товар.indexOf("SE (2022) 64") != -1 ||
@@ -213,7 +212,6 @@ export const newPrice = (el) => {
     el.Товар.indexOf("15 M") != -1 ||
     el.Товар.indexOf("MGN") != -1 ||
     el.Товар.indexOf("Vision Pro") != -1 ||
-    el.Товар.indexOf("16 Pro 128") != -1 ||
     el.Товар.indexOf("iPad Air 11") != -1 ||
     el.Товар.indexOf("IPad Air 11") != -1
   ) {
@@ -221,20 +219,28 @@ export const newPrice = (el) => {
       ? Number(el.Стоимость) + 1000
       : Number(el.Cтоимость) + 1000;
   } else if (
-    el.Товар.indexOf("16 128") != -1 ||
-    el.Товар.indexOf("16 256") != -1 ||
-    el.Товар.indexOf("16 512") != -1 ||
-    el.Товар.indexOf("16 Plus 128") != -1 ||
-    el.Товар.indexOf("16 Plus 256") != -1 ||
-    el.Товар.indexOf("16 Plus 512") != -1 ||
-    el.Товар.indexOf("16 Pro 128") != -1 ||
-    el.Товар.indexOf("16 Pro 256") != -1 ||
-    el.Товар.indexOf("16 Pro 512") != -1 ||
-    el.Товар.indexOf("16 Pro 1Tb") != -1 ||
-    el.Товар.indexOf("Watch S10") == -1 ||
-    el.Товар.indexOf("AW Series 10") == -1 ||
-    el.Товар.indexOf("AW 10") == -1 ||
-    el.Товар.indexOf("AW  10") == -1
+    el.Товар.indexOf("16 ProMax 256") == -1 &&
+    el.Товар.indexOf("16 ProMax 512") == -1 &&
+    el.Товар.indexOf("16 ProMax 1Tb") == -1 &&
+    el.Товар.indexOf("16 Pro Max 256") == -1 &&
+    el.Товар.indexOf("16 Pro Max 512") == -1 &&
+    el.Товар.indexOf("16 Pro Max 1Tb") == -1 &&
+    el.Товар.indexOf("16 Pro Max 1TB") == -1 &&
+    el.Товар.indexOf("16 Pro Max 1Tb") == -1 &&
+    (el.Товар.indexOf("16 128") != -1 ||
+      el.Товар.indexOf("16 256") != -1 ||
+      el.Товар.indexOf("16 512") != -1 ||
+      el.Товар.indexOf("16 Plus 128") != -1 ||
+      el.Товар.indexOf("16 Plus 256") != -1 ||
+      el.Товар.indexOf("16 Plus 512") != -1 ||
+      el.Товар.indexOf("16 Pro 128") != -1 ||
+      el.Товар.indexOf("16 Pro 256") != -1 ||
+      el.Товар.indexOf("16 Pro 512") != -1 ||
+      el.Товар.indexOf("16 Pro 1Tb") != -1 ||
+      el.Товар.indexOf("Watch S10") == -1 ||
+      el.Товар.indexOf("AW Series 10") == -1 ||
+      el.Товар.indexOf("AW 10") == -1 ||
+      el.Товар.indexOf("AW  10") == -1)
   ) {
     return el.Стоимость
       ? Number(el.Стоимость) + 2000

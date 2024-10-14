@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import { newPrice } from "../../helpers/newPrice";
-import style from "./styles.module.css";
 import { copyTable } from "../../helpers/copy";
+import { returnFixPrice } from "../../helpers/fixPrice";
 import Footer from "./Footer";
+import style from "./styles.module.css";
+import { newPrice } from "../../helpers/newPrice";
 
 const Apple = ({ el }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,8 +118,9 @@ const Apple = ({ el }) => {
     const fixairpodspro = fixGongkong.replace(airpodspro, "Pro 2 USB-C");
     const fixStick = fixairpodspro.replace("!", "");
     const fixAW10 = fixStick.replace("AW 10", "S10");
+    const fixiPhone = fixAW10.replace("iPhone ", "");
 
-    return fixAW10.replace(proMax, "Pro Max");
+    return fixiPhone.replace(proMax, "Pro Max");
   };
 
   const closedSubMenu = () => {
