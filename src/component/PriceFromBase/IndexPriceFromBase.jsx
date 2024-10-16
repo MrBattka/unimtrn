@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { read, utils, writeFile } from "xlsx";
-import style from "./indexPicrFromBase.module.css";
+import React from "react";
 import Apple from "./Apple";
+import HeaderMob from "./Header";
+import style from "./indexPicrFromBase.module.css";
 import NewProduct from "./NewProduct";
 import OtherBrands from "./OtherBrands";
 import Samsung from "./Samsung";
@@ -41,6 +41,7 @@ const IndexFromBase = ({ handleImportFromBase, fullList }) => {
         </div>
       </div>
       <div className={style.wrapper_cat}>
+        <HeaderMob fullList={fullList} />
         <Apple fullList={fullList} />
         <Samsung fullList={fullList} />
         <OtherBrands fullList={fullList} />
