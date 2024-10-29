@@ -6,7 +6,75 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const GameConsoles = ({ el }) => {
+const GameConsoles = ({ double }) => {
+  const sort = double.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr1 = sort.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort1 = allPriceArr1.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr2 = sort1.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort2 = allPriceArr2.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr3 = sort2.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort3 = allPriceArr3.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  const sort3rev = sort3.reverse();
+
+  let allPriceArr = sort3rev.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+
   const [isOpen, setIsOpen] = useState(false);
   const [isNintendo, setIsNintendo] = useState(false);
   const [isOculus, setIsOculus] = useState(false);
@@ -20,40 +88,40 @@ const GameConsoles = ({ el }) => {
   let wiFi = /wifi/gi;
   let playstation = /Playstation/gi;
 
-  const fixName = (el) => {
-    const fixGb = el.Товар.replace(gb, "");
+  const fixName = (allPriceArr) => {
+    const fixGb = allPriceArr.name.replace(gb, "");
     const fixPlaystation = fixGb.replace(playstation, "PlayStation");
     return fixPlaystation.replace(wiFi, "Wi-Fi");
   };
 
-  const checkIsConsoles = (el) => {
+  const checkIsConsoles = (allPriceArr) => {
     return (
-      el.length &&
-      el.map(
-        (el, index) =>
-          baseFix(el) &&
-          (el.Товар.indexOf("PlayStation") != -1 ||
-            el.Товар.indexOf("Playstation") != -1 ||
-            el.Товар.indexOf("PS5") != -1 ||
-            el.Товар.indexOf("Nintendo") != -1 ||
-            el.Товар.indexOf("Oculus") != -1 ||
-            el.Товар.indexOf("Pico") != -1 ||
-            el.Товар.indexOf("Xbox") != -1 ||
-            el.Товар.indexOf("Steam") != -1) &&
+      allPriceArr.length &&
+      allPriceArr.map(
+        (productEl, index) =>
+          baseFix(productEl) &&
+          (productEl.name.indexOf("PlayStation") != -1 ||
+            productEl.name.indexOf("Playstation") != -1 ||
+            productEl.name.indexOf("PS5") != -1 ||
+            productEl.name.indexOf("Nintendo") != -1 ||
+            productEl.name.indexOf("Oculus") != -1 ||
+            productEl.name.indexOf("Pico") != -1 ||
+            productEl.name.indexOf("Xbox") != -1 ||
+            productEl.name.indexOf("Steam") != -1) &&
           (isConsoles || setIsConsoles(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el)
+          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
-
+  
   return (
     <div>
       <div>
         <div>
-          {el.length > 1 && (
+          {allPriceArr.length > 1 && (
             <span
               className={
-                checkIsConsoles(el) && !isConsoles
+                checkIsConsoles(allPriceArr) && !isConsoles
                   ? style.titleNotFound
                   : style.title
               }
@@ -80,13 +148,13 @@ const GameConsoles = ({ el }) => {
               </h4>
               <tbody>
                 {isNintendo && <div>🕹️Nintendo</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Nintendo") != -1 &&
+                        el.name.indexOf("Nintendo") != -1 &&
                         (isNintendo || setIsNintendo(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -95,13 +163,13 @@ const GameConsoles = ({ el }) => {
 
                 {isOculus && <br />}
                 {isOculus && <div>🥽Oculus</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Oculus") != -1 &&
+                        el.name.indexOf("Oculus") != -1 &&
                         (isOculus || setIsOculus(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -110,13 +178,13 @@ const GameConsoles = ({ el }) => {
 
                 {isPico && <br />}
                 {isPico && <div>🥽Pico</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Pico") != -1 &&
+                        el.name.indexOf("Pico") != -1 &&
                         (isPico || setIsPico(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -125,15 +193,15 @@ const GameConsoles = ({ el }) => {
 
                 {isPlayStation && <br />}
                 {isPlayStation && <div>🎮PlayStation</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("PlayStation") != -1 ||
-                          el.Товар.indexOf("Playstation") != -1 ||
-                          el.Товар.indexOf("PS5") != -1) &&
+                        (el.name.indexOf("PlayStation") != -1 ||
+                          el.name.indexOf("Playstation") != -1 ||
+                          el.name.indexOf("PS5") != -1) &&
                         (isPlayStation || setIsPlayStation(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -142,13 +210,13 @@ const GameConsoles = ({ el }) => {
 
                 {isXbox && <br />}
                 {isXbox && <div>🎮Xbox</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Xbox") != -1 &&
+                        el.name.indexOf("Xbox") != -1 &&
                         (isXbox || setIsXbox(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -157,13 +225,13 @@ const GameConsoles = ({ el }) => {
 
                 {isSteam && <br />}
                 {isSteam && <div>🕹️Steam</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Steam") != -1 &&
+                        el.name.indexOf("Steam") != -1 &&
                         (isSteam || setIsSteam(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (

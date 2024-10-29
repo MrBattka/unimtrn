@@ -6,7 +6,78 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const Samsung = ({ el }) => {
+const Samsung = ({ double }) => {
+  const sort = double.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr1 = sort.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort1 = allPriceArr1.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr2 = sort1.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort2 = allPriceArr2.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr3 = sort2.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort3 = allPriceArr3.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  const sort3rev = sort3.reverse();
+
+  let allPriceArr = sort3rev.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+
+  console.log(allPriceArr);
+  
+
   const [isOpen, setIsOpen] = useState(false);
   const [isOther, setIsOther] = useState(false);
   const [isPhones, setIsPhones] = useState(false);
@@ -25,8 +96,8 @@ const Samsung = ({ el }) => {
   let s24 = /Samsung S24/gi;
   let a550 = /A550/gi;
 
-  const fixName = (el) => {
-    const fixGb = el.Товар.replace(gb, "");
+  const fixName = (allPriceArr) => {
+    const fixGb = allPriceArr.name.replace(gb, "");
     const fixGalaxyWatch = fixGb.replace(galaxyWatch, "Watch");
     const fixClassik = fixGalaxyWatch.replace(classik, "Classic");
     const fixS21 = fixClassik.replace(s21, "S21");
@@ -38,36 +109,36 @@ const Samsung = ({ el }) => {
     return fixA550.replace(zFlip, "Z Flip");
   };
 
-  const checkIsProduct = (el) => {
+  const checkIsProduct = (allPriceArr) => {
     return (
-      el.length &&
-      el.map(
-        (el, index) =>
-          baseFix(el) &&
-          (el.Товар.indexOf("Galaxy Buds") != -1 ||
-            el.Товар.indexOf("Galaxy Smart Tag") != -1 ||
-            el.Товар.indexOf("Watch 6") != -1 ||
-            el.Товар.indexOf("A05s") != -1 ||
-            el.Товар.indexOf("A05") != -1 ||
-            el.Товар.indexOf("A06") != -1 ||
-            el.Товар.indexOf("A15") != -1 ||
-            el.Товар.indexOf("A25") != -1 ||
-            el.Товар.indexOf("A24") != -1 ||
-            el.Товар.indexOf("A54") != -1 ||
-            el.Товар.indexOf("A34") != -1 ||
-            el.Товар.indexOf("A35 ") != -1 ||
-            el.Товар.indexOf("M34") != -1 ||
-            el.Товар.indexOf("M54") != -1 ||
-            el.Товар.indexOf("A55") != -1 ||
-            el.Товар.indexOf("S21") != -1 ||
-            el.Товар.indexOf("S22") != -1 ||
-            el.Товар.indexOf("S23") != -1 ||
-            el.Товар.indexOf("S24") != -1 ||
-            el.Товар.indexOf("Z Flip") != -1 ||
-            el.Товар.indexOf("Z Fold") != -1 ||
-            el.Товар.indexOf("Tab S") != -1) &&
+      allPriceArr.length &&
+      allPriceArr.map(
+        (productEl, index) =>
+          baseFix(productEl) &&
+          (productEl.name.indexOf("Galaxy Buds") != -1 ||
+            productEl.name.indexOf("Galaxy Smart Tag") != -1 ||
+            productEl.name.indexOf("Watch 6") != -1 ||
+            productEl.name.indexOf("A05s") != -1 ||
+            productEl.name.indexOf("A05") != -1 ||
+            productEl.name.indexOf("A06") != -1 ||
+            productEl.name.indexOf("A15") != -1 ||
+            productEl.name.indexOf("A25") != -1 ||
+            productEl.name.indexOf("A24") != -1 ||
+            productEl.name.indexOf("A54") != -1 ||
+            productEl.name.indexOf("A34") != -1 ||
+            productEl.name.indexOf("A35 ") != -1 ||
+            productEl.name.indexOf("M34") != -1 ||
+            productEl.name.indexOf("M54") != -1 ||
+            productEl.name.indexOf("A55") != -1 ||
+            productEl.name.indexOf("S21") != -1 ||
+            productEl.name.indexOf("S22") != -1 ||
+            productEl.name.indexOf("S23") != -1 ||
+            productEl.name.indexOf("S24") != -1 ||
+            productEl.name.indexOf("Z Flip") != -1 ||
+            productEl.name.indexOf("Z Fold") != -1 ||
+            productEl.name.indexOf("Tab S") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el)
+          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
@@ -76,10 +147,10 @@ const Samsung = ({ el }) => {
     <div>
       <div>
         <div>
-          {el.length > 1 && (
+          {allPriceArr.length > 1 && (
             <span
               className={
-                checkIsProduct(el) && !isProduct
+                checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
                   : style.title
               }
@@ -106,14 +177,14 @@ const Samsung = ({ el }) => {
               </h4>
               <tbody>
                 {isOther && <div>👉Samsung</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Galaxy Buds") != -1 ||
-                          el.Товар.indexOf("Galaxy Smart Tag") != -1) &&
+                        (el.name.indexOf("Galaxy Buds") != -1 ||
+                          el.name.indexOf("Galaxy Smart Tag") != -1) &&
                         (isOther || setIsOther(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -122,13 +193,14 @@ const Samsung = ({ el }) => {
 
                 {isWatch && <br />}
                 {isWatch && <div>⌚Watch</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Watch 6") != -1 &&
+                        (el.name.indexOf("Watch 6") != -1 ||
+                        el.name.indexOf("Watch 7") != -1) &&
                         (isWatch || setIsWatch(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -137,30 +209,30 @@ const Samsung = ({ el }) => {
 
                 {isPhones && <br />}
                 {isPhones && <div>📱Phones</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("A05s") != -1 ||
-                          el.Товар.indexOf("A05") != -1 ||
-                          el.Товар.indexOf("A06") != -1 ||
-                          el.Товар.indexOf("A15") != -1 ||
-                          el.Товар.indexOf("A25") != -1 ||
-                          el.Товар.indexOf("A24") != -1 ||
-                          el.Товар.indexOf("A54") != -1 ||
-                          el.Товар.indexOf("A34") != -1 ||
-                          el.Товар.indexOf("A35 ") != -1 ||
-                          el.Товар.indexOf("M34") != -1 ||
-                          el.Товар.indexOf("M54") != -1 ||
-                          el.Товар.indexOf("A55") != -1 ||
-                          el.Товар.indexOf("S21") != -1 ||
-                          el.Товар.indexOf("S22") != -1 ||
-                          el.Товар.indexOf("S23") != -1 ||
-                          el.Товар.indexOf("S24") != -1 ||
-                          el.Товар.indexOf("Z Flip") != -1 ||
-                          el.Товар.indexOf("Z Fold") != -1) &&
+                        (el.name.indexOf("A05s") != -1 ||
+                          el.name.indexOf("A05") != -1 ||
+                          el.name.indexOf("A06") != -1 ||
+                          el.name.indexOf("A15") != -1 ||
+                          el.name.indexOf("A25") != -1 ||
+                          el.name.indexOf("A24") != -1 ||
+                          el.name.indexOf("A54") != -1 ||
+                          el.name.indexOf("A34") != -1 ||
+                          el.name.indexOf("A35 ") != -1 ||
+                          el.name.indexOf("M34") != -1 ||
+                          el.name.indexOf("M54") != -1 ||
+                          el.name.indexOf("A55") != -1 ||
+                          el.name.indexOf("S21") != -1 ||
+                          el.name.indexOf("S22") != -1 ||
+                          el.name.indexOf("S23") != -1 ||
+                          el.name.indexOf("S24") != -1 ||
+                          el.name.indexOf("Z Flip") != -1 ||
+                          el.name.indexOf("Z Fold") != -1) &&
                         (isPhones || setIsPhones(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -169,13 +241,13 @@ const Samsung = ({ el }) => {
 
                 {isTab && <br />}
                 {isTab && <div>📟Tab</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Tab S") != -1 &&
+                        el.name.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (

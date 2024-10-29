@@ -48,6 +48,14 @@ a {
     border-radius: 6px;
 }
 
+.button_active_3 {
+    width: 110px;
+    margin-right: 40px;
+    text-decoration: underline;
+    background: linear-gradient(rgb(255, 255, 255), rgba(0, 131, 39, 0.459));
+    border-radius: 6px;
+}
+
 .wrapper_refresh {
     justify-content: space-between;
     margin-left: 400px;

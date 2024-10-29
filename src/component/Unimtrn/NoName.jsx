@@ -6,7 +6,75 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const NoName = ({ el }) => {
+const NoName = ({ double }) => {
+  const sort = double.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr1 = sort.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort1 = allPriceArr1.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr2 = sort1.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort2 = allPriceArr2.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr3 = sort2.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort3 = allPriceArr3.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  const sort3rev = sort3.reverse();
+
+  let allPriceArr = sort3rev.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+
   const [isOpen, setIsOpen] = useState(false);
   const [isBeats, setIsBeats] = useState(false);
   const [isBlackview, setIsBlackview] = useState(false);
@@ -23,34 +91,32 @@ const NoName = ({ el }) => {
   let glasses = /glases/gi;
   let huawei = /HUAWEI/gi;
 
-  console.log(el);
-
-  const fixName = (el) => {
-    const fixGb = el.Товар.replace(gb, "");
+  const fixName = (allPriceArr) => {
+    const fixGb = allPriceArr.Товар.replace(gb, "");
     const fixGlasses = fixGb.replace(glasses, "glasses");
     const fixHuawei = fixGlasses.replace(huawei, "Huawei");
     return fixHuawei.replace(wiFi, "Wi-Fi");
   };
 
-  const checkIsProduct = (el) => {
+  const checkIsProduct = (allPriceArr) => {
     return (
-      el.length &&
-      el.map(
-        (el, index) =>
-          baseFix(el) &&
-          (el.Товар.indexOf("Beats") != -1 ||
-            el.Товар.indexOf("Blackview") != -1 ||
-            el.Товар.indexOf("AGM") != -1 ||
-            el.Товар.indexOf("infinix") != -1 ||
-            el.Товар.indexOf("Oppo") != -1 ||
-            el.Товар.indexOf("Huawei") != -1 ||
-            el.Товар.indexOf("HUAWEI") != -1 ||
-            el.Товар.indexOf("Realme") != -1 ||
-            el.Товар.indexOf("Tecno") != -1 ||
-            el.Товар.indexOf("Camon ") != -1 ||
-            el.Товар.indexOf("Spark ") != -1) &&
+      allPriceArr.length &&
+      allPriceArr.map(
+        (productEl, index) =>
+          baseFix(productEl) &&
+          (productEl.name.indexOf("Beats") != -1 ||
+            productEl.name.indexOf("Blackview") != -1 ||
+            productEl.name.indexOf("AGM") != -1 ||
+            productEl.name.indexOf("infinix") != -1 ||
+            productEl.name.indexOf("Oppo") != -1 ||
+            productEl.name.indexOf("Huawei") != -1 ||
+            productEl.name.indexOf("HUAWEI") != -1 ||
+            productEl.name.indexOf("Realme") != -1 ||
+            productEl.name.indexOf("Tecno") != -1 ||
+            productEl.name.indexOf("Camon ") != -1 ||
+            productEl.name.indexOf("Spark ") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el)
+          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
@@ -59,10 +125,10 @@ const NoName = ({ el }) => {
     <div>
       <div>
         <div>
-          {el.length > 1 && (
+          {allPriceArr.length > 1 && (
             <span
               className={
-                checkIsProduct(el) && !isProduct
+                checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
                   : style.title
               }
@@ -89,13 +155,13 @@ const NoName = ({ el }) => {
               </h4>
               <tbody>
                 {isBeats && <div>🎧Beats</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Beats") != -1 &&
+                        el.name.indexOf("Beats") != -1 &&
                         (isBeats || setIsBeats(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -104,13 +170,13 @@ const NoName = ({ el }) => {
 
                 {isBlackview && <br />}
                 {isBlackview && <div>📱Blackview</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Blackview") != -1 &&
+                        el.name.indexOf("Blackview") != -1 &&
                         (isBlackview || setIsBlackview(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -119,13 +185,13 @@ const NoName = ({ el }) => {
 
                 {isAGM && <br />}
                 {isAGM && <div>📱AGM</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("AGM") != -1 &&
+                        el.name.indexOf("AGM") != -1 &&
                         (isAGM || setIsAGM(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -134,13 +200,13 @@ const NoName = ({ el }) => {
 
                 {isInfinix && <br />}
                 {isInfinix && <div>📱Infinix</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("infinix") != -1 &&
+                        el.name.indexOf("infinix") != -1 &&
                         (isInfinix || setIsInfinix(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -149,13 +215,13 @@ const NoName = ({ el }) => {
 
                 {isOppo && <br />}
                 {isOppo && <div>📱Oppo</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Oppo") != -1 &&
+                        el.name.indexOf("Oppo") != -1 &&
                         (isOppo || setIsOppo(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -164,14 +230,14 @@ const NoName = ({ el }) => {
 
                 {isHuawei && <br />}
                 {isHuawei && <div>📱Huawei</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Huawei") != -1 ||
-                          el.Товар.indexOf("HUAWEI") != -1) &&
+                        (el.name.indexOf("Huawei") != -1 ||
+                          el.name.indexOf("HUAWEI") != -1) &&
                         (isHuawei || setIsHuawei(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -180,13 +246,13 @@ const NoName = ({ el }) => {
 
                 {isRealme && <br />}
                 {isRealme && <div>📱Realme</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.Товар.indexOf("Realme") != -1 &&
+                        el.name.indexOf("Realme") != -1 &&
                         (isRealme || setIsRealme(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -195,15 +261,15 @@ const NoName = ({ el }) => {
 
                 {isTecno && <br />}
                 {isTecno && <div>📱Tecno</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.Товар.indexOf("Tecno") != -1 ||
-                          el.Товар.indexOf("Camon ") != -1 ||
-                          el.Товар.indexOf("Spark ") != -1) &&
+                        (el.name.indexOf("Tecno") != -1 ||
+                          el.name.indexOf("Camon ") != -1 ||
+                          el.name.indexOf("Spark ") != -1) &&
                         (isTecno || setIsTecno(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (

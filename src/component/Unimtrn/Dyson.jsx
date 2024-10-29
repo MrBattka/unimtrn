@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
+import { returnFixPrice, returnFixPrice1 } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
 import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
@@ -7,48 +7,124 @@ import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 import Product from "../Common/Product";
 
-const Dyson = ({ el }) => {
+const Dyson = ({ double }) => {
+  const sort = double.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr1 = sort.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort1 = allPriceArr1.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr2 = sort1.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort2 = allPriceArr2.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr3 = sort2.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort3 = allPriceArr3.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  const sort3rev = sort3.reverse();
+
+  let allPriceArr = sort3rev.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDyson, setIsDyson] = useState(false);
+ 
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
   let heapdphone = /Heapdphone/gi;
   let dyson = /Dyson/gi;
 
-  const fixName = (el) => {
-    const fixGb = el.Товар.replace(gb, "");
+  const fixName = (dysonEl) => {
+    const fixGb = dysonEl.name.replace(gb, "");
     const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
     const fixDyson = fixHeapdphone.replace(dyson, "");
     return fixDyson.replace(wiFi, "Wi-Fi");
   };
 
-  const checkIsDyson = (el) => {
+  const checkIsDyson = (dysonEl) => {
     return (
-      el.length &&
-      el.map(
-        (el, index) =>
-          baseFix(el) &&
-          (el.Товар.indexOf("Airwrap ") != -1 ||
-            el.Товар.indexOf("V1") != -1 ||
-            el.Товар.indexOf("Vented") != -1 ||
-            el.Товар.indexOf("HD0") != -1 ||
-            el.Товар.indexOf("HD1") != -1 ||
-            el.Товар.indexOf("Gen5 Detect") != -1 ||
-            el.Товар.indexOf("Gen 5 Detect") != -1 ||
-            el.Товар.indexOf("RB0") != -1 ||
-            el.Товар.indexOf("HT0") != -1 ||
-            el.Товар.indexOf("HS0") != -1 ||
-            el.Товар.indexOf("Designed") != -1 ||
-            el.Товар.indexOf("Heapdphone") != -1 ||
-            el.Товар.indexOf("PH04") != -1 ||
-            el.Товар.indexOf("Wash G1 ") != -1 ||
-            el.Товар.indexOf("Paddle Brush") != -1 ||
-            el.Товар.indexOf("Supersonic Hair") != -1 ||
-            el.Товар.indexOf("Air Purifier") != -1 ||
-            el.Товар.indexOf("Vacuum Cleaner Micro") != -1) &&
+      dysonEl.length &&
+      allPriceArr.map(
+        (dysonEl, index) =>
+          baseFix(dysonEl) &&
+          (dysonEl.name.indexOf("Airwrap") != -1 ||
+            dysonEl.name.indexOf("V1") != -1 ||
+            dysonEl.name.indexOf("V-1") != -1 ||
+            dysonEl.name.indexOf("Vented") != -1 ||
+            dysonEl.name.indexOf("HD0") != -1 ||
+            dysonEl.name.indexOf("HD1") != -1 ||
+            dysonEl.name.indexOf("HD-0") != -1 ||
+            dysonEl.name.indexOf("HD-1") != -1 ||
+            dysonEl.name.indexOf("Gen5 Detect") != -1 ||
+            dysonEl.name.indexOf("Gen 5 Detect") != -1 ||
+            dysonEl.name.indexOf("RB0") != -1 ||
+            dysonEl.name.indexOf("HT0") != -1 ||
+            dysonEl.name.indexOf("HS0") != -1 ||
+            dysonEl.name.indexOf("RB-0") != -1 ||
+            dysonEl.name.indexOf("HT-0") != -1 ||
+            dysonEl.name.indexOf("HS-0") != -1 ||
+            dysonEl.name.indexOf("Designed") != -1 ||
+            dysonEl.name.indexOf("Heapdphone") != -1 ||
+            dysonEl.name.indexOf("PH04") != -1 ||
+            dysonEl.name.indexOf("PH-04") != -1 ||
+            dysonEl.name.indexOf("Wash G1 ") != -1 ||
+            dysonEl.name.indexOf("Paddle Brush") != -1 ||
+            dysonEl.name.indexOf("Supersonic Hair") != -1 ||
+            dysonEl.name.indexOf("Air Purifier") != -1 ||
+            dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
           (isDyson || setIsDyson(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el)
+          dysonEl.name + dysonEl.extraPrice
       )
     );
   };
@@ -57,10 +133,12 @@ const Dyson = ({ el }) => {
     <div>
       <div>
         <div>
-          {el.length > 1 && (
+          {allPriceArr.length > 1 && (
             <span
               className={
-                checkIsDyson(el) && !isDyson ? style.titleNotFound : style.title
+                checkIsDyson(allPriceArr) && !isDyson
+                  ? style.titleNotFound
+                  : style.title
               }
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -85,29 +163,37 @@ const Dyson = ({ el }) => {
               </h4>
               <tbody>
                 {isDyson && <div>✂Dyson🪒</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((dysonEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        (el.Товар.indexOf("Airwrap ") != -1 ||
-                          el.Товар.indexOf("V1") != -1 ||
-                          el.Товар.indexOf("Vented") != -1 ||
-                          el.Товар.indexOf("HD0") != -1 ||
-                          el.Товар.indexOf("HD1") != -1 ||
-                          el.Товар.indexOf("Gen5 Detect") != -1 ||
-                          el.Товар.indexOf("Gen 5 Detect") != -1 ||
-                          el.Товар.indexOf("RB0") != -1 ||
-                          el.Товар.indexOf("HT0") != -1 ||
-                          el.Товар.indexOf("HS0") != -1 ||
-                          el.Товар.indexOf("Designed") != -1 ||
-                          el.Товар.indexOf("Heapdphone") != -1 ||
-                          el.Товар.indexOf("PH04") != -1 ||
-                          el.Товар.indexOf("Wash G1 ") != -1 ||
-                          el.Товар.indexOf("Paddle Brush") != -1 ||
-                          el.Товар.indexOf("Supersonic Hair") != -1 ||
-                          el.Товар.indexOf("Air Purifier") != -1 ||
-                          el.Товар.indexOf("Vacuum Cleaner Micro") != -1) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                      {baseFix(dysonEl) &&
+                        (dysonEl.name.indexOf("Airwrap") != -1 ||
+                          dysonEl.name.indexOf("V1") != -1 ||
+                          dysonEl.name.indexOf("V-1") != -1 ||
+                          dysonEl.name.indexOf("Vented") != -1 ||
+                          dysonEl.name.indexOf("HD0") != -1 ||
+                          dysonEl.name.indexOf("HD1") != -1 ||
+                          dysonEl.name.indexOf("HD-0") != -1 ||
+                          dysonEl.name.indexOf("HD-1") != -1 ||
+                          dysonEl.name.indexOf("Gen5 Detect") != -1 ||
+                          dysonEl.name.indexOf("Gen 5 Detect") != -1 ||
+                          dysonEl.name.indexOf("RB0") != -1 ||
+                          dysonEl.name.indexOf("HT0") != -1 ||
+                          dysonEl.name.indexOf("HS0") != -1 ||
+                          dysonEl.name.indexOf("RB-0") != -1 ||
+                          dysonEl.name.indexOf("HT-0") != -1 ||
+                          dysonEl.name.indexOf("HS-0") != -1 ||
+                          dysonEl.name.indexOf("Designed") != -1 ||
+                          dysonEl.name.indexOf("Heapdphone") != -1 ||
+                          dysonEl.name.indexOf("PH04") != -1 ||
+                          dysonEl.name.indexOf("PH-04") != -1 ||
+                          dysonEl.name.indexOf("Wash G1 ") != -1 ||
+                          dysonEl.name.indexOf("Paddle Brush") != -1 ||
+                          dysonEl.name.indexOf("Supersonic Hair") != -1 ||
+                          dysonEl.name.indexOf("Air Purifier") != -1 ||
+                          dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
+                        returnFixPrice1(dysonEl, fixName(dysonEl)) +
+                          newPrice(dysonEl.name, dysonEl.stockPrice)}
                     </div>
                   ))
                 ) : (

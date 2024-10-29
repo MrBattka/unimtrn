@@ -6,7 +6,75 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const GarminGoProDji = ({ el }) => {
+const GarminGoProDji = ({ double }) => {
+  const sort = double.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr1 = sort.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort1 = allPriceArr1.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr2 = sort1.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort2 = allPriceArr2.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  let allPriceArr3 = sort2.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  const sort3 = allPriceArr3.sort(
+    (a, b) =>
+      (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
+      (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
+  );
+
+  const sort3rev = sort3.reverse();
+
+  let allPriceArr = sort3rev.filter((obj1, i, arr) => {
+    return (
+      arr.findIndex(
+        (obj2) =>
+          ["id"].every((key) => obj2[key] === obj1[key]) &&
+          ["stockPrice"].every((key) => obj2[key] <= obj1[key])
+      ) === i
+    );
+  });
+
+  allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDJI, setIsDJI] = useState(false);
   const [isGarmin, setIsGarmin] = useState(false);
@@ -21,30 +89,30 @@ const GarminGoProDji = ({ el }) => {
   let sunglases = /Sunglases/gi;
   let dji = /Dji/gi;
 
-  const fixName = (el) => {
-    const fixGb = el.Товар.replace(gb, "");
+  const fixName = (allPriceArr) => {
+    const fixGb = allPriceArr.name.replace(gb, "");
     const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
     const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
     const fixDji = fixSunglases.replace(dji, "DJI");
     return fixDji.replace(wiFi, "Wi-Fi");
   };
 
-  const checkIsProduct = (el) => {
+  const checkIsProduct = (allPriceArr) => {
     return (
-      el.length &&
-      el.map(
-        (el, index) =>
-          baseFix(el) &&
-          (el.Товар.indexOf("DJL ") != -1 ||
-            el.Товар.indexOf("DJI ") != -1 ||
-            el.Товар.indexOf("DJi ") != -1 ||
-            el.Товар.indexOf("Dji ") != -1 ||
-            el.Товар.indexOf("Garmin") != -1 ||
-            el.Товар.indexOf("GoPro") != -1 ||
-            el.Товар.indexOf("JBL") != -1 ||
-            el.Товар.indexOf("Marshall") != -1) &&
+      allPriceArr.length &&
+      allPriceArr.map(
+        (productEl, index) =>
+          baseFix(productEl) &&
+          (productEl.name.indexOf("DJL ") != -1 ||
+            productEl.name.indexOf("DJI ") != -1 ||
+            productEl.name.indexOf("DJi ") != -1 ||
+            productEl.name.indexOf("Dji ") != -1 ||
+            productEl.name.indexOf("Garmin") != -1 ||
+            productEl.name.indexOf("GoPro") != -1 ||
+            productEl.name.indexOf("JBL") != -1 ||
+            productEl.name.indexOf("Marshall") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el)
+          returnFixPrice(productEl, fixName(productEl)) + productEl.stockPrice
       )
     );
   };
@@ -53,10 +121,10 @@ const GarminGoProDji = ({ el }) => {
     <div>
       <div>
         <div>
-          {el.length > 1 && (
+          {allPriceArr.length > 1 && (
             <span
               className={
-                checkIsProduct(el) && !isProduct
+                checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
                   : style.title
               }
@@ -85,16 +153,16 @@ const GarminGoProDji = ({ el }) => {
               </h4>
               <tbody>
                 {isDJI && <div>📸DJI</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((DJIEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        (el.Товар.indexOf("DJL ") != -1 ||
-                          el.Товар.indexOf("DJI ") != -1 ||
-                          el.Товар.indexOf("DJi ") != -1 ||
-                          el.Товар.indexOf("Dji ") != -1) &&
+                      {baseFix(DJIEl) &&
+                        (DJIEl.name.indexOf("DJL ") != -1 ||
+                          DJIEl.name.indexOf("DJI ") != -1 ||
+                          DJIEl.name.indexOf("DJi ") != -1 ||
+                          DJIEl.name.indexOf("Dji ") != -1) &&
                         (isDJI || setIsDJI(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(DJIEl, fixName(DJIEl)) + newPrice(DJIEl.name, DJIEl.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -103,13 +171,13 @@ const GarminGoProDji = ({ el }) => {
 
                 {isGarmin && <br />}
                 {isGarmin && <div>⌚Garmin</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((garminEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        el.Товар.indexOf("Garmin") != -1 &&
+                      {baseFix(garminEl) &&
+                        garminEl.name.indexOf("Garmin") != -1 &&
                         (isGarmin || setIsGarmin(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(garminEl, fixName(garminEl)) + newPrice(garminEl.name, garminEl.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -118,13 +186,13 @@ const GarminGoProDji = ({ el }) => {
 
                 {isGoPro && <br />}
                 {isGoPro && <div>📸GoPro</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((goProEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        el.Товар.indexOf("GoPro") != -1 &&
+                      {baseFix(goProEl) &&
+                        goProEl.name.indexOf("GoPro") != -1 &&
                         (isGoPro || setIsGoPro(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(goProEl, fixName(goProEl)) + newPrice(goProEl.name, goProEl.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -133,13 +201,13 @@ const GarminGoProDji = ({ el }) => {
 
                 {isJBL && <br />}
                 {isJBL && <div>🔊JBL</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((jblEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        el.Товар.indexOf("JBL") != -1 &&
+                      {baseFix(jblEl) &&
+                        jblEl.name.indexOf("JBL") != -1 &&
                         (isJBL || setIsJBL(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(jblEl, fixName(jblEl)) + newPrice(jblEl.name, jblEl.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -148,13 +216,13 @@ const GarminGoProDji = ({ el }) => {
 
                 {isMarshall && <br />}
                 {isMarshall && <div>🎧Marshall</div>}
-                {el.length ? (
-                  el.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((marshsalEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        el.Товар.indexOf("Marshall") != -1 &&
+                      {baseFix(marshsalEl) &&
+                        marshsalEl.name.indexOf("Marshall") != -1 &&
                         (isMarshall || setIsMarshall(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el)}
+                        returnFixPrice(marshsalEl, fixName(marshsalEl)) + newPrice(marshsalEl.name, marshsalEl.stockPrice)}
                     </div>
                   ))
                 ) : (
