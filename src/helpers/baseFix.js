@@ -92,3 +92,24 @@ export const baseFixHi = (el) => {
     el.name?.indexOf("🎵 Airpods") == -1
   );
 };
+
+export const baseFixMiHonor = (el) => {
+  let toLowerCase = el.name?.toLowerCase();
+  return (
+    toLowerCase.indexOf("оптом") == -1 &&
+    toLowerCase.indexOf("———") == -1 &&
+    toLowerCase.indexOf("желаем") == -1 &&
+    toLowerCase.indexOf("mihonor") == -1 &&
+    toLowerCase.indexOf("доброе") == -1 &&
+    toLowerCase.indexOf("телефоны") == -1 &&
+    toLowerCase.indexOf("заказать") == -1 &&
+    toLowerCase.indexOf("bekkorolev") == -1 &&
+    toLowerCase.indexOf("+7-") == -1 &&
+    toLowerCase.indexOf("самовывоз") == -1 &&
+    toLowerCase.indexOf("тихорецкий") == -1 &&
+    toLowerCase.indexOf("*") == -1 &&
+    toLowerCase.indexOf("от") == -1 &&
+    toLowerCase.indexOf("электросамокат") == -1 &&
+    (toLowerCase === "wi-fi  " ? toLowerCase.indexOf("wi-fi") == -1 : toLowerCase)
+  );
+};

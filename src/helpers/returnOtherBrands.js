@@ -376,71 +376,169 @@ export const returnIDOtherBrand = (name) => {
     return 18965;
 
     // OnePlus
-  } else if (name.indexOf("ace 2 12/256 black") !== -1) {
+  } else if (name.indexOf("ace 2") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27300;
-  } else if (name.indexOf("ace 2 12/256 glacier blue") !== -1) {
+  } else if (
+  name.indexOf("ace 2") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 27303;
-  } else if (name.indexOf("ace 2 16/256 black") !== -1) {
+  } else if (
+  name.indexOf("ace 2") !== -1 &&
+  name.indexOf("16/256") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27301;
-  } else if (name.indexOf("ace 2 16/256 glacier blue") !== -1) {
+  } else if (
+  name.indexOf("ace 2") !== -1 &&
+  name.indexOf("16/256") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 27304;
-  } else if (name.indexOf("ace 2 16/512 black") !== -1) {
+  } else if (
+  name.indexOf("ace 2") !== -1 &&
+  name.indexOf("512") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27302;
-  } else if (name.indexOf("ace 2 16/512 glacier blue") !== -1) {
+  } else if (
+  name.indexOf("ace 2") !== -1 &&
+  name.indexOf("512") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 27305;
-  } else if (name.indexOf("ace 2v 12/256 black") !== -1) {
+  } else if (
+  name.indexOf("ace 2v") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27306;
-  } else if (name.indexOf("ace 2v 12/256 green") !== -1) {
+  } else if (
+  name.indexOf("ace 2v") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("green") !== -1) {
     return 27309;
-  } else if (name.indexOf("ace 2v 16/256 black") !== -1) {
+  } else if (
+  name.indexOf("ace 2v") !== -1 &&
+  name.indexOf("16/256") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27307;
-  } else if (name.indexOf("ace 2v 16/256 green") !== -1) {
+  } else if (
+  name.indexOf("ace 2v") !== -1 &&
+  name.indexOf("16/256") !== -1 &&
+  name.indexOf("green") !== -1) {
     return 27310;
-  } else if (name.indexOf("ace 2v 16/512 black") !== -1) {
+  } else if (
+  name.indexOf("ace 2v") !== -1 &&
+  name.indexOf("16/512") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27308;
-  } else if (name.indexOf("ace 2v 16/512 green") !== -1) {
+  } else if (
+  name.indexOf("ace 2v") !== -1 &&
+  name.indexOf("16/512") !== -1 &&
+  name.indexOf("green") !== -1) {
     return 27311;
-  } else if (name.indexOf("nord n100 4/64 midnight frost") !== -1) {
+  } else if (
+  name.indexOf("nord n10") !== -1 &&
+  name.indexOf("4/64") !== -1 &&
+  name.indexOf("midnight") !== -1) {
     return 18594;
-  } else if (name.indexOf("nord n10 6/128 midnight ice") !== -1) {
+  } else if (
+  name.indexOf("nord n10") !== -1 &&
+  name.indexOf("6/128") !== -1 &&
+  name.indexOf("midnight") !== -1) {
     return 18595;
-  } else if (name.indexOf("nord ce 8/128 blue void") !== -1) {
+  } else if (
+  name.indexOf("nord ce") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 20344;
-  } else if (name.indexOf("nord ce 8/128 charkoal ink") !== -1) {
+  } else if (
+  name.indexOf("nord ce") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("charkoal") !== -1) {
     return 20345;
-  } else if (name.indexOf("nord ce 8/128 silver ray") !== -1) {
+  } else if (
+  name.indexOf("nord ce") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("silver") !== -1) {
     return 20346;
-  } else if (name.indexOf("nord ce 12/256 charkoal ink") !== -1) {
+  } else if (
+  name.indexOf("nord ce") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("charkoal") !== -1) {
     return 20348;
-  } else if (name.indexOf("nord ce 12/256 blue void") !== -1) {
+  } else if (
+  name.indexOf("nord ce") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 20347;
-  } else if (name.indexOf("nord ce 12/256 silver ray") !== -1) {
+  } else if (
+  name.indexOf("nord ce") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("silver") !== -1) {
     return 20349;
-  } else if (name.indexOf("nord 2 12/256 blue haze") !== -1) {
+  } else if (
+  name.indexOf("nord 2") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 20448;
-  } else if (name.indexOf("nord 2 12/256 gray sierra") !== -1) {
+  } else if (
+  name.indexOf("nord 2") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("gray") !== -1) {
     return 20447;
-  } else if (name.indexOf("nord 2 8/128 blue haze") !== -1) {
+  } else if (
+  name.indexOf("nord 2") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 20446;
-  } else if (name.indexOf("nord 2 8/128 gray sierra") !== -1) {
+  } else if (
+  name.indexOf("nord 2") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("gray") !== -1) {
     return 20445;
-  } else if (name.indexOf("nord 2t 12/256 gray shadow") !== -1) {
+  } else if (
+  name.indexOf("nord 2t") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("gray") !== -1) {
     return 22819;
-  } else if (name.indexOf("nord 2t 12/256 jade fog") !== -1) {
+  } else if (
+  name.indexOf("nord 2t") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("jade") !== -1) {
     return 22820;
-  } else if (name.indexOf("nord 2t 8/128 gray shadow") !== -1) {
+  } else if (
+  name.indexOf("nord 2t") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("gray") !== -1) {
     return 22817;
-  } else if (name.indexOf("nord 2t 8/128 jade fog") !== -1) {
+  } else if (
+  name.indexOf("nord 2t") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("jade") !== -1) {
     return 22818;
-  } else if (name.indexOf("nord n20 6/128 blue") !== -1) {
+  } else if (
+  name.indexOf("nord n20") !== -1 &&
+  name.indexOf("6/128") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 22816;
-  } else if (name.indexOf("nord n20 se 4/64 blue oasis") !== -1) {
+  } else if (
+  name.indexOf("nord n20 se") !== -1 &&
+  name.indexOf("4/64") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 23560;
-  } else if (name.indexOf("nord n20 se 4/64 celestial black") !== -1) {
+  } else if (
+  name.indexOf("nord n20 se") !== -1 &&
+  name.indexOf("4/64") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 23561;
-  } else if (name.indexOf("nord n200 4/64 blue quantum") !== -1) {
+  } else if (
+  name.indexOf("nord n200") !== -1 &&
+  name.indexOf("4/64") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 20413;
-  } else if (name.indexOf("nord ce2 8/128 bahama blue") !== -1) {
+  } else if (
+  name.indexOf("nord ce2") !== -1 &&
+  name.indexOf("8/128") !== -1 &&
+  name.indexOf("blue") !== -1) {
     return 22088;
   } else if (name.indexOf("nord ce2 8/128 gray mirror") !== -1) {
     return 22089;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { baseFix, baseFixHi } from "../../helpers/baseFix";
+import { baseFix, baseFixHi, baseFixMiHonor } from "../../helpers/baseFix";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
 import { returnIDApple } from "../../helpers/returnIDApple";
@@ -26,8 +26,9 @@ import OnePlusZTENothingHonor from "./OnePlusZTENothingHonor";
 import GameConsoles from "./GameConsoles";
 import Samsung from "./Samsung";
 import Xiaomi from "./Xiaomi";
+import { fixNameMihonor, returnExtraPriceMihonor, returnNameInArrMihonor, returnStockPriceMihonor } from "../Provider/MiHonor/helpers/helpers";
 
-const IndexPriceForOrder = ({ dataUnimtrn, hi, handleImport, unimtrn }) => {
+const IndexPriceForOrder = ({ dataUnimtrn, hi, handleImport, mihonorData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
   const allPriceArrNotID = [];
@@ -72,20 +73,34 @@ const IndexPriceForOrder = ({ dataUnimtrn, hi, handleImport, unimtrn }) => {
     }
   });
 
+  mihonorData.map((mihonor) => {
+    
+    baseFixMiHonor(mihonor) && returnStockPriceMihonor(fixNameMihonor(mihonor.name));
+    baseFixMiHonor(mihonor) && returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
+    if (
+      mihonor.name &&
+      typeof mihonor.name === "string" &&
+      baseFixMiHonor(mihonor) 
+    )
+     {
+      return (
+        returnIDApple(fixNameMihonor(mihonor.name)) !== 'No match' &&
+        returnStockPriceMihonor(mihonor.name) &&
+        allPriceArr.push({
+          id: returnIDApple(returnNameInArrMihonor(fixNameMihonor(mihonor.name))),
+          name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
+          extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
+          stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
+          provider: "MiHonor",
+        })
+      );
+    }
+  });
+
+  const str = 'i am strong'
+
+  console.log(str.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' '));
   
-
-  // const doubleArr = allPriceArr.filter(
-  //   (obj1, i, arr) =>
-  //     arr.findIndex(
-  //       (obj2) =>
-  //         ["id"].every((key) => obj2[key] === obj1[key]) &&
-  //         ["stockPrice"].every((key) => obj2[key] <= obj1[key])
-  //     ) === i
-  // );
-
-  
-
-  // allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
   return (
     <div className={style.wrapper}>

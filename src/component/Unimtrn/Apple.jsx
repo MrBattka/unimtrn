@@ -74,7 +74,6 @@ const Apple = ({ double }) => {
   });
 
   allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
-  console.log(allPriceArr);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOpeniPhone, setIsOpeniPhone] = useState(false);

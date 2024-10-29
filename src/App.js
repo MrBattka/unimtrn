@@ -10,22 +10,35 @@ import icon from "./source/icon/icon.png";
 const App = () => {
   const [dataUnimtrn, setDataUnimtrn] = useState([]);
   const [dataHi, setDataHi] = useState([]);
+  const [dataMihonor, setDataMihonor] = useState([]);
 
   const [fullList, setFullList] = useState([]);
 
-  const unimtrn = []
-  const hi = []
+  const unimtrn = [];
+  const hi = [];
+  const mihonor = [];
 
   dataUnimtrn.map((unimtrnEl) => {
     unimtrnEl.Товар &&
-      unimtrn.push({ name: unimtrnEl.Товар, price: unimtrnEl.Стоимость || unimtrnEl.Cтоимость });
+      unimtrn.push({
+        name: unimtrnEl.Товар,
+        price: unimtrnEl.Стоимость || unimtrnEl.Cтоимость,
+      });
   });
 
   dataHi.map((hiEl) => {
-    hiEl.Hi && typeof hiEl.Hi === "string" && hi.push({ name: hiEl.Hi });
+    hiEl.Hi &&
+      typeof hiEl.Hi === "string" &&
+      hiEl.Hi.length > 3 &&
+      hi.push({ name: hiEl.Hi });
   });
-  console.log(unimtrn);
-  
+
+  dataMihonor.map((mihonorEl) => {
+    mihonorEl.MiHonor &&
+    mihonorEl.MiHonor.length > 3 &&
+      typeof mihonorEl.MiHonor === "string" &&
+      mihonor.push({ name: mihonorEl.MiHonor });
+  });
   
 
   const handleImportForOrder = ($event) => {
@@ -42,6 +55,8 @@ const App = () => {
           setDataUnimtrn(unimtrnSheet);
           const hiSheet = utils.sheet_to_json(wb.Sheets[sheets[1]]);
           setDataHi(hiSheet);
+          const mihonorSheet = utils.sheet_to_json(wb.Sheets[sheets[2]]);
+          setDataMihonor(mihonorSheet);
         }
       };
       reader.readAsArrayBuffer(file);
@@ -79,19 +94,37 @@ const App = () => {
           <Route
             path="/"
             element={
-              <IndexPriceForOrder dataUnimtrn={unimtrn} hi={hi} el={dataHi} handleImport={handleImportForOrder} />
+              <IndexPriceForOrder
+                dataUnimtrn={unimtrn}
+                hi={hi}
+                el={dataHi}
+                dataMihonor={mihonor}
+                handleImport={handleImportForOrder}
+              />
             }
           />
           <Route
             path="/unimtrn"
             element={
-              <IndexPriceForOrder dataUnimtrn={unimtrn} hi={hi} el={dataHi} handleImport={handleImportForOrder} />
+              <IndexPriceForOrder
+                dataUnimtrn={unimtrn}
+                hi={hi}
+                el={dataHi}
+                dataMihonor={mihonor}
+                handleImport={handleImportForOrder}
+              />
             }
           />
           <Route
             path="/price-for-order"
             element={
-              <IndexPriceForOrder dataUnimtrn={unimtrn} hi={hi} el={dataHi} handleImport={handleImportForOrder} />
+              <IndexPriceForOrder
+                dataUnimtrn={unimtrn}
+                hi={hi}
+                el={dataHi}
+                mihonorData={mihonor}
+                handleImport={handleImportForOrder}
+              />
             }
           />
           <Route

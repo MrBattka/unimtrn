@@ -75,9 +75,6 @@ const Samsung = ({ double }) => {
 
   allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
-  console.log(allPriceArr);
-  
-
   const [isOpen, setIsOpen] = useState(false);
   const [isOther, setIsOther] = useState(false);
   const [isPhones, setIsPhones] = useState(false);
@@ -138,7 +135,8 @@ const Samsung = ({ double }) => {
             productEl.name.indexOf("Z Fold") != -1 ||
             productEl.name.indexOf("Tab S") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
+          returnFixPrice(productEl, fixName(productEl)) +
+            newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
@@ -184,7 +182,8 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Galaxy Buds") != -1 ||
                           el.name.indexOf("Galaxy Smart Tag") != -1) &&
                         (isOther || setIsOther(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -198,9 +197,10 @@ const Samsung = ({ double }) => {
                     <div key={index}>
                       {baseFix(el) &&
                         (el.name.indexOf("Watch 6") != -1 ||
-                        el.name.indexOf("Watch 7") != -1) &&
+                          el.name.indexOf("Watch 7") != -1) &&
                         (isWatch || setIsWatch(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -232,7 +232,8 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("Z Flip") != -1 ||
                           el.name.indexOf("Z Fold") != -1) &&
                         (isPhones || setIsPhones(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
@@ -247,7 +248,8 @@ const Samsung = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          newPrice(el.name, el.stockPrice)}
                     </div>
                   ))
                 ) : (
