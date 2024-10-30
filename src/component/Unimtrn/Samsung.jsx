@@ -183,7 +183,14 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("Galaxy Smart Tag") != -1) &&
                         (isOther || setIsOther(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.stockPrice)}
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -200,7 +207,14 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("Watch 7") != -1) &&
                         (isWatch || setIsWatch(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.stockPrice)}
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -233,7 +247,14 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("Z Fold") != -1) &&
                         (isPhones || setIsPhones(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.stockPrice)}
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -249,7 +270,14 @@ const Samsung = ({ double }) => {
                         el.name.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.stockPrice)}
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (

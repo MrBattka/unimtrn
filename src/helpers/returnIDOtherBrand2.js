@@ -176,65 +176,67 @@ export const returnIDOtherBrand2 = (name) => {
     return 27901;
   } else if (name.indexOf("xperia 10 v 8/128 white") !== -1) {
     return 27897;
-  } else if (name.indexOf("xperia 5 iv 8/128 black") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/128 black") !== -1) {
     return 24034;
-  } else if (name.indexOf("xperia 5 iv 8/128 ecru white") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/128 ecru white") !== -1) {
     return 24038;
-  } else if (name.indexOf("xperia 5 iv 8/128 white") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/128 white") !== -1) {
     return 24038;
-  } else if (name.indexOf("xperia 5 iv 8/128 green") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/128 green") !== -1) {
     return 24036;
-  } else if (name.indexOf("xperia 5 iv 8/256 black") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/256 black") !== -1) {
     return 24035;
-  } else if (name.indexOf("xperia 5 iv 8/256 ecru white") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/256 ecru white") !== -1) {
     return 24039;
-  } else if (name.indexOf("xperia 5 iv 8/256 white") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/256 white") !== -1) {
     return 24039;
-  } else if (name.indexOf("xperia 5 iv 8/256 green") !== -1) {
+  } else if (name.indexOf("xperia 5iv 8/256 green") !== -1) {
     return 24037;
-  } else if (name.indexOf("xperia 5 v 8/128 black") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/128 black") !== -1) {
     return 28466;
-  } else if (name.indexOf("xperia 5 v 8/128 blue") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/128 blue") !== -1) {
     return 28467;
-  } else if (name.indexOf("xperia 5 v 8/128 platinum silver") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/128 platinum silver") !== -1) {
     return 28468;
-  } else if (name.indexOf("xperia 5 v 8/128 silver") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/128 silver") !== -1) {
     return 28468;
-  } else if (name.indexOf("xperia 5 v 8/256 black") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/256 black") !== -1) {
     return 28469;
-  } else if (name.indexOf("xperia 5 v 8/256 platinum silver") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/256 platinum silver") !== -1) {
     return 28471;
-  } else if (name.indexOf("xperia 5 v 8/256 silver") !== -1) {
+  } else if (name.indexOf("xperia 5v 8/256 silver") !== -1) {
     return 28471;
-  } else if (name.indexOf("xperia 1 iv 12/256 black") !== -1) {
+  } else if (name.indexOf("xperia 1iv 12/256 black") !== -1) {
     return 24028;
-  } else if (name.indexOf("xperia 1 iv 12/256 violet") !== -1) {
+  } else if (name.indexOf("xperia 1iv 12/256 violet") !== -1) {
     return 24030;
-  } else if (name.indexOf("xperia 1 iv 12/256 white") !== -1) {
+  } else if (name.indexOf("xperia 1iv 12/256 white") !== -1) {
     return 24032;
-  } else if (name.indexOf("xperia 1 iv 12/512 black") !== -1) {
+  } else if (name.indexOf("xperia 1iv 12/512 black") !== -1) {
     return 24029;
-  } else if (name.indexOf("xperia 1 iv 12/512 violet") !== -1) {
+  } else if (name.indexOf("xperia 1iv 12/512 violet") !== -1) {
     return 24031;
-  } else if (name.indexOf("xperia 1 iv 12/512 white") !== -1) {
+  } else if (name.indexOf("xperia 1iv 12/512 white") !== -1) {
     return 24033;
-  } else if (name.indexOf("xperia 1 v 12/256 black") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/256 black") !== -1 &&
+  name.indexOf("xperia 1v 12/256 black") !== -1 &&
+name.indexOf("xperia 1v 12/256 black") !== -1) {
     return 27888;
-  } else if (name.indexOf("xperia 1 v 12/256 khaki green") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/256 khaki green") !== -1) {
     return 27890;
-  } else if (name.indexOf("xperia 1 v 12/256 green") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/256 green") !== -1) {
     return 27890;
-  } else if (name.indexOf("xperia 1 v 12/256 platinum silver") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/256 platinum silver") !== -1) {
     return 27892;
-  } else if (name.indexOf("xperia 1 v 12/256 silver") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/256 silver") !== -1) {
     return 27892;
-  } else if (name.indexOf("xperia 1 v 12/512 black") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/512 black") !== -1) {
     return 27889;
-  } else if (name.indexOf("xperia 1 v 12/512 khaki green") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/512 khaki green") !== -1) {
     return 27893;
-  } else if (name.indexOf("xperia 1 v 12/512 green") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/512 green") !== -1) {
     return 27893;
-  } else if (name.indexOf("xperia 1 v 12/512 platinum silver") !== -1) {
+  } else if (name.indexOf("xperia 1v 12/512 platinum silver") !== -1) {
     return 27891;
   } else if (name.indexOf("xperia 1 v 12/512 silver") !== -1) {
     return 27891;
@@ -294,122 +296,7 @@ export const returnIDOtherBrand2 = (name) => {
     return 36440;
   } else if (name.indexOf("xperia 1 vi 12/512 red") !== -1) {
     return 36440;
-  } else if (
-    name.indexOf("xperia 1vi 12/256 black 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/256 black") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36446;
-  } else if (
-    name.indexOf("xperia 1vi 12/256 khaki green 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/256 khaki green") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36447;
-  } else if (
-    name.indexOf("xperia 1vi 12/256 platinum silver 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/256 platinum silver") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36448;
-  } else if (
-    name.indexOf("xperia 1vi 12/256 scar red 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/256 scar red") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36449;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 black 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 black") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36450;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 khaki green 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi khaki green 12/512") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36451;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 platinum silver 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 platinum silver") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36452;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 scar red 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 scar red") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36453;
-  } else if (
-    name.indexOf("xperia 10vi 8/128 blue 🇨🇳") !== -1 ||
-    (name.indexOf("10vi 8/128 blue") !== -1 && name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36313;
-  } else if (
-    name.indexOf("xperia 10vi 8/128 black") !== -1 ||
-    (name.indexOf("10vi 8/128 black") !== -1 && name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36188;
-  } else if (
-    name.indexOf("xperia 10vi 8/128 white 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 10vi 8/128 white") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36310;
-  } else if (
-    name.indexOf("xperia 1vi 12/256 platinum silver 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/256 platinum silver") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36448;
-  } else if (
-    name.indexOf("xperia 1vi 12/256 silver 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/256 silver") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36448;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 black 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 black") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36450;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 khaki green 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 khaki green") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36451;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 green 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 green") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36451;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 platinum silver 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 platinum silver") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36452;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 silver 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 silver") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36452;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 scar red 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 scar red") !== -1 &&
-      name.indexOf("🇨🇳") !== -1)
-  ) {
-    return 36453;
-  } else if (
-    name.indexOf("xperia 1vi 12/512 red 🇨🇳") !== -1 ||
-    (name.indexOf("xperia 1vi 12/512 red") !== -1 && name.indexOf("🇨🇳") !== -1)
-  ) {
+  
   } else if (name.indexOf("xperia 1iv 12/256 black") !== -1) {
     return 24028;
   } else if (name.indexOf("xperia 1iv 12/256violet") !== -1) {
@@ -497,9 +384,10 @@ export const returnIDOtherBrand2 = (name) => {
   ) {
     return 36188;
   } else if (
-    name.indexOf("xperia 10vi 8/128 white 🇭🇰") !== -1 ||
-    (name.indexOf("xperia 10vi 8/128 white") !== -1 &&
-      name.indexOf("🇭🇰") !== -1)
+      name.indexOf("xperia 10v") !== -1 &&
+      name.indexOf("8/128") !== -1 &&
+      name.indexOf("white") !== -1 &&
+      (name.indexOf("🇭🇰") !== -1 || name.indexOf("🇨🇳") !== -1)
   ) {
     return 36310;
   } else if (name.indexOf("xperia 10vi 8/128 black") !== -1) {
@@ -690,7 +578,8 @@ export const returnIDOtherBrand2 = (name) => {
   } else if (name.indexOf("xperia 1vi 12/512 scar red") !== -1) {
     return 36440;
   } else if (name.indexOf("xperia 1vi 12/512 red") !== -1) {
-    return 36440; // ZTE
+    return 36440; 
+    // ZTE
   } else if (name.indexOf("red magic 8 pro 12/256 transparent") !== -1) {
     return 28498;
   } else if (name.indexOf("red magic 8 pro 16/512 titanium") !== -1) {

@@ -114,7 +114,8 @@ const Xiaomi = ({ double }) => {
             productEl.name.indexOf("Poco") != -1 ||
             productEl.name.indexOf("POCO") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
+          returnFixPrice(productEl, fixName(productEl)) +
+            newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
@@ -161,7 +162,15 @@ const Xiaomi = ({ double }) => {
                           el.name.indexOf("Mi Watch") != -1 ||
                           el.name.indexOf("Mi Portable") != -1) &&
                         (isOther || setIsOther(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -180,7 +189,15 @@ const Xiaomi = ({ double }) => {
                           el.name.indexOf("Pad SE") != -1) &&
                         el.name.indexOf("Redmi Buds") == -1 &&
                         (isRedmi || setIsRedmi(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -199,7 +216,15 @@ const Xiaomi = ({ double }) => {
                         el.name.indexOf("Mi Portable ") == -1 &&
                         el.name.indexOf("HDMI") == -1 &&
                         (isMi || setIsMi(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -215,7 +240,15 @@ const Xiaomi = ({ double }) => {
                         (el.name.indexOf("Poco") != -1 ||
                           el.name.indexOf("POCO") != -1) &&
                         (isPoco || setIsPoco(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (

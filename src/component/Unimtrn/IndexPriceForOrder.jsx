@@ -91,15 +91,13 @@ const IndexPriceForOrder = ({ dataUnimtrn, hi, handleImport, mihonorData }) => {
           name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
           extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
           stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
+          condition: ' - от 3шт.',
           provider: "MiHonor",
         })
       );
     }
   });
-
-  const str = 'i am strong'
-
-  console.log(str.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' '));
+  
   
 
   return (
