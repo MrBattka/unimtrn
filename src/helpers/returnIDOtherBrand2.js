@@ -208,19 +208,24 @@ export const returnIDOtherBrand2 = (name) => {
     return 28471;
   } else if (name.indexOf("xperia 1iv 12/256 black") !== -1) {
     return 24028;
-  } else if (name.indexOf("xperia 1iv 12/256 violet") !== -1) {
+  } else if (
+  name.indexOf("xperia 1iv") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  (name.indexOf("violet") !== -1 || name.indexOf("purple") !== -1)) {
     return 24030;
   } else if (name.indexOf("xperia 1iv 12/256 white") !== -1) {
     return 24032;
   } else if (name.indexOf("xperia 1iv 12/512 black") !== -1) {
     return 24029;
-  } else if (name.indexOf("xperia 1iv 12/512 violet") !== -1) {
+  } else if (name.indexOf("xperia 1iv") !== -1 &&
+  name.indexOf("12/512") !== -1 &&
+  (name.indexOf("violet") !== -1 || name.indexOf("purple") !== -1)) {
     return 24031;
   } else if (name.indexOf("xperia 1iv 12/512 white") !== -1) {
     return 24033;
-  } else if (name.indexOf("xperia 1v 12/256 black") !== -1 &&
-  name.indexOf("xperia 1v 12/256 black") !== -1 &&
-name.indexOf("xperia 1v 12/256 black") !== -1) {
+  } else if (name.indexOf("xperia 1v") !== -1 &&
+  name.indexOf("12/256") !== -1 &&
+  name.indexOf("black") !== -1) {
     return 27888;
   } else if (name.indexOf("xperia 1v 12/256 khaki green") !== -1) {
     return 27890;
