@@ -98,7 +98,7 @@ const App = () => {
                 dataUnimtrn={unimtrn}
                 hi={hi}
                 el={dataHi}
-                dataMihonor={mihonor}
+                mihonorData={mihonor}
                 handleImport={handleImportForOrder}
               />
             }
@@ -110,7 +110,7 @@ const App = () => {
                 dataUnimtrn={unimtrn}
                 hi={hi}
                 el={dataHi}
-                dataMihonor={mihonor}
+                mihonorData={mihonor}
                 handleImport={handleImportForOrder}
               />
             }
