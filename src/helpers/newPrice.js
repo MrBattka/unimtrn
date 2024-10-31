@@ -181,6 +181,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("aw series 8") !== -1 ||
     name.indexOf("aw 8") !== -1 ||
     name.indexOf("aw 8") !== -1 ||
+    name.indexOf("s8 4") !== -1 ||
     name.indexOf("watch s8") !== -1 ||
     name.indexOf("aw series 9") !== -1 ||
     name.indexOf("s21") !== -1 ||
