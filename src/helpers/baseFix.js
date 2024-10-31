@@ -45,6 +45,7 @@ export const baseFix = (el) => {
     el.name?.indexOf("прошит") == -1 &&
     el.name?.indexOf("вскрыт") == -1 &&
     el.name?.indexOf("реболл") == -1 &&
+    el.name?.indexOf("коробка") == -1 &&
     el !== "Товар"
   );
 };
@@ -110,6 +111,89 @@ export const baseFixMiHonor = (el) => {
     toLowerCase.indexOf("*") == -1 &&
     toLowerCase.indexOf("от") == -1 &&
     toLowerCase.indexOf("электросамокат") == -1 &&
-    (toLowerCase === "wi-fi  " ? toLowerCase.indexOf("wi-fi") == -1 : toLowerCase)
+    (toLowerCase === "wi-fi  "
+      ? toLowerCase.indexOf("wi-fi") == -1
+      : toLowerCase)
+  );
+};
+
+export const baseFixMiOpts = (el) => {
+  let toLowerCase = el.name?.toLowerCase();
+  return (
+    toLowerCase.indexOf("оптом") == -1 &&
+    toLowerCase.indexOf("miopt") == -1 &&
+    toLowerCase.indexOf("метро") == -1 &&
+    toLowerCase.indexOf("тяк") == -1 &&
+    toLowerCase.indexOf("мелочей") == -1 &&
+    toLowerCase.indexOf("магазин") == -1 &&
+    toLowerCase.indexOf("прайс") == -1 &&
+    toLowerCase.indexOf("пишите") == -1 &&
+    toLowerCase.indexOf("📞") == -1 &&
+    toLowerCase.indexOf("rustam") == -1 &&
+    toLowerCase.indexOf("📱") == -1 &&
+    toLowerCase.indexOf("🔌") == -1 &&
+    toLowerCase.indexOf("🇷🇺🇷🇺") == -1 &&
+    toLowerCase.indexOf("armor") == -1 &&
+    toLowerCase.indexOf("📲") == -1 &&
+    toLowerCase.indexOf("канал") == -1 &&
+    toLowerCase.indexOf("t.me") == -1 &&
+    toLowerCase.indexOf("samsung") == -1 &&
+    toLowerCase.indexOf("note🇷🇺") == -1 &&
+    toLowerCase.indexOf("poco🇷🇺") == -1 &&
+    toLowerCase.indexOf("mi 🇷🇺") == -1 &&
+    toLowerCase.indexOf("от") == -1 &&
+    toLowerCase.indexOf("pad🇷🇺") == -1 &&
+    toLowerCase.indexOf("iphone🇪🇺") == -1 &&
+    (toLowerCase === "honor🇷🇺"
+      ? toLowerCase.indexOf("honor🇷🇺") == -1
+      : toLowerCase) &&
+    (toLowerCase === "itel🇷🇺"
+      ? toLowerCase.indexOf("itel🇷🇺") == -1
+      : toLowerCase) &&
+    (toLowerCase === "realme🇷🇺"
+      ? toLowerCase.indexOf("realme🇷🇺") == -1
+      : toLowerCase) &&
+    (toLowerCase === "tecno🇷🇺"
+      ? toLowerCase.indexOf("tecno🇷🇺") == -1
+      : toLowerCase)
+  );
+};
+
+export const baseFixSuperPrice = (el) => {
+  let toLowerCase = el.name?.toLowerCase();
+  return (
+    toLowerCase.indexOf("⭕️") == -1 &&
+    toLowerCase.indexOf("📷") == -1 &&
+    toLowerCase.indexOf("🍏") == -1 &&
+    toLowerCase.indexOf("➖") == -1 &&
+    toLowerCase.indexOf("adapter") == -1 &&
+    toLowerCase.indexOf("🇪🇺 xiaomi 🇪🇺") == -1 &&
+    (toLowerCase === "huawei"
+      ? toLowerCase.indexOf("huawei") == -1
+      : toLowerCase) &&
+    (toLowerCase === "airpods 2"
+      ? toLowerCase.indexOf("airpods 2") == -1
+      : toLowerCase) &&
+    (toLowerCase === "sony"
+      ? toLowerCase.indexOf("sony") == -1
+      : toLowerCase) &&
+    (toLowerCase === "google"
+      ? toLowerCase.indexOf("google") == -1
+      : toLowerCase) &&
+    (toLowerCase === "apple"
+      ? toLowerCase.indexOf("apple") == -1
+      : toLowerCase) &&
+    (toLowerCase === "oneplus"
+      ? toLowerCase.indexOf("oneplus") == -1
+      : toLowerCase) &&
+    (toLowerCase === "samsung"
+      ? toLowerCase.indexOf("samsung") == -1
+      : toLowerCase) &&
+    (toLowerCase === "xiaomi"
+      ? toLowerCase.indexOf("xiaomi") == -1
+      : toLowerCase) &&
+    (toLowerCase === "garmin"
+      ? toLowerCase.indexOf("garmin") == -1
+      : toLowerCase)
   );
 };

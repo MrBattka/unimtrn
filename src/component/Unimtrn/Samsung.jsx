@@ -184,7 +184,7 @@ const Samsung = ({ double }) => {
                         (isOther || setIsOther(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(
@@ -208,7 +208,7 @@ const Samsung = ({ double }) => {
                         (isWatch || setIsWatch(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(
@@ -248,7 +248,7 @@ const Samsung = ({ double }) => {
                         (isPhones || setIsPhones(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(
@@ -271,7 +271,7 @@ const Samsung = ({ double }) => {
                         (isTab || setIsTab(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(

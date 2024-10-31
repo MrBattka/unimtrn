@@ -11,12 +11,16 @@ const App = () => {
   const [dataUnimtrn, setDataUnimtrn] = useState([]);
   const [dataHi, setDataHi] = useState([]);
   const [dataMihonor, setDataMihonor] = useState([]);
+  const [dataMiOpts, setDataMiOpts] = useState([]);
+  const [dataSuperprice, setDataSuperprice] = useState([]);
 
   const [fullList, setFullList] = useState([]);
 
   const unimtrn = [];
   const hi = [];
   const mihonor = [];
+  const miopts = [];
+  const superprice = [];
 
   dataUnimtrn.map((unimtrnEl) => {
     unimtrnEl.Товар &&
@@ -39,6 +43,22 @@ const App = () => {
       typeof mihonorEl.MiHonor === "string" &&
       mihonor.push({ name: mihonorEl.MiHonor });
   });
+
+  dataMiOpts.map((mioptsEl) => {
+    mioptsEl.MiOpts &&
+    mioptsEl.MiOpts.length > 3 &&
+      typeof mioptsEl.MiOpts === "string" &&
+      miopts.push({ name: mioptsEl.MiOpts });
+  });
+
+  dataSuperprice.map((superpriceEl) => {
+    superpriceEl.Название &&
+    superpriceEl.Название.length > 3 &&
+      typeof superpriceEl.Название === "string" &&
+      superprice.push({ name: superpriceEl.Название, price: superpriceEl.Цена });
+  });
+  
+  console.log(superprice);
   
 
   const handleImportForOrder = ($event) => {
@@ -57,6 +77,10 @@ const App = () => {
           setDataHi(hiSheet);
           const mihonorSheet = utils.sheet_to_json(wb.Sheets[sheets[2]]);
           setDataMihonor(mihonorSheet);
+          const mioptsSheet = utils.sheet_to_json(wb.Sheets[sheets[3]]);
+          setDataMiOpts(mioptsSheet);
+          const superpriceSheet = utils.sheet_to_json(wb.Sheets[sheets[4]]);
+          setDataSuperprice(superpriceSheet);
         }
       };
       reader.readAsArrayBuffer(file);
@@ -99,6 +123,8 @@ const App = () => {
                 hi={hi}
                 el={dataHi}
                 mihonorData={mihonor}
+                mioptsData={miopts}
+                superpriceData={superprice}
                 handleImport={handleImportForOrder}
               />
             }
@@ -111,6 +137,8 @@ const App = () => {
                 hi={hi}
                 el={dataHi}
                 mihonorData={mihonor}
+                mioptsData={miopts}
+                superpriceData={superprice}
                 handleImport={handleImportForOrder}
               />
             }
@@ -123,6 +151,8 @@ const App = () => {
                 hi={hi}
                 el={dataHi}
                 mihonorData={mihonor}
+                mioptsData={miopts}
+                superpriceData={superprice}
                 handleImport={handleImportForOrder}
               />
             }

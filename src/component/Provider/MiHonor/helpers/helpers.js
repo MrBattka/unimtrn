@@ -1,4 +1,3 @@
-import { newPrice } from "../../../../helpers/newPrice";
 
 const fixFlags = (str) => {
   const result = [];
@@ -108,7 +107,7 @@ export const fixNameMihonor = (name) => {
   const fixPurple = fixNavy.replace("PURPLE", "Purple");
   const fixGray = fixPurple.replace("GRAY", "Gray");
   const fixMI = fixGray.replace("XIAOMI", "Mi");
-  const fixRedmi = fixMI.replace("REDMI", "Redmi");
+  const fixRedmi = fixMI.replace("REDMI", "");
   const fixNote = fixRedmi.replace("NOTE", "Note");
   const fixPro = fixNote.replace("PRO", "Pro");
   const fixPad = fixPro.replace("PAD", "Pad");

@@ -492,8 +492,9 @@ export const fixNameHi = (name) => {
   const fixZFold5 = fixLavender.replace("Z Fold5", "Z Fold 5");
   const fixZFold6 = fixZFold5.replace("Z Fold6", "Z Fold 6");
   const fix13C = fixZFold6.replace("13C", "13c");
+  const fixNoteRedmi = fix13C.replace("Redmi Note 1", "Note 1");
 
-  const fixA256128 = fix13C.replace("A25 6/128 Black", "A25 6/128 Blue/Black");
+  const fixA256128 = fixNoteRedmi.replace("A25 6/128 Black", "A25 6/128 Blue/Black");
   const fixA258128 = fixA256128.replace(
     "A25 8/128 Black",
     "A25 8/128 Blue/Black"

@@ -166,7 +166,14 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                           asusEl.name.indexOf("Asus") != -1) &&
                         (isAsus || setIsAsus(true)) &&
                         returnFixPrice(asusEl, fixName(asusEl)) +
-                          newPrice(asusEl.name, asusEl.stockPrice)}
+                        (asusEl.condition
+                          ? `${newPrice(asusEl.name, asusEl.extraPrice)} 👉 (${
+                              newPrice(asusEl.name, asusEl.stockPrice) + asusEl.condition
+                            })`
+                          : newPrice(
+                              asusEl.name,
+                              asusEl.condition ? asusEl.extraPrice : asusEl.stockPrice
+                            ))}
                     </div>
                   ))
                 ) : (
@@ -184,7 +191,14 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                         googleEl.name.indexOf("Pixel 8 8/256 Obsidian") == -1 &&
                         (isGoogle || setIsGoogle(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
-                          newPrice(googleEl.name, googleEl.stockPrice)}
+                        (googleEl.condition
+                          ? `${newPrice(googleEl.name, googleEl.extraPrice)} 👉 (${
+                              newPrice(googleEl.name, googleEl.stockPrice) + googleEl.condition
+                            })`
+                          : newPrice(
+                              googleEl.name,
+                              googleEl.condition ? googleEl.extraPrice : googleEl.stockPrice
+                            ))}
                     </div>
                   ))
                 ) : (
@@ -201,7 +215,14 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                           sonyEl.name.indexOf("Xperia") != -1) &&
                         (isSony || setIsSony(true)) &&
                         returnFixPrice(sonyEl, fixName(sonyEl)) +
-                          newPrice(sonyEl.name, sonyEl.stockPrice)}
+                        (sonyEl.condition
+                          ? `${newPrice(sonyEl.name, sonyEl.extraPrice)} 👉 (${
+                              newPrice(sonyEl.name, sonyEl.stockPrice) + sonyEl.condition
+                            })`
+                          : newPrice(
+                              sonyEl.name,
+                              sonyEl.condition ? sonyEl.extraPrice : sonyEl.stockPrice
+                            ))}
                     </div>
                   ))
                 ) : (

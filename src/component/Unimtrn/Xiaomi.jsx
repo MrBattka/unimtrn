@@ -164,7 +164,7 @@ const Xiaomi = ({ double }) => {
                         (isOther || setIsOther(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(
@@ -188,10 +188,11 @@ const Xiaomi = ({ double }) => {
                           el.name.indexOf("Redmi") != -1 ||
                           el.name.indexOf("Pad SE") != -1) &&
                         el.name.indexOf("Redmi Buds") == -1 &&
+                        el.name.indexOf("HUAWEI") == -1 &&
                         (isRedmi || setIsRedmi(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(
@@ -218,7 +219,7 @@ const Xiaomi = ({ double }) => {
                         (isMi || setIsMi(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(
@@ -242,7 +243,7 @@ const Xiaomi = ({ double }) => {
                         (isPoco || setIsPoco(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} - (${
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
                             : newPrice(

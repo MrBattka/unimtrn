@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { baseFix, baseFixHi, baseFixMiHonor } from "../../helpers/baseFix";
+import {
+  baseFix,
+  baseFixHi,
+  baseFixMiHonor,
+  baseFixMiOpts,
+  baseFixSuperPrice,
+} from "../../helpers/baseFix";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
 import { returnIDApple } from "../../helpers/returnIDApple";
@@ -26,9 +32,28 @@ import OnePlusZTENothingHonor from "./OnePlusZTENothingHonor";
 import GameConsoles from "./GameConsoles";
 import Samsung from "./Samsung";
 import Xiaomi from "./Xiaomi";
-import { fixNameMihonor, returnExtraPriceMihonor, returnNameInArrMihonor, returnStockPriceMihonor } from "../Provider/MiHonor/helpers/helpers";
+import {
+  fixNameMihonor,
+  returnExtraPriceMihonor,
+  returnNameInArrMihonor,
+  returnStockPriceMihonor,
+} from "../Provider/MiHonor/helpers/helpers";
+import {
+  fixNameMiOpts,
+  returnExtraPriceMiOpts,
+  returnNameInArrMiOpts,
+  returnStockPriceMiOpts,
+} from "../Provider/MiOpts/helpers/helpers";
+import { fixNameSuperPrice } from "../Provider/SuperPrice/helpers/helpers";
 
-const IndexPriceForOrder = ({ dataUnimtrn, hi, handleImport, mihonorData }) => {
+const IndexPriceForOrder = ({
+  dataUnimtrn,
+  hi,
+  handleImport,
+  mihonorData,
+  mioptsData,
+  superpriceData
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
   const allPriceArrNotID = [];
@@ -74,31 +99,78 @@ const IndexPriceForOrder = ({ dataUnimtrn, hi, handleImport, mihonorData }) => {
   });
 
   mihonorData.map((mihonor) => {
-    
-    baseFixMiHonor(mihonor) && returnStockPriceMihonor(fixNameMihonor(mihonor.name));
-    baseFixMiHonor(mihonor) && returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
+    baseFixMiHonor(mihonor) &&
+      returnStockPriceMihonor(fixNameMihonor(mihonor.name));
+    baseFixMiHonor(mihonor) &&
+      returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
     if (
       mihonor.name &&
       typeof mihonor.name === "string" &&
-      baseFixMiHonor(mihonor) 
-    )
-     {
+      baseFixMiHonor(mihonor)
+    ) {
       return (
-        returnIDApple(fixNameMihonor(mihonor.name)) !== 'No match' &&
+        returnIDApple(fixNameMihonor(mihonor.name)) !== "No match" &&
         returnStockPriceMihonor(mihonor.name) &&
         allPriceArr.push({
-          id: returnIDApple(returnNameInArrMihonor(fixNameMihonor(mihonor.name))),
+          id: returnIDApple(
+            returnNameInArrMihonor(fixNameMihonor(mihonor.name))
+          ),
           name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
           extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
           stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
+          condition: " - от 3шт.",
+          provider: "MiHonor",
+        })
+      );
+    }
+  });
+
+  mioptsData.map((miopts) => {
+    baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
+    baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
+    if (
+      miopts.name &&
+      typeof miopts.name === "string" &&
+      baseFixMiOpts(miopts)
+    )
+     {
+      return (
+        returnIDApple(fixNameMiOpts(miopts.name)) !== 'No match' &&
+        returnExtraPriceMiOpts(miopts.name) &&
+        returnStockPriceMiOpts(miopts.name) &&
+        allPriceArr.push({
+          id: returnIDApple(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
+          name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
+          extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
+          stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
           condition: ' - от 3шт.',
           provider: "MiHonor",
         })
       );
     }
   });
-  
-  
+
+  superpriceData.map((superprice) => {
+    if (
+      superprice.name &&
+      typeof superprice.name === "string" &&
+      baseFixSuperPrice(superprice) 
+    ) {
+      return (
+        returnIDApple(fixNameSuperPrice(superprice.name)) !== "No match" &&
+        newPrice(superprice.name, superprice.price) &&
+        superprice.price &&
+        allPriceArr.push({
+          id: returnIDApple(fixNameSuperPrice(superprice.name)),
+          name: fixNameSuperPrice(superprice.name),
+          stockPrice: superprice.price,
+        })
+      );
+    }
+  });
+
+
+  console.log(allPriceArr);
 
   return (
     <div className={style.wrapper}>

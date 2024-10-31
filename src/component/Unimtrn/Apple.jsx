@@ -1210,6 +1210,7 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("SE (2022) 64") != -1 ||
                                 el.name.indexOf("SE (2022) 128") != -1 ||
                                 el.name.indexOf("SE (2022) 256") != -1) &&
+                                el.name.indexOf("OnePlus") === -1 &&
                               (isSEWatch || setIsSEWatch(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 newPrice(el.name, el.stockPrice)}

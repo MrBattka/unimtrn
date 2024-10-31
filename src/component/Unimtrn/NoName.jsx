@@ -92,7 +92,7 @@ const NoName = ({ double }) => {
   let huawei = /HUAWEI/gi;
 
   const fixName = (allPriceArr) => {
-    const fixGb = allPriceArr.Товар.replace(gb, "");
+    const fixGb = allPriceArr.name.replace(gb, "");
     const fixGlasses = fixGb.replace(glasses, "glasses");
     const fixHuawei = fixGlasses.replace(huawei, "Huawei");
     return fixHuawei.replace(wiFi, "Wi-Fi");
@@ -116,7 +116,8 @@ const NoName = ({ double }) => {
             productEl.name.indexOf("Camon ") != -1 ||
             productEl.name.indexOf("Spark ") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
+          returnFixPrice(productEl, fixName(productEl)) +
+            newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
@@ -161,7 +162,15 @@ const NoName = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Beats") != -1 &&
                         (isBeats || setIsBeats(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -176,7 +185,15 @@ const NoName = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Blackview") != -1 &&
                         (isBlackview || setIsBlackview(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -191,7 +208,15 @@ const NoName = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("AGM") != -1 &&
                         (isAGM || setIsAGM(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -206,7 +231,15 @@ const NoName = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("infinix") != -1 &&
                         (isInfinix || setIsInfinix(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -221,7 +254,15 @@ const NoName = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Oppo") != -1 &&
                         (isOppo || setIsOppo(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -237,7 +278,15 @@ const NoName = ({ double }) => {
                         (el.name.indexOf("Huawei") != -1 ||
                           el.name.indexOf("HUAWEI") != -1) &&
                         (isHuawei || setIsHuawei(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -252,7 +301,15 @@ const NoName = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Realme") != -1 &&
                         (isRealme || setIsRealme(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -269,7 +326,15 @@ const NoName = ({ double }) => {
                           el.name.indexOf("Camon ") != -1 ||
                           el.name.indexOf("Spark ") != -1) &&
                         (isTecno || setIsTecno(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (

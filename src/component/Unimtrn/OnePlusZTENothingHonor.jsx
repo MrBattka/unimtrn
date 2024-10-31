@@ -109,7 +109,8 @@ const OnePlusZTENothingHonor = ({ double }) => {
             productEl.name.indexOf("Nothing ear") != -1 ||
             productEl.name.indexOf("Honor") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.stockPrice)
+          returnFixPrice(productEl, fixName(productEl)) +
+            newPrice(productEl.name, productEl.stockPrice)
       )
     );
   };
@@ -157,7 +158,15 @@ const OnePlusZTENothingHonor = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("OnePlus") != -1 &&
                         (isOnePlus || setIsOnePlus(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -173,7 +182,15 @@ const OnePlusZTENothingHonor = ({ double }) => {
                         (el.name.indexOf("RedMagic") != -1 ||
                           el.name.indexOf("Nubia") != -1) &&
                         (isZTE || setIsZTE(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -191,7 +208,15 @@ const OnePlusZTENothingHonor = ({ double }) => {
                           el.name.indexOf("Nothing Ear") != -1 ||
                           el.name.indexOf("Nothing ear") != -1) &&
                         (isNothing || setIsNothing(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
@@ -206,7 +231,15 @@ const OnePlusZTENothingHonor = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Honor") != -1 &&
                         (isHonor || setIsHonor(true)) &&
-                        returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)}
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
                     </div>
                   ))
                 ) : (
