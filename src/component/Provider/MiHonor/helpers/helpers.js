@@ -106,7 +106,9 @@ export const fixNameMihonor = (name) => {
   const fixNavy = fixWhite.replace("NAVY", "Navy");
   const fixPurple = fixNavy.replace("PURPLE", "Purple");
   const fixGray = fixPurple.replace("GRAY", "Gray");
-  const fixMI = fixGray.replace("XIAOMI", "Mi");
+  const fixLight = fixGray.replace("LIGHT", "Light");
+  const fixLilac = fixLight.replace("LILAC", "Lilac");
+  const fixMI = fixLilac.replace("XIAOMI", "Mi");
   const fixRedmi = fixMI.replace("REDMI", "");
   const fixNote = fixRedmi.replace("NOTE", "Note");
   const fixPro = fixNote.replace("PRO", "Pro");
