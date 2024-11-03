@@ -46,6 +46,7 @@ export const baseFix = (el) => {
     el.name?.indexOf("вскрыт") == -1 &&
     el.name?.indexOf("реболл") == -1 &&
     el.name?.indexOf("коробка") == -1 &&
+    el.name?.indexOf("угол") == -1 &&
     el !== "Товар"
   );
 };
