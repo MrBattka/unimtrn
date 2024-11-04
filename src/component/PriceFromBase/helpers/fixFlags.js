@@ -44,7 +44,8 @@ const flags = [
   "BE/A",
   "KH/A",
   "E/A",
-  "GB"
+  "GB",
+  " HN"
 ];
 
 let LLAFlag = /LL\/A/g;
@@ -102,6 +103,7 @@ let SGFlag = /SG/g
 let BEAFlag = /BE\/A/g
 let KHAFlag = /KH\/A/g
 let EAFlag = /E\/A/g
+let HNFlag = /HN/g
 
 let usb = /🇺🇸B/g;
 let AFAEM = /🇿🇦AEM/g;
@@ -164,8 +166,9 @@ export const changeFlag = (el) => {
   const fixBEA = fixSG.replace(BEAFlag, "🇧🇷");
   const fixKHA = fixBEA.replace(KHAFlag, "🇰🇷");
   const fixEA = fixKHA.replace(EAFlag, "🇲🇽");
+  const fixHN = fixEA.replace(HNFlag, "🇮🇳");
 
-  const fixUsb = fixEA.replace(usb, "USB");
+  const fixUsb = fixHN.replace(usb, "USB");
   const fixAFAEM = fixUsb.replace(AFAEM, "AFAEM");
   const fixAsus = fixAFAEM.replace(asus, "ASUS");
   const fixMydc = fixAsus.replace(mydc, "MYDC");
