@@ -47,6 +47,39 @@ export const baseFix = (el) => {
     el.name?.indexOf("реболл") == -1 &&
     el.name?.indexOf("коробка") == -1 &&
     el.name?.indexOf("угол") == -1 &&
+    el.name?.indexOf("царапин") == -1 &&
+    el.name?.indexOf("ремонт") == -1 &&
+    el.name?.indexOf("потертости") == -1 &&
+    el.name?.indexOf("скол") == -1 &&
+    el.name?.indexOf("пятна") == -1 &&
+    el.name?.indexOf("замена") == -1 &&
+    el.name?.indexOf("пиксель") == -1 &&
+    el.name?.indexOf("на экране") == -1 &&
+    el.name?.indexOf("мятый") == -1 &&
+    el.name?.indexOf("Мятый") == -1 &&
+    el.name?.indexOf("открытый") == -1 &&
+    el.name?.indexOf("дефект") == -1 &&
+    el.name?.indexOf("вскрыт") == -1 &&
+    el.name?.indexOf("реболл") == -1 &&
+    el.name?.indexOf("No charger") == -1 &&
+    el.name?.indexOf("открыт") == -1 &&
+    el.name?.indexOf("Мятый") == -1 &&
+    el.name?.indexOf("мятый") == -1 &&
+    el.name?.indexOf("без пломб") == -1 &&
+    el.name?.indexOf("прошит") == -1 &&
+    el.name?.indexOf("вскрыт") == -1 &&
+    el.name?.indexOf("угол") == -1 &&
+    el.name?.indexOf("прошит") == -1 &&
+    el.name?.indexOf("потерто") == -1 &&
+    el.name?.indexOf("экран") == -1 &&
+    el.name?.indexOf("realme") == -1 &&
+    el.name?.indexOf("актив") == -1 &&
+    el.name.indexOf("обменка") == -1 &&
+    el.name?.indexOf("уцен") == -1 &&
+    el.name?.indexOf("обме") == -1 &&
+    el.name?.indexOf("короб") == -1 &&
+    el.name?.indexOf("пломба") == -1 &&
+    el.name.indexOf('""') == -1 &&
     el !== "Товар"
   );
 };
@@ -91,7 +124,40 @@ export const baseFixHi = (el) => {
     el.name?.indexOf("Tab A8") == -1 &&
     el.name?.indexOf("Tab S8") == -1 &&
     el.name?.indexOf("Tab A9") == -1 &&
-    el.name?.indexOf("🎵 Airpods") == -1
+    el.name?.indexOf("🎵 Airpods") == -1 &&
+    el.name?.indexOf("царапин") == -1 &&
+    el.name?.indexOf("ремонт") == -1 &&
+    el.name?.indexOf("потертости") == -1 &&
+    el.name?.indexOf("скол") == -1 &&
+    el.name?.indexOf("пятна") == -1 &&
+    el.name?.indexOf("замена") == -1 &&
+    el.name?.indexOf("пиксель") == -1 &&
+    el.name?.indexOf("на экране") == -1 &&
+    el.name?.indexOf("мятый") == -1 &&
+    el.name?.indexOf("Мятый") == -1 &&
+    el.name?.indexOf("открытый") == -1 &&
+    el.name?.indexOf("дефект") == -1 &&
+    el.name?.indexOf("вскрыт") == -1 &&
+    el.name?.indexOf("реболл") == -1 &&
+    el.name?.indexOf("No charger") == -1 &&
+    el.name?.indexOf("открыт") == -1 &&
+    el.name?.indexOf("Мятый") == -1 &&
+    el.name?.indexOf("мятый") == -1 &&
+    el.name?.indexOf("без пломб") == -1 &&
+    el.name?.indexOf("прошит") == -1 &&
+    el.name?.indexOf("вскрыт") == -1 &&
+    el.name?.indexOf("угол") == -1 &&
+    el.name?.indexOf("прошит") == -1 &&
+    el.name?.indexOf("потерто") == -1 &&
+    el.name?.indexOf("экран") == -1 &&
+    el.name?.indexOf("realme") == -1 &&
+    el.name?.indexOf("актив") == -1 &&
+    el.name.indexOf("обменка") == -1 &&
+    el.name?.indexOf("уцен") == -1 &&
+    el.name?.indexOf("обме") == -1 &&
+    el.name?.indexOf("короб") == -1 &&
+    el.name?.indexOf("пломба") == -1 &&
+    el.name.indexOf('""') == -1
   );
 };
 
@@ -114,7 +180,40 @@ export const baseFixMiHonor = (el) => {
     toLowerCase.indexOf("электросамокат") == -1 &&
     (toLowerCase === "wi-fi  "
       ? toLowerCase.indexOf("wi-fi") == -1
-      : toLowerCase)
+      : toLowerCase) &&
+    toLowerCase?.indexOf("царапин") == -1 &&
+    toLowerCase?.indexOf("ремонт") == -1 &&
+    toLowerCase?.indexOf("потертости") == -1 &&
+    toLowerCase?.indexOf("скол") == -1 &&
+    toLowerCase?.indexOf("пятна") == -1 &&
+    toLowerCase?.indexOf("замена") == -1 &&
+    toLowerCase?.indexOf("пиксель") == -1 &&
+    toLowerCase?.indexOf("на экране") == -1 &&
+    toLowerCase?.indexOf("мятый") == -1 &&
+    toLowerCase?.indexOf("Мятый") == -1 &&
+    toLowerCase?.indexOf("открытый") == -1 &&
+    toLowerCase?.indexOf("дефект") == -1 &&
+    toLowerCase?.indexOf("вскрыт") == -1 &&
+    toLowerCase?.indexOf("реболл") == -1 &&
+    toLowerCase?.indexOf("No charger") == -1 &&
+    toLowerCase?.indexOf("открыт") == -1 &&
+    toLowerCase?.indexOf("Мятый") == -1 &&
+    toLowerCase?.indexOf("мятый") == -1 &&
+    toLowerCase?.indexOf("без пломб") == -1 &&
+    toLowerCase?.indexOf("прошит") == -1 &&
+    toLowerCase?.indexOf("вскрыт") == -1 &&
+    toLowerCase?.indexOf("угол") == -1 &&
+    toLowerCase?.indexOf("прошит") == -1 &&
+    toLowerCase?.indexOf("потерто") == -1 &&
+    toLowerCase?.indexOf("экран") == -1 &&
+    toLowerCase?.indexOf("realme") == -1 &&
+    toLowerCase?.indexOf("актив") == -1 &&
+    toLowerCase.indexOf("обменка") == -1 &&
+    toLowerCase?.indexOf("уцен") == -1 &&
+    toLowerCase?.indexOf("обме") == -1 &&
+    toLowerCase?.indexOf("короб") == -1 &&
+    toLowerCase?.indexOf("пломба") == -1 &&
+    toLowerCase.indexOf('""') == -1
   );
 };
 
@@ -156,7 +255,40 @@ export const baseFixMiOpts = (el) => {
       : toLowerCase) &&
     (toLowerCase === "tecno🇷🇺"
       ? toLowerCase.indexOf("tecno🇷🇺") == -1
-      : toLowerCase)
+      : toLowerCase) &&
+    toLowerCase?.indexOf("царапин") == -1 &&
+    toLowerCase?.indexOf("ремонт") == -1 &&
+    toLowerCase?.indexOf("потертости") == -1 &&
+    toLowerCase?.indexOf("скол") == -1 &&
+    toLowerCase?.indexOf("пятна") == -1 &&
+    toLowerCase?.indexOf("замена") == -1 &&
+    toLowerCase?.indexOf("пиксель") == -1 &&
+    toLowerCase?.indexOf("на экране") == -1 &&
+    toLowerCase?.indexOf("мятый") == -1 &&
+    toLowerCase?.indexOf("Мятый") == -1 &&
+    toLowerCase?.indexOf("открытый") == -1 &&
+    toLowerCase?.indexOf("дефект") == -1 &&
+    toLowerCase?.indexOf("вскрыт") == -1 &&
+    toLowerCase?.indexOf("реболл") == -1 &&
+    toLowerCase?.indexOf("No charger") == -1 &&
+    toLowerCase?.indexOf("открыт") == -1 &&
+    toLowerCase?.indexOf("Мятый") == -1 &&
+    toLowerCase?.indexOf("мятый") == -1 &&
+    toLowerCase?.indexOf("без пломб") == -1 &&
+    toLowerCase?.indexOf("прошит") == -1 &&
+    toLowerCase?.indexOf("вскрыт") == -1 &&
+    toLowerCase?.indexOf("угол") == -1 &&
+    toLowerCase?.indexOf("прошит") == -1 &&
+    toLowerCase?.indexOf("потерто") == -1 &&
+    toLowerCase?.indexOf("экран") == -1 &&
+    toLowerCase?.indexOf("realme") == -1 &&
+    toLowerCase?.indexOf("актив") == -1 &&
+    toLowerCase.indexOf("обменка") == -1 &&
+    toLowerCase?.indexOf("уцен") == -1 &&
+    toLowerCase?.indexOf("обме") == -1 &&
+    toLowerCase?.indexOf("короб") == -1 &&
+    toLowerCase?.indexOf("пломба") == -1 &&
+    toLowerCase.indexOf('""') == -1
   );
 };
 
@@ -195,6 +327,93 @@ export const baseFixSuperPrice = (el) => {
       : toLowerCase) &&
     (toLowerCase === "garmin"
       ? toLowerCase.indexOf("garmin") == -1
-      : toLowerCase)
+      : toLowerCase) &&
+    toLowerCase?.indexOf("царапин") == -1 &&
+    toLowerCase?.indexOf("ремонт") == -1 &&
+    toLowerCase?.indexOf("потертости") == -1 &&
+    toLowerCase?.indexOf("скол") == -1 &&
+    toLowerCase?.indexOf("пятна") == -1 &&
+    toLowerCase?.indexOf("замена") == -1 &&
+    toLowerCase?.indexOf("пиксель") == -1 &&
+    toLowerCase?.indexOf("на экране") == -1 &&
+    toLowerCase?.indexOf("мятый") == -1 &&
+    toLowerCase?.indexOf("Мятый") == -1 &&
+    toLowerCase?.indexOf("открытый") == -1 &&
+    toLowerCase?.indexOf("дефект") == -1 &&
+    toLowerCase?.indexOf("вскрыт") == -1 &&
+    toLowerCase?.indexOf("реболл") == -1 &&
+    toLowerCase?.indexOf("No charger") == -1 &&
+    toLowerCase?.indexOf("открыт") == -1 &&
+    toLowerCase?.indexOf("Мятый") == -1 &&
+    toLowerCase?.indexOf("мятый") == -1 &&
+    toLowerCase?.indexOf("без пломб") == -1 &&
+    toLowerCase?.indexOf("прошит") == -1 &&
+    toLowerCase?.indexOf("вскрыт") == -1 &&
+    toLowerCase?.indexOf("угол") == -1 &&
+    toLowerCase?.indexOf("прошит") == -1 &&
+    toLowerCase?.indexOf("потерто") == -1 &&
+    toLowerCase?.indexOf("экран") == -1 &&
+    toLowerCase?.indexOf("realme") == -1 &&
+    toLowerCase?.indexOf("актив") == -1 &&
+    toLowerCase.indexOf("обменка") == -1 &&
+    toLowerCase?.indexOf("уцен") == -1 &&
+    toLowerCase?.indexOf("обме") == -1 &&
+    toLowerCase?.indexOf("короб") == -1 &&
+    toLowerCase?.indexOf("пломба") == -1 &&
+    toLowerCase.indexOf('""') == -1
   );
+};
+
+export const baseFixBase = (el) => {
+  const toLowerCase = el.name?.toLowerCase();
+  return toLowerCase?.indexOf("left") != -1 ||
+    toLowerCase?.indexOf("левый") != -1 ||
+    toLowerCase?.indexOf("right") != -1 ||
+    toLowerCase?.indexOf("правый") != -1 ||
+    toLowerCase?.indexOf("case") != -1 ||
+    toLowerCase?.indexOf("кейс") != -1
+    ? toLowerCase?.indexOf("airpods") == -1
+    : toLowerCase &&
+        toLowerCase.indexOf('"a"') == -1 &&
+        toLowerCase.indexOf('"b"') == -1 &&
+        toLowerCase.indexOf('"c"') == -1 &&
+        toLowerCase.indexOf('"a+"') == -1 &&
+        toLowerCase.indexOf('"b+"') == -1 &&
+        toLowerCase.indexOf('"c+"') == -1 &&
+        toLowerCase.indexOf('"a-"') == -1 &&
+        toLowerCase.indexOf('"b-"') == -1 &&
+        toLowerCase.indexOf('"c-"') == -1 &&
+        toLowerCase?.indexOf("царапин") == -1 &&
+        toLowerCase?.indexOf("ремонт") == -1 &&
+        toLowerCase?.indexOf("потертости") == -1 &&
+        toLowerCase?.indexOf("скол") == -1 &&
+        toLowerCase?.indexOf("пятна") == -1 &&
+        toLowerCase?.indexOf("замена") == -1 &&
+        toLowerCase?.indexOf("пиксель") == -1 &&
+        toLowerCase?.indexOf("на экране") == -1 &&
+        toLowerCase?.indexOf("мятый") == -1 &&
+        toLowerCase?.indexOf("Мятый") == -1 &&
+        toLowerCase?.indexOf("открытый") == -1 &&
+        toLowerCase?.indexOf("дефект") == -1 &&
+        toLowerCase?.indexOf("вскрыт") == -1 &&
+        toLowerCase?.indexOf("реболл") == -1 &&
+        toLowerCase?.indexOf("No charger") == -1 &&
+        toLowerCase?.indexOf("открыт") == -1 &&
+        toLowerCase?.indexOf("Мятый") == -1 &&
+        toLowerCase?.indexOf("мятый") == -1 &&
+        toLowerCase?.indexOf("без пломб") == -1 &&
+        toLowerCase?.indexOf("прошит") == -1 &&
+        toLowerCase?.indexOf("вскрыт") == -1 &&
+        toLowerCase?.indexOf("угол") == -1 &&
+        toLowerCase?.indexOf("прошит") == -1 &&
+        toLowerCase?.indexOf("потерто") == -1 &&
+        toLowerCase?.indexOf("экран") == -1 &&
+        toLowerCase?.indexOf("realme") == -1 &&
+        toLowerCase?.indexOf("актив") == -1 &&
+        toLowerCase.indexOf("обменка") == -1 &&
+        toLowerCase?.indexOf("уцен") == -1 &&
+        toLowerCase?.indexOf("обме") == -1 &&
+        toLowerCase?.indexOf("короб") == -1 &&
+        toLowerCase?.indexOf("пломба") == -1 &&
+        toLowerCase.indexOf('""') == -1;
 };

@@ -13,6 +13,7 @@ const App = () => {
   const [dataMihonor, setDataMihonor] = useState([]);
   const [dataMiOpts, setDataMiOpts] = useState([]);
   const [dataSuperprice, setDataSuperprice] = useState([]);
+  const [dataBase, setDataBase] = useState([]);
 
   const [fullList, setFullList] = useState([]);
 
@@ -21,6 +22,7 @@ const App = () => {
   const mihonor = [];
   const miopts = [];
   const superprice = [];
+  const base = [];
 
   dataUnimtrn.map((unimtrnEl) => {
     unimtrnEl.Товар &&
@@ -58,8 +60,22 @@ const App = () => {
       superprice.push({ name: superpriceEl.Название, price: superpriceEl.Цена });
   });
   
-  console.log(superprice);
-  
+  dataBase.map((baseEl) => {
+    baseEl.Наименование &&
+      baseEl.Наименование.length > 7 &&
+      typeof baseEl.Наименование === "string" &&
+      base.push({
+        name: baseEl.Наименование,
+        price: baseEl.Себестоимость,
+        extra: baseEl.Опт,
+      });
+  });
+
+  const deleteDoubleProduct = base.filter(
+    (value, index, self) =>
+      index ===
+      self.findIndex((t) => t.place === value.place && t.name === value.name)
+  );
 
   const handleImportForOrder = ($event) => {
     const files = $event.target.files;
@@ -81,6 +97,8 @@ const App = () => {
           setDataMiOpts(mioptsSheet);
           const superpriceSheet = utils.sheet_to_json(wb.Sheets[sheets[4]]);
           setDataSuperprice(superpriceSheet);
+          const baseSheet = utils.sheet_to_json(wb.Sheets[sheets[5]]);
+          setDataBase(baseSheet);
         }
       };
       reader.readAsArrayBuffer(file);
@@ -125,6 +143,7 @@ const App = () => {
                 mihonorData={mihonor}
                 mioptsData={miopts}
                 superpriceData={superprice}
+                baseData={deleteDoubleProduct}
                 handleImport={handleImportForOrder}
               />
             }
@@ -139,6 +158,7 @@ const App = () => {
                 mihonorData={mihonor}
                 mioptsData={miopts}
                 superpriceData={superprice}
+                baseData={deleteDoubleProduct}
                 handleImport={handleImportForOrder}
               />
             }
@@ -153,6 +173,7 @@ const App = () => {
                 mihonorData={mihonor}
                 mioptsData={miopts}
                 superpriceData={superprice}
+                baseData={deleteDoubleProduct}
                 handleImport={handleImportForOrder}
               />
             }

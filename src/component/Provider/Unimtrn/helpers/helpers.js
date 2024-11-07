@@ -458,6 +458,7 @@ export const fixNameUnimtrn = (el) => {
   const fix10VI = replaceCrafted.replace("10 VI", "10VI");
   const fix1V = fix10VI.replace("1 V", "1V");
   const fix1VI = fix1V.replace("1 VI", "1VI");
+  const fixAir = fix1VI.replace("Air Air", "Air");
 
-  return fix1VI;
+  return fixAir;
 };

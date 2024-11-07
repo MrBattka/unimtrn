@@ -143,6 +143,8 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("12 64") !== -1 ||
     name.indexOf("12 128") !== -1 ||
     name.indexOf("12 256") !== -1 ||
+    name.indexOf("12 mini") !== -1 ||
+    name.indexOf("13 mini") !== -1 ||
     name.indexOf("12 pro max") !== -1 ||
     name.indexOf("13 128") !== -1 ||
     name.indexOf("13 256") !== -1 ||

@@ -1372,8 +1372,8 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("Mini") != -1 ||
-                                el.name.indexOf("MINI") != -1) &&
+                              (el.name.indexOf("Mini 6") != -1 ||
+                                el.name.indexOf("MINI 6") != -1) &&
                               el.name.indexOf("6") != -1 &&
                               (isiPadMini || setIsiPadMini(true)) &&
                               returnFixPrice(el, fixName(el)) +

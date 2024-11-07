@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   baseFix,
+  baseFixBase,
   baseFixHi,
   baseFixMiHonor,
   baseFixMiOpts,
@@ -45,6 +46,8 @@ import {
   returnStockPriceMiOpts,
 } from "../Provider/MiOpts/helpers/helpers";
 import { fixNameSuperPrice } from "../Provider/SuperPrice/helpers/helpers";
+import { returnFixNameBase } from "../Provider/Base/helpers/helpers";
+import { changeFlag, returnFixPriceHi } from "../PriceFromBase/helpers/fixFlags";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -52,7 +55,8 @@ const IndexPriceForOrder = ({
   handleImport,
   mihonorData,
   mioptsData,
-  superpriceData
+  superpriceData,
+  baseData
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
@@ -164,13 +168,37 @@ const IndexPriceForOrder = ({
           id: returnIDApple(fixNameSuperPrice(superprice.name)),
           name: fixNameSuperPrice(superprice.name),
           stockPrice: superprice.price,
+          provider: 'SuperPrice'
         })
       );
     }
   });
 
+  baseData.map((base) => {
+    if (
+      base.name &&
+      typeof base.name === "string" &&
+      baseFixBase(base)
+    ) {
+      return (
+        returnIDApple(returnFixNameBase(base.name)) !== "No match" &&
+        base.price &&
+        baseFixBase(base) &&
+        allPriceArr.push({
+          id: returnIDApple(returnFixNameBase(base.name)),
+          name: returnFixNameBase(changeFlag(base.name)),
+          stockPrice: base.extra,
+          provider: "База",
+        })
+      );
+    }
+  });
 
-  console.log(allPriceArr);
+  console.log(allPriceArr.map((pr) => {
+    return pr.provider === "База"
+  }));
+  
+  
 
   return (
     <div className={style.wrapper}>
