@@ -178,8 +178,9 @@ const Apple = ({ double }) => {
     const fixStick = fixairpodspro.replace("!", "");
     const fixAW10 = fixStick.replace("AW 10", "S10");
     const fixiPhone = fixAW10.replace("iPhone ", "");
+    const fixSE= fixiPhone.replace("Watch SE", "SE");
 
-    return fixiPhone.replace(proMax, "Pro Max");
+    return fixSE.replace(proMax, "Pro Max");
   };
 
   const closedSubMenu = () => {

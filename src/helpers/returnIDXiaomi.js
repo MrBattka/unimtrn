@@ -4,6 +4,24 @@ export const returnIDXiaomi = (name) => {
   //  Poco
   if (name.indexOf("c65 6/128 black") !== -1) {
     return 30609;
+  } else if (name.indexOf("c61 4/128 black") != -1) {
+    return 36917;
+  } else if (name.indexOf("c61 4/128 blue") != -1) {
+    return 36918;
+  } else if (name.indexOf("c61 4/128 green") != -1) {
+    return 36919;
+  } else if (name.indexOf("c61 4/64 black") != -1) {
+    return 36892;
+  } else if (name.indexOf("c61 4/64 blue") != -1) {
+    return 36894;
+  } else if (name.indexOf("c61 4/64 green") != -1) {
+    return 36896;
+  } else if (name.indexOf("c61 6/128 black") != -1) {
+    return 36893;
+  } else if (name.indexOf("c61 6/128 blue") != -1) {
+    return 36895;
+  } else if (name.indexOf("c61 6/128 green") != -1) {
+    return 36897;
   } else if (name.indexOf("c65 6/128 blue") !== -1) {
     return 30611;
   } else if (name.indexOf("c65 6/128 purple") !== -1) {

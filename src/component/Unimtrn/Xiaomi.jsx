@@ -91,7 +91,8 @@ const Xiaomi = ({ double }) => {
     const fixGb = allPriceArr.name.replace(gb, "");
     const fixPoco = fixGb.replace(poco, "POCO");
     const fixPoco1 = fixPoco.replace(poco1, "POCO");
-    return fixPoco1.replace(wiFi, "Wi-Fi");
+    const fixPocophone = fixPoco1.replace("phone", "");
+    return fixPocophone.replace(wiFi, "Wi-Fi");
   };
 
   const checkIsProduct = (allPriceArr) => {

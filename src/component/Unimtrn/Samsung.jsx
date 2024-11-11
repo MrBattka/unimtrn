@@ -103,7 +103,8 @@ const Samsung = ({ double }) => {
     const fixS24 = fixS23.replace(s24, "S24");
     const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
     const fixA550 = fixWiFi.replace(a550, "A55");
-    return fixA550.replace(zFlip, "Z Flip");
+    const replaceSamsung = fixA550.replace("Samsung ", "");
+    return replaceSamsung.replace(zFlip, "Z Flip");
   };
 
   const checkIsProduct = (allPriceArr) => {
