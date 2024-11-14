@@ -77,7 +77,7 @@ const IndexPriceForOrder = ({
     ) {
       allPriceArr.push({
         id: returnIDApple(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
-        name: returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)),
+        name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
         provider: "Unimtrn",
