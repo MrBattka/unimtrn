@@ -78,7 +78,7 @@ const IndexPriceForOrder = ({
       allPriceArr.push({
         id: returnIDApple(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
         name: returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)),
-        extraPrice: unimtrnEl.price,
+        extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
         provider: "Unimtrn",
       });
@@ -148,7 +148,7 @@ const IndexPriceForOrder = ({
           extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
           stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
           condition: ' - от 3шт.',
-          provider: "MiHonor",
+          provider: "MiOpts",
         })
       );
     }

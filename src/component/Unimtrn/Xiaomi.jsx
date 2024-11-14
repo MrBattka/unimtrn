@@ -7,6 +7,7 @@ import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
 const Xiaomi = ({ double }) => {
+
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -87,12 +88,15 @@ const Xiaomi = ({ double }) => {
   let poco = /Poco/gi;
   let poco1 = /poco/gi;
 
+
   const fixName = (allPriceArr) => {
     const fixGb = allPriceArr.name.replace(gb, "");
     const fixPoco = fixGb.replace(poco, "POCO");
     const fixPoco1 = fixPoco.replace(poco1, "POCO");
     const fixPocophone = fixPoco1.replace("phone", "");
-    return fixPocophone.replace(wiFi, "Wi-Fi");
+    const replaceXiaomi = fixPocophone.replace("Xiaomi ", "");
+    const replaceRedmi = replaceXiaomi.replace("Redmi Note", "Note");
+    return replaceRedmi.replace(wiFi, "Wi-Fi")
   };
 
   const checkIsProduct = (allPriceArr) => {
@@ -172,6 +176,14 @@ const Xiaomi = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Redmi Buds") != -1 ||
+                                el.name.indexOf("Mi Watch") != -1 ||
+                                el.name.indexOf("Mi Portable") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -190,6 +202,7 @@ const Xiaomi = ({ double }) => {
                           el.name.indexOf("Pad SE") != -1) &&
                         el.name.indexOf("Redmi Buds") == -1 &&
                         el.name.indexOf("HUAWEI") == -1 &&
+                        el.name.indexOf("Huawei") == -1 &&
                         (isRedmi || setIsRedmi(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
@@ -200,6 +213,18 @@ const Xiaomi = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Redmi Note") != -1 ||
+                                el.name.indexOf("Note") != -1 ||
+                                el.name.indexOf("Redmi") != -1 ||
+                                el.name.indexOf("Pad SE") != -1) &&
+                              el.name.indexOf("Redmi Buds") == -1 &&
+                              el.name.indexOf("HUAWEI") == -1 &&
+                              el.name.indexOf("Huawei") == -1 && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -227,6 +252,16 @@ const Xiaomi = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Mi ") != -1 ||
+                                el.name.indexOf("MI ") != -1) &&
+                              el.name.indexOf("Mi Watch") == -1 &&
+                              el.name.indexOf("Mi Portable ") == -1 &&
+                              el.name.indexOf("HDMI") == -1 && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -251,6 +286,13 @@ const Xiaomi = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Poco") != -1 ||
+                                el.name.indexOf("POCO") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (

@@ -174,6 +174,16 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                               asusEl.name,
                               asusEl.condition ? asusEl.extraPrice : asusEl.stockPrice
                             ))}
+                            <h3 className="del">
+                              {baseFix(asusEl) &&
+                                (asusEl.name.indexOf("Asus") != -1 ||
+                                asusEl.name.indexOf("ZenFone") != -1 ||
+                                asusEl.name.indexOf("ROG") != -1 ||
+                                asusEl.name.indexOf("Rog") != -1 ||
+                                asusEl.name.indexOf("Asus") != -1) && (
+                                  <span>{" - " + asusEl.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -199,6 +209,14 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                               googleEl.name,
                               googleEl.condition ? googleEl.extraPrice : googleEl.stockPrice
                             ))}
+                            <h3 className="del">
+                              {baseFix(googleEl) &&
+                                (googleEl.name.indexOf("Google") != -1 ||
+                                googleEl.name.indexOf("Pixel") != -1) &&
+                              googleEl.name.indexOf("Pixel 8 8/256 Obsidian") == -1 && (
+                                  <span>{" - " + googleEl.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -223,6 +241,14 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                               sonyEl.name,
                               sonyEl.condition ? sonyEl.extraPrice : sonyEl.stockPrice
                             ))}
+                            <h3 className="del">
+                              {baseFix(sonyEl) &&
+                                (sonyEl.name.indexOf("Sony Wireless") != -1 ||
+                                sonyEl.name.indexOf("Wireless WH") != -1 ||
+                                sonyEl.name.indexOf("Xperia") != -1) && (
+                                  <span>{" - " + sonyEl.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (

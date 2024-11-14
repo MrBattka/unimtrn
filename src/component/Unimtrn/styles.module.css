@@ -51,6 +51,11 @@ h4:active {
   color: rgb(158, 158, 158);
 }
 
+h3 {
+  font-size: 14px;
+  display: inline;
+  color: red;
+}
 
 input {
   display: none;

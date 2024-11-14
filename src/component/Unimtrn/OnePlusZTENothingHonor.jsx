@@ -167,6 +167,12 @@ const OnePlusZTENothingHonor = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("OnePlus") != -1 && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -191,6 +197,13 @@ const OnePlusZTENothingHonor = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("RedMagic") != -1 ||
+                                el.name.indexOf("Nubia") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -217,6 +230,15 @@ const OnePlusZTENothingHonor = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Nothing Phone") != -1 ||
+                                el.name.indexOf("Nothing CMF") != -1 ||
+                                el.name.indexOf("Nothing Ear") != -1 ||
+                                el.name.indexOf("Nothing ear") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (
@@ -240,6 +262,12 @@ const OnePlusZTENothingHonor = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
+                              <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("Honor") != -1 && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
                     </div>
                   ))
                 ) : (

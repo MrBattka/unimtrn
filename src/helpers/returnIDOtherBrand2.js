@@ -396,12 +396,14 @@ export const returnIDOtherBrand2 = (name) => {
     return 24033;
   } else if (
     name.indexOf("xperia 10vi 8/128 blue 🇭🇰") !== -1 ||
-    (name.indexOf("10vi 8/128 blue") !== -1 && name.indexOf("🇭🇰") !== -1)
+    (name.indexOf("10vi 8/128 blue") !== -1 &&
+      (name.indexOf("🇭🇰") !== -1 || name.indexOf("🇨🇳") !== -1))
   ) {
     return 36313;
   } else if (
     name.indexOf("xperia 10vi 8/128 black") !== -1 ||
-    (name.indexOf("10vi 8/128 black") !== -1 && name.indexOf("🇭🇰") !== -1)
+    (name.indexOf("10vi 8/128 black") !== -1 &&
+      (name.indexOf("🇭🇰") !== -1 || name.indexOf("🇨🇳") !== -1))
   ) {
     return 36188;
   } else if (
@@ -465,9 +467,11 @@ export const returnIDOtherBrand2 = (name) => {
     return 24037;
   } else if (name.indexOf("xperia 5v 8/128 black") !== -1) {
     return 28466;
-  } else if (name.indexOf("xperia 5v") !== -1 &&
-  name.indexOf("8/128") !== -1 &&
-  name.indexOf("blue") !== -1) {
+  } else if (
+    name.indexOf("xperia 5v") !== -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
     return 28467;
   } else if (name.indexOf("xperia 5v 8/128 platinum silver") !== -1) {
     return 28468;
