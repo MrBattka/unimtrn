@@ -42,8 +42,12 @@ const Used = ({ fullList }) => {
     const fixWifi = used.name.replace(wifi, "Wi-Fi");
     const fixWifi2 = fixWifi.replace(wifi2, "Wi-Fi");
     const fixCoros = fixWifi2.replace(corosName, "");
-    const replaceApple = fixCoros.replace("Apple ", "");
-    const replaceSams = replaceApple.replace("Samsung ", "");
+    const replaceAppleWatch = fixCoros.replace("Apple Watch ", "");
+    const replaceApple = replaceAppleWatch.replace("Apple ", "");
+    const replaceiPhone = replaceApple.replace("iPhone ", "");
+    const replaceMacbook = replaceiPhone.replace("MacBook ", "");
+    
+    const replaceSams = replaceMacbook.replace("Samsung ", "");
     const replaceXiaomi = replaceSams.replace("Xiaomi Redmi", "Redmi");
     const fixPoco = replaceXiaomi.replace("Pocophone", "Poco");
     return changeFlag(fixPoco);
