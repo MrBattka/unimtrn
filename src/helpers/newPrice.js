@@ -52,7 +52,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("redmi") !== -1 ||
     name.indexOf("watch") !== -1 ||
     name.indexOf("rayban") !== -1 ||
-    name.indexOf("gopro") !== -1 ||
+    
     name.indexOf("oppo") !== -1 ||
     name.indexOf("agm") !== -1 ||
     name.indexOf("blackview") !== -1 ||
@@ -135,7 +135,9 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("nubia") !== -1 ||
     name.indexOf("nothing phone") !== -1 ||
     name.indexOf("honor") !== -1 ||
-    name.indexOf("redmi note") !== -1
+    name.indexOf("redmi note") !== -1 ||
+    name.indexOf("gopro") !== -1 ||
+    name.indexOf("hero") !== -1 
   ) {
     return Number(price) + 400;
   } else if (

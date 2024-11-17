@@ -57,7 +57,15 @@ export const returnIDOtherBrand2 = (name) => {
   } else if (name.indexOf("oculus quest 3 128") !== -1) {
     return 35722;
   } else if (name.indexOf("oculus quest 3 512") !== -1) {
-    return 35723; // Pico
+    return 35723; 
+  } else if (name.indexOf("oculus quest 3s 128") !== -1) {
+    return 281891;
+  } else if (name.indexOf("oculus quest 3s 256") !== -1) {
+    return 357222;
+  } else if (name.indexOf("oculus quest 3s 512") !== -1) {
+    return 357233;
+    
+    // Pico
   } else if (name.indexOf("pico 4 128") !== -1) {
     return 28186;
   } else if (name.indexOf("pico 4 256") !== -1) {

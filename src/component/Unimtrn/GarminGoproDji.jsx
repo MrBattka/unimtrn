@@ -94,7 +94,8 @@ const GarminGoProDji = ({ double }) => {
     const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
     const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
     const fixDji = fixSunglases.replace(dji, "DJI");
-    return fixDji.replace(wiFi, "Wi-Fi");
+    const replaceGoPro = fixDji.replace("GoPro", "");
+    return replaceGoPro.replace(wiFi, "Wi-Fi");
   };
 
   const checkIsProduct = (allPriceArr) => {
@@ -205,12 +206,14 @@ const GarminGoProDji = ({ double }) => {
                   allPriceArr.map((goProEl, index) => (
                     <div key={index}>
                       {baseFix(goProEl) &&
-                        goProEl.name.indexOf("GoPro") != -1 &&
+                        (goProEl.name.indexOf("GoPro") != -1 ||
+                        goProEl.name.indexOf("Hero") != -1) &&
                         (isGoPro || setIsGoPro(true)) &&
                         returnFixPrice(goProEl, fixName(goProEl)) + newPrice(goProEl.name, goProEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(goProEl) &&
-                                goProEl.name.indexOf("GoPro") != -1 && (
+                                (goProEl.name.indexOf("GoPro") != -1 ||
+                                goProEl.name.indexOf("Hero") != -1) && (
                                   <span>{" - " + goProEl.provider}</span>
                                 )}
                             </h3>

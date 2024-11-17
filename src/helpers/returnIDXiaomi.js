@@ -10,6 +10,14 @@ export const returnIDXiaomi = (name) => {
     return 36918;
   } else if (name.indexOf("c61 4/128 green") != -1) {
     return 36919;
+
+  } else if (name.indexOf("c61 3/64 black") != -1) {
+    return 368922;
+  } else if (name.indexOf("c61 3/64 blue") != -1) {
+    return 368943;
+  } else if (name.indexOf("c61 3/64 green") != -1) {
+    return 368964;
+
   } else if (name.indexOf("c61 4/64 black") != -1) {
     return 36892;
   } else if (name.indexOf("c61 4/64 blue") != -1) {

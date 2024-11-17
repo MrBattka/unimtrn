@@ -265,6 +265,10 @@ export const returnIDOtherBrand = (name) => {
     return 27657;
   } else if (name.indexOf("hero 12") !== -1) {
     return 30285;
+  } else if (name.indexOf("hero 13") !== -1) {
+    return 302851;
+  } else if (name.indexOf("hero 4k") !== -1) {
+    return 302852;
   } else if (name.indexOf("el grande") !== -1) {
     return 17242;
 
