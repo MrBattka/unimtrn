@@ -254,6 +254,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isDemo && <br />}
+            {isDemo && <br />}
             {isDemo && <div>🔥 Обменки / Демо</div>}
             {result.map((demo, i) => (
               <div key={i}>
