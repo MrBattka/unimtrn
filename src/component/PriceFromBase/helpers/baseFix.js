@@ -12,6 +12,17 @@ export const baseFix = (el) => {
   );
 };
 
+export const baseFixUsed = (el) => {
+  return (
+    el.name?.indexOf("Пломбa") === -1 &&
+    el.name?.indexOf("Пломба") === -1 &&
+    el.name?.indexOf("\"\"") === -1 &&
+    el.name?.indexOf("обменка") === -1 &&
+    el.name?.indexOf("Обменка") === -1 &&
+    el.name?.indexOf("Демо") === -1
+  );
+};
+
 export const fixApple = (el) => {
   return (
     el.name.indexOf("Pencil") === -1 &&

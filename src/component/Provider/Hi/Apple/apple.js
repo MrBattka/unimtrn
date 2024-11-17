@@ -102,6 +102,7 @@ export const returnAppleHi = (nameStock) => {
     name.indexOf("IPad 9") != -1 ||
     name.indexOf("Magic Keyboard") != -1 ||
     name.indexOf("MINI 6") != -1 ||
+    name.indexOf("MINI 7") != -1 ||
     name.indexOf("Air 13") != -1 ||
     name.indexOf("Air 15") != -1 ||
     name.indexOf("Pro 13") != -1 ||

@@ -1628,16 +1628,18 @@ const Apple = ({ double }) => {
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Mini 6") != -1 ||
-                                el.name.indexOf("MINI 6") != -1) &&
-                              el.name.indexOf("6") != -1 &&
+                                el.name.indexOf("MINI 6") != -1 ||
+                                el.name.indexOf("Mini 7") != -1 ||
+                                el.name.indexOf("MINI 7") != -1) &&
                               (isiPadMini || setIsiPadMini(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 newPrice(el.name, el.stockPrice)}
                                 <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Mini 6") != -1 ||
-                                el.name.indexOf("MINI 6") != -1) &&
-                              el.name.indexOf("6") != -1  && (
+                                el.name.indexOf("MINI 6") != -1 ||
+                                el.name.indexOf("Mini 7") != -1 ||
+                                el.name.indexOf("MINI 7") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
