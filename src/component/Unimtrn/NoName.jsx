@@ -155,7 +155,7 @@ const NoName = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                {isBeats && <div>🎧Beats</div>}
+                {isBeats && <div>🎧 **Beats**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -184,7 +184,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isBlackview && <br />}
-                {isBlackview && <div>📱Blackview</div>}
+                {isBlackview && <div>📱 **Blackview**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -213,7 +213,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isAGM && <br />}
-                {isAGM && <div>📱AGM</div>}
+                {isAGM && <div>📱 **AGM**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -242,7 +242,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isInfinix && <br />}
-                {isInfinix && <div>📱Infinix</div>}
+                {isInfinix && <div>📱 **Infinix**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -271,7 +271,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isOppo && <br />}
-                {isOppo && <div>📱Oppo</div>}
+                {isOppo && <div>📱 **Oppo**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -300,7 +300,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isHuawei && <br />}
-                {isHuawei && <div>📱Huawei</div>}
+                {isHuawei && <div>📱 **Huawei**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -331,7 +331,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isRealme && <br />}
-                {isRealme && <div>📱Realme</div>}
+                {isRealme && <div>📱 **Realme**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -360,7 +360,7 @@ const NoName = ({ double }) => {
                 )}
 
                 {isTecno && <br />}
-                {isTecno && <div>📱Tecno</div>}
+                {isTecno && <div>📱 **Tecno**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>

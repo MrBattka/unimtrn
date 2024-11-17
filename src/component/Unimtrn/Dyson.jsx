@@ -8,7 +8,30 @@ import Footer from "./Footer";
 import Product from "../Common/Product";
 
 const Dyson = ({ double }) => {
-  const sort = double.sort(
+  const res= []
+
+  let gb = /Gb/gi;
+  let wiFi = /wifi/gi;
+  let heapdphone = /Heapdphone/gi;
+  let dyson = /Dyson/gi;
+
+  double.map((el) => {
+    const fixGb = el.name.replace(gb, "");
+    const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
+    const fixDyson = fixHeapdphone.replace(dyson, "");
+    const replaceSpace =
+      fixDyson[0] === " " ? fixDyson.slice(1) : fixDyson;
+    res.push({
+      id: el.id,
+      name: replaceSpace.replace(wiFi, "Wi-Fi"),
+      stockPrice: el.stockPrice,
+      extraPrice: el.extraPrice,
+      provider: el.provider,
+      condition: el.condition,
+    });
+  });
+
+  const sort = res.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
       (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
@@ -79,18 +102,6 @@ const Dyson = ({ double }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDyson, setIsDyson] = useState(false);
 
-  let gb = /Gb/gi;
-  let wiFi = /wifi/gi;
-  let heapdphone = /Heapdphone/gi;
-  let dyson = /Dyson/gi;
-
-  const fixName = (dysonEl) => {
-    const fixGb = dysonEl.name.replace(gb, "");
-    const fixHeapdphone = fixGb.replace(heapdphone, "Headphone");
-    const fixDyson = fixHeapdphone.replace(dyson, "");
-    return fixDyson.replace(wiFi, "Wi-Fi");
-  };
-
   const checkIsDyson = (dysonEl) => {
     return (
       dysonEl.length &&
@@ -128,10 +139,6 @@ const Dyson = ({ double }) => {
     );
   };
 
-  const returnProvider = (el) => {
-    return <span>{" - " + el.provider}</span>;
-  };
-
   return (
     <div>
       <div>
@@ -165,7 +172,7 @@ const Dyson = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody id="product">
-                {isDyson && <div>✂Dyson🪒</div>}
+                {isDyson && <div>✂**Dyson**🪒</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((dysonEl, index) => (
                     <div key={index}>
@@ -195,7 +202,7 @@ const Dyson = ({ double }) => {
                           dysonEl.name.indexOf("Supersonic Hair") != -1 ||
                           dysonEl.name.indexOf("Air Purifier") != -1 ||
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
-                        returnFixPrice1(dysonEl, fixName(dysonEl)) +
+                        returnFixPrice1(dysonEl, dysonEl.name) +
                           newPrice(dysonEl.name, dysonEl.stockPrice)}
                       <h3 className="del">
                         {baseFix(dysonEl) &&

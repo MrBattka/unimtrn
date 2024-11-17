@@ -4,6 +4,7 @@ export const returnFixNameBase= (name) => {
     const fixPlus = replaceNote4G.replace("Plus", "+")
     const fixNordCE3 = fixPlus.replace("Nord CE 3", "Nord CE3")
     const replaceGalaxy = fixNordCE3.replace("Galaxy ", "")
+    const replaceMacBook = replaceGalaxy.replace("MacBook ", "")
 
-    return replaceGalaxy
+    return replaceMacBook
 }

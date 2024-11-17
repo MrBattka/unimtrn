@@ -787,7 +787,7 @@ const Apple = ({ double }) => {
                       ❐ Copy
                     </h4>
                     <tbody>
-                      {isAirPods && <div>🎧AirPods</div>}
+                      {isAirPods && <div>🎧 **AirPods**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -816,7 +816,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isAirPodsMax && <br />}
-                      {isAirPodsMax && <div>🎧AirPods Max</div>}
+                      {isAirPodsMax && <div>🎧 **AirPods Max**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -837,7 +837,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isPencil && <br />}
-                      {isPencil && <div>✏️Pencil</div>}
+                      {isPencil && <div>✏️ **Pencil**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -858,7 +858,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isMagic && <br />}
-                      {isMagic && <div>🖱️Magic⌨️</div>}
+                      {isMagic && <div>🖱️⌨️ **Magic**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -907,7 +907,7 @@ const Apple = ({ double }) => {
                       <div>🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim</div>
                       <div>🇺🇸 14 Модели - e sim ( нет лотка sim )</div>
                       <div> e sim (14е модели)</div>
-                      {isXR && <div>📱iPhone XR</div>}                     
+                      {isXR && <div>📱 **iPhone XR**</div>}                     
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -930,7 +930,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isSE && <br />}
-                      {isSE && <div>📱iPhone SE</div>}
+                      {isSE && <div>📱 **iPhone SE**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -957,7 +957,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is11 && <br />}
-                      {is11 && <div>📱iPhone 11</div>}
+                      {is11 && <div>📱 **iPhone 11**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -980,7 +980,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is12 && <br />}
-                      {is12 && <div>📱iPhone 12</div>}
+                      {is12 && <div>📱 **iPhone 12**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1007,7 +1007,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is13Mini && <br />}
-                      {is13Mini && <div>📱iPhone 13 Mini</div>}
+                      {is13Mini && <div>📱 **iPhone 13 Mini**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1032,7 +1032,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is13 && <br />}
-                      {is13 && <div>📱iPhone 13</div>}
+                      {is13 && <div>📱 **iPhone 13**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1057,7 +1057,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is14 && <br />}
-                      {is14 && <div>📱iPhone 14</div>}
+                      {is14 && <div>📱 **iPhone 14**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1084,7 +1084,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is14Pro && <br />}
-                      {is14Pro && <div>📱iPhone 14 Pro</div>}
+                      {is14Pro && <div>📱 **iPhone 14 Pro**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1111,7 +1111,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is15 && <br />}
-                      {is15 && <div>📱iPhone 15</div>}
+                      {is15 && <div>📱 **iPhone 15**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1136,7 +1136,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is15Plus && <br />}
-                      {is15Plus && <div>📱iPhone 15 Plus</div>}
+                      {is15Plus && <div>📱 **iPhone 15 Plus**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1161,7 +1161,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is15Pro && <br />}
-                      {is15Pro && <div>📱iPhone 15 Pro</div>}
+                      {is15Pro && <div>📱 **iPhone 15 Pro**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1188,7 +1188,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is15ProMax && <br />}
-                      {is15ProMax && <div>📱iPhone 15 Pro Max</div>}
+                      {is15ProMax && <div>📱 **iPhone 15 Pro Max**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1223,7 +1223,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16 && <br />}
-                      {is16 && <div>📱iPhone 16🔥</div>}
+                      {is16 && <div>📱 **iPhone 16**🔥</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1248,7 +1248,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16Plus && <br />}
-                      {is16Plus && <div>📱iPhone 16 Plus🔥</div>}
+                      {is16Plus && <div>📱 **iPhone 16 Plus**🔥</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1273,7 +1273,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16Pro && <br />}
-                      {is16Pro && <div>📱iPhone 16 Pro🔥</div>}
+                      {is16Pro && <div>📱 **iPhone 16 Pro**🔥</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1300,7 +1300,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16ProMax && <br />}
-                      {is16ProMax && <div>📱iPhone 16 Pro Max🔥</div>}
+                      {is16ProMax && <div>📱 **iPhone 16 Pro Max**🔥</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((iPhone16El, index) => (
                           <div key={index}>
@@ -1375,7 +1375,7 @@ const Apple = ({ double }) => {
                       ❐ Copy
                     </h4>
                     <tbody>
-                      {isSEWatch && <div>⌚AW SE</div>}
+                      {isSEWatch && <div>⌚ **AW SE**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1414,7 +1414,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isS8 && <br />}
-                      {isS8 && <div>⌚AW S8</div>}
+                      {isS8 && <div>⌚ **AW S8**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1443,7 +1443,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isS9 && <br />}
-                      {isS9 && <div>⌚AW S9</div>}
+                      {isS9 && <div>⌚ **AW S9**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1472,7 +1472,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isS10 && <br />}
-                      {isS10 && <div>⌚AW S10</div>}
+                      {isS10 && <div>⌚ **AW S10**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1501,7 +1501,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isUltra && <br />}
-                      {isUltra && <div>⌚AW Ultra</div>}
+                      {isUltra && <div>⌚ **AW Ultra**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1526,7 +1526,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isUltra2024 && <br />}
-                      {isUltra2024 && <div>⌚AW Ultra 2024</div>}
+                      {isUltra2024 && <div>⌚ **AW Ultra 2024**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1576,7 +1576,7 @@ const Apple = ({ double }) => {
                       ❐ Copy
                     </h4>
                     <tbody>
-                      {isiPad9 && <div>📟iPad 9</div>}
+                      {isiPad9 && <div>📟 **iPad 9**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1599,7 +1599,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isiPad10 && <br />}
-                      {isiPad10 && <div>📟iPad 10</div>}
+                      {isiPad10 && <div>📟 **iPad 10**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1622,7 +1622,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isiPadMini && <br />}
-                      {isiPadMini && <div>📟iPad Mini</div>}
+                      {isiPadMini && <div>📟 **iPad Mini**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1649,7 +1649,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isiPadAir && <br />}
-                      {isiPadAir && <div>📟iPad Air</div>}
+                      {isiPadAir && <div>📟 **iPad Air**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1676,7 +1676,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isiPadPro11 && <br />}
-                      {isiPadPro11 && <div>📟iPad Pro 11</div>}
+                      {isiPadPro11 && <div>📟 **iPad Pro 11**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1699,7 +1699,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isiPadPro12 && <br />}
-                      {isiPadPro12 && <div>📟iPad Pro 12</div>}
+                      {isiPadPro12 && <div>📟 **iPad Pro 12**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1720,7 +1720,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isiPadPro13 && <br />}
-                      {isiPadPro13 && <div>📟iPad Pro 13</div>}
+                      {isiPadPro13 && <div>📟 **iPad Pro 13**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1767,7 +1767,7 @@ const Apple = ({ double }) => {
                     </h4>
                     <tbody>
                       {isiMac && <br />}
-                      {isiMac && <div>🖥️iMac</div>}
+                      {isiMac && <div>🖥️ **iMac**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1856,7 +1856,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {isMacBook && <br />}
-                      {isMacBook && <div>💻MacBook</div>}
+                      {isMacBook && <div>💻 **MacBook**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>

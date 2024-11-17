@@ -147,7 +147,7 @@ const GameConsoles = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                {isNintendo && <div>🕹️Nintendo</div>}
+                {isNintendo && <div>🕹️ **Nintendo**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -168,7 +168,7 @@ const GameConsoles = ({ double }) => {
                 )}
 
                 {isOculus && <br />}
-                {isOculus && <div>🥽Oculus</div>}
+                {isOculus && <div>🥽 **Oculus**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -189,7 +189,7 @@ const GameConsoles = ({ double }) => {
                 )}
 
                 {isPico && <br />}
-                {isPico && <div>🥽Pico</div>}
+                {isPico && <div>🥽 **Pico**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -210,7 +210,7 @@ const GameConsoles = ({ double }) => {
                 )}
 
                 {isPlayStation && <br />}
-                {isPlayStation && <div>🎮PlayStation</div>}
+                {isPlayStation && <div>🎮 **PlayStation**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -235,7 +235,7 @@ const GameConsoles = ({ double }) => {
                 )}
 
                 {isXbox && <br />}
-                {isXbox && <div>🎮Xbox</div>}
+                {isXbox && <div>🎮 **Xbox**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -256,7 +256,7 @@ const GameConsoles = ({ double }) => {
                 )}
 
                 {isSteam && <br />}
-                {isSteam && <div>🕹️Steam</div>}
+                {isSteam && <div>🕹️ **Steam**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>

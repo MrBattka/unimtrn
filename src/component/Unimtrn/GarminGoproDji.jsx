@@ -7,7 +7,35 @@ import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
 const GarminGoProDji = ({ double }) => {
-  const sort = double.sort(
+
+  const res = [];
+
+  let gb = /Gb/gi;
+  let watchGarmin = /Watch Garmin/gi;
+  let wiFi = /wifi/gi;
+  let sunglases = /Sunglases/gi;
+  let dji = /Dji/gi;
+
+
+  double.map((el) => {
+    const fixGb = el.name.replace(gb, "");
+    const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
+    const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
+    const fixDji = fixSunglases.replace(dji, "DJI");
+    const replaceGoPro = fixDji.replace("GoPro", "");
+    const replaceSpace =
+      replaceGoPro[0] === " " ? replaceGoPro.slice(1) : replaceGoPro;
+    res.push({
+      id: el.id,
+      name: replaceSpace.replace(wiFi, "Wi-Fi"),
+      stockPrice: el.stockPrice,
+      extraPrice: el.extraPrice,
+      provider: el.provider,
+      condition: el.condition,
+    });
+  });
+
+  const sort = res.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
       (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
@@ -83,21 +111,6 @@ const GarminGoProDji = ({ double }) => {
   const [isMarshall, setIsMarshall] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
 
-  let gb = /Gb/gi;
-  let watchGarmin = /Watch Garmin/gi;
-  let wiFi = /wifi/gi;
-  let sunglases = /Sunglases/gi;
-  let dji = /Dji/gi;
-
-  const fixName = (allPriceArr) => {
-    const fixGb = allPriceArr.name.replace(gb, "");
-    const fixWatchGarmin = fixGb.replace(watchGarmin, "Garmin");
-    const fixSunglases = fixWatchGarmin.replace(sunglases, "Sunglasses");
-    const fixDji = fixSunglases.replace(dji, "DJI");
-    const replaceGoPro = fixDji.replace("GoPro", "");
-    return replaceGoPro.replace(wiFi, "Wi-Fi");
-  };
-
   const checkIsProduct = (allPriceArr) => {
     return (
       allPriceArr.length &&
@@ -113,7 +126,7 @@ const GarminGoProDji = ({ double }) => {
             productEl.name.indexOf("JBL") != -1 ||
             productEl.name.indexOf("Marshall") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) + productEl.stockPrice
+          returnFixPrice(productEl, productEl.name) + productEl.stockPrice
       )
     );
   };
@@ -153,7 +166,7 @@ const GarminGoProDji = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                {isDJI && <div>📸DJI</div>}
+                {isDJI && <div>📸 **DJI**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((DJIEl, index) => (
                     <div key={index}>
@@ -163,7 +176,7 @@ const GarminGoProDji = ({ double }) => {
                           DJIEl.name.indexOf("DJi ") != -1 ||
                           DJIEl.name.indexOf("Dji ") != -1) &&
                         (isDJI || setIsDJI(true)) &&
-                        returnFixPrice(DJIEl, fixName(DJIEl)) + newPrice(DJIEl.name, DJIEl.stockPrice)}
+                        returnFixPrice(DJIEl, DJIEl.name) + newPrice(DJIEl.name, DJIEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(DJIEl) &&
                                 (DJIEl.name.indexOf("DJL ") != -1 ||
@@ -180,14 +193,14 @@ const GarminGoProDji = ({ double }) => {
                 )}
 
                 {isGarmin && <br />}
-                {isGarmin && <div>⌚Garmin</div>}
+                {isGarmin && <div>⌚ **Garmin**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((garminEl, index) => (
                     <div key={index}>
                       {baseFix(garminEl) &&
                         garminEl.name.indexOf("Garmin") != -1 &&
                         (isGarmin || setIsGarmin(true)) &&
-                        returnFixPrice(garminEl, fixName(garminEl)) + newPrice(garminEl.name, garminEl.stockPrice)}
+                        returnFixPrice(garminEl, garminEl.name) + newPrice(garminEl.name, garminEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(garminEl) &&
                                 garminEl.name.indexOf("Garmin") != -1 && (
@@ -201,7 +214,7 @@ const GarminGoProDji = ({ double }) => {
                 )}
 
                 {isGoPro && <br />}
-                {isGoPro && <div>📸GoPro</div>}
+                {isGoPro && <div>📸 **GoPro**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((goProEl, index) => (
                     <div key={index}>
@@ -209,7 +222,7 @@ const GarminGoProDji = ({ double }) => {
                         (goProEl.name.indexOf("GoPro") != -1 ||
                         goProEl.name.indexOf("Hero") != -1) &&
                         (isGoPro || setIsGoPro(true)) &&
-                        returnFixPrice(goProEl, fixName(goProEl)) + newPrice(goProEl.name, goProEl.stockPrice)}
+                        returnFixPrice(goProEl, goProEl.name) + newPrice(goProEl.name, goProEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(goProEl) &&
                                 (goProEl.name.indexOf("GoPro") != -1 ||
@@ -224,14 +237,14 @@ const GarminGoProDji = ({ double }) => {
                 )}
 
                 {isJBL && <br />}
-                {isJBL && <div>🔊JBL</div>}
+                {isJBL && <div>🔊 **JBL**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((jblEl, index) => (
                     <div key={index}>
                       {baseFix(jblEl) &&
                         jblEl.name.indexOf("JBL") != -1 &&
                         (isJBL || setIsJBL(true)) &&
-                        returnFixPrice(jblEl, fixName(jblEl)) + newPrice(jblEl.name, jblEl.stockPrice)}
+                        returnFixPrice(jblEl, jblEl.name) + newPrice(jblEl.name, jblEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(jblEl) &&
                                 jblEl.name.indexOf("JBL") != -1 && (
@@ -245,14 +258,14 @@ const GarminGoProDji = ({ double }) => {
                 )}
 
                 {isMarshall && <br />}
-                {isMarshall && <div>🎧Marshall</div>}
+                {isMarshall && <div>🎧 **Marshall**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((marshsalEl, index) => (
                     <div key={index}>
                       {baseFix(marshsalEl) &&
                         marshsalEl.name.indexOf("Marshall") != -1 &&
                         (isMarshall || setIsMarshall(true)) &&
-                        returnFixPrice(marshsalEl, fixName(marshsalEl)) + newPrice(marshsalEl.name, marshsalEl.stockPrice)}
+                        returnFixPrice(marshsalEl, marshsalEl.name) + newPrice(marshsalEl.name, marshsalEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(marshsalEl) &&
                                 marshsalEl.name.indexOf("Marshall") != -1 && (

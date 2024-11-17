@@ -154,7 +154,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                {isAsus && <div>📱Asus</div>}
+                {isAsus && <div>📱 **Asus**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((asusEl, index) => (
                     <div key={index}>
@@ -190,15 +190,13 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                   <tr></tr>
                 )}
                 {isGoogle && <br />}
-                {isGoogle && <div>📱Google</div>}
-                Pixel 8 8/256 Obsidian 🇯🇵53500
+                {isGoogle && <div>📱 **Google**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((googleEl, index) => (
                     <div key={index}>
                       {baseFix(googleEl) &&
                         (googleEl.name.indexOf("Google") != -1 ||
                           googleEl.name.indexOf("Pixel") != -1) &&
-                        googleEl.name.indexOf("Pixel 8 8/256 Obsidian") == -1 &&
                         (isGoogle || setIsGoogle(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
                         (googleEl.condition
@@ -212,8 +210,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                             <h3 className="del">
                               {baseFix(googleEl) &&
                                 (googleEl.name.indexOf("Google") != -1 ||
-                                googleEl.name.indexOf("Pixel") != -1) &&
-                              googleEl.name.indexOf("Pixel 8 8/256 Obsidian") == -1 && (
+                                googleEl.name.indexOf("Pixel") != -1) && (
                                   <span>{" - " + googleEl.provider}</span>
                                 )}
                             </h3>
@@ -223,7 +220,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                   <tr></tr>
                 )}
                 {isSony && <br />}
-                {isSony && <div>📱Sony</div>}
+                {isSony && <div>📱 **Sony**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((sonyEl, index) => (
                     <div key={index}>

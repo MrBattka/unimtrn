@@ -7,7 +7,43 @@ import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
 const Samsung = ({ double }) => {
-  const sort = double.sort(
+  const res = []
+
+  let gb = /Gb/gi;
+  let zFlip = /Z flip/gi;
+  let galaxyWatch = /Galaxy Watch/gi;
+  let classik = /Classik/gi;
+  let wiFi = /wifi/gi;
+  let s21 = /Samsung S21/gi;
+  let s22 = /Samsung S22/gi;
+  let s23 = /Samsung S23/gi;
+  let s24 = /Samsung S24/gi;
+  let a550 = /A550/gi;
+
+  double.map((el) => {
+    const fixGb = el.name.replace(gb, "");
+    const fixGalaxyWatch = fixGb.replace(galaxyWatch, "Watch");
+    const fixClassik = fixGalaxyWatch.replace(classik, "Classic");
+    const fixS21 = fixClassik.replace(s21, "S21");
+    const fixS22 = fixS21.replace(s22, "S22");
+    const fixS23 = fixS22.replace(s23, "S23");
+    const fixS24 = fixS23.replace(s24, "S24");
+    const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
+    const fixA550 = fixWiFi.replace(a550, "A55");
+    const replaceSamsung = fixA550.replace("Samsung ", "");
+    const replaceSpace =
+      replaceSamsung[0] === " " ? replaceSamsung.slice(1) : replaceSamsung;
+    res.push({
+      id: el.id,
+      name: replaceSpace.replace(zFlip, "Z Flip"),
+      stockPrice: el.stockPrice,
+      extraPrice: el.extraPrice,
+      provider: el.provider,
+      condition: el.condition,
+    });
+  });
+
+  const sort = res.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
       (a.stockPrice > b.stockPrice ? 1 : b.stockPrice > a.stockPrice ? -1 : 0)
@@ -82,31 +118,6 @@ const Samsung = ({ double }) => {
   const [isTab, setIsTab] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
 
-  let gb = /Gb/gi;
-  let zFlip = /Z flip/gi;
-  let galaxyWatch = /Galaxy Watch/gi;
-  let classik = /Classik/gi;
-  let wiFi = /wifi/gi;
-  let s21 = /Samsung S21/gi;
-  let s22 = /Samsung S22/gi;
-  let s23 = /Samsung S23/gi;
-  let s24 = /Samsung S24/gi;
-  let a550 = /A550/gi;
-
-  const fixName = (allPriceArr) => {
-    const fixGb = allPriceArr.name.replace(gb, "");
-    const fixGalaxyWatch = fixGb.replace(galaxyWatch, "Watch");
-    const fixClassik = fixGalaxyWatch.replace(classik, "Classic");
-    const fixS21 = fixClassik.replace(s21, "S21");
-    const fixS22 = fixS21.replace(s22, "S22");
-    const fixS23 = fixS22.replace(s23, "S23");
-    const fixS24 = fixS23.replace(s24, "S24");
-    const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
-    const fixA550 = fixWiFi.replace(a550, "A55");
-    const replaceSamsung = fixA550.replace("Samsung ", "");
-    return replaceSamsung.replace(zFlip, "Z Flip");
-  };
-
   const checkIsProduct = (allPriceArr) => {
     return (
       allPriceArr.length &&
@@ -136,7 +147,7 @@ const Samsung = ({ double }) => {
             productEl.name.indexOf("Z Fold") != -1 ||
             productEl.name.indexOf("Tab S") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) +
+          returnFixPrice(productEl, productEl.name) +
             newPrice(productEl.name, productEl.stockPrice)
       )
     );
@@ -175,7 +186,7 @@ const Samsung = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                {isOther && <div>👉Samsung</div>}
+                <div>👇 **Samsung**</div>
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -183,7 +194,7 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Galaxy Buds") != -1 ||
                           el.name.indexOf("Galaxy Smart Tag") != -1) &&
                         (isOther || setIsOther(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
@@ -214,7 +225,7 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Watch 6") != -1 ||
                           el.name.indexOf("Watch 7") != -1) &&
                         (isWatch || setIsWatch(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
@@ -261,7 +272,7 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("Z Flip") != -1 ||
                           el.name.indexOf("Z Fold") != -1) &&
                         (isPhones || setIsPhones(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
@@ -307,7 +318,7 @@ const Samsung = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition

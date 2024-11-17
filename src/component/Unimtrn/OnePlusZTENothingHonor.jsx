@@ -151,7 +151,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
               </h4>
               <tbody>
                 {isOnePlus && <br />}
-                {isOnePlus && <div>📱OnePlus</div>}
+                {isOnePlus && <div>📱 **OnePlus**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -180,7 +180,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
                 )}
 
                 {isZTE && <br />}
-                {isZTE && <div>📱ZTE</div>}
+                {isZTE && <div>📱 **ZTE**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -211,7 +211,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
                 )}
 
                 {isNothing && <br />}
-                {isNothing && <div>📱Nothing</div>}
+                {isNothing && <div>📱 **Nothing**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -246,7 +246,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
                 )}
 
                 {isHonor && <br />}
-                {isHonor && <div>📱Honor</div>}
+                {isHonor && <div>📱 **Honor**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>

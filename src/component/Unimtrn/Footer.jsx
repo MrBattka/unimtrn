@@ -7,7 +7,7 @@ const Footer = () => {
         <div>
             <br />
             <div>💬ДЛЯ ЗАКАЗА💬</div>
-            <div>🚀Telegram: @onlinemyprice</div>
+            <div>🚀Telegram: `@onlinemyprice`</div>
         </div>
     )
 }
