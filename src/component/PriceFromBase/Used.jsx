@@ -267,7 +267,7 @@ const Used = ({ fullList }) => {
                     demo.name?.indexOf("обменка") !== -1 ||
                     demo.name?.indexOf("Демо") !== -1) &&
                   (isDemo || setIsDemo(true)) &&
-                  returnFixPrice(demo, demo.name) + demo.price}
+                  returnFixPrice(demo, changeFlag(demo.name)) + demo.price}
               </div>
             ))}
             <br />
