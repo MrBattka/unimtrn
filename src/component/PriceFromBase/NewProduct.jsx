@@ -76,6 +76,7 @@ const NewProduct = ({ fullList }) => {
                 newProduct.name.indexOf("ZTE ") == -1 &&
                 newProduct.name.indexOf("Dyson") == -1 &&
                 newProduct.name.indexOf("Apple Watch S8") == -1 &&
+                newProduct.name.indexOf("Xperia") == -1 &&
                 returnFixPrice(newProduct, fixName(newProduct)) + newProduct.price}
             </div>
           ))}

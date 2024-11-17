@@ -6,17 +6,18 @@ import { copyTable } from "./helpers/copy";
 
 const OtherBrands = ({ fullList }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHuawei, setIsHuawei] = useState(false)
-  const [isCOROS, setIsCOROS] = useState(false)
-  const [isGoogle, setIsGoogle] = useState(false)
-  const [isPlaystation, setIsPlaystation] = useState(false)
-  const [isGoPro, setIsGoPro] = useState(false)
-  const [isFinis, setIsFinis] = useState(false)
-  const [isAsus, setIsAsus] = useState(false)
-  const [isNothing, setIsNothing] = useState(false)
-  const [isOnePlus, setIsOnePlus] = useState(false)
-  const [isZTE, setIsZTE] = useState(false)
-  const [isDyson, setIsDyson] = useState(false)
+  const [isHuawei, setIsHuawei] = useState(false);
+  const [isCOROS, setIsCOROS] = useState(false);
+  const [isGoogle, setIsGoogle] = useState(false);
+  const [isPlaystation, setIsPlaystation] = useState(false);
+  const [isGoPro, setIsGoPro] = useState(false);
+  const [isFinis, setIsFinis] = useState(false);
+  const [isAsus, setIsAsus] = useState(false);
+  const [isNothing, setIsNothing] = useState(false);
+  const [isOnePlus, setIsOnePlus] = useState(false);
+  const [isZTE, setIsZTE] = useState(false);
+  const [isDyson, setIsDyson] = useState(false);
+  const [isSony, setIsSony] = useState(false);
 
   const arr = [];
 
@@ -114,7 +115,7 @@ const OtherBrands = ({ fullList }) => {
                     gameConsole.name.indexOf("Xbox") !== -1) &&
                   (isPlaystation || setIsPlaystation(true)) &&
                   returnFixPrice(gameConsole, fixName(gameConsole)) +
-                  gameConsole.price}
+                    gameConsole.price}
               </div>
             ))}
             {isGoPro && <br />}
@@ -199,6 +200,18 @@ const OtherBrands = ({ fullList }) => {
                   dyson.name.indexOf("Dyson") !== -1 &&
                   (isDyson || setIsDyson(true)) &&
                   returnFixPrice(dyson, fixName(dyson)) + dyson.price}
+              </div>
+            ))}
+
+            {isSony && <br />}
+            {isSony && <div>📲 Sony</div>}
+            {result.map((sony, i) => (
+              <div key={i}>
+                {baseFix(sony) &&
+                  sony.price &&
+                  sony.name.indexOf("Xperia") !== -1 &&
+                  (isSony || setIsSony(true)) &&
+                  returnFixPrice(sony, fixName(sony)) + sony.price}
               </div>
             ))}
             <br />

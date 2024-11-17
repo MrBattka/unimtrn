@@ -67,13 +67,24 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             <br />
-            <div>Пломбы</div>
+            <div>🏷 Пломбы</div>
             {result.map((seals, i) => (
               <div key={i}>
                 {seals.price &&
                   (seals.name?.indexOf("Пломбa") !== -1 ||
                     seals.name?.indexOf("Пломба") !== -1) &&
                   returnFixPrice(seals, fixName(seals)) + seals.price}
+              </div>
+            ))}
+            <br />
+            <div>🔥 Обменки / Демо</div>
+            {result.map((demo, i) => (
+              <div key={i}>
+                {demo.price &&
+                  (demo.name?.indexOf("Обменка") !== -1 ||
+                  demo.name?.indexOf("обменка") !== -1 ||
+                    demo.name?.indexOf("Демо") !== -1) &&
+                  returnFixPrice(demo, fixName(demo)) + demo.price}
               </div>
             ))}
             <br />
