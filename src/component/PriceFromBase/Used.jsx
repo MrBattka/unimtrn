@@ -103,7 +103,7 @@ const Used = ({ fullList }) => {
             ))}
             <br /> */}
 
-            <div>🍏 Apple</div>
+            <div>🍏 **Apple**</div>
             {result.map((apple, i) => (
               <div key={i}>
                 {baseFixUsed(apple) &&
@@ -120,7 +120,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isiPhone && <br />}
-            {isiPhone && <div>📱 Apple iPhone</div>}
+            {isiPhone && <div>📱 **Apple iPhone**</div>}
             {result.map((iPhone, i) => (
               <div key={i}>
                 {baseFixUsed(iPhone) &&
@@ -132,7 +132,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isAwSE && <br />}
-            {isAwSE && <div>⌚️ Apple Watch SE 2023</div>}
+            {isAwSE && <div>⌚️ **Apple Watch SE 2023**</div>}
             {result.map((SE, i) => (
               <div key={i} ref={refWatchSE}>
                 {baseFixUsed(SE) &&
@@ -145,7 +145,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isAwS8 && <br />}
-            {isAwS8 && <div>⌚️ Apple Watch S8</div>}
+            {isAwS8 && <div>⌚️ **Apple Watch S8**</div>}
             {result.map((s8, i) => (
               <div key={i}>
                 {baseFixUsed(s8) &&
@@ -157,7 +157,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isAwS9 && <br />}
-            {isAwS9 && <div>⌚️ Apple Watch S9</div>}
+            {isAwS9 && <div>⌚️ **Apple Watch S9**</div>}
             {result.map((s9, i) => (
               <div key={i} ref={refWatchS9}>
                 {baseFixUsed(s9) &&
@@ -169,7 +169,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isiPad && <br />}
-            {isiPad && <div>📟 Apple iPad</div>}
+            {isiPad && <div>📟 **Apple iPad**</div>}
             {result.map((iPad, i) => (
               <div key={i}>
                 {baseFixUsed(iPad) &&
@@ -181,7 +181,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isMacBook && <br />}
-            {isMacBook && <div>💻 Apple MacBook</div>}
+            {isMacBook && <div>💻 **Apple MacBook**</div>}
             {result.map((macbook, i) => (
               <div key={i}>
                 {baseFixUsed(macbook) &&
@@ -193,7 +193,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isiMac && <br />}
-            {isiMac && <div>🖥️ Apple iMac</div>}
+            {isiMac && <div>🖥️ **Apple iMac**</div>}
             {result.map((iMac, i) => (
               <div key={i}>
                 {baseFixUsed(iMac) &&
@@ -205,7 +205,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isSams && <br />}
-            {isSams && <div>📱 Samsung</div>}
+            {isSams && <div>📱 **Samsung**</div>}
             {result.map((galaxy, i) => (
               <div key={i}>
                 {baseFixUsed(galaxy) &&
@@ -218,7 +218,7 @@ const Used = ({ fullList }) => {
             ))}
 
             {isXiaomi && <br />}
-            {isXiaomi && <div>📱 Xiaomi</div>}
+            {isXiaomi && <div>📱 **Xiaomi**</div>}
             {result.map((xiaomi, i) => (
               <div key={i}>
                 {baseFixUsed(xiaomi) &&
@@ -232,7 +232,7 @@ const Used = ({ fullList }) => {
             ))}
 
             {isOther && <br />}
-            {isOther && <div>📱 Остальные бренды</div>}
+            {isOther && <div>📱 **Остальные бренды**</div>}
             {result.map((other, i) => (
               <div key={i}>
                 {baseFixUsed(other) &&
@@ -248,7 +248,7 @@ const Used = ({ fullList }) => {
             ))}
 
             <br />
-            <div>🏷 Пломбы</div>
+            <div>🏷 **Пломбы**</div>
             {result.map((seals, i) => (
               <div key={i}>
                 {seals.price &&
@@ -259,7 +259,7 @@ const Used = ({ fullList }) => {
             ))}
             {isDemo && <br />}
             {isDemo && <br />}
-            {isDemo && <div>🔥 Обменки / Демо</div>}
+            {isDemo && <div>🔥 **Обменки / Демо**</div>}
             {result.map((demo, i) => (
               <div key={i}>
                 {demo.price &&

@@ -217,7 +217,7 @@ const Samsung = ({ double }) => {
                 )}
 
                 {isWatch && <br />}
-                {isWatch && <div>⌚Watch</div>}
+                {isWatch && <div>⌚ Watch</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -248,7 +248,7 @@ const Samsung = ({ double }) => {
                 )}
 
                 {isPhones && <br />}
-                {isPhones && <div>📱Phones</div>}
+                {isPhones && <div>📱 Phones</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -311,7 +311,7 @@ const Samsung = ({ double }) => {
                 )}
 
                 {isTab && <br />}
-                {isTab && <div>📟Tab</div>}
+                {isTab && <div>📟 Tab</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>

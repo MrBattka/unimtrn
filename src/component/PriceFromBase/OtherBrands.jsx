@@ -72,7 +72,7 @@ const OtherBrands = ({ fullList }) => {
             ❐ Copy
           </h4>
           <table>
-            {isHuawei && <div>📲 Huawei</div>}
+            {isHuawei && <div>📲 **Huawei**</div>}
             {result.map((huawei, i) => (
               <div key={i}>
                 {baseFix(huawei) &&
@@ -83,7 +83,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isCOROS && <br />}
-            {isCOROS && <div>📲 COROS</div>}
+            {isCOROS && <div>📲 **COROS**</div>}
             {result.map((coros, i) => (
               <div key={i}>
                 {baseFix(coros) &&
@@ -94,7 +94,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isGoogle && <br />}
-            {isGoogle && <div>📲 Google</div>}
+            {isGoogle && <div>📲 **Google**</div>}
             {result.map((google, i) => (
               <div key={i}>
                 {baseFix(google) &&
@@ -105,7 +105,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isPlaystation && <br />}
-            {isPlaystation && <div>Playstation 🎮 / Xbox 🎮</div>}
+            {isPlaystation && <div>🎮 **Playstation / Xbox** 🎮</div>}
             {result.map((gameConsole, i) => (
               <div key={i}>
                 {baseFix(gameConsole) &&
@@ -119,7 +119,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isGoPro && <br />}
-            {isGoPro && <div>📹 GoPro</div>}
+            {isGoPro && <div>📹 **GoPro**</div>}
             <div>
               {result.map((goPro, i) => (
                 <div key={i}>
@@ -135,7 +135,7 @@ const OtherBrands = ({ fullList }) => {
               ))}
             </div>
             {isFinis && <br />}
-            {isFinis && <div>📲 Finis</div>}
+            {isFinis && <div>📲 **Finis**</div>}
             {result.map((finis, i) => (
               <div key={i}>
                 {baseFix(finis) &&
@@ -147,7 +147,7 @@ const OtherBrands = ({ fullList }) => {
             ))}
             <div>
               {isAsus && <br />}
-              {isAsus && <div>📲 Asus</div>}
+              {isAsus && <div>📲 **Asus**</div>}
               {result.map((asus, i) => (
                 <div key={i}>
                   {baseFix(asus) &&
@@ -159,7 +159,7 @@ const OtherBrands = ({ fullList }) => {
               ))}
             </div>
             {isNothing && <br />}
-            {isNothing && <div>📲 Nothing Phone</div>}
+            {isNothing && <div>📲 **Nothing Phone**</div>}
             {result.map((nothing, i) => (
               <div key={i}>
                 {baseFix(nothing) &&
@@ -170,7 +170,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isOnePlus && <br />}
-            {isOnePlus && <div>📲 One Plus</div>}
+            {isOnePlus && <div>📲 **One Plus**</div>}
             {result.map((onePlus, i) => (
               <div key={i}>
                 {baseFix(onePlus) &&
@@ -181,7 +181,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isZTE && <br />}
-            {isZTE && <div>📲 ZTE</div>}
+            {isZTE && <div>📲 **ZTE**</div>}
             {result.map((ZTE, i) => (
               <div key={i}>
                 {baseFix(ZTE) &&
@@ -192,7 +192,7 @@ const OtherBrands = ({ fullList }) => {
               </div>
             ))}
             {isDyson && <br />}
-            {isDyson && <div>📲 Dyson</div>}
+            {isDyson && <div>📲 **Dyson**</div>}
             {result.map((dyson, i) => (
               <div key={i}>
                 {baseFix(dyson) &&
@@ -204,7 +204,7 @@ const OtherBrands = ({ fullList }) => {
             ))}
 
             {isSony && <br />}
-            {isSony && <div>📲 Sony</div>}
+            {isSony && <div>📲 **Sony**</div>}
             {result.map((sony, i) => (
               <div key={i}>
                 {baseFix(sony) &&

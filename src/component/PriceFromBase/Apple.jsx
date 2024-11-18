@@ -66,7 +66,7 @@ const Apple = ({ fullList }) => {
             ❐ Copy
           </h4>
           <table>
-            <div>📲 Apple</div>
+            <div>📲 **Apple**</div>
             {result.map((apple, i) => (
               <div key={i}>
                 {baseFix(apple) &&
@@ -82,7 +82,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isiPhone && <br />}
-            {isiPhone && <div>📲 Apple iPhone</div>}
+            {isiPhone && <div>📲 **Apple iPhone**</div>}
             {result.map((iPhone, i) => (
               <div key={i}>
                 {baseFix(iPhone) &&
@@ -93,7 +93,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isAwSE && <br />}
-            {isAwSE && <div>⌚️ Apple Watch SE 2023</div>}
+            {isAwSE && <div>⌚️ **Apple Watch SE 2023**</div>}
             {result.map((SE, i) =>
             (
               <div key={i} ref={refWatchSE}>
@@ -106,7 +106,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isAwS8 && <br />}
-            {isAwS8 && <div>⌚️ Apple Watch S8</div>}
+            {isAwS8 && <div>⌚️ **Apple Watch S8**</div>}
             {result.map((s8, i) => (
               <div key={i}>
                 {baseFix(s8) &&
@@ -117,7 +117,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isAwS9 && <br />}
-            {isAwS9 && <div>⌚️ Apple Watch S9</div>}
+            {isAwS9 && <div>⌚️ **Apple Watch S9**</div>}
             {result.map((s9, i) => (
               <div key={i} ref={refWatchS9}>
                 {baseFix(s9) &&
@@ -128,7 +128,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isiPad && <br />}
-            {isiPad && <div>📟 Apple iPad</div>}
+            {isiPad && <div>📟 **Apple iPad**</div>}
             {result.map((iPad, i) => (
               <div key={i}>
                 {baseFix(iPad) &&
@@ -139,7 +139,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isMacBook && <br />}
-            {isMacBook && <div>💻 Apple MacBook</div>}
+            {isMacBook && <div>💻 **Apple MacBook**</div>}
             {result.map((macbook, i) => (
               <div key={i}>
                 {baseFix(macbook) &&
@@ -151,7 +151,7 @@ const Apple = ({ fullList }) => {
               </div>
             ))}
             {isiMac && <br />}
-            {isiMac && <div> Apple iMac</div>}
+            {isiMac && <div> **Apple iMac**</div>}
             {result.map((iMac, i) => (
               <div key={i}>
                 {baseFix(iMac) &&

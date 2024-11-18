@@ -51,7 +51,7 @@ const Samsung = ({ fullList }) => {
             ❐ Copy
           </h4>
           <table>
-            <div>📲 Samsung Galaxy</div>
+            <div>📲 **Samsung Galaxy**</div>
             {result.map((galaxy, i) => (
               <div key={i}>
                 {baseFix(galaxy) &&
@@ -62,7 +62,7 @@ const Samsung = ({ fullList }) => {
               </div>
             ))}
             {isTab && <br />}
-            {isTab && <div>📲 Galaxy Tab</div>}
+            {isTab && <div>📲 **Galaxy Tab**</div>}
             {result.map((tab, i) => (
               <div key={i}>
                 {baseFix(tab) &&

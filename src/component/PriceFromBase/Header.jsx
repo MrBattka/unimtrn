@@ -34,7 +34,7 @@ const HeaderMob = ({ fullList }) => {
             <div>❗️В наличии в Севастополе</div>
             <div>💸Оплата наличными при получении </div>
             <br />
-            <div>💬ДЛЯ ЗАКАЗА💬</div>
+            <div>💬**ДЛЯ ЗАКАЗА💬**</div>
             <div>📞 WhatsApp: https://wa.me/79787922235</div>
           </table>
         </div>

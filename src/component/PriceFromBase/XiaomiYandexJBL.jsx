@@ -60,7 +60,7 @@ const Xiaomi = ({ fullList }) => {
             ❐ Copy
           </h4>
           <table>
-            {isXiaomi && <div>📲 Xiaomi</div>}
+            {isXiaomi && <div>📲 **Xiaomi**</div>}
             {result.map((xiaomi, i) => (
               <div key={i}>
                 {baseFix(xiaomi) &&
@@ -72,7 +72,7 @@ const Xiaomi = ({ fullList }) => {
               </div>
             ))}
             {isYandex && <br />}
-            {isYandex && <div>🔊 Яндекс Станция</div>}
+            {isYandex && <div>🔊 **Яндекс Станция**</div>}
             <div>
               {result.map((yandex, i) => (
                 <div key={i}>
@@ -85,7 +85,7 @@ const Xiaomi = ({ fullList }) => {
               ))}
             </div>
             {isJBL && <br />}
-            {isJBL && <div>🔊 JBL</div>}
+            {isJBL && <div>🔊 **JBL**</div>}
             <div>
               {result.map((jbl, i) => (
                 <div key={i}>
@@ -98,7 +98,7 @@ const Xiaomi = ({ fullList }) => {
               ))}
             </div>
             {isShokz && <br />}
-            {isShokz && <div>Shokz</div>}
+            {isShokz && <div>👓 **Shokz**</div>}
             <div>
               {result.map((shokz, i) => (
                 <div key={i}>
