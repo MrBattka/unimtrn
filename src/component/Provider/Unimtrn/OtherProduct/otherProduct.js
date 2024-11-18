@@ -37,6 +37,7 @@ export const returnOtherProduct = (el) => {
     el.name.indexOf("Nothing Ear") != -1 ||
     el.name.indexOf("Nothing ear") != -1 ||
     el.name.indexOf("Honor") != -1 ||
-    el.name.indexOf("Hero") != -1
+    el.name.indexOf("Hero") != -1 ||
+    el.name.indexOf("Яндекс") != -1
   );
 };

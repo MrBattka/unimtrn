@@ -85,6 +85,7 @@ const NoName = ({ double }) => {
   const [isRealme, setIsRealme] = useState(false);
   const [isTecno, setIsTecno] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
+  const [isYandex, setIsYandex] = useState(false);
 
   let gb = /Gb/gi;
   let wiFi = /wifi/gi;
@@ -95,7 +96,9 @@ const NoName = ({ double }) => {
     const fixGb = allPriceArr.name.replace(gb, "");
     const fixGlasses = fixGb.replace(glasses, "glasses");
     const fixHuawei = fixGlasses.replace(huawei, "Huawei");
-    return fixHuawei.replace(wiFi, "Wi-Fi");
+    const fixZigbee = fixHuawei.replace("Ziee", "Zigbee");
+    const fix65Вт = fixZigbee.replace(", 65Вт", "");
+    return fix65Вт.replace(wiFi, "Wi-Fi");
   };
 
   const checkIsProduct = (allPriceArr) => {
@@ -114,6 +117,7 @@ const NoName = ({ double }) => {
             productEl.name.indexOf("Realme") != -1 ||
             productEl.name.indexOf("Tecno") != -1 ||
             productEl.name.indexOf("Camon ") != -1 ||
+            productEl.name.indexOf("Яндекс") != -1 ||
             productEl.name.indexOf("Spark ") != -1) &&
           (isProduct || setIsProduct(true)) &&
           returnFixPrice(productEl, fixName(productEl)) +
@@ -171,12 +175,11 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("Beats") != -1 && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("Beats") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -200,12 +203,11 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("Blackview") != -1 && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("Blackview") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -229,12 +231,11 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("AGM") != -1 && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("AGM") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -258,12 +259,11 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("infinix") != -1 && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("infinix") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -287,12 +287,11 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("Oppo") != -1 && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("Oppo") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -317,13 +316,13 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                (el.name.indexOf("Huawei") != -1 ||
-                                el.name.indexOf("HUAWEI") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          (el.name.indexOf("Huawei") != -1 ||
+                            el.name.indexOf("HUAWEI") != -1) && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -347,12 +346,11 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("Realme") != -1 && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("Realme") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -378,14 +376,42 @@ const NoName = ({ double }) => {
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
                               ))}
-                              <h3 className="del">
-                              {baseFix(el) &&
-                                (el.name.indexOf("Tecno") != -1 ||
-                                el.name.indexOf("Camon ") != -1 ||
-                                el.name.indexOf("Spark ") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          (el.name.indexOf("Tecno") != -1 ||
+                            el.name.indexOf("Camon ") != -1 ||
+                            el.name.indexOf("Spark ") != -1) && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isYandex && <br />}
+                {isYandex && <div>🔊 **Яндекс**</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        el.name.indexOf("Яндекс") != -1 &&
+                        (isYandex || setIsYandex(true)) &&
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              ))}
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("Яндекс") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
                     </div>
                   ))
                 ) : (

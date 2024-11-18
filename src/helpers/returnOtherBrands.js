@@ -140,6 +140,65 @@ export const returnIDOtherBrand = (name) => {
     name.indexOf("hs05 long ceramic pop") !== -1
   ) {
     return 34764;
+
+  } else if (
+    name.indexOf("hd") !== -1 &&
+    name.indexOf("18") !== -1 &&
+    name.indexOf("supersonic") !== -1 &&
+    name.indexOf("blue") !== -1 &&
+    name.indexOf("topaz") !== -1
+  ) {
+    return 270961;
+  } else if (
+    name.indexOf("hs") !== -1 &&
+    name.indexOf("05") !== -1 &&
+    name.indexOf("pink") !== -1 &&
+    name.indexOf("rose") !== -1
+  ) {
+    return 270962;
+  } else if (
+    name.indexOf("hs") !== -1 &&
+    name.indexOf("08") !== -1 &&
+    name.indexOf("patina") !== -1 &&
+    name.indexOf("topaz") !== -1
+  ) {
+    return 270963;
+  } else if (
+    name.indexOf("hs") !== -1 &&
+    name.indexOf("08") !== -1 &&
+    name.indexOf("blue") !== -1 &&
+    name.indexOf("topaz") !== -1
+  ) {
+    return 270964;
+  } else if (
+    name.indexOf("ht") !== -1 &&
+    name.indexOf("01") !== -1 &&
+    name.indexOf("pink") !== -1 &&
+    name.indexOf("rose") !== -1
+  ) {
+    return 270965;
+  } else if (
+    name.indexOf("ht") !== -1 &&
+    name.indexOf("01") !== -1 &&
+    name.indexOf("nickel") !== -1 &&
+    name.indexOf("cooper") !== -1
+  ) {
+    return 270966;
+  } else if (
+    name.indexOf("ht") !== -1 &&
+    name.indexOf("01") !== -1 &&
+    name.indexOf("blue") !== -1 &&
+    name.indexOf("cooper") !== -1
+  ) {
+    return 270967;
+  } else if (
+    name.indexOf("hs") !== -1 &&
+    name.indexOf("05") !== -1 &&
+    name.indexOf("blue") !== -1 &&
+    name.indexOf("blush") !== -1
+  ) {
+    return 270968;
+
   } else if (
     name.indexOf("hs") !== -1 &&
     name.indexOf("05") !== -1 &&

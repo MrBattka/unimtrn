@@ -66,7 +66,9 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("realme") !== -1 ||
     name.indexOf("polaroid") !== -1 ||
     name.indexOf("sonos") !== -1 ||
-    name.indexOf("pad se") !== -1
+    name.indexOf("pad se") !== -1 ||
+    name.indexOf("яндекс") !== -1 ||
+    name.indexOf("станция") !== -1
   ) {
     return Number(price) + 300;
   } else if (
