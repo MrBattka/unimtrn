@@ -49,6 +49,8 @@ export const fixNameSuperPrice = (name) => {
   const fixMiMIX = fixMi.replace("Xiaomi MIX", "Mi MIX");
   const replaceXiaomi = fixMiMIX.replace("Xiaomi ", "");
   const fixNote = replaceXiaomi.replace("Redmi Note", "Note");
-
-  return fixNote;
+  const replaceValve = fixNote.replace("Valve ", "");
+  const replaceMeta = replaceValve.replace("Meta Oculus", "Oculus");
+  
+  return replaceMeta;
 };

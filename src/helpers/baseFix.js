@@ -13,8 +13,6 @@ export const baseFix = (el) => {
     el.name?.indexOf("Silicon") == -1 &&
     el.name?.indexOf("Grip Case") == -1 &&
     el.name?.indexOf("Sult Case") == -1 &&
-    el.name?.indexOf("Docking Station") == -1 &&
-    el.name?.indexOf("Doсking Station") == -1 &&
     el.name?.indexOf("Power Bank") == -1 &&
     el.name?.indexOf("Magez") == -1 &&
     el.name?.indexOf("Transparent") == -1 &&

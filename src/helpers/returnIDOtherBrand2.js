@@ -25,28 +25,33 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("ps portal") !== -1 ||
     name.indexOf("portal remote") !== -1
   ) {
-    return 34478; //  Steam deck
-  } else if (name.indexOf("steam deck oled 512") !== -1) {
+    return 34478; 
+    //  Steam deck
+  } else if (name.indexOf("steam") !== -1 &&
+  name.indexOf("oled") !== -1 &&
+  name.indexOf("512") !== -1) {
     return 34401;
-  } else if (name.indexOf("steam deck oled 1tb") !== -1) {
+  } else if (name.indexOf("steam") !== -1 &&
+  name.indexOf("oled") !== -1 &&
+  name.indexOf("1tb") !== -1) {
     return 34403;
   } else if (
-    name.indexOf("steam deck led 16/64") !== -1 ||
+    name.indexOf("steam deck oled 16/64") !== -1 ||
     name.indexOf("steam deck 16/64") !== -1
   ) {
     return 28310;
   } else if (
-    name.indexOf("steam deck led 64") !== -1 ||
+    name.indexOf("steam deck oled 64") !== -1 ||
     name.indexOf("steam deck 64") !== -1
   ) {
     return 30300;
   } else if (
-    name.indexOf("steam deck led 256") !== -1 ||
+    name.indexOf("steam deck oled 256") !== -1 ||
     name.indexOf("steam deck 256") !== -1
   ) {
     return 30301;
   } else if (
-    name.indexOf("steam deck led 512") !== -1 ||
+    name.indexOf("steam deck oled 512") !== -1 ||
     name.indexOf("steam deck 512") !== -1
   ) {
     return 30302; // Oculus
@@ -1355,24 +1360,31 @@ export const returnIDOtherBrand2 = (name) => {
   } else if (
     (name.indexOf("яндекс") !== -1 || name.indexOf("станция") !== -1) &&
     name.indexOf("мини") !== -1 &&
-    name.indexOf("красн") !== -1 &&
+    (name.indexOf("красн") !== -1 || name.indexOf("red") !== -1) &&
     name.indexOf("с часами") !== -1
   ) {
     return 23955;
   } else if (
     (name.indexOf("яндекс") !== -1 || name.indexOf("станция") !== -1) &&
     name.indexOf("мини") !== -1 &&
-    name.indexOf("син") !== -1 &&
+    (name.indexOf("син") !== -1 || name.indexOf("blue") !== -1) &&
     name.indexOf("с часами") !== -1
   ) {
     return 23956;
   } else if (
     (name.indexOf("яндекс") !== -1 || name.indexOf("станция") !== -1) &&
     name.indexOf("мини") !== -1 &&
-    name.indexOf("черн") !== -1 &&
+    (name.indexOf("черн") !== -1 || name.indexOf("black") !== -1) &&
     name.indexOf("с часами") !== -1
   ) {
     return 23954;
+  } else if (
+    (name.indexOf("яндекс") !== -1 || name.indexOf("станция") !== -1) &&
+    name.indexOf("мини") !== -1 &&
+    (name.indexOf("сер") !== -1 || name.indexOf("gray") !== -1) &&
+    name.indexOf("с часами") !== -1
+  ) {
+    return 239541;
   } else if (name.indexOf("coros pod 2") !== -1) {
     return 27150;
   } else if (name.indexOf("openswim blue") !== -1) {
