@@ -575,7 +575,8 @@ export const fixNameHi = (name) => {
   const fixOB = fixUltra2.replace("OB", "Ocean Band");
   const fixAL = fixOB.replace("AL", "Alpine Loop");
   const fixTL = fixAL.replace("TL", "Trail Loop");
-  const fixAirpodsMax = fixTL.replace("AirPods MAX", "AirPods Max");
+  const fixMini7 = fixTL.replace("MINI 7", "iPad Mini 7");
+  const fixAirpodsMax = fixMini7.replace("AirPods MAX", "AirPods Max");
   const fixMacBracket1 =
     fixAirpodsMax.indexOf("Air") != -1 || fixAirpodsMax.indexOf("Pro") != -1
       ? fixAirpodsMax.replace(")", "")
