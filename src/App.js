@@ -25,10 +25,10 @@ const App = () => {
   const base = [];
 
   dataUnimtrn.map((unimtrnEl) => {
-    unimtrnEl.Товар &&
+    (unimtrnEl.Товар || unimtrnEl.Модификация) &&
       unimtrn.push({
-        name: unimtrnEl.Товар,
-        price: unimtrnEl.Стоимость || unimtrnEl.Cтоимость,
+        name: unimtrnEl.Товар || unimtrnEl.Модификация,
+        price: unimtrnEl.Стоимость || unimtrnEl.Cтоимость || unimtrnEl.Цена,
       });
   });
 
@@ -41,25 +41,28 @@ const App = () => {
 
   dataMihonor.map((mihonorEl) => {
     mihonorEl.MiHonor &&
-    mihonorEl.MiHonor.length > 3 &&
+      mihonorEl.MiHonor.length > 3 &&
       typeof mihonorEl.MiHonor === "string" &&
       mihonor.push({ name: mihonorEl.MiHonor });
   });
 
   dataMiOpts.map((mioptsEl) => {
     mioptsEl.MiOpts &&
-    mioptsEl.MiOpts.length > 3 &&
+      mioptsEl.MiOpts.length > 3 &&
       typeof mioptsEl.MiOpts === "string" &&
       miopts.push({ name: mioptsEl.MiOpts });
   });
 
   dataSuperprice.map((superpriceEl) => {
     superpriceEl.Название &&
-    superpriceEl.Название.length > 3 &&
+      superpriceEl.Название.length > 3 &&
       typeof superpriceEl.Название === "string" &&
-      superprice.push({ name: superpriceEl.Название, price: superpriceEl.Цена });
+      superprice.push({
+        name: superpriceEl.Название,
+        price: superpriceEl.Цена,
+      });
   });
-  
+
   dataBase.map((baseEl) => {
     baseEl.Наименование &&
       baseEl.Наименование.length > 7 &&
