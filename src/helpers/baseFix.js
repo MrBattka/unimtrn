@@ -1,83 +1,85 @@
 export const baseFix = (el) => {
+  let toLowerCase = el.name?.toLowerCase();
   return (
     el[0] !== "(" &&
-    el.name?.indexOf("MagEZ Case") == -1 &&
-    el.name?.indexOf("PITAKA") == -1 &&
-    el.name?.indexOf("USB-C 25W") == -1 &&
-    el.name?.indexOf("Кабель") == -1 &&
-    el.name?.indexOf("Charge Cable") == -1 &&
-    el.name?.indexOf("20W") == -1 &&
-    el.name?.indexOf("USB-С Lightning") == -1 &&
-    el.name?.indexOf("Муляж") == -1 &&
-    el.name?.indexOf("кожа") == -1 &&
-    el.name?.indexOf("Silicon") == -1 &&
-    el.name?.indexOf("Grip Case") == -1 &&
-    el.name?.indexOf("Sult Case") == -1 &&
-    el.name?.indexOf("Power Bank") == -1 &&
-    el.name?.indexOf("Magez") == -1 &&
-    el.name?.indexOf("Transparent") == -1 &&
-    el.name?.indexOf("Transpаrent") == -1 &&
-    el.name?.indexOf("Power Adapter") == -1 &&
-    el.name?.indexOf("Travel Bag") == -1 &&
-    el.name?.indexOf("Anti-Slip Stand") == -1 &&
-    el.name?.indexOf("ModCase for") == -1 &&
-    el.name?.indexOf("Cooling Fans") == -1 &&
-    el.name?.indexOf("Protective Standing") == -1 &&
-    el.name?.indexOf("Folio") == -1 &&
-    el.name?.indexOf("царапин") == -1 &&
-    el.name?.indexOf("ремонт") == -1 &&
-    el.name?.indexOf("потертости") == -1 &&
-    el.name?.indexOf("скол") == -1 &&
-    el.name?.indexOf("пятна") == -1 &&
-    el.name?.indexOf("замена") == -1 &&
-    el.name?.indexOf("пиксель") == -1 &&
-    el.name?.indexOf("на экране") == -1 &&
-    el.name?.indexOf("мятый") == -1 &&
-    el.name?.indexOf("открытый") == -1 &&
-    el.name?.indexOf("дефект") == -1 &&
-    el.name?.indexOf("No charger") == -1 &&
-    el.name?.indexOf("открыт") == -1 &&
-    el.name?.indexOf("Мятый") == -1 &&
-    el.name?.indexOf("мятый") == -1 &&
-    el.name?.indexOf("без пломб") == -1 &&
-    el.name?.indexOf("прошит") == -1 &&
-    el.name?.indexOf("вскрыт") == -1 &&
-    el.name?.indexOf("реболл") == -1 &&
-    el.name?.indexOf("коробка") == -1 &&
-    el.name?.indexOf("угол") == -1 &&
-    el.name?.indexOf("царапин") == -1 &&
-    el.name?.indexOf("ремонт") == -1 &&
-    el.name?.indexOf("потертости") == -1 &&
-    el.name?.indexOf("скол") == -1 &&
-    el.name?.indexOf("пятна") == -1 &&
-    el.name?.indexOf("замена") == -1 &&
-    el.name?.indexOf("пиксель") == -1 &&
-    el.name?.indexOf("на экране") == -1 &&
-    el.name?.indexOf("мятый") == -1 &&
-    el.name?.indexOf("Мятый") == -1 &&
-    el.name?.indexOf("открытый") == -1 &&
-    el.name?.indexOf("дефект") == -1 &&
-    el.name?.indexOf("вскрыт") == -1 &&
-    el.name?.indexOf("реболл") == -1 &&
-    el.name?.indexOf("No charger") == -1 &&
-    el.name?.indexOf("открыт") == -1 &&
-    el.name?.indexOf("Мятый") == -1 &&
-    el.name?.indexOf("мятый") == -1 &&
-    el.name?.indexOf("без пломб") == -1 &&
-    el.name?.indexOf("прошит") == -1 &&
-    el.name?.indexOf("вскрыт") == -1 &&
-    el.name?.indexOf("угол") == -1 &&
-    el.name?.indexOf("прошит") == -1 &&
-    el.name?.indexOf("потерто") == -1 &&
-    el.name?.indexOf("экран") == -1 &&
-    el.name?.indexOf("realme") == -1 &&
-    el.name?.indexOf("актив") == -1 &&
-    el.name.indexOf("обменка") == -1 &&
-    el.name?.indexOf("уцен") == -1 &&
-    el.name?.indexOf("обме") == -1 &&
-    el.name?.indexOf("короб") == -1 &&
-    el.name?.indexOf("пломба") == -1 &&
-    el.name.indexOf('""') == -1 &&
+    toLowerCase.indexOf("magez case") == -1 &&
+    toLowerCase.indexOf("pitaka") == -1 &&
+    toLowerCase.indexOf("usb-c 25w") == -1 &&
+    toLowerCase.indexOf("Кабель") == -1 &&
+    toLowerCase.indexOf("charge cable") == -1 &&
+    toLowerCase.indexOf("20w") == -1 &&
+    toLowerCase.indexOf("usb-c lightning") == -1 &&
+    toLowerCase.indexOf("муляж") == -1 &&
+    toLowerCase.indexOf("кожа") == -1 &&
+    toLowerCase.indexOf("silicon") == -1 &&
+    toLowerCase.indexOf("grip case") == -1 &&
+    toLowerCase.indexOf("sult case") == -1 &&
+    toLowerCase.indexOf("power bank") == -1 &&
+    toLowerCase.indexOf("magez") == -1 &&
+    toLowerCase.indexOf("transparent") == -1 &&
+    toLowerCase.indexOf("transpаrent") == -1 &&
+    toLowerCase.indexOf("power adapter") == -1 &&
+    toLowerCase.indexOf("travel bag") == -1 &&
+    toLowerCase.indexOf("anti-slip stand") == -1 &&
+    toLowerCase.indexOf("modcase for") == -1 &&
+    toLowerCase.indexOf("cooling fans") == -1 &&
+    toLowerCase.indexOf("protective standing") == -1 &&
+    toLowerCase.indexOf("folio") == -1 &&
+    toLowerCase.indexOf("царапин") == -1 &&
+    toLowerCase.indexOf("ремонт") == -1 &&
+    toLowerCase.indexOf("потертости") == -1 &&
+    toLowerCase.indexOf("скол") == -1 &&
+    toLowerCase.indexOf("пятна") == -1 &&
+    toLowerCase.indexOf("замена") == -1 &&
+    toLowerCase.indexOf("пиксель") == -1 &&
+    toLowerCase.indexOf("на экране") == -1 &&
+    toLowerCase.indexOf("мятый") == -1 &&
+    toLowerCase.indexOf("открытый") == -1 &&
+    toLowerCase.indexOf("дефект") == -1 &&
+    toLowerCase.indexOf("No charger") == -1 &&
+    toLowerCase.indexOf("открыт") == -1 &&
+    toLowerCase.indexOf("Мятый") == -1 &&
+    toLowerCase.indexOf("мятый") == -1 &&
+    toLowerCase.indexOf("без пломб") == -1 &&
+    toLowerCase.indexOf("прошит") == -1 &&
+    toLowerCase.indexOf("вскрыт") == -1 &&
+    toLowerCase.indexOf("реболл") == -1 &&
+    toLowerCase.indexOf("коробка") == -1 &&
+    toLowerCase.indexOf("угол") == -1 &&
+    toLowerCase.indexOf("царапин") == -1 &&
+    toLowerCase.indexOf("ремонт") == -1 &&
+    toLowerCase.indexOf("потертости") == -1 &&
+    toLowerCase.indexOf("скол") == -1 &&
+    toLowerCase.indexOf("пятна") == -1 &&
+    toLowerCase.indexOf("замена") == -1 &&
+    toLowerCase.indexOf("пиксель") == -1 &&
+    toLowerCase.indexOf("на экране") == -1 &&
+    toLowerCase.indexOf("мятый") == -1 &&
+    toLowerCase.indexOf("Мятый") == -1 &&
+    toLowerCase.indexOf("открытый") == -1 &&
+    toLowerCase.indexOf("дефект") == -1 &&
+    toLowerCase.indexOf("вскрыт") == -1 &&
+    toLowerCase.indexOf("реболл") == -1 &&
+    toLowerCase.indexOf("No charger") == -1 &&
+    toLowerCase.indexOf("открыт") == -1 &&
+    toLowerCase.indexOf("Мятый") == -1 &&
+    toLowerCase.indexOf("мятый") == -1 &&
+    toLowerCase.indexOf("без пломб") == -1 &&
+    toLowerCase.indexOf("прошит") == -1 &&
+    toLowerCase.indexOf("вскрыт") == -1 &&
+    toLowerCase.indexOf("угол") == -1 &&
+    toLowerCase.indexOf("прошит") == -1 &&
+    toLowerCase.indexOf("потерто") == -1 &&
+    toLowerCase.indexOf("экран") == -1 &&
+    toLowerCase.indexOf("realme") == -1 &&
+    toLowerCase.indexOf("актив") == -1 &&
+    toLowerCase.indexOf("обменка") == -1 &&
+    toLowerCase.indexOf("уцен") == -1 &&
+    toLowerCase.indexOf("обме") == -1 &&
+    toLowerCase.indexOf("короб") == -1 &&
+    toLowerCase.indexOf("пломба") == -1 &&
+    toLowerCase.indexOf('""') == -1 &&
+    toLowerCase.indexOf("asis+") == -1 &&
     el !== "Товар"
   );
 };
@@ -85,44 +87,43 @@ export const baseFix = (el) => {
 export const baseFixHi = (el) => {
   return (
     el[0] !== "(" &&
-    el.name?.indexOf("MagEZ Case") == -1 &&
-    el.name?.indexOf("PITAKA") == -1 &&
-    el.name?.indexOf("USB-C 25W") == -1 &&
-    el.name?.indexOf("Кабель") == -1 &&
-    el.name?.indexOf("Charge Cable") == -1 &&
-    el.name?.indexOf("20W") == -1 &&
-    el.name?.indexOf("USB-С Lightning") == -1 &&
-    el.name?.indexOf("Муляж") == -1 &&
+    el.name?.indexOf("magEZ case") == -1 &&
+    el.name?.indexOf("pitaka") == -1 &&
+    el.name?.indexOf("usb-c 25w") == -1 &&
+    el.name?.indexOf("кабель") == -1 &&
+    el.name?.indexOf("charge cable") == -1 &&
+    el.name?.indexOf("20w") == -1 &&
+    el.name?.indexOf("usb-c lightning") == -1 &&
+    el.name?.indexOf("муляж") == -1 &&
     el.name?.indexOf("кожа") == -1 &&
-    el.name?.indexOf("Silicon") == -1 &&
-    el.name?.indexOf("Grip Case") == -1 &&
-    el.name?.indexOf("Sult Case") == -1 &&
-    el.name?.indexOf("питания MacBook") == -1 &&
+    el.name?.indexOf("silicon") == -1 &&
+    el.name?.indexOf("grip case") == -1 &&
+    el.name?.indexOf("sult case") == -1 &&
+    el.name?.indexOf("питания macbook") == -1 &&
     el.name?.indexOf("\u2757") == -1 &&
-    el.name?.indexOf("💻 Mac 💻") == -1 &&
-    el.name?.indexOf("≪  MacBook Air 13  ≫") == -1 &&
-    el.name?.indexOf("≪  MacBook Pro 13  ≫") == -1 &&
-    el.name?.indexOf("≪  MacBook Air 15  ≫") == -1 &&
+    el.name?.indexOf("💻 mac 💻") == -1 &&
+    el.name?.indexOf("≪  macbook air 13  ≫") == -1 &&
+    el.name?.indexOf("≪  macbook pro 13  ≫") == -1 &&
+    el.name?.indexOf("≪  macbook air 15  ≫") == -1 &&
     el.name?.indexOf("📂") == -1 &&
-    el.name?.indexOf("🔥🔥  14 Pro Max  🔥") == -1 &&
-    el.name?.indexOf("🔥🔥  14 Pro  🔥") == -1 &&
-    el.name?.indexOf("AirPods 1 ") == -1 &&
-    el.name?.indexOf("FNEH3") == -1 &&
+    el.name?.indexOf("🔥🔥  14 pro max  🔥") == -1 &&
+    el.name?.indexOf("🔥🔥  14 pro  🔥") == -1 &&
+    el.name?.indexOf("airpods 1 ") == -1 &&
+    el.name?.indexOf("fneh3") == -1 &&
     el.name?.indexOf("━─") == -1 &&
-    el.name?.indexOf("SE2 40/") == -1 &&
-    el.name?.indexOf("AirPods Pro 2 Type-C Left") == -1 &&
-    el.name?.indexOf("AirPods 2 Case") == -1 &&
-    el.name?.indexOf("INSTINCT") == -1 &&
-    el.name?.indexOf("🎧AirPods 🎧") == -1 &&
-    el.name?.indexOf("A03s") == -1 &&
-    el.name?.indexOf("≪SE 2≫") == -1 &&
-    el.name?.indexOf("S20 ") == -1 &&
-    el.name?.indexOf("S21 ") == -1 &&
-    el.name?.indexOf("S22 ") == -1 &&
-    el.name?.indexOf("Tab A8") == -1 &&
-    el.name?.indexOf("Tab S8") == -1 &&
-    el.name?.indexOf("Tab A9") == -1 &&
-    el.name?.indexOf("🎵 Airpods") == -1 &&
+    el.name?.indexOf("se2 40/") == -1 &&
+    el.name?.indexOf("left") == -1 &&
+    el.name?.indexOf("airpods 2 case") == -1 &&
+    el.name?.indexOf("🎧airpods 🎧") == -1 &&
+    el.name?.indexOf("a03s") == -1 &&
+    el.name?.indexOf("≪se 2≫") == -1 &&
+    el.name?.indexOf("s20 ") == -1 &&
+    el.name?.indexOf("s21 ") == -1 &&
+    el.name?.indexOf("s22 ") == -1 &&
+    el.name?.indexOf("tab a8") == -1 &&
+    el.name?.indexOf("tab s8") == -1 &&
+    el.name?.indexOf("tab a9") == -1 &&
+    el.name?.indexOf("🎵 airpods") == -1 &&
     el.name?.indexOf("царапин") == -1 &&
     el.name?.indexOf("ремонт") == -1 &&
     el.name?.indexOf("потертости") == -1 &&
