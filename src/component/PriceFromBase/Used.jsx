@@ -90,7 +90,7 @@ const Used = ({ fullList }) => {
             ❐ Copy
           </h4>
           <table>
-            <div>👇 Идеальное БУ</div>
+            <div>👇 **Идеальное БУ**</div>
             <br />
             {/* <div>🍏 Apple</div> */}
             {/* {result.map((appleUsed, i) => (
