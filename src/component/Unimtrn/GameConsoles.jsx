@@ -90,7 +90,8 @@ const GameConsoles = ({ double }) => {
 
   const fixName = (allPriceArr) => {
     const fixGb = allPriceArr.name.replace(gb, "");
-    const fixPlaystation = fixGb.replace(playstation, "PlayStation");
+    const replaceSony = fixGb.replace("Sony ", "");
+    const fixPlaystation = replaceSony.replace(playstation, "PlayStation");
     return fixPlaystation.replace(wiFi, "Wi-Fi");
   };
 
