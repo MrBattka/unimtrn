@@ -80,6 +80,7 @@ export const baseFix = (el) => {
     toLowerCase.indexOf("пломба") == -1 &&
     toLowerCase.indexOf('""') == -1 &&
     toLowerCase.indexOf("asis+") == -1 &&
+    toLowerCase.indexOf("внутри") == -1 &&
     el !== "Товар"
   );
 };
