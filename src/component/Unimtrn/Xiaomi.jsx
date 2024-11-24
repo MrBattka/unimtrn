@@ -19,7 +19,8 @@ const Xiaomi = ({ double }) => {
     const fixPoco = fixGb.replace(poco, "POCO");
     const fixPoco1 = fixPoco.replace(poco1, "POCO");
     const fixPocophone = fixPoco1.replace("phone", "");
-    const replaceXiaomi = fixPocophone.replace("Xiaomi ", "");
+    const fixMi = fixPocophone.replace("Xiaomi 1", "MI 1");
+    const replaceXiaomi = fixMi.replace("Xiaomi ", "");
     const fixPadSE =
       replaceXiaomi.indexOf("Redmi") === -1
         ? replaceXiaomi.replace("Pad SE", "Redmi Pad SE")

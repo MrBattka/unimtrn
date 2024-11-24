@@ -35,7 +35,8 @@ const Xiaomi = ({ fullList }) => {
     const fixWifi2 = fixWifi.replace(wifi2, "Wi-Fi");
     const fixPoco = fixWifi2.replace(poco, "Poco");
     const fixNote = fixPoco.replace(note, "Note");
-    const fixXiaomi = fixNote.replace(xiaomiName, "");
+    const fixMi = fixNote.replace("Xiaomi 1", "MI 1");
+    const fixXiaomi = fixMi.replace(xiaomiName, "");
     const fixYandex = fixXiaomi.replace(yandexName, "");
     return changeFlag(fixYandex);
   };
