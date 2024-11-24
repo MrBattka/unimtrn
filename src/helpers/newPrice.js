@@ -91,8 +91,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("asus") !== -1 ||
     name.indexOf("zenfone") !== -1 ||
     name.indexOf("zenfone") !== -1 ||
-    name.indexOf("mi ") !== -1 ||
-    name.indexOf("mi ") !== -1 ||
+    
     name.indexOf("airpods max") !== -1 ||
     name.indexOf("air pods max") !== -1 ||
     name.indexOf("airpods max") !== -1 ||
@@ -197,7 +196,9 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("z flip") !== -1 ||
     name.indexOf("z fold") !== -1 ||
     name.indexOf("tab s") !== -1 ||
-    name.indexOf("microsoft") !== -1
+    name.indexOf("microsoft") !== -1 ||
+    name.indexOf("mi ") !== -1 ||
+    name.indexOf("mi ") !== -1  
   ) {
     return Number(price) + 500;
   } else if (

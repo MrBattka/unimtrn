@@ -199,10 +199,14 @@ const Samsung = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Galaxy Buds") != -1 ||
@@ -230,10 +234,14 @@ const Samsung = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Watch 6") != -1 ||
@@ -277,10 +285,14 @@ const Samsung = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("A05s") != -1 ||
@@ -323,10 +335,14 @@ const Samsung = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Tab S") != -1 && (
                           <span>{" - " + el.provider}</span>

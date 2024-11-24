@@ -187,10 +187,12 @@ const Xiaomi = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Redmi Buds") != -1 ||
@@ -222,10 +224,12 @@ const Xiaomi = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Mi ") != -1 ||
@@ -262,10 +266,12 @@ const Xiaomi = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Redmi Note") != -1 ||
@@ -302,10 +308,12 @@ const Xiaomi = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Redmi Pad") != -1 ||
@@ -336,10 +344,12 @@ const Xiaomi = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
                                 el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Poco") != -1 ||

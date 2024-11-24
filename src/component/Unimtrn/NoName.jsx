@@ -171,10 +171,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Beats") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -199,10 +203,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Blackview") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -227,10 +235,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("AGM") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -255,10 +267,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("infinix") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -283,10 +299,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Oppo") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -312,10 +332,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Huawei") != -1 ||
@@ -342,10 +366,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Realme") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -372,10 +400,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Tecno") != -1 ||
@@ -403,10 +435,14 @@ const NoName = ({ double }) => {
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
                                 newPrice(el.name, el.stockPrice) + el.condition
                               })`
-                            : newPrice(
+                            : el.provider !== "База"
+                            ? newPrice(
                                 el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              ))}
+                                el.condition
+                                  ? el.extraPrice
+                                  : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Яндекс") != -1 && (
                           <span>{" - " + el.provider}</span>

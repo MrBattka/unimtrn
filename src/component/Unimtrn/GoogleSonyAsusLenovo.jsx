@@ -116,7 +116,8 @@ const GoogleSonyAsusLenovo = ({ double }) => {
             productEl.name.indexOf("Wireless WH") != -1 ||
             productEl.name.indexOf("Xperia") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) + newPrice(productEl.name, productEl.price)
+          returnFixPrice(productEl, fixName(productEl)) +
+            newPrice(productEl.name, productEl.price)
       )
     );
   };
@@ -166,24 +167,32 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                           asusEl.name.indexOf("Asus") != -1) &&
                         (isAsus || setIsAsus(true)) &&
                         returnFixPrice(asusEl, fixName(asusEl)) +
-                        (asusEl.condition
-                          ? `${newPrice(asusEl.name, asusEl.extraPrice)} 👉 (${
-                              newPrice(asusEl.name, asusEl.stockPrice) + asusEl.condition
-                            })`
-                          : newPrice(
-                              asusEl.name,
-                              asusEl.condition ? asusEl.extraPrice : asusEl.stockPrice
-                            ))}
-                            <h3 className="del">
-                              {baseFix(asusEl) &&
-                                (asusEl.name.indexOf("Asus") != -1 ||
-                                asusEl.name.indexOf("ZenFone") != -1 ||
-                                asusEl.name.indexOf("ROG") != -1 ||
-                                asusEl.name.indexOf("Rog") != -1 ||
-                                asusEl.name.indexOf("Asus") != -1) && (
-                                  <span>{" - " + asusEl.provider}</span>
-                                )}
-                            </h3>
+                          (asusEl.condition
+                            ? `${newPrice(
+                                asusEl.name,
+                                asusEl.extraPrice
+                              )} 👉 (${
+                                newPrice(asusEl.name, asusEl.stockPrice) +
+                                asusEl.condition
+                              })`
+                            : asusEl.provider !== "База"
+                            ? newPrice(
+                                asusEl.name,
+                                asusEl.condition
+                                  ? asusEl.extraPrice
+                                  : asusEl.stockPrice
+                              )
+                            : asusEl.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(asusEl) &&
+                          (asusEl.name.indexOf("Asus") != -1 ||
+                            asusEl.name.indexOf("ZenFone") != -1 ||
+                            asusEl.name.indexOf("ROG") != -1 ||
+                            asusEl.name.indexOf("Rog") != -1 ||
+                            asusEl.name.indexOf("Asus") != -1) && (
+                            <span>{" - " + asusEl.provider}</span>
+                          )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -199,21 +208,29 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                           googleEl.name.indexOf("Pixel") != -1) &&
                         (isGoogle || setIsGoogle(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
-                        (googleEl.condition
-                          ? `${newPrice(googleEl.name, googleEl.extraPrice)} 👉 (${
-                              newPrice(googleEl.name, googleEl.stockPrice) + googleEl.condition
-                            })`
-                          : newPrice(
-                              googleEl.name,
-                              googleEl.condition ? googleEl.extraPrice : googleEl.stockPrice
-                            ))}
-                            <h3 className="del">
-                              {baseFix(googleEl) &&
-                                (googleEl.name.indexOf("Google") != -1 ||
-                                googleEl.name.indexOf("Pixel") != -1) && (
-                                  <span>{" - " + googleEl.provider}</span>
-                                )}
-                            </h3>
+                          (googleEl.condition
+                            ? `${newPrice(
+                                googleEl.name,
+                                googleEl.extraPrice
+                              )} 👉 (${
+                                newPrice(googleEl.name, googleEl.stockPrice) +
+                                googleEl.condition
+                              })`
+                            : googleEl.provider !== "База"
+                            ? newPrice(
+                                googleEl.name,
+                                googleEl.condition
+                                  ? googleEl.extraPrice
+                                  : googleEl.stockPrice
+                              )
+                            : googleEl.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(googleEl) &&
+                          (googleEl.name.indexOf("Google") != -1 ||
+                            googleEl.name.indexOf("Pixel") != -1) && (
+                            <span>{" - " + googleEl.provider}</span>
+                          )}
+                      </h3>
                     </div>
                   ))
                 ) : (
@@ -230,22 +247,30 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                           sonyEl.name.indexOf("Xperia") != -1) &&
                         (isSony || setIsSony(true)) &&
                         returnFixPrice(sonyEl, fixName(sonyEl)) +
-                        (sonyEl.condition
-                          ? `${newPrice(sonyEl.name, sonyEl.extraPrice)} 👉 (${
-                              newPrice(sonyEl.name, sonyEl.stockPrice) + sonyEl.condition
-                            })`
-                          : newPrice(
-                              sonyEl.name,
-                              sonyEl.condition ? sonyEl.extraPrice : sonyEl.stockPrice
-                            ))}
-                            <h3 className="del">
-                              {baseFix(sonyEl) &&
-                                (sonyEl.name.indexOf("Sony Wireless") != -1 ||
-                                sonyEl.name.indexOf("Wireless WH") != -1 ||
-                                sonyEl.name.indexOf("Xperia") != -1) && (
-                                  <span>{" - " + sonyEl.provider}</span>
-                                )}
-                            </h3>
+                          (sonyEl.condition
+                            ? `${newPrice(
+                                sonyEl.name,
+                                sonyEl.extraPrice
+                              )} 👉 (${
+                                newPrice(sonyEl.name, sonyEl.stockPrice) +
+                                sonyEl.condition
+                              })`
+                            : sonyEl.provider !== "База"
+                            ? newPrice(
+                                sonyEl.name,
+                                sonyEl.condition
+                                  ? sonyEl.extraPrice
+                                  : sonyEl.stockPrice
+                              )
+                            : sonyEl.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(sonyEl) &&
+                          (sonyEl.name.indexOf("Sony Wireless") != -1 ||
+                            sonyEl.name.indexOf("Wireless WH") != -1 ||
+                            sonyEl.name.indexOf("Xperia") != -1) && (
+                            <span>{" - " + sonyEl.provider}</span>
+                          )}
+                      </h3>
                     </div>
                   ))
                 ) : (

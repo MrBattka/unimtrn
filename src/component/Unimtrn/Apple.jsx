@@ -799,7 +799,9 @@ const Apple = ({ double }) => {
                               el.name.indexOf("AirPods Max") == -1 &&
                               (isAirPods || setIsAirPods(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("AirPods") != -1 ||
@@ -824,7 +826,9 @@ const Apple = ({ double }) => {
                               el.name.indexOf("AirPods Max") != -1 &&
                               (isAirPodsMax || setIsAirPodsMax(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
                                 el.name.indexOf("AirPods Max") != -1 && (
@@ -845,7 +849,9 @@ const Apple = ({ double }) => {
                               el.name.indexOf("Pencil") != -1 &&
                               (isPencil || setIsPencil(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
                                 el.name.indexOf("Pencil") != -1 && (
@@ -867,11 +873,13 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("Magic Mouse") != -1) &&
                               (isMagic || setIsMagic(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Magic Keyboard") != -1 ||
-                                el.name.indexOf("Magic Mouse") != -1) && (
+                                  el.name.indexOf("Magic Mouse") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -916,11 +924,13 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("XR 128") != -1) &&
                               (isXR || setIsXR(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("XR 64") != -1 ||
-                                el.name.indexOf("XR 128") != -1) && (
+                                  el.name.indexOf("XR 128") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -941,13 +951,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("SE 256") != -1) &&
                               (isSE || setIsSE(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("SE 3") != -1 ||
-                                el.name.indexOf("SE 64") != -1 ||
-                                el.name.indexOf("SE 128") != -1 ||
-                                el.name.indexOf("SE 256") != -1) && (
+                                  el.name.indexOf("SE 64") != -1 ||
+                                  el.name.indexOf("SE 128") != -1 ||
+                                  el.name.indexOf("SE 256") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -966,11 +978,13 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("11 128") != -1) &&
                               (is11 || setIs11(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("11 64") != -1 ||
-                                el.name.indexOf("11 128") != -1) && (
+                                  el.name.indexOf("11 128") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -991,13 +1005,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("12 Pro Max") != -1) &&
                               (is12 || setIs12(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("12 64") != -1 ||
-                                el.name.indexOf("12 128") != -1 ||
-                                el.name.indexOf("12 256") != -1 ||
-                                el.name.indexOf("12 Pro Max") != -1) && (
+                                  el.name.indexOf("12 128") != -1 ||
+                                  el.name.indexOf("12 256") != -1 ||
+                                  el.name.indexOf("12 Pro Max") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1017,12 +1033,14 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("13 Mini 512") != -1) &&
                               (is13Mini || setIs13Mini(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("13 Mini 128") != -1 ||
-                                el.name.indexOf("13 Mini 256") != -1 ||
-                                el.name.indexOf("13 Mini 512") != -1) && (
+                                  el.name.indexOf("13 Mini 256") != -1 ||
+                                  el.name.indexOf("13 Mini 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1042,12 +1060,14 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("13 512") != -1) &&
                               (is13 || setIs13(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("13 128") != -1 ||
-                                el.name.indexOf("13 256") != -1 ||
-                                el.name.indexOf("13 512") != -1) && (
+                                  el.name.indexOf("13 256") != -1 ||
+                                  el.name.indexOf("13 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1068,13 +1088,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("14 Plus") != -1) &&
                               (is14 || setIs14(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("14 128") != -1 ||
-                                el.name.indexOf("14 256") != -1 ||
-                                el.name.indexOf("14 512") != -1 ||
-                                el.name.indexOf("14 Plus") != -1) && (
+                                  el.name.indexOf("14 256") != -1 ||
+                                  el.name.indexOf("14 512") != -1 ||
+                                  el.name.indexOf("14 Plus") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1095,13 +1117,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("14 Pro 1TB") != -1) &&
                               (is14Pro || setIs14Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("14 Pro 128") != -1 ||
-                                el.name.indexOf("14 Pro 256") != -1 ||
-                                el.name.indexOf("14 Pro 512") != -1 ||
-                                el.name.indexOf("14 Pro 1TB") != -1) && (
+                                  el.name.indexOf("14 Pro 256") != -1 ||
+                                  el.name.indexOf("14 Pro 512") != -1 ||
+                                  el.name.indexOf("14 Pro 1TB") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1121,12 +1145,14 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("15 512") != -1) &&
                               (is15 || setIs15(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("15 128") != -1 ||
-                                el.name.indexOf("15 256") != -1 ||
-                                el.name.indexOf("15 512") != -1) && (
+                                  el.name.indexOf("15 256") != -1 ||
+                                  el.name.indexOf("15 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1146,12 +1172,14 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("15 Plus 512") != -1) &&
                               (is15Plus || setIs15Plus(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("15 Plus 128") != -1 ||
-                                el.name.indexOf("15 Plus 256") != -1 ||
-                                el.name.indexOf("15 Plus 512") != -1) && (
+                                  el.name.indexOf("15 Plus 256") != -1 ||
+                                  el.name.indexOf("15 Plus 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1172,13 +1200,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("15 Pro 1Tb") != -1) &&
                               (is15Pro || setIs15Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("15 Pro 128") != -1 ||
-                                el.name.indexOf("15 Pro 256") != -1 ||
-                                el.name.indexOf("15 Pro 512") != -1 ||
-                                el.name.indexOf("15 Pro 1Tb") != -1) && (
+                                  el.name.indexOf("15 Pro 256") != -1 ||
+                                  el.name.indexOf("15 Pro 512") != -1 ||
+                                  el.name.indexOf("15 Pro 1Tb") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1203,17 +1233,19 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("15 Pro Max 1Tb") != -1) &&
                               (is15ProMax || setIs15ProMax(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("15 ProMax 256") != -1 ||
-                                el.name.indexOf("15 ProMax 512") != -1 ||
-                                el.name.indexOf("15 ProMax 1Tb") != -1 ||
-                                el.name.indexOf("15 Pro Max 256") != -1 ||
-                                el.name.indexOf("15 Pro Max 512") != -1 ||
-                                el.name.indexOf("15 Pro Max 1Tb") != -1 ||
-                                el.name.indexOf("15 Pro Max 1TB") != -1 ||
-                                el.name.indexOf("15 Pro Max 1Tb") != -1) && (
+                                  el.name.indexOf("15 ProMax 512") != -1 ||
+                                  el.name.indexOf("15 ProMax 1Tb") != -1 ||
+                                  el.name.indexOf("15 Pro Max 256") != -1 ||
+                                  el.name.indexOf("15 Pro Max 512") != -1 ||
+                                  el.name.indexOf("15 Pro Max 1Tb") != -1 ||
+                                  el.name.indexOf("15 Pro Max 1TB") != -1 ||
+                                  el.name.indexOf("15 Pro Max 1Tb") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1233,12 +1265,14 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("16 512") != -1) &&
                               (is16 || setIs16(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("16 128") != -1 ||
-                                el.name.indexOf("16 256") != -1 ||
-                                el.name.indexOf("16 512") != -1) && (
+                                  el.name.indexOf("16 256") != -1 ||
+                                  el.name.indexOf("16 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1258,12 +1292,14 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("16 Plus 512") != -1) &&
                               (is16Plus || setIs16Plus(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("16 Plus 128") != -1 ||
-                                el.name.indexOf("16 Plus 256") != -1 ||
-                                el.name.indexOf("16 Plus 512") != -1) && (
+                                  el.name.indexOf("16 Plus 256") != -1 ||
+                                  el.name.indexOf("16 Plus 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1284,13 +1320,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("16 Pro 1Tb") != -1) &&
                               (is16Pro || setIs16Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("16 Pro 128") != -1 ||
-                                el.name.indexOf("16 Pro 256") != -1 ||
-                                el.name.indexOf("16 Pro 512") != -1 ||
-                                el.name.indexOf("16 Pro 1Tb") != -1) && (
+                                  el.name.indexOf("16 Pro 256") != -1 ||
+                                  el.name.indexOf("16 Pro 512") != -1 ||
+                                  el.name.indexOf("16 Pro 1Tb") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1322,27 +1360,30 @@ const Apple = ({ double }) => {
                                   -1) &&
                               (is16ProMax || setIs16ProMax(true)) &&
                               returnFixPrice(iPhone16El, fixName(iPhone16El)) +
-                                newPrice(
-                                  iPhone16El.name,
-                                  iPhone16El.stockPrice
-                                )}
-                                <h3 className="del">
+                                (iPhone16El.provider !== "База"
+                                  ? newPrice(
+                                      iPhone16El.name,
+                                      iPhone16El.stockPrice
+                                    )
+                                  : iPhone16El.stockPrice)}
+                            <h3 className="del">
                               {baseFix(iPhone16El) &&
-                                (iPhone16El.name.indexOf("16 ProMax 256") != -1 ||
-                                iPhone16El.name.indexOf("16 ProMax 512") !=
+                                (iPhone16El.name.indexOf("16 ProMax 256") !=
                                   -1 ||
-                                iPhone16El.name.indexOf("16 ProMax 1Tb") !=
-                                  -1 ||
-                                iPhone16El.name.indexOf("16 Pro Max 256") !=
-                                  -1 ||
-                                iPhone16El.name.indexOf("16 Pro Max 512") !=
-                                  -1 ||
-                                iPhone16El.name.indexOf("16 Pro Max 1Tb") !=
-                                  -1 ||
-                                iPhone16El.name.indexOf("16 Pro Max 1TB") !=
-                                  -1 ||
-                                iPhone16El.name.indexOf("16 Pro Max 1Tb") !=
-                                  -1) && (
+                                  iPhone16El.name.indexOf("16 ProMax 512") !=
+                                    -1 ||
+                                  iPhone16El.name.indexOf("16 ProMax 1Tb") !=
+                                    -1 ||
+                                  iPhone16El.name.indexOf("16 Pro Max 256") !=
+                                    -1 ||
+                                  iPhone16El.name.indexOf("16 Pro Max 512") !=
+                                    -1 ||
+                                  iPhone16El.name.indexOf("16 Pro Max 1Tb") !=
+                                    -1 ||
+                                  iPhone16El.name.indexOf("16 Pro Max 1TB") !=
+                                    -1 ||
+                                  iPhone16El.name.indexOf("16 Pro Max 1Tb") !=
+                                    -1) && (
                                   <span>{" - " + iPhone16El.provider}</span>
                                 )}
                             </h3>
@@ -1392,19 +1433,21 @@ const Apple = ({ double }) => {
                               el.name.indexOf("OnePlus") === -1 &&
                               (isSEWatch || setIsSEWatch(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Watch SE") != -1 ||
-                                el.name.indexOf("SE (2023) Gen") != -1 ||
-                                el.name.indexOf("SE (2022) Gen") != -1 ||
-                                el.name.indexOf("SE 2") != -1 ||
-                                el.name.indexOf("SE2 4") != -1 ||
-                                el.name.indexOf("SE 4") != -1 ||
-                                el.name.indexOf("SE (2022) 64") != -1 ||
-                                el.name.indexOf("SE (2022) 128") != -1 ||
-                                el.name.indexOf("SE (2022) 256") != -1) &&
-                              el.name.indexOf("OnePlus") === -1 && (
+                                  el.name.indexOf("SE (2023) Gen") != -1 ||
+                                  el.name.indexOf("SE (2022) Gen") != -1 ||
+                                  el.name.indexOf("SE 2") != -1 ||
+                                  el.name.indexOf("SE2 4") != -1 ||
+                                  el.name.indexOf("SE 4") != -1 ||
+                                  el.name.indexOf("SE (2022) 64") != -1 ||
+                                  el.name.indexOf("SE (2022) 128") != -1 ||
+                                  el.name.indexOf("SE (2022) 256") != -1) &&
+                                el.name.indexOf("OnePlus") === -1 && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1426,14 +1469,16 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("AW  8") != -1) &&
                               (isS8 || setIsS8(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Watch S8") != -1 ||
-                                el.name.indexOf("S8 4") != -1 ||
-                                el.name.indexOf("AW Series 8") != -1 ||
-                                el.name.indexOf("AW 8") != -1 ||
-                                el.name.indexOf("AW  8") != -1) && (
+                                  el.name.indexOf("S8 4") != -1 ||
+                                  el.name.indexOf("AW Series 8") != -1 ||
+                                  el.name.indexOf("AW 8") != -1 ||
+                                  el.name.indexOf("AW  8") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1455,14 +1500,16 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("AW  9") != -1) &&
                               (isS9 || setIsS9(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Watch S9") != -1 ||
-                                el.name.indexOf("AW Series 9") != -1 ||
-                                el.name.indexOf("AW 9") != -1 ||
-                                el.name.indexOf("S9 4") != -1 ||
-                                el.name.indexOf("AW  9") != -1) && (
+                                  el.name.indexOf("AW Series 9") != -1 ||
+                                  el.name.indexOf("AW 9") != -1 ||
+                                  el.name.indexOf("S9 4") != -1 ||
+                                  el.name.indexOf("AW  9") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1484,14 +1531,16 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("AW  10") != -1) &&
                               (isS10 || setIsS10(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Watch S10") != -1 ||
-                                el.name.indexOf("AW Series 10") != -1 ||
-                                el.name.indexOf("AW 10") != -1 ||
-                                el.name.indexOf("S10 4") != -1 ||
-                                el.name.indexOf("AW  10") != -1) && (
+                                  el.name.indexOf("AW Series 10") != -1 ||
+                                  el.name.indexOf("AW 10") != -1 ||
+                                  el.name.indexOf("S10 4") != -1 ||
+                                  el.name.indexOf("AW  10") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1511,12 +1560,14 @@ const Apple = ({ double }) => {
                               el.name.indexOf("2024") == -1 &&
                               (isUltra || setIsUltra(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Ultra 2") != -1 ||
-                                el.name.indexOf("UL 2") != -1) &&
-                              el.name.indexOf("2024") == -1 && (
+                                  el.name.indexOf("UL 2") != -1) &&
+                                el.name.indexOf("2024") == -1 && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1537,13 +1588,15 @@ const Apple = ({ double }) => {
                                   el.name.indexOf("2024") != -1)) &&
                               (isUltra2024 || setIsUltra2024(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Ultra 2 2024") != -1 ||
-                                el.name.indexOf("Ultra 2 (2024)") != -1 ||
-                                (el.name.indexOf("UL 2") != -1 &&
-                                  el.name.indexOf("2024") != -1)) && (
+                                  el.name.indexOf("Ultra 2 (2024)") != -1 ||
+                                  (el.name.indexOf("UL 2") != -1 &&
+                                    el.name.indexOf("2024") != -1)) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1585,11 +1638,13 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("IPad 9") != -1) &&
                               (isiPad9 || setIsiPad9(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("iPad 9") != -1 ||
-                                el.name.indexOf("IPad 9") != -1) && (
+                                  el.name.indexOf("IPad 9") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1608,11 +1663,13 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("IPad 10") != -1) &&
                               (isiPad10 || setIsiPad10(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("iPad 10") != -1 ||
-                                el.name.indexOf("IPad 10") != -1)  && (
+                                  el.name.indexOf("IPad 10") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1633,13 +1690,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("MINI 7") != -1) &&
                               (isiPadMini || setIsiPadMini(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Mini 6") != -1 ||
-                                el.name.indexOf("MINI 6") != -1 ||
-                                el.name.indexOf("Mini 7") != -1 ||
-                                el.name.indexOf("MINI 7") != -1) && (
+                                  el.name.indexOf("MINI 6") != -1 ||
+                                  el.name.indexOf("Mini 7") != -1 ||
+                                  el.name.indexOf("MINI 7") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1660,13 +1719,15 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("IPad Air 11") != -1) &&
                               (isiPadAir || setIsiPadAir(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("iPad Air 5") != -1 ||
-                                el.name.indexOf("iPad Air 11") != -1 ||
-                                el.name.indexOf("iPad Air 13") != -1 ||
-                                el.name.indexOf("IPad Air 11") != -1)  && (
+                                  el.name.indexOf("iPad Air 11") != -1 ||
+                                  el.name.indexOf("iPad Air 13") != -1 ||
+                                  el.name.indexOf("IPad Air 11") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1685,11 +1746,13 @@ const Apple = ({ double }) => {
                               el.name.indexOf("iPad Pro 11") != -1 &&
                               (isiPadPro11 || setIsiPadPro11(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 el.name.indexOf("Magic Keyboard") == -1 &&
-                                el.name.indexOf("iPad Pro 11") != -1  && (
+                                el.name.indexOf("iPad Pro 11") != -1 && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1707,10 +1770,12 @@ const Apple = ({ double }) => {
                               el.name.indexOf("iPad Pro 12") != -1 &&
                               (isiPadPro12 || setIsiPadPro12(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
-                                el.name.indexOf("iPad Pro 12") != -1  && (
+                                el.name.indexOf("iPad Pro 12") != -1 && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1729,8 +1794,10 @@ const Apple = ({ double }) => {
                               el.name.indexOf("Magic Keyboard") == -1 &&
                               (isiPadPro13 || setIsiPadPro13(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 el.name.indexOf("iPad Pro 13") != -1 &&
                                 el.name.indexOf("Magic Keyboard") == -1 && (
@@ -1809,44 +1876,46 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("MXNF2") != -1) &&
                               (isiMac || setIsiMac(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("iMac") != -1 ||
-                                el.name.indexOf("MGNR3") != -1 ||
-                                el.name.indexOf("MGNT3") != -1 ||
-                                el.name.indexOf("MGPC3") != -1 ||
-                                el.name.indexOf("MGPD3") != -1 ||
-                                el.name.indexOf("MGPH3") != -1 ||
-                                el.name.indexOf("MGPJ3") != -1 ||
-                                el.name.indexOf("MGPK3") != -1 ||
-                                el.name.indexOf("MGPL3") != -1 ||
-                                el.name.indexOf("MGPM3") != -1 ||
-                                el.name.indexOf("MGPN3") != -1 ||
-                                el.name.indexOf("MGTF3") != -1 ||
-                                el.name.indexOf("MJV83") != -1 ||
-                                el.name.indexOf("MJV93") != -1 ||
-                                el.name.indexOf("MJVA3") != -1 ||
-                                el.name.indexOf("MQR93") != -1 ||
-                                el.name.indexOf("MQRA3") != -1 ||
-                                el.name.indexOf("MQRC3") != -1 ||
-                                el.name.indexOf("MQRD3") != -1 ||
-                                el.name.indexOf("MQRJ3") != -1 ||
-                                el.name.indexOf("MQRK3") != -1 ||
-                                el.name.indexOf("MQRN3") != -1 ||
-                                el.name.indexOf("MQRP3") != -1 ||
-                                el.name.indexOf("MQRQ3") != -1 ||
-                                el.name.indexOf("MQRR3") != -1 ||
-                                el.name.indexOf("MQRT3") != -1 ||
-                                el.name.indexOf("MQRU3") != -1 ||
-                                el.name.indexOf("MXNG2") != -1 ||
-                                el.name.indexOf("Z12SIMAC01") != -1 ||
-                                el.name.indexOf("Z12TIMAC01") != -1 ||
-                                el.name.indexOf("Z130IMAC01") != -1 ||
-                                el.name.indexOf("Z131IMAC01") != -1 ||
-                                el.name.indexOf("Z132IMAC01") != -1 ||
-                                el.name.indexOf("Z133IMAC01") != -1 ||
-                                el.name.indexOf("MXNF2") != -1) && (
+                                  el.name.indexOf("MGNR3") != -1 ||
+                                  el.name.indexOf("MGNT3") != -1 ||
+                                  el.name.indexOf("MGPC3") != -1 ||
+                                  el.name.indexOf("MGPD3") != -1 ||
+                                  el.name.indexOf("MGPH3") != -1 ||
+                                  el.name.indexOf("MGPJ3") != -1 ||
+                                  el.name.indexOf("MGPK3") != -1 ||
+                                  el.name.indexOf("MGPL3") != -1 ||
+                                  el.name.indexOf("MGPM3") != -1 ||
+                                  el.name.indexOf("MGPN3") != -1 ||
+                                  el.name.indexOf("MGTF3") != -1 ||
+                                  el.name.indexOf("MJV83") != -1 ||
+                                  el.name.indexOf("MJV93") != -1 ||
+                                  el.name.indexOf("MJVA3") != -1 ||
+                                  el.name.indexOf("MQR93") != -1 ||
+                                  el.name.indexOf("MQRA3") != -1 ||
+                                  el.name.indexOf("MQRC3") != -1 ||
+                                  el.name.indexOf("MQRD3") != -1 ||
+                                  el.name.indexOf("MQRJ3") != -1 ||
+                                  el.name.indexOf("MQRK3") != -1 ||
+                                  el.name.indexOf("MQRN3") != -1 ||
+                                  el.name.indexOf("MQRP3") != -1 ||
+                                  el.name.indexOf("MQRQ3") != -1 ||
+                                  el.name.indexOf("MQRR3") != -1 ||
+                                  el.name.indexOf("MQRT3") != -1 ||
+                                  el.name.indexOf("MQRU3") != -1 ||
+                                  el.name.indexOf("MXNG2") != -1 ||
+                                  el.name.indexOf("Z12SIMAC01") != -1 ||
+                                  el.name.indexOf("Z12TIMAC01") != -1 ||
+                                  el.name.indexOf("Z130IMAC01") != -1 ||
+                                  el.name.indexOf("Z131IMAC01") != -1 ||
+                                  el.name.indexOf("Z132IMAC01") != -1 ||
+                                  el.name.indexOf("Z133IMAC01") != -1 ||
+                                  el.name.indexOf("MXNF2") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1962,108 +2031,110 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("Z1AW001NS") != -1) &&
                               (isMacBook || setIsMacBook(true)) &&
                               returnFixPrice(el, fixName(el)) +
-                                newPrice(el.name, el.stockPrice)}
-                                <h3 className="del">
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
                               {baseFix(el) &&
                                 (el.name.indexOf("Macbook") != -1 ||
-                                el.name.indexOf("Book ") != -1 ||
-                                el.name.indexOf("MB") != -1 ||
-                                el.name.indexOf("13.6 M") != -1 ||
-                                el.name.indexOf("15 M") != -1 ||
-                                el.name.indexOf("MGN") != -1 ||
-                                el.name.indexOf("MBPM2-03") != -1 ||
-                                el.name.indexOf("MBPM2-04") != -1 ||
-                                el.name.indexOf("MBPM2-05") != -1 ||
-                                el.name.indexOf("MBPM2-06") != -1 ||
-                                el.name.indexOf("MBPM2-07") != -1 ||
-                                el.name.indexOf("MBPM2-08") != -1 ||
-                                el.name.indexOf("MBPM2-09") != -1 ||
-                                el.name.indexOf("MBPM2-10") != -1 ||
-                                el.name.indexOf("MBPM2-11") != -1 ||
-                                el.name.indexOf("MBPM2-12") != -1 ||
-                                el.name.indexOf("MBPM2SL-03") != -1 ||
-                                el.name.indexOf("MBPM2SL-04") != -1 ||
-                                el.name.indexOf("MBPM2SL-05") != -1 ||
-                                el.name.indexOf("MBPM2SL-06") != -1 ||
-                                el.name.indexOf("MBPM2SL-07") != -1 ||
-                                el.name.indexOf("MBPM2SL-08") != -1 ||
-                                el.name.indexOf("MBPM2SL-09") != -1 ||
-                                el.name.indexOf("MBPM2SL-10") != -1 ||
-                                el.name.indexOf("MBPM2SL-11") != -1 ||
-                                el.name.indexOf("MBPM2SL-12") != -1 ||
-                                el.name.indexOf("MGN63") != -1 ||
-                                el.name.indexOf("MGN93") != -1 ||
-                                el.name.indexOf("MGND3") != -1 ||
-                                el.name.indexOf("MLXW3") != -1 ||
-                                el.name.indexOf("MLXX3") != -1 ||
-                                el.name.indexOf("MLXY3") != -1 ||
-                                el.name.indexOf("MLY03") != -1 ||
-                                el.name.indexOf("MLY13") != -1 ||
-                                el.name.indexOf("MLY23") != -1 ||
-                                el.name.indexOf("MLY33") != -1 ||
-                                el.name.indexOf("MLY43") != -1 ||
-                                el.name.indexOf("MNEH3") != -1 ||
-                                el.name.indexOf("MNEJ3") != -1 ||
-                                el.name.indexOf("MNEP3") != -1 ||
-                                el.name.indexOf("MNEQ3") != -1 ||
-                                el.name.indexOf("MPHE3") != -1 ||
-                                el.name.indexOf("MPHF3") != -1 ||
-                                el.name.indexOf("MPHH3") != -1 ||
-                                el.name.indexOf("MPHJ3") != -1 ||
-                                el.name.indexOf("MQKP3") != -1 ||
-                                el.name.indexOf("MQKQ3") != -1 ||
-                                el.name.indexOf("MQKR3") != -1 ||
-                                el.name.indexOf("MQKT3") != -1 ||
-                                el.name.indexOf("MQKU3") != -1 ||
-                                el.name.indexOf("MQKU3") != -1 ||
-                                el.name.indexOf("MQKV3") != -1 ||
-                                el.name.indexOf("MQKW3") != -1 ||
-                                el.name.indexOf("MQKX3") != -1 ||
-                                el.name.indexOf("MR7J3") != -1 ||
-                                el.name.indexOf("MR7K3") != -1 ||
-                                el.name.indexOf("MRW13") != -1 ||
-                                el.name.indexOf("MRW23") != -1 ||
-                                el.name.indexOf("MRW33") != -1 ||
-                                el.name.indexOf("MRW43") != -1 ||
-                                el.name.indexOf("MRW63") != -1 ||
-                                el.name.indexOf("MRW73") != -1 ||
-                                el.name.indexOf("MRX33") != -1 ||
-                                el.name.indexOf("MRX43") != -1 ||
-                                el.name.indexOf("MRX53") != -1 ||
-                                el.name.indexOf("MRX63") != -1 ||
-                                el.name.indexOf("MRX73") != -1 ||
-                                el.name.indexOf("MRX83") != -1 ||
-                                el.name.indexOf("MRXN3") != -1 ||
-                                el.name.indexOf("MRXP3") != -1 ||
-                                el.name.indexOf("MRXQ3") != -1 ||
-                                el.name.indexOf("MRXR3") != -1 ||
-                                el.name.indexOf("MRXT3") != -1 ||
-                                el.name.indexOf("MRXU3") != -1 ||
-                                el.name.indexOf("MRXV3") != -1 ||
-                                el.name.indexOf("MRXW3") != -1 ||
-                                el.name.indexOf("MRYM3") != -1 ||
-                                el.name.indexOf("MRYN3") != -1 ||
-                                el.name.indexOf("MRYP3") != -1 ||
-                                el.name.indexOf("MRYQ3") != -1 ||
-                                el.name.indexOf("MRYR3") != -1 ||
-                                el.name.indexOf("MRYT3") != -1 ||
-                                el.name.indexOf("MRYU3") != -1 ||
-                                el.name.indexOf("MRYV3") != -1 ||
-                                el.name.indexOf("MTL73") != -1 ||
-                                el.name.indexOf("MTL83") != -1 ||
-                                el.name.indexOf("MUW63") != -1 ||
-                                el.name.indexOf("MUW73") != -1 ||
-                                el.name.indexOf("MXCR3") != -1 ||
-                                el.name.indexOf("MXCT3") != -1 ||
-                                el.name.indexOf("MXCU3") != -1 ||
-                                el.name.indexOf("MXCV3") != -1 ||
-                                el.name.indexOf("MXD13") != -1 ||
-                                el.name.indexOf("MXD23") != -1 ||
-                                el.name.indexOf("MXD33") != -1 ||
-                                el.name.indexOf("MXD43") != -1 ||
-                                el.name.indexOf("Z1AW001FY") != -1 ||
-                                el.name.indexOf("Z1AW001LV") != -1 ||
-                                el.name.indexOf("Z1AW001NS") != -1) && (
+                                  el.name.indexOf("Book ") != -1 ||
+                                  el.name.indexOf("MB") != -1 ||
+                                  el.name.indexOf("13.6 M") != -1 ||
+                                  el.name.indexOf("15 M") != -1 ||
+                                  el.name.indexOf("MGN") != -1 ||
+                                  el.name.indexOf("MBPM2-03") != -1 ||
+                                  el.name.indexOf("MBPM2-04") != -1 ||
+                                  el.name.indexOf("MBPM2-05") != -1 ||
+                                  el.name.indexOf("MBPM2-06") != -1 ||
+                                  el.name.indexOf("MBPM2-07") != -1 ||
+                                  el.name.indexOf("MBPM2-08") != -1 ||
+                                  el.name.indexOf("MBPM2-09") != -1 ||
+                                  el.name.indexOf("MBPM2-10") != -1 ||
+                                  el.name.indexOf("MBPM2-11") != -1 ||
+                                  el.name.indexOf("MBPM2-12") != -1 ||
+                                  el.name.indexOf("MBPM2SL-03") != -1 ||
+                                  el.name.indexOf("MBPM2SL-04") != -1 ||
+                                  el.name.indexOf("MBPM2SL-05") != -1 ||
+                                  el.name.indexOf("MBPM2SL-06") != -1 ||
+                                  el.name.indexOf("MBPM2SL-07") != -1 ||
+                                  el.name.indexOf("MBPM2SL-08") != -1 ||
+                                  el.name.indexOf("MBPM2SL-09") != -1 ||
+                                  el.name.indexOf("MBPM2SL-10") != -1 ||
+                                  el.name.indexOf("MBPM2SL-11") != -1 ||
+                                  el.name.indexOf("MBPM2SL-12") != -1 ||
+                                  el.name.indexOf("MGN63") != -1 ||
+                                  el.name.indexOf("MGN93") != -1 ||
+                                  el.name.indexOf("MGND3") != -1 ||
+                                  el.name.indexOf("MLXW3") != -1 ||
+                                  el.name.indexOf("MLXX3") != -1 ||
+                                  el.name.indexOf("MLXY3") != -1 ||
+                                  el.name.indexOf("MLY03") != -1 ||
+                                  el.name.indexOf("MLY13") != -1 ||
+                                  el.name.indexOf("MLY23") != -1 ||
+                                  el.name.indexOf("MLY33") != -1 ||
+                                  el.name.indexOf("MLY43") != -1 ||
+                                  el.name.indexOf("MNEH3") != -1 ||
+                                  el.name.indexOf("MNEJ3") != -1 ||
+                                  el.name.indexOf("MNEP3") != -1 ||
+                                  el.name.indexOf("MNEQ3") != -1 ||
+                                  el.name.indexOf("MPHE3") != -1 ||
+                                  el.name.indexOf("MPHF3") != -1 ||
+                                  el.name.indexOf("MPHH3") != -1 ||
+                                  el.name.indexOf("MPHJ3") != -1 ||
+                                  el.name.indexOf("MQKP3") != -1 ||
+                                  el.name.indexOf("MQKQ3") != -1 ||
+                                  el.name.indexOf("MQKR3") != -1 ||
+                                  el.name.indexOf("MQKT3") != -1 ||
+                                  el.name.indexOf("MQKU3") != -1 ||
+                                  el.name.indexOf("MQKU3") != -1 ||
+                                  el.name.indexOf("MQKV3") != -1 ||
+                                  el.name.indexOf("MQKW3") != -1 ||
+                                  el.name.indexOf("MQKX3") != -1 ||
+                                  el.name.indexOf("MR7J3") != -1 ||
+                                  el.name.indexOf("MR7K3") != -1 ||
+                                  el.name.indexOf("MRW13") != -1 ||
+                                  el.name.indexOf("MRW23") != -1 ||
+                                  el.name.indexOf("MRW33") != -1 ||
+                                  el.name.indexOf("MRW43") != -1 ||
+                                  el.name.indexOf("MRW63") != -1 ||
+                                  el.name.indexOf("MRW73") != -1 ||
+                                  el.name.indexOf("MRX33") != -1 ||
+                                  el.name.indexOf("MRX43") != -1 ||
+                                  el.name.indexOf("MRX53") != -1 ||
+                                  el.name.indexOf("MRX63") != -1 ||
+                                  el.name.indexOf("MRX73") != -1 ||
+                                  el.name.indexOf("MRX83") != -1 ||
+                                  el.name.indexOf("MRXN3") != -1 ||
+                                  el.name.indexOf("MRXP3") != -1 ||
+                                  el.name.indexOf("MRXQ3") != -1 ||
+                                  el.name.indexOf("MRXR3") != -1 ||
+                                  el.name.indexOf("MRXT3") != -1 ||
+                                  el.name.indexOf("MRXU3") != -1 ||
+                                  el.name.indexOf("MRXV3") != -1 ||
+                                  el.name.indexOf("MRXW3") != -1 ||
+                                  el.name.indexOf("MRYM3") != -1 ||
+                                  el.name.indexOf("MRYN3") != -1 ||
+                                  el.name.indexOf("MRYP3") != -1 ||
+                                  el.name.indexOf("MRYQ3") != -1 ||
+                                  el.name.indexOf("MRYR3") != -1 ||
+                                  el.name.indexOf("MRYT3") != -1 ||
+                                  el.name.indexOf("MRYU3") != -1 ||
+                                  el.name.indexOf("MRYV3") != -1 ||
+                                  el.name.indexOf("MTL73") != -1 ||
+                                  el.name.indexOf("MTL83") != -1 ||
+                                  el.name.indexOf("MUW63") != -1 ||
+                                  el.name.indexOf("MUW73") != -1 ||
+                                  el.name.indexOf("MXCR3") != -1 ||
+                                  el.name.indexOf("MXCT3") != -1 ||
+                                  el.name.indexOf("MXCU3") != -1 ||
+                                  el.name.indexOf("MXCV3") != -1 ||
+                                  el.name.indexOf("MXD13") != -1 ||
+                                  el.name.indexOf("MXD23") != -1 ||
+                                  el.name.indexOf("MXD33") != -1 ||
+                                  el.name.indexOf("MXD43") != -1 ||
+                                  el.name.indexOf("Z1AW001FY") != -1 ||
+                                  el.name.indexOf("Z1AW001LV") != -1 ||
+                                  el.name.indexOf("Z1AW001NS") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>

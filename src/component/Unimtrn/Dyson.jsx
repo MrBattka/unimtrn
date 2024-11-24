@@ -203,7 +203,7 @@ const Dyson = ({ double }) => {
                           dysonEl.name.indexOf("Air Purifier") != -1 ||
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
                         returnFixPrice1(dysonEl, dysonEl.name) +
-                          newPrice(dysonEl.name, dysonEl.stockPrice)}
+                        (dysonEl.provider !== "База" ? newPrice(dysonEl.name, dysonEl.stockPrice) : dysonEl.stockPrice)}
                       <h3 className="del">
                         {baseFix(dysonEl) &&
                           (dysonEl.name.indexOf("Airwrap") != -1 ||
