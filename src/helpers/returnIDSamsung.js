@@ -142,16 +142,60 @@ export const returnIDSamsung = (name) => {
 
   } else if (
     name.indexOf("a06 ") !== -1 &&
+    name.indexOf("4/64") !== -1 &&
+    name.indexOf("gold") !== -1
+  ) {
+    return 36880;
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
+    name.indexOf("4/64") !== -1 &&
+    name.indexOf("light blue") !== -1
+  ) {
+    return 36877;
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
+    name.indexOf("4/64") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 36873;
+
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
+    name.indexOf("4/128") !== -1 &&
+    name.indexOf("gold") !== -1
+  ) {
+    return 36879;
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
+    name.indexOf("4/128") !== -1 &&
+    name.indexOf("light blue") !== -1
+  ) {
+    return 36876;
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
+    name.indexOf("4/128") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 36872;
+
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("gold") !== -1
   ) {
-    return 301371;
+    return 36881;
   } else if (
     name.indexOf("a06 ") !== -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("light blue") !== -1
   ) {
-    return 301362;
+    return 36878;
+  } else if (
+    name.indexOf("a06 ") !== -1 &&
+    name.indexOf("6/128") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 36875;
 
   } else if (
     name.indexOf("a15 ") !== -1 &&
