@@ -30,7 +30,8 @@ const Samsung = ({ double }) => {
     const fixS24 = fixS23.replace(s24, "S24");
     const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
     const fixA550 = fixWiFi.replace(a550, "A55");
-    const replaceSamsung = fixA550.replace("Samsung ", "");
+    const fixGalaxy = (fixA550.indexOf("Galaxy A") || fixA550.indexOf("Galaxy S")) ? fixA550.replace("Galaxy ", ""): fixA550
+    const replaceSamsung = fixGalaxy.replace("Samsung ", "");
     const replaceSpace =
       replaceSamsung[0] === " " ? replaceSamsung.slice(1) : replaceSamsung;
     res.push({
