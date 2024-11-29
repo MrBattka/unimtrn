@@ -195,7 +195,7 @@ export const returnExtraPriceHi = (name) => {
       removeSpaceName2[0] === " "
         ? removeSpaceName2.slice(1)
         : removeSpaceName2;
-    let splitPriceEU = /\s(.+)/.exec(removeSpaceName3)[1];
+    let splitPriceEU = removeSpaceName3.indexOf(" ") ? /\s(.+)/.exec(removeSpaceName3)[1] : removeSpaceName3
     let reverseBackStrName = splitPriceEU.split("").reverse().join("");
 
     return newPrice(reverseBackStrName, fixCar);

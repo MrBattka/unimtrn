@@ -220,7 +220,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("s10 4") !== -1 ||
     name.indexOf("ultra 2") !== -1
   ) {
-    return Number(price) + 1000;
+    return Number(price) + 700;
   } else if (
     name.indexOf("16 promax 256") !== -1 ||
     name.indexOf("16 promax 512") !== -1 ||
@@ -240,6 +240,17 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("16 pro 256") !== -1 ||
     name.indexOf("16 pro 512") !== -1 ||
     name.indexOf("16 pro 1tb") !== -1 ||
+    name.indexOf("16 promax 256") !== -1 ||
+    name.indexOf("16 promax 512") !== -1 ||
+    name.indexOf("16 promax 1tb") !== -1 ||
+    name.indexOf("16 pro max 256") !== -1 ||
+    name.indexOf("16 pro max 512") !== -1 ||
+    name.indexOf("16 pro max 1tb") !== -1 ||
+    name.indexOf("16 pro max 1tb") !== -1 ||
+    name.indexOf("16 pro max 1tb") !== -1
+  ) {
+    return Number(price) + 1000;
+  } else if (
     name.indexOf("mac") !== -1 ||
     name.indexOf("macbook") !== -1 ||
     name.indexOf("book ") !== -1 ||
@@ -383,19 +394,9 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("z1aw001fy") != -1 ||
     name.indexOf("z1aw001lv") != -1 ||
     name.indexOf("z1aw001ns") != -1
+    
   ) {
     return Number(price) + 2000;
-  } else if (
-    name.indexOf("16 promax 256") !== -1 ||
-    name.indexOf("16 promax 512") !== -1 ||
-    name.indexOf("16 promax 1tb") !== -1 ||
-    name.indexOf("16 pro max 256") !== -1 ||
-    name.indexOf("16 pro max 512") !== -1 ||
-    name.indexOf("16 pro max 1tb") !== -1 ||
-    name.indexOf("16 pro max 1tb") !== -1 ||
-    name.indexOf("16 pro max 1tb") !== -1
-  ) {
-    return Number(price) + 2500;
   } else {
     return `${price}🟥 Без наценки `;
   }
