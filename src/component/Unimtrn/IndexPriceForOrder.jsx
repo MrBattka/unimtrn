@@ -48,6 +48,7 @@ import {
 import { fixNameSuperPrice } from "../Provider/SuperPrice/helpers/helpers";
 import { returnFixNameBase } from "../Provider/Base/helpers/helpers";
 import { changeFlag, returnFixPriceHi } from "../PriceFromBase/helpers/fixFlags";
+import { returnID } from "../../helpers/returnProductID";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -129,6 +130,36 @@ const IndexPriceForOrder = ({
     }
   });
 
+  // mihonorData.map((mihonor) => {
+  //   baseFixMiHonor(mihonor) &&
+  //     returnStockPriceMihonor(fixNameMihonor(mihonor.name));
+  //   baseFixMiHonor(mihonor) &&
+  //     returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
+  //   if (
+  //     mihonor.name &&
+  //     typeof mihonor.name === "string" &&
+  //     baseFixMiHonor(mihonor)
+  //   ) {
+  //     return (
+  //       returnID(fixNameMihonor(mihonor.name)) !== "No match" &&
+  //       returnStockPriceMihonor(mihonor.name) &&
+  //       allPriceArr.push({
+  //         id: returnID(
+  //           returnNameInArrMihonor(fixNameMihonor(mihonor.name))
+  //         ),
+  //         name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
+  //         extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
+  //         stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
+  //         condition: " - от 3шт.",
+  //         provider: "MiHonor",
+  //       })
+  //     );
+  //   }
+  // });
+
+  // console.log(allPriceArr);
+  
+
   mioptsData.map((miopts) => {
     baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
     baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
@@ -194,10 +225,6 @@ const IndexPriceForOrder = ({
     }
   });
 
-  console.log(allPriceArr.map((pr) => {
-    return pr.provider === "База"
-  }));
-  
   
 
   return (
