@@ -47,8 +47,10 @@ import {
 } from "../Provider/MiOpts/helpers/helpers";
 import { fixNameSuperPrice } from "../Provider/SuperPrice/helpers/helpers";
 import { returnFixNameBase } from "../Provider/Base/helpers/helpers";
-import { changeFlag, returnFixPriceHi } from "../PriceFromBase/helpers/fixFlags";
-import { returnID } from "../../helpers/returnProductID";
+import {
+  changeFlag,
+  returnFixPriceHi,
+} from "../PriceFromBase/helpers/fixFlags";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -57,7 +59,7 @@ const IndexPriceForOrder = ({
   mihonorData,
   mioptsData,
   superpriceData,
-  baseData
+  baseData,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
@@ -130,36 +132,6 @@ const IndexPriceForOrder = ({
     }
   });
 
-  // mihonorData.map((mihonor) => {
-  //   baseFixMiHonor(mihonor) &&
-  //     returnStockPriceMihonor(fixNameMihonor(mihonor.name));
-  //   baseFixMiHonor(mihonor) &&
-  //     returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
-  //   if (
-  //     mihonor.name &&
-  //     typeof mihonor.name === "string" &&
-  //     baseFixMiHonor(mihonor)
-  //   ) {
-  //     return (
-  //       returnID(fixNameMihonor(mihonor.name)) !== "No match" &&
-  //       returnStockPriceMihonor(mihonor.name) &&
-  //       allPriceArr.push({
-  //         id: returnID(
-  //           returnNameInArrMihonor(fixNameMihonor(mihonor.name))
-  //         ),
-  //         name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
-  //         extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
-  //         stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
-  //         condition: " - от 3шт.",
-  //         provider: "MiHonor",
-  //       })
-  //     );
-  //   }
-  // });
-
-  // console.log(allPriceArr);
-  
-
   mioptsData.map((miopts) => {
     baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
     baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
@@ -167,10 +139,9 @@ const IndexPriceForOrder = ({
       miopts.name &&
       typeof miopts.name === "string" &&
       baseFixMiOpts(miopts)
-    )
-     {
+    ) {
       return (
-        returnIDApple(fixNameMiOpts(miopts.name)) !== 'No match' &&
+        returnIDApple(fixNameMiOpts(miopts.name)) !== "No match" &&
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(miopts.name) &&
         allPriceArr.push({
@@ -178,7 +149,7 @@ const IndexPriceForOrder = ({
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
           extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
           stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
-          condition: ' - от 3шт.',
+          condition: " - от 3шт.",
           provider: "MiOpts",
         })
       );
@@ -189,7 +160,7 @@ const IndexPriceForOrder = ({
     if (
       superprice.name &&
       typeof superprice.name === "string" &&
-      baseFixSuperPrice(superprice) 
+      baseFixSuperPrice(superprice)
     ) {
       return (
         returnIDApple(fixNameSuperPrice(superprice.name)) !== "No match" &&
@@ -199,18 +170,14 @@ const IndexPriceForOrder = ({
           id: returnIDApple(fixNameSuperPrice(superprice.name)),
           name: fixNameSuperPrice(superprice.name),
           stockPrice: superprice.price,
-          provider: 'SuperPrice'
+          provider: "SuperPrice",
         })
       );
     }
   });
 
   baseData.map((base) => {
-    if (
-      base.name &&
-      typeof base.name === "string" &&
-      baseFixBase(base)
-    ) {
+    if (base.name && typeof base.name === "string" && baseFixBase(base)) {
       return (
         returnIDApple(returnFixNameBase(base.name)) !== "No match" &&
         base.price &&
@@ -224,8 +191,6 @@ const IndexPriceForOrder = ({
       );
     }
   });
-
-  
 
   return (
     <div className={style.wrapper}>

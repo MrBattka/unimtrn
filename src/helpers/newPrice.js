@@ -113,17 +113,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("paddle brush") !== -1 ||
     name.indexOf("supersonic hair") !== -1 ||
     name.indexOf("air purifier") !== -1 ||
-    name.indexOf("nintendo") !== -1 ||
-    name.indexOf("oculus") !== -1 ||
-    name.indexOf("playstation") !== -1 ||
-    name.indexOf("playstation") !== -1 ||
-    name.indexOf("xbox") !== -1 ||
-    name.indexOf("ps5") !== -1 ||
-    name.indexOf("pico") !== -1 ||
-    name.indexOf("steam") !== -1 ||
-    name.indexOf("garmin") !== -1 ||
-    name.indexOf("google") !== -1 ||
-    name.indexOf("xperia") !== -1 ||
+    
     name.indexOf("rog") !== -1 ||
     name.indexOf("rog") !== -1 ||
     name.indexOf("acer") !== -1 ||
@@ -198,7 +188,18 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("tab s") !== -1 ||
     name.indexOf("microsoft") !== -1 ||
     name.indexOf("mi ") !== -1 ||
-    name.indexOf("mi ") !== -1  
+    name.indexOf("mi ") !== -1  ||
+    name.indexOf("nintendo") !== -1 ||
+    name.indexOf("oculus") !== -1 ||
+    name.indexOf("playstation") !== -1 ||
+    name.indexOf("playstation") !== -1 ||
+    name.indexOf("xbox") !== -1 ||
+    name.indexOf("ps5") !== -1 ||
+    name.indexOf("pico") !== -1 ||
+    name.indexOf("steam") !== -1 ||
+    name.indexOf("garmin") !== -1 ||
+    name.indexOf("google") !== -1 ||
+    name.indexOf("xperia") !== -1 
   ) {
     return Number(price) + 500;
   } else if (
