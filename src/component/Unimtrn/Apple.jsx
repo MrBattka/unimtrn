@@ -150,6 +150,7 @@ const Apple = ({ double }) => {
   let MGN93 = /M1 256 Silver MGN93/gi;
   let MGND3 = /M1 256 Space Grey MGN63/gi;
   let airpodspro = /pro 2 ucb-c/gi;
+  let MacBook = /MacBook 15 -M3 2024/gi;
 
   const fixName = (el) => {
     const fixGb = el.name.replace(gb, "");
@@ -179,8 +180,9 @@ const Apple = ({ double }) => {
     const fixAW10 = fixStick.replace("AW 10", "S10");
     const fixiPhone = fixAW10.replace("iPhone ", "");
     const fixSE = fixiPhone.replace("Watch SE", "SE");
+    const fixMacBook = fixSE.replace(MacBook, "Air 15 M3 2024");
 
-    return fixSE.replace(proMax, "Pro Max");
+    return fixSE.replace(fixMacBook, "Pro Max");
   };
 
   const closedSubMenu = () => {
@@ -1263,6 +1265,7 @@ const Apple = ({ double }) => {
                               (el.name.indexOf("16 128") != -1 ||
                                 el.name.indexOf("16 256") != -1 ||
                                 el.name.indexOf("16 512") != -1) &&
+                              el.name.indexOf("MW") === -1 &&
                               (is16 || setIs16(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1272,9 +1275,9 @@ const Apple = ({ double }) => {
                               {baseFix(el) &&
                                 (el.name.indexOf("16 128") != -1 ||
                                   el.name.indexOf("16 256") != -1 ||
-                                  el.name.indexOf("16 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
+                                  el.name.indexOf("16 512") != -1) &&
+                                el.name.indexOf("MW") ===
+                                  -1(<span>{" - " + el.provider}</span>)}
                             </h3>
                           </div>
                         ))
