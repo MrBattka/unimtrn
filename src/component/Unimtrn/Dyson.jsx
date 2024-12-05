@@ -239,8 +239,8 @@ const Dyson = ({ double }) => {
                   <tr></tr>
                 )}
                 <br />
-                <div>🇪🇺 - Наша вилка</div>
-                <div>🇦🇪🇮🇳🇨🇳🇬🇧🇭🇰 - Не наша вилка</div>
+                <div>__🇪🇺 - Наша вилка__</div>
+                <div>🇦🇪🇮🇳🇨🇳🇬🇧🇭🇰 __- Не наша вилка__</div>
                 <Footer />
               </tbody>
             </table>

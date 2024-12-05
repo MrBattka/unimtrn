@@ -462,6 +462,7 @@ export const fixNameUnimtrn = (el) => {
   const fixzigbee = fixAir.replace("Ziee", "Zigbee");
   const replaceValve = fixzigbee.replace("Valve ", "");
   const replaceS9260 = replaceValve.replace("S9260 ", "");
+  const replaceFire = replaceS9260.replace("🔥", "");
 
-  return replaceS9260;
+  return replaceFire;
 };

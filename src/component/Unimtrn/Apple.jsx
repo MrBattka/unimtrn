@@ -914,9 +914,9 @@ const Apple = ({ double }) => {
                       ❐ Copy
                     </h4>
                     <tbody>
-                      <div>🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim</div>
-                      <div>🇺🇸 14 Модели - e sim ( нет лотка sim )</div>
-                      <div> e sim (14е модели)</div>
+                      <div>__🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim__</div>
+                      <div>__🇺🇸 14 Модели - e sim ( нет лотка sim )__</div>
+                      <div> __e sim (14е модели)__</div>
                       {isXR && <div>📱 **iPhone XR**</div>}                     
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
