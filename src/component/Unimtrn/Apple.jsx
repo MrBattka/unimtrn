@@ -182,7 +182,7 @@ const Apple = ({ double }) => {
     const fixSE = fixiPhone.replace("Watch SE", "SE");
     const fixMacBook = fixSE.replace(MacBook, "Air 15 M3 2024");
 
-    return fixSE.replace(fixMacBook, "Pro Max");
+    return fixMacBook.replace(proMax, "Pro Max");
   };
 
   const closedSubMenu = () => {
@@ -1265,7 +1265,6 @@ const Apple = ({ double }) => {
                               (el.name.indexOf("16 128") != -1 ||
                                 el.name.indexOf("16 256") != -1 ||
                                 el.name.indexOf("16 512") != -1) &&
-                              el.name.indexOf("MW") === -1 &&
                               (is16 || setIs16(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1275,9 +1274,9 @@ const Apple = ({ double }) => {
                               {baseFix(el) &&
                                 (el.name.indexOf("16 128") != -1 ||
                                   el.name.indexOf("16 256") != -1 ||
-                                  el.name.indexOf("16 512") != -1) &&
-                                el.name.indexOf("MW") ===
-                                  -1(<span>{" - " + el.provider}</span>)}
+                                  el.name.indexOf("16 512") != -1) &&(
+                                  <span>{" - " + el.provider}</span>
+                                )}
                             </h3>
                           </div>
                         ))
