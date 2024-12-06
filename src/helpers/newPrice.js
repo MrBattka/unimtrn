@@ -52,7 +52,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("redmi") !== -1 ||
     name.indexOf("watch") !== -1 ||
     name.indexOf("rayban") !== -1 ||
-    
     name.indexOf("oppo") !== -1 ||
     name.indexOf("agm") !== -1 ||
     name.indexOf("blackview") !== -1 ||
@@ -91,7 +90,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("asus") !== -1 ||
     name.indexOf("zenfone") !== -1 ||
     name.indexOf("zenfone") !== -1 ||
-    
     name.indexOf("airpods max") !== -1 ||
     name.indexOf("air pods max") !== -1 ||
     name.indexOf("airpods max") !== -1 ||
@@ -113,7 +111,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("paddle brush") !== -1 ||
     name.indexOf("supersonic hair") !== -1 ||
     name.indexOf("air purifier") !== -1 ||
-    
     name.indexOf("rog") !== -1 ||
     name.indexOf("rog") !== -1 ||
     name.indexOf("acer") !== -1 ||
@@ -128,7 +125,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("honor") !== -1 ||
     name.indexOf("redmi note") !== -1 ||
     name.indexOf("gopro") !== -1 ||
-    name.indexOf("hero") !== -1 
+    name.indexOf("hero") !== -1
   ) {
     return Number(price) + 400;
   } else if (
@@ -158,18 +155,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("15 plus 128") !== -1 ||
     name.indexOf("15 plus 256") !== -1 ||
     name.indexOf("15 plus 512") !== -1 ||
-    name.indexOf("15 pro 128") !== -1 ||
-    name.indexOf("15 pro 256") !== -1 ||
-    name.indexOf("15 pro 512") !== -1 ||
-    name.indexOf("15 pro 1tb") !== -1 ||
-    name.indexOf("15 promax 256") !== -1 ||
-    name.indexOf("15 promax 512") !== -1 ||
-    name.indexOf("15 promax 1tb") !== -1 ||
-    name.indexOf("15 pro max 256") !== -1 ||
-    name.indexOf("15 pro max 512") !== -1 ||
-    name.indexOf("15 pro max 1tb") !== -1 ||
-    name.indexOf("15 pro max 1tb") !== -1 ||
-    name.indexOf("15 pro max 1tb") !== -1 ||
     name.indexOf("aw 9") !== -1 ||
     name.indexOf("s9 4") !== -1 ||
     name.indexOf("aw 9") !== -1 ||
@@ -183,12 +168,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("s22") !== -1 ||
     name.indexOf("s23") !== -1 ||
     name.indexOf("s24") !== -1 ||
-    name.indexOf("z flip") !== -1 ||
-    name.indexOf("z fold") !== -1 ||
-    name.indexOf("tab s") !== -1 ||
     name.indexOf("microsoft") !== -1 ||
-    name.indexOf("mi ") !== -1 ||
-    name.indexOf("mi ") !== -1  ||
     name.indexOf("nintendo") !== -1 ||
     name.indexOf("oculus") !== -1 ||
     name.indexOf("playstation") !== -1 ||
@@ -199,7 +179,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("steam") !== -1 ||
     name.indexOf("garmin") !== -1 ||
     name.indexOf("google") !== -1 ||
-    name.indexOf("xperia") !== -1 
+    name.indexOf("xperia") !== -1
   ) {
     return Number(price) + 500;
   } else if (
@@ -223,6 +203,23 @@ export const newPrice = (nameStock, price) => {
   ) {
     return Number(price) + 700;
   } else if (
+    name.indexOf("z flip") !== -1 ||
+    name.indexOf("z fold") !== -1 ||
+    name.indexOf("tab s") !== -1 ||
+    name.indexOf("mi ") !== -1 ||
+    name.indexOf("mi ") !== -1 ||
+    name.indexOf("15 pro 128") !== -1 ||
+    name.indexOf("15 pro 256") !== -1 ||
+    name.indexOf("15 pro 512") !== -1 ||
+    name.indexOf("15 pro 1tb") !== -1 ||
+    name.indexOf("15 promax 256") !== -1 ||
+    name.indexOf("15 promax 512") !== -1 ||
+    name.indexOf("15 promax 1tb") !== -1 ||
+    name.indexOf("15 pro max 256") !== -1 ||
+    name.indexOf("15 pro max 512") !== -1 ||
+    name.indexOf("15 pro max 1tb") !== -1 ||
+    name.indexOf("15 pro max 1tb") !== -1 ||
+    name.indexOf("15 pro max 1tb") !== -1 ||
     name.indexOf("16 promax 256") !== -1 ||
     name.indexOf("16 promax 512") !== -1 ||
     name.indexOf("16 promax 1tb") !== -1 ||
@@ -395,7 +392,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("z1aw001fy") != -1 ||
     name.indexOf("z1aw001lv") != -1 ||
     name.indexOf("z1aw001ns") != -1
-    
   ) {
     return Number(price) + 2000;
   } else {
