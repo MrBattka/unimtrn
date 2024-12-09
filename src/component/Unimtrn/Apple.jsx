@@ -1257,7 +1257,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16 && <br />}
-                      {is16 && <div>📱 **iPhone 16**🔥</div>}
+                      {is16 && <div>📱 **iPhone 16**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1284,7 +1284,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16Plus && <br />}
-                      {is16Plus && <div>📱 **iPhone 16 Plus**🔥</div>}
+                      {is16Plus && <div>📱 **iPhone 16 Plus**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1311,7 +1311,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16Pro && <br />}
-                      {is16Pro && <div>📱 **iPhone 16 Pro**🔥</div>}
+                      {is16Pro && <div>📱 **iPhone 16 Pro**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>
@@ -1340,7 +1340,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16ProMax && <br />}
-                      {is16ProMax && <div>📱 **iPhone 16 Pro Max**🔥</div>}
+                      {is16ProMax && <div>📱 **iPhone 16 Pro Max**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((iPhone16El, index) => (
                           <div key={index}>

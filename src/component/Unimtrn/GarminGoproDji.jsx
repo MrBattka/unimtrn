@@ -207,7 +207,8 @@ const GarminGoProDji = ({ double }) => {
                           : garminEl.stockPrice)}
                         <h3 className="del">
                               {baseFix(garminEl) &&
-                                garminEl.name.indexOf("Garmin") != -1 && (
+                                (garminEl.name.indexOf("Garmin") != -1 ||
+                                garminEl.name.indexOf("GARMIN") != -1) && (
                                   <span>{" - " + garminEl.provider}</span>
                                 )}
                             </h3>

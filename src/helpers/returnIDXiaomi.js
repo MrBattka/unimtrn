@@ -467,38 +467,72 @@ export const returnIDXiaomi = (name) => {
     return 27414;
   } else if (name.indexOf("note 12s 8/256 green") !== -1) {
     return 27420;
-  } else if (name.indexOf("redmi 13c 4/128 clover green") !== -1) {
+  } else if (name.indexOf("redmi 13c 4/128 green") !== -1) {
     return 30886;
-  } else if (name.indexOf("redmi 13c 4/128 glacier white") !== -1) {
+  } else if (name.indexOf("redmi 13c 4/128 white") !== -1) {
     return 30883;
-  } else if (name.indexOf("redmi 13c 4/128 midnight black") !== -1) {
+  } else if (name.indexOf("redmi 13c 4/128 black") !== -1) {
     return 30877;
-  } else if (name.indexOf("redmi 13c 4/128 navy blue") !== -1) {
+  } else if (name.indexOf("redmi 13c 4/128 blue") !== -1) {
     return 30880;
-  } else if (name.indexOf("redmi 13c 6/128 clover green") !== -1) {
+  } else if (name.indexOf("redmi 13c 6/128 green") !== -1) {
     return 30887;
-  } else if (name.indexOf("redmi 13c 6/128 glacier white") !== -1) {
+  } else if (name.indexOf("redmi 13c 6/128 white") !== -1) {
     return 30884;
-  } else if (name.indexOf("redmi 13c 6/128 midnight black") !== -1) {
+  } else if (name.indexOf("redmi 13c 6/128 black") !== -1) {
     return 30878;
-  } else if (name.indexOf("redmi 13c 6/128 navy blue") !== -1) {
+  } else if (name.indexOf("redmi 13c 6/128 blue") !== -1) {
     return 30881;
-  } else if (name.indexOf("redmi 13c 8/128 clover green") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/128 green") !== -1) {
     return 30888;
-  } else if (name.indexOf("redmi 13c 8/128 glacier white") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/128 white") !== -1) {
     return 30885;
-  } else if (name.indexOf("redmi 13c 8/128 midnight black") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/128 black") !== -1) {
     return 30879;
-  } else if (name.indexOf("redmi 13c 8/128 navy blue") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/128 blue") !== -1) {
     return 30882;
-  } else if (name.indexOf("redmi 13c 8/256 clover green") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/256 green") !== -1) {
     return 30907;
-  } else if (name.indexOf("redmi 13c 8/256 glacier white") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/256 white") !== -1) {
     return 30908;
-  } else if (name.indexOf("redmi 13c 8/256 midnight black") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/256 black") !== -1) {
     return 30909;
-  } else if (name.indexOf("redmi 13c 8/256 navy blue") !== -1) {
+  } else if (name.indexOf("redmi 13c 8/256 blue") !== -1) {
     return 30910;
+
+  } else if (name.indexOf("redmi 14c 4/128 green") !== -1) {
+    return 308861;
+  } else if (name.indexOf("redmi 14c 4/128 purple") !== -1) {
+    return 308832;
+  } else if (name.indexOf("redmi 14c 4/128 black") !== -1) {
+    return 30877;
+  } else if (name.indexOf("redmi 14c 4/128 blue") !== -1) {
+    return 308803;
+  } else if (name.indexOf("redmi 14c 6/128 green") !== -1) {
+    return 308874;
+  } else if (name.indexOf("redmi 14c 6/128 purple") !== -1) {
+    return 308845;
+  } else if (name.indexOf("redmi 14c 6/128 black") !== -1) {
+    return 308786;
+  } else if (name.indexOf("redmi 14c 6/128 blue") !== -1) {
+    return 308817;
+  } else if (name.indexOf("redmi 14c 8/128 green") !== -1) {
+    return 308888;
+  } else if (name.indexOf("redmi 14c 8/128 purple") !== -1) {
+    return 308859;
+  } else if (name.indexOf("redmi 14c 8/128 black") !== -1) {
+    return 308790;
+  } else if (name.indexOf("redmi 14c 8/128 blue") !== -1) {
+    return 308821;
+  } else if (name.indexOf("redmi 14c 8/256 green") !== -1) {
+    return 309072;
+  } else if (name.indexOf("redmi 14c 8/256 purple") !== -1) {
+    return 309083;
+  } else if (name.indexOf("redmi 14c 8/256 black") !== -1) {
+    return 309094
+  } else if (name.indexOf("redmi 14c 8/256 blue") !== -1) {
+    return 309105;
+
   } else if (name.indexOf("redmi a3 3/64 lake blue") !== -1) {
     return 35716;
   } else if (name.indexOf("redmi a3 3/64 midnight black") !== -1) {
