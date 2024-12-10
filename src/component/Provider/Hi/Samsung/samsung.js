@@ -7,6 +7,7 @@ export const returnSamsungHi = (name) => {
     name.indexOf("A05 ") != -1 ||
     name.indexOf("A06 ") != -1 ||
     name.indexOf("A15 ") != -1 ||
+    name.indexOf("A16 ") != -1 ||
     name.indexOf("A25 ") != -1 ||
     name.indexOf("A24 ") != -1 ||
     name.indexOf("A54 ") != -1 ||

@@ -6,6 +6,7 @@ export const returnSamsung = (el) => {
     el.name.indexOf("A05 ") != -1 ||
     el.name.indexOf("A06 ") != -1 ||
     el.name.indexOf("A15 ") != -1 ||
+    el.name.indexOf("A16 ") != -1 ||
     el.name.indexOf("A25 ") != -1 ||
     el.name.indexOf("A24 ") != -1 ||
     el.name.indexOf("A54 ") != -1 ||
