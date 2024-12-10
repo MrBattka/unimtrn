@@ -25,6 +25,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("a05 ") !== -1 ||
     name.indexOf("a06") !== -1 ||
     name.indexOf("a15 ") !== -1 ||
+    name.indexOf("a16 ") !== -1 ||
     name.indexOf("a25 ") !== -1 ||
     name.indexOf("a24 ") !== -1 ||
     name.indexOf("a54 ") !== -1 ||
