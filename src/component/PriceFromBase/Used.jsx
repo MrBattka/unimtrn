@@ -46,7 +46,7 @@ const Used = ({ fullList }) => {
     const replaceApple = replaceAppleWatch.replace("Apple ", "");
     const replaceiPhone = replaceApple.replace("iPhone ", "");
     const replaceMacbook = replaceiPhone.replace("MacBook ", "");
-    
+
     const replaceSams = replaceMacbook.replace("Samsung ", "");
     const replaceXiaomi = replaceSams.replace("Xiaomi Redmi", "Redmi");
     const fixPoco = replaceXiaomi.replace("Pocophone", "Poco");
@@ -224,8 +224,8 @@ const Used = ({ fullList }) => {
                 {baseFixUsed(xiaomi) &&
                   xiaomi.price &&
                   checkUsed(xiaomi) &&
-                  (xiaomi.name.indexOf("Xiaomi") !== -1 || 
-                  xiaomi.name.indexOf("Poco") !== -1) &&
+                  (xiaomi.name.indexOf("Xiaomi") !== -1 ||
+                    xiaomi.name.indexOf("Poco") !== -1) &&
                   (isXiaomi || setIsXiaomi(true)) &&
                   returnFixPrice(xiaomi, fixName(xiaomi)) + xiaomi.price}
               </div>
@@ -246,7 +246,8 @@ const Used = ({ fullList }) => {
                   returnFixPrice(other, fixName(other)) + other.price}
               </div>
             ))}
-
+            <br />
+            <div>──── ୨୧ ────</div>
             <br />
             <div>🏷 **Пломбы**</div>
             {result.map((seals, i) => (
@@ -258,6 +259,7 @@ const Used = ({ fullList }) => {
               </div>
             ))}
             {isDemo && <br />}
+            {isDemo && <div>──── ୨୧ ────</div>}
             {isDemo && <br />}
             {isDemo && <div>🔥 **Обменки / Демо**</div>}
             {result.map((demo, i) => (
