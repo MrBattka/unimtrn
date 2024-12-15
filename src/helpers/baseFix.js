@@ -340,6 +340,7 @@ export const baseFixSuperPrice = (el) => {
     toLowerCase?.indexOf("Мятый") == -1 &&
     toLowerCase?.indexOf("открытый") == -1 &&
     toLowerCase?.indexOf("дефект") == -1 &&
+    toLowerCase?.indexOf("распак") == -1 &&
     toLowerCase?.indexOf("вскрыт") == -1 &&
     toLowerCase?.indexOf("реболл") == -1 &&
     toLowerCase?.indexOf("No charger") == -1 &&
