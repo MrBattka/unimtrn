@@ -81,6 +81,7 @@ export const baseFix = (el) => {
     toLowerCase.indexOf('""') == -1 &&
     toLowerCase.indexOf("asis+") == -1 &&
     toLowerCase.indexOf("внутри") == -1 &&
+    toLowerCase?.indexOf("распак") == -1 &&
     el !== "Товар"
   );
 };
@@ -157,7 +158,8 @@ export const baseFixHi = (el) => {
     el.name?.indexOf("обме") == -1 &&
     el.name?.indexOf("короб") == -1 &&
     el.name?.indexOf("пломба") == -1 &&
-    el.name.indexOf('""') == -1
+    el.name.indexOf('""') == -1 &&
+    el.name.indexOf("распак") == -1
   );
 };
 
@@ -213,6 +215,7 @@ export const baseFixMiHonor = (el) => {
     toLowerCase?.indexOf("обме") == -1 &&
     toLowerCase?.indexOf("короб") == -1 &&
     toLowerCase?.indexOf("пломба") == -1 &&
+    toLowerCase?.indexOf("распак") == -1 &&
     toLowerCase.indexOf('""') == -1
   );
 };
@@ -288,6 +291,7 @@ export const baseFixMiOpts = (el) => {
     toLowerCase?.indexOf("обме") == -1 &&
     toLowerCase?.indexOf("короб") == -1 &&
     toLowerCase?.indexOf("пломба") == -1 &&
+    toLowerCase?.indexOf("распак") == -1 &&
     toLowerCase.indexOf('""') == -1
   );
 };
@@ -361,6 +365,7 @@ export const baseFixSuperPrice = (el) => {
     toLowerCase?.indexOf("обме") == -1 &&
     toLowerCase?.indexOf("короб") == -1 &&
     toLowerCase?.indexOf("пломба") == -1 &&
+    toLowerCase?.indexOf("распак") == -1 &&
     toLowerCase.indexOf('""') == -1
   );
 };
@@ -416,5 +421,6 @@ export const baseFixBase = (el) => {
         toLowerCase?.indexOf("обме") == -1 &&
         toLowerCase?.indexOf("короб") == -1 &&
         toLowerCase?.indexOf("пломба") == -1 &&
+        toLowerCase?.indexOf("распак") == -1 &&
         toLowerCase.indexOf('""') == -1;
 };
