@@ -11,6 +11,19 @@ export const returnIDOtherBrand2 = (name) => {
   ) {
     return 30947;
   } else if (
+    (name.indexOf("ps5 pro") !== -1 ||
+      name.indexOf("playstation 5 pro") !== -1 ||
+      name.indexOf("ps 5 pro") !== -1) &&
+    name.indexOf("digital") !== -1
+  ) {
+    return 36834;
+  } else if (
+    name.indexOf("ps5 pro") !== -1 ||
+    name.indexOf("playstation 5 pro") !== -1 ||
+    name.indexOf("ps 5 pro") !== -1
+  ) {
+    return 36835;
+  } else if (
     name.indexOf("dualsense black") !== -1 ||
     name.indexOf("dualsense white") !== -1 ||
     name.indexOf("dualsenseBlack") !== -1 ||
@@ -25,15 +38,19 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("ps portal") !== -1 ||
     name.indexOf("portal remote") !== -1
   ) {
-    return 34478; 
+    return 34478;
     //  Steam deck
-  } else if (name.indexOf("steam") !== -1 &&
-  name.indexOf("oled") !== -1 &&
-  name.indexOf("512") !== -1) {
+  } else if (
+    name.indexOf("steam") !== -1 &&
+    name.indexOf("oled") !== -1 &&
+    name.indexOf("512") !== -1
+  ) {
     return 34401;
-  } else if (name.indexOf("steam") !== -1 &&
-  name.indexOf("oled") !== -1 &&
-  name.indexOf("1tb") !== -1) {
+  } else if (
+    name.indexOf("steam") !== -1 &&
+    name.indexOf("oled") !== -1 &&
+    name.indexOf("1tb") !== -1
+  ) {
     return 34403;
   } else if (
     name.indexOf("steam deck oled 16/64") !== -1 ||
@@ -1309,8 +1326,6 @@ export const returnIDOtherBrand2 = (name) => {
     (name.indexOf("малиновая") !== -1 || name.indexOf("pink") !== -1)
   ) {
     return 35838;
-
-
   } else if (
     (name.indexOf("яндекс") !== -1 || name.indexOf("станция") !== -1) &&
     name.indexOf("лайт") !== -1 &&
@@ -1355,8 +1370,6 @@ export const returnIDOtherBrand2 = (name) => {
     (name.indexOf("красн") !== -1 || name.indexOf("red") !== -1)
   ) {
     return 358387;
-
-
   } else if (
     (name.indexOf("яндекс") !== -1 || name.indexOf("станция") !== -1) &&
     name.indexOf("мини") !== -1 &&
