@@ -49,6 +49,7 @@ const NewProduct = ({ fullList }) => {
                 newProduct.name.indexOf("iPhone") == -1 &&
                 newProduct.name.indexOf("SE 2023 Gen") == -1 &&
                 newProduct.name.indexOf("Apple Watch S9") == -1 &&
+                newProduct.name.indexOf("Apple Watch S10") == -1 &&
                 newProduct.name.indexOf("iPad") == -1 &&
                 newProduct.name.indexOf("MacBook") == -1 &&
                 newProduct.name.indexOf("iMac") == -1 &&

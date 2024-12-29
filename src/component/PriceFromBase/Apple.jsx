@@ -6,13 +6,14 @@ import { copyTable } from "./helpers/copy";
 
 const Apple = ({ fullList }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAwSE, setIsAWSE] = useState(false)
-  const [isAwS8, setIsAWS8] = useState(false)
-  const [isAwS9, setIsAWS9] = useState(false)
-  const [isiPad, setIsIPad] = useState(false)
-  const [isMacBook, setIsMacBook] = useState(false)
-  const [isiMac, setIsIMac] = useState(false)
-  const [isiPhone, setIsIphone] = useState(false)
+  const [isAwSE, setIsAWSE] = useState(false);
+  const [isAwS8, setIsAWS8] = useState(false);
+  const [isAwS9, setIsAWS9] = useState(false);
+  const [isAwS10, setIsAWS10] = useState(false);
+  const [isiPad, setIsIPad] = useState(false);
+  const [isMacBook, setIsMacBook] = useState(false);
+  const [isiMac, setIsIMac] = useState(false);
+  const [isiPhone, setIsIphone] = useState(false);
 
   const arr = [];
 
@@ -43,8 +44,9 @@ const Apple = ({ fullList }) => {
     return changeFlag(fixIPhone);
   };
 
-  const refWatchSE = useRef()
-  const refWatchS9 = useRef()
+  const refWatchSE = useRef();
+  const refWatchS9 = useRef();
+  const refWatchS10 = useRef();
 
   return (
     <div>
@@ -94,8 +96,7 @@ const Apple = ({ fullList }) => {
             ))}
             {isAwSE && <br />}
             {isAwSE && <div>⌚️ **Apple Watch SE 2023**</div>}
-            {result.map((SE, i) =>
-            (
+            {result.map((SE, i) => (
               <div key={i} ref={refWatchSE}>
                 {baseFix(SE) &&
                   SE.price &&
@@ -127,6 +128,19 @@ const Apple = ({ fullList }) => {
                   returnFixPrice(s9, fixName(s9)) + s9.price}
               </div>
             ))}
+
+            {isAwS10 && <br />}
+            {isAwS10 && <div>⌚️ **Apple Watch S10**</div>}
+            {result.map((s10, i) => (
+              <div key={i} ref={refWatchS10}>
+                {baseFix(s10) &&
+                  s10.price &&
+                  s10.name.indexOf("Apple Watch S10") !== -1 &&
+                  (isAwS10 || setIsAWS10(true)) &&
+                  returnFixPrice(s10, fixName(s10)) + s10.price}
+              </div>
+            ))}
+
             {isiPad && <br />}
             {isiPad && <div>📟 **Apple iPad**</div>}
             {result.map((iPad, i) => (
@@ -145,8 +159,7 @@ const Apple = ({ fullList }) => {
                 {baseFix(macbook) &&
                   macbook.price &&
                   macbook.name.indexOf("MacBook") !== -1 &&
-                  (isMacBook ||
-                    setIsMacBook(true)) &&
+                  (isMacBook || setIsMacBook(true)) &&
                   returnFixPrice(macbook, fixName(macbook)) + macbook.price}
               </div>
             ))}
