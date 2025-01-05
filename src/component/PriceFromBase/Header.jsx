@@ -28,7 +28,7 @@ const HeaderMob = ({ fullList }) => {
             ❐ Copy
           </h4>
           <table>
-            <div>{`${day < 10 ? `0${day}` : day}.${month}.${year}`}</div>
+            <div>{`${day < 10 ? `0${day}` : day}.${month < 10 ? `0${month}` : month}.${year}`}</div>
             <div>🧑‍💻Работаем с 9:00 до 20:00 </div>
             <div>🚀Доставка</div>
             <div>❗️В наличии в Севастополе</div>
