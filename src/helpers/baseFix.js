@@ -82,6 +82,8 @@ export const baseFix = (el) => {
     toLowerCase.indexOf("asis+") == -1 &&
     toLowerCase.indexOf("внутри") == -1 &&
     toLowerCase?.indexOf("распак") == -1 &&
+    toLowerCase?.indexOf("крышк") == -1 &&
+    toLowerCase?.indexOf("отсутств") == -1 &&
     el !== "Товар"
   );
 };
@@ -158,6 +160,8 @@ export const baseFixHi = (el) => {
     el.name?.indexOf("обме") == -1 &&
     el.name?.indexOf("короб") == -1 &&
     el.name?.indexOf("пломба") == -1 &&
+    el.name?.indexOf("крышк") == -1 &&
+    el.name?.indexOf("отсутств") == -1 &&
     el.name.indexOf('""') == -1 &&
     el.name.indexOf("распак") == -1
   );
@@ -188,6 +192,8 @@ export const baseFixMiHonor = (el) => {
     toLowerCase?.indexOf("потертости") == -1 &&
     toLowerCase?.indexOf("скол") == -1 &&
     toLowerCase?.indexOf("пятна") == -1 &&
+    toLowerCase?.indexOf("крышк") == -1 &&
+    toLowerCase?.indexOf("отсутств") == -1 &&
     toLowerCase?.indexOf("замена") == -1 &&
     toLowerCase?.indexOf("пиксель") == -1 &&
     toLowerCase?.indexOf("на экране") == -1 &&
@@ -237,6 +243,8 @@ export const baseFixMiOpts = (el) => {
     toLowerCase.indexOf("🔌") == -1 &&
     toLowerCase.indexOf("🇷🇺🇷🇺") == -1 &&
     toLowerCase.indexOf("armor") == -1 &&
+    toLowerCase?.indexOf("крышк") == -1 &&
+    toLowerCase?.indexOf("отсутств") == -1 &&
     toLowerCase.indexOf("📲") == -1 &&
     toLowerCase.indexOf("канал") == -1 &&
     toLowerCase.indexOf("t.me") == -1 &&
@@ -366,6 +374,8 @@ export const baseFixSuperPrice = (el) => {
     toLowerCase?.indexOf("короб") == -1 &&
     toLowerCase?.indexOf("пломба") == -1 &&
     toLowerCase?.indexOf("распак") == -1 &&
+    toLowerCase?.indexOf("крышк") == -1 &&
+    toLowerCase?.indexOf("отсутств") == -1 &&
     toLowerCase.indexOf('""') == -1
   );
 };
@@ -422,5 +432,7 @@ export const baseFixBase = (el) => {
         toLowerCase?.indexOf("короб") == -1 &&
         toLowerCase?.indexOf("пломба") == -1 &&
         toLowerCase?.indexOf("распак") == -1 &&
+        toLowerCase?.indexOf("крышк") == -1 &&
+        toLowerCase?.indexOf("отсутств") == -1 &&
         toLowerCase.indexOf('""') == -1;
 };
