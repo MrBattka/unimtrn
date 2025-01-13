@@ -28,7 +28,6 @@ const Xiaomi = ({ fullList }) => {
   let poco = /Pocophone/gi;
   let note = /Redmi Note/gi;
   let xiaomiName = /Xiaomi /gi;
-  let yandexName = /Yandex /gi;
 
   const fixName = (xiaomi) => {
     const fixWifi = xiaomi.name.replace(wifi, "Wi-Fi");
@@ -37,8 +36,7 @@ const Xiaomi = ({ fullList }) => {
     const fixNote = fixPoco.replace(note, "Note");
     const fixMi = fixNote.replace("Xiaomi 1", "MI 1");
     const fixXiaomi = fixMi.replace(xiaomiName, "");
-    const fixYandex = fixXiaomi.replace(yandexName, "");
-    return changeFlag(fixYandex);
+    return changeFlag(fixXiaomi);
   };
 
   return (
@@ -80,7 +78,7 @@ const Xiaomi = ({ fullList }) => {
                   {baseFix(yandex) &&
                     yandex.price &&
                     yandex.name.indexOf("Яндекс") !== -1 &&
-                    (yandex || setIsYandex(true)) &&
+                    (isYandex || setIsYandex(true)) &&
                     returnFixPrice(yandex, fixName(yandex)) + yandex.price}
                 </div>
               ))}
