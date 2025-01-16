@@ -86,36 +86,12 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("se 64") !== -1 ||
     name.indexOf("se 128") !== -1 ||
     name.indexOf("se 256") !== -1 ||
-    name.indexOf("11 64") !== -1 ||
-    name.indexOf("11 128") !== -1 ||
     name.indexOf("asus") !== -1 ||
     name.indexOf("zenfone") !== -1 ||
     name.indexOf("zenfone") !== -1 ||
     name.indexOf("airpods max") !== -1 ||
     name.indexOf("air pods max") !== -1 ||
     name.indexOf("airpods max") !== -1 ||
-    name.indexOf("airwrap ") !== -1 ||
-    name.indexOf("v1") !== -1 ||
-    name.indexOf("vented") !== -1 ||
-    name.indexOf("hd0") !== -1 ||
-    name.indexOf("hd1") !== -1 ||
-    name.indexOf("gen5 detect") !== -1 ||
-    name.indexOf("gen 5 detect") !== -1 ||
-    name.indexOf("rb0") !== -1 ||
-    name.indexOf("ht0") !== -1 ||
-    name.indexOf("hs0") !== -1 ||
-    name.indexOf("designed") !== -1 ||
-    name.indexOf("heapdphone") !== -1 ||
-    name.indexOf("ph04") !== -1 ||
-    name.indexOf("vacuum cleaner micro") !== -1 ||
-    name.indexOf("wash g1 ") !== -1 ||
-    name.indexOf("paddle brush") !== -1 ||
-    name.indexOf("supersonic hair") !== -1 ||
-    name.indexOf("air purifier") !== -1 ||
-    name.indexOf("rog") !== -1 ||
-    name.indexOf("rog") !== -1 ||
-    name.indexOf("acer") !== -1 ||
-    name.indexOf("msi") !== -1 ||
     name.indexOf("asus") !== -1 ||
     name.indexOf("lenovo") !== -1 ||
     name.indexOf("motorola") !== -1 ||
@@ -130,6 +106,8 @@ export const newPrice = (nameStock, price) => {
   ) {
     return Number(price) + 400;
   } else if (
+    name.indexOf("11 64") !== -1 ||
+    name.indexOf("11 128") !== -1 ||
     name.indexOf("xr 64") !== -1 ||
     name.indexOf("12 64") !== -1 ||
     name.indexOf("12 128") !== -1 ||
@@ -137,38 +115,11 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("12 mini") !== -1 ||
     name.indexOf("13 mini") !== -1 ||
     name.indexOf("12 pro max") !== -1 ||
-    name.indexOf("13 128") !== -1 ||
-    name.indexOf("13 256") !== -1 ||
-    name.indexOf("13 512") !== -1 ||
-    name.indexOf("14 128") !== -1 ||
-    name.indexOf("14 256") !== -1 ||
-    name.indexOf("14 512") !== -1 ||
-    name.indexOf("14 plus") !== -1 ||
-    name.indexOf("14 pro 128") !== -1 ||
-    name.indexOf("14 pro 256") !== -1 ||
-    name.indexOf("14 pro 512") !== -1 ||
-    name.indexOf("14 pro 1tb") !== -1 ||
-    name.indexOf("14 pro 1tb") !== -1 ||
-    name.indexOf("14 promax") !== -1 ||
-    name.indexOf("15 128") !== -1 ||
-    name.indexOf("15 256") !== -1 ||
-    name.indexOf("15 512") !== -1 ||
-    name.indexOf("15 plus 128") !== -1 ||
-    name.indexOf("15 plus 256") !== -1 ||
-    name.indexOf("15 plus 512") !== -1 ||
-    name.indexOf("aw 9") !== -1 ||
-    name.indexOf("s9 4") !== -1 ||
-    name.indexOf("aw 9") !== -1 ||
     name.indexOf("aw series 8") !== -1 ||
     name.indexOf("aw 8") !== -1 ||
     name.indexOf("aw 8") !== -1 ||
     name.indexOf("s8 4") !== -1 ||
     name.indexOf("watch s8") !== -1 ||
-    name.indexOf("aw series 9") !== -1 ||
-    name.indexOf("s21") !== -1 ||
-    name.indexOf("s22") !== -1 ||
-    name.indexOf("s23") !== -1 ||
-    name.indexOf("s24") !== -1 ||
     name.indexOf("microsoft") !== -1 ||
     name.indexOf("nintendo") !== -1 ||
     name.indexOf("oculus") !== -1 ||
@@ -185,6 +136,10 @@ export const newPrice = (nameStock, price) => {
     return Number(price) + 500;
   } else if (
     name.indexOf("ipad 9") !== -1 ||
+    name.indexOf("rog") !== -1 ||
+    name.indexOf("rog") !== -1 ||
+    name.indexOf("acer") !== -1 ||
+    name.indexOf("msi") !== -1 ||
     name.indexOf("ipad 10") !== -1 ||
     name.indexOf("ipad 9") !== -1 ||
     name.indexOf("ipad 9") !== -1 ||
@@ -200,7 +155,40 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("aw 10") !== -1 ||
     name.indexOf("aw 10") !== -1 ||
     name.indexOf("s10 4") !== -1 ||
-    name.indexOf("ultra 2") !== -1
+    name.indexOf("ultra 2") !== -1 ||
+    name.indexOf("airwrap ") !== -1 ||
+    name.indexOf("v1") !== -1 ||
+    name.indexOf("vented") !== -1 ||
+    name.indexOf("hd0") !== -1 ||
+    name.indexOf("hd1") !== -1 ||
+    name.indexOf("gen5 detect") !== -1 ||
+    name.indexOf("gen 5 detect") !== -1 ||
+    name.indexOf("rb0") !== -1 ||
+    name.indexOf("ht0") !== -1 ||
+    name.indexOf("hs0") !== -1 ||
+    name.indexOf("designed") !== -1 ||
+    name.indexOf("heapdphone") !== -1 ||
+    name.indexOf("aw series 9") !== -1 ||
+    name.indexOf("s21") !== -1 ||
+    name.indexOf("s22") !== -1 ||
+    name.indexOf("s23") !== -1 ||
+    name.indexOf("s24") !== -1 ||
+    name.indexOf("ph04") !== -1 ||
+    name.indexOf("vacuum cleaner micro") !== -1 ||
+    name.indexOf("wash g1 ") !== -1 ||
+    name.indexOf("paddle brush") !== -1 ||
+    name.indexOf("supersonic hair") !== -1 ||
+    name.indexOf("air purifier") !== -1 ||
+    name.indexOf("13 128") !== -1 ||
+    name.indexOf("13 256") !== -1 ||
+    name.indexOf("13 512") !== -1 ||
+    name.indexOf("14 128") !== -1 ||
+    name.indexOf("14 256") !== -1 ||
+    name.indexOf("14 512") !== -1 ||
+    name.indexOf("14 plus") !== -1 ||
+    name.indexOf("aw 9") !== -1 ||
+    name.indexOf("s9 4") !== -1 ||
+    name.indexOf("aw 9") !== -1
   ) {
     return Number(price) + 700;
   } else if (
@@ -235,6 +223,21 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("16 plus 128") !== -1 ||
     name.indexOf("16 plus 256") !== -1 ||
     name.indexOf("16 plus 512") !== -1 ||
+    name.indexOf("14 pro 128") !== -1 ||
+    name.indexOf("14 pro 256") !== -1 ||
+    name.indexOf("14 pro 512") !== -1 ||
+    name.indexOf("14 pro 1tb") !== -1 ||
+    name.indexOf("14 pro 1tb") !== -1 ||
+    name.indexOf("14 promax") !== -1 ||
+    name.indexOf("15 128") !== -1 ||
+    name.indexOf("15 256") !== -1 ||
+    name.indexOf("15 512") !== -1 ||
+    name.indexOf("15 plus 128") !== -1 ||
+    name.indexOf("15 plus 256") !== -1 ||
+    name.indexOf("15 plus 512") !== -1
+  ) {
+    return Number(price) + 1000;
+  } else if (
     name.indexOf("16 pro 128") !== -1 ||
     name.indexOf("16 pro 256") !== -1 ||
     name.indexOf("16 pro 512") !== -1 ||
@@ -248,7 +251,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("16 pro max 1tb") !== -1 ||
     name.indexOf("16 pro max 1tb") !== -1
   ) {
-    return Number(price) + 1000;
+    return Number(price) + 1500;
   } else if (
     name.indexOf("mac") !== -1 ||
     name.indexOf("macbook") !== -1 ||
