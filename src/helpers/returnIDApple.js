@@ -20,7 +20,8 @@ export const returnIDApple = (nameStock) => {
   ) {
     return 20959;
   } else if (
-    name.indexOf("airpods 4 anc") !== -1 ||
+    (name.indexOf("airpods 4") !== -1 &&
+    name.indexOf(" anc ") !== -1) ||
     (name.indexOf("airpods 4 ") !== -1 && name.indexOf("с шумо") !== -1)
   ) {
     return 36587;
