@@ -8,16 +8,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("nothing cmf") !== -1 ||
     name.indexOf("galaxy buds") !== -1 ||
     name.indexOf("galaxy smart tag") !== -1 ||
-    name.indexOf("airpods pro") !== -1 ||
-    name.indexOf("airpods pro") !== -1 ||
-    name.indexOf("air pods pro") !== -1 ||
-    name.indexOf("air pods 2") !== -1 ||
-    name.indexOf("airpods 2") !== -1 ||
-    name.indexOf("airpods 2") !== -1 ||
-    name.indexOf("air pods 3") !== -1 ||
-    name.indexOf("airpods 3") !== -1 ||
-    name.indexOf("airpods 3") !== -1 ||
-    name.indexOf("airpods 4") !== -1 ||
     name.indexOf("pencil") !== -1 ||
     name.indexOf("homepod") !== -1 ||
     name.indexOf("redmi buds") !== -1 ||
@@ -102,7 +92,17 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("honor") !== -1 ||
     name.indexOf("redmi note") !== -1 ||
     name.indexOf("gopro") !== -1 ||
-    name.indexOf("hero") !== -1
+    name.indexOf("hero") !== -1 ||
+    name.indexOf("airpods pro") !== -1 ||
+    name.indexOf("airpods pro") !== -1 ||
+    name.indexOf("air pods pro") !== -1 ||
+    name.indexOf("air pods 2") !== -1 ||
+    name.indexOf("airpods 2") !== -1 ||
+    name.indexOf("airpods 2") !== -1 ||
+    name.indexOf("air pods 3") !== -1 ||
+    name.indexOf("airpods 3") !== -1 ||
+    name.indexOf("airpods 3") !== -1 ||
+    name.indexOf("airpods 4") !== -1 
   ) {
     return Number(price) + 400;
   } else if (
