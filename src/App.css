@@ -2,6 +2,10 @@
 .App {
   width: 100vw;
   height: 100vh;
+  background-image: url("/src/source/bg/bg1.jpg");
+  background-size: cover;
+  /* background-attachment: local; */
+  overflow-y: hidden;
 }
 
 .img {
