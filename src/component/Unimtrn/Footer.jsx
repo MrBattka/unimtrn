@@ -11,7 +11,7 @@ const Footer = () => {
             <div>🚀Telegram: @onlinemyprice</div>
             <br />
             <div>✈️ **Наши отправки**</div>
-            <div>🚀Telegram: t.me/mobilochka_otparvki</div>
+            <div>🚀Telegram: t.me/mobilochka_delivery</div>
         </div>
     )
 }
