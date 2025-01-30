@@ -1,5 +1,4 @@
 import { returnIDXiaomi } from "./returnIDXiaomi";
-import { returnIDOtherBrand } from "./returnOtherBrands";
 
 export const returnIDSamsung = (nameStock) => {
   const removeDoubleSpace = nameStock.replace(/\s+/g, " ");

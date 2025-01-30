@@ -9,7 +9,7 @@ import {
 } from "../../helpers/baseFix";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
-import { returnIDApple } from "../../helpers/returnIDApple";
+import { returnIDSamsung } from "../../helpers/returnIDSamsung";
 import {
   fixNameHi,
   returnExtraPriceHi,
@@ -68,7 +68,7 @@ const IndexPriceForOrder = ({
   dataUnimtrn.map((unimtrnEl) => {
     if (
       unimtrnEl.name &&
-      returnIDApple(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))) !==
+      returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))) !==
         "No match" &&
       baseFix(unimtrnEl) &&
       (returnApple(unimtrnEl) ||
@@ -79,7 +79,7 @@ const IndexPriceForOrder = ({
         returnOtherProduct(unimtrnEl))
     ) {
       allPriceArr.push({
-        id: returnIDApple(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
+        id: returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
         name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
@@ -91,11 +91,11 @@ const IndexPriceForOrder = ({
   hi.map((hiEl) => {
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
       return (
-        returnIDApple(fixNameHi(hiEl.name)) !== "No match" &&
+        returnIDSamsung(fixNameHi(hiEl.name)) !== "No match" &&
         returnExtraPriceHi(hiEl.name) &&
         returnStockPriceHi(hiEl.name) &&
         allPriceArr.push({
-          id: returnIDApple(fixNameHi(hiEl.name)),
+          id: returnIDSamsung(fixNameHi(hiEl.name)),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
           extraPrice: returnExtraPriceHi(hiEl.name),
           stockPrice: returnStockPriceHi(hiEl.name),
@@ -116,10 +116,10 @@ const IndexPriceForOrder = ({
       baseFixMiHonor(mihonor)
     ) {
       return (
-        returnIDApple(fixNameMihonor(mihonor.name)) !== "No match" &&
+        returnIDSamsung(fixNameMihonor(mihonor.name)) !== "No match" &&
         returnStockPriceMihonor(mihonor.name) &&
         allPriceArr.push({
-          id: returnIDApple(
+          id: returnIDSamsung(
             returnNameInArrMihonor(fixNameMihonor(mihonor.name))
           ),
           name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
@@ -141,11 +141,11 @@ const IndexPriceForOrder = ({
       baseFixMiOpts(miopts)
     ) {
       return (
-        returnIDApple(fixNameMiOpts(miopts.name)) !== "No match" &&
+        returnIDSamsung(fixNameMiOpts(miopts.name)) !== "No match" &&
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(miopts.name) &&
         allPriceArr.push({
-          id: returnIDApple(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
+          id: returnIDSamsung(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
           extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
           stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
@@ -163,11 +163,11 @@ const IndexPriceForOrder = ({
       baseFixSuperPrice(superprice)
     ) {
       return (
-        returnIDApple(fixNameSuperPrice(superprice.name)) !== "No match" &&
+        returnIDSamsung(fixNameSuperPrice(superprice.name)) !== "No match" &&
         newPrice(superprice.name, superprice.price) &&
         superprice.price &&
         allPriceArr.push({
-          id: returnIDApple(fixNameSuperPrice(superprice.name)),
+          id: returnIDSamsung(fixNameSuperPrice(superprice.name)),
           name: fixNameSuperPrice(superprice.name),
           stockPrice: superprice.price,
           provider: "SuperPrice",
@@ -179,11 +179,11 @@ const IndexPriceForOrder = ({
   baseData.map((base) => {
     if (base.name && typeof base.name === "string" && baseFixBase(base)) {
       return (
-        returnIDApple(returnFixNameBase(base.name)) !== "No match" &&
+        returnIDSamsung(returnFixNameBase(base.name)) !== "No match" &&
         base.price &&
         baseFixBase(base) &&
         allPriceArr.push({
-          id: returnIDApple(returnFixNameBase(base.name)),
+          id: returnIDSamsung(returnFixNameBase(base.name)),
           name: returnFixNameBase(changeFlag(base.name)),
           stockPrice: base.extra,
           provider: "База",

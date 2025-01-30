@@ -86,6 +86,7 @@ export const baseFix = (el) => {
     toLowerCase?.indexOf("отсутств") == -1 &&
     toLowerCase?.indexOf("пятно") == -1 &&
     toLowerCase?.indexOf("мяты") == -1 &&
+    toLowerCase?.indexOf("rfb") == -1 &&
     el !== "Товар"
   );
 };
