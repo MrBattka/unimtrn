@@ -52,7 +52,7 @@ const Apple = ({ fullList }) => {
     <div>
       <div>
         {result.length > 1 && (
-          <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+          <span className={isOpen ? style.titleOpen : style.title} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "Apple ▲" : "Apple ▼"}
           </span>
         )}

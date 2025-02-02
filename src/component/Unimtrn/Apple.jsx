@@ -756,7 +756,7 @@ const Apple = ({ double }) => {
             className={
               checkIsProduct(allPriceArr) && !isProduct
                 ? style.titleNotFound
-                : style.title
+                : (isOpen ? style.titleOpen : style.title)
             }
             onClick={() => closedSubMenu()}
           >
@@ -773,7 +773,7 @@ const Apple = ({ double }) => {
                   className={
                     checkIsProductAirPods(allPriceArr) && !isProductAirPods
                       ? style.titleCategoryNotFound
-                      : style.titlecategory
+                      : (isOpenAirPods ? style.titlecategoryOpen : style.titlecategory)
                   }
                   onClick={() => setIsOpenAirPods(!isOpenAirPods)}
                 >
@@ -898,7 +898,7 @@ const Apple = ({ double }) => {
                   className={
                     checkIsProductiPhone(allPriceArr) && !isProductiPhone
                       ? style.titleCategoryNotFound
-                      : style.titlecategory
+                      : (isOpeniPhone ? style.titlecategoryOpen : style.titlecategory)
                   }
                   onClick={() => setIsOpeniPhone(!isOpeniPhone)}
                 >
@@ -1402,7 +1402,7 @@ const Apple = ({ double }) => {
                   className={
                     checkIsProductAW(allPriceArr) && !isProductAW
                       ? style.titleCategoryNotFound
-                      : style.titlecategory
+                      : (isOpenWatch ? style.titlecategoryOpen : style.titlecategory)
                   }
                   onClick={() => setIsOpenWatch(!isOpenWatch)}
                 >
@@ -1615,7 +1615,7 @@ const Apple = ({ double }) => {
                   className={
                     checkIsProductiPad(allPriceArr) && !isProductiPad
                       ? style.titleCategoryNotFound
-                      : style.titlecategory
+                      : (isOpeniPad ? style.titlecategoryOpen : style.titlecategory)
                   }
                   onClick={() => setIsOpeniPad(!isOpeniPad)}
                 >
@@ -1821,7 +1821,7 @@ const Apple = ({ double }) => {
                   className={
                     checkIsProductMac(allPriceArr) && !isProductMac
                       ? style.titleCategoryNotFound
-                      : style.titlecategory
+                      : (isOpenMacBook ? style.titlecategoryOpen : style.titlecategory)
                   }
                   onClick={() => setIsOpenMacBook(!isOpenMacBook)}
                 >

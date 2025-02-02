@@ -149,7 +149,7 @@ const Xiaomi = ({ double }) => {
               className={
                 checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
-                  : style.title
+                  : (isOpen ? style.titleOpen : style.title)
               }
               onClick={() => setIsOpen(!isOpen)}
             >

@@ -5,6 +5,19 @@
   display: block;
 }
 
+.title:hover {
+  color: #b1b1b1;
+  transition: 0.3s;
+}
+
+.titleOpen {
+  color: #9c9c9c;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
 .titleNotFound {
   cursor: pointer;
   font-weight: bold;
@@ -19,6 +32,20 @@
   margin-bottom: 5px;
   margin-left: 20px;
   display: block;
+}
+
+.titlecategory:hover {
+  color: #b1b1b1;
+  transition: 0.3s;
+}
+
+.titlecategoryOpen {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  display: block;
+  color: #9c9c9c;
 }
 
 .titleCategoryNotFound {
@@ -45,11 +72,16 @@
 h4 {
   margin: 0 0 5px 0;
   cursor: pointer;
-  color: rgb(80, 80, 80);
+  color: rgb(107, 107, 107);
+}
+
+h4:hover {
+  color: rgb(185, 185, 185);
+  transition: 0.3s;
 }
 
 h4:active {
-  color: rgb(158, 158, 158);
+  color: rgb(139, 139, 139);
 }
 
 h3 {

@@ -43,7 +43,7 @@ const Xiaomi = ({ fullList }) => {
     <div>
       <div>
         {result.length > 1 && (
-          <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+          <span className={isOpen ? style.titleOpen : style.title} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "Xiaomi / Yandex / JBL ▲" : "Xiaomi / Yandex / JBL ▼"}
           </span>
         )}

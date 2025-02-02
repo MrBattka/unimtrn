@@ -148,7 +148,7 @@ const Dyson = ({ double }) => {
               className={
                 checkIsDyson(allPriceArr) && !isDyson
                   ? style.titleNotFound
-                  : style.title
+                  : (isOpen ? style.titleOpen : style.title)
               }
               onClick={() => setIsOpen(!isOpen)}
             >

@@ -74,7 +74,7 @@ const Used = ({ fullList }) => {
     <div>
       <div>
         {result.length > 1 && (
-          <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+          <span className={isOpen ? style.titleOpen : style.title} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "Б/У ▲" : "Б/У ▼"}
           </span>
         )}

@@ -13,7 +13,7 @@ const HeaderMob = ({ fullList }) => {
     <div>
       {fullList.length > 2 && (
         <div>
-          <span className={style.title} onClick={() => setIsOpen(!isOpen)}>
+          <span className={isOpen ? style.titleOpen : style.title} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "Header ▲" : "Header ▼"}
           </span>
         </div>

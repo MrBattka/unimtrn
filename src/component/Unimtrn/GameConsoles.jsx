@@ -125,7 +125,7 @@ const GameConsoles = ({ double }) => {
               className={
                 checkIsConsoles(allPriceArr) && !isConsoles
                   ? style.titleNotFound
-                  : style.title
+                  : (isOpen ? style.titleOpen : style.title)
               }
               onClick={() => setIsOpen(!isOpen)}
             >
