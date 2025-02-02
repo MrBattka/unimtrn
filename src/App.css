@@ -5,7 +5,7 @@
   background-image: url("/src/source/bg/bg1.jpg");
   background-size: cover;
   /* background-attachment: local; */
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .img {
