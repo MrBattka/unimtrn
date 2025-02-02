@@ -5,7 +5,7 @@ import "./App.css";
 import Header from "./component/Header/Header";
 import IndexFromBase from "./component/PriceFromBase/IndexPriceFromBase";
 import IndexPriceForOrder from "./component/Unimtrn/IndexPriceForOrder";
-import icon from "./source/icon/icon1.png";
+import icon from "./source/icon/icon.png";
 
 const App = () => {
   const [dataUnimtrn, setDataUnimtrn] = useState([]);

@@ -33,7 +33,7 @@ const NewProduct = ({ fullList }) => {
       </div>
 
       {isOpen && (
-        <div>
+        <div className={style.row}>
           <div>📲 Новый товар</div>
           {result.map((newProduct, i) => (
             <div key={i}>

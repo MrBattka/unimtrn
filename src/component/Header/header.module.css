@@ -32,6 +32,10 @@ a {
     border-radius: 6px;
 }
 
+.button:hover {
+    color: rgb(192, 192, 192);
+}
+
 .button_active_1 {
     width: 110px;
     color: rgb(223, 223, 223);
@@ -60,6 +64,21 @@ a {
 }
 
 .refresh {
-    font-size: 30px;
-    color: red;
+    font-size: 40px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    color: white;
+}
+
+.refresh:hover {
+    text-shadow: 0 0 5px red;
+    color: rgb(163, 163, 163);
+    transition: 0.5s;
+}
+
+.refresh:active {
+    text-shadow: none;
+    color: white;
+    transition: 0.5s;
 }

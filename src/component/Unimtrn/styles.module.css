@@ -38,6 +38,7 @@
 .row {
   max-height: 50vh;
   overflow-y: scroll;
+  overflow-x: none;
   margin-bottom: 5px;
 }
 
@@ -114,7 +115,7 @@ p {
   height: fit-content;
   width: 100%;
   margin-top: 50px;
-  overflow: auto;
+  overflow-x: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
   margin-left: 26%;
