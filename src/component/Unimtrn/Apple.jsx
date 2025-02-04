@@ -96,6 +96,7 @@ const Apple = ({ double }) => {
   const [isOpenAirPods, setIsOpenAirPods] = useState(false);
   const [isAirPods, setIsAirPods] = useState(false);
   const [isAirPodsMax, setIsAirPodsMax] = useState(false);
+  const [isAirPodsMax2024, setIsAirPodsMax2024] = useState(false);
   const [isPencil, setIsPencil] = useState(false);
   const [isMagic, setIsMagic] = useState(false);
   const [isOpenWatch, setIsOpenWatch] = useState(false);
@@ -826,6 +827,8 @@ const Apple = ({ double }) => {
                           <div key={index}>
                             {baseFix(el) &&
                               el.name.indexOf("AirPods Max") != -1 &&
+                              el.name.indexOf("USB-C") == -1 &&
+                              el.name.indexOf("2") == -1 &&
                               (isAirPodsMax || setIsAirPodsMax(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -833,7 +836,9 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                el.name.indexOf("AirPods Max") != -1 && (
+                                el.name.indexOf("AirPods Max") != -1 &&
+                                el.name.indexOf("USB-C") == -1 &&
+                                el.name.indexOf("2") == -1 && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -842,6 +847,35 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
+
+
+                      {isAirPodsMax2024 && <br />}
+                      {isAirPodsMax2024 && <div>🎧 **AirPods Max 2024**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("AirPods Max") != -1 &&
+                              el.name.indexOf("USB-C") != -1 &&
+                              (isAirPodsMax2024 || setIsAirPodsMax2024(true)) &&
+                              returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("AirPods Max") != -1 &&
+                                el.name.indexOf("USB-C") != -1 && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
+
                       {isPencil && <br />}
                       {isPencil && <div>✏️ **Pencil**</div>}
                       {allPriceArr.length ? (

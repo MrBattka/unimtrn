@@ -200,7 +200,8 @@ const GarminGoProDji = ({ double }) => {
                   allPriceArr.map((garminEl, index) => (
                     <div key={index}>
                       {baseFix(garminEl) &&
-                        garminEl.name.indexOf("Garmin") != -1 &&
+                        (garminEl.name.indexOf("Garmin") != -1 ||
+                        garminEl.name.indexOf("GARMIN") != -1) &&
                         (isGarmin || setIsGarmin(true)) &&
                         returnFixPrice(garminEl, garminEl.name) + (garminEl.provider !== "База"
                           ? newPrice(garminEl.name, garminEl.stockPrice)

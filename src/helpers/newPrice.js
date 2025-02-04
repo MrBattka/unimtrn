@@ -234,7 +234,8 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("15 512") !== -1 ||
     name.indexOf("15 plus 128") !== -1 ||
     name.indexOf("15 plus 256") !== -1 ||
-    name.indexOf("15 plus 512") !== -1
+    name.indexOf("15 plus 512") !== -1 ||
+    name.indexOf("s25") !== -1
   ) {
     return Number(price) + 1000;
   } else if (

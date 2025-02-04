@@ -225,7 +225,7 @@ const IndexPriceForOrder = ({
       </div>
 
       <div className={style.wrapper_cat}>
-        <Dyson double={allPriceArr} />
+        <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} />
         <GarminGoProDji double={allPriceArr} />
         <NoName double={allPriceArr} />
         <GoogleSonyAsusLenovo double={allPriceArr} />

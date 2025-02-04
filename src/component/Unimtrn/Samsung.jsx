@@ -7,7 +7,7 @@ import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
 const Samsung = ({ double }) => {
-  const res = []
+  const res = [];
 
   let gb = /Gb/gi;
   let zFlip = /Z flip/gi;
@@ -30,7 +30,10 @@ const Samsung = ({ double }) => {
     const fixS24 = fixS23.replace(s24, "S24");
     const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
     const fixA550 = fixWiFi.replace(a550, "A55");
-    const fixGalaxy = (fixA550.indexOf("Galaxy A") || fixA550.indexOf("Galaxy S")) ? fixA550.replace("Galaxy ", ""): fixA550
+    const fixGalaxy =
+      fixA550.indexOf("Galaxy A") || fixA550.indexOf("Galaxy S")
+        ? fixA550.replace("Galaxy ", "")
+        : fixA550;
     const replaceSamsung = fixGalaxy.replace("Samsung ", "");
     const replaceSpace =
       replaceSamsung[0] === " " ? replaceSamsung.slice(1) : replaceSamsung;
@@ -164,7 +167,9 @@ const Samsung = ({ double }) => {
               className={
                 checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
-                  : (isOpen ? style.titleOpen : style.title)
+                  : isOpen
+                  ? style.titleOpen
+                  : style.title
               }
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -204,9 +209,7 @@ const Samsung = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -239,9 +242,7 @@ const Samsung = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -279,8 +280,12 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("S21 ") != -1 ||
                           el.name.indexOf("S22 ") != -1 ||
                           el.name.indexOf("S23 ") != -1 ||
+                          el.name.indexOf("S23+") != -1 ||
                           el.name.indexOf("S24 ") != -1 ||
-                          el.name.indexOf("Z Flip") != -1 ||
+                          el.name.indexOf("S24+") != -1 ||
+                          el.name.indexOf("S25 ") != -1 ||
+                          (el.name.indexOf("S25+") != -1) ||
+                            (el.name.indexOf("Z Flip") != -1) ||
                           el.name.indexOf("Z Fold") != -1) &&
                         (isPhones || setIsPhones(true)) &&
                         returnFixPrice(el, el.name) +
@@ -291,9 +296,7 @@ const Samsung = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -313,7 +316,11 @@ const Samsung = ({ double }) => {
                             el.name.indexOf("S21 ") != -1 ||
                             el.name.indexOf("S22 ") != -1 ||
                             el.name.indexOf("S23 ") != -1 ||
+                            el.name.indexOf("S23+") != -1 ||
                             el.name.indexOf("S24 ") != -1 ||
+                            el.name.indexOf("S24+") != -1 ||
+                            el.name.indexOf("S25 ") != -1 ||
+                            el.name.indexOf("S25+") != -1 ||
                             el.name.indexOf("Z Flip") != -1 ||
                             el.name.indexOf("Z Fold") != -1) && (
                             <span>{" - " + el.provider}</span>
@@ -341,9 +348,7 @@ const Samsung = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">

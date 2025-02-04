@@ -24,6 +24,7 @@ export const returnSamsungHi = (name) => {
     name.indexOf("S22") != -1 ||
     name.indexOf("S23") != -1 ||
     name.indexOf("S24") != -1 ||
+    name.indexOf("S25") != -1 ||
     name.indexOf("Z Flip") != -1 ||
     name.indexOf("Z Fold") != -1 ||
     name.indexOf("Tab S") != -1 ||

@@ -19,6 +19,7 @@ export const returnSamsung = (el) => {
     el.name.indexOf("S22") != -1 ||
     el.name.indexOf("S23") != -1 ||
     el.name.indexOf("S24") != -1 ||
+    el.name.indexOf("S25") != -1 ||
     el.name.indexOf("Z Flip") != -1 ||
     el.name.indexOf("Z Fold") != -1 ||
     el.name.indexOf("Watch 6") != -1 ||
