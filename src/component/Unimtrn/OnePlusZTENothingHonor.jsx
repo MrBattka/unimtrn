@@ -135,8 +135,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
           )}
         </div>
       </div>
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
               <thead>
@@ -294,7 +293,6 @@ const OnePlusZTENothingHonor = ({ double }) => {
             </table>
           </div>
         </div>
-      )}
     </div>
   );
 };

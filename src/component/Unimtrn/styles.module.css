@@ -62,11 +62,22 @@
   margin-left: 20px;
 }
 
-.row {
+.open {
+  animation-name: open;
+  animation-duration: 0.6s;
+  display: block;
   max-height: 50vh;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-bottom: 5px;
+}
+
+.closed {
+  animation-name: close;
+  animation-duration: 0.6s;
+  opacity: 0;
+  height: 0;
+  display: none;
 }
 
 h4 {
@@ -162,3 +173,27 @@ p {
     justify-content: center;
     align-items: center;
   } */
+
+
+
+  @keyframes open {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: 50vh;
+      opacity: 1;
+    }
+}
+
+@keyframes close {
+  from {
+    height: 50vh;
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}

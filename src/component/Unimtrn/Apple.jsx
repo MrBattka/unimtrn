@@ -765,8 +765,7 @@ const Apple = ({ double }) => {
           </span>
         )}
       </div>
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <div className={style.test}>
             <table className="table">
               <div>
@@ -2189,7 +2188,6 @@ const Apple = ({ double }) => {
             </table>
           </div>
         </div>
-      )}
     </div>
   );
 };
