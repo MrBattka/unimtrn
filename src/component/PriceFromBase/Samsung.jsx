@@ -40,9 +40,7 @@ const Samsung = ({ fullList }) => {
           </span>
         )}
       </div>
-
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <h4
             onClick={() => {
               copyTable();
@@ -75,7 +73,6 @@ const Samsung = ({ fullList }) => {
             <br />
           </table>
         </div>
-      )}
     </div>
   );
 };

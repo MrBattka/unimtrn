@@ -79,9 +79,7 @@ const Used = ({ fullList }) => {
           </span>
         )}
       </div>
-
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <h4
             onClick={() => {
               copyTable();
@@ -275,7 +273,6 @@ const Used = ({ fullList }) => {
             <br />
           </table>
         </div>
-      )}
     </div>
   );
 };

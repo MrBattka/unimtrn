@@ -28,12 +28,24 @@
     margin-left: 26%;
 }
 
-.row {
+.open {
+    animation-name: open;
+    animation-duration: 0.6s;
+    display: block;
+    height: min-content;
     max-height: 55vh;
-    overflow-x: scroll;
+    overflow-y: scroll;
     overflow-x: hidden;
     margin-bottom: 5px;
-}
+  }
+  
+  .closed {
+    animation-name: close;
+    animation-duration: 0.6s;
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
 
 .header {
     width: 300px;
@@ -47,4 +59,26 @@ h4 {
 
 h4:active {
     color: rgb(158, 158, 158);
+}
+
+@keyframes open {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: 55vh;
+      opacity: 1;
+    }
+}
+
+@keyframes close {
+  from {
+    height: 55vh;
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
 }

@@ -57,9 +57,7 @@ const Apple = ({ fullList }) => {
           </span>
         )}
       </div>
-
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <h4
             onClick={() => {
               copyTable();
@@ -177,7 +175,6 @@ const Apple = ({ fullList }) => {
             <br />
           </table>
         </div>
-      )}
     </div>
   );
 };

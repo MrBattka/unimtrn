@@ -18,8 +18,7 @@ const HeaderMob = ({ fullList }) => {
           </span>
         </div>
       )}
-      {isOpen && (
-        <div>
+        <div className={isOpen ? style.open : style.closed}>
           <h4
             onClick={() => {
               copyTable();
@@ -38,7 +37,6 @@ const HeaderMob = ({ fullList }) => {
             <div>📞 WhatsApp:** https://wa.me/79787922235 **</div>
           </table>
         </div>
-      )}
     </div>
   );
 };

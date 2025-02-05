@@ -57,15 +57,20 @@
   color: red;
 }
 
-.category {
+.openAppleCategory {
   display: inline-block;
   margin-left: 20px;
+  animation-name: open;
+  animation-duration: 0.6s;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .open {
   animation-name: open;
   animation-duration: 0.6s;
   display: block;
+  height: min-content;
   max-height: 50vh;
   overflow-y: scroll;
   overflow-x: hidden;

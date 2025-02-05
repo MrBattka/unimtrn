@@ -31,9 +31,7 @@ const NewProduct = ({ fullList }) => {
           </span>
         )}
       </div>
-
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <div>📲 Новый товар</div>
           {result.map((newProduct, i) => (
             <div key={i}>
@@ -83,7 +81,6 @@ const NewProduct = ({ fullList }) => {
           ))}
           <br />
         </div>
-      )}
     </div>
   );
 };

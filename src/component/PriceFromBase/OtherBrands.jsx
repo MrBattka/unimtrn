@@ -61,9 +61,7 @@ const OtherBrands = ({ fullList }) => {
           </span>
         )}
       </div>
-
-      {isOpen && (
-        <div className={style.row}>
+        <div className={isOpen ? style.open : style.closed}>
           <h4
             onClick={() => {
               copyTable();
@@ -217,7 +215,6 @@ const OtherBrands = ({ fullList }) => {
             <br />
           </table>
         </div>
-      )}
     </div>
   );
 };

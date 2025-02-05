@@ -779,8 +779,7 @@ const Apple = ({ double }) => {
                 >
                   {isOpenAirPods ? "AirPods ▲" : "AirPods ▼"} 
                 </div>
-                {isOpenAirPods && (
-                  <div className={style.category}>
+                  <div className={isOpenAirPods ? style.openAppleCategory : style.closed}>
                     <h4
                       onClick={() => {
                         copyTable();
@@ -846,8 +845,6 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-
-
                       {isAirPodsMax2024 && <br />}
                       {isAirPodsMax2024 && <div>🎧 **AirPods Max 2024**</div>}
                       {allPriceArr.length ? (
@@ -873,8 +870,6 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-
-
                       {isPencil && <br />}
                       {isPencil && <div>✏️ **Pencil**</div>}
                       {allPriceArr.length ? (
@@ -926,7 +921,6 @@ const Apple = ({ double }) => {
                       <Footer />
                     </tbody>
                   </div>
-                )}
                 <div
                   className={
                     checkIsProductiPhone(allPriceArr) && !isProductiPhone
@@ -937,8 +931,7 @@ const Apple = ({ double }) => {
                 >
                   {isOpeniPhone ? "iPhone ▲" : "iPhone ▼"}
                 </div>
-                {isOpeniPhone && (
-                  <div className={style.category}>
+                  <div className={isOpeniPhone ? style.openAppleCategory : style.closed}>
                     <h4
                       onClick={() => {
                         copyTable();
@@ -1430,7 +1423,6 @@ const Apple = ({ double }) => {
                       <Footer />
                     </tbody>
                   </div>
-                )}
                 <div
                   className={
                     checkIsProductAW(allPriceArr) && !isProductAW
@@ -1441,8 +1433,7 @@ const Apple = ({ double }) => {
                 >
                   {isOpenWatch ? "AW ▲" : "AW ▼"}
                 </div>
-                {isOpenWatch && (
-                  <div className={style.category}>
+                  <div className={isOpenWatch ? style.openAppleCategory : style.closed}>
                     <h4
                       onClick={() => {
                         copyTable();
@@ -1643,7 +1634,6 @@ const Apple = ({ double }) => {
                       <Footer />
                     </tbody>
                   </div>
-                )}
                 <div
                   className={
                     checkIsProductiPad(allPriceArr) && !isProductiPad
@@ -1654,8 +1644,7 @@ const Apple = ({ double }) => {
                 >
                   {isOpeniPad ? "iPad ▲" : "iPad ▼"}
                 </div>
-                {isOpeniPad && (
-                  <div className={style.category}>
+                  <div className={isOpeniPad ? style.openAppleCategory : style.closed}>
                     <h4
                       onClick={() => {
                         copyTable();
@@ -1849,7 +1838,6 @@ const Apple = ({ double }) => {
                       <Footer /> 
                     </tbody>
                   </div>
-                )}
                 <div
                   className={
                     checkIsProductMac(allPriceArr) && !isProductMac
@@ -1860,8 +1848,7 @@ const Apple = ({ double }) => {
                 >
                   {isOpenMacBook ? "MacBook ▲" : "MacBook ▼"} 
                 </div>
-                {isOpenMacBook && (
-                  <div className={style.category}>
+                  <div className={isOpenMacBook ? style.openAppleCategory : style.closed}>
                     <h4
                       onClick={() => {
                         copyTable();
@@ -2183,7 +2170,6 @@ const Apple = ({ double }) => {
                       <Footer /> 
                     </tbody>
                   </div>
-                )}
               </div>
             </table>
           </div>
