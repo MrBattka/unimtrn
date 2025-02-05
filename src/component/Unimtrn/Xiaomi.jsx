@@ -149,7 +149,9 @@ const Xiaomi = ({ double }) => {
               className={
                 checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
-                  : (isOpen ? style.titleOpen : style.title)
+                  : isOpen
+                  ? style.titleOpen
+                  : style.title
               }
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -158,6 +160,7 @@ const Xiaomi = ({ double }) => {
           )}
         </div>
       </div>
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -366,6 +369,7 @@ const Xiaomi = ({ double }) => {
             </table>
           </div>
         </div>
+      )}
     </div>
   );
 };

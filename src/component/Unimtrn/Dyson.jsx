@@ -8,13 +8,13 @@ import Footer from "./Footer";
 import Product from "../Common/Product";
 
 const Dyson = ({ double, dataUnimtrn }) => {
-  const res= []
+  const res = [];
 
   let dyson = /Dyson/gi;
 
   const fixName = (name) => {
-    return name.replace(dyson, "")
-  }
+    return name.replace(dyson, "");
+  };
 
   const [isOpen, setIsOpen] = useState(false);
   const [isDyson, setIsDyson] = useState(false);
@@ -22,7 +22,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
   const checkIsDyson = (dysonEl) => {
     return (
       dysonEl.length &&
-      dataUnimtrn.map(
+      dysonEl.map(
         (dysonEl, index) =>
           baseFix(dysonEl) &&
           (dysonEl.name.indexOf("Airwrap") != -1 ||
@@ -51,7 +51,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
             dysonEl.name.indexOf("Air Purifier") != -1 ||
             dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
           (isDyson || setIsDyson(true)) &&
-          fixName(dysonEl.name) + dysonEl.extraPrice
+          fixName(dysonEl.name)
       )
     );
   };
@@ -65,7 +65,9 @@ const Dyson = ({ double, dataUnimtrn }) => {
               className={
                 checkIsDyson(dataUnimtrn) && !isDyson
                   ? style.titleNotFound
-                  : (isOpen ? style.titleOpen : style.title)
+                  : isOpen
+                  ? style.titleOpen
+                  : style.title
               }
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -75,6 +77,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
         </div>
       </div>
       {/* {isOpen && ( */}
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -88,7 +91,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
               >
                 ❐ Copy
               </h4>
-              <tbody id="product">
+              <tbody>
                 {isDyson && <div>✂**Dyson**🪒</div>}
                 {dataUnimtrn.length ? (
                   dataUnimtrn.map((dysonEl, index) => (
@@ -120,8 +123,9 @@ const Dyson = ({ double, dataUnimtrn }) => {
                           dysonEl.name.indexOf("Air Purifier") != -1 ||
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
                         returnFixPrice1(dysonEl, fixName(dysonEl.name)) +
-                        (dysonEl.provider !== "База" ? newPrice(dysonEl.name, dysonEl.price) : dysonEl.price)}
-                      
+                          (dysonEl.provider !== "База"
+                            ? newPrice(dysonEl.name, dysonEl.price)
+                            : dysonEl.price)}
                     </div>
                   ))
                 ) : (
@@ -135,7 +139,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
             </table>
           </div>
         </div>
-      
+      )}
     </div>
   );
 };

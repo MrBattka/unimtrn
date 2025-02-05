@@ -39,11 +39,15 @@ const OtherProduct = ({ el }) => {
     <div>
       <div>
         {el.length > 1 && (
-          <span className={isOpen ? style.titleOpen : style.title} onClick={() => setIsOpen(!isOpen)}>
+          <span
+            className={isOpen ? style.titleOpen : style.title}
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? "Новый товар ▲" : "Новый товар ▼"}
           </span>
         )}
       </div>
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -270,6 +274,7 @@ const OtherProduct = ({ el }) => {
             </table>
           </div>
         </div>
+      )}
     </div>
   );
 };

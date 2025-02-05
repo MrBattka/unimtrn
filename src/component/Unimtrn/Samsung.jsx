@@ -178,6 +178,7 @@ const Samsung = ({ double }) => {
           )}
         </div>
       </div>
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -283,8 +284,8 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("S24 ") != -1 ||
                           el.name.indexOf("S24+") != -1 ||
                           el.name.indexOf("S25 ") != -1 ||
-                          (el.name.indexOf("S25+") != -1) ||
-                            (el.name.indexOf("Z Flip") != -1) ||
+                          el.name.indexOf("S25+") != -1 ||
+                          el.name.indexOf("Z Flip") != -1 ||
                           el.name.indexOf("Z Fold") != -1) &&
                         (isPhones || setIsPhones(true)) &&
                         returnFixPrice(el, el.name) +
@@ -365,6 +366,7 @@ const Samsung = ({ double }) => {
             </table>
           </div>
         </div>
+      )}
     </div>
   );
 };

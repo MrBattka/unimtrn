@@ -757,7 +757,9 @@ const Apple = ({ double }) => {
             className={
               checkIsProduct(allPriceArr) && !isProduct
                 ? style.titleNotFound
-                : (isOpen ? style.titleOpen : style.title)
+                : isOpen
+                ? style.titleOpen
+                : style.title
             }
             onClick={() => closedSubMenu()}
           >
@@ -765,6 +767,7 @@ const Apple = ({ double }) => {
           </span>
         )}
       </div>
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className={style.test}>
             <table className="table">
@@ -773,13 +776,20 @@ const Apple = ({ double }) => {
                   className={
                     checkIsProductAirPods(allPriceArr) && !isProductAirPods
                       ? style.titleCategoryNotFound
-                      : (isOpenAirPods ? style.titlecategoryOpen : style.titlecategory)
+                      : isOpenAirPods
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
                   }
                   onClick={() => setIsOpenAirPods(!isOpenAirPods)}
                 >
                   {isOpenAirPods ? "AirPods ▲" : "AirPods ▼"} 
                 </div>
-                  <div className={isOpenAirPods ? style.openAppleCategory : style.closed}>
+                {isOpenAirPods && (
+                  <div
+                    className={
+                      isOpenAirPods ? style.openAppleCategory : style.closed
+                    }
+                  >
                     <h4
                       onClick={() => {
                         copyTable();
@@ -921,17 +931,25 @@ const Apple = ({ double }) => {
                       <Footer />
                     </tbody>
                   </div>
+                )}
                 <div
                   className={
                     checkIsProductiPhone(allPriceArr) && !isProductiPhone
                       ? style.titleCategoryNotFound
-                      : (isOpeniPhone ? style.titlecategoryOpen : style.titlecategory)
+                      : isOpeniPhone
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
                   }
                   onClick={() => setIsOpeniPhone(!isOpeniPhone)}
                 >
                   {isOpeniPhone ? "iPhone ▲" : "iPhone ▼"}
                 </div>
-                  <div className={isOpeniPhone ? style.openAppleCategory : style.closed}>
+                {isOpeniPhone && (
+                  <div
+                    className={
+                      isOpeniPhone ? style.openAppleCategory : style.closed
+                    }
+                  >
                     <h4
                       onClick={() => {
                         copyTable();
@@ -1300,7 +1318,7 @@ const Apple = ({ double }) => {
                               {baseFix(el) &&
                                 (el.name.indexOf("16 128") != -1 ||
                                   el.name.indexOf("16 256") != -1 ||
-                                  el.name.indexOf("16 512") != -1) &&(
+                                  el.name.indexOf("16 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1423,17 +1441,25 @@ const Apple = ({ double }) => {
                       <Footer />
                     </tbody>
                   </div>
+                )}
                 <div
                   className={
                     checkIsProductAW(allPriceArr) && !isProductAW
                       ? style.titleCategoryNotFound
-                      : (isOpenWatch ? style.titlecategoryOpen : style.titlecategory)
+                      : isOpenWatch
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
                   }
                   onClick={() => setIsOpenWatch(!isOpenWatch)}
                 >
                   {isOpenWatch ? "AW ▲" : "AW ▼"}
                 </div>
-                  <div className={isOpenWatch ? style.openAppleCategory : style.closed}>
+                {isOpenWatch && (
+                  <div
+                    className={
+                      isOpenWatch ? style.openAppleCategory : style.closed
+                    }
+                  >
                     <h4
                       onClick={() => {
                         copyTable();
@@ -1634,17 +1660,25 @@ const Apple = ({ double }) => {
                       <Footer />
                     </tbody>
                   </div>
+                )}
                 <div
                   className={
                     checkIsProductiPad(allPriceArr) && !isProductiPad
                       ? style.titleCategoryNotFound
-                      : (isOpeniPad ? style.titlecategoryOpen : style.titlecategory)
+                      : isOpeniPad
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
                   }
                   onClick={() => setIsOpeniPad(!isOpeniPad)}
                 >
                   {isOpeniPad ? "iPad ▲" : "iPad ▼"}
                 </div>
-                  <div className={isOpeniPad ? style.openAppleCategory : style.closed}>
+                {isOpeniPad && (
+                  <div
+                    className={
+                      isOpeniPad ? style.openAppleCategory : style.closed
+                    }
+                  >
                     <h4
                       onClick={() => {
                         copyTable();
@@ -1838,17 +1872,25 @@ const Apple = ({ double }) => {
                       <Footer /> 
                     </tbody>
                   </div>
+                )}
                 <div
                   className={
                     checkIsProductMac(allPriceArr) && !isProductMac
                       ? style.titleCategoryNotFound
-                      : (isOpenMacBook ? style.titlecategoryOpen : style.titlecategory)
+                      : isOpenMacBook
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
                   }
                   onClick={() => setIsOpenMacBook(!isOpenMacBook)}
                 >
                   {isOpenMacBook ? "MacBook ▲" : "MacBook ▼"} 
                 </div>
-                  <div className={isOpenMacBook ? style.openAppleCategory : style.closed}>
+                {isOpenMacBook && (
+                  <div
+                    className={
+                      isOpenMacBook ? style.openAppleCategory : style.closed
+                    }
+                  >
                     <h4
                       onClick={() => {
                         copyTable();
@@ -2170,10 +2212,12 @@ const Apple = ({ double }) => {
                       <Footer /> 
                     </tbody>
                   </div>
+                )}
               </div>
             </table>
           </div>
         </div>
+      )}
     </div>
   );
 };

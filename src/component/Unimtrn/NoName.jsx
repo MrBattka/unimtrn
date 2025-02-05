@@ -135,7 +135,9 @@ const NoName = ({ double }) => {
               className={
                 checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
-                  : (isOpen ? style.titleOpen : style.title)
+                  : isOpen
+                  ? style.titleOpen
+                  : style.title
               }
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -144,6 +146,7 @@ const NoName = ({ double }) => {
           )}
         </div>
       </div>
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -173,9 +176,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -205,9 +206,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -237,9 +236,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -269,9 +266,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -301,9 +296,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -334,9 +327,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -368,9 +359,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -402,9 +391,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -437,9 +424,7 @@ const NoName = ({ double }) => {
                             : el.provider !== "База"
                             ? newPrice(
                                 el.name,
-                                el.condition
-                                  ? el.extraPrice
-                                  : el.stockPrice
+                                el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
@@ -457,6 +442,7 @@ const NoName = ({ double }) => {
             </table>
           </div>
         </div>
+      )}
     </div>
   );
 };

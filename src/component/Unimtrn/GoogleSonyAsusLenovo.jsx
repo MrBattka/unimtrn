@@ -131,7 +131,9 @@ const GoogleSonyAsusLenovo = ({ double }) => {
               className={
                 checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
-                  : (isOpen ? style.titleOpen : style.title)
+                  : isOpen
+                  ? style.titleOpen
+                  : style.title
               }
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -140,6 +142,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
           )}
         </div>
       </div>
+      {isOpen && (
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -280,6 +283,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
             </table>
           </div>
         </div>
+      )}
     </div>
   );
 };

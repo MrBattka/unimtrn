@@ -134,6 +134,7 @@ const GameConsoles = ({ double }) => {
           )}
         </div>
       </div>
+      {isOpen &&
         <div className={isOpen ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
@@ -293,6 +294,7 @@ const GameConsoles = ({ double }) => {
             </table>
           </div>
         </div>
+        }
     </div>
   );
 };
