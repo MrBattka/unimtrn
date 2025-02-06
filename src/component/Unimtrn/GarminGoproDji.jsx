@@ -6,7 +6,7 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const GarminGoProDji = ({ double }) => {
+const GarminGoProDji = ({ double, superprice }) => {
   const res = [];
 
   let gb = /Gb/gi;
@@ -197,24 +197,15 @@ const GarminGoProDji = ({ double }) => {
 
                 {isGarmin && <br />}
                 {isGarmin && <div>⌚ **Garmin**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((garminEl, index) => (
+                {superprice.length ? (
+                  superprice.map((garminEl, index) => (
                     <div key={index}>
                       {baseFix(garminEl) &&
+                      garminEl.price &&
                         (garminEl.name.indexOf("Garmin") != -1 ||
                           garminEl.name.indexOf("GARMIN") != -1) &&
                         (isGarmin || setIsGarmin(true)) &&
-                        returnFixPrice(garminEl, garminEl.name) +
-                          (garminEl.provider !== "База"
-                            ? newPrice(garminEl.name, garminEl.stockPrice)
-                            : garminEl.stockPrice)}
-                      <h3 className="del">
-                        {baseFix(garminEl) &&
-                          (garminEl.name.indexOf("Garmin") != -1 ||
-                            garminEl.name.indexOf("GARMIN") != -1) && (
-                            <span>{" - " + garminEl.provider}</span>
-                          )}
-                      </h3>
+                        returnFixPrice(garminEl, garminEl.name) + newPrice(garminEl.name, garminEl.price)}
                     </div>
                   ))
                 ) : (

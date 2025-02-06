@@ -129,7 +129,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("ps5") !== -1 ||
     name.indexOf("pico") !== -1 ||
     name.indexOf("steam") !== -1 ||
-    name.indexOf("garmin") !== -1 ||
     name.indexOf("google") !== -1 ||
     name.indexOf("xperia") !== -1
   ) {
@@ -235,6 +234,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("15 plus 128") !== -1 ||
     name.indexOf("15 plus 256") !== -1 ||
     name.indexOf("15 plus 512") !== -1 ||
+    name.indexOf("garmin") !== -1 ||
     name.indexOf("s25") !== -1
   ) {
     return Number(price) + 1000;
