@@ -10,7 +10,7 @@ export const returnIDOtherBrand2 = (name) => {
   name.indexOf("512") != -1) {
     return 24537;
   } else if (
-  name.indexOf("xbox one") != -1 &&
+  name.indexOf("xbox") != -1 &&
   name.indexOf(" s ") != -1 &&
   name.indexOf("1tb") != -1) {
     return 14551;
