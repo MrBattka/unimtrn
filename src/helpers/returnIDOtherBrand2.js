@@ -68,9 +68,14 @@ export const returnIDOtherBrand2 = (name) => {
     return 34478;
 
     //  Steam deck
-  } else if (name.indexOf("steam deck oled 512") != -1) {
+  } else if (name.indexOf("steam deck") != -1 &&
+  name.indexOf("oled") != -1 &&
+  name.indexOf("512") != -1) {
     return 34401;
-  } else if (name.indexOf("steam deck oled 1tb") != -1) {
+  } else if (
+  name.indexOf("steam deck") != -1 &&
+  name.indexOf("oled") != -1 &&
+  name.indexOf("1tb") != -1) {
     return 34403;
   } else if (name.indexOf("steam deck 16/64") != -1) {
     return 28310;
@@ -109,12 +114,14 @@ export const returnIDOtherBrand2 = (name) => {
     // Marshall
   } else if (
     name.indexOf("major 4 black") != -1 ||
-    name.indexOf("major iv black") != -1
+    name.indexOf("major iv black") != -1 ||
+    name.indexOf("4 major black") != -1
   ) {
     return 28100;
   } else if (
     name.indexOf("major 4 brown") != -1 ||
-    name.indexOf("major iv brown") != -1
+    name.indexOf("major iv brown") != -1 ||
+    name.indexOf("4 major brown") != -1
   ) {
     return 28101;
 
@@ -662,6 +669,46 @@ export const returnIDOtherBrand2 = (name) => {
     return 36903;
   } else if (name.indexOf("nubia z60s pro 8/256 white") != -1) {
     return 36900;
+  } else if (name.indexOf("nubia z70 ultra 12/256 black") != -1) {
+    return 37798;
+  } else if (name.indexOf("nubia z70 ultra 12/256") != -1 &&
+  (name.indexOf("yellow") != -1 ||
+  name.indexOf("gold") != -1)) {
+    return 37852;
+  } else if (name.indexOf("nubia z70 ultra 12/256 orange") != -1) {
+    return 37853;
+  } else if (name.indexOf("nubia z70 ultra 12/256 starry night") != -1) {
+    return 37854;
+  } else if (name.indexOf("nubia z70 ultra 16/512 black") != -1) {
+    return 37859;
+  } else if (name.indexOf("nubia z70 ultra 16/512") != -1 &&
+  (name.indexOf("yellow") != -1 ||
+  name.indexOf("gold") != -1)) {
+    return 37860;
+  } else if (name.indexOf("nubia z70 ultra 16/512 orange") != -1) {
+    return 37861;
+  } else if (name.indexOf("nubia z70 ultra 16/512 starry night") != -1) {
+    return 37862;
+  } else if (name.indexOf("nubia z70 ultra 16/1tb black") != -1) {
+    return 37867;
+  } else if (name.indexOf("nubia z70 ultra 16/1tb") != -1 &&
+  (name.indexOf("yellow") != -1 ||
+  name.indexOf("gold") != -1)) {
+    return 37868;
+  } else if (name.indexOf("nubia z70 ultra 16/1tb orange") != -1) {
+    return 37869;
+  } else if (name.indexOf("nubia z70 ultra 16/1tb starry night") != -1) {
+    return 37870;
+  } else if (name.indexOf("nubia z70 ultra 24/1tb black") != -1) {
+    return 37875;
+  } else if (name.indexOf("nubia z70 ultra 24/1tb") != -1 &&
+  (name.indexOf("yellow") != -1 ||
+  name.indexOf("gold") != -1)) {
+    return 37876;
+  } else if (name.indexOf("nubia z70 ultra 24/1tb orange") != -1) {
+    return 37877;
+  } else if (name.indexOf("nubia z70 ultra 24/1tb starry night") != -1) {
+    return 37878;
   } else if (name.indexOf("red magic 8 pro 12/256 transparent") != -1) {
     return 28498;
   } else if (name.indexOf("red magic 8 pro 16/512 titanium") != -1) {
@@ -913,6 +960,209 @@ export const returnIDOtherBrand2 = (name) => {
     (name.indexOf("sleet") != -1 || name.indexOf("black") != -1)
   ) {
     return 36685;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/256") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("shadow") != -1)
+  ) {
+    return 37736;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("shadow") != -1)
+  ) {
+    return 37738;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/256") != -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("dusk") != -1)
+  ) {
+    return 37740;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/256") != -1 &&
+    (name.indexOf("silver") != -1 || name.indexOf("moonlight") != -1)
+  ) {
+    return 37741;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/256") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    name.indexOf("lightspeed") != -1
+  ) {
+    return 37742;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    (name.indexOf("dark") != -1 ||
+      name.indexOf("black") != -1 ||
+      name.indexOf("dusk") != -1)
+  ) {
+    return 37743;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    (name.indexOf("silver") != -1 || name.indexOf("moonlight") != -1)
+  ) {
+    return 37744;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("lightspeed") != -1
+  ) {
+    return 37745;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    (name.indexOf("dark") != -1 ||
+      name.indexOf("black") != -1 ||
+      name.indexOf("shadow") != -1)
+  ) {
+    return 37746;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/512") != -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("dusk") != -1)
+  ) {
+    return 37747;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    (name.indexOf("silver") != -1 || name.indexOf("moonlight") != -1)
+  ) {
+    return 37748;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    name.indexOf("lightspeed") != -1
+  ) {
+    return 37749;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    (name.indexOf("dark") != -1 ||
+      name.indexOf("black") != -1 ||
+      name.indexOf("shadow") != -1)
+  ) {
+    return 37750;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    (name.indexOf("dark") != -1 ||
+      name.indexOf("black") != -1 ||
+      name.indexOf("shadow") != -1)
+  ) {
+    return 37751;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("dusk") != -1)
+  ) {
+    return 37752;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("dusk") != -1)
+  ) {
+    return 37753;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/512") != -1 &&
+    (name.indexOf("silver") != -1 || name.indexOf("moonlight") != -1)
+  ) {
+    return 37754;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    (name.indexOf("silver") != -1 || name.indexOf("moonlight") != -1)
+  ) {
+    return 37755;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    name.indexOf("lightspeed") != -1
+  ) {
+    return 37756;
+  } else if (
+    (name.indexOf("redmagic 10 pro") != -1 ||
+      name.indexOf("red magic 10 pro") != -1) &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    name.indexOf("lightspeed") != -1
+  ) {
+    return 37757;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("transparent") == -1 &&
+    name.indexOf("24/1tb") != -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("shadow") != -1)
+  ) {
+    return 37770;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    (name.indexOf("black") != -1 ||
+      name.indexOf("dark") != -1 ||
+      name.indexOf("dusk") != -1)
+  ) {
+    return 37771;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    (name.indexOf("silver") != -1 || name.indexOf("moonlight") != -1)
+  ) {
+    return 37772;
+  } else if (
+    (name.indexOf("redmagic 10 pro +") != -1 ||
+      name.indexOf("red magic 10 pro +") != -1) &&
+    name.indexOf("24/1tb") != -1 &&
+    name.indexOf("transparent") == -1 &&
+    name.indexOf("lightspeed") != -1
+  ) {
+    return 37773;
   } else if (name.indexOf("z50 ultra 12/256 black") != -1) {
     return 36132;
   } else if (name.indexOf("z50 ultra 12/256 silver") != -1) {

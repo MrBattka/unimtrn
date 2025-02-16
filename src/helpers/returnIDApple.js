@@ -4698,23 +4698,23 @@ export const returnIDApple = (name) => {
   ) {
     return 30419;
   } else if (
-    name.indexOf("15 pro max 1tb black ") != -1 ||
-    name.indexOf("15 pro max 1tb black ") != -1
+    name.indexOf("15 pro max 1tb black") != -1 ||
+    name.indexOf("15 pro max 1tb black") != -1
   ) {
     return 28272;
   } else if (
-    name.indexOf("15 pro max 1tb blue ") != -1 ||
-    name.indexOf("15 pro max 1tb blue ") != -1
+    name.indexOf("15 pro max 1tb blue") != -1 ||
+    name.indexOf("15 pro max 1tb blue") != -1
   ) {
     return 28273;
   } else if (
-    name.indexOf("15 pro max 1tb natural ") != -1 ||
-    name.indexOf("15 pro max 1tb natural ") != -1
+    name.indexOf("15 pro max 1tb natural") != -1 ||
+    name.indexOf("15 pro max 1tb natural") != -1
   ) {
     return 28276;
   } else if (
-    name.indexOf("15 pro max 1tb white ") != -1 ||
-    name.indexOf("15 pro max 1tb white ") != -1
+    name.indexOf("15 pro max 1tb white") != -1 ||
+    name.indexOf("15 pro max 1tb white") != -1
   ) {
     return 28279;
   } else if (
@@ -4755,6 +4755,8 @@ export const returnIDApple = (name) => {
     return 30423;
   } else if (name.indexOf("15 pro max 256 blue") != -1) {
     return 28274;
+  } else if (name.indexOf("15 pro max 256 black") != -1) {
+    return 28270;
   } else if (name.indexOf("15 pro max 256 natural") != -1) {
     return 28277;
   } else if (name.indexOf("15 pro max 256 white") != -1) {
@@ -4797,6 +4799,8 @@ export const returnIDApple = (name) => {
     return 30427;
   } else if (name.indexOf("15 pro max 512 blue") != -1) {
     return 28275;
+  } else if (name.indexOf("15 pro max 512 black") != -1) {
+    return 28271;
   } else if (name.indexOf("15 pro max 512 natural") != -1) {
     return 28278;
   } else if (name.indexOf("15 pro max 512 white") != -1) {

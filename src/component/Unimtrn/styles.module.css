@@ -173,6 +173,11 @@ p {
   margin-top: 10px;
 }
 
+.provider {
+  color: red;
+  font-weight: 600;
+}
+
 /* .wrapper_cat {
     display: flex;
     justify-content: center;

@@ -58,7 +58,7 @@ export const returnNameInArrHi = (name) => {
       reverseStrName[0] === " " ? reverseStrName.slice(1) : reverseStrName;
     let removeDoubleSpaceName =
       removeSpaceName[0] === " " ? removeSpaceName.slice(1) : removeSpaceName;
-    let splitPriceEU = /\s(.+)/.exec(removeDoubleSpaceName)[1];
+    let splitPriceEU = removeDoubleSpaceName.indexOf(" ") !== - 1 ? /\s(.+)/.exec(removeDoubleSpaceName)[1] : removeDoubleSpaceName
     let reverseBackStrName = splitPriceEU.split("").reverse().join("");
 
     return reverseBackStrName;
@@ -195,7 +195,7 @@ export const returnExtraPriceHi = (name) => {
       removeSpaceName2[0] === " "
         ? removeSpaceName2.slice(1)
         : removeSpaceName2;
-    let splitPriceEU = removeSpaceName3.indexOf(" ") ? /\s(.+)/.exec(removeSpaceName3)[1] : removeSpaceName3
+    let splitPriceEU = removeSpaceName3.indexOf(" ") != -1 ? /\s(.+)/.exec(removeSpaceName3)[1] : removeSpaceName3
     let reverseBackStrName = splitPriceEU.split("").reverse().join("");
 
     return newPrice(reverseBackStrName, fixCar);

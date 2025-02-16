@@ -7,6 +7,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("nothing ear") !== -1 ||
     name.indexOf("nothing cmf") !== -1 ||
     name.indexOf("galaxy buds") !== -1 ||
+    name.indexOf("buds") !== -1 ||
     name.indexOf("galaxy smart tag") !== -1 ||
     name.indexOf("pencil") !== -1 ||
     name.indexOf("homepod") !== -1 ||
@@ -23,6 +24,9 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("a34 ") !== -1 ||
     name.indexOf("m34 ") !== -1 ||
     name.indexOf("m54 ") !== -1 ||
+    name.indexOf("f15 ") !== -1 ||
+    name.indexOf("m55 ") !== -1 ||
+    name.indexOf("m55s ") !== -1 ||
     name.indexOf("a55 ") !== -1 ||
     name.indexOf("a550 ") !== -1 ||
     name.indexOf("galaxy watch") !== -1 ||

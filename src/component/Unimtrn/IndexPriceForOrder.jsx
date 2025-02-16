@@ -51,6 +51,7 @@ import {
   changeFlag,
   returnFixPriceHi,
 } from "../PriceFromBase/helpers/fixFlags";
+import ProductNotID from "./ProductNotID";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -192,6 +193,135 @@ const IndexPriceForOrder = ({
     }
   });
 
+
+
+
+  dataUnimtrn.map((unimtrnEl) => {
+    if (
+      unimtrnEl.name &&
+      returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))) ===
+        "No match" &&
+      baseFix(unimtrnEl) &&
+      (returnApple(unimtrnEl) ||
+        returnDyson(unimtrnEl) ||
+        returnSamsung(unimtrnEl) ||
+        returnXiaomi(unimtrnEl) ||
+        returnGameConsole(unimtrnEl) ||
+        returnOtherProduct(unimtrnEl))
+    ) {
+      allPriceArrNotID.push({
+        id: returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
+        name: fixNameUnimtrn(unimtrnEl),
+        extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
+        stockPrice: unimtrnEl.price,
+        provider: "Unimtrn",
+      });
+    }
+  });
+
+  hi.map((hiEl) => {
+    if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
+      return (
+        returnIDSamsung(fixNameHi(hiEl.name)) === "No match" &&
+        allPriceArrNotID.push({
+          id: returnIDSamsung(fixNameHi(hiEl.name)),
+          name: returnNameInArrHi(fixNameHi(hiEl.name)),
+          extraPrice: returnStockPriceHi(hiEl.name),
+          stockPrice: returnStockPriceHi(hiEl.name),
+          provider: "Hi",
+        })
+      );
+    }
+  });
+
+  mihonorData.map((mihonor) => {
+    baseFixMiHonor(mihonor) &&
+      returnStockPriceMihonor(fixNameMihonor(mihonor.name));
+    baseFixMiHonor(mihonor) &&
+      returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
+    if (
+      mihonor.name &&
+      typeof mihonor.name === "string" &&
+      baseFixMiHonor(mihonor)
+    ) {
+      return (
+        returnIDSamsung(fixNameMihonor(mihonor.name)) === "No match" &&
+        returnStockPriceMihonor(mihonor.name) &&
+        allPriceArrNotID.push({
+          id: returnIDSamsung(
+            returnNameInArrMihonor(fixNameMihonor(mihonor.name))
+          ),
+          name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
+          extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
+          stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
+          condition: " - от 3шт.",
+          provider: "MiHonor",
+        })
+      );
+    }
+  });
+
+  mioptsData.map((miopts) => {
+    baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
+    baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
+    if (
+      miopts.name &&
+      typeof miopts.name === "string" &&
+      baseFixMiOpts(miopts)
+    ) {
+      return (
+        returnIDSamsung(fixNameMiOpts(miopts.name)) === "No match" &&
+        returnExtraPriceMiOpts(miopts.name) &&
+        returnStockPriceMiOpts(miopts.name) &&
+        allPriceArrNotID.push({
+          id: returnIDSamsung(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
+          name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
+          extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
+          stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
+          condition: " - от 3шт.",
+          provider: "MiOpts",
+        })
+      );
+    }
+  });
+
+  superpriceData.map((superprice) => {
+    if (
+      superprice.name &&
+      typeof superprice.name === "string" &&
+      baseFixSuperPrice(superprice)
+    ) {
+      return (
+        returnIDSamsung(fixNameSuperPrice(superprice.name)) === "No match" &&
+        newPrice(superprice.name, superprice.price) &&
+        superprice.price &&
+        allPriceArrNotID.push({
+          id: returnIDSamsung(fixNameSuperPrice(superprice.name)),
+          name: fixNameSuperPrice(superprice.name),
+          stockPrice: superprice.price,
+          provider: "SuperPrice",
+        })
+      );
+    }
+  });
+
+  baseData.map((base) => {
+    if (base.name && typeof base.name === "string" && baseFixBase(base)) {
+      return (
+        returnIDSamsung(returnFixNameBase(base.name)) === "No match" &&
+        base.price &&
+        baseFixBase(base) &&
+        allPriceArrNotID.push({
+          id: returnIDSamsung(returnFixNameBase(base.name)),
+          name: returnFixNameBase(changeFlag(base.name)),
+          stockPrice: base.extra,
+          provider: "База",
+        })
+      );
+    }
+  });
+console.log(allPriceArrNotID);
+
   return (
     <div className={style.wrapper}>
       <div className={style.flexbox}>
@@ -234,6 +364,7 @@ const IndexPriceForOrder = ({
         <Samsung double={allPriceArr} />
         <Xiaomi double={allPriceArr} />
         <Apple double={allPriceArr} />
+        <ProductNotID allPriceArr={allPriceArrNotID} />
       </div>
     </div>
   );

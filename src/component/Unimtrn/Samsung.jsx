@@ -198,7 +198,7 @@ const Samsung = ({ double }) => {
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.name.indexOf("Galaxy Buds") != -1 ||
+                        (el.name.indexOf("Buds") != -1 ||
                           el.name.indexOf("Galaxy Smart Tag") != -1) &&
                         (isOther || setIsOther(true)) &&
                         returnFixPrice(el, el.name) +
@@ -214,7 +214,7 @@ const Samsung = ({ double }) => {
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
-                          (el.name.indexOf("Galaxy Buds") != -1 ||
+                          (el.name.indexOf("Buds") != -1 ||
                             el.name.indexOf("Galaxy Smart Tag") != -1) && (
                             <span>{" - " + el.provider}</span>
                           )}
@@ -271,6 +271,9 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("A16 ") != -1 ||
                           el.name.indexOf("A25 ") != -1 ||
                           el.name.indexOf("A24 ") != -1 ||
+                          el.name.indexOf("F15 ") != -1 ||
+                          el.name.indexOf("M55 ") != -1 ||
+                          el.name.indexOf("M55S ") != -1 ||
                           el.name.indexOf("A54 ") != -1 ||
                           el.name.indexOf("A34 ") != -1 ||
                           el.name.indexOf("A35 ") != -1 ||

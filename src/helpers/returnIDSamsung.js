@@ -712,19 +712,19 @@ export const returnIDSamsung = (nameStock) => {
     return 35924;
   } else if (name.indexOf("f15 4/128") != -1 && name.indexOf("black") != -1) {
     return 37936;
-  } else if (name.indexOf("f15 4/128") != -1 && name.indexOf("violet") != -1) {
+  } else if (name.indexOf("f15 4/128") != -1 && (name.indexOf("violet") != -1 || name.indexOf("purple") != -1)) {
     return 37956;
   } else if (name.indexOf("f15 4/128") != -1 && name.indexOf("green") != -1) {
     return 37957;
   } else if (name.indexOf("f15 6/128") != -1 && name.indexOf("black") != -1) {
     return 37961;
-  } else if (name.indexOf("f15 6/128") != -1 && name.indexOf("violet") != -1) {
+  } else if (name.indexOf("f15 6/128") != -1 && (name.indexOf("violet") != -1 || name.indexOf("purple") != -1)) {
     return 37962;
   } else if (name.indexOf("f15 6/128") != -1 && name.indexOf("green") != -1) {
     return 37963;
   } else if (name.indexOf("f15 8/128") != -1 && name.indexOf("black") != -1) {
     return 37967;
-  } else if (name.indexOf("f15 8/128") != -1 && name.indexOf("violet") != -1) {
+  } else if (name.indexOf("f15 8/128") != -1 && (name.indexOf("violet") != -1 || name.indexOf("purple") != -1)) {
     return 37968;
   } else if (name.indexOf("f15 8/128") != -1 && name.indexOf("green") != -1) {
     return 37969;
@@ -4378,7 +4378,8 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("watch 6 classic 47 black") != -1
   ) {
     return 27920;
-  } else if (name.indexOf("watch6 classic 47 silver") != -1) {
+  } else if (name.indexOf("watch6 classic 47 silver") != -1 ||
+  name.indexOf("watch 6 classic 47 silver") != -1) {
     return 27919;
   } else if (name.indexOf("watch 7 40") != -1 && name.indexOf("cream") != -1) {
     return 36526;
@@ -4415,17 +4416,24 @@ export const returnIDSamsung = (nameStock) => {
   } else if (
     name.indexOf("buds 2 pro graphite") != -1 ||
     name.indexOf("buds pro 2 graphite") != -1 ||
-    name.indexOf("buds 2 pro black") != -1
+    name.indexOf("buds 2 pro black") != -1 ||
+    name.indexOf("buds 2 pro") != -1 &&
+    (name.indexOf("graphite") != -1 ||
+    name.indexOf("black") != -1)
   ) {
     return 27358;
   } else if (
     name.indexOf("buds 2 pro purple") != -1 ||
-    name.indexOf("buds pro 2 purple") != -1
+    name.indexOf("buds pro 2 purple") != -1 ||
+    name.indexOf("buds 2 pro") != -1 &&
+    name.indexOf("purple") != -1
   ) {
     return 27360;
   } else if (
     name.indexOf("buds 2 pro white") != -1 ||
-    name.indexOf("buds pro 2 white") != -1
+    name.indexOf("buds pro 2 white") != -1 ||
+    name.indexOf("buds 2 pro") != -1 &&
+    name.indexOf("white") != -1
   ) {
     return 27359;
   } else if (name.indexOf("buds 2") != -1 && name.indexOf("black") != -1) {
@@ -4438,9 +4446,11 @@ export const returnIDSamsung = (nameStock) => {
     return 20563;
   } else if (name.indexOf("buds 2") != -1 && name.indexOf("white") != -1) {
     return 20562;
-  } else if (name.indexOf("buds 3 white") != -1) {
+  } else if (name.indexOf("buds 3") != -1 &&
+  name.indexOf("white") != -1) {
     return 36498;
-  } else if (name.indexOf("buds 3 silver") != -1) {
+  } else if (name.indexOf("buds 3") != -1 &&
+  name.indexOf("silver") != -1) {
     return 36532;
   } else if (name.indexOf("buds fe") != -1 && name.indexOf("graphite") != -1) {
     return 35689;
