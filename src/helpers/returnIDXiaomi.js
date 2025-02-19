@@ -2564,28 +2564,24 @@ export const returnIDXiaomi = (name) => {
     // Redmi Pad
   } else if (
     name.indexOf("poco pad ") != -1 &&
-    name.indexOf("5g") != -1 &&
     name.indexOf("8/128") != -1 &&
     name.indexOf("blue") != -1
   ) {
     return 37117;
   } else if (
     name.indexOf("poco pad ") != -1 &&
-    name.indexOf("5g") != -1 &&
     name.indexOf("8/128") != -1 &&
     name.indexOf("gray") != -1
   ) {
     return 37120;
   } else if (
     name.indexOf("poco pad ") != -1 &&
-    name.indexOf("5g") != -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("blue") != -1
   ) {
     return 37119;
   } else if (
     name.indexOf("poco pad ") != -1 &&
-    name.indexOf("5g") != -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("gray") != -1
   ) {
@@ -3218,45 +3214,84 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("green") != -1
   ) {
     return 37436;
-  } else if (name.indexOf("redmi 14c 4/128 purple") != -1) {
+  } else if (name.indexOf("redmi 14c 4/128") != -1 &&
+  name.indexOf("purple") != -1) {
     return 37099;
-  } else if (name.indexOf("redmi 14c 4/128 black") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/128") != -1 &&
+  name.indexOf("black") != -1) {
     return 37097;
-  } else if (name.indexOf("redmi 14c 4/128 green") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/128") != -1 &&
+  name.indexOf("green") != -1) {
     return 37098;
-  } else if (name.indexOf("redmi 14c 4/128 blue") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/128") != -1 &&
+  name.indexOf("blue") != -1) {
     return 37100;
-  } else if (name.indexOf("redmi 14c 4/256 purple") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/256") != -1 &&
+  name.indexOf("purple") != -1) {
     return 37113;
-  } else if (name.indexOf("redmi 14c 4/256 black") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/256") != -1 &&
+  name.indexOf("black") != -1) {
     return 37114;
-  } else if (name.indexOf("redmi 14c 4/256 green") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/256") != -1 &&
+  name.indexOf("green") != -1) {
     return 37115;
-  } else if (name.indexOf("redmi 14c 4/256 blue") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 4/256") != -1 &&
+  name.indexOf("blue") != -1) {
     return 37116;
-  } else if (name.indexOf("redmi 14c 6/128 purple") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 6/128") != -1 &&
+  name.indexOf("purple") != -1) {
     return 37101;
-  } else if (name.indexOf("redmi 14c 6/128 black") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 6/128") != -1 &&
+  name.indexOf("black") != -1) {
     return 37102;
-  } else if (name.indexOf("redmi 14c 6/128 green") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 6/128") != -1 &&
+  name.indexOf("green") != -1) {
     return 37103;
-  } else if (name.indexOf("redmi 14c 6/128 blue") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 6/128") != -1 &&
+  name.indexOf("blue") != -1) {
     return 37104;
-  } else if (name.indexOf("redmi 14c 8/128 purple") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/128") != -1 &&
+  name.indexOf("purple") != -1) {
     return 37105;
-  } else if (name.indexOf("redmi 14c 8/128 black") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/128") != -1 &&
+  name.indexOf("black") != -1) {
     return 37106;
-  } else if (name.indexOf("redmi 14c 8/128 green") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/128") != -1 &&
+  name.indexOf("green") != -1) {
     return 37107;
-  } else if (name.indexOf("redmi 14c 8/128 blue") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/128") != -1 &&
+  name.indexOf("blue") != -1) {
     return 37108;
-  } else if (name.indexOf("redmi 14c 8/256 purple") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/256") != -1 &&
+  name.indexOf("purple") != -1) {
     return 37109;
-  } else if (name.indexOf("redmi 14c 8/256 black") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/256") != -1 &&
+  name.indexOf("black") != -1) {
     return 37110;
-  } else if (name.indexOf("redmi 14c 8/256 green") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/256") != -1 &&
+  name.indexOf("green") != -1) {
     return 37111;
-  } else if (name.indexOf("redmi 14c 8/256 blue") != -1) {
+  } else if (
+  name.indexOf("redmi 14c 8/256") != -1 &&
+  name.indexOf("blue") != -1) {
     return 37112;
   } else if (name.indexOf("redmi 13 6/128 midnight black") != -1) {
     return 36688;

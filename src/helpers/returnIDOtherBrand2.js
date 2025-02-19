@@ -44,6 +44,7 @@ export const returnIDOtherBrand2 = (name) => {
     return 36835;
   } else if (
     (name.indexOf("dualsense black") != -1 ||
+    name.indexOf("dual sense black") != -1 ||
       name.indexOf("dualsense white") != -1 ||
       name.indexOf("dualsenseBlack") != -1 ||
       name.indexOf("dualsenseWhite") != -1 ||
@@ -51,15 +52,20 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("white") != -1
   ) {
     return 19661;
-  } else if (name.indexOf("dualsense") != -1 && name.indexOf("red") != -1) {
+  } else if ((name.indexOf("dualsense") != -1 || name.indexOf("dual sense") != -1) && 
+  name.indexOf("red") != -1) {
     return 36796;
-  } else if (name.indexOf("dualsense purple") != -1) {
+  } else if (name.indexOf("dualsense purple") != -1 &&
+  name.indexOf("dual sense purple") != -1) {
     return 36799;
-  } else if (name.indexOf("dualsense black") != -1) {
+  } else if (name.indexOf("dualsense black") != -1 &&
+  name.indexOf("dual sense black") != -1) {
     return 36801;
-  } else if (name.indexOf("dualsense pink") != -1) {
+  } else if (name.indexOf("dualsense pink") != -1 &&
+  name.indexOf("dual sense pink") != -1) {
     return 36798;
-  } else if (name.indexOf("dualsense") != -1 && name.indexOf("blue") != -1) {
+  } else if ((name.indexOf("dualsense") != -1 ||
+  name.indexOf("dual sense") != -1) && name.indexOf("blue") != -1) {
     return 36797;
   } else if (
     name.indexOf("ps portal") != -1 ||
@@ -176,6 +182,13 @@ export const returnIDOtherBrand2 = (name) => {
     return 19102;
 
     // Sony
+  } else if (
+    name.indexOf("xperia 1iv") != -1 &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("black") != -1 &&
+    name.indexOf("gaming") != -1
+  ) {
+    return 37696;
   } else if (
     name.indexOf("xperia 1v ") != -1 &&
     name.indexOf("12/256") != -1 &&
