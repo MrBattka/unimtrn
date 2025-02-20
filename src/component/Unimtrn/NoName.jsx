@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../../helpers/baseFix";
+import { baseFix, baseFixMiHonor } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
+import { fixNameMihonor, returnExtraPriceMihonor, returnNameInArrMihonor, returnStockPriceMihonor } from "../Provider/MiHonor/helpers/helpers";
 
-const NoName = ({ double }) => {
+const NoName = ({ double, dataUnimtrn, mihonorData }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -162,28 +163,15 @@ const NoName = ({ double }) => {
               </h4>
               <tbody>
                 {isBeats && <div>🎧 **Beats**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((el, index) => (
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((BeatsEl, index) => (
                     <div key={index}>
-                      {baseFix(el) &&
-                        el.name.indexOf("Beats") != -1 &&
+                      {baseFix(BeatsEl) &&
+                        BeatsEl.price &&
+                        BeatsEl.name.indexOf("Beats") != -1 &&
                         (isBeats || setIsBeats(true)) &&
-                        returnFixPrice(el, fixName(el)) +
-                          (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
-                              })`
-                            : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              )
-                            : el.stockPrice)}
-                      <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("Beats") != -1 && (
-                          <span>{" - " + el.provider}</span>
-                        )}
-                      </h3>
+                        returnFixPrice(BeatsEl, BeatsEl.name) +
+                          newPrice(BeatsEl.name, BeatsEl.price)}
                     </div>
                   ))
                 ) : (
@@ -252,28 +240,18 @@ const NoName = ({ double }) => {
 
                 {isInfinix && <br />}
                 {isInfinix && <div>📱 **Infinix**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((el, index) => (
-                    <div key={index}>
-                      {baseFix(el) &&
-                        el.name.indexOf("infinix") != -1 &&
+                {mihonorData.length ? (
+                  mihonorData.map((el, index) => (
+                    
+                <div key={index}>
+                      {baseFixMiHonor(el) &&
+                        el.name.indexOf("INFINIX") != -1 &&
+                        el.name.indexOf("*INFINIX*") == -1 &&
                         (isInfinix || setIsInfinix(true)) &&
-                        returnFixPrice(el, fixName(el)) +
-                          (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
-                              })`
-                            : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              )
-                            : el.stockPrice)}
-                      <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("infinix") != -1 && (
-                          <span>{" - " + el.provider}</span>
-                        )}
-                      </h3>
+                        returnNameInArrMihonor(fixNameMihonor(el.name)) +
+                         `${newPrice(el.name, returnExtraPriceMihonor(fixNameMihonor(el.name)))} 👉 (${
+                                newPrice(el.name, returnStockPriceMihonor(fixNameMihonor(el.name))) + " - от 3шт."
+                              })`}
                     </div>
                   ))
                 ) : (

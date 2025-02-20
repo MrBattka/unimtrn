@@ -114,7 +114,8 @@ export const fixNameMihonor = (name) => {
   const fixRedmi = fixMI.replace("REDMI", "");
   const fixNote = fixRedmi.replace("NOTE", "Note");
   const fixPro = fixNote.replace("PRO", "Pro");
-  const fixPad = fixPro.replace("PAD", "Pad");
+  const fixInfinix = fixPro.replace("INFINIX", "Infinix");
+  const fixPad = fixInfinix.replace("PAD", "Pad");
   const replace5GSamsung = fixPad.indexOf("S2") !== -1 ? fixPad.replace("5G ", "") : fixPad
   
 

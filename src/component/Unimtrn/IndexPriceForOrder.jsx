@@ -356,8 +356,8 @@ console.log(allPriceArrNotID);
 
       <div className={style.wrapper_cat}>
         <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} />
-        <GarminGoProDji double={allPriceArr} superprice={superpriceData} />
-        <NoName double={allPriceArr} />
+        <GarminGoProDji double={allPriceArr} superprice={superpriceData} dataUnimtrn={dataUnimtrn} />
+        <NoName double={allPriceArr} dataUnimtrn={dataUnimtrn} mihonorData={mihonorData} />
         <GoogleSonyAsusLenovo double={allPriceArr} />
         <OnePlusZTENothingHonor double={allPriceArr} />
         <GameConsoles double={allPriceArr} />

@@ -6,7 +6,7 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const GarminGoProDji = ({ double, superprice }) => {
+const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
   const res = [];
 
   let gb = /Gb/gi;
@@ -167,28 +167,17 @@ const GarminGoProDji = ({ double, superprice }) => {
               </h4>
               <tbody>
                 {isDJI && <div>📸 **DJI**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((DJIEl, index) => (
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((DJIEl, index) => (
                     <div key={index}>
                       {baseFix(DJIEl) &&
-                        (DJIEl.name.indexOf("DJL ") != -1 ||
-                          DJIEl.name.indexOf("DJI ") != -1 ||
-                          DJIEl.name.indexOf("DJi ") != -1 ||
-                          DJIEl.name.indexOf("Dji ") != -1) &&
-                        (isDJI || setIsDJI(true)) &&
-                        returnFixPrice(DJIEl, DJIEl.name) +
-                          (DJIEl.provider !== "База"
-                            ? newPrice(DJIEl.name, DJIEl.stockPrice)
-                            : DJIEl.stockPrice)}
-                      <h3 className="del">
-                        {baseFix(DJIEl) &&
-                          (DJIEl.name.indexOf("DJL ") != -1 ||
-                            DJIEl.name.indexOf("DJI ") != -1 ||
-                            DJIEl.name.indexOf("DJi ") != -1 ||
-                            DJIEl.name.indexOf("Dji ") != -1) && (
-                            <span>{" - " + DJIEl.provider}</span>
-                          )}
-                      </h3>
+                      DJIEl.price &&
+                      (DJIEl.name.indexOf("DJL ") != -1 ||
+                      DJIEl.name.indexOf("DJI ") != -1 ||
+                      DJIEl.name.indexOf("DJi ") != -1 ||
+                      DJIEl.name.indexOf("Dji ") != -1) &&
+                      (isDJI || setIsDJI(true)) &&
+                      returnFixPrice(DJIEl, DJIEl.name) + newPrice(DJIEl.name, DJIEl.price)}
                     </div>
                   ))
                 ) : (
