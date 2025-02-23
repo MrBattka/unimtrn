@@ -6,7 +6,7 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const GoogleSonyAsusLenovo = ({ double }) => {
+const GoogleSonyAsusLenovo = ({ double, dataUnimtrn }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -158,33 +158,21 @@ const GoogleSonyAsusLenovo = ({ double }) => {
               </h4>
               <tbody>
                 {isAsus && <div>📱 **Asus**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((asusEl, index) => (
+
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((asusEl, index) => (
                     <div key={index}>
                       {baseFix(asusEl) &&
+                        asusEl.price &&
                         (asusEl.name.indexOf("Asus") != -1 ||
                           asusEl.name.indexOf("ZenFone") != -1 ||
                           asusEl.name.indexOf("ROG") != -1 ||
                           asusEl.name.indexOf("Rog") != -1 ||
                           asusEl.name.indexOf("Asus") != -1) &&
                         (isAsus || setIsAsus(true)) &&
-                        returnFixPrice(asusEl, fixName(asusEl)) +
-                          (asusEl.condition
-                            ? `${newPrice(
-                                asusEl.name,
-                                asusEl.extraPrice
-                              )} 👉 (${
-                                newPrice(asusEl.name, asusEl.stockPrice) +
-                                asusEl.condition
-                              })`
-                            : asusEl.provider !== "База"
-                            ? newPrice(
-                                asusEl.name,
-                                asusEl.condition
-                                  ? asusEl.extraPrice
-                                  : asusEl.stockPrice
-                              )
-                            : asusEl.stockPrice)}
+                        returnFixPrice(asusEl, asusEl.name) +
+                          newPrice(asusEl.name, asusEl.price)}
+
                       <h3 className="del">
                         {baseFix(asusEl) &&
                           (asusEl.name.indexOf("Asus") != -1 ||
@@ -192,7 +180,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                             asusEl.name.indexOf("ROG") != -1 ||
                             asusEl.name.indexOf("Rog") != -1 ||
                             asusEl.name.indexOf("Asus") != -1) && (
-                            <span>{" - " + asusEl.provider}</span>
+                            <span>{" - " + "Unimtrn"}</span>
                           )}
                       </h3>
                     </div>
@@ -200,6 +188,7 @@ const GoogleSonyAsusLenovo = ({ double }) => {
                 ) : (
                   <tr></tr>
                 )}
+
                 {isGoogle && <br />}
                 {isGoogle && <div>📱 **Google**</div>}
                 {allPriceArr.length ? (

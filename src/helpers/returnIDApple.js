@@ -595,7 +595,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("navy") !== -1 &&
     (name.indexOf("natural titanium") !== -1 ||
-      name.indexOf("natural case") !== -1) &&
+      name.indexOf("natural") !== -1) &&
     (name.indexOf("alpine loop") !== -1 || name.indexOf("al") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -604,7 +604,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("green") !== -1 &&
     (name.indexOf("natural titanium") !== -1 ||
-      name.indexOf("natural case") !== -1) &&
+      name.indexOf("natural") !== -1) &&
     (name.indexOf("alpine loop") !== -1 || name.indexOf("al") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -613,7 +613,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("green") !== -1 &&
     (name.indexOf("black titanium") !== -1 ||
-      name.indexOf("black case") !== -1) &&
+      name.indexOf("black") !== -1) &&
     (name.indexOf("alpine loop") !== -1 || name.indexOf("al") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -622,7 +622,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("navy") !== -1 &&
     (name.indexOf("black titanium") !== -1 ||
-      name.indexOf("black case") !== -1) &&
+      name.indexOf("black") !== -1) &&
     (name.indexOf("alpine loop") !== -1 || name.indexOf("al") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -631,7 +631,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("tan") !== -1 &&
     (name.indexOf("black titanium") !== -1 ||
-      name.indexOf("black case") !== -1) &&
+      name.indexOf("black") !== -1) &&
     (name.indexOf("alpine loop") !== -1 || name.indexOf("al") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -640,7 +640,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("blue") !== -1 &&
     (name.indexOf("natural titanium") !== -1 ||
-      name.indexOf("natural case") !== -1) &&
+      name.indexOf("natural") !== -1) &&
     (name.indexOf("trail loop") !== -1 || name.indexOf("tl") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -649,7 +649,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("navy") !== -1 &&
     (name.indexOf("natural titanium") !== -1 ||
-      name.indexOf("natural case") !== -1) &&
+      name.indexOf("natural") !== -1) &&
     (name.indexOf("ocean band") !== -1 || name.indexOf("ob") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -658,7 +658,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("black") !== -1 &&
     (name.indexOf("black titanium") !== -1 ||
-      name.indexOf("black case") !== -1) &&
+      name.indexOf("black") !== -1) &&
     (name.indexOf("milanese loop") !== -1 || name.indexOf("ml") !== -1) &&
     name.indexOf("2024") != -1
   ) {
@@ -667,7 +667,7 @@ export const returnIDApple = (name) => {
     (name.indexOf("ultra 2") !== -1 || name.indexOf("ul 2") !== -1) &&
     name.indexOf("natural") !== -1 &&
     (name.indexOf("natural titanium") !== -1 ||
-      name.indexOf("natural case") !== -1) &&
+      name.indexOf("natural") !== -1) &&
     (name.indexOf("milanese loop") !== -1 || name.indexOf("ml") !== -1) &&
     name.indexOf("2024") != -1
   ) {
