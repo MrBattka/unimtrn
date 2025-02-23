@@ -4318,6 +4318,13 @@ export const returnIDSamsung = (nameStock) => {
     return 22824;
 
     // Watch
+  } else if (name.indexOf("galaxy watch fe Black") != -1) {
+    return 38212;
+  } else if (name.indexOf("galaxy watch fe silver") != -1) {
+    return 38214;
+  } else if (name.indexOf("galaxy watch fe pink") != -1) {
+    return 38213;
+
   } else if (name.indexOf("redmi watch 3 black") != -1) {
     return 26348;
   } else if (name.indexOf("redmi watch 3 white") != -1) {
@@ -4457,6 +4464,10 @@ export const returnIDSamsung = (nameStock) => {
   } else if (name.indexOf("buds 3") != -1 &&
   name.indexOf("silver") != -1) {
     return 36532;
+  } else if (name.indexOf("buds 3 pro white") != -1) {
+    return 38004;
+  } else if (name.indexOf("buds 3 pro silver") != -1) {
+    return 38019;
   } else if (name.indexOf("buds fe") != -1 && name.indexOf("graphite") != -1) {
     return 35689;
   } else if (name.indexOf("buds fe") != -1 && name.indexOf("white") != -1) {

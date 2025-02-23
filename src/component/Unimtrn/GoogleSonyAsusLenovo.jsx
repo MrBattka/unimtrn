@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import style from "./styles.module.css";
-import { baseFix } from "../../helpers/baseFix";
+import { baseFix, baseFixSuperPrice } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const GoogleSonyAsusLenovo = ({ double, dataUnimtrn }) => {
+const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -77,7 +77,10 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isAsus, setIsAsus] = useState(false);
-  const [isGoogle, setIsGoogle] = useState(false);
+  const [isPixelPhone, setIsPixelPhone] = useState(false);
+  const [isPixelWatch, setIsPixelWatch] = useState(false);
+  const [isPixelTab, setIsPixelTab] = useState(false);
+  const [isPixelBuds, setIsPixelBuds] = useState(false);
   const [isSony, setIsSony] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
 
@@ -189,15 +192,61 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn }) => {
                   <tr></tr>
                 )}
 
-                {isGoogle && <br />}
-                {isGoogle && <div>📱 **Google**</div>}
+                {isPixelBuds && <br />}
+                {isPixelBuds && <div>📱 **Pixel Buds**</div>}
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((googleEl, index) => (
+                    <div key={index}>
+                      {baseFix(googleEl) &&
+                        googleEl.name.indexOf("Pixel Buds") != -1 &&
+                        (isPixelBuds || setIsPixelBuds(true)) &&
+                        returnFixPrice(googleEl, fixName(googleEl)) +
+                          newPrice(googleEl.name, googleEl.price)}
+                      <h3 className="del">
+                        {baseFix(googleEl) &&
+                          googleEl.name.indexOf("Pixel Buds") != -1 && (
+                            <span>{" - " + "Unimtrn"}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isPixelWatch && <br />}
+                {isPixelWatch && <div>📱 **Pixel Watch**</div>}
+                {superprice.length ? (
+                  superprice.map((googleEl, index) => (
+                    <div key={index}>
+                      {baseFixSuperPrice(googleEl) &&
+                        googleEl.name.indexOf("Pixel Watch") != -1 &&
+                        (isPixelWatch || setIsPixelWatch(true)) &&
+                        returnFixPrice(googleEl, fixName(googleEl)) +
+                          newPrice(googleEl.name, googleEl.price)}
+                      <h3 className="del">
+                        {baseFixSuperPrice(googleEl) &&
+                          googleEl.name.indexOf("Pixel Watch") != -1 && (
+                            <span>{" - " + "Super Price"}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                {isPixelPhone && <br />}
+                {isPixelPhone && <div>📱 **Pixel Phone**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((googleEl, index) => (
                     <div key={index}>
                       {baseFix(googleEl) &&
                         (googleEl.name.indexOf("Google") != -1 ||
                           googleEl.name.indexOf("Pixel") != -1) &&
-                        (isGoogle || setIsGoogle(true)) &&
+                        googleEl.name.indexOf("Pixel Watch") == -1 &&
+                        googleEl.name.indexOf("Pixel Buds") == -1 &&
+                        googleEl.name.indexOf("Pixel Tablet") == -1 &&
+                        (isPixelPhone || setIsPixelPhone(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
                           (googleEl.condition
                             ? `${newPrice(
@@ -218,7 +267,10 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn }) => {
                       <h3 className="del">
                         {baseFix(googleEl) &&
                           (googleEl.name.indexOf("Google") != -1 ||
-                            googleEl.name.indexOf("Pixel") != -1) && (
+                            googleEl.name.indexOf("Pixel") != -1) &&
+                          googleEl.name.indexOf("Pixel Watch") == -1 &&
+                          googleEl.name.indexOf("Pixel Buds") == -1 &&
+                          googleEl.name.indexOf("Pixel Tablet") == -1 && (
                             <span>{" - " + googleEl.provider}</span>
                           )}
                       </h3>
@@ -227,6 +279,29 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn }) => {
                 ) : (
                   <tr></tr>
                 )}
+
+                {isPixelTab && <br />}
+                {isPixelTab && <div>📱 **Pixel Tablet**</div>}
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((googleEl, index) => (
+                    <div key={index}>
+                      {baseFix(googleEl) &&
+                        googleEl.name.indexOf("Pixel Tab") != -1 &&
+                        (isPixelTab || setIsPixelTab(true)) &&
+                        returnFixPrice(googleEl, fixName(googleEl)) +
+                          newPrice(googleEl.name, googleEl.price)}
+                      <h3 className="del">
+                        {baseFix(googleEl) &&
+                          googleEl.name.indexOf("Pixel Tab") != -1 && (
+                            <span>{" - " + "Unimtrn"}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
                 {isSony && <br />}
                 {isSony && <div>📱 **Sony**</div>}
                 {allPriceArr.length ? (

@@ -2,6 +2,7 @@ export const baseFix = (el) => {
   let toLowerCase = el.name?.toLowerCase();
   return (
     el[0] !== "(" &&
+    toLowerCase.indexOf("коцка") == -1 &&
     toLowerCase.indexOf("magez case") == -1 &&
     toLowerCase.indexOf("pitaka") == -1 &&
     toLowerCase.indexOf("usb-c 25w") == -1 &&

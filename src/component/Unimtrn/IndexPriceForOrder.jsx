@@ -358,7 +358,7 @@ console.log(allPriceArrNotID);
         <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} />
         <GarminGoProDji double={allPriceArr} superprice={superpriceData} dataUnimtrn={dataUnimtrn} />
         <NoName double={allPriceArr} dataUnimtrn={dataUnimtrn} mihonorData={mihonorData} />
-        <GoogleSonyAsusLenovo double={allPriceArr} dataUnimtrn={dataUnimtrn} />
+        <GoogleSonyAsusLenovo double={allPriceArr} dataUnimtrn={dataUnimtrn} superprice={superpriceData} />
         <OnePlusZTENothingHonor double={allPriceArr} />
         <GameConsoles double={allPriceArr} />
         <Samsung double={allPriceArr} />

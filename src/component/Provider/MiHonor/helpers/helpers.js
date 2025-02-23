@@ -99,8 +99,9 @@ export const fixNameMihonor = (name) => {
   const replaceSamsung = fix12256.replace("SAMSUNG ", "");
   const replaceM555G = replaceSamsung.replace("M55 5G", "M55");
   const replaceM55S5G = replaceM555G.replace("M55S 5G", "M55S");
+  const fixA9Plus = replaceM55S5G.replace("A9 PLUS", "A9 +");
 
-  const fixBlack = replaceM55S5G.replace("BLACK", "Black");
+  const fixBlack = fixA9Plus.replace("BLACK", "Black");
   const fixYellow = fixBlack.replace("YELLOW", "Yellow");
   const fixBlue = fixYellow.replace("BLUE", "Blue");
   const fixGreen = fixBlue.replace("GREEN", "Green");

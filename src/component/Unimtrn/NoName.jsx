@@ -5,7 +5,12 @@ import { baseFix, baseFixMiHonor } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
-import { fixNameMihonor, returnExtraPriceMihonor, returnNameInArrMihonor, returnStockPriceMihonor } from "../Provider/MiHonor/helpers/helpers";
+import {
+  fixNameMihonor,
+  returnExtraPriceMihonor,
+  returnNameInArrMihonor,
+  returnStockPriceMihonor,
+} from "../Provider/MiHonor/helpers/helpers";
 
 const NoName = ({ double, dataUnimtrn, mihonorData }) => {
   const sort = double.sort(
@@ -80,6 +85,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
   const [isBeats, setIsBeats] = useState(false);
   const [isBlackview, setIsBlackview] = useState(false);
   const [isAGM, setIsAGM] = useState(false);
+  const [isHonor, setIsHonor] = useState(false);
   const [isInfinix, setIsInfinix] = useState(false);
   const [isOppo, setIsOppo] = useState(false);
   const [isHuawei, setIsHuawei] = useState(false);
@@ -238,20 +244,49 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                   <tr></tr>
                 )}
 
+                {isHonor && <br />}
+                {isHonor && <div>📱 **Honor**</div>}
+                {mihonorData.length ? (
+                  mihonorData.map((el, index) => (
+                    <div key={index}>
+                      {baseFixMiHonor(el) &&
+                        el.name.indexOf("HONOR") != -1 &&
+                        (isHonor || setIsHonor(true)) &&
+                        returnNameInArrMihonor(fixNameMihonor(el.name)) +
+                          `${newPrice(
+                            el.name,
+                            returnExtraPriceMihonor(fixNameMihonor(el.name))
+                          )} 👉 (${
+                            newPrice(
+                              el.name,
+                              returnStockPriceMihonor(fixNameMihonor(el.name))
+                            ) + " - от 3шт."
+                          })`}
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
                 {isInfinix && <br />}
                 {isInfinix && <div>📱 **Infinix**</div>}
                 {mihonorData.length ? (
                   mihonorData.map((el, index) => (
-                    
-                <div key={index}>
+                    <div key={index}>
                       {baseFixMiHonor(el) &&
                         el.name.indexOf("INFINIX") != -1 &&
                         el.name.indexOf("*INFINIX*") == -1 &&
                         (isInfinix || setIsInfinix(true)) &&
                         returnNameInArrMihonor(fixNameMihonor(el.name)) +
-                         `${newPrice(el.name, returnExtraPriceMihonor(fixNameMihonor(el.name)))} 👉 (${
-                                newPrice(el.name, returnStockPriceMihonor(fixNameMihonor(el.name))) + " - от 3шт."
-                              })`}
+                          `${newPrice(
+                            el.name,
+                            returnExtraPriceMihonor(fixNameMihonor(el.name))
+                          )} 👉 (${
+                            newPrice(
+                              el.name,
+                              returnStockPriceMihonor(fixNameMihonor(el.name))
+                            ) + " - от 3шт."
+                          })`}
                     </div>
                   ))
                 ) : (
