@@ -2421,6 +2421,14 @@ export const returnIDApple = (name) => {
     return 36424;
 
     // imac
+  } else if (name.indexOf("mu9d3") != -1) {
+    return 38245;
+  } else if (name.indexOf("mu9e3") != -1) {
+    return 38246;
+  } else if (name.indexOf("mvyt4") != -1) {
+    return 38247;
+  } else if (name.indexOf("mcx44") != -1) {
+    return 38248;
   } else if (name.indexOf("mxnf2") != -1) {
     return 16220;
   } else if (name.indexOf("mxng2") != -1) {
@@ -5270,6 +5278,18 @@ export const returnIDApple = (name) => {
   name.indexOf("🇨🇳") != -1 &&
   name.indexOf("🇭🇰") != -1) {
     return 366722;
+  } else if (name.indexOf("16e 128 black") != -1) {
+    return 38256;
+  } else if (name.indexOf("16e 128 white") != -1) {
+    return 38257;
+  } else if (name.indexOf("16e 256 black") != -1) {
+    return 38258;
+  } else if (name.indexOf("16e 256 white") != -1) {
+    return 38259;
+  } else if (name.indexOf("16e 512 black") != -1) {
+    return 38262;
+  } else if (name.indexOf("16e 512 white") != -1) {
+    return 38263;
   } else {
     return "No match";
   }
