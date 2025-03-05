@@ -89,6 +89,7 @@ const Apple = ({ double }) => {
   const [is15Plus, setIs15Plus] = useState(false);
   const [is15Pro, setIs15Pro] = useState(false);
   const [is15ProMax, setIs15ProMax] = useState(false);
+  const [is16e, setIs16e] = useState(false);
   const [is16, setIs16] = useState(false);
   const [is16Plus, setIs16Plus] = useState(false);
   const [is16Pro, setIs16Pro] = useState(false);
@@ -253,6 +254,12 @@ const Apple = ({ double }) => {
             el.name.indexOf("16 128") != -1 ||
             el.name.indexOf("16 256") != -1 ||
             el.name.indexOf("16 512") != -1 ||
+            el.name.indexOf("16e 128") != -1 ||
+            el.name.indexOf("16e 256") != -1 ||
+            el.name.indexOf("16e 512") != -1 ||
+            el.name.indexOf("16Е 128") != -1 ||
+            el.name.indexOf("16Е 256") != -1 ||
+            el.name.indexOf("16Е 512") != -1 ||
             el.name.indexOf("16 Plus 128") != -1 ||
             el.name.indexOf("16 Plus 256") != -1 ||
             el.name.indexOf("16 Plus 512") != -1 ||
@@ -1292,6 +1299,39 @@ const Apple = ({ double }) => {
                                   el.name.indexOf("15 Pro Max 1Tb") != -1 ||
                                   el.name.indexOf("15 Pro Max 1TB") != -1 ||
                                   el.name.indexOf("15 Pro Max 1Tb") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16e && <br />}
+                      {is16e && <div>📱 **🔥iPhone 16e🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.name.indexOf("16e 128") != -1 ||
+                                el.name.indexOf("16e 256") != -1 ||
+                                el.name.indexOf("16e 512") != -1 ||
+                                el.name.indexOf("16Е 128") != -1 ||
+                                el.name.indexOf("16E 256") != -1 ||
+                                el.name.indexOf("16E 512") != -1) &&
+                              (is16e || setIs16e(true)) &&
+                              returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("16e 128") != -1 ||
+                                  el.name.indexOf("16e 256") != -1 ||
+                                  el.name.indexOf("16e 512") != -1 ||
+                                  el.name.indexOf("16Е 128") != -1 ||
+                                  el.name.indexOf("16E 256") != -1 ||
+                                  el.name.indexOf("16E 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>

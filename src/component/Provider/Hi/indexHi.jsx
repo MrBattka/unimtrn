@@ -1,20 +1,14 @@
 import React, { useState } from "react";
+import { baseFixHi } from "../../../helpers/baseFix";
 import { returnIDApple } from "../../../helpers/returnIDApple";
 import BasicTable from "../../CreateTable/CreateTable";
-import { returnAppleHi } from "./Apple/apple";
-import { returnDysonHi } from "./Dyson/dyson";
-import { returnGarminHi } from "./Garmin/garmin";
-import { returnGoogleHi } from "./Google/google";
 import {
   fixNameHi,
   returnExtraPriceHi,
   returnNameInArrHi,
   returnStockPriceHi,
 } from "./helpers/helpers";
-import { returnSamsungHi } from "./Samsung/samsung";
 import style from "./styles.module.css";
-import { returnXiaomiHi } from "./Xiaomi/xiaomi";
-import { baseFixHi } from "../../../helpers/baseFix";
 
 
 const IndexHi = ({ hi }) => {
