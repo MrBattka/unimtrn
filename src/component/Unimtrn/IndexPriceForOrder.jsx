@@ -11,7 +11,6 @@ import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
 import { returnIDSamsung } from "../../helpers/returnIDSamsung";
 import {
-  fixNameHi,
   returnExtraPriceHi,
   returnNameInArrHi,
   returnStockPriceHi,
@@ -90,20 +89,18 @@ const IndexPriceForOrder = ({
   });
 
   hi.map((hiEl) => {
-    if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
       return (
-        returnIDSamsung(fixNameHi(hiEl.name)) !== "No match" &&
-        returnExtraPriceHi(hiEl.name) &&
+        baseFixHi(hiEl) &&
+        returnIDSamsung(returnNameInArrHi(hiEl.name)) !== "No match" &&  
         returnStockPriceHi(hiEl.name) &&
         allPriceArr.push({
-          id: returnIDSamsung(fixNameHi(hiEl.name)),
-          name: returnNameInArrHi(fixNameHi(hiEl.name)),
+          id: returnIDSamsung(returnNameInArrHi(hiEl.name)),
+          name: returnNameInArrHi(hiEl.name),
           extraPrice: returnExtraPriceHi(hiEl.name),
           stockPrice: returnStockPriceHi(hiEl.name),
           provider: "Hi",
         })
       );
-    }
   });
 
   mihonorData.map((mihonor) => {
@@ -222,10 +219,11 @@ const IndexPriceForOrder = ({
   hi.map((hiEl) => {
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
       return (
-        returnIDSamsung(fixNameHi(hiEl.name)) === "No match" &&
+        baseFixHi(hiEl) &&
+        returnIDSamsung(returnNameInArrHi(hiEl.name)) === "No match" &&
         allPriceArrNotID.push({
-          id: returnIDSamsung(fixNameHi(hiEl.name)),
-          name: returnNameInArrHi(fixNameHi(hiEl.name)),
+          id: returnIDSamsung(returnNameInArrHi(hiEl.name)),
+          name: returnNameInArrHi(hiEl.name),
           extraPrice: returnStockPriceHi(hiEl.name),
           stockPrice: returnStockPriceHi(hiEl.name),
           provider: "Hi",
@@ -355,6 +353,12 @@ console.log(allPriceArrNotID);
       </div>
 
       <div className={style.wrapper_cat}>
+        {/* {hi.map((hiel) => (
+          <div>
+            {baseFixHi(hiel) && returnIDSamsung(returnNameInArrHi(hiel.name))}
+            
+          </div>
+        ))} */}
         <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} />
         <GarminGoProDji double={allPriceArr} superprice={superpriceData} dataUnimtrn={dataUnimtrn} />
         <NoName double={allPriceArr} dataUnimtrn={dataUnimtrn} mihonorData={mihonorData} />

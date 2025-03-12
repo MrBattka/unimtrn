@@ -37,8 +37,8 @@ export const returnNameInArrHi = (name) => {
     let fixLemon = splitPricesSG.replace("🍏 ", "");
     let fixFire = fixLemon.replace("🔥 ", "");
     let fixDoubleCar = fixFire.replace(" 🏎", "");
-    let fixDoubleSpaceCar = fixDoubleCar.replace("  🏎", "");
-    let fixCarPrice = fixDoubleSpaceCar.replace("🏎", "");
+    let fixDoubleSpaceCar = fixDoubleCar.replace(" 🛩", "");
+    let fixCarPrice = fixDoubleSpaceCar.replace(" 🚙", "");
     let fixAirPods = fixCarPrice.replace("🎧", "");
     let fixMacbook = fixAirPods.replace("💻", "");
     let fixAppleName = fixMacbook.replace("Apple", "");
@@ -48,8 +48,8 @@ export const returnNameInArrHi = (name) => {
     let fixLemon = name.replace("🍏 ", "");
     let fixFire = fixLemon.replace("🔥", "");
     let fixDoubleCar = fixFire.replace(" 🏎", "");
-    let fixDoubleSpaceCar = fixDoubleCar.replace("  🏎", "");
-    let fixCarPrice = fixDoubleSpaceCar.replace("🏎", "");
+    let fixDoubleSpaceCar = fixDoubleCar.replace(" 🛩", "");
+    let fixCarPrice = fixDoubleSpaceCar.replace(" 🚙", "");
     let fixAirPods = fixCarPrice.replace("🎧", "");
     let fixMacbook = fixAirPods.replace("💻", "");
 
@@ -85,8 +85,8 @@ export const returnExtraPriceHi = (name) => {
   ) {
     let fixLemonPrice = name.replace("🍏 ", "");
     let fixDoubleCarPrice = fixLemonPrice.replace(" 🏎", "");
-    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace("  🏎", "");
-    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace("🏎", "");
+    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace(" 🛩", "");
+    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace(" 🚙", "");
     let flagSearch =
       fixCarPricePrice.search("🇪🇺") &
       fixCarPricePrice.search("🇷🇺") &
@@ -153,8 +153,8 @@ export const returnExtraPriceHi = (name) => {
 
     let fixLemon = splitPricesSG.replace("🍏 ", "");
     let fixDoubleCar = fixLemon.replace(" 🏎", "");
-    let fixDoubleSpaceCar = fixDoubleCar.replace("  🏎", "");
-    let fixCarPrice = fixDoubleSpaceCar.replace("🏎", "");
+    let fixDoubleSpaceCar = fixDoubleCar.replace(" 🛩", "");
+    let fixCarPrice = fixDoubleSpaceCar.replace(" 🚙", "");
     let fixAirPods = fixCarPrice.replace("🎧", "");
     let fixMacbook = fixAirPods.replace("💻", "");
     let fixAppleName = fixMacbook.replace("Apple", "");
@@ -163,8 +163,8 @@ export const returnExtraPriceHi = (name) => {
   } else {
     let fixLemonPrice = name.replace("🍏 ", "");
     let fixDoubleCarPrice = fixLemonPrice.replace(" 🏎", "");
-    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace("  🏎", "");
-    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace("🏎", "");
+    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace(" 🛩", "");
+    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace(" 🚙", "");
 
     let reverseStr = fixCarPricePrice.split("").reverse().join("");
     let removeSpace1 = reverseStr[0] === " " ? reverseStr.slice(1) : reverseStr;
@@ -179,8 +179,8 @@ export const returnExtraPriceHi = (name) => {
 
     let fixLemon = name.replace("🍏 ", "");
     let fixDoubleCar = fixLemon.replace(" 🏎", "");
-    let fixDoubleSpaceCar = fixDoubleCar.replace("  🏎", "");
-    let fixCarPrice = fixDoubleSpaceCar.replace("🏎", "");
+    let fixDoubleSpaceCar = fixDoubleCar.replace(" 🛩", "");
+    let fixCarPrice = fixDoubleSpaceCar.replace(" 🚙", "");
     let fixAirPods = fixCarPrice.replace("🎧", "");
     let fixMacbook = fixAirPods.replace("💻", "");
 
@@ -222,8 +222,8 @@ export const returnStockPriceHi = (name) => {
   ) {
     let fixLemonPrice = name.replace("🍏 ", "");
     let fixDoubleCarPrice = fixLemonPrice.replace(" 🏎", "");
-    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace("  🏎", "");
-    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace("🏎", "");
+    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace(" 🛩", "");
+    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace(" 🚙", "");
     let flagSearch =
       fixCarPricePrice.search("🇪🇺") &
       fixCarPricePrice.search("🇷🇺") &
@@ -270,13 +270,12 @@ export const returnStockPriceHi = (name) => {
     let reverseBackStr = splitStartPrice.split("").reverse().join("");
 
     let fixCar = reverseBackStr.replace("🏎", "");
-
-    return Number(fixCar);
+    return Number(fixCar)
   } else {
     let fixLemonPrice = name.replace("🍏 ", "");
     let fixDoubleCarPrice = fixLemonPrice.replace(" 🏎", "");
-    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace("  🏎", "");
-    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace("🏎", "");
+    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace(" 🛩", "");
+    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace(" 🚙", "");
 
     let reverseStr = fixCarPricePrice.split("").reverse().join("");
 
@@ -552,8 +551,13 @@ export const fixNameHi = (name) => {
   const fixA155G = fixGrey.replace("A15 5G", "A15");
   const fixA255G = fixA155G.replace("A25 5G", "A25");
   const fixA355G = fixA255G.replace("A35 5G", "A35");
+  
 
-  const fix16e = fixA355G.replace("16Е", "16e");
+  const fixCar1 = fixA355G.replace("🚙", "");
+  const fixCar2 = fixCar1.replace("🛩", "");
+  const fixCar3 = fixCar2.replace("🏎", "");
+
+  const fix16e = fixCar3.replace("16Е", "16e");
 
   const fixA545G = fix16e.replace("A54 5G", "A54");
   const fixA555G = fixA545G.replace("A55 5G", "A55");
