@@ -6,6 +6,7 @@ export const returnFixNameBase= (name) => {
     const replaceGalaxy = fixNordCE3.replace("Galaxy ", "")
     const replaceMacBook = replaceGalaxy.replace("MacBook ", "")
     const fixMi = replaceMacBook.replace("Xiaomi 1", "MI 1")
+    const replaceWatch = fixMi.replace("Watch S10", "S10")
 
-    return fixMi
+    return replaceWatch
 }

@@ -158,7 +158,6 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("aw 10") !== -1 ||
     name.indexOf("aw 10") !== -1 ||
     name.indexOf("s10 4") !== -1 ||
-    name.indexOf("ultra 2") !== -1 ||
     name.indexOf("airwrap ") !== -1 ||
     name.indexOf("v1") !== -1 ||
     name.indexOf("vented") !== -1 ||
@@ -249,7 +248,8 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("16 pro max 512") !== -1 ||
     name.indexOf("16 pro max 1tb") !== -1 ||
     name.indexOf("16 pro max 1tb") !== -1 ||
-    name.indexOf("16 pro max 1tb") !== -1
+    name.indexOf("16 pro max 1tb") !== -1 ||
+    name.indexOf("ultra 2") !== -1
   ) {
     return Number(price) + 800;
   } else if (

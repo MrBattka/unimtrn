@@ -7,7 +7,7 @@ import {
   returnExtraPriceHi,
   returnNameInArrHi,
   returnStockPriceHi,
-} from "./helpers/helpers";
+} from "./helpers/helpers.js";
 import style from "./styles.module.css";
 
 
@@ -24,13 +24,13 @@ const IndexHi = ({ hi }) => {
     ) {
       return (
         returnIDApple(fixNameHi(hiEl.name)) !== "No match" &&
-        returnExtraPriceHi(hiEl.name) &&
-        returnStockPriceHi(hiEl.name) &&
+        returnExtraPriceHi(fixNameHi(hiEl.name)) &&
+        returnStockPriceHi(fixNameHi(hiEl.name)) &&
         resultArr.push({
           id: returnIDApple(fixNameHi(hiEl.name)),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
-          extraPrice: returnExtraPriceHi(hiEl.name),
-          stockPrice: returnStockPriceHi(hiEl.name),
+          extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
+          stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
           provider: "Hi",
         })
       );

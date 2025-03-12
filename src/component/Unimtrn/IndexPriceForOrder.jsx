@@ -11,6 +11,7 @@ import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
 import { returnIDSamsung } from "../../helpers/returnIDSamsung";
 import {
+  fixNameHi,
   returnExtraPriceHi,
   returnNameInArrHi,
   returnStockPriceHi,
@@ -91,13 +92,13 @@ const IndexPriceForOrder = ({
   hi.map((hiEl) => {
       return (
         baseFixHi(hiEl) &&
-        returnIDSamsung(returnNameInArrHi(hiEl.name)) !== "No match" &&  
+        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&  
         returnStockPriceHi(hiEl.name) &&
         allPriceArr.push({
-          id: returnIDSamsung(returnNameInArrHi(hiEl.name)),
-          name: returnNameInArrHi(hiEl.name),
-          extraPrice: returnExtraPriceHi(hiEl.name),
-          stockPrice: returnStockPriceHi(hiEl.name),
+          id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+          name: returnNameInArrHi(fixNameHi(hiEl.name)),
+          extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
+          stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
           provider: "Hi",
         })
       );
@@ -220,12 +221,12 @@ const IndexPriceForOrder = ({
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
       return (
         baseFixHi(hiEl) &&
-        returnIDSamsung(returnNameInArrHi(hiEl.name)) === "No match" &&
+        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) === "No match" &&
         allPriceArrNotID.push({
-          id: returnIDSamsung(returnNameInArrHi(hiEl.name)),
-          name: returnNameInArrHi(hiEl.name),
-          extraPrice: returnStockPriceHi(hiEl.name),
-          stockPrice: returnStockPriceHi(hiEl.name),
+          id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+          name: returnNameInArrHi(fixNameHi(hiEl.name)),
+          extraPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
+          stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
           provider: "Hi",
         })
       );
