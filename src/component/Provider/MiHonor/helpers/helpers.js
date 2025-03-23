@@ -105,7 +105,7 @@ export const fixNameMihonor = (name) => {
   const fixYellow = fixBlack.replace("YELLOW", "Yellow");
   const fixBlue = fixYellow.replace("BLUE", "Blue");
   const fixGreen = fixBlue.replace("GREEN", "Green");
-  const fixWhite = fixGreen.replace("WHITE ", "White");
+  const fixWhite = fixGreen.replace("WHITE", "White");
   const fixNavy = fixWhite.replace("NAVY", "Navy");
   const fixPurple = fixNavy.replace("PURPLE", "Purple");
   const fixGray = fixPurple.replace("GRAY", "Gray");
