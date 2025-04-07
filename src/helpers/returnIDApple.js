@@ -2035,6 +2035,7 @@ export const returnIDApple = (name) => {
     name.indexOf("starlight") != -1 &&
     name.indexOf("lte") != -1
   ) {
+    return 36416;
   } else if (
     name.indexOf("air 13") != -1 &&
     name.indexOf(" m2 ") != -1 &&
@@ -2043,6 +2044,518 @@ export const returnIDApple = (name) => {
     name.indexOf("wi-fi") != -1
   ) {
     return 36455;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38470;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38471;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38472;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38473;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38502;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38503;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38504;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38505;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38494;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38495;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38496;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38497;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38526;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38527;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38528;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38529;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38478;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38479;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38480;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38481;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38510;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38511;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38512;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38513;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38486;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38487;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38488;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38489;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38518;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38519;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38520;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38521;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38535;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38536;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38537;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38538;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38567;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38568;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38569;
+  } else if (
+    name.indexOf("air 11") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38570;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38559;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38560;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38561;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38562;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38591;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38592;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38593;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("1tb") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38594;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38543;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38544;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38545;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38546;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38575;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38576;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38577;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38578;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38551;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38552;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38553;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38554;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38583;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38584;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38585;
+  } else if (
+    name.indexOf("air 13") !== -1 &&
+    (name.indexOf("2025") !== -1 || name.indexOf("m3") !== -1) &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("starlight") !== -1
+  ) {
+    return 38586;
   } else if (
     name.indexOf("air 13") != -1 &&
     name.indexOf(" m2 ") != -1 &&
