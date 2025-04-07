@@ -99,7 +99,6 @@ const Apple = ({ double }) => {
   const [isAsIs15, setIsAsIs15] = useState(false);
   const [isAsIs16, setIsAsIs16] = useState(false);
 
-
   const [isOpenAirPods, setIsOpenAirPods] = useState(false);
   const [isAirPods, setIsAirPods] = useState(false);
   const [isAirPodsMax, setIsAirPodsMax] = useState(false);
@@ -941,16 +940,18 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      {(isAsIs13 || isAsIs14 || isAsIs15 || isAsIs16) && <br/>}
-                      {(isAsIs13 || isAsIs14 || isAsIs15 || isAsIs16) && <br/>}
-                      {(isAsIs13 || isAsIs14 || isAsIs15 || isAsIs16) && <div>📱 **iPhone ASIS**</div>}
+                      {(isAsIs13 || isAsIs14 || isAsIs15 || isAsIs16) && <br />}
+                      {(isAsIs13 || isAsIs14 || isAsIs15 || isAsIs16) && <br />}
+                      {(isAsIs13 || isAsIs14 || isAsIs15 || isAsIs16) && (
+                        <div>📱 **iPhone ASIS**</div>
+                      )}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
                             {baseFix(asis) &&
                               (asis.name.indexOf("ASIS") != -1 ||
                                 asis.name.indexOf("Asis") != -1) &&
-                                (asis.name.indexOf("13 Mini 128") != -1 ||
+                              (asis.name.indexOf("13 Mini 128") != -1 ||
                                 asis.name.indexOf("13 Mini 256") != -1 ||
                                 asis.name.indexOf("13 Mini 512") != -1 ||
                                 asis.name.indexOf("13 128") != -1 ||
@@ -965,7 +966,7 @@ const Apple = ({ double }) => {
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
                                   asis.name.indexOf("Asis") != -1) &&
-                                  (asis.name.indexOf("13 Mini 128") != -1 ||
+                                (asis.name.indexOf("13 Mini 128") != -1 ||
                                   asis.name.indexOf("13 Mini 256") != -1 ||
                                   asis.name.indexOf("13 Mini 512") != -1 ||
                                   asis.name.indexOf("13 128") != -1 ||
@@ -979,15 +980,14 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-
-                      {isAsIs14 && <br/>}
+                      {isAsIs13 && isAsIs14 && <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
                             {baseFix(asis) &&
                               (asis.name.indexOf("ASIS") != -1 ||
                                 asis.name.indexOf("Asis") != -1) &&
-                                (asis.name.indexOf("14 128") != -1 ||
+                              (asis.name.indexOf("14 128") != -1 ||
                                 asis.name.indexOf("14 256") != -1 ||
                                 asis.name.indexOf("14 512") != -1 ||
                                 asis.name.indexOf("14 Plus") != -1 ||
@@ -1009,33 +1009,32 @@ const Apple = ({ double }) => {
                                 (asis.name.indexOf("ASIS") != -1 ||
                                   asis.name.indexOf("Asis") != -1) &&
                                 (asis.name.indexOf("14 128") != -1 ||
-                                asis.name.indexOf("14 256") != -1 ||
-                                asis.name.indexOf("14 512") != -1 ||
-                                asis.name.indexOf("14 Plus") != -1 ||
-                                asis.name.indexOf("14 Pro 128") != -1 ||
-                                asis.name.indexOf("14 Pro 256") != -1 ||
-                                asis.name.indexOf("14 Pro 512") != -1 ||
-                                asis.name.indexOf("14 Pro 1TB") != -1 ||
-                                asis.name.indexOf("14 Pro Max 128") != -1 ||
-                                asis.name.indexOf("14 Pro Max 256") != -1 ||
-                                asis.name.indexOf("14 Pro Max 512") != -1 ||
-                                asis.name.indexOf("14 Pro Max 1TB") != -1) && (
-                                  <span>{" - " + asis.provider}</span>
-                                )}
+                                  asis.name.indexOf("14 256") != -1 ||
+                                  asis.name.indexOf("14 512") != -1 ||
+                                  asis.name.indexOf("14 Plus") != -1 ||
+                                  asis.name.indexOf("14 Pro 128") != -1 ||
+                                  asis.name.indexOf("14 Pro 256") != -1 ||
+                                  asis.name.indexOf("14 Pro 512") != -1 ||
+                                  asis.name.indexOf("14 Pro 1TB") != -1 ||
+                                  asis.name.indexOf("14 Pro Max 128") != -1 ||
+                                  asis.name.indexOf("14 Pro Max 256") != -1 ||
+                                  asis.name.indexOf("14 Pro Max 512") != -1 ||
+                                  asis.name.indexOf("14 Pro Max 1TB") !=
+                                    -1) && <span>{" - " + asis.provider}</span>}
                             </h3>
                           </div>
                         ))
                       ) : (
                         <tr></tr>
                       )}
-                      {isAsIs15 && <br/>}
+                      {isAsIs15 && <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
                             {baseFix(asis) &&
                               (asis.name.indexOf("ASIS") != -1 ||
                                 asis.name.indexOf("Asis") != -1) &&
-                                (asis.name.indexOf("15 128") != -1 ||
+                              (asis.name.indexOf("15 128") != -1 ||
                                 asis.name.indexOf("15 256") != -1 ||
                                 asis.name.indexOf("15 512") != -1 ||
                                 asis.name.indexOf("15 Plus") != -1 ||
@@ -1055,7 +1054,7 @@ const Apple = ({ double }) => {
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
                                   asis.name.indexOf("Asis") != -1) &&
-                                  (asis.name.indexOf("15 128") != -1 ||
+                                (asis.name.indexOf("15 128") != -1 ||
                                   asis.name.indexOf("15 256") != -1 ||
                                   asis.name.indexOf("15 512") != -1 ||
                                   asis.name.indexOf("15 Plus") != -1 ||
@@ -1065,36 +1064,35 @@ const Apple = ({ double }) => {
                                   asis.name.indexOf("15 Pro 1TB") != -1 ||
                                   asis.name.indexOf("15 Pro Max 256") != -1 ||
                                   asis.name.indexOf("15 Pro Max 512") != -1 ||
-                                  asis.name.indexOf("15 Pro Max 1TB") != -1) && (
-                                  <span>{" - " + asis.provider}</span>
-                                )}
+                                  asis.name.indexOf("15 Pro Max 1TB") !=
+                                    -1) && <span>{" - " + asis.provider}</span>}
                             </h3>
                           </div>
                         ))
                       ) : (
                         <tr></tr>
                       )}
-                      {isAsIs16 && <br/>}
+                      {isAsIs16 && <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
                             {baseFix(asis) &&
                               (asis.name.indexOf("ASIS") != -1 ||
                                 asis.name.indexOf("Asis") != -1) &&
-                                  (asis.name.indexOf("16 128") != -1 ||
-                                  asis.name.indexOf("16 256") != -1 ||
-                                  asis.name.indexOf("16 512") != -1 ||
-                                  asis.name.indexOf("16e 128") != -1 ||
-                                  asis.name.indexOf("16e 256") != -1 ||
-                                  asis.name.indexOf("16e 512") != -1 ||
-                                  asis.name.indexOf("16 Plus") != -1 ||
-                                  asis.name.indexOf("16 Pro 128") != -1 ||
-                                  asis.name.indexOf("16 Pro 256") != -1 ||
-                                  asis.name.indexOf("16 Pro 512") != -1 ||
-                                  asis.name.indexOf("16 Pro 1TB") != -1 ||
-                                  asis.name.indexOf("16 Pro Max 256") != -1 ||
-                                  asis.name.indexOf("16 Pro Max 512") != -1 ||
-                                  asis.name.indexOf("16 Pro Max 1TB") != -1) &&
+                              (asis.name.indexOf("16 128") != -1 ||
+                                asis.name.indexOf("16 256") != -1 ||
+                                asis.name.indexOf("16 512") != -1 ||
+                                asis.name.indexOf("16e 128") != -1 ||
+                                asis.name.indexOf("16e 256") != -1 ||
+                                asis.name.indexOf("16e 512") != -1 ||
+                                asis.name.indexOf("16 Plus") != -1 ||
+                                asis.name.indexOf("16 Pro 128") != -1 ||
+                                asis.name.indexOf("16 Pro 256") != -1 ||
+                                asis.name.indexOf("16 Pro 512") != -1 ||
+                                asis.name.indexOf("16 Pro 1TB") != -1 ||
+                                asis.name.indexOf("16 Pro Max 256") != -1 ||
+                                asis.name.indexOf("16 Pro Max 512") != -1 ||
+                                asis.name.indexOf("16 Pro Max 1TB") != -1) &&
                               (isAsIs16 || setIsAsIs16(true)) &&
                               returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
@@ -1104,7 +1102,7 @@ const Apple = ({ double }) => {
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
                                   asis.name.indexOf("Asis") != -1) &&
-                                  (asis.name.indexOf("16 128") != -1 ||
+                                (asis.name.indexOf("16 128") != -1 ||
                                   asis.name.indexOf("16 256") != -1 ||
                                   asis.name.indexOf("16 512") != -1 ||
                                   asis.name.indexOf("16e 128") != -1 ||
@@ -1117,9 +1115,8 @@ const Apple = ({ double }) => {
                                   asis.name.indexOf("16 Pro 1TB") != -1 ||
                                   asis.name.indexOf("16 Pro Max 256") != -1 ||
                                   asis.name.indexOf("16 Pro Max 512") != -1 ||
-                                  asis.name.indexOf("16 Pro Max 1TB") != -1) && (
-                                  <span>{" - " + asis.provider}</span>
-                                )}
+                                  asis.name.indexOf("16 Pro Max 1TB") !=
+                                    -1) && <span>{" - " + asis.provider}</span>}
                             </h3>
                           </div>
                         ))
@@ -1164,10 +1161,10 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("XR 64") != -1 ||
-                                el.name.indexOf("XR 128") != -1)) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("XR 64") != -1 ||
+                                el.name.indexOf("XR 128") != -1) &&
                               (isXR || setIsXR(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1175,10 +1172,10 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("XR 64") != -1 ||
-                                  el.name.indexOf("XR 128") != -1)) && (
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("XR 64") != -1 ||
+                                  el.name.indexOf("XR 128") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1193,12 +1190,12 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("SE 3") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("SE 3") != -1 ||
                                 el.name.indexOf("SE 64") != -1 ||
                                 el.name.indexOf("SE 128") != -1 ||
-                                el.name.indexOf("SE 256") != -1)) &&
+                                el.name.indexOf("SE 256") != -1) &&
                               (isSE || setIsSE(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1206,12 +1203,12 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("SE 3") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("SE 3") != -1 ||
                                   el.name.indexOf("SE 64") != -1 ||
                                   el.name.indexOf("SE 128") != -1 ||
-                                  el.name.indexOf("SE 256") != -1)) && (
+                                  el.name.indexOf("SE 256") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1226,10 +1223,10 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("11 64") != -1 ||
-                                el.name.indexOf("11 128") != -1)) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("11 64") != -1 ||
+                                el.name.indexOf("11 128") != -1) &&
                               (is11 || setIs11(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1237,10 +1234,10 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("11 64") != -1 ||
-                                  el.name.indexOf("11 128") != -1)) && (
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("11 64") != -1 ||
+                                  el.name.indexOf("11 128") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1255,12 +1252,12 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("12 64") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("12 64") != -1 ||
                                 el.name.indexOf("12 128") != -1 ||
                                 el.name.indexOf("12 256") != -1 ||
-                                el.name.indexOf("12 Pro Max") != -1)) &&
+                                el.name.indexOf("12 Pro Max") != -1) &&
                               (is12 || setIs12(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1268,12 +1265,12 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("12 64") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("12 64") != -1 ||
                                   el.name.indexOf("12 128") != -1 ||
                                   el.name.indexOf("12 256") != -1 ||
-                                  el.name.indexOf("12 Pro Max") != -1)) && (
+                                  el.name.indexOf("12 Pro Max") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1288,11 +1285,11 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("13 Mini 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("13 Mini 128") != -1 ||
                                 el.name.indexOf("13 Mini 256") != -1 ||
-                                el.name.indexOf("13 Mini 512") != -1)) &&
+                                el.name.indexOf("13 Mini 512") != -1) &&
                               (is13Mini || setIs13Mini(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1300,11 +1297,11 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("13 Mini 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("13 Mini 128") != -1 ||
                                   el.name.indexOf("13 Mini 256") != -1 ||
-                                  el.name.indexOf("13 Mini 512") != -1)) && (
+                                  el.name.indexOf("13 Mini 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1319,11 +1316,11 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("13 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("13 128") != -1 ||
                                 el.name.indexOf("13 256") != -1 ||
-                                el.name.indexOf("13 512") != -1)) &&
+                                el.name.indexOf("13 512") != -1) &&
                               (is13 || setIs13(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1331,11 +1328,11 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("13 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("13 128") != -1 ||
                                   el.name.indexOf("13 256") != -1 ||
-                                  el.name.indexOf("13 512") != -1)) && (
+                                  el.name.indexOf("13 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1350,12 +1347,12 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("14 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("14 128") != -1 ||
                                 el.name.indexOf("14 256") != -1 ||
                                 el.name.indexOf("14 512") != -1 ||
-                                el.name.indexOf("14 Plus") != -1)) &&
+                                el.name.indexOf("14 Plus") != -1) &&
                               (is14 || setIs14(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1363,12 +1360,12 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("14 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("14 128") != -1 ||
                                   el.name.indexOf("14 256") != -1 ||
                                   el.name.indexOf("14 512") != -1 ||
-                                  el.name.indexOf("14 Plus") != -1)) && (
+                                  el.name.indexOf("14 Plus") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1383,12 +1380,12 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("14 Pro 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("14 Pro 128") != -1 ||
                                 el.name.indexOf("14 Pro 256") != -1 ||
                                 el.name.indexOf("14 Pro 512") != -1 ||
-                                el.name.indexOf("14 Pro 1TB") != -1)) &&
+                                el.name.indexOf("14 Pro 1TB") != -1) &&
                               (is14Pro || setIs14Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1396,12 +1393,12 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("14 Pro 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("14 Pro 128") != -1 ||
                                   el.name.indexOf("14 Pro 256") != -1 ||
                                   el.name.indexOf("14 Pro 512") != -1 ||
-                                  el.name.indexOf("14 Pro 1TB") != -1)) && (
+                                  el.name.indexOf("14 Pro 1TB") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1416,11 +1413,11 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 128") != -1 ||
                                 el.name.indexOf("15 256") != -1 ||
-                                el.name.indexOf("15 512") != -1)) &&
+                                el.name.indexOf("15 512") != -1) &&
                               (is15 || setIs15(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1428,11 +1425,11 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("15 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 128") != -1 ||
                                   el.name.indexOf("15 256") != -1 ||
-                                  el.name.indexOf("15 512") != -1)) && (
+                                  el.name.indexOf("15 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1447,11 +1444,11 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 Plus 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 Plus 128") != -1 ||
                                 el.name.indexOf("15 Plus 256") != -1 ||
-                                el.name.indexOf("15 Plus 512") != -1)) &&
+                                el.name.indexOf("15 Plus 512") != -1) &&
                               (is15Plus || setIs15Plus(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1459,11 +1456,11 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("15 Plus 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 Plus 128") != -1 ||
                                   el.name.indexOf("15 Plus 256") != -1 ||
-                                  el.name.indexOf("15 Plus 512") != -1)) && (
+                                  el.name.indexOf("15 Plus 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1478,12 +1475,12 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 Pro 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 Pro 128") != -1 ||
                                 el.name.indexOf("15 Pro 256") != -1 ||
                                 el.name.indexOf("15 Pro 512") != -1 ||
-                                el.name.indexOf("15 Pro 1Tb") != -1)) &&
+                                el.name.indexOf("15 Pro 1Tb") != -1) &&
                               (is15Pro || setIs15Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1491,12 +1488,12 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("15 Pro 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 Pro 128") != -1 ||
                                   el.name.indexOf("15 Pro 256") != -1 ||
                                   el.name.indexOf("15 Pro 512") != -1 ||
-                                  el.name.indexOf("15 Pro 1Tb") != -1)) && (
+                                  el.name.indexOf("15 Pro 1Tb") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1511,16 +1508,16 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 ProMax 256") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 ProMax 256") != -1 ||
                                 el.name.indexOf("15 ProMax 512") != -1 ||
                                 el.name.indexOf("15 ProMax 1Tb") != -1 ||
                                 el.name.indexOf("15 Pro Max 256") != -1 ||
                                 el.name.indexOf("15 Pro Max 512") != -1 ||
                                 el.name.indexOf("15 Pro Max 1Tb") != -1 ||
                                 el.name.indexOf("15 Pro Max 1TB") != -1 ||
-                                el.name.indexOf("15 Pro Max 1Tb") != -1)) &&
+                                el.name.indexOf("15 Pro Max 1Tb") != -1) &&
                               (is15ProMax || setIs15ProMax(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1528,16 +1525,16 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("15 ProMax 256") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 ProMax 256") != -1 ||
                                   el.name.indexOf("15 ProMax 512") != -1 ||
                                   el.name.indexOf("15 ProMax 1Tb") != -1 ||
                                   el.name.indexOf("15 Pro Max 256") != -1 ||
                                   el.name.indexOf("15 Pro Max 512") != -1 ||
                                   el.name.indexOf("15 Pro Max 1Tb") != -1 ||
                                   el.name.indexOf("15 Pro Max 1TB") != -1 ||
-                                  el.name.indexOf("15 Pro Max 1Tb") != -1)) && (
+                                  el.name.indexOf("15 Pro Max 1Tb") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1552,14 +1549,14 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16e 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16e 128") != -1 ||
                                 el.name.indexOf("16e 256") != -1 ||
                                 el.name.indexOf("16e 512") != -1 ||
                                 el.name.indexOf("16Е 128") != -1 ||
                                 el.name.indexOf("16E 256") != -1 ||
-                                el.name.indexOf("16E 512") != -1)) &&
+                                el.name.indexOf("16E 512") != -1) &&
                               (is16e || setIs16e(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1567,14 +1564,14 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("16e 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16e 128") != -1 ||
                                   el.name.indexOf("16e 256") != -1 ||
                                   el.name.indexOf("16e 512") != -1 ||
                                   el.name.indexOf("16Е 128") != -1 ||
                                   el.name.indexOf("16E 256") != -1 ||
-                                  el.name.indexOf("16E 512") != -1)) && (
+                                  el.name.indexOf("16E 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1589,11 +1586,11 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16 128") != -1 ||
                                 el.name.indexOf("16 256") != -1 ||
-                                el.name.indexOf("16 512") != -1)) &&
+                                el.name.indexOf("16 512") != -1) &&
                               (is16 || setIs16(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1601,11 +1598,11 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("16 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16 128") != -1 ||
                                   el.name.indexOf("16 256") != -1 ||
-                                  el.name.indexOf("16 512") != -1)) && (
+                                  el.name.indexOf("16 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1620,11 +1617,11 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16 Plus 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16 Plus 128") != -1 ||
                                 el.name.indexOf("16 Plus 256") != -1 ||
-                                el.name.indexOf("16 Plus 512") != -1)) &&
+                                el.name.indexOf("16 Plus 512") != -1) &&
                               (is16Plus || setIs16Plus(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1632,11 +1629,11 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("16 Plus 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16 Plus 128") != -1 ||
                                   el.name.indexOf("16 Plus 256") != -1 ||
-                                  el.name.indexOf("16 Plus 512") != -1)) && (
+                                  el.name.indexOf("16 Plus 512") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1651,12 +1648,12 @@ const Apple = ({ double }) => {
                         allPriceArr.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
-                              (el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16 Pro 128") != -1 ||
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16 Pro 128") != -1 ||
                                 el.name.indexOf("16 Pro 256") != -1 ||
                                 el.name.indexOf("16 Pro 512") != -1 ||
-                                el.name.indexOf("16 Pro 1Tb") != -1)) &&
+                                el.name.indexOf("16 Pro 1Tb") != -1) &&
                               (is16Pro || setIs16Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
@@ -1664,12 +1661,12 @@ const Apple = ({ double }) => {
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
-                                (el.name.indexOf("ASIS") === -1 &&
-                                  el.name.indexOf("Asis") === -1 &&
-                                  (el.name.indexOf("16 Pro 128") != -1 ||
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16 Pro 128") != -1 ||
                                   el.name.indexOf("16 Pro 256") != -1 ||
                                   el.name.indexOf("16 Pro 512") != -1 ||
-                                  el.name.indexOf("16 Pro 1Tb") != -1)) && (
+                                  el.name.indexOf("16 Pro 1Tb") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>
@@ -1684,10 +1681,9 @@ const Apple = ({ double }) => {
                         allPriceArr.map((iPhone16PM, index) => (
                           <div key={index}>
                             {baseFix(iPhone16PM) &&
-                              (iPhone16PM.name.indexOf("ASIS") === -1 &&
-                                iPhone16PM.name.indexOf("Asis") === -1 &&
-                                (iPhone16PM.name.indexOf("16 ProMax 256") !=
-                                  -1 ||
+                              iPhone16PM.name.indexOf("ASIS") === -1 &&
+                              iPhone16PM.name.indexOf("Asis") === -1 &&
+                              (iPhone16PM.name.indexOf("16 ProMax 256") != -1 ||
                                 iPhone16PM.name.indexOf("16 ProMax 512") !=
                                   -1 ||
                                 iPhone16PM.name.indexOf("16 ProMax 1Tb") !=
@@ -1701,7 +1697,7 @@ const Apple = ({ double }) => {
                                 iPhone16PM.name.indexOf("16 Pro Max 1TB") !=
                                   -1 ||
                                 iPhone16PM.name.indexOf("16 Pro Max 1Tb") !=
-                                  -1)) &&
+                                  -1) &&
                               (is16ProMax || setIs16ProMax(true)) &&
                               returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
                                 (iPhone16PM.provider !== "База"
@@ -1712,10 +1708,10 @@ const Apple = ({ double }) => {
                                   : iPhone16PM.stockPrice)}
                             <h3 className="del">
                               {baseFix(iPhone16PM) &&
-                                (iPhone16PM.name.indexOf("ASIS") === -1 &&
-                                  iPhone16PM.name.indexOf("Asis") === -1 &&
-                                  (iPhone16PM.name.indexOf("16 ProMax 256") !=
-                                    -1 ||
+                                iPhone16PM.name.indexOf("ASIS") === -1 &&
+                                iPhone16PM.name.indexOf("Asis") === -1 &&
+                                (iPhone16PM.name.indexOf("16 ProMax 256") !=
+                                  -1 ||
                                   iPhone16PM.name.indexOf("16 ProMax 512") !=
                                     -1 ||
                                   iPhone16PM.name.indexOf("16 ProMax 1Tb") !=
@@ -1729,7 +1725,7 @@ const Apple = ({ double }) => {
                                   iPhone16PM.name.indexOf("16 Pro Max 1TB") !=
                                     -1 ||
                                   iPhone16PM.name.indexOf("16 Pro Max 1Tb") !=
-                                    -1)) && (
+                                    -1) && (
                                   <span>{" - " + iPhone16PM.provider}</span>
                                 )}
                             </h3>
@@ -1738,7 +1734,6 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      
                       <Footer />
                     </tbody>
                   </div>
@@ -2510,7 +2505,6 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      
                       <Footer /> 
                     </tbody>
                   </div>
