@@ -111,7 +111,8 @@ const Xiaomi = ({ double }) => {
   const [isRedmi, setIsRedmi] = useState(false);
   const [isMi, setIsMi] = useState(false);
   const [isPoco, setIsPoco] = useState(false);
-  const [isPad, setIsPad] = useState(false);
+  const [isRedmiPad, setIsRedmiPad] = useState(false);
+  const [isMiPad, setIsMiPad] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
 
   const checkIsProduct = (allPriceArr) => {
@@ -218,6 +219,7 @@ const Xiaomi = ({ double }) => {
                         (el.name.indexOf("Mi ") != -1 ||
                           el.name.indexOf("MI ") != -1) &&
                         el.name.indexOf("Mi Watch") == -1 &&
+                        el.name.indexOf("Mi Pad") == -1 &&
                         el.name.indexOf("Mi Portable ") == -1 &&
                         el.name.indexOf("HDMI") == -1 &&
                         (isMi || setIsMi(true)) &&
@@ -237,6 +239,7 @@ const Xiaomi = ({ double }) => {
                           (el.name.indexOf("Mi ") != -1 ||
                             el.name.indexOf("MI ") != -1) &&
                           el.name.indexOf("Mi Watch") == -1 &&
+                          el.name.indexOf("Mi Pad") == -1 &&
                           el.name.indexOf("Mi Portable ") == -1 &&
                           el.name.indexOf("HDMI") == -1 && (
                             <span>{" - " + el.provider}</span>
@@ -293,8 +296,8 @@ const Xiaomi = ({ double }) => {
                   <tr></tr>
                 )}
 
-                {isPad && <br />}
-                {isPad && <div>📱 Redmi Pad</div>}
+                {isRedmiPad && <br />}
+                {isRedmiPad && <div>📱 Redmi Pad</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -304,7 +307,7 @@ const Xiaomi = ({ double }) => {
                         el.name.indexOf("Redmi Buds") == -1 &&
                         el.name.indexOf("HUAWEI") == -1 &&
                         el.name.indexOf("Huawei") == -1 &&
-                        (isPad || setIsPad(true)) &&
+                        (isRedmiPad || setIsRedmiPad(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
@@ -320,6 +323,47 @@ const Xiaomi = ({ double }) => {
                         {baseFix(el) &&
                           (el.name.indexOf("Redmi Pad") != -1 ||
                             el.name.indexOf("Pad SE") != -1) &&
+                          el.name.indexOf("Redmi Buds") == -1 &&
+                          el.name.indexOf("HUAWEI") == -1 &&
+                          el.name.indexOf("Huawei") == -1 && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isMiPad && <br />}
+                {isMiPad && <div>📱 Mi Pad</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.name.indexOf("Redmi Pad") == -1 ||
+                          el.name.indexOf("Pad SE") == -1) &&
+                        el.name.indexOf("Redmi Buds") == -1 &&
+                        el.name.indexOf("HUAWEI") == -1 &&
+                        el.name.indexOf("Huawei") == -1 &&
+                        el.name.indexOf("Mi Pad") !== -1 &&
+                        (isMiPad || setIsMiPad(true)) &&
+                        returnFixPrice(el, el.name) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          (el.name.indexOf("Redmi Pad") === -1 ||
+                            el.name.indexOf("Pad SE") === -1) &&
+                        el.name.indexOf("Mi Pad") !== -1 &&
                           el.name.indexOf("Redmi Buds") == -1 &&
                           el.name.indexOf("HUAWEI") == -1 &&
                           el.name.indexOf("Huawei") == -1 && (
