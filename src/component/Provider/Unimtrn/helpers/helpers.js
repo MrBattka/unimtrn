@@ -467,6 +467,9 @@ export const fixNameUnimtrn = (el) => {
   const fixR960 = fixBuds2Pro.replace("R960 ", "");
   const fix124 = fixR960.replace("12.4 ", "");
   const fixNX733J = fix124.replace("NX733J ", "");
+  const fixAsisNoBox = fixNX733J.replace("(Asis+ No Box)", "(Asis+ No Box) - ");
+  const fixAsis = fixAsisNoBox.replace("(Asis+)", "(Asis+) - ");
+  const fixAsis1 = fixAsis.replace("( Asis+ )", "(Asis+) - ");
 
-  return fixNX733J;
+  return fixAsis1;
 };
