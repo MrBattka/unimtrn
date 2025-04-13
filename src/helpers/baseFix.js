@@ -17,6 +17,8 @@ export const baseFix = (el) => {
     toLowerCase.indexOf("sult case") == -1 &&
     toLowerCase.indexOf("power bank") == -1 &&
     toLowerCase.indexOf("magez") == -1 &&
+    toLowerCase.indexOf("под") == -1 &&
+    toLowerCase.indexOf("пыль") == -1 &&
     toLowerCase.indexOf("transparent") == -1 &&
     toLowerCase.indexOf("transpаrent") == -1 &&
     toLowerCase.indexOf("power adapter") == -1 &&
