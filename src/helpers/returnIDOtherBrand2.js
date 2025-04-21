@@ -1540,6 +1540,20 @@ export const returnIDOtherBrand2 = (name) => {
     return 20308;
   } else if (name.indexOf("jbl clip 4 yellow") !== -1) {
     return 20303;
+
+
+  } else if (name.indexOf("jbl clip 5 black") !== -1) {
+    return 443093;
+  } else if (name.indexOf("jbl clip 5 blue") !== -1) {
+    return 512364;
+  } else if (name.indexOf("jbl clip 5 purple") !== -1) {
+    return 495022;
+  } else if (name.indexOf("jbl clip 5 squad") !== -1) {
+    return 253742;
+  } else if (name.indexOf("jbl clip 5 white") !== -1) {
+    return 577041;
+
+
   } else if (name.indexOf("jbl flip 5 black") !== -1) {
     return 15234;
   } else if (name.indexOf("jbl flip 5 blue") !== -1) {
