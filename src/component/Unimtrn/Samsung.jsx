@@ -198,8 +198,9 @@ const Samsung = ({ double }) => {
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.name.indexOf("Buds") != -1 ||
-                          el.name.indexOf("Galaxy Smart Tag") != -1) &&
+                        (el.name.indexOf("OnePlus") === -1 &&
+                          (el.name.indexOf("Buds") !== -1 ||
+                          el.name.indexOf("Galaxy Smart Tag") !== -1)) &&
                         (isOther || setIsOther(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
@@ -214,8 +215,9 @@ const Samsung = ({ double }) => {
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
-                          (el.name.indexOf("Buds") != -1 ||
-                            el.name.indexOf("Galaxy Smart Tag") != -1) && (
+                          (el.name.indexOf("OnePlus") === -1 &&
+                          (el.name.indexOf("Buds") !== -1 ||
+                          el.name.indexOf("Galaxy Smart Tag") !== -1)) && (
                             <span>{" - " + el.provider}</span>
                           )}
                       </h3>

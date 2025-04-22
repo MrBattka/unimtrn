@@ -1027,7 +1027,7 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      {isAsIs15 && <br />}
+                      {isAsIs15 && (isAsIs13 || isAsIs14) &&  <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
@@ -1072,7 +1072,7 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      {isAsIs16 && <br />}
+                      {isAsIs16 && (isAsIs13 || isAsIs14 || isAsIs15) &&  <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
@@ -1155,7 +1155,7 @@ const Apple = ({ double }) => {
                     <tbody>
                       <div>__🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim__</div>
                       <div>__🇺🇸 14 Модели - e sim ( нет лотка sim )__</div>
-                      <div> __e sim (14е модели)__</div>
+                      <div> __Остальные страны sim + e sim__</div>
                       {isXR && <div>📱 **iPhone XR**</div>}                     
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (

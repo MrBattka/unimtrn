@@ -78,6 +78,7 @@ export const baseFix = (el) => {
     toLowerCase.indexOf("актив") == -1 &&
     toLowerCase.indexOf("обменка") == -1 &&
     toLowerCase.indexOf("уцен") == -1 &&
+    toLowerCase.indexOf("царап") == -1 &&
     toLowerCase.indexOf("обме") == -1 &&
     toLowerCase.indexOf("короб") == -1 &&
     toLowerCase.indexOf("пломба") == -1 &&
