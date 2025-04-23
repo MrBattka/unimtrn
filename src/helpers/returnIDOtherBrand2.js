@@ -1498,6 +1498,21 @@ export const returnIDOtherBrand2 = (name) => {
     return 20282;
   } else if (name.indexOf("jbl charge 5 white") !== -1) {
     return 20286;
+
+  } else if (name.indexOf("jbl charge 6 black") !== -1) {
+    return 921329;
+  } else if (name.indexOf("jbl charge 6 white") !== -1) {
+    return 841005;
+  } else if (name.indexOf("jbl charge 6 blue") !== -1) {
+    return 953311;
+  } else if (name.indexOf("jbl charge 6 red") !== -1) {
+    return 510969;
+  } else if (name.indexOf("jbl charge 6 purple") !== -1) {
+    return 180678;
+  } else if (name.indexOf("jbl charge 6 squad") !== -1) {
+    return 183729;
+
+
   } else if (name.indexOf("jbl clip 3 black/white camouflage") !== -1) {
     return 15233;
   } else if (name.indexOf("jbl clip 3 black/white/brown camo") !== -1) {
@@ -1578,6 +1593,21 @@ export const returnIDOtherBrand2 = (name) => {
     return 15238;
   } else if (name.indexOf("jbl flip 5 white") !== -1) {
     return 15239;
+
+  } else if (name.indexOf("jbl flip 7 white") !== -1) {
+    return 932114;
+  } else if (name.indexOf("jbl flip 7 black") !== -1) {
+    return 309702;
+  } else if (name.indexOf("jbl flip 7 red") !== -1) {
+    return 846670;
+  } else if (name.indexOf("jbl flip 7 squad") !== -1) {
+    return 983591;
+  } else if (name.indexOf("jbl flip 7 purple") !== -1) {
+    return 995810;
+  } else if (name.indexOf("jbl flip 7 blue") !== -1) {
+    return 459047;
+
+
   } else if (name.indexOf("jbl go 3 black") !== -1) {
     return 18968;
   } else if (name.indexOf("jbl go 3 black / orange") !== -1) {

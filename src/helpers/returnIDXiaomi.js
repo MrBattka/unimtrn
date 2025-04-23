@@ -461,129 +461,144 @@ export const returnIDXiaomi = (name) => {
   } else if (name.indexOf("m6 4/128 blue") != -1) {
     return 31107;
   } else if (
-    name.indexOf("m6 ") != -1 &&
+    name.indexOf("poco m6 ") != -1 &&
     name.indexOf("6/128") != -1 &&
     name.indexOf("black") != -1
   ) {
     return 31108;
   } else if (
-    name.indexOf("m6 ") != -1 &&
+    name.indexOf("poco m6 ") != -1 &&
     name.indexOf("6/128") != -1 &&
     name.indexOf("silver") != -1
   ) {
     return 36789;
   } else if (
-    name.indexOf("m6 ") != -1 &&
+    name.indexOf("poco m6 ") != -1 &&
     name.indexOf("6/128") != -1 &&
     name.indexOf("purple") != -1
   ) {
     return 31109;
   } else if (
-    name.indexOf("m6 ") != -1 &&
+    name.indexOf("poco m6 ") != -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("black") != -1
   ) {
     return 31110;
   } else if (
-    name.indexOf("m6 ") != -1 &&
+    name.indexOf("poco m6 ") != -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("silver") != -1
   ) {
     return 36790;
   } else if (
-    name.indexOf("m6 ") != -1 &&
+    name.indexOf("poco m6 ") != -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("purple") != -1
   ) {
     return 31111;
-  } else if (name.indexOf("m6 pro 12/512 black") != -1) {
+
+  } else if (name.indexOf("poco m7 pro 12/256 green") != -1) {
+    return 134387;
+  } else if (name.indexOf("poco m7 pro 12/256 silver") != -1) {
+    return 747896;
+  } else if (name.indexOf("poco m7 pro 12/256 purple") != -1) {
+    return 931994;
+  } else if (name.indexOf("poco m7 pro 8/256 green") != -1) {
+    return 823339;
+  } else if (name.indexOf("poco m7 pro 8/256 silver") != -1) {
+    return 366267;
+  } else if (name.indexOf("poco m7 pro 8/256 purple") != -1) {
+    return 647588;
+
+
+  } else if (name.indexOf("poco m6 pro 12/512 black") != -1) {
     return 31126;
-  } else if (name.indexOf("m6 pro 12/512 power blue") != -1) {
+  } else if (name.indexOf("poco m6 pro 12/512 power blue") != -1) {
     return 31124;
-  } else if (name.indexOf("m6 pro 12/512 purple") != -1) {
+  } else if (name.indexOf("poco m6 pro 12/512 purple") != -1) {
     return 31125;
-  } else if (name.indexOf("m6 pro 4/64 forest green") != -1) {
+  } else if (name.indexOf("poco m6 pro 4/64 forest green") != -1) {
     return 30184;
-  } else if (name.indexOf("m6 pro 4/64 power black") != -1) {
+  } else if (name.indexOf("poco m6 pro 4/64 power black") != -1) {
     return 30182;
-  } else if (name.indexOf("m6 pro 6/128 forest green") != -1) {
+  } else if (name.indexOf("poco m6 pro 6/128 forest green") != -1) {
     return 30185;
-  } else if (name.indexOf("m6 pro 6/128 power black") != -1) {
+  } else if (name.indexOf("poco m6 pro 6/128 power black") != -1) {
     return 30183;
-  } else if (name.indexOf("m6 pro 8/256 blue") != -1) {
+  } else if (name.indexOf("poco m6 pro 8/256 blue") != -1) {
     return 31123;
-  } else if (name.indexOf("m6 pro 8/256 power black") != -1) {
+  } else if (name.indexOf("poco m6 pro 8/256 power black") != -1) {
     return 31121;
-  } else if (name.indexOf("m6 pro 8/256 purple") != -1) {
+  } else if (name.indexOf("poco m6 pro 8/256 purple") != -1) {
     return 31122;
-  } else if (name.indexOf("x5 6/128 black") != -1) {
+  } else if (name.indexOf("poco x5 6/128 black") != -1) {
     return 27245;
-  } else if (name.indexOf("x5 6/128 blue") != -1) {
+  } else if (name.indexOf("poco x5 6/128 blue") != -1) {
     return 27247;
-  } else if (name.indexOf("x5 6/128 green") != -1) {
+  } else if (name.indexOf("poco x5 6/128 green") != -1) {
     return 27249;
-  } else if (name.indexOf("x5 8/256 black") != -1) {
+  } else if (name.indexOf("poco x5 8/256 black") != -1) {
     return 27246;
-  } else if (name.indexOf("x5 8/256 blue") != -1) {
+  } else if (name.indexOf("poco x5 8/256 blue") != -1) {
     return 27248;
-  } else if (name.indexOf("x5 8/256 green") != -1) {
+  } else if (name.indexOf("poco x5 8/256 green") != -1) {
     return 27250;
-  } else if (name.indexOf("x5 pro 6/128 black") != -1) {
+  } else if (name.indexOf("poco x5 pro 6/128 black") != -1) {
     return 27239;
-  } else if (name.indexOf("x5 pro 6/128 blue") != -1) {
+  } else if (name.indexOf("poco x5 pro 6/128 blue") != -1) {
     return 27241;
-  } else if (name.indexOf("x5 pro 6/128 yellow") != -1) {
+  } else if (name.indexOf("poco x5 pro 6/128 yellow") != -1) {
     return 27243;
-  } else if (name.indexOf("x5 pro 8/256 black") != -1) {
+  } else if (name.indexOf("poco x5 pro 8/256 black") != -1) {
     return 27240;
-  } else if (name.indexOf("x5 pro 8/256 blue") != -1) {
+  } else if (name.indexOf("poco x5 pro 8/256 blue") != -1) {
     return 27242;
-  } else if (name.indexOf("x5 pro 8/256 yellow") != -1) {
+  } else if (name.indexOf("poco x5 pro 8/256 yellow") != -1) {
     return 27244;
-  } else if (name.indexOf("x6 5g 12/256 black") != -1) {
+  } else if (name.indexOf("poco x6 5g 12/256 black") != -1) {
     return 31115;
-  } else if (name.indexOf("x6 5g 12/256 blue") != -1) {
+  } else if (name.indexOf("poco x6 5g 12/256 blue") != -1) {
     return 31117;
-  } else if (name.indexOf("x6 5g 12/256 white") != -1) {
+  } else if (name.indexOf("poco x6 5g 12/256 white") != -1) {
     return 31116;
-  } else if (name.indexOf("x6 5g 12/512 black") != -1) {
+  } else if (name.indexOf("poco x6 5g 12/512 black") != -1) {
     return 31118;
-  } else if (name.indexOf("x6 5g 12/512 blue") != -1) {
+  } else if (name.indexOf("poco x6 5g 12/512 blue") != -1) {
     return 31120;
-  } else if (name.indexOf("x6 5g 12/512 white") != -1) {
+  } else if (name.indexOf("poco x6 5g 12/512 white") != -1) {
     return 31119;
-  } else if (name.indexOf("x6 5g 8/256 black") != -1) {
+  } else if (name.indexOf("poco x6 5g 8/256 black") != -1) {
     return 31112;
-  } else if (name.indexOf("x6 5g 8/256 blue") != -1) {
+  } else if (name.indexOf("poco x6 5g 8/256 blue") != -1) {
     return 31114;
-  } else if (name.indexOf("x6 5g 8/256 white") != -1) {
+  } else if (name.indexOf("poco x6 5g 8/256 white") != -1) {
     return 31113;
-  } else if (name.indexOf("x6 pro 5g 12/256 black") != -1) {
+  } else if (name.indexOf("poco x6 pro 5g 12/256 black") != -1) {
     return 31130;
   } else if (
-    name.indexOf("x6 pro 5g 12/256 gray") != -1 ||
-    name.indexOf("x6 pro 5g 12/256 grey") != -1
+    name.indexOf("poco x6 pro 5g 12/256 gray") != -1 ||
+    name.indexOf("poco x6 pro 5g 12/256 grey") != -1
   ) {
     return 31132;
-  } else if (name.indexOf("x6 pro 5g 12/256 yellow") != -1) {
+  } else if (name.indexOf("poco x6 pro 5g 12/256 yellow") != -1) {
     return 31131;
-  } else if (name.indexOf("x6 pro 5g 12/512 black") != -1) {
+  } else if (name.indexOf("poco x6 pro 5g 12/512 black") != -1) {
     return 31133;
   } else if (
-    name.indexOf("x6 pro 5g 12/512 gray") != -1 ||
-    name.indexOf("x6 pro 5g 12/512 grey") != -1
+    name.indexOf("poco x6 pro 5g 12/512 gray") != -1 ||
+    name.indexOf("poco x6 pro 5g 12/512 grey") != -1
   ) {
     return 31135;
-  } else if (name.indexOf("x6 pro 5g 12/512 yellow") != -1) {
+  } else if (name.indexOf("poco x6 pro 5g 12/512 yellow") != -1) {
     return 31134;
-  } else if (name.indexOf("x6 pro 5g 8/256 black") != -1) {
+  } else if (name.indexOf("poco x6 pro 5g 8/256 black") != -1) {
     return 31127;
   } else if (
-    name.indexOf("x6 pro 5g 8/256 gray") != -1 ||
-    name.indexOf("x6 pro 5g 8/256 grey") != -1
+    name.indexOf("poco x6 pro 5g 8/256 gray") != -1 ||
+    name.indexOf("poco x6 pro 5g 8/256 grey") != -1
   ) {
     return 31129;
-  } else if (name.indexOf("x6 pro 5g 8/256 yellow") != -1) {
+  } else if (name.indexOf("poco x6 pro 5g 8/256 yellow") != -1) {
     return 31128;
   } else if (name.indexOf("poco x7 8/128 black") != -1) {
     return 37796;
