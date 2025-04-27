@@ -1826,7 +1826,7 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("note 14 Pro") !== -1 &&
     name.indexOf("note 14 Pro +") == -1 &&
     name.indexOf("5g") == -1 &&
-    name.indexOf("8/128") !== -1 &&
+    name.indexOf("12/512") !== -1 &&
     name.indexOf("black") !== -1
   ) {
     return 37671;
@@ -1834,7 +1834,7 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("note 14 Pro") !== -1 &&
     name.indexOf("note 14 Pro +") == -1 &&
     name.indexOf("5g") == -1 &&
-    name.indexOf("8/128") !== -1 &&
+    name.indexOf("12/512") !== -1 &&
     name.indexOf("blue") !== -1
   ) {
     return 37672;
@@ -1842,7 +1842,7 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("note 14 Pro") !== -1 &&
     name.indexOf("note 14 Pro +") == -1 &&
     name.indexOf("5g") == -1 &&
-    name.indexOf("8/128") !== -1 &&
+    name.indexOf("12/512") !== -1 &&
     name.indexOf("purple") !== -1
   ) {
     return 37673;

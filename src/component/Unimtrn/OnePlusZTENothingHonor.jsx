@@ -77,6 +77,9 @@ const OnePlusZTENothingHonor = ({ double }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOnePlus, setIsOnePlus] = useState(false);
+  const [isOnePlusBuds, setIsOnePlusBuds] = useState(false);
+  const [isOnePlusWatch, setIsOnePlusWatch] = useState(false);
+  const [isOnePlusPad, setIsOnePlusPad] = useState(false);
   const [isZTE, setIsZTE] = useState(false);
   const [isNothing, setIsNothing] = useState(false);
   const [isHonor, setIsHonor] = useState(false);
@@ -152,13 +155,43 @@ const OnePlusZTENothingHonor = ({ double }) => {
                 ❐ Copy
               </h4>
               <tbody>
-                {isOnePlus && <br />}
-                {isOnePlus && <div>📱 **OnePlus**</div>}
+                {isOnePlusBuds && <br />}
+                {isOnePlusBuds && <div>📱 **OnePlus Buds**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        el.name.indexOf("OnePlus") != -1 &&
+                        el.name.indexOf("OnePlus Buds") !== -1 &&
+                        (isOnePlusBuds || setIsOnePlusBuds(true)) &&
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("OnePlus Buds") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isOnePlus && <br />}
+                {isOnePlus && <div>📱 **OnePlus Watch**</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        el.name.indexOf("OnePlus Watch") != -1 &&
                         (isOnePlus || setIsOnePlus(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
@@ -172,7 +205,71 @@ const OnePlusZTENothingHonor = ({ double }) => {
                               )
                             : el.stockPrice)}
                       <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("OnePlus") != -1 && (
+                        {baseFix(el) && el.name.indexOf("OnePlus Watch") != -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                {isOnePlus && <br />}
+                {isOnePlus && <div>📱 **OnePlus Phone**</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        el.name.indexOf("OnePlus") != -1 &&
+                        el.name.indexOf("OnePlus Buds") === -1 &&
+                        el.name.indexOf("OnePlus Pad") === -1 &&
+                        el.name.indexOf("OnePlus Watch") === -1 &&
+                        (isOnePlus || setIsOnePlus(true)) &&
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("OnePlus") != -1 &&
+                        el.name.indexOf("OnePlus Buds") === -1 &&
+                        el.name.indexOf("OnePlus Pad") === -1 &&
+                        el.name.indexOf("OnePlus Watch") === -1 && (
+                          <span>{" - " + el.provider}</span>
+                        )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                {isOnePlus && <br />}
+                {isOnePlus && <div>📱 **OnePlus Pad**</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        el.name.indexOf("OnePlus Pad") !== -1 &&
+                        (isOnePlus || setIsOnePlus(true)) &&
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(el) && el.name.indexOf("OnePlus Pad") !== -1 && (
                           <span>{" - " + el.provider}</span>
                         )}
                       </h3>

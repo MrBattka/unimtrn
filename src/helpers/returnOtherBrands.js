@@ -858,14 +858,44 @@ export const returnIDOtherBrand = (name) => {
     // OnePlus
   } else if (
     name.indexOf("oneplus watch") != -1 &&
+    name.indexOf("oneplus watch 2") === -1 &&
     (name.indexOf("midnight") != -1 || name.indexOf("black") != -1)
   ) {
     return 20455;
   } else if (
     name.indexOf("oneplus watch") != -1 &&
+    name.indexOf("oneplus watch 2") === -1 &&
     (name.indexOf("moonlight") != -1 || name.indexOf("silver") != -1)
   ) {
     return 20456;
+
+  } else if (
+    name.indexOf("oneplus watch 2 ") != -1 &&
+    name.indexOf("gray") != -1
+  ) {
+    return 435689;
+  } else if (
+    name.indexOf("oneplus watch 2 ") != -1 &&
+    name.indexOf("steel") != -1
+  ) {
+    return 895116;
+  } else if (
+    name.indexOf("oneplus watch 2 ") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 444248;
+
+  } else if (
+    name.indexOf("oneplus watch 2r") != -1 &&
+    name.indexOf("gray") != -1
+  ) {
+    return 936878;
+  } else if (
+    name.indexOf("oneplus watch 2r") != -1 &&
+    name.indexOf("green") != -1
+  ) {
+    return 187649;
+
   } else if (name.indexOf("ace 2 12/256 black") != -1) {
     return 27300;
   } else if (name.indexOf("ace 2 12/256 glacier blue") != -1) {
@@ -1388,6 +1418,24 @@ export const returnIDOtherBrand = (name) => {
     name.indexOf("white") != -1
   ) {
     return 19038;
+
+  } else if (
+    name.indexOf("oneplus buds 3") != -1 &&
+    (name.indexOf("black") != -1 ||
+    name.indexOf("gray") != -1)
+  ) {
+    return 561697;
+  } else if (
+    name.indexOf("oneplus buds 3") != -1 &&
+    name.indexOf("green") != -1
+  ) {
+    return 241624;
+  } else if (
+    name.indexOf("oneplus buds 3") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 509184;
+
   } else if (
     name.indexOf("oneplus buds nord") != -1 &&
     name.indexOf("blue") != -1
@@ -1749,6 +1797,21 @@ export const returnIDOtherBrand = (name) => {
     name.indexOf("white") != -1
   ) {
     return 35886;
+
+  } else if (
+    name.indexOf("oneplus pad pro") != -1 &&
+    name.indexOf("16/512") != -1 &&
+    (name.indexOf("gray") != -1 || name.indexOf("black") != -1)
+  ) {
+    return 982532;
+  } else if (
+    name.indexOf("oneplus pad pro") != -1 &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("green") != -1
+  ) {
+    return 901880;
+
+
   } else if (
     name.indexOf("oneplus pad go") != -1 &&
     name.indexOf("8/128") != -1 &&
