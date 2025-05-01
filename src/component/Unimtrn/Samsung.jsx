@@ -118,6 +118,7 @@ const Samsung = ({ double }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOther, setIsOther] = useState(false);
   const [isPhones, setIsPhones] = useState(false);
+  const [isBuds, setIsBuds] = useState(false);
   const [isWatch, setIsWatch] = useState(false);
   const [isTab, setIsTab] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
@@ -194,6 +195,8 @@ const Samsung = ({ double }) => {
               </h4>
               <tbody>
                 <div>👇 **Samsung**</div>
+                {isBuds && <br />}
+                {isBuds && <div>🎧 Galaxy Buds</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -201,7 +204,7 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("OnePlus") === -1 &&
                           (el.name.indexOf("Buds") !== -1 ||
                           el.name.indexOf("Galaxy Smart Tag") !== -1)) &&
-                        (isOther || setIsOther(true)) &&
+                        (isBuds || setIsBuds(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${

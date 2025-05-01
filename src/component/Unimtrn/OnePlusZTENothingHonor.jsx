@@ -80,6 +80,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
   const [isOnePlusBuds, setIsOnePlusBuds] = useState(false);
   const [isOnePlusWatch, setIsOnePlusWatch] = useState(false);
   const [isOnePlusPad, setIsOnePlusPad] = useState(false);
+  const [isNothingEar, setIsNothingEar] = useState(false);
   const [isZTE, setIsZTE] = useState(false);
   const [isNothing, setIsNothing] = useState(false);
   const [isHonor, setIsHonor] = useState(false);
@@ -156,7 +157,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
               </h4>
               <tbody>
                 {isOnePlusBuds && <br />}
-                {isOnePlusBuds && <div>📱 **OnePlus Buds**</div>}
+                {isOnePlusBuds && <div>🎧 **OnePlus Buds**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -185,14 +186,14 @@ const OnePlusZTENothingHonor = ({ double }) => {
                   <tr></tr>
                 )}
 
-                {isOnePlus && <br />}
-                {isOnePlus && <div>📱 **OnePlus Watch**</div>}
+                {isOnePlusWatch && <br />}
+                {isOnePlusWatch && <div>⌚ **OnePlus Watch**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         el.name.indexOf("OnePlus Watch") != -1 &&
-                        (isOnePlus || setIsOnePlus(true)) &&
+                        (isOnePlusWatch || setIsOnePlusWatch(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
@@ -249,14 +250,14 @@ const OnePlusZTENothingHonor = ({ double }) => {
                 ) : (
                   <tr></tr>
                 )}
-                {isOnePlus && <br />}
-                {isOnePlus && <div>📱 **OnePlus Pad**</div>}
+                {isOnePlusPad && <br />}
+                {isOnePlusPad && <div>📟 **OnePlus Pad**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         el.name.indexOf("OnePlus Pad") !== -1 &&
-                        (isOnePlus || setIsOnePlus(true)) &&
+                        (isOnePlusPad || setIsOnePlusPad(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
@@ -313,7 +314,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
                 )}
 
                 {isNothing && <br />}
-                {isNothing && <div>📱 **Nothing**</div>}
+                {isNothing && <div>📱 **Nothing Phone**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -340,6 +341,37 @@ const OnePlusZTENothingHonor = ({ double }) => {
                             el.name.indexOf("Nothing CMF") != -1 ||
                             el.name.indexOf("Nothing Ear") != -1 ||
                             el.name.indexOf("Nothing ear") != -1) && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isNothingEar && <br />}
+                {isNothingEar && <div>🎧 **Nothing Ear**</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.name.indexOf("Nothing Ear") != -1) &&
+                        (isNothingEar || setIsNothingEar(true)) &&
+                        returnFixPrice(el, fixName(el)) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          (el.name.indexOf("Nothing Ear") != -1) && (
                             <span>{" - " + el.provider}</span>
                           )}
                       </h3>

@@ -132,6 +132,29 @@ export const returnIDOtherBrand2 = (name) => {
     return 28101;
 
   } else if (
+    name.indexOf("minor 4 black") !== -1 ||
+    name.indexOf("minor iv black") !== -1 ||
+    name.indexOf("4 minor black") !== -1
+  ) {
+    return 218201;
+  } else if (
+    name.indexOf("minor 4 cream") !== -1 ||
+    name.indexOf("minor iv cream") !== -1 ||
+    name.indexOf("4 minor cream") !== -1
+  ) {
+    return 738810;
+
+  } else if (
+    name.indexOf("motif 2 a.n.c. black") !== -1
+  ) {
+    return 459350;
+
+  } else if (
+    name.indexOf("monitor 3 a.n.c. black") !== -1
+  ) {
+    return 803688;
+
+  } else if (
     name.indexOf("major 5 black") !== -1 ||
     name.indexOf("major v black") !== -1 ||
     name.indexOf("5 major black") !== -1
@@ -671,6 +694,80 @@ export const returnIDOtherBrand2 = (name) => {
     return 28512;
   } else if (name.indexOf("nubia redmagic 8s pro 12/256 graphite") !== -1) {
     return 28513;
+
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("12/256") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 38815;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("12/256") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 38818;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("12/256") != -1 &&
+    name.indexOf("white") != -1
+  ) {
+    return 38819;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 38823;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 38824;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("white") != -1
+  ) {
+    return 38825;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 38838;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 38839;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("16/512") != -1 &&
+    name.indexOf("white") != -1
+  ) {
+    return 38840;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("16/1tb") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 38832;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("16/1tb") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 38833;
+  } else if (
+    name.indexOf("honor magic 7 pro") != -1 &&
+    name.indexOf("16/1tb") != -1 &&
+    name.indexOf("white") != -1
+  ) {
+    return 38834;
+
   } else if (name.indexOf("nubia z60s pro 12/256 aqua") !== -1) {
     return 36911;
   } else if (name.indexOf("nubia z60s pro 12/256 black") !== -1) {
@@ -2139,6 +2236,28 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("goggle") !== -1
   ) {
     return 26204;
+
+  } else if (
+    name.indexOf("nothing ear 3") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 378533;
+  } else if (
+    name.indexOf("nothing ear 3") !== -1 &&
+    name.indexOf("white") !== -1
+  ) {
+    return 919147;
+  } else if (
+    name.indexOf("nothing ear (a)") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 961125;
+  } else if (
+    name.indexOf("nothing ear (a)") !== -1 &&
+    name.indexOf("white") !== -1
+  ) {
+    return 299225;
+
   } else if (
     name.indexOf("nothing phone") !== -1 &&
     (name.indexOf("1 ") !== -1 || name.indexOf("(1)") !== -1) &&

@@ -164,6 +164,12 @@ export const returnIDXiaomi = (name) => {
     return 37475;
   } else if (name.indexOf("c75 6/128 green") !== -1) {
     return 37474;
+  } else if (name.indexOf("c75 8/128 black") !== -1) {
+    return 329844;
+  } else if (name.indexOf("c75 8/128 gold") !== -1) {
+    return 595625;
+  } else if (name.indexOf("c75 8/128 green") !== -1) {
+    return 666354;
   } else if (name.indexOf("c75 8/256 black") !== -1) {
     return 37476;
   } else if (name.indexOf("c75 8/256 gold") !== -1) {
@@ -496,7 +502,6 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("purple") !== -1
   ) {
     return 31111;
-
   } else if (name.indexOf("poco m7 pro 12/256 green") !== -1) {
     return 134387;
   } else if (name.indexOf("poco m7 pro 12/256 silver") !== -1) {
@@ -509,8 +514,6 @@ export const returnIDXiaomi = (name) => {
     return 366267;
   } else if (name.indexOf("poco m7 pro 8/256 purple") !== -1) {
     return 647588;
-
-
   } else if (name.indexOf("poco m6 pro 12/512 black") !== -1) {
     return 31126;
   } else if (name.indexOf("poco m6 pro 12/512 power blue") !== -1) {
@@ -636,7 +639,6 @@ export const returnIDXiaomi = (name) => {
     return 37847;
   } else if (name.indexOf("poco x7 pro 12/512 green") !== -1) {
     return 37848;
-
 
     //  Redmi
   } else if (name.indexOf("note 12 pro 12/256 black") !== -1) {
@@ -1558,6 +1560,105 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("purple") !== -1
   ) {
     return 37057;
+
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 804754;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
+    return 299466;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 625534;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("8/256") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 375825;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("8/256") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
+    return 438403;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("8/256") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 836114;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 159026;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
+    return 109570;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 933573;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("12/512") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 160789;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("12/512") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
+    return 563303;
+  } else if (
+    name.indexOf("note 14 pro") !== -1 &&
+    name.indexOf("note 14 Pro +") == -1 &&
+    name.indexOf("5g") === -1 &&
+    name.indexOf("12/512") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 916249;
+
+
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
@@ -2635,7 +2736,6 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("white") !== -1
   ) {
     return 37201;
-
   } else if (name.indexOf("mi 15 ultra 12/256 black") !== -1) {
     return 38447;
   } else if (name.indexOf("mi 15 ultra 12/256 green") !== -1) {
@@ -3125,8 +3225,6 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("gold") !== -1
   ) {
     return 27377;
-
-
   } else if (
     name.indexOf("mi pad 7 ") !== -1 &&
     name.indexOf("pro") === -1 &&
@@ -3175,7 +3273,6 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("green") !== -1
   ) {
     return 812429;
-
   } else if (
     name.indexOf("mi pad 7 ") !== -1 &&
     name.indexOf("pro") === -1 &&
@@ -3200,9 +3297,6 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("green") !== -1
   ) {
     return 336335;
-
-
-
   } else if (
     name.indexOf("mi pad 7 pro") !== -1 &&
     name.indexOf("7s") === -1 &&
@@ -3245,7 +3339,6 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("green") !== -1
   ) {
     return 400193;
-
   } else if (
     name.indexOf("redmi pad") !== -1 &&
     name.indexOf("3/64") !== -1 &&
@@ -3435,84 +3528,105 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("green") !== -1
   ) {
     return 37436;
-  } else if (name.indexOf("redmi 14c 4/128") !== -1 &&
-  name.indexOf("purple") !== -1) {
+  } else if (
+    name.indexOf("redmi 14c 4/128") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
     return 37099;
   } else if (
-  name.indexOf("redmi 14c 4/128") !== -1 &&
-  name.indexOf("black") !== -1) {
+    name.indexOf("redmi 14c 4/128") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 37097;
   } else if (
-  name.indexOf("redmi 14c 4/128") !== -1 &&
-  name.indexOf("green") !== -1) {
+    name.indexOf("redmi 14c 4/128") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
     return 37098;
   } else if (
-  name.indexOf("redmi 14c 4/128") !== -1 &&
-  name.indexOf("blue") !== -1) {
+    name.indexOf("redmi 14c 4/128") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
     return 37100;
   } else if (
-  name.indexOf("redmi 14c 4/256") !== -1 &&
-  name.indexOf("purple") !== -1) {
+    name.indexOf("redmi 14c 4/256") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
     return 37113;
   } else if (
-  name.indexOf("redmi 14c 4/256") !== -1 &&
-  name.indexOf("black") !== -1) {
+    name.indexOf("redmi 14c 4/256") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 37114;
   } else if (
-  name.indexOf("redmi 14c 4/256") !== -1 &&
-  name.indexOf("green") !== -1) {
+    name.indexOf("redmi 14c 4/256") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
     return 37115;
   } else if (
-  name.indexOf("redmi 14c 4/256") !== -1 &&
-  name.indexOf("blue") !== -1) {
+    name.indexOf("redmi 14c 4/256") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
     return 37116;
   } else if (
-  name.indexOf("redmi 14c 6/128") !== -1 &&
-  name.indexOf("purple") !== -1) {
+    name.indexOf("redmi 14c 6/128") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
     return 37101;
   } else if (
-  name.indexOf("redmi 14c 6/128") !== -1 &&
-  name.indexOf("black") !== -1) {
+    name.indexOf("redmi 14c 6/128") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 37102;
   } else if (
-  name.indexOf("redmi 14c 6/128") !== -1 &&
-  name.indexOf("green") !== -1) {
+    name.indexOf("redmi 14c 6/128") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
     return 37103;
   } else if (
-  name.indexOf("redmi 14c 6/128") !== -1 &&
-  name.indexOf("blue") !== -1) {
+    name.indexOf("redmi 14c 6/128") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
     return 37104;
   } else if (
-  name.indexOf("redmi 14c 8/128") !== -1 &&
-  name.indexOf("purple") !== -1) {
+    name.indexOf("redmi 14c 8/128") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
     return 37105;
   } else if (
-  name.indexOf("redmi 14c 8/128") !== -1 &&
-  name.indexOf("black") !== -1) {
+    name.indexOf("redmi 14c 8/128") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 37106;
   } else if (
-  name.indexOf("redmi 14c 8/128") !== -1 &&
-  name.indexOf("green") !== -1) {
+    name.indexOf("redmi 14c 8/128") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
     return 37107;
   } else if (
-  name.indexOf("redmi 14c 8/128") !== -1 &&
-  name.indexOf("blue") !== -1) {
+    name.indexOf("redmi 14c 8/128") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
     return 37108;
   } else if (
-  name.indexOf("redmi 14c 8/256") !== -1 &&
-  name.indexOf("purple") !== -1) {
+    name.indexOf("redmi 14c 8/256") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
     return 37109;
   } else if (
-  name.indexOf("redmi 14c 8/256") !== -1 &&
-  name.indexOf("black") !== -1) {
+    name.indexOf("redmi 14c 8/256") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 37110;
   } else if (
-  name.indexOf("redmi 14c 8/256") !== -1 &&
-  name.indexOf("green") !== -1) {
+    name.indexOf("redmi 14c 8/256") !== -1 &&
+    name.indexOf("green") !== -1
+  ) {
     return 37111;
   } else if (
-  name.indexOf("redmi 14c 8/256") !== -1 &&
-  name.indexOf("blue") !== -1) {
+    name.indexOf("redmi 14c 8/256") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
     return 37112;
   } else if (name.indexOf("redmi 13 6/128 midnight black") !== -1) {
     return 36688;
@@ -3688,6 +3802,55 @@ export const returnIDXiaomi = (name) => {
     return 37001;
   } else if (name.indexOf("mi band 8 black") !== -1) {
     return 27421;
+  } else if (
+    name.indexOf("redmi watch 4 ru") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 321360;
+  } else if (
+    name.indexOf("redmi watch 4 ru") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 217586;
+
+  } else if (
+    name.indexOf("redmi watch 5 active ru") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 186172;
+  } else if (
+    name.indexOf("redmi watch 5 active ru") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 450805;
+
+  } else if (
+    name.indexOf("redmi watch 5 lite ru") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 283633;
+  } else if (
+    name.indexOf("redmi watch 5 lite ru") !== -1 &&
+    name.indexOf("gold") !== -1
+  ) {
+    return 896590;
+
+  } else if (
+    name.indexOf("redmi watch 5 ru") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 260432;
+  } else if (
+    name.indexOf("redmi watch 5 ru") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 735613;
+  } else if (
+    name.indexOf("redmi watch 5 ru") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 186230;
+    
   } else {
     return returnIDGarmin(name) || "No match";
   }

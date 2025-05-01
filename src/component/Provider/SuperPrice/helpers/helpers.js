@@ -50,6 +50,15 @@ export const fixNameSuperPrice = (name) => {
   const fixNote = replaceXiaomi.replace("Redmi Note", "Note");
   const replaceValve = fixNote.replace("Valve ", "");
   const replaceMeta = replaceValve.replace("Meta Oculus", "Oculus");
+
+  const replace5G = (replaceMeta.indexOf("POCO X7") !== -1 || replaceMeta.indexOf("A25") !== -1
+  || replaceMeta.indexOf("POCO X7") !== -1 || replaceMeta.indexOf("POCO X7") !== -1 ||
+  replaceMeta.indexOf("A26") !== -1 || replaceMeta.indexOf("A35") !== -1 ||
+  replaceMeta.indexOf("A36") !== -1 || replaceMeta.indexOf("A55") !== -1 ||
+  replaceMeta.indexOf("A56") !== -1 || replaceMeta.indexOf("S23") !== -1 ||
+  replaceMeta.indexOf("S24") !== -1 || replaceMeta.indexOf("S25") !== -1 ||
+  replaceMeta.indexOf("M55") !== -1) ? replaceMeta.replace("5G ", "") : replaceMeta
+    
   
-  return replaceMeta;
+  return replace5G;
 };

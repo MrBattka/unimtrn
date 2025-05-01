@@ -23,8 +23,8 @@ export const returnNameInArrMiOpts = (name) => {
   
   let removeRUB =
     reverseStrName[0] === "-" ? reverseStrName.slice(1) : reverseStrName;
-    let splitStick = removeRUB.indexOf("-") !== -1 ? /\-(.+)/.exec(removeRUB)[1] : removeRUB
-  let splitPrice = /\s(.+)/.exec(splitStick)[1];
+    let splitStick = sliceFlags.indexOf("-") !== -1 ? /\-(.+)/.exec(removeRUB)[1] : removeRUB
+  // let splitPrice = /\s(.+)/.exec(splitStick)[1];
   
   
   let reverseBackStrName = splitStick.split("").reverse().join("");
@@ -65,8 +65,20 @@ export const fixNameMiOpts = (name) => {
   const fixMI = removeNewIcon.replace("Xiaomi", "Mi");
   const fixRedmi = fixMI.replace("Redmi", "");
   const fixPoco = fixRedmi.replace("Poco", "POCO");
-  const replaceGB = fixPoco.replace("GB", "");
+  const fixS23FE = fixPoco.replace("S23FE", "S23 Fe");
+  const fixS24FE = fixS23FE.replace("S24FE", "S24 Fe");
+  const fixS25FE = fixS24FE.replace("S25FE", "S25 Fe");
+  const fixGray = fixS25FE.replace("Grey", "Gray");
+  const replaceGB = fixGray.replace("GB", "");
+
+  const replace5G = (replaceGB.indexOf("POCO X7") !== -1 || replaceGB.indexOf("A25") !== -1
+|| replaceGB.indexOf("POCO X7") !== -1 || replaceGB.indexOf("POCO X7") !== -1 ||
+replaceGB.indexOf("A26") !== -1 || replaceGB.indexOf("A35") !== -1 ||
+replaceGB.indexOf("A36") !== -1 || replaceGB.indexOf("A55") !== -1 ||
+replaceGB.indexOf("A56") !== -1 || replaceGB.indexOf("S23") !== -1 ||
+replaceGB.indexOf("S24") !== -1 || replaceGB.indexOf("S25") !== -1 ||
+replaceGB.indexOf("M55") !== -1) ? replaceGB.replace("5G ", "") : replaceGB
   
 
-  return replaceGB;
+  return replace5G;
 };

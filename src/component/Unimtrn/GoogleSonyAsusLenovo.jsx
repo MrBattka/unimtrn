@@ -193,7 +193,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                 )}
 
                 {isPixelBuds && <br />}
-                {isPixelBuds && <div>📱 **Pixel Buds**</div>}
+                {isPixelBuds && <div>🎧 **Pixel Buds**</div>}
                 {dataUnimtrn.length ? (
                   dataUnimtrn.map((googleEl, index) => (
                     <div key={index}>
@@ -215,7 +215,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                 )}
 
                 {isPixelWatch && <br />}
-                {isPixelWatch && <div>📱 **Pixel Watch**</div>}
+                {isPixelWatch && <div>⌚ **Pixel Watch**</div>}
                 {superprice.length ? (
                   superprice.map((googleEl, index) => (
                     <div key={index}>
@@ -281,7 +281,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                 )}
 
                 {isPixelTab && <br />}
-                {isPixelTab && <div>📱 **Pixel Tablet**</div>}
+                {isPixelTab && <div>📟 **Pixel Tablet**</div>}
                 {dataUnimtrn.length ? (
                   dataUnimtrn.map((googleEl, index) => (
                     <div key={index}>
