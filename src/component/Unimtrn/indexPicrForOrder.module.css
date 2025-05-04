@@ -71,3 +71,15 @@ div {
     font-weight: 300;
     font-style: normal;
 }
+
+@media (max-width: 768px) {
+    .wrapper_control {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 550px) {
+    .wrapper_control {
+        margin-top: 100px;
+    }
+}

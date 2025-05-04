@@ -10,5 +10,22 @@
 
 .img {
   margin: -120px 0 0px 40px;
+  /* width: 375px; */
 }
 
+
+@media (max-width: 1024px) {
+  .img {
+    margin: -70px 0 0px 40px;
+    width: 275px;
+  }
+}
+
+@media (max-width: 768px) {
+  .img {
+    margin: -20px 0 0px 40px;
+    width: 175px;
+    background-size:auto;
+    background-attachment: local;
+  }
+}
