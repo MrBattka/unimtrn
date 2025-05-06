@@ -91,9 +91,10 @@ const IndexPriceForOrder = ({
 
   hi.map((hiEl) => {
       return (
+        
         baseFixHi(hiEl) &&
         returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&  
-        returnStockPriceHi(hiEl.name) &&
+        // returnStockPriceHi(hiEl.name) &&
         allPriceArr.push({
           id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
@@ -103,6 +104,9 @@ const IndexPriceForOrder = ({
         })
       );
   });
+
+  console.log(allPriceArr);
+  
 
   mihonorData.map((mihonor) => {
     baseFixMiHonor(mihonor) &&
@@ -218,10 +222,14 @@ const IndexPriceForOrder = ({
   });
 
   hi.map((hiEl) => {
+    
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
+      
       return (
+        
         baseFixHi(hiEl) &&
         returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) === "No match" &&
+        
         allPriceArrNotID.push({
           id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
@@ -319,7 +327,6 @@ const IndexPriceForOrder = ({
       );
     }
   });
-console.log(allPriceArrNotID);
 
   return (
     <div className={style.wrapper}>

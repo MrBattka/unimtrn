@@ -761,6 +761,7 @@ const Apple = ({ double }) => {
     );
   };
 
+
   return (
     <div>
       <div>

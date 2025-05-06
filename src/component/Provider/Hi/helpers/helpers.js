@@ -60,7 +60,7 @@ export const returnNameInArrHi = (name) => {
       removeSpaceName[0] === " " ? removeSpaceName.slice(1) : removeSpaceName;
     let splitPriceEU = removeDoubleSpaceName.indexOf(" ") !== - 1 ? /\s(.+)/.exec(removeDoubleSpaceName)[1] : removeDoubleSpaceName
     let reverseBackStrName = splitPriceEU.split("").reverse().join("");
-
+    
     return reverseBackStrName;
   }
 };
@@ -269,7 +269,12 @@ export const returnStockPriceHi = (name) => {
     let splitStartPrice = removeSpace3.split("  ")[0];
     let reverseBackStr = splitStartPrice.split("").reverse().join("");
 
-    let fixCar = reverseBackStr.replace("🏎", "");
+    let replaceSlim = reverseBackStr.replace("(Slim) ", "")
+    let replaceCPO = replaceSlim.replace("СPO ", "")
+    let replaceSpace = replaceCPO.replace(" ", "")
+
+    let fixCar = replaceSpace.replace("🏎", "");
+    
     return Number(fixCar)
   } else {
     let fixLemonPrice = name.replace("🍏 ", "");
@@ -284,7 +289,7 @@ export const returnStockPriceHi = (name) => {
       removeSpace1[0] === " " ? removeSpace1.slice(1) : removeSpace1;
     let removeSpace3 =
       removeSpace2[0] === " " ? removeSpace2.slice(1) : removeSpace2;
-    let splitStartPrice = removeSpace3.split("  ")[0];
+    let splitStartPrice = removeSpace3.split(" ")[0];
     let reverseBackStr = splitStartPrice.split("").reverse().join("");
 
     let fixCar = reverseBackStr.replace("🏎", "");
