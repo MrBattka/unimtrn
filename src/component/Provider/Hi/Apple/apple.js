@@ -234,6 +234,22 @@ export const returnAppleHi = (nameStock) => {
     el.name.indexOf("Z131IMAC01") != -1 ||
     el.name.indexOf("Z132IMAC01") != -1 ||
     el.name.indexOf("Z133IMAC01") != -1 ||
-    el.name.indexOf("MXNF2") != -1
+    el.name.indexOf("MXNF2") != -1 ||
+    el.name.indexOf("MW123") != -1 ||
+    el.name.indexOf("MW0W3") != -1 ||
+    el.name.indexOf("MC6T4") != -1 ||
+    el.name.indexOf("MW0Y3") != -1 ||
+    el.name.indexOf("MC6V4") != -1 ||
+    el.name.indexOf("MW0X3") != -1 ||
+    el.name.indexOf("MC6V4") != -1 ||
+    el.name.indexOf("MW103") != -1 ||
+    el.name.indexOf("MW1L3") != -1 ||
+    el.name.indexOf("MW1G3") != -1 ||
+    el.name.indexOf("MC7A4") != -1 ||
+    el.name.indexOf("MW1J3") != -1 ||
+    el.name.indexOf("MW1M3") != -1 ||
+    el.name.indexOf("MW1H3") != -1 ||
+    el.name.indexOf("MC7C4") != -1 ||
+    el.name.indexOf("MW1K3") != -1
   );
 };
