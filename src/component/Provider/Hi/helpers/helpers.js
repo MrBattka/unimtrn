@@ -1,68 +1,23 @@
 import { newPrice } from "../../../../helpers/newPrice";
 
 export const returnNameInArrHi = (name) => {
-  if (
-    name?.indexOf("🇪🇺") != -1 ||
-    name?.indexOf("🇷🇺") != -1 ||
-    name?.indexOf("🇰🇿") != -1 ||
-    name?.indexOf("🇿🇦") != -1 ||
-    name?.indexOf("🇮🇳") != -1 ||
-    name?.indexOf("🇦🇪") != -1 ||
-    name?.indexOf("🇲🇾") != -1 ||
-    name?.indexOf("🇭🇰") != -1 ||
-    name?.indexOf("🇻🇳") != -1 ||
-    name?.indexOf("🇹🇭") != -1 ||
-    name?.indexOf("🇬🇧") != -1 ||
-    name?.indexOf("🇯🇵") != -1 ||
-    name?.indexOf("🇺🇸") != -1 ||
-    name?.indexOf("🇨🇳") != -1 ||
-    name?.indexOf("🇸🇬") != -1
-  ) {
-    let splitPriceEU = name.replace(/🇪🇺.*/g, "🇪🇺");
-    let splitPriceRU = splitPriceEU.replace(/🇷🇺.*/g, "🇷🇺");
-    let splitPriceKZ = splitPriceRU.replace(/🇰🇿.*/g, "🇰🇿");
-    let splitPriceZA = splitPriceKZ.replace(/🇿🇦.*/g, "🇿🇦");
-    let splitPriceIN = splitPriceZA.replace(/🇮🇳.*/g, "🇮🇳");
-    let splitPriceAE = splitPriceIN.replace(/🇦🇪.*/g, "🇦🇪");
-    let splitPriceMY = splitPriceAE.replace(/🇲🇾.*/g, "🇲🇾");
-    let splitPriceHK = splitPriceMY.replace(/🇭🇰.*/g, "🇭🇰");
-    let splitPriceVN = splitPriceHK.replace(/🇻🇳.*/g, "🇻🇳");
-    let splitPriceTH = splitPriceVN.replace(/🇹🇭.*/g, "🇹🇭");
-    let splitPriceGB = splitPriceTH.replace(/🇬🇧.*/g, "🇬🇧");
-    let splitPriceJP = splitPriceGB.replace(/🇯🇵.*/g, "🇯🇵");
-    let splitPriceUS = splitPriceJP.replace(/🇺🇸.*/g, "🇺🇸");
-    let splitPriceCN = splitPriceUS.replace(/🇨🇳.*/g, "🇨🇳");
-    let splitPricesSG = splitPriceCN.replace(/🇸🇬.*/g, "🇸🇬");
+  let reverseStrName = name.split("").reverse().join("");
+  let checkSpace =
+    reverseStrName[0] === " "
+      ? reverseStrName.replace(" ", "")
+      : reverseStrName;
+  let checkSpace1 =
+    checkSpace[0] === " " ? checkSpace.replace(" ", "") : checkSpace;
+  let checkSpace2 =
+    checkSpace1[0] === " " ? checkSpace1.replace(" ", "") : checkSpace1;
 
-    let fixLemon = splitPricesSG.replace("🍏 ", "");
-    let fixFire = fixLemon.replace("🔥 ", "");
-    let fixDoubleCar = fixFire.replace(" 🏎", "");
-    let fixDoubleSpaceCar = fixDoubleCar.replace(" 🛩", "");
-    let fixCarPrice = fixDoubleSpaceCar.replace(" 🚙", "");
-    let fixAirPods = fixCarPrice.replace("🎧", "");
-    let fixMacbook = fixAirPods.replace("💻", "");
-    let fixAppleName = fixMacbook.replace("Apple", "");
+    let checkSpace3 =
+    checkSpace2[0] === " " ? checkSpace2.replace(" ", "") : checkSpace2;
 
-    return fixAppleName;
-  } else {
-    let fixLemon = name.replace("🍏 ", "");
-    let fixFire = fixLemon.replace("🔥", "");
-    let fixDoubleCar = fixFire.replace(" 🏎", "");
-    let fixDoubleSpaceCar = fixDoubleCar.replace(" 🛩", "");
-    let fixCarPrice = fixDoubleSpaceCar.replace(" 🚙", "");
-    let fixAirPods = fixCarPrice.replace("🎧", "");
-    let fixMacbook = fixAirPods.replace("💻", "");
+  let splitPrice = checkSpace3.indexOf(" ") !== -1 ? /\s(.+)/.exec(checkSpace3)[1] : checkSpace3
+  let reverseBackStrName = splitPrice.split("").reverse().join("");
 
-    let reverseStrName = fixMacbook.split("").reverse().join("");
-    let removeSpaceName =
-      reverseStrName[0] === " " ? reverseStrName.slice(1) : reverseStrName;
-    let removeDoubleSpaceName =
-      removeSpaceName[0] === " " ? removeSpaceName.slice(1) : removeSpaceName;
-    let splitPriceEU = removeDoubleSpaceName.indexOf(" ") !== - 1 ? /\s(.+)/.exec(removeDoubleSpaceName)[1] : removeDoubleSpaceName
-    let reverseBackStrName = splitPriceEU.split("").reverse().join("");
-    
-    return reverseBackStrName;
-  }
+  return reverseBackStrName;
 };
 
 export const returnExtraPriceHi = (name) => {
@@ -203,99 +158,24 @@ export const returnExtraPriceHi = (name) => {
 };
 
 export const returnStockPriceHi = (name) => {
-  if (
-    name?.indexOf("🇪🇺") != -1 ||
-    name?.indexOf("🇷🇺") != -1 ||
-    name?.indexOf("🇰🇿") != -1 ||
-    name?.indexOf("🇿🇦") != -1 ||
-    name?.indexOf("🇮🇳") != -1 ||
-    name?.indexOf("🇦🇪") != -1 ||
-    name?.indexOf("🇲🇾") != -1 ||
-    name?.indexOf("🇭🇰") != -1 ||
-    name?.indexOf("🇻🇳") != -1 ||
-    name?.indexOf("🇹🇭") != -1 ||
-    name?.indexOf("🇬🇧") != -1 ||
-    name?.indexOf("🇯🇵") != -1 ||
-    name?.indexOf("🇺🇸") != -1 ||
-    name?.indexOf("🇨🇳") != -1 ||
-    name?.indexOf("🇸🇬") != -1
-  ) {
-    let fixLemonPrice = name.replace("🍏 ", "");
-    let fixDoubleCarPrice = fixLemonPrice.replace(" 🏎", "");
-    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace(" 🛩", "");
-    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace(" 🚙", "");
-    let flagSearch =
-      fixCarPricePrice.search("🇪🇺") &
-      fixCarPricePrice.search("🇷🇺") &
-      fixCarPricePrice.search("🇰🇿") &
-      fixCarPricePrice.search("🇿🇦") &
-      fixCarPricePrice.search("🇮🇳") &
-      fixCarPricePrice.search("🇦🇪") &
-      fixCarPricePrice.search("🇲🇾") &
-      fixCarPricePrice.search("🇭🇰") &
-      fixCarPricePrice.search("🇻🇳") &
-      fixCarPricePrice.search("🇹🇭") &
-      fixCarPricePrice.search("🇬🇧") &
-      fixCarPricePrice.search("🇯🇵") &
-      fixCarPricePrice.search("🇺🇸") &
-      fixCarPricePrice.search("🇨🇳") &
-      fixCarPricePrice.search("🇸🇬");
-    let length = fixCarPricePrice.length;
+  const removeDoubleSpace = name.replace(/\s+/g, " ");
+  let replaceCar = removeDoubleSpace.replace(" 🏎️", "")
 
-    let splitStartPriceFlag = fixCarPricePrice.substring(flagSearch, length);
+  let reverseStrName = replaceCar.split("").reverse().join("");
+  let checkSpace =
+    reverseStrName[0] === " "
+      ? reverseStrName.replace(" ", "")
+      : reverseStrName;
+  let checkSpace1 =
+    checkSpace[0] === " " ? checkSpace.replace(" ", "") : checkSpace;
+  let checkSpace2 =
+    checkSpace1[0] === " " ? checkSpace1.replace(" ", "") : checkSpace1;
+  let checkSpace3 =
+    checkSpace1[0] === " " ? checkSpace2.replace(" ", "") : checkSpace2;
+  let splitPrice = checkSpace3.split(" ")[0];
+  let reverseBackStrName = splitPrice.split("").reverse().join("");
 
-    let splitFlagEU = splitStartPriceFlag.replace("🇪🇺", "");
-    let splitFlagRU = splitFlagEU.replace("🇷🇺", "");
-    let splitFlagKZ = splitFlagRU.replace("🇰🇿", "");
-    let splitFlagZA = splitFlagKZ.replace("🇿🇦", "");
-    let splitFlagIN = splitFlagZA.replace("🇮🇳", "");
-    let splitFlagAE = splitFlagIN.replace("🇦🇪", "");
-    let splitFlagMY = splitFlagAE.replace("🇲🇾", "");
-    let splitFlagHK = splitFlagMY.replace("🇭🇰", "");
-    let splitFlagVN = splitFlagHK.replace("🇻🇳", "");
-    let splitFlagTH = splitFlagVN.replace("🇹🇭", "");
-    let splitFlagGB = splitFlagTH.replace("🇬🇧", "");
-    let splitFlagJP = splitFlagGB.replace("🇯🇵", "");
-    let splitFlagUS = splitFlagJP.replace("🇺🇸", "");
-    let splitFlagCN = splitFlagUS.replace("🇨🇳", "");
-    let splitFlagSG = splitFlagCN.replace("🇸🇬", "");
-
-    let reverseStr = splitFlagSG.split("").reverse().join("");
-    let removeSpace1 = reverseStr[0] === " " ? reverseStr.slice(1) : reverseStr;
-    let removeSpace2 =
-      removeSpace1[0] === " " ? removeSpace1.slice(1) : removeSpace1;
-    let removeSpace3 =
-      removeSpace2[0] === " " ? removeSpace2.slice(1) : removeSpace2;
-    let splitStartPrice = removeSpace3.split("  ")[0];
-    let reverseBackStr = splitStartPrice.split("").reverse().join("");
-
-    let replaceSlim = reverseBackStr.replace("(Slim) ", "")
-    let replaceCPO = replaceSlim.replace("СPO ", "")
-    let replaceSpace = replaceCPO.replace(" ", "")
-
-    let fixCar = replaceSpace.replace("🏎", "");
-    
-    return Number(fixCar)
-  } else {
-    let fixLemonPrice = name.replace("🍏 ", "");
-    let fixDoubleCarPrice = fixLemonPrice.replace(" 🏎", "");
-    let fixDoubleSpaceCarPrice = fixDoubleCarPrice.replace(" 🛩", "");
-    let fixCarPricePrice = fixDoubleSpaceCarPrice.replace(" 🚙", "");
-
-    let reverseStr = fixCarPricePrice.split("").reverse().join("");
-
-    let removeSpace1 = reverseStr[0] === " " ? reverseStr.slice(1) : reverseStr;
-    let removeSpace2 =
-      removeSpace1[0] === " " ? removeSpace1.slice(1) : removeSpace1;
-    let removeSpace3 =
-      removeSpace2[0] === " " ? removeSpace2.slice(1) : removeSpace2;
-    let splitStartPrice = removeSpace3.split(" ")[0];
-    let reverseBackStr = splitStartPrice.split("").reverse().join("");
-
-    let fixCar = reverseBackStr.replace("🏎", "");
-
-    return Number(fixCar);
-  }
+  return reverseBackStrName;
 };
 
 export const fixNameHi = (name) => {
@@ -306,7 +186,20 @@ export const fixNameHi = (name) => {
       ? removeDoubleSpace.slice(1)
       : removeDoubleSpace;
 
-  const fixPlus = removeFirstDoubleSpace.replace("S24 +", "S24+");
+  
+  let fixCar = removeFirstDoubleSpace.replace(" 🛩", "");
+  let fixCar11 = fixCar.replace(" 🏎", "");
+  let fixCar22 = fixCar11.replace(" 🚙", "");
+  let fixCar33 = fixCar22.replace(" 🚕", "");
+  let fixCar4 = fixCar33.replace(" 🚚", "");
+  let fixCar5 = fixCar4.replace(" 🚗", "");
+  let fixCar6 = fixCar5.replace(" 🚘", "");
+  let fixCar7 = fixCar6.replace(" 🚖", "");
+  // let replaceCar = fixCar7.replace(" 🏎️", "")
+  let replaceLaptop = fixCar7.replace("💻", "");
+  let fixZero = replaceLaptop.replace("0️", "0");
+
+  const fixPlus = fixZero.replace("S24 +", "S24+");
   const fixMarbleGray = fixPlus.replace(
     "S24 8/128 Gray",
     "S24 8/128 Marble Gray"
@@ -558,11 +451,7 @@ export const fixNameHi = (name) => {
   const fixA355G = fixA255G.replace("A35 5G", "A35");
   
 
-  const fixCar1 = fixA355G.replace("🚙", "");
-  const fixCar2 = fixCar1.replace("🛩", "");
-  const fixCar3 = fixCar2.replace("🏎", "");
-
-  const fix16e = fixCar3.replace("16Е", "16e");
+  const fix16e = fixA355G.replace("16Е", "16e");
 
   const fixA545G = fix16e.replace("A54 5G", "A54");
   const fixA555G = fixA545G.replace("A55 5G", "A55");

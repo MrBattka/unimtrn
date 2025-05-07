@@ -104,8 +104,6 @@ const IndexPriceForOrder = ({
         })
       );
   });
-
-  console.log(allPriceArr);
   
 
   mihonorData.map((mihonor) => {

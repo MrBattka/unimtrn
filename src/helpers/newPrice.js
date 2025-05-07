@@ -106,7 +106,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("air pods 3") !== -1 ||
     name.indexOf("airpods 3") !== -1 ||
     name.indexOf("airpods 3") !== -1 ||
-    name.indexOf("airpods 4") !== -1 
+    name.indexOf("airpods 4") !== -1
   ) {
     return Number(price) + 300;
   } else if (
@@ -395,7 +395,23 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("mxd43") != -1 ||
     name.indexOf("z1aw001fy") != -1 ||
     name.indexOf("z1aw001lv") != -1 ||
-    name.indexOf("z1aw001ns") != -1
+    name.indexOf("z1aw001ns") != -1 ||
+    name.indexOf("mw123") != -1 ||
+    name.indexOf("mw0w3") != -1 ||
+    name.indexOf("mc6t4") != -1 ||
+    name.indexOf("mw0y3") != -1 ||
+    name.indexOf("mc6v4") != -1 ||
+    name.indexOf("mw0x3") != -1 ||
+    name.indexOf("mc6v4") != -1 ||
+    name.indexOf("mw103") != -1 ||
+    name.indexOf("mw1l3") != -1 ||
+    name.indexOf("mw1g3") != -1 ||
+    name.indexOf("mc7a4") != -1 ||
+    name.indexOf("mw1j3") != -1 ||
+    name.indexOf("mw1m3") != -1 ||
+    name.indexOf("mw1h3") != -1 ||
+    name.indexOf("mc7c4") != -1 ||
+    name.indexOf("mw1k3") != -1
   ) {
     return Number(price) + 2000;
   } else {

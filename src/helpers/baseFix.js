@@ -97,7 +97,7 @@ export const baseFix = (el) => {
 export const baseFixHi = (el) => {
   return (
     el[0] !== "(" &&
-    
+    el.name.indexOf(" СPO ") == -1 &&
     el.name?.indexOf("magEZ case") == -1 &&
     el.name?.indexOf("pitaka") == -1 &&
     el.name?.indexOf("usb-c 25w") == -1 &&
