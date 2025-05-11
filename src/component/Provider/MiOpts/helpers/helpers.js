@@ -23,9 +23,7 @@ export const returnNameInArrMiOpts = (name) => {
   
   let removeRUB =
     reverseStrName[0] === "-" ? reverseStrName.slice(1) : reverseStrName;
-    let splitStick = sliceFlags.indexOf("-") !== -1 ? /\-(.+)/.exec(removeRUB)[1] : removeRUB
-  // let splitPrice = /\s(.+)/.exec(splitStick)[1];
-  
+  let splitStick = removeRUB.indexOf("-") !== -1 ? removeRUB.split("-")[1] : removeRUB
   
   let reverseBackStrName = splitStick.split("").reverse().join("");
 
@@ -51,6 +49,9 @@ export const returnStockPriceMiOpts = (name) => {
     let slicePrice =
     sliceFlags[1].indexOf("-") != -1 && sliceFlags[1].indexOf("Wi-Fi") ==-1 ? sliceFlags[1].split("-", 2) : sliceFlags[1];
   let reverseBackStrName = slicePrice[0].split("").reverse().join("");
+// console.log(reverseBackStrName);
+
+
   let extraPrice = Number(reverseBackStrName) + 400
 
   return extraPrice;
@@ -63,7 +64,9 @@ export const fixNameMiOpts = (name) => {
 
 
   const fixMI = removeNewIcon.replace("Xiaomi", "Mi");
-  const fixRedmi = fixMI.replace("Redmi", "");
+  const replaceWatchWithSpace = fixMI.replace("⌚️ ", "");
+  const replaceWatch = replaceWatchWithSpace.replace("⌚", "");
+  const fixRedmi = replaceWatch.replace("Redmi", "");
   const fixPoco = fixRedmi.replace("Poco", "POCO");
   const fixS23FE = fixPoco.replace("S23FE", "S23 Fe");
   const fixS24FE = fixS23FE.replace("S24FE", "S24 Fe");
