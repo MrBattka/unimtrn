@@ -195,8 +195,8 @@ export const fixNameHi = (name) => {
   let fixCar5 = fixCar4.replace(" 🚗", "");
   let fixCar6 = fixCar5.replace(" 🚘", "");
   let fixCar7 = fixCar6.replace(" 🚖", "");
-  // let replaceCar = fixCar7.replace(" 🏎️", "")
-  let replaceLaptop = fixCar7.replace("💻", "");
+  let replaceHeadphone = fixCar7.replace("🎧", "")
+  let replaceLaptop = replaceHeadphone.replace("💻", "");
   let fixZero = replaceLaptop.replace("0️", "0");
 
   const fixPlus = fixZero.replace("S24 +", "S24+");
