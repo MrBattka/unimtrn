@@ -1242,6 +1242,7 @@ const Apple = ({ double }) => {
                             {baseFix(el) &&
                               el.name.indexOf("ASIS") === -1 &&
                               el.name.indexOf("Asis") === -1 &&
+                              el.name.indexOf("Air") === -1 &&
                               (el.name.indexOf("11 64") != -1 ||
                                 el.name.indexOf("11 128") != -1) &&
                               (is11 || setIs11(true)) &&
@@ -1253,6 +1254,7 @@ const Apple = ({ double }) => {
                               {baseFix(el) &&
                                 el.name.indexOf("ASIS") === -1 &&
                                 el.name.indexOf("Asis") === -1 &&
+                                el.name.indexOf("Air") === -1 &&
                                 (el.name.indexOf("11 64") != -1 ||
                                   el.name.indexOf("11 128") != -1) && (
                                   <span>{" - " + el.provider}</span>
@@ -1335,6 +1337,7 @@ const Apple = ({ double }) => {
                             {baseFix(el) &&
                               el.name.indexOf("ASIS") === -1 &&
                               el.name.indexOf("Asis") === -1 &&
+                              el.name.indexOf("Air") === -1 &&
                               (el.name.indexOf("13 128") != -1 ||
                                 el.name.indexOf("13 256") != -1 ||
                                 el.name.indexOf("13 512") != -1) &&
@@ -1347,6 +1350,7 @@ const Apple = ({ double }) => {
                               {baseFix(el) &&
                                 el.name.indexOf("ASIS") === -1 &&
                                 el.name.indexOf("Asis") === -1 &&
+                                el.name.indexOf("Air") === -1 &&
                                 (el.name.indexOf("13 128") != -1 ||
                                   el.name.indexOf("13 256") != -1 ||
                                   el.name.indexOf("13 512") != -1) && (
