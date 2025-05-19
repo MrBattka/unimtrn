@@ -127,18 +127,9 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
       <div className="App">
-        <Header />
-
+        <h2 className="title">Под заказ</h2>
         <img className="img" src={icon} alt="Not found" />
-
-        {/* Metr */}
-
-        <Routes>
-          <Route
-            path="/"
-            element={
               <IndexPriceForOrder
                 dataUnimtrn={unimtrn}
                 hi={hi}
@@ -149,61 +140,7 @@ const App = () => {
                 baseData={deleteDoubleProduct}
                 handleImport={handleImportForOrder}
               />
-            }
-          />
-          <Route
-            path="/unimtrn"
-            element={
-              <IndexPriceForOrder
-                dataUnimtrn={unimtrn}
-                hi={hi}
-                el={dataHi}
-                mihonorData={mihonor}
-                mioptsData={miopts}
-                superpriceData={superprice}
-                baseData={deleteDoubleProduct}
-                handleImport={handleImportForOrder}
-              />
-            }
-          />
-          <Route
-            path="/price-for-order"
-            element={
-              <IndexPriceForOrder
-                dataUnimtrn={unimtrn}
-                hi={hi}
-                el={dataHi}
-                mihonorData={mihonor}
-                mioptsData={miopts}
-                superpriceData={superprice}
-                baseData={deleteDoubleProduct}
-                handleImport={handleImportForOrder}
-              />
-            }
-          />
-          <Route
-            path="/price-from-base"
-            element={
-              <IndexFromBase
-                el={dataUnimtrn}
-                handleImportFromBase={handleImportFromBase}
-                fullList={fullList}
-              />
-            }
-          />
-          {/* <Route
-            path="/id-creater"
-            element={
-              <IDCreater
-              hi={hi}
-              el={dataUnimtrn}
-              handleImport={handleImportForOrder}
-              />
-            }
-          /> */}
-        </Routes>
       </div>
-    </BrowserRouter>
   );
 };
 
