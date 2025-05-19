@@ -158,6 +158,18 @@ export const returnIDXiaomi = (name) => {
     return 30612;
   } else if (name.indexOf("c65 8/256 purple") !== -1) {
     return 30614;
+  } else if (name.indexOf("poco c71 4/64 black") != -1) {
+    return 38874;
+  } else if (name.indexOf("poco c71 4/64 blue") != -1) {
+    return 38973;
+  } else if (name.indexOf("poco c71 4/64 gold") != -1) {
+    return 38974;
+  } else if (name.indexOf("poco c71 6/128 black") != -1) {
+    return 38978;
+  } else if (name.indexOf("poco c71 6/128 blue") != -1) {
+    return 38979;
+  } else if (name.indexOf("poco c71 6/128 gold") != -1) {
+    return 38980;
   } else if (name.indexOf("c75 6/128 black") !== -1) {
     return 37385;
   } else if (name.indexOf("c75 6/128 gold") !== -1) {
@@ -1662,6 +1674,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("black") !== -1
@@ -1670,6 +1683,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("blue") !== -1
@@ -1678,6 +1692,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("green") !== -1
@@ -1686,6 +1701,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1694,6 +1710,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("black") !== -1
@@ -1702,6 +1719,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("blue") !== -1
@@ -1710,6 +1728,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("green") !== -1
@@ -1718,6 +1737,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1726,6 +1746,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("black") !== -1
@@ -1734,6 +1755,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("blue") !== -1
@@ -1742,6 +1764,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("green") !== -1
@@ -1750,6 +1773,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") == -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1758,6 +1782,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("black") !== -1
@@ -1766,6 +1791,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("green") !== -1
@@ -1774,6 +1800,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("6/128") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1782,6 +1809,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("black") !== -1
@@ -1790,6 +1818,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("green") !== -1
@@ -1798,6 +1827,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("8/128") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1806,6 +1836,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("black") !== -1
@@ -1814,6 +1845,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("green") !== -1
@@ -1822,6 +1854,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("8/256") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1830,6 +1863,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("12/256") !== -1 &&
     name.indexOf("black") !== -1
@@ -1838,6 +1872,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("12/256") !== -1 &&
     name.indexOf("green") !== -1
@@ -1846,6 +1881,7 @@ export const returnIDXiaomi = (name) => {
   } else if (
     name.indexOf("note 14") !== -1 &&
     name.indexOf("note 14 Pro") == -1 &&
+    name.indexOf("note 14s") == -1 &&
     name.indexOf("5g") !== -1 &&
     name.indexOf("12/256") !== -1 &&
     name.indexOf("purple") !== -1
@@ -1947,6 +1983,60 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("purple") !== -1
   ) {
     return 37673;
+  } else if (
+    name.indexOf("note 14s") !== -1 &&
+    name.indexOf("8/256") !== -1 &&
+    name.indexOf("purple") !== -1
+  ) {
+    return 38796;
+  } else if (
+    name.indexOf("note 14s") !== -1 &&
+    name.indexOf("8/256") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
+    return 38797;
+  } else if (
+    name.indexOf("note 14s") !== -1 &&
+    name.indexOf("8/256") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38798;
+  } else if (
+    name.indexOf("note 14s") != -1 &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("purple") != -1
+  ) {
+    return 38920;
+  } else if (
+    name.indexOf("note 14s") != -1 &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 38921;
+  } else if (
+    name.indexOf("note 14s") != -1 &&
+    name.indexOf("12/512") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 38922;
+  } else if (
+    name.indexOf("note 14s") != -1 &&
+    name.indexOf("8/128") != -1 &&
+    name.indexOf("purple") != -1
+  ) {
+    return 38914;
+  } else if (
+    name.indexOf("note 14s") != -1 &&
+    name.indexOf("8/128") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 38915;
+  } else if (
+    name.indexOf("note 14s") != -1 &&
+    name.indexOf("8/128") != -1 &&
+    name.indexOf("blue") != -1
+  ) {
+    return 38916;
   } else if (name.indexOf("note 13r pro 12/256 black") !== -1) {
     return 30889;
   } else if (name.indexOf("note 13r pro 12/256 blue") !== -1) {
