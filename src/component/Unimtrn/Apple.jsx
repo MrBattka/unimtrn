@@ -1243,6 +1243,7 @@ const Apple = ({ double }) => {
                               el.name.indexOf("ASIS") === -1 &&
                               el.name.indexOf("Asis") === -1 &&
                               el.name.indexOf("Air") === -1 &&
+                              el.name.indexOf("iPad") === -1 &&
                               (el.name.indexOf("11 64") != -1 ||
                                 el.name.indexOf("11 128") != -1) &&
                               (is11 || setIs11(true)) &&
@@ -1255,6 +1256,7 @@ const Apple = ({ double }) => {
                                 el.name.indexOf("ASIS") === -1 &&
                                 el.name.indexOf("Asis") === -1 &&
                                 el.name.indexOf("Air") === -1 &&
+                                el.name.indexOf("iPad") === -1 &&
                                 (el.name.indexOf("11 64") != -1 ||
                                   el.name.indexOf("11 128") != -1) && (
                                   <span>{" - " + el.provider}</span>

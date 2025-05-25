@@ -185,17 +185,35 @@ export const returnIDGarmin = (nameStock) => {
     return 27338;
   } else if (name.indexOf("forerunner 255 music black") != -1) {
     return 27337;
-  } else if (name.indexOf("forerunner 265 black") != -1) {
+  } else if (
+    name.indexOf("forerunner 265") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 27327;
-  } else if (name.indexOf("forerunner 265 aqua") != -1) {
+  } else if (
+    name.indexOf("forerunner 265") !== -1 &&
+    name.indexOf("aqua") !== -1
+  ) {
     return 27328;
-  } else if (name.indexOf("forerunner 265 white") != -1) {
+  } else if (
+    name.indexOf("forerunner 265") !== -1 &&
+    name.indexOf("white") !== -1
+  ) {
     return 27326;
-  } else if (name.indexOf("forerunner 265s black") != -1) {
+  } else if (
+    name.indexOf("forerunner 265s") !== -1 &&
+    name.indexOf("black") !== -1
+  ) {
     return 27325;
-  } else if (name.indexOf("forerunner 265s pink") != -1) {
+  } else if (
+    name.indexOf("forerunner 265s") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
     return 27324;
-  } else if (name.indexOf("forerunner 265s white") != -1) {
+  } else if (
+    name.indexOf("forerunner 265s") !== -1 &&
+    name.indexOf("white") !== -1
+  ) {
     return 27323;
   } else if (name.indexOf("forerunner 45 black") != -1) {
     return 35807;
@@ -774,7 +792,6 @@ export const returnIDGarmin = (nameStock) => {
     name.indexOf("black") != -1
   ) {
     return 24834;
-
   } else if (
     name.indexOf("forerunner 165") != -1 &&
     name.indexOf("black/slate") != -1 &&
@@ -799,10 +816,9 @@ export const returnIDGarmin = (nameStock) => {
   } else if (
     name.indexOf("forerunner 165") != -1 &&
     name.indexOf("turquoise/aqua") != -1 &&
-    name.indexOf("music") != -1 
+    name.indexOf("music") != -1
   ) {
     return 37172;
-
   } else if (
     name.indexOf(
       "garmin fenix 7x sapphire solar carbon gray dlc titanium / black band"
@@ -1030,38 +1046,43 @@ export const returnIDGarmin = (nameStock) => {
     name.indexOf("surf edition mavericks") != -1
   ) {
     return 35790;
-  } else if (name.indexOf("instinct 2s") != -1 &&
-  name.indexOf("camo edition") != -1 &&
-  name.indexOf("mist camo") != -1) {
+  } else if (
+    name.indexOf("instinct 2s") != -1 &&
+    name.indexOf("camo edition") != -1 &&
+    name.indexOf("mist camo") != -1
+  ) {
     return 35766;
   } else if (
-  name.indexOf("instinct 2s") != -1 &&
-  name.indexOf("solar") != -1 &&
-  name.indexOf("graphite") != -1) {
+    name.indexOf("instinct 2s") != -1 &&
+    name.indexOf("solar") != -1 &&
+    name.indexOf("graphite") != -1
+  ) {
     return 35761;
   } else if (
-  name.indexOf("instinct 2s") != -1 &&
-  name.indexOf("solar") != -1 &&
-  name.indexOf("mist") != -1 &&
-  name.indexOf("gray") != -1) {
+    name.indexOf("instinct 2s") != -1 &&
+    name.indexOf("solar") != -1 &&
+    name.indexOf("mist") != -1 &&
+    name.indexOf("gray") != -1
+  ) {
     return 35762;
   } else if (
-  name.indexOf("instinct 2s") != -1 &&
-  name.indexOf("solar") != -1 &&
-  name.indexOf("neo") != -1 &&
-  name.indexOf("tropic") != -1) {
+    name.indexOf("instinct 2s") != -1 &&
+    name.indexOf("solar") != -1 &&
+    name.indexOf("neo") != -1 &&
+    name.indexOf("tropic") != -1
+  ) {
     return 35763;
   } else if (
     name.indexOf("instinct 2s") != -1 &&
-  name.indexOf("standard") != -1 &&
-  name.indexOf("deep") != -1 &&
-  name.indexOf("orchid") != -1
+    name.indexOf("standard") != -1 &&
+    name.indexOf("deep") != -1 &&
+    name.indexOf("orchid") != -1
   ) {
     return 35764;
   } else if (
     name.indexOf("instinct 2s") != -1 &&
-  name.indexOf("standard") != -1 &&
-  name.indexOf("graphite") != -1
+    name.indexOf("standard") != -1 &&
+    name.indexOf("graphite") != -1
   ) {
     return 35765;
   } else if (name.indexOf("garmin instinct 2x flame red") != -1) {
@@ -1154,7 +1175,6 @@ export const returnIDGarmin = (nameStock) => {
     return 35812;
   } else if (name.indexOf("garmin tactix charlie") != -1) {
     return 14384;
-  
   } else if (
     name.indexOf("venu 2 plus") != -1 &&
     name.indexOf("gps") != -1 &&
@@ -1171,8 +1191,6 @@ export const returnIDGarmin = (nameStock) => {
     name.indexOf("ww") != -1
   ) {
     return 25030;
-  
- 
   } else if (
     name.indexOf("venu 2 plus") != -1 &&
     name.indexOf("gps") != -1 &&
@@ -1191,7 +1209,6 @@ export const returnIDGarmin = (nameStock) => {
     name.indexOf("ww") != -1
   ) {
     return 25025;
-  
   } else if (
     name.indexOf("venu 2 plus") != -1 &&
     name.indexOf("gps") != -1 &&
@@ -1203,7 +1220,7 @@ export const returnIDGarmin = (nameStock) => {
     name.indexOf("venu 2 plus") != -1 &&
     name.indexOf("gps") != -1 &&
     name.indexOf("ivory case") != -1 &&
-    name.indexOf("silicone band") != -1 
+    name.indexOf("silicone band") != -1
   ) {
     return 25031;
   } else if (
