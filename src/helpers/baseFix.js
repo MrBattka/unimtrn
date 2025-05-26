@@ -90,6 +90,7 @@ export const baseFix = (el) => {
     toLowerCase?.indexOf("мяты") == -1 &&
     toLowerCase?.indexOf("rfb") == -1 &&
     toLowerCase?.indexOf("корпус") == -1 &&
+    toLowerCase?.indexOf("надор") == -1 &&
     el !== "Товар"
   );
 };
