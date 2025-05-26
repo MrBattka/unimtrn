@@ -12,7 +12,6 @@ export const baseFix = (el) => {
     toLowerCase.indexOf("usb-c lightning") == -1 &&
     toLowerCase.indexOf("муляж") == -1 &&
     toLowerCase.indexOf("кожа") == -1 &&
-    toLowerCase.indexOf("silicon") == -1 &&
     toLowerCase.indexOf("grip case") == -1 &&
     toLowerCase.indexOf("sult case") == -1 &&
     toLowerCase.indexOf("power bank") == -1 &&
@@ -90,6 +89,7 @@ export const baseFix = (el) => {
     toLowerCase?.indexOf("пятно") == -1 &&
     toLowerCase?.indexOf("мяты") == -1 &&
     toLowerCase?.indexOf("rfb") == -1 &&
+    toLowerCase?.indexOf("корпус") == -1 &&
     el !== "Товар"
   );
 };

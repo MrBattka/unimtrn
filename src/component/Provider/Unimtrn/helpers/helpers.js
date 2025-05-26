@@ -59,7 +59,8 @@ export const fixNameUnimtrn = (el) => {
       : removeDoubleSpace;
   const fixIPad9 = removeFirstDoubleSpace.replace(IPad9, "iPad 9");
   const fixWiSpaceFi = fixIPad9.replace("Wi Fi", "Wi-Fi");
-  const fixWatchS8 = fixWiSpaceFi.replace(watchS8, "S8");
+  const fixGarmin = fixWiSpaceFi.replace("Watch Garmin", "Garmin");
+  const fixWatchS8 = fixGarmin.replace(watchS8, "S8");
   const fixWiFi = fixWatchS8.replace(wiFi, "Wi-Fi");
   const fixAWS9Space = fixWiFi.replace(aw9Space, "S9");
   const fixAWS9 = fixAWS9Space.replace(aws9, "S9");

@@ -5,6 +5,7 @@ import { baseFix } from "../../helpers/baseFix";
 import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
+import { fixNameUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
 
 const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
   const res = [];
@@ -186,15 +187,15 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
 
                 {isGarmin && <br />}
                 {isGarmin && <div>⌚ **Garmin**</div>}
-                {superprice.length ? (
-                  superprice.map((garminEl, index) => (
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((garminEl, index) => (
                     <div key={index}>
                       {baseFix(garminEl) &&
                       garminEl.price &&
                         (garminEl.name.indexOf("Garmin") != -1 ||
                           garminEl.name.indexOf("GARMIN") != -1) &&
                         (isGarmin || setIsGarmin(true)) &&
-                        returnFixPrice(garminEl, garminEl.name) + newPrice(garminEl.name, garminEl.price)}
+                        returnFixPrice(garminEl, fixNameUnimtrn(garminEl)) + newPrice(garminEl.name, garminEl.price)}
                     </div>
                   ))
                 ) : (

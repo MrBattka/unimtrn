@@ -269,6 +269,7 @@ const Samsung = ({ double }) => {
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
+                        el.name.indexOf("iPad") === -1 &&
                         (el.name.indexOf("A05s ") != -1 ||
                           el.name.indexOf("A05 ") != -1 ||
                           el.name.indexOf("A06 ") != -1 ||
@@ -309,6 +310,7 @@ const Samsung = ({ double }) => {
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
+                        el.name.indexOf("iPad") === -1 &&
                           (el.name.indexOf("A05s ") != -1 ||
                             el.name.indexOf("A05 ") != -1 ||
                             el.name.indexOf("A06 ") != -1 ||

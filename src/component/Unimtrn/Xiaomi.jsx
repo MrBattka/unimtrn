@@ -181,7 +181,7 @@ const Xiaomi = ({ double }) => {
                 <div>👇 **Xiaomi**</div>
 
                 {isMi && <br />}
-                {isMi && <div>📱 Mi</div>}
+                {isMi && <div>📱 Mi Phone</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -221,7 +221,7 @@ const Xiaomi = ({ double }) => {
                   <tr></tr>
                 )}
                 {isMiPad && <br />}
-                {isMiPad && <div>📱 Mi Pad</div>}
+                {isMiPad && <div>📟 Mi Pad</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -419,7 +419,7 @@ const Xiaomi = ({ double }) => {
                   <tr></tr>
                 )}
                 {isPoco && <br />}
-                {isPoco && <div>📱 Poco</div>}
+                {isPoco && <div>📱 Poco Phone</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
