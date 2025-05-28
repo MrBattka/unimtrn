@@ -1567,7 +1567,7 @@ const Apple = ({ double }) => {
                         <tr></tr>
                       )}
                       {is16e && <br />}
-                      {is16e && <div>📱 **🔥iPhone 16e🔥**</div>}
+                      {is16e && <div>📱 **iPhone 16e**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
                           <div key={index}>

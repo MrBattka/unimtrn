@@ -13,7 +13,8 @@ const Dyson = ({ double, dataUnimtrn }) => {
   let dyson = /Dyson/gi;
 
   const fixName = (name) => {
-    return name.replace(dyson, "");
+    const replaceFire = name.replace("🔥", "")
+    return replaceFire.replace(dyson, "");
   };
 
   const [isOpen, setIsOpen] = useState(false);
