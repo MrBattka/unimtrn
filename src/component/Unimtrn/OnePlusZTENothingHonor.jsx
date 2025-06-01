@@ -6,7 +6,7 @@ import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
 import Footer from "./Footer";
 
-const OnePlusZTENothingHonor = ({ double }) => {
+const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -176,9 +176,10 @@ const OnePlusZTENothingHonor = ({ double }) => {
                               )
                             : el.stockPrice)}
                       <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("OnePlus Buds") != -1 && (
-                          <span>{" - " + el.provider}</span>
-                        )}
+                        {baseFix(el) &&
+                          el.name.indexOf("OnePlus Buds") != -1 && (
+                            <span>{" - " + el.provider}</span>
+                          )}
                       </h3>
                     </div>
                   ))
@@ -206,9 +207,10 @@ const OnePlusZTENothingHonor = ({ double }) => {
                               )
                             : el.stockPrice)}
                       <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("OnePlus Watch") != -1 && (
-                          <span>{" - " + el.provider}</span>
-                        )}
+                        {baseFix(el) &&
+                          el.name.indexOf("OnePlus Watch") != -1 && (
+                            <span>{" - " + el.provider}</span>
+                          )}
                       </h3>
                     </div>
                   ))
@@ -238,12 +240,13 @@ const OnePlusZTENothingHonor = ({ double }) => {
                               )
                             : el.stockPrice)}
                       <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("OnePlus") != -1 &&
-                        el.name.indexOf("OnePlus Buds") === -1 &&
-                        el.name.indexOf("OnePlus Pad") === -1 &&
-                        el.name.indexOf("OnePlus Watch") === -1 && (
-                          <span>{" - " + el.provider}</span>
-                        )}
+                        {baseFix(el) &&
+                          el.name.indexOf("OnePlus") != -1 &&
+                          el.name.indexOf("OnePlus Buds") === -1 &&
+                          el.name.indexOf("OnePlus Pad") === -1 &&
+                          el.name.indexOf("OnePlus Watch") === -1 && (
+                            <span>{" - " + el.provider}</span>
+                          )}
                       </h3>
                     </div>
                   ))
@@ -270,9 +273,10 @@ const OnePlusZTENothingHonor = ({ double }) => {
                               )
                             : el.stockPrice)}
                       <h3 className="del">
-                        {baseFix(el) && el.name.indexOf("OnePlus Pad") !== -1 && (
-                          <span>{" - " + el.provider}</span>
-                        )}
+                        {baseFix(el) &&
+                          el.name.indexOf("OnePlus Pad") !== -1 && (
+                            <span>{" - " + el.provider}</span>
+                          )}
                       </h3>
                     </div>
                   ))
@@ -356,7 +360,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.name.indexOf("Nothing Ear") != -1) &&
+                        el.name.indexOf("Nothing Ear") != -1 &&
                         (isNothingEar || setIsNothingEar(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
@@ -371,7 +375,7 @@ const OnePlusZTENothingHonor = ({ double }) => {
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
-                          (el.name.indexOf("Nothing Ear") != -1) && (
+                          el.name.indexOf("Nothing Ear") != -1 && (
                             <span>{" - " + el.provider}</span>
                           )}
                       </h3>
@@ -383,26 +387,17 @@ const OnePlusZTENothingHonor = ({ double }) => {
 
                 {isHonor && <br />}
                 {isHonor && <div>📱 **Honor**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((el, index) => (
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         el.name.indexOf("Honor") != -1 &&
                         (isHonor || setIsHonor(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
-                              })`
-                            : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              )
-                            : el.stockPrice)}
+                          newPrice(el.name, el.price)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Honor") != -1 && (
-                          <span>{" - " + el.provider}</span>
+                          <span>{" - Unimtrn"}</span>
                         )}
                       </h3>
                     </div>

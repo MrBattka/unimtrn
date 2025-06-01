@@ -64,7 +64,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("яндекс") !== -1 ||
     name.indexOf("станция") !== -1
   ) {
-    return Number(price) + 300;
+    return Number(price) + 500;
   } else if (
     name.indexOf("pixel") !== -1 ||
     name.indexOf("se (2022) gen") !== -1 ||
@@ -108,7 +108,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("airpods 3") !== -1 ||
     name.indexOf("airpods 4") !== -1
   ) {
-    return Number(price) + 300;
+    return Number(price) + 500;
   } else if (
     name.indexOf("11 64") !== -1 ||
     name.indexOf("11 128") !== -1 ||
@@ -136,7 +136,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("google") !== -1 ||
     name.indexOf("xperia") !== -1
   ) {
-    return Number(price) + 400;
+    return Number(price) + 500;
   } else if (
     name.indexOf("ipad 9") !== -1 ||
     name.indexOf("rog") !== -1 ||
@@ -192,7 +192,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("s9 4") !== -1 ||
     name.indexOf("aw 9") !== -1
   ) {
-    return Number(price) + 500;
+    return Number(price) + 600;
   } else if (
     name.indexOf("z flip") !== -1 ||
     name.indexOf("z fold") !== -1 ||
@@ -235,7 +235,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("garmin") !== -1 ||
     name.indexOf("s25") !== -1
   ) {
-    return Number(price) + 600;
+    return Number(price) + 700;
   } else if (
     name.indexOf("16 pro 128") !== -1 ||
     name.indexOf("16 pro 256") !== -1 ||

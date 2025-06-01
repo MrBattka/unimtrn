@@ -369,7 +369,7 @@ const IndexPriceForOrder = ({
         <GarminGoProDji double={allPriceArr} superprice={superpriceData} dataUnimtrn={dataUnimtrn} />
         <NoName double={allPriceArr} dataUnimtrn={dataUnimtrn} mihonorData={mihonorData} />
         <GoogleSonyAsusLenovo double={allPriceArr} dataUnimtrn={dataUnimtrn} superprice={superpriceData} />
-        <OnePlusZTENothingHonor double={allPriceArr} />
+        <OnePlusZTENothingHonor double={allPriceArr} dataUnimtrn={dataUnimtrn} />
         <GameConsoles double={allPriceArr} />
         <Samsung double={allPriceArr} />
         <Xiaomi double={allPriceArr} />

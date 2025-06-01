@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { returnFixPrice, returnFixPrice1 } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import { returnFixPrice1 } from "../../helpers/fixPrice";
+import { newPrice } from "../../helpers/newPrice";
 import Footer from "./Footer";
-import Product from "../Common/Product";
+import style from "./styles.module.css";
 
 const Dyson = ({ double, dataUnimtrn }) => {
   const res = [];

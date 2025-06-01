@@ -89,6 +89,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
   const [isInfinix, setIsInfinix] = useState(false);
   const [isOppo, setIsOppo] = useState(false);
   const [isHuawei, setIsHuawei] = useState(false);
+  const [isHuaweiWatch, setIsHuaweiWatch] = useState(false);
   const [isRealme, setIsRealme] = useState(false);
   const [isTecno, setIsTecno] = useState(false);
   const [isProduct, setIsProduct] = useState(false);
@@ -244,30 +245,6 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                   <tr></tr>
                 )}
 
-                {isHonor && <br />}
-                {isHonor && <div>📱 **Honor**</div>}
-                {mihonorData.length ? (
-                  mihonorData.map((el, index) => (
-                    <div key={index}>
-                      {baseFixMiHonor(el) &&
-                        el.name.indexOf("HONOR") != -1 &&
-                        (isHonor || setIsHonor(true)) &&
-                        returnNameInArrMihonor(fixNameMihonor(el.name)) +
-                          `${newPrice(
-                            el.name,
-                            returnExtraPriceMihonor(fixNameMihonor(el.name))
-                          )} 👉 (${
-                            newPrice(
-                              el.name,
-                              returnStockPriceMihonor(fixNameMihonor(el.name))
-                            ) + " - от 3шт."
-                          })`}
-                    </div>
-                  ))
-                ) : (
-                  <tr></tr>
-                )}
-
                 {isInfinix && <br />}
                 {isInfinix && <div>📱 **Infinix**</div>}
                 {mihonorData.length ? (
@@ -324,7 +301,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                 )}
 
                 {isHuawei && <br />}
-                {isHuawei && <div>📱 **Huawei**</div>}
+                {isHuawei && <div>📱 **Huawei Phone**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -332,6 +309,30 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (el.name.indexOf("Huawei") != -1 ||
                           el.name.indexOf("HUAWEI") != -1) &&
                         (isHuawei || setIsHuawei(true)) &&
+                        returnFixPrice(el, fixName(el)) +
+                          newPrice(el.name, el.price)}
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          (el.name.indexOf("Huawei") != -1 ||
+                            el.name.indexOf("HUAWEI") != -1) && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isHuaweiWatch && <br />}
+                {isHuaweiWatch && <div>⌚ **Huawei Watch**</div>}
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        (el.name.indexOf("Huawei Watch") != -1 ||
+                          el.name.indexOf("HUAWEI WATCH") != -1) &&
+                        (isHuaweiWatch || setIsHuaweiWatch(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${newPrice(el.name, el.extraPrice)} 👉 (${
@@ -345,8 +346,8 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
-                          (el.name.indexOf("Huawei") != -1 ||
-                            el.name.indexOf("HUAWEI") != -1) && (
+                          (el.name.indexOf("Huawei Watch") != -1 ||
+                          el.name.indexOf("HUAWEI WATCH") != -1) && (
                             <span>{" - " + el.provider}</span>
                           )}
                       </h3>
