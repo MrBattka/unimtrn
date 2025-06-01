@@ -310,7 +310,16 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                           el.name.indexOf("HUAWEI") != -1) &&
                         (isHuawei || setIsHuawei(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.price)}
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Huawei") != -1 ||
@@ -338,7 +347,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Huawei Watch") != -1 ||
-                          el.name.indexOf("HUAWEI WATCH") != -1) && (
+                            el.name.indexOf("HUAWEI WATCH") != -1) && (
                             <span>{" - Unimtrn"}</span>
                           )}
                       </h3>
