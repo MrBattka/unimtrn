@@ -20,6 +20,10 @@
   font-size: 35px;
 }
 
+.title_red {
+  color: #ff0000;
+}
+
 
 @media (max-width: 1024px) {
   .img {

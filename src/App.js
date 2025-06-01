@@ -128,7 +128,7 @@ const App = () => {
 
   return (
       <div className="App">
-        <h2 className="title">Под заказ</h2>
+        <h2 className="title"><span className="title_red">Под</span> заказ</h2>
         <img className="img" src={icon} alt="Not found" />
               <IndexPriceForOrder
                 dataUnimtrn={unimtrn}
