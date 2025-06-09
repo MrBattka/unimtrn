@@ -235,7 +235,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("garmin") !== -1 ||
     name.indexOf("s25") !== -1
   ) {
-    return Number(price) + 700;
+    return Number(price) + 800;
   } else if (
     name.indexOf("16 pro 128") !== -1 ||
     name.indexOf("16 pro 256") !== -1 ||
@@ -251,7 +251,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("16 pro max 1tb") !== -1 ||
     name.indexOf("ultra 2") !== -1
   ) {
-    return Number(price) + 800;
+    return Number(price) + 1200;
   } else if (
     name.indexOf("mac") !== -1 ||
     name.indexOf("macbook") !== -1 ||
