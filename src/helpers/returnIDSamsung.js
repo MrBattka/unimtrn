@@ -4394,6 +4394,100 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("silver") !== -1
   ) {
     return 38964;
+
+
+} else if (
+    name.indexOf("tab s10 fe") !== -1 &&
+    name.indexOf("tab s10 fe +") === -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38958;
+  } else if (
+    name.indexOf("tab s10 fe") !== -1 &&
+    name.indexOf("tab s10 fe +") === -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38959;
+  } else if (
+    name.indexOf("tab s10 fe") !== -1 &&
+    name.indexOf("tab s10 fe +") === -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38960;
+  } else if (
+    name.indexOf("tab s10 fe") !== -1 &&
+    name.indexOf("tab s10 fe +") === -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38953;
+  } else if (
+    name.indexOf("tab s10 fe") !== -1 &&
+    name.indexOf("tab s10 fe +") === -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38870;
+  } else if (
+    name.indexOf("tab s10 fe") !== -1 &&
+    name.indexOf("tab s10 fe +") === -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38954;
+  } else if (
+    name.indexOf("tab s10 fe +") !== -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38968;
+  } else if (
+    name.indexOf("tab s10 fe +") !== -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38969;
+  } else if (
+    name.indexOf("tab s10 fe +") !== -1 &&
+    name.indexOf("12/256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38970;
+  } else if (
+    name.indexOf("tab s10 fe +") !== -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38963;
+  } else if (
+    name.indexOf("tab s10 fe +") !== -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("gray") !== -1
+  ) {
+    return 38872;
+  } else if (
+    name.indexOf("tab s10 fe +") !== -1 &&
+    name.indexOf("8/128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38964;
+
+
   } else if (
     name.indexOf("tab s10 +") != -1 &&
     name.indexOf("5g") != -1 &&

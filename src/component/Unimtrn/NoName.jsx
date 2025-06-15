@@ -424,26 +424,17 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
 
                 {isYandex && <br />}
                 {isYandex && <div>🔊 **Яндекс**</div>}
-                {allPriceArr.length ? (
-                  allPriceArr.map((el, index) => (
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         el.name.indexOf("Яндекс") != -1 &&
                         (isYandex || setIsYandex(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
-                              })`
-                            : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
-                                el.condition ? el.extraPrice : el.stockPrice
-                              )
-                            : el.stockPrice)}
+                          newPrice(el.name, el.price)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Яндекс") != -1 && (
-                          <span>{" - " + el.provider}</span>
+                          <span>{" - Unimtrn"}</span>
                         )}
                       </h3>
                     </div>
