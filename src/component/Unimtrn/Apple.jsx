@@ -777,7 +777,6 @@ const Apple = ({ double }) => {
     );
   };
 
-
   return (
     <div>
       <div>
@@ -1044,7 +1043,7 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      {isAsIs15 && (isAsIs13 || isAsIs14) &&  <br />}
+                      {isAsIs15 && (isAsIs13 || isAsIs14) && <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
@@ -1089,7 +1088,7 @@ const Apple = ({ double }) => {
                       ) : (
                         <tr></tr>
                       )}
-                      {isAsIs16 && (isAsIs13 || isAsIs14 || isAsIs15) &&  <br />}
+                      {isAsIs16 && (isAsIs13 || isAsIs14 || isAsIs15) && <br />}
                       {allPriceArr.length ? (
                         allPriceArr.map((asis, index) => (
                           <div key={index}>
@@ -1706,21 +1705,8 @@ const Apple = ({ double }) => {
                             {baseFix(iPhone16PM) &&
                               iPhone16PM.name.indexOf("ASIS") === -1 &&
                               iPhone16PM.name.indexOf("Asis") === -1 &&
-                              (iPhone16PM.name.indexOf("16 ProMax 256") != -1 ||
-                                iPhone16PM.name.indexOf("16 ProMax 512") !=
-                                  -1 ||
-                                iPhone16PM.name.indexOf("16 ProMax 1Tb") !=
-                                  -1 ||
-                                iPhone16PM.name.indexOf("16 Pro Max 256") !=
-                                  -1 ||
-                                iPhone16PM.name.indexOf("16 Pro Max 512") !=
-                                  -1 ||
-                                iPhone16PM.name.indexOf("16 Pro Max 1Tb") !=
-                                  -1 ||
-                                iPhone16PM.name.indexOf("16 Pro Max 1TB") !=
-                                  -1 ||
-                                iPhone16PM.name.indexOf("16 Pro Max 1Tb") !=
-                                  -1) &&
+                              (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
+                                iPhone16PM.name.indexOf("16 Pro Max") != -1) &&
                               (is16ProMax || setIs16ProMax(true)) &&
                               returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
                                 (iPhone16PM.provider !== "База"
@@ -1733,21 +1719,8 @@ const Apple = ({ double }) => {
                               {baseFix(iPhone16PM) &&
                                 iPhone16PM.name.indexOf("ASIS") === -1 &&
                                 iPhone16PM.name.indexOf("Asis") === -1 &&
-                                (iPhone16PM.name.indexOf("16 ProMax 256") !=
-                                  -1 ||
-                                  iPhone16PM.name.indexOf("16 ProMax 512") !=
-                                    -1 ||
-                                  iPhone16PM.name.indexOf("16 ProMax 1Tb") !=
-                                    -1 ||
-                                  iPhone16PM.name.indexOf("16 Pro Max 256") !=
-                                    -1 ||
-                                  iPhone16PM.name.indexOf("16 Pro Max 512") !=
-                                    -1 ||
-                                  iPhone16PM.name.indexOf("16 Pro Max 1Tb") !=
-                                    -1 ||
-                                  iPhone16PM.name.indexOf("16 Pro Max 1TB") !=
-                                    -1 ||
-                                  iPhone16PM.name.indexOf("16 Pro Max 1Tb") !=
+                                (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
+                                  iPhone16PM.name.indexOf("16 Pro Max") !=
                                     -1) && (
                                   <span>{" - " + iPhone16PM.provider}</span>
                                 )}

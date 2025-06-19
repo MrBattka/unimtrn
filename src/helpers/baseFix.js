@@ -186,7 +186,7 @@ export const baseFixHi = (el) => {
     el.name.indexOf("⏳") == -1 &&
     el.name.indexOf("20W") == -1 &&
     el.name.indexOf("От ") == -1 &&
-    
+    el.name.indexOf("ASIS") == -1 &&
     el.name.indexOf(" ") == -1 &&
     el.name.indexOf("сетевой") == -1 &&
     el.name.indexOf("питания") == -1 &&

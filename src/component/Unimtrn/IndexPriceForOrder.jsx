@@ -94,7 +94,6 @@ const IndexPriceForOrder = ({
         
         baseFixHi(hiEl) &&
         returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&  
-        // returnStockPriceHi(hiEl.name) &&
         allPriceArr.push({
           id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
