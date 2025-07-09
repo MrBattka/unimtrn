@@ -277,6 +277,9 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("A16 ") != -1 ||
                           el.name.indexOf("A25 ") != -1 ||
                           el.name.indexOf("A24 ") != -1 ||
+                          el.name.indexOf("A26 ") != -1 ||
+                          el.name.indexOf("A36 ") != -1 ||
+                          el.name.indexOf("A56 ") != -1 ||
                           el.name.indexOf("F15 ") != -1 ||
                           el.name.indexOf("M55 ") != -1 ||
                           el.name.indexOf("M55S ") != -1 ||
@@ -319,6 +322,9 @@ const Samsung = ({ double }) => {
                             el.name.indexOf("A24 ") != -1 ||
                             el.name.indexOf("A54 ") != -1 ||
                             el.name.indexOf("A34 ") != -1 ||
+                            el.name.indexOf("A26 ") != -1 ||
+                          el.name.indexOf("A36 ") != -1 ||
+                          el.name.indexOf("A56 ") != -1 ||
                             el.name.indexOf("A35 ") != -1 ||
                             el.name.indexOf("M34 ") != -1 ||
                             el.name.indexOf("M54 ") != -1 ||
