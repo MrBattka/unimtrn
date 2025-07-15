@@ -170,28 +170,14 @@ export const changeFlag = (el) => {
 
 export const checkFixPrice = (el) => {
   return flags.reduce(
-    (acc, current) => acc && el.Товар.indexOf(current) === -1,
-    true
-  );
-};
-export const returnFixPrice = (el, prod) => {
-  if (checkFixPrice(el) || el.Товар.indexOf("USB") != -1) {
-    return `${prod} - `;
-  } else {
-    return prod;
-  }
-};
-
-export const checkFixPriceHi = (prod) => {
-  return flags.reduce(
-    (acc, current) => acc && prod.name.indexOf(current) === -1,
+    (acc, current) => acc && el.name.indexOf(current) === -1,
     true
   );
 };
 export const returnFixPriceHi = (el, prod) => {
-  console.log(prod + "prod");
-  if (checkFixPriceHi(el)) {
-    return `${prod} - `;
+  if (checkFixPrice(el) || el.name.indexOf("USB") != -1) {
+    
+    return prod;
   } else {
     return prod;
   }

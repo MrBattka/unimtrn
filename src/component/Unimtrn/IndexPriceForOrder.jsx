@@ -10,29 +10,13 @@ import {
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
 import { returnIDSamsung } from "../../helpers/returnIDSamsung";
+import { returnFixNameBase } from "../Provider/Base/helpers/helpers";
 import {
   fixNameHi,
   returnExtraPriceHi,
   returnNameInArrHi,
   returnStockPriceHi,
 } from "../Provider/Hi/helpers/helpers";
-import { returnApple } from "../Provider/Unimtrn/Apple/apple";
-import { returnDyson } from "../Provider/Unimtrn/Dyson/dyson";
-import { returnGameConsole } from "../Provider/Unimtrn/GameConsole/gameConsole";
-import { returnOtherProduct } from "../Provider/Unimtrn/OtherProduct/otherProduct";
-import { returnSamsung } from "../Provider/Unimtrn/Samsung/samsung";
-import { returnXiaomi } from "../Provider/Unimtrn/Xiaomi/xiaomi";
-import { fixNameUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
-import Apple from "./Apple";
-import Dyson from "./Dyson";
-import GoogleSonyAsusLenovo from "./GoogleSonyAsusLenovo";
-import style from "./indexPicrForOrder.module.css";
-import GarminGoProDji from "./GarminGoproDji";
-import NoName from "./NoName";
-import OnePlusZTENothingHonor from "./OnePlusZTENothingHonor";
-import GameConsoles from "./GameConsoles";
-import Samsung from "./Samsung";
-import Xiaomi from "./Xiaomi";
 import {
   fixNameMihonor,
   returnExtraPriceMihonor,
@@ -46,12 +30,27 @@ import {
   returnStockPriceMiOpts,
 } from "../Provider/MiOpts/helpers/helpers";
 import { fixNameSuperPrice } from "../Provider/SuperPrice/helpers/helpers";
-import { returnFixNameBase } from "../Provider/Base/helpers/helpers";
-import {
-  changeFlag,
-  returnFixPriceHi,
-} from "../PriceFromBase/helpers/fixFlags";
+import { returnApple } from "../Provider/Unimtrn/Apple/apple";
+import { returnDyson } from "../Provider/Unimtrn/Dyson/dyson";
+import { returnGameConsole } from "../Provider/Unimtrn/GameConsole/gameConsole";
+import { returnOtherProduct } from "../Provider/Unimtrn/OtherProduct/otherProduct";
+import { returnSamsung } from "../Provider/Unimtrn/Samsung/samsung";
+import { returnXiaomi } from "../Provider/Unimtrn/Xiaomi/xiaomi";
+import { fixNameUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
+import Apple from "./Apple";
+import Dyson from "./Dyson";
+import GameConsoles from "./GameConsoles";
+import GarminGoProDji from "./GarminGoproDji";
+import GoogleSonyAsusLenovo from "./GoogleSonyAsusLenovo";
+import NoName from "./NoName";
+import OnePlusZTENothingHonor from "./OnePlusZTENothingHonor";
+import Samsung from "./Samsung";
+import Xiaomi from "./Xiaomi";
+import style from "./indexPicrForOrder.module.css";
+
+import { changeFlag } from "../PriceFromBase/helpers/fixFlags";
 import ProductNotID from "./ProductNotID";
+import { returnFixPriceHi } from "../../helpers/fixFlags";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -93,10 +92,11 @@ const IndexPriceForOrder = ({
       return (
         
         baseFixHi(hiEl) &&
-        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&  
+        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
+        
         allPriceArr.push({
           id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
-          name: returnNameInArrHi(fixNameHi(hiEl.name)),
+          name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
           extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
           stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
           provider: "Hi",

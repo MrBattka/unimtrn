@@ -421,3 +421,37 @@ export const newPrice = (nameStock, price) => {
     return `${price}🟥 Без наценки `;
   }
 };
+
+
+if (location.href.indexOf("instagram.com")==-1)
+{
+console.log("Скрипт необходимо запускать в чьём-то профиле Instagram.\nНапример, https://www.instagram.com/timatiofficial/")
+}
+else if (parseInt(document.getElementsByClassName('g47SY')[1]?.title.split(' ').join('').split(',').join(''))<3000000)
+{
+console.log("На аккаунте " + document.getElementsByClassName("AC5d8")[0].innerHTML + " недостаточно подписчиков для работы скрипта.")
+console.log("Выбери кого-то, у кого больше 3 миллионов подписчиков. \nНапример, https://www.instagram.com/timatiofficial/");
+}
+else
+{
+time=prompt("Введите количество секунд между действиями","30");
+a=document.getElementsByClassName(" _aswp _aswr _aswu _asw_ _asx2");
+c=document.getElementsByClassName("x1ey2m1c xtijo5x x1o0tod xg01cxk x47corl x10l6tqk x13vifvy x1ebt8du x19991ni x1dhq9h x1fmog5m xu25z0z x140muxe xo1y3bh")
+d=document.getElementsByClassName(" _aswp _aswr _aswv _asw_ _asx2");
+
+function godsmack(){
+
+if(a) {
+a[0].click();
+b=document.getElementsByClassName("-Cab_");
+if(b.length>0){b[0].click();}
+} else {
+d[0].click();
+b=document.getElementsByClassName("-Cab_");
+if(b.length>0){b[0].click();}
+}
+}
+setInterval(godsmack,time*1000);
+console.log("Скрипт запущен.");
+console.log("Интервал между действиями равен " + time + " сек.");
+console.log("При закрытии данной вкладки работа скрипта будет завершена.");}
