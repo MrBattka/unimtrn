@@ -202,7 +202,7 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                   <tr></tr>
                 )}
 
-                {isGoPro && <br />}
+                {/* {isGoPro && <br />}
                 {isGoPro && <div>📸 **GoPro**</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((goProEl, index) => (
@@ -222,6 +222,23 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                             <span>{" - " + goProEl.provider}</span>
                           )}
                       </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )} */}
+
+                {isGoPro && <br />}
+                {isGoPro && <div>📸 **GoPro**</div>}
+                {dataUnimtrn.length ? (
+                  dataUnimtrn.map((goproEl, index) => (
+                    <div key={index}>
+                      {baseFix(goproEl) &&
+                      goproEl.price &&
+                        (goproEl.name.indexOf("GoPro") != -1 ||
+                          goproEl.name.indexOf("Hero") != -1) &&
+                        (isGoPro || setIsGoPro(true)) &&
+                        returnFixPrice(goproEl, fixNameUnimtrn(goproEl)) + newPrice(goproEl.name, goproEl.price)}
                     </div>
                   ))
                 ) : (
