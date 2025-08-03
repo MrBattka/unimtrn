@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import style from "./styles.module.css";
 import { newPrice } from "../../helpers/newPrice";
 
-const Apple = ({ double }) => {
+const Apple = ({ double, dataUnimtrn }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -115,6 +115,7 @@ const Apple = ({ double }) => {
   const [isOpeniPad, setIsOpeniPad] = useState(false);
   const [isiPad9, setIsiPad9] = useState(false);
   const [isiPad10, setIsiPad10] = useState(false);
+  const [isiPad11, setIsiPad11] = useState(false);
   const [isiPadAir, setIsiPadAir] = useState(false);
   const [isiPadMini, setIsiPadMini] = useState(false);
   const [isiPadPro11, setIsiPadPro11] = useState(false);
@@ -2020,6 +2021,31 @@ const Apple = ({ double }) => {
                               {baseFix(el) &&
                                 (el.name.indexOf("iPad 10") != -1 ||
                                   el.name.indexOf("IPad 10") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {isiPad11 && <br />}
+                      {isiPad11 && <div>📟 **iPad 11**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.name.indexOf("iPad 11") != -1 ||
+                                el.name.indexOf("IPad 11") != -1) &&
+                              (isiPad11 || setIsiPad11(true)) &&
+                              returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? newPrice(el.name, el.stockPrice)
+                                  : el.stockPrice)}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("iPad 11") != -1 ||
+                                  el.name.indexOf("IPad 11") != -1) && (
                                   <span>{" - " + el.provider}</span>
                                 )}
                             </h3>

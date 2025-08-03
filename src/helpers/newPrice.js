@@ -137,7 +137,8 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("pico") !== -1 ||
     name.indexOf("steam") !== -1 ||
     name.indexOf("google") !== -1 ||
-    name.indexOf("xperia") !== -1
+    name.indexOf("xperia") !== -1 ||
+    name.indexOf("galaxy ring") !== -1
   ) {
     return Number(price) + 500;
   } else if (
@@ -147,6 +148,7 @@ export const newPrice = (nameStock, price) => {
     name.indexOf("acer") !== -1 ||
     name.indexOf("msi") !== -1 ||
     name.indexOf("ipad 10") !== -1 ||
+    name.indexOf("ipad 11") !== -1 ||
     name.indexOf("ipad 9") !== -1 ||
     name.indexOf("ipad 9") !== -1 ||
     name.indexOf("ipad mini") !== -1 ||

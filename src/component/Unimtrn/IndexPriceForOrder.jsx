@@ -372,7 +372,7 @@ const IndexPriceForOrder = ({
         <GameConsoles double={allPriceArr} />
         <Samsung double={allPriceArr} />
         <Xiaomi double={allPriceArr} />
-        <Apple double={allPriceArr} />
+        <Apple double={allPriceArr} dataUnimtrn={dataUnimtrn} />
         <ProductNotID allPriceArr={allPriceArrNotID} />
       </div>
     </div>

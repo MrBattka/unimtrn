@@ -971,6 +971,174 @@ export const returnIDApple = (name) => {
     name.indexOf("lte") != -1
   ) {
     return 24850;
+    } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38598;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38625;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
+    return 38599;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38600;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("yellow") !== -1
+  ) {
+    return 38618;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38623;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("4/128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
+    return 38624;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("128") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("yellow") !== -1
+  ) {
+    return 38626;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38606;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
+    return 38607;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38608;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("yellow") !== -1
+  ) {
+    return 38609;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38631;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
+    return 38632;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38633;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("yellow") !== -1
+  ) {
+    return 38634;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38614;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
+    return 38615;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38616;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("wi-fi") !== -1 &&
+    name.indexOf("yellow") !== -1
+  ) {
+    return 38617;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("blue") !== -1
+  ) {
+    return 38639;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("pink") !== -1
+  ) {
+    return 38640;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("silver") !== -1
+  ) {
+    return 38641;
+  } else if (
+    name.indexOf("ipad 11") !== -1 &&
+    name.indexOf("512") !== -1 &&
+    name.indexOf("lte") !== -1 &&
+    name.indexOf("yellow") !== -1
+  ) {
+    return 38642;
   } else if (
     name.indexOf("pro 11") != -1 &&
     name.indexOf(" m2 ") != -1 &&

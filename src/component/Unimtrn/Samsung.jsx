@@ -31,7 +31,8 @@ const Samsung = ({ double }) => {
     const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
     const fixA550 = fixWiFi.replace(a550, "A55");
     const fixGalaxy =
-      fixA550.indexOf("Galaxy A") || fixA550.indexOf("Galaxy S")
+      (fixA550.indexOf("Galaxy A") !== -1 || fixA550.indexOf("Galaxy S") !== -1 
+      || fixA550.indexOf("Galaxy Z") !== -1 || fixA550.indexOf("Galaxy Tab") !== -1)
         ? fixA550.replace("Galaxy ", "")
         : fixA550;
     const replaceSamsung = fixGalaxy.replace("Samsung ", "");
@@ -118,6 +119,7 @@ const Samsung = ({ double }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOther, setIsOther] = useState(false);
   const [isPhones, setIsPhones] = useState(false);
+  const [isRings, setIsRings] = useState(false);
   const [isBuds, setIsBuds] = useState(false);
   const [isWatch, setIsWatch] = useState(false);
   const [isTab, setIsTab] = useState(false);
@@ -158,6 +160,7 @@ const Samsung = ({ double }) => {
       )
     );
   };
+console.log(allPriceArr);
 
   return (
     <div>
@@ -195,6 +198,38 @@ const Samsung = ({ double }) => {
               </h4>
               <tbody>
                 <div>👇 **Samsung**</div>
+
+                {isRings && <br />}
+                {isRings && <div>💍 Galaxy Ring</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                          el.name.indexOf("Galaxy Ring") !== -1 &&
+                        (isRings || setIsRings(true)) &&
+                        returnFixPrice(el, el.name) +
+                          (el.condition
+                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
+                                newPrice(el.name, el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? newPrice(
+                                el.name,
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice)}
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          el.name.indexOf("Galaxy Ring") !== -1 && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}  
+
                 {isBuds && <br />}
                 {isBuds && <div>🎧 Galaxy Buds</div>}
                 {allPriceArr.length ? (
