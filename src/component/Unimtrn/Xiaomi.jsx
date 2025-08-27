@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import Footer from "./Footer";
+import style from "./styles.module.css";
 
 const Xiaomi = ({ double }) => {
   let gb = /Gb/gi;
@@ -138,7 +138,7 @@ const Xiaomi = ({ double }) => {
             productEl.name.indexOf("POCO") != -1) &&
           (isProduct || setIsProduct(true)) &&
           returnFixPrice(productEl, productEl.name) +
-            newPrice(productEl.name, productEl.stockPrice)
+            additionalCost(productEl.stockPrice)
       )
     );
   };
@@ -195,12 +195,11 @@ const Xiaomi = ({ double }) => {
                         (isMi || setIsMi(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -235,12 +234,11 @@ const Xiaomi = ({ double }) => {
                         (isMiPad || setIsMiPad(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -273,12 +271,11 @@ const Xiaomi = ({ double }) => {
                         (isBuds || setIsBuds(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -308,12 +305,11 @@ const Xiaomi = ({ double }) => {
                         (isWatch || setIsWatch(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -350,12 +346,11 @@ const Xiaomi = ({ double }) => {
                         (isRedmi || setIsRedmi(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -368,7 +363,7 @@ const Xiaomi = ({ double }) => {
                           el.name.indexOf("HUAWEI") == -1 &&
                           el.name.indexOf("Pad SE") == -1 &&
                           el.name.indexOf("Watch") == -1 &&
-                        el.name.indexOf("Buds") == -1 &&
+                          el.name.indexOf("Buds") == -1 &&
                           el.name.indexOf("Redmi Pad") == -1 &&
                           el.name.indexOf("Huawei") == -1 && (
                             <span>{" - " + el.provider}</span>
@@ -394,12 +389,11 @@ const Xiaomi = ({ double }) => {
                         (isRedmiPad || setIsRedmiPad(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -430,12 +424,11 @@ const Xiaomi = ({ double }) => {
                         (isPoco || setIsPoco(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -465,12 +458,11 @@ const Xiaomi = ({ double }) => {
                         (isPocoPad || setIsPocoPad(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}

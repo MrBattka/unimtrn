@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
-import Footer from "./Footer";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import { fixNameUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
+import Footer from "./Footer";
+import style from "./styles.module.css";
 
 const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
   const res = [];
@@ -172,13 +172,14 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                   dataUnimtrn.map((DJIEl, index) => (
                     <div key={index}>
                       {baseFix(DJIEl) &&
-                      DJIEl.price &&
-                      (DJIEl.name.indexOf("DJL ") != -1 ||
-                      DJIEl.name.indexOf("DJI ") != -1 ||
-                      DJIEl.name.indexOf("DJi ") != -1 ||
-                      DJIEl.name.indexOf("Dji ") != -1) &&
-                      (isDJI || setIsDJI(true)) &&
-                      returnFixPrice(DJIEl, DJIEl.name) + newPrice(DJIEl.name, DJIEl.price)}
+                        DJIEl.price &&
+                        (DJIEl.name.indexOf("DJL ") != -1 ||
+                          DJIEl.name.indexOf("DJI ") != -1 ||
+                          DJIEl.name.indexOf("DJi ") != -1 ||
+                          DJIEl.name.indexOf("Dji ") != -1) &&
+                        (isDJI || setIsDJI(true)) &&
+                        returnFixPrice(DJIEl, DJIEl.name) +
+                          additionalCost(DJIEl.price)}
                     </div>
                   ))
                 ) : (
@@ -191,11 +192,12 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                   dataUnimtrn.map((garminEl, index) => (
                     <div key={index}>
                       {baseFix(garminEl) &&
-                      garminEl.price &&
+                        garminEl.price &&
                         (garminEl.name.indexOf("Garmin") != -1 ||
                           garminEl.name.indexOf("GARMIN") != -1) &&
                         (isGarmin || setIsGarmin(true)) &&
-                        returnFixPrice(garminEl, fixNameUnimtrn(garminEl)) + newPrice(garminEl.name, garminEl.price)}
+                        returnFixPrice(garminEl, fixNameUnimtrn(garminEl)) +
+                          additionalCost(garminEl.price)}
                     </div>
                   ))
                 ) : (
@@ -213,7 +215,7 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                         (isGoPro || setIsGoPro(true)) &&
                         returnFixPrice(goProEl, goProEl.name) +
                           (goProEl.provider !== "База"
-                            ? newPrice(goProEl.name, goProEl.stockPrice)
+                            ? additionalCost(goProEl.name, goProEl.stockPrice)
                             : goProEl.stockPrice)}
                       <h3 className="del">
                         {baseFix(goProEl) &&
@@ -234,11 +236,12 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                   dataUnimtrn.map((goproEl, index) => (
                     <div key={index}>
                       {baseFix(goproEl) &&
-                      goproEl.price &&
+                        goproEl.price &&
                         (goproEl.name.indexOf("GoPro") != -1 ||
                           goproEl.name.indexOf("Hero") != -1) &&
                         (isGoPro || setIsGoPro(true)) &&
-                        returnFixPrice(goproEl, fixNameUnimtrn(goproEl)) + newPrice(goproEl.name, goproEl.price)}
+                        returnFixPrice(goproEl, fixNameUnimtrn(goproEl)) +
+                          additionalCost(goproEl.price)}
                     </div>
                   ))
                 ) : (
@@ -255,7 +258,7 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                         (isJBL || setIsJBL(true)) &&
                         returnFixPrice(jblEl, jblEl.name) +
                           (jblEl.provider !== "База"
-                            ? newPrice(jblEl.name, jblEl.stockPrice)
+                            ? additionalCost(jblEl.stockPrice)
                             : jblEl.stockPrice)}
                       <h3 className="del">
                         {baseFix(jblEl) && jblEl.name.indexOf("JBL") != -1 && (
@@ -278,7 +281,7 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                         (isMarshall || setIsMarshall(true)) &&
                         returnFixPrice(marshsalEl, marshsalEl.name) +
                           (marshsalEl.provider !== "База"
-                            ? newPrice(marshsalEl.name, marshsalEl.stockPrice)
+                            ? additionalCost(marshsalEl.stockPrice)
                             : marshsalEl.stockPrice)}
                       <h3 className="del">
                         {baseFix(marshsalEl) &&

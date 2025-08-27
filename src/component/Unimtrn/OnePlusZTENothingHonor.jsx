@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import Footer from "./Footer";
+import style from "./styles.module.css";
 
 const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
   const sort = double.sort(
@@ -114,7 +114,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
             productEl.name.indexOf("Honor") != -1) &&
           (isProduct || setIsProduct(true)) &&
           returnFixPrice(productEl, fixName(productEl)) +
-            newPrice(productEl.name, productEl.stockPrice)
+            additionalCost(productEl.stockPrice)
       )
     );
   };
@@ -166,12 +166,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isOnePlusBuds || setIsOnePlusBuds(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -197,12 +196,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isOnePlusWatch || setIsOnePlusWatch(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -230,12 +228,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isOnePlus || setIsOnePlus(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -263,12 +260,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isOnePlusPad || setIsOnePlusPad(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -295,12 +291,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isZTE || setIsZTE(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -330,12 +325,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isNothing || setIsNothing(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -364,12 +358,11 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (isNothingEar || setIsNothingEar(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -394,7 +387,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         el.name.indexOf("Honor") != -1 &&
                         (isHonor || setIsHonor(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.price)}
+                          additionalCost(el.price)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Honor") != -1 && (
                           <span>{" - Unimtrn"}</span>

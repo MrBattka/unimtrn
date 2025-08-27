@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix, baseFixMiHonor } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
-import Footer from "./Footer";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import {
   fixNameMihonor,
   returnExtraPriceMihonor,
   returnNameInArrMihonor,
   returnStockPriceMihonor,
 } from "../Provider/MiHonor/helpers/helpers";
+import Footer from "./Footer";
+import style from "./styles.module.css";
 
 const NoName = ({ double, dataUnimtrn, mihonorData }) => {
   const sort = double.sort(
@@ -129,7 +129,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
             productEl.name.indexOf("Spark ") != -1) &&
           (isProduct || setIsProduct(true)) &&
           returnFixPrice(productEl, fixName(productEl)) +
-            newPrice(productEl.name, productEl.stockPrice)
+            additionalCost(productEl.stockPrice)
       )
     );
   };
@@ -178,7 +178,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         BeatsEl.name.indexOf("Beats") != -1 &&
                         (isBeats || setIsBeats(true)) &&
                         returnFixPrice(BeatsEl, BeatsEl.name) +
-                          newPrice(BeatsEl.name, BeatsEl.price)}
+                          additionalCost(BeatsEl.price)}
                     </div>
                   ))
                 ) : (
@@ -195,12 +195,11 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (isBlackview || setIsBlackview(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -225,12 +224,11 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (isAGM || setIsAGM(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -255,12 +253,10 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         el.name.indexOf("*INFINIX*") == -1 &&
                         (isInfinix || setIsInfinix(true)) &&
                         returnNameInArrMihonor(fixNameMihonor(el.name)) +
-                          `${newPrice(
-                            el.name,
+                          `${additionalCost(
                             returnExtraPriceMihonor(fixNameMihonor(el.name))
                           )} 👉 (${
-                            newPrice(
-                              el.name,
+                            additionalCost(
                               returnStockPriceMihonor(fixNameMihonor(el.name))
                             ) + " - от 3шт."
                           })`}
@@ -280,12 +276,11 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (isOppo || setIsOppo(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -311,12 +306,11 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (isHuawei || setIsHuawei(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -343,7 +337,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                           el.name.indexOf("HUAWEI WATCH") != -1) &&
                         (isHuaweiWatch || setIsHuaweiWatch(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.price)}
+                          additionalCost(el.price)}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Huawei Watch") != -1 ||
@@ -367,12 +361,11 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (isRealme || setIsRealme(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -399,12 +392,11 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (isTecno || setIsTecno(true)) &&
                         returnFixPrice(el, fixName(el)) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -431,7 +423,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         el.name.indexOf("Яндекс") != -1 &&
                         (isYandex || setIsYandex(true)) &&
                         returnFixPrice(el, fixName(el)) +
-                          newPrice(el.name, el.price)}
+                          additionalCost(el.price)}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Яндекс") != -1 && (
                           <span>{" - Unimtrn"}</span>

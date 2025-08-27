@@ -50,7 +50,8 @@ export const fixNameSuperPrice = (name) => {
   const fixZFlip7 = fixZFold7.replace("Z Flip7", "Z Flip 7");
   const replaceXiaomi = fixZFlip7.replace("Xiaomi ", "");
   const fixNote = replaceXiaomi.replace("Redmi Note", "Note");
-  const replaceValve = fixNote.replace("Valve ", "");
+  const replaceMacBook = fixNote.replace("MacBook ", "");
+  const replaceValve = replaceMacBook.replace("Valve ", "");
   const replaceMeta = replaceValve.replace("Meta Oculus", "Oculus");
 
   const replace5G = (replaceMeta.indexOf("POCO X7") !== -1 || replaceMeta.indexOf("A25") !== -1

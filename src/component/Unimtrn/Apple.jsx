@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
 import { copyTable } from "../../helpers/copy";
 import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost, newPrice } from "../../helpers/newPrice";
 import Footer from "./Footer";
 import style from "./styles.module.css";
-import { newPrice } from "../../helpers/newPrice";
 
 const Apple = ({ double, dataUnimtrn }) => {
   const sort = double.sort(
@@ -282,7 +282,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("16 Pro Max 1TB") != -1 ||
             el.name.indexOf("16 Pro Max 1Tb") != -1) &&
           (isProductiPhone || setIsProductiPhone(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)
+          returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -301,7 +301,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("Magic Keyboard") != -1 ||
             el.name.indexOf("Magic Mouse") != -1) &&
           (isProductAirPods || setIsProductAirPods(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)
+          returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -338,7 +338,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("Ultra 2") != -1 ||
             el.name.indexOf("UL 2") != -1) &&
           (isProductAW || setIsProductAW(true)) &&
-          returnFixPrice(el, fixName(el)) + newPrice(el.name, el.stockPrice)
+          returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -840,7 +840,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAirPods || setIsAirPods(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -869,7 +869,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAirPodsMax || setIsAirPodsMax(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -895,7 +895,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAirPodsMax2024 || setIsAirPodsMax2024(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -919,7 +919,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isPencil || setIsPencil(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -943,7 +943,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isMagic || setIsMagic(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -977,7 +977,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAsIs13 || setIsAsIs13(true)) &&
                               returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
-                                  ? newPrice(asis.name, asis.stockPrice)
+                                  ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice)}
                             <h3 className="del">
                               {baseFix(asis) &&
@@ -1019,7 +1019,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAsIs14 || setIsAsIs14(true)) &&
                               returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
-                                  ? newPrice(asis.name, asis.stockPrice)
+                                  ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice)}
                             <h3 className="del">
                               {baseFix(asis) &&
@@ -1065,7 +1065,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAsIs15 || setIsAsIs15(true)) &&
                               returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
-                                  ? newPrice(asis.name, asis.stockPrice)
+                                  ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice)}
                             <h3 className="del">
                               {baseFix(asis) &&
@@ -1113,7 +1113,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isAsIs16 || setIsAsIs16(true)) &&
                               returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
-                                  ? newPrice(asis.name, asis.stockPrice)
+                                  ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice)}
                             <h3 className="del">
                               {baseFix(asis) &&
@@ -1185,7 +1185,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isXR || setIsXR(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1216,7 +1216,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isSE || setIsSE(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1249,7 +1249,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is11 || setIs11(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1282,7 +1282,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is12 || setIs12(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1314,7 +1314,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is13Mini || setIs13Mini(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1346,7 +1346,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is13 || setIs13(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1379,7 +1379,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is14 || setIs14(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1412,7 +1412,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is14Pro || setIs14Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1444,7 +1444,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is15 || setIs15(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1475,7 +1475,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is15Plus || setIs15Plus(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1507,7 +1507,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is15Pro || setIs15Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1544,7 +1544,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is15ProMax || setIs15ProMax(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1583,7 +1583,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is16e || setIs16e(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1617,7 +1617,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is16 || setIs16(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1648,7 +1648,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is16Plus || setIs16Plus(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1680,7 +1680,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is16Pro || setIs16Pro(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1711,10 +1711,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (is16ProMax || setIs16ProMax(true)) &&
                               returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
                                 (iPhone16PM.provider !== "База"
-                                  ? newPrice(
-                                      iPhone16PM.name,
-                                      iPhone16PM.stockPrice
-                                    )
+                                  ? additionalCost(iPhone16PM.stockPrice)
                                   : iPhone16PM.stockPrice)}
                             <h3 className="del">
                               {baseFix(iPhone16PM) &&
@@ -1779,7 +1776,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isSEWatch || setIsSEWatch(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1815,7 +1812,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isS8 || setIsS8(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1846,7 +1843,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isS9 || setIsS9(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1877,7 +1874,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isS10 || setIsS10(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1906,7 +1903,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isUltra || setIsUltra(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1934,7 +1931,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isUltra2024 || setIsUltra2024(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -1990,7 +1987,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPad9 || setIsiPad9(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2015,7 +2012,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPad10 || setIsiPad10(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2040,7 +2037,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPad11 || setIsiPad11(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2068,7 +2065,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPadMini || setIsiPadMini(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2098,7 +2095,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPadAir || setIsiPadAir(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2125,7 +2122,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPadPro11 || setIsiPadPro11(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2149,7 +2146,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPadPro12 || setIsiPadPro12(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2173,7 +2170,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiPadPro13 || setIsiPadPro13(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2261,7 +2258,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isiMac || setIsiMac(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&
@@ -2432,7 +2429,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (isMacBook || setIsMacBook(true)) &&
                               returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
-                                  ? newPrice(el.name, el.stockPrice)
+                                  ? additionalCost(el.stockPrice)
                                   : el.stockPrice)}
                             <h3 className="del">
                               {baseFix(el) &&

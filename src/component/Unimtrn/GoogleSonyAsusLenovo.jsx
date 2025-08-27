@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix, baseFixSuperPrice } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import Footer from "./Footer";
+import style from "./styles.module.css";
 
 const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
   const sort = double.sort(
@@ -120,7 +120,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
             productEl.name.indexOf("Xperia") != -1) &&
           (isProduct || setIsProduct(true)) &&
           returnFixPrice(productEl, fixName(productEl)) +
-            newPrice(productEl.name, productEl.price)
+            additionalCost(productEl.price)
       )
     );
   };
@@ -174,7 +174,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                           asusEl.name.indexOf("Asus") != -1) &&
                         (isAsus || setIsAsus(true)) &&
                         returnFixPrice(asusEl, asusEl.name) +
-                          newPrice(asusEl.name, asusEl.price)}
+                          additionalCost(asusEl.price)}
 
                       <h3 className="del">
                         {baseFix(asusEl) &&
@@ -201,7 +201,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                         googleEl.name.indexOf("Pixel Buds") != -1 &&
                         (isPixelBuds || setIsPixelBuds(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
-                          newPrice(googleEl.name, googleEl.price)}
+                          additionalCost(googleEl.price)}
                       <h3 className="del">
                         {baseFix(googleEl) &&
                           googleEl.name.indexOf("Pixel Buds") != -1 && (
@@ -223,7 +223,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                         googleEl.name.indexOf("Pixel Watch") != -1 &&
                         (isPixelWatch || setIsPixelWatch(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
-                          newPrice(googleEl.name, googleEl.price)}
+                          additionalCost(googleEl.price)}
                       <h3 className="del">
                         {baseFixSuperPrice(googleEl) &&
                           googleEl.name.indexOf("Pixel Watch") != -1 && (
@@ -249,16 +249,12 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                         (isPixelPhone || setIsPixelPhone(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
                           (googleEl.condition
-                            ? `${newPrice(
-                                googleEl.name,
-                                googleEl.extraPrice
-                              )} 👉 (${
-                                newPrice(googleEl.name, googleEl.stockPrice) +
+                            ? `${additionalCost(googleEl.extraPrice)} 👉 (${
+                                additionalCost(googleEl.stockPrice) +
                                 googleEl.condition
                               })`
                             : googleEl.provider !== "База"
-                            ? newPrice(
-                                googleEl.name,
+                            ? additionalCost(
                                 googleEl.condition
                                   ? googleEl.extraPrice
                                   : googleEl.stockPrice
@@ -289,7 +285,7 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                         googleEl.name.indexOf("Pixel Tab") != -1 &&
                         (isPixelTab || setIsPixelTab(true)) &&
                         returnFixPrice(googleEl, fixName(googleEl)) +
-                          newPrice(googleEl.name, googleEl.price)}
+                          additionalCost(googleEl.price)}
                       <h3 className="del">
                         {baseFix(googleEl) &&
                           googleEl.name.indexOf("Pixel Tab") != -1 && (
@@ -314,16 +310,12 @@ const GoogleSonyAsusLenovo = ({ double, dataUnimtrn, superprice }) => {
                         (isSony || setIsSony(true)) &&
                         returnFixPrice(sonyEl, fixName(sonyEl)) +
                           (sonyEl.condition
-                            ? `${newPrice(
-                                sonyEl.name,
-                                sonyEl.extraPrice
-                              )} 👉 (${
-                                newPrice(sonyEl.name, sonyEl.stockPrice) +
+                            ? `${additionalCost(sonyEl.extraPrice)} 👉 (${
+                                additionalCost(sonyEl.stockPrice) +
                                 sonyEl.condition
                               })`
                             : sonyEl.provider !== "База"
-                            ? newPrice(
-                                sonyEl.name,
+                            ? additionalCost(
                                 sonyEl.condition
                                   ? sonyEl.extraPrice
                                   : sonyEl.stockPrice

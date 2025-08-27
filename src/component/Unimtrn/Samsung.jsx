@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { returnFixPrice } from "../../helpers/fixPrice";
-import style from "./styles.module.css";
+import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
-import { newPrice } from "../../helpers/newPrice";
 import { copyTable } from "../../helpers/copy";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import Footer from "./Footer";
+import style from "./styles.module.css";
 
 const Samsung = ({ double }) => {
   const res = [];
@@ -31,8 +31,10 @@ const Samsung = ({ double }) => {
     const fixWiFi = fixS24.replace(wiFi, "Wi-Fi");
     const fixA550 = fixWiFi.replace(a550, "A55");
     const fixGalaxy =
-      (fixA550.indexOf("Galaxy A") !== -1 || fixA550.indexOf("Galaxy S") !== -1 
-      || fixA550.indexOf("Galaxy Z") !== -1 || fixA550.indexOf("Galaxy Tab") !== -1)
+      fixA550.indexOf("Galaxy A") !== -1 ||
+      fixA550.indexOf("Galaxy S") !== -1 ||
+      fixA550.indexOf("Galaxy Z") !== -1 ||
+      fixA550.indexOf("Galaxy Tab") !== -1
         ? fixA550.replace("Galaxy ", "")
         : fixA550;
     const replaceSamsung = fixGalaxy.replace("Samsung ", "");
@@ -156,11 +158,11 @@ const Samsung = ({ double }) => {
             productEl.name.indexOf("Tab S") != -1) &&
           (isProduct || setIsProduct(true)) &&
           returnFixPrice(productEl, productEl.name) +
-            newPrice(productEl.name, productEl.stockPrice)
+            additionalCost(productEl.stockPrice)
       )
     );
   };
-console.log(allPriceArr);
+  console.log(allPriceArr);
 
   return (
     <div>
@@ -205,16 +207,15 @@ console.log(allPriceArr);
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                          el.name.indexOf("Galaxy Ring") !== -1 &&
+                        el.name.indexOf("Galaxy Ring") !== -1 &&
                         (isRings || setIsRings(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -228,7 +229,7 @@ console.log(allPriceArr);
                   ))
                 ) : (
                   <tr></tr>
-                )}  
+                )}
 
                 {isBuds && <br />}
                 {isBuds && <div>🎧 Galaxy Buds</div>}
@@ -236,26 +237,25 @@ console.log(allPriceArr);
                   allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
-                        (el.name.indexOf("OnePlus") === -1 &&
-                          (el.name.indexOf("Buds") !== -1 ||
-                          el.name.indexOf("Galaxy Smart Tag") !== -1)) &&
+                        el.name.indexOf("OnePlus") === -1 &&
+                        (el.name.indexOf("Buds") !== -1 ||
+                          el.name.indexOf("Galaxy Smart Tag") !== -1) &&
                         (isBuds || setIsBuds(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
-                          (el.name.indexOf("OnePlus") === -1 &&
+                          el.name.indexOf("OnePlus") === -1 &&
                           (el.name.indexOf("Buds") !== -1 ||
-                          el.name.indexOf("Galaxy Smart Tag") !== -1)) && (
+                            el.name.indexOf("Galaxy Smart Tag") !== -1) && (
                             <span>{" - " + el.provider}</span>
                           )}
                       </h3>
@@ -276,12 +276,11 @@ console.log(allPriceArr);
                         (isWatch || setIsWatch(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
@@ -337,18 +336,17 @@ console.log(allPriceArr);
                         (isPhones || setIsPhones(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}
                       <h3 className="del">
                         {baseFix(el) &&
-                        el.name.indexOf("iPad") === -1 &&
+                          el.name.indexOf("iPad") === -1 &&
                           (el.name.indexOf("A05s ") != -1 ||
                             el.name.indexOf("A05 ") != -1 ||
                             el.name.indexOf("A06 ") != -1 ||
@@ -358,8 +356,8 @@ console.log(allPriceArr);
                             el.name.indexOf("A54 ") != -1 ||
                             el.name.indexOf("A34 ") != -1 ||
                             el.name.indexOf("A26 ") != -1 ||
-                          el.name.indexOf("A36 ") != -1 ||
-                          el.name.indexOf("A56 ") != -1 ||
+                            el.name.indexOf("A36 ") != -1 ||
+                            el.name.indexOf("A56 ") != -1 ||
                             el.name.indexOf("A35 ") != -1 ||
                             el.name.indexOf("M34 ") != -1 ||
                             el.name.indexOf("M54 ") != -1 ||
@@ -393,12 +391,11 @@ console.log(allPriceArr);
                         (isTab || setIsTab(true)) &&
                         returnFixPrice(el, el.name) +
                           (el.condition
-                            ? `${newPrice(el.name, el.extraPrice)} 👉 (${
-                                newPrice(el.name, el.stockPrice) + el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
                               })`
                             : el.provider !== "База"
-                            ? newPrice(
-                                el.name,
+                            ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
                             : el.stockPrice)}

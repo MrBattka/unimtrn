@@ -2,7 +2,7 @@ import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
 import { copyTable } from "../../helpers/copy";
 import { returnFixPrice1 } from "../../helpers/fixPrice";
-import { newPrice } from "../../helpers/newPrice";
+import { additionalCost } from "../../helpers/newPrice";
 import Footer from "./Footer";
 import style from "./styles.module.css";
 
@@ -12,7 +12,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
   let dyson = /Dyson/gi;
 
   const fixName = (name) => {
-    const replaceFire = name.replace("🔥", "")
+    const replaceFire = name.replace("🔥", "");
     return replaceFire.replace(dyson, "");
   };
 
@@ -124,7 +124,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
                         returnFixPrice1(dysonEl, fixName(dysonEl.name)) +
                           (dysonEl.provider !== "База"
-                            ? newPrice(dysonEl.name, dysonEl.price)
+                            ? additionalCost(dysonEl.stockPrice)
                             : dysonEl.price)}
                     </div>
                   ))

@@ -423,3 +423,27 @@ export const newPrice = (nameStock, price) => {
     return `${price}🟥 Без наценки `;
   }
 };
+
+const taxiing = (num) => {
+  const toStr = num.toString();
+
+  if (toStr.lenght === 5) {
+  }
+};
+
+export const additionalCost = (price) => {
+  const one = price / 100;
+
+  if (price <= 10000) {
+    return Number(price) + Number(Math.ceil((one * 3) / 100) + "00");
+  } else if (price > 10000 && price <= 20000) {
+    return Number(price) + Number(Math.ceil((one * 2.5) / 100) + "00");
+  } else if (price > 20000 && price <= 40000) {
+    return Number(price) + Number(Math.ceil((one * 2) / 100) + "00");
+  } else if (price > 40000) {
+    return Number(price) + Number(Math.ceil((one * 1) / 100) + "00");
+    // return one * 1
+  } else {
+    return `${price}🟥 Без наценки `;
+  }
+};
