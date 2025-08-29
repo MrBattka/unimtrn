@@ -124,7 +124,7 @@ const Dyson = ({ double, dataUnimtrn }) => {
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
                         returnFixPrice1(dysonEl, fixName(dysonEl.name)) +
                           (dysonEl.provider !== "База"
-                            ? additionalCost(dysonEl.stockPrice)
+                            ? additionalCost(dysonEl.price)
                             : dysonEl.price)}
                     </div>
                   ))
