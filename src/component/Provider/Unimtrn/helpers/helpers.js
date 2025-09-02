@@ -476,6 +476,7 @@ export const fixNameUnimtrn = (el) => {
   const fixAsis1 = fixAsis.replace("( Asis+ )", "(Asis+) - ");
   const fixTabS10Plus = fixAsis1.replace("Tab S10+", "Tab S10 +");
   const fixTabS10FEPlus = fixTabS10Plus.replace("Tab S10 FE Plus", "Tab S10 FE +");
+  const replaceMacBook = fixTabS10FEPlus.replace("MacBook ", "");
 
-  return fixTabS10FEPlus;
+  return replaceMacBook;
 };
