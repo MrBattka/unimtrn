@@ -192,9 +192,9 @@ export const returnStockPriceHi = (name) => {
   const removeDoubleSpace2 = splitPrice.replace(" ", "");
 
   let slicePrice =
-    reverseStrName.indexOf("-") !== -1
-      ? reverseStrName.split("-")[0]
-      : reverseStrName;
+    checkSpace2.indexOf("-") !== -1
+      ? checkSpace2.split("-")[0]
+      : checkSpace2;
 
   let reverseBackStrName = slicePrice.split("").reverse().join("");
   let w = reverseBackStrName.replace(" ", "");
@@ -213,7 +213,18 @@ export const fixNameHi = (name) => {
       ? removeDoubleSpace.slice(1)
       : removeDoubleSpace;
 
-  let fixCar = removeFirstDoubleSpace.replace(" 🛩", "");
+      let checkSpace =
+    removeFirstDoubleSpace[0] === " "
+      ? removeFirstDoubleSpace.replace(" ", "")
+      : removeFirstDoubleSpace;
+  let checkSpace1 =
+    checkSpace[0] === " " ? checkSpace.replace(" ", "") : checkSpace;
+  let checkSpace2 =
+    checkSpace1[0] === " " ? checkSpace1.replace(" ", "") : checkSpace1;
+  let checkSpace3 =
+    checkSpace1[0] === " " ? checkSpace2.replace(" ", "") : checkSpace2;
+
+  let fixCar = checkSpace3.replace(" 🛩", "");
   let fixCar11 = fixCar.replace(" 🏎", "");
   let fixCar22 = fixCar11.replace(" 🚙", "");
   let fixCar33 = fixCar22.replace(" 🚕", "");

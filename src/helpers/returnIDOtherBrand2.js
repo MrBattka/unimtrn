@@ -269,6 +269,18 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("blue") !== -1
   ) {
     return 19102;
+    } else if (
+    name.indexOf("switch 2") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("mario") !== -1
+  ) {
+    return 39887;
+    } else if (
+    name.indexOf("switch 2") !== -1 &&
+    name.indexOf("256") !== -1 &&
+    name.indexOf("mario") === -1
+  ) {
+    return 39886;
 
     // Sony
     } else if (
