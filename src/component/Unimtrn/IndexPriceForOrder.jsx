@@ -80,7 +80,7 @@ const IndexPriceForOrder = ({
     ) {
       allPriceArr.push({
         id: returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
-        name: fixNameUnimtrn(unimtrnEl),
+        name: returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
         provider: "Unimtrn",

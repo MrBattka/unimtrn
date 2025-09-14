@@ -122,10 +122,12 @@ const Dyson = ({ double, dataUnimtrn }) => {
                           dysonEl.name.indexOf("Supersonic Hair") != -1 ||
                           dysonEl.name.indexOf("Air Purifier") != -1 ||
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
-                        returnFixPrice1(dysonEl, fixName(dysonEl.name)) +
+                        "` " +
+                          returnFixPrice1(dysonEl, fixName(dysonEl.name)) +
                           (dysonEl.provider !== "База"
                             ? additionalCost(dysonEl.price)
-                            : dysonEl.price)}
+                            : dysonEl.price) +
+                          "`"}
                     </div>
                   ))
                 ) : (

@@ -159,10 +159,10 @@ const GameConsoles = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Nintendo") != -1 &&
                         (isNintendo || setIsNintendo(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.provider !== "База"
                             ? additionalCost(el.stockPrice)
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Nintendo") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -182,10 +182,10 @@ const GameConsoles = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Oculus") != -1 &&
                         (isOculus || setIsOculus(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.provider !== "База"
                             ? additionalCost(el.stockPrice)
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Oculus") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -205,10 +205,10 @@ const GameConsoles = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Pico") != -1 &&
                         (isPico || setIsPico(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.provider !== "База"
                             ? additionalCost(el.stockPrice)
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Pico") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -230,10 +230,10 @@ const GameConsoles = ({ double }) => {
                           el.name.indexOf("Playstation") != -1 ||
                           el.name.indexOf("PS5") != -1) &&
                         (isPlayStation || setIsPlayStation(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.provider !== "База"
                             ? additionalCost(el.stockPrice)
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("PlayStation") != -1 ||
@@ -256,10 +256,10 @@ const GameConsoles = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Xbox") != -1 &&
                         (isXbox || setIsXbox(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.provider !== "База"
                             ? additionalCost(el.stockPrice)
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Xbox") != -1 && (
                           <span>{" - " + el.provider}</span>
@@ -279,10 +279,10 @@ const GameConsoles = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Steam") != -1 &&
                         (isSteam || setIsSteam(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.provider !== "База"
                             ? additionalCost(el.stockPrice)
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Steam") != -1 && (
                           <span>{" - " + el.provider}</span>

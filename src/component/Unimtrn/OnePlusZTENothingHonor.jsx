@@ -113,7 +113,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
             productEl.name.indexOf("Nothing ear") != -1 ||
             productEl.name.indexOf("Honor") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          returnFixPrice(productEl, fixName(productEl)) +
+          "` " + returnFixPrice(productEl, fixName(productEl)) +
             additionalCost(productEl.stockPrice)
       )
     );
@@ -164,7 +164,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                       {baseFix(el) &&
                         el.name.indexOf("OnePlus Buds") !== -1 &&
                         (isOnePlusBuds || setIsOnePlusBuds(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -173,7 +173,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("OnePlus Buds") != -1 && (
@@ -194,7 +194,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                       {baseFix(el) &&
                         el.name.indexOf("OnePlus Watch") != -1 &&
                         (isOnePlusWatch || setIsOnePlusWatch(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -203,7 +203,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("OnePlus Watch") != -1 && (
@@ -226,7 +226,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         el.name.indexOf("OnePlus Pad") === -1 &&
                         el.name.indexOf("OnePlus Watch") === -1 &&
                         (isOnePlus || setIsOnePlus(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -235,7 +235,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("OnePlus") != -1 &&
@@ -258,7 +258,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                       {baseFix(el) &&
                         el.name.indexOf("OnePlus Pad") !== -1 &&
                         (isOnePlusPad || setIsOnePlusPad(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -267,7 +267,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("OnePlus Pad") !== -1 && (
@@ -289,7 +289,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                         (el.name.indexOf("RedMagic") != -1 ||
                           el.name.indexOf("Nubia") != -1) &&
                         (isZTE || setIsZTE(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -298,7 +298,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("RedMagic") != -1 ||
@@ -323,7 +323,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                           el.name.indexOf("Nothing Ear") != -1 ||
                           el.name.indexOf("Nothing ear") != -1) &&
                         (isNothing || setIsNothing(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -332,7 +332,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Nothing Phone") != -1 ||
@@ -356,7 +356,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Nothing Ear") != -1 &&
                         (isNothingEar || setIsNothingEar(true)) &&
-                        returnFixPrice(el, fixName(el)) +
+                        "` " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -365,7 +365,7 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("Nothing Ear") != -1 && (
@@ -386,8 +386,8 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Honor") != -1 &&
                         (isHonor || setIsHonor(true)) &&
-                        returnFixPrice(el, fixName(el)) +
-                          additionalCost(el.price)}
+                        "` " + returnFixPrice(el, fixName(el)) +
+                          additionalCost(el.price) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Honor") != -1 && (
                           <span>{" - Unimtrn"}</span>

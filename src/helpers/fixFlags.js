@@ -158,8 +158,11 @@ export const changeFlag = (el) => {
   const fixQNA = fixGB.replace(QNAFlag, "🇪🇺");
   const fixSG = fixQNA.replace(SGFlag, "🇸🇬");
   const fixBEA = fixSG.replace(BEAFlag, "🇧🇷");
+  const fixCLA = fixBEA.replace("CL/A", "🇨🇦");
+  const fixCL = fixCLA.replace("CL", "🇨🇱");
+  const fixIND = fixCL.replace("IND", "🇮🇩");
 
-  const fixUsb = fixBEA.replace(usb, "USB");
+  const fixUsb = fixIND.replace(usb, "USB");
   const fixAFAEM = fixUsb.replace(AFAEM, "AFAEM");
   const fixAsus = fixAFAEM.replace(asus, "ASUS");
   const fixMydc = fixAsus.replace(mydc, "MYDC");

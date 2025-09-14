@@ -118,9 +118,12 @@ const Samsung = ({ double }) => {
 
   allPriceArr.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
   const [isOther, setIsOther] = useState(false);
-  const [isPhones, setIsPhones] = useState(false);
+  const [isPhonesA, setIsPhonesA] = useState(false);
+  const [isPhonesS, setIsPhonesS] = useState(false);
+  const [isPhonesZ, setIsPhonesZ] = useState(false);
   const [isRings, setIsRings] = useState(false);
   const [isBuds, setIsBuds] = useState(false);
   const [isWatch, setIsWatch] = useState(false);
@@ -162,7 +165,6 @@ const Samsung = ({ double }) => {
       )
     );
   };
-  console.log(allPriceArr);
 
   return (
     <div>
@@ -173,19 +175,19 @@ const Samsung = ({ double }) => {
               className={
                 checkIsProduct(allPriceArr) && !isProduct
                   ? style.titleNotFound
-                  : isOpen
+                  : isOpen1
                   ? style.titleOpen
                   : style.title
               }
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen1(!isOpen1)}
             >
-              {isOpen ? "Samsung ▲" : "Samsung ▼"}
+              {isOpen1 ? "Samsung 1  ▲" : "Samsung 1  ▼"}
             </span>
           )}
         </div>
       </div>
-      {isOpen && (
-        <div className={isOpen ? style.open : style.closed}>
+      {isOpen1 && (
+        <div className={isOpen1 ? style.open : style.closed}>
           <div className="col-sm-6 offset-3">
             <table className="table">
               <thead>
@@ -209,7 +211,7 @@ const Samsung = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Galaxy Ring") !== -1 &&
                         (isRings || setIsRings(true)) &&
-                        returnFixPrice(el, el.name) +
+                        "` " + returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -218,7 +220,8 @@ const Samsung = ({ double }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("Galaxy Ring") !== -1 && (
@@ -241,7 +244,8 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Buds") !== -1 ||
                           el.name.indexOf("Galaxy Smart Tag") !== -1) &&
                         (isBuds || setIsBuds(true)) &&
-                        returnFixPrice(el, el.name) +
+                        "` " +
+                          returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -250,7 +254,8 @@ const Samsung = ({ double }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("OnePlus") === -1 &&
@@ -274,7 +279,8 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Watch 6") != -1 ||
                           el.name.indexOf("Watch 7") != -1) &&
                         (isWatch || setIsWatch(true)) &&
-                        returnFixPrice(el, el.name) +
+                        "` " +
+                          returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -283,7 +289,8 @@ const Samsung = ({ double }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           (el.name.indexOf("Watch 6") != -1 ||
@@ -297,8 +304,8 @@ const Samsung = ({ double }) => {
                   <tr></tr>
                 )}
 
-                {isPhones && <br />}
-                {isPhones && <div>📱 Galaxy Phones</div>}
+                {isPhonesA && <br />}
+                {isPhonesA && <div>📱 Galaxy A</div>}
                 {allPriceArr.length ? (
                   allPriceArr.map((el, index) => (
                     <div key={index}>
@@ -322,19 +329,10 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("A35 ") != -1 ||
                           el.name.indexOf("M34 ") != -1 ||
                           el.name.indexOf("M54 ") != -1 ||
-                          el.name.indexOf("A55 ") != -1 ||
-                          el.name.indexOf("S21 ") != -1 ||
-                          el.name.indexOf("S22 ") != -1 ||
-                          el.name.indexOf("S23 ") != -1 ||
-                          el.name.indexOf("S23+") != -1 ||
-                          el.name.indexOf("S24 ") != -1 ||
-                          el.name.indexOf("S24+") != -1 ||
-                          el.name.indexOf("S25 ") != -1 ||
-                          el.name.indexOf("S25+") != -1 ||
-                          el.name.indexOf("Z Flip") != -1 ||
-                          el.name.indexOf("Z Fold") != -1) &&
-                        (isPhones || setIsPhones(true)) &&
-                        returnFixPrice(el, el.name) +
+                          el.name.indexOf("A55 ") != -1) &&
+                        (isPhonesA || setIsPhonesA(true)) &&
+                        "` " +
+                          returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -343,7 +341,8 @@ const Samsung = ({ double }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(el) &&
                           el.name.indexOf("iPad") === -1 &&
@@ -361,16 +360,129 @@ const Samsung = ({ double }) => {
                             el.name.indexOf("A35 ") != -1 ||
                             el.name.indexOf("M34 ") != -1 ||
                             el.name.indexOf("M54 ") != -1 ||
-                            el.name.indexOf("A55 ") != -1 ||
-                            el.name.indexOf("S21 ") != -1 ||
+                            el.name.indexOf("A55 ") != -1) && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+                <Footer />
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      <div>
+        <div>
+          {allPriceArr.length > 1 && (
+            <span
+              className={
+                checkIsProduct(allPriceArr) && !isProduct
+                  ? style.titleNotFound
+                  : isOpen2
+                  ? style.titleOpen
+                  : style.title
+              }
+              onClick={() => setIsOpen2(!isOpen2)}
+            >
+              {isOpen2 ? "Samsung 2 ▲" : "Samsung 2 ▼"}
+            </span>
+          )}
+        </div>
+      </div>
+      {isOpen2 && (
+        <div className={isOpen2 ? style.open : style.closed}>
+          <div className="col-sm-6 offset-3">
+            <table className="table">
+              <thead>
+                <tr>{/* <th scope="col">Товар</th> */}</tr>
+              </thead>
+              <h4
+                onClick={() => {
+                  copyTable();
+                }}
+              >
+                ❐ Copy
+              </h4>
+              <tbody>
+                {isPhonesS && <br />}
+                {isPhonesS && <div>📱 Galaxy S</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        el.name.indexOf("iPad") === -1 &&
+                        (el.name.indexOf("S21 ") != -1 ||
+                          el.name.indexOf("S22 ") != -1 ||
+                          el.name.indexOf("S23 ") != -1 ||
+                          el.name.indexOf("S23+") != -1 ||
+                          el.name.indexOf("S24 ") != -1 ||
+                          el.name.indexOf("S24+") != -1 ||
+                          el.name.indexOf("S25 ") != -1 ||
+                          el.name.indexOf("S25+") != -1) &&
+                        (isPhonesS || setIsPhonesS(true)) &&
+                        "` " +
+                          returnFixPrice(el, el.name) +
+                          (el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? additionalCost(
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice) +
+                          "`"}
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          el.name.indexOf("iPad") === -1 &&
+                          (el.name.indexOf("S21 ") != -1 ||
                             el.name.indexOf("S22 ") != -1 ||
                             el.name.indexOf("S23 ") != -1 ||
                             el.name.indexOf("S23+") != -1 ||
                             el.name.indexOf("S24 ") != -1 ||
                             el.name.indexOf("S24+") != -1 ||
                             el.name.indexOf("S25 ") != -1 ||
-                            el.name.indexOf("S25+") != -1 ||
-                            el.name.indexOf("Z Flip") != -1 ||
+                            el.name.indexOf("S25+") != -1) && (
+                            <span>{" - " + el.provider}</span>
+                          )}
+                      </h3>
+                    </div>
+                  ))
+                ) : (
+                  <tr></tr>
+                )}
+
+                {isPhonesZ && <br />}
+                {isPhonesZ && <div>📱 Galaxy Z</div>}
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
+                    <div key={index}>
+                      {baseFix(el) &&
+                        el.name.indexOf("iPad") === -1 &&
+                        (el.name.indexOf("Z Flip") != -1 ||
+                          el.name.indexOf("Z Fold") != -1) &&
+                        (isPhonesZ || setIsPhonesZ(true)) &&
+                        "` " +
+                          returnFixPrice(el, el.name) +
+                          (el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? additionalCost(
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice) +
+                          "`"}
+                      <h3 className="del">
+                        {baseFix(el) &&
+                          el.name.indexOf("iPad") === -1 &&
+                          (el.name.indexOf("Z Flip") != -1 ||
                             el.name.indexOf("Z Fold") != -1) && (
                             <span>{" - " + el.provider}</span>
                           )}
@@ -389,7 +501,8 @@ const Samsung = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
-                        returnFixPrice(el, el.name) +
+                        "` " +
+                          returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -398,7 +511,8 @@ const Samsung = ({ double }) => {
                             ? additionalCost(
                                 el.condition ? el.extraPrice : el.stockPrice
                               )
-                            : el.stockPrice)}
+                            : el.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Tab S") != -1 && (
                           <span>{" - " + el.provider}</span>
