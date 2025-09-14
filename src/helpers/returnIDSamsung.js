@@ -2696,6 +2696,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("black") != -1
   ) {
@@ -2704,6 +2705,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("red") != -1
   ) {
@@ -2712,6 +2714,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("navy") != -1
   ) {
@@ -2720,6 +2723,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/256") != -1 &&
     (name.indexOf("icy") != -1 || name.indexOf("ice") != -1)
   ) {
@@ -2728,6 +2732,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("silver") != -1
   ) {
@@ -2736,6 +2741,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("mint") != -1
   ) {
@@ -2744,6 +2750,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     name.indexOf("black") != -1
   ) {
@@ -2752,6 +2759,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     name.indexOf("red") != -1
   ) {
@@ -2760,6 +2768,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     (name.indexOf("icy") != -1 || name.indexOf("ice") != -1)
   ) {
@@ -2768,6 +2777,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     name.indexOf("mint") != -1
   ) {
@@ -2776,6 +2786,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     name.indexOf("navy") != -1
   ) {
@@ -2784,6 +2795,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     name.indexOf("pink") != -1
   ) {
@@ -2792,6 +2804,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/512") != -1 &&
     name.indexOf("silver") != -1
   ) {
@@ -2800,6 +2813,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     name.indexOf("black") != -1
   ) {
@@ -2808,6 +2822,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     name.indexOf("red") != -1
   ) {
@@ -2816,6 +2831,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     (name.indexOf("icy") != -1 || name.indexOf("ice") != -1)
   ) {
@@ -2824,6 +2840,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     name.indexOf("mint") != -1
   ) {
@@ -2832,6 +2849,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     name.indexOf("navy") != -1
   ) {
@@ -2840,6 +2858,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     name.indexOf("pink") != -1
   ) {
@@ -2848,6 +2867,7 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("s25") != -1 &&
     name.indexOf("ultra") == -1 &&
     name.indexOf("s25+") == -1 &&
+    name.indexOf("s25 fe") == -1 &&
     name.indexOf("12/128") != -1 &&
     name.indexOf("silver") != -1
   ) {
@@ -3115,6 +3135,57 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("white") != -1
   ) {
     return 37661;
+
+} else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("jetblack") != -1
+  ) {
+    return 913167;
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("navy") != -1
+  ) {
+    return 291353;
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("ice") != -1
+  ) {
+    return 461099;
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("white") != -1
+  ) {
+    return 293153;
+
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/512") != -1 &&
+    name.indexOf("jetblack") != -1
+  ) {
+    return 135919;
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/512") != -1 &&
+    name.indexOf("navy") != -1
+  ) {
+    return 854188;
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/512") != -1 &&
+    name.indexOf("ice") != -1
+  ) {
+    return 908615;
+    } else if (
+    name.indexOf("s25 fe") != -1 &&
+    name.indexOf("8/512") != -1 &&
+    name.indexOf("white") != -1
+  ) {
+    return 510576;
+
   } else if (name.indexOf("z flip 5 8/256 blue 🇰🇿") != -1) {
     return 30816;
   } else if (name.indexOf("z flip 5 8/256 cream 🇰🇿") != -1) {
