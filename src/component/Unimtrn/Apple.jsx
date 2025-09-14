@@ -1186,7 +1186,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                     </h4>
                     <tbody>
                       <div>__🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim__</div>
-                      <div>__🇺🇸 14 Модели - e sim ( нет лотка sim )__</div>
+                      <div>__🇺🇸 от 14 Модели - e sim ( нет лотка sim )__</div>
                       <div> __Остальные страны sim + e sim__</div>
                       {isXR && <div>📱 **iPhone XR**</div>}                     
                       {allPriceArr.length ? (
