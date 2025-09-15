@@ -990,10 +990,10 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("13 256") != -1 ||
                                 asis.name.indexOf("13 512") != -1) &&
                               (isAsIs13 || setIsAsIs13(true)) &&
-                              returnFixPrice(asis, fixName(asis)) +
+                              "` " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
-                                  : asis.stockPrice)}
+                                  : asis.stockPrice) + "`"}
                             <h3 className="del">
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
@@ -1032,10 +1032,10 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("14 Pro Max 512") != -1 ||
                                 asis.name.indexOf("14 Pro Max 1TB") != -1) &&
                               (isAsIs14 || setIsAsIs14(true)) &&
-                              returnFixPrice(asis, fixName(asis)) +
+                              "` " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
-                                  : asis.stockPrice)}
+                                  : asis.stockPrice) + "'"}
                             <h3 className="del">
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
@@ -1078,10 +1078,10 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("15 Pro Max 512") != -1 ||
                                 asis.name.indexOf("15 Pro Max 1TB") != -1) &&
                               (isAsIs15 || setIsAsIs15(true)) &&
-                              returnFixPrice(asis, fixName(asis)) +
+                              "` " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
-                                  : asis.stockPrice)}
+                                  : asis.stockPrice) + "`"}
                             <h3 className="del">
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
@@ -1126,10 +1126,10 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("16 Pro Max 512") != -1 ||
                                 asis.name.indexOf("16 Pro Max 1TB") != -1) &&
                               (isAsIs16 || setIsAsIs16(true)) &&
-                              returnFixPrice(asis, fixName(asis)) +
+                              "` " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
-                                  : asis.stockPrice)}
+                                  : asis.stockPrice) + "'"}
                             <h3 className="del">
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
