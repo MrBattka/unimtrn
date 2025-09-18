@@ -158,6 +158,18 @@ export const returnIDXiaomi = (name) => {
     return 30612;
   } else if (name.indexOf("c65 8/256 purple") !== -1) {
     return 30614;
+    } else if (name.indexOf("c85 6/128 black") !== -1) {
+    return 40612;
+  } else if (name.indexOf("c85 6/128 green") !== -1) {
+    return 40689;
+  } else if (name.indexOf("c85 6/128 purple") !== -1) {
+    return 40688;
+  } else if (name.indexOf("c85 8/256 black") !== -1) {
+    return 40686;
+  } else if (name.indexOf("c85 8/256 green") !== -1) {
+    return 40690;
+  } else if (name.indexOf("c85 8/256 purple") !== -1) {
+    return 40687;
   } else if (name.indexOf("poco c71 4/64 black") != -1) {
     return 38874;
   } else if (name.indexOf("poco c71 4/64 blue") != -1) {
@@ -2168,6 +2180,84 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("blue") != -1
   ) {
     return 38916;
+    } else if (name.indexOf("note 15 12/256 black") != -1) {
+    return 40694;
+  } else if (name.indexOf("note 15 12/256 blue") != -1) {
+    return 40702;
+  } else if (name.indexOf("note 15 12/256 white") != -1) {
+    return 40695;
+  } else if (name.indexOf("note 15 6/128 black") != -1) {
+    return 40609;
+  } else if (name.indexOf("note 15 6/128 blue") != -1) {
+    return 40699;
+  } else if (name.indexOf("note 15 6/128 white") != -1) {
+    return 40698;
+  } else if (name.indexOf("note 15 8/128 black") != -1) {
+    return 40692;
+  } else if (name.indexOf("note 15 8/128 blue") != -1) {
+    return 40700;
+  } else if (name.indexOf("note 15 8/128 white") != -1) {
+    return 40697;
+  } else if (name.indexOf("note 15 8/256 black") != -1) {
+    return 40693;
+  } else if (name.indexOf("note 15 8/256 blue") != -1) {
+    return 40701;
+  } else if (name.indexOf("note 15 8/256 white") != -1) {
+    return 40696;
+  } else if (name.indexOf("note 15 pro 12/256 black") != -1) {
+    return 40704;
+  } else if (name.indexOf("note 15 pro 12/256 blue") != -1) {
+    return 40711;
+  } else if (name.indexOf("note 15 pro 12/256 purple") != -1) {
+    return 40707;
+  } else if (name.indexOf("note 15 pro 12/256 white") != -1) {
+    return 40712;
+  } else if (name.indexOf("note 15 pro 12/512 black") != -1) {
+    return 40705;
+  } else if (name.indexOf("note 15 pro 12/512 blue") != -1) {
+    return 40721;
+  } else if (name.indexOf("note 15 pro 12/512 purple") != -1) {
+    return 40706;
+  } else if (name.indexOf("note 15 pro 12/512 white") != -1) {
+    return 40713;
+  } else if (name.indexOf("note 15 pro 8/256 black") != -1) {
+    return 40610;
+  } else if (name.indexOf("note 15 pro 8/256 blue") != -1) {
+    return 40709;
+  } else if (name.indexOf("note 15 pro 8/256 purple") != -1) {
+    return 40708;
+  } else if (name.indexOf("note 15 pro 8/256 white") != -1) {
+    return 40714;
+  } else if (name.indexOf("note 15 pro + 12/256 black") != -1) {
+    return 40611;
+  } else if (name.indexOf("note 15 pro + 12/256 blue") != -1) {
+    return 40723;
+  } else if (name.indexOf("note 15 pro + 12/256 purple") != -1) {
+    return 40722;
+  } else if (name.indexOf("note 15 pro + 12/256 white") != -1) {
+    return 40731;
+  } else if (name.indexOf("note 15 pro + 12/512 black") != -1) {
+    return 40716;
+  } else if (name.indexOf("note 15 pro + 12/512 blue") != -1) {
+    return 40724;
+  } else if (name.indexOf("note 15 pro + 12/512 purple") != -1) {
+    return 40720;
+  } else if (name.indexOf("note 15 pro + 12/512 white") != -1) {
+    return 40730;
+  } else if (name.indexOf("note 15 pro + 16/1tb blue") != -1) {
+    return 40726;
+  } else if (name.indexOf("note 15 pro + 16/1tb purple") != -1) {
+    return 40718;
+  } else if (name.indexOf("note 15 pro + 16/1tb white") != -1) {
+    return 40727;
+  } else if (name.indexOf("note 15 pro + 16/512 black") != -1) {
+    return 40717;
+  } else if (name.indexOf("note 15 pro + 16/512 blue") != -1) {
+    return 40725;
+  } else if (name.indexOf("note 15 pro + 16/512 purple") != -1) {
+    return 40719;
+  } else if (name.indexOf("note 15 pro + 16/512 white") != -1) {
+    return 40729;
   } else if (name.indexOf("note 13r pro 12/256 black") !== -1) {
     return 30889;
   } else if (name.indexOf("note 13r pro 12/256 blue") !== -1) {

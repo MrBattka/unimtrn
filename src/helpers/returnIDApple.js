@@ -1,3 +1,5 @@
+import { returnIDApple2 } from "./returnIDApple2";
+
 export const returnIDApple = (name) => {
   //  AirPods
   if (name.indexOf("airpods 2") != -1) {
@@ -7032,6 +7034,6 @@ export const returnIDApple = (name) => {
   ) {
     return 38263;
   } else {
-    return "No match";
+    return returnIDApple2(name) || "No match";
   }
 };

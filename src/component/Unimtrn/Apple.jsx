@@ -95,6 +95,10 @@ const Apple = ({ double, dataUnimtrn }) => {
   const [is16Plus, setIs16Plus] = useState(false);
   const [is16Pro, setIs16Pro] = useState(false);
   const [is16ProMax, setIs16ProMax] = useState(false);
+  const [isAir, setIsAir] = useState(false);
+  const [is17, setIs17] = useState(false);
+  const [is17Pro, setIs17Pro] = useState(false);
+  const [is17ProMax, setIs17ProMax] = useState(false);
   const [isAsIs13, setIsAsIs13] = useState(false);
   const [isAsIs14, setIsAsIs14] = useState(false);
   const [isAsIs15, setIsAsIs15] = useState(false);
@@ -108,11 +112,14 @@ const Apple = ({ double, dataUnimtrn }) => {
   const [isMagic, setIsMagic] = useState(false);
   const [isOpenWatch, setIsOpenWatch] = useState(false);
   const [isSEWatch, setIsSEWatch] = useState(false);
+  const [isSE3Watch, setIsSE3Watch] = useState(false);
   const [isS8, setIsS8] = useState(false);
   const [isS9, setIsS9] = useState(false);
   const [isUltra, setIsUltra] = useState(false);
   const [isS10, setIsS10] = useState(false);
+  const [isS11, setIsS11] = useState(false);
   const [isUltra2024, setIsUltra2024] = useState(false);
+  const [isUltra3, setIsUltra3] = useState(false);
   const [isOpeniPad, setIsOpeniPad] = useState(false);
   const [isiPad9, setIsiPad9] = useState(false);
   const [isiPad10, setIsiPad10] = useState(false);
@@ -295,7 +302,15 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("16 Pro Max 512") != -1 ||
             el.name.indexOf("16 Pro Max 1Tb") != -1 ||
             el.name.indexOf("16 Pro Max 1TB") != -1 ||
-            el.name.indexOf("16 Pro Max 1Tb") != -1) &&
+            el.name.indexOf("16 Pro Max 1Tb") != -1 ||
+            el.name.indexOf("Air 256") != -1 ||
+            el.name.indexOf("Air 512") != -1 ||
+            el.name.indexOf("Air 1tb") != -1 ||
+            el.name.indexOf("17 256") != -1 ||
+            el.name.indexOf("17 512") != -1 ||
+            el.name.indexOf("17 Pro") != -1 ||
+            el.name.indexOf("17 ProMax") != -1 ||
+            el.name.indexOf("17 Pro Max") != -1) &&
           (isProductiPhone2 || setIsProductiPhone2(true)) &&
           "` " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
@@ -332,7 +347,9 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("SE (2022) Gen") != -1 ||
             el.name.indexOf("SE 2") != -1 ||
             el.name.indexOf("SE2 4") != -1 ||
-            el.name.indexOf("SE 4") != -1 ||
+            el.name.indexOf("SE 40") != -1 ||
+            el.name.indexOf("SE 3") != -1 ||
+            el.name.indexOf("SE 44") != -1 ||
             el.name.indexOf("SE (2022) 64") != -1 ||
             el.name.indexOf("SE (2022) 128") != -1 ||
             el.name.indexOf("SE (2022) 256") != -1 ||
@@ -350,6 +367,13 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("AW 10") != -1 ||
             el.name.indexOf("S10 4") != -1 ||
             el.name.indexOf("AW  10") != -1 ||
+            
+            el.name.indexOf("Watch S1`") != -1 ||
+            el.name.indexOf("AW Series 1`") != -1 ||
+            el.name.indexOf("AW 1`") != -1 ||
+            el.name.indexOf("S1` 4") != -1 ||
+            el.name.indexOf("AW  1`") != -1 ||
+            el.name.indexOf("Ultra 3") != -1 ||
             el.name.indexOf("Ultra 2") != -1 ||
             el.name.indexOf("UL 2") != -1) &&
           (isProductAW || setIsProductAW(true)) &&
@@ -1159,626 +1183,6 @@ const Apple = ({ double, dataUnimtrn }) => {
                     </tbody>
                   </div>
                 )}
-                <div
-                  className={
-                    checkIsProductiPhone1(allPriceArr) && !isProductiPhone1
-                      ? style.titleCategoryNotFound
-                      : isOpeniPhone1
-                      ? style.titlecategoryOpen
-                      : style.titlecategory
-                  }
-                  onClick={() => setIsOpeniPhone1(!isOpeniPhone1)}
-                >
-                  {isOpeniPhone1 ? "iPhone 1 ▲" : "iPhone 1 ▼"}
-                </div>
-                {isOpeniPhone1 && (
-                  <div
-                    className={
-                      isOpeniPhone1 ? style.openAppleCategory : style.closed
-                    }
-                  >
-                    <h4
-                      onClick={() => {
-                        copyTable();
-                      }}
-                    >
-                      ❐ Copy
-                    </h4>
-                    <tbody>
-                      <div>__🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim__</div>
-                      <div>__🇺🇸 от 14 Модели - e sim ( нет лотка sim )__</div>
-                      <div> __Остальные страны sim + e sim__</div>
-                      {isXR && <div>📱 **iPhone XR**</div>}                     
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("XR 64") != -1 ||
-                                el.name.indexOf("XR 128") != -1) &&
-                              (isXR || setIsXR(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("XR 64") != -1 ||
-                                  el.name.indexOf("XR 128") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {isSE && <br />}
-                      {isSE && <div>📱 **iPhone SE**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("SE 3") != -1 ||
-                                el.name.indexOf("SE 64") != -1 ||
-                                el.name.indexOf("SE 128") != -1 ||
-                                el.name.indexOf("SE 256") != -1) &&
-                              (isSE || setIsSE(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("SE 3") != -1 ||
-                                  el.name.indexOf("SE 64") != -1 ||
-                                  el.name.indexOf("SE 128") != -1 ||
-                                  el.name.indexOf("SE 256") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is11 && <br />}
-                      {is11 && <div>📱 **iPhone 11**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              el.name.indexOf("Air") === -1 &&
-                              el.name.indexOf("iPad") === -1 &&
-                              (el.name.indexOf("11 64") != -1 ||
-                                el.name.indexOf("11 128") != -1) &&
-                              (is11 || setIs11(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                el.name.indexOf("Air") === -1 &&
-                                el.name.indexOf("iPad") === -1 &&
-                                (el.name.indexOf("11 64") != -1 ||
-                                  el.name.indexOf("11 128") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is12 && <br />}
-                      {is12 && <div>📱 **iPhone 12**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("12 64") != -1 ||
-                                el.name.indexOf("12 128") != -1 ||
-                                el.name.indexOf("12 256") != -1 ||
-                                el.name.indexOf("12 Pro Max") != -1) &&
-                              (is12 || setIs12(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("12 64") != -1 ||
-                                  el.name.indexOf("12 128") != -1 ||
-                                  el.name.indexOf("12 256") != -1 ||
-                                  el.name.indexOf("12 Pro Max") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is13Mini && <br />}
-                      {is13Mini && <div>📱 **iPhone 13 Mini**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("13 Mini 128") != -1 ||
-                                el.name.indexOf("13 Mini 256") != -1 ||
-                                el.name.indexOf("13 Mini 512") != -1) &&
-                              (is13Mini || setIs13Mini(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("13 Mini 128") != -1 ||
-                                  el.name.indexOf("13 Mini 256") != -1 ||
-                                  el.name.indexOf("13 Mini 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is13 && <br />}
-                      {is13 && <div>📱 **iPhone 13**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              el.name.indexOf("Air") === -1 &&
-                              (el.name.indexOf("13 128") != -1 ||
-                                el.name.indexOf("13 256") != -1 ||
-                                el.name.indexOf("13 512") != -1) &&
-                              (is13 || setIs13(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                el.name.indexOf("Air") === -1 &&
-                                (el.name.indexOf("13 128") != -1 ||
-                                  el.name.indexOf("13 256") != -1 ||
-                                  el.name.indexOf("13 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is14 && <br />}
-                      {is14 && <div>📱 **iPhone 14**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("14 128") != -1 ||
-                                el.name.indexOf("14 256") != -1 ||
-                                el.name.indexOf("14 512") != -1 ||
-                                el.name.indexOf("14 Plus") != -1) &&
-                              (is14 || setIs14(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("14 128") != -1 ||
-                                  el.name.indexOf("14 256") != -1 ||
-                                  el.name.indexOf("14 512") != -1 ||
-                                  el.name.indexOf("14 Plus") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is14Pro && <br />}
-                      {is14Pro && <div>📱 **iPhone 14 Pro**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("14 Pro 128") != -1 ||
-                                el.name.indexOf("14 Pro 256") != -1 ||
-                                el.name.indexOf("14 Pro 512") != -1 ||
-                                el.name.indexOf("14 Pro 1TB") != -1) &&
-                              (is14Pro || setIs14Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("14 Pro 128") != -1 ||
-                                  el.name.indexOf("14 Pro 256") != -1 ||
-                                  el.name.indexOf("14 Pro 512") != -1 ||
-                                  el.name.indexOf("14 Pro 1TB") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is15 && <br />}
-                      {is15 && <div>📱 **iPhone 15**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("15 128") != -1 ||
-                                el.name.indexOf("15 256") != -1 ||
-                                el.name.indexOf("15 512") != -1) &&
-                              (is15 || setIs15(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 128") != -1 ||
-                                  el.name.indexOf("15 256") != -1 ||
-                                  el.name.indexOf("15 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is15Plus && <br />}
-                      {is15Plus && <div>📱 **iPhone 15 Plus**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("15 Plus 128") != -1 ||
-                                el.name.indexOf("15 Plus 256") != -1 ||
-                                el.name.indexOf("15 Plus 512") != -1) &&
-                              (is15Plus || setIs15Plus(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 Plus 128") != -1 ||
-                                  el.name.indexOf("15 Plus 256") != -1 ||
-                                  el.name.indexOf("15 Plus 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is15Pro && <br />}
-                      {is15Pro && <div>📱 **iPhone 15 Pro**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("15 Pro 128") != -1 ||
-                                el.name.indexOf("15 Pro 256") != -1 ||
-                                el.name.indexOf("15 Pro 512") != -1 ||
-                                el.name.indexOf("15 Pro 1Tb") != -1) &&
-                              (is15Pro || setIs15Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 Pro 128") != -1 ||
-                                  el.name.indexOf("15 Pro 256") != -1 ||
-                                  el.name.indexOf("15 Pro 512") != -1 ||
-                                  el.name.indexOf("15 Pro 1Tb") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is15ProMax && <br />}
-                      {is15ProMax && <div>📱 **iPhone 15 Pro Max**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("15 ProMax 256") != -1 ||
-                                el.name.indexOf("15 ProMax 512") != -1 ||
-                                el.name.indexOf("15 ProMax 1Tb") != -1 ||
-                                el.name.indexOf("15 Pro Max 256") != -1 ||
-                                el.name.indexOf("15 Pro Max 512") != -1 ||
-                                el.name.indexOf("15 Pro Max 1Tb") != -1 ||
-                                el.name.indexOf("15 Pro Max 1TB") != -1 ||
-                                el.name.indexOf("15 Pro Max 1Tb") != -1) &&
-                              (is15ProMax || setIs15ProMax(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("15 ProMax 256") != -1 ||
-                                  el.name.indexOf("15 ProMax 512") != -1 ||
-                                  el.name.indexOf("15 ProMax 1Tb") != -1 ||
-                                  el.name.indexOf("15 Pro Max 256") != -1 ||
-                                  el.name.indexOf("15 Pro Max 512") != -1 ||
-                                  el.name.indexOf("15 Pro Max 1Tb") != -1 ||
-                                  el.name.indexOf("15 Pro Max 1TB") != -1 ||
-                                  el.name.indexOf("15 Pro Max 1Tb") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      <Footer />
-                    </tbody>
-                  </div>
-                )}
-
-                <div
-                  className={
-                    checkIsProductiPhone2(allPriceArr) && !isProductiPhone2
-                      ? style.titleCategoryNotFound
-                      : isOpeniPhone2
-                      ? style.titlecategoryOpen
-                      : style.titlecategory
-                  }
-                  onClick={() => setIsOpeniPhone2(!isOpeniPhone2)}
-                >
-                  {isOpeniPhone2 ? "iPhone 2 ▲" : "iPhone 2 ▼"}
-                </div>
-
-                {isOpeniPhone2 && (
-                  <div
-                    className={
-                      isOpeniPhone2 ? style.openAppleCategory : style.closed
-                    }
-                  >
-                    <h4
-                      onClick={() => {
-                        copyTable();
-                      }}
-                    >
-                      ❐ Copy
-                    </h4>
-                    <tbody>
-                      {is16e && <br />}
-                      {is16e && <div>📱 **iPhone 16e**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("16e 128") != -1 ||
-                                el.name.indexOf("16e 256") != -1 ||
-                                el.name.indexOf("16e 512") != -1 ||
-                                el.name.indexOf("16Е 128") != -1 ||
-                                el.name.indexOf("16E 256") != -1 ||
-                                el.name.indexOf("16E 512") != -1) &&
-                              (is16e || setIs16e(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16e 128") != -1 ||
-                                  el.name.indexOf("16e 256") != -1 ||
-                                  el.name.indexOf("16e 512") != -1 ||
-                                  el.name.indexOf("16Е 128") != -1 ||
-                                  el.name.indexOf("16E 256") != -1 ||
-                                  el.name.indexOf("16E 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is16 && <br />}
-                      {is16 && <div>📱 **iPhone 16**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("16 128") != -1 ||
-                                el.name.indexOf("16 256") != -1 ||
-                                el.name.indexOf("16 512") != -1) &&
-                              (is16 || setIs16(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16 128") != -1 ||
-                                  el.name.indexOf("16 256") != -1 ||
-                                  el.name.indexOf("16 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is16Plus && <br />}
-                      {is16Plus && <div>📱 **iPhone 16 Plus**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("16 Plus 128") != -1 ||
-                                el.name.indexOf("16 Plus 256") != -1 ||
-                                el.name.indexOf("16 Plus 512") != -1) &&
-                              (is16Plus || setIs16Plus(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16 Plus 128") != -1 ||
-                                  el.name.indexOf("16 Plus 256") != -1 ||
-                                  el.name.indexOf("16 Plus 512") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is16Pro && <br />}
-                      {is16Pro && <div>📱 **iPhone 16 Pro**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
-                          <div key={index}>
-                            {baseFix(el) &&
-                              el.name.indexOf("ASIS") === -1 &&
-                              el.name.indexOf("Asis") === -1 &&
-                              (el.name.indexOf("16 Pro 128") != -1 ||
-                                el.name.indexOf("16 Pro 256") != -1 ||
-                                el.name.indexOf("16 Pro 512") != -1 ||
-                                el.name.indexOf("16 Pro 1Tb") != -1) &&
-                              (is16Pro || setIs16Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
-                                (el.provider !== "База"
-                                  ? additionalCost(el.stockPrice)
-                                  : el.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(el) &&
-                                el.name.indexOf("ASIS") === -1 &&
-                                el.name.indexOf("Asis") === -1 &&
-                                (el.name.indexOf("16 Pro 128") != -1 ||
-                                  el.name.indexOf("16 Pro 256") != -1 ||
-                                  el.name.indexOf("16 Pro 512") != -1 ||
-                                  el.name.indexOf("16 Pro 1Tb") != -1) && (
-                                  <span>{" - " + el.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      {is16ProMax && <br />}
-                      {is16ProMax && <div>📱 **iPhone 16 Pro Max**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((iPhone16PM, index) => (
-                          <div key={index}>
-                            {baseFix(iPhone16PM) &&
-                              iPhone16PM.name.indexOf("ASIS") === -1 &&
-                              iPhone16PM.name.indexOf("Asis") === -1 &&
-                              (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
-                                iPhone16PM.name.indexOf("16 Pro Max") != -1) &&
-                              (is16ProMax || setIs16ProMax(true)) &&
-                              "` " + returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
-                                (iPhone16PM.provider !== "База"
-                                  ? additionalCost(iPhone16PM.stockPrice)
-                                  : iPhone16PM.stockPrice) + "`"}
-                            <h3 className="del">
-                              {baseFix(iPhone16PM) &&
-                                iPhone16PM.name.indexOf("ASIS") === -1 &&
-                                iPhone16PM.name.indexOf("Asis") === -1 &&
-                                (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
-                                  iPhone16PM.name.indexOf("16 Pro Max") !=
-                                    -1) && (
-                                  <span>{" - " + iPhone16PM.provider}</span>
-                                )}
-                            </h3>
-                          </div>
-                        ))
-                      ) : (
-                        <tr></tr>
-                      )}
-                      <Footer />
-                    </tbody>
-                  </div>
-                )}
 
                 <div
                   className={
@@ -1846,6 +1250,38 @@ const Apple = ({ double, dataUnimtrn }) => {
                       ) : (
                         <tr></tr>
                       )}
+
+                    {isSE3Watch && <div>⌚ **🔥AW SE 3🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.name.indexOf("SE 3") != -1 ||
+                                  el.name.indexOf("SE3 4") != -1) &&
+                                  el.name.indexOf("SE3 128") === -1 &&
+                                  el.name.indexOf("SE3 256") === -1 &&
+                                el.name.indexOf("OnePlus") === -1 &&
+                              (isSE3Watch || setIsSE3Watch(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("SE 3") != -1 ||
+                                  el.name.indexOf("SE3 4") != -1) &&
+                                  el.name.indexOf("SE3 128") === -1 &&
+                                  el.name.indexOf("SE3 256") === -1 &&
+                                el.name.indexOf("OnePlus") === -1 && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
                       {isS8 && <br />}
                       {isS8 && <div>⌚ **AW S8**</div>}
                       {allPriceArr.length ? (
@@ -1939,6 +1375,39 @@ const Apple = ({ double, dataUnimtrn }) => {
                       ) : (
                         <tr></tr>
                       )}
+
+                      {isS11 && <br />}
+                      {isS11 && <div>⌚ **🔥AW S11🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.name.indexOf("Watch S11") != -1 ||
+                                el.name.indexOf("AW Series 11") != -1 ||
+                                el.name.indexOf("AW 11") != -1 ||
+                                el.name.indexOf("S11 4") != -1 ||
+                                el.name.indexOf("AW  11") != -1) &&
+                              (isS11 || setIsS11(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Watch S11") != -1 ||
+                                  el.name.indexOf("AW Series 11") != -1 ||
+                                  el.name.indexOf("AW 11") != -1 ||
+                                  el.name.indexOf("S11 4") != -1 ||
+                                  el.name.indexOf("AW  11") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
                       {isUltra && <br />}
                       {isUltra && <div>⌚ **AW Ultra**</div>}
                       {allPriceArr.length ? (
@@ -1995,10 +1464,39 @@ const Apple = ({ double, dataUnimtrn }) => {
                       ) : (
                         <tr></tr>
                       )}
+
+                      {isUltra3 && <br />}
+                      {isUltra3 && <div>⌚ **🔥AW Ultra 3🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              (el.name.indexOf("Ultra 3") != -1 ||
+                                el.name.indexOf("UL 3") != -1) &&
+                              (isUltra3 || setIsUltra3(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                (el.name.indexOf("Ultra 3") != -1 ||
+                                  el.name.indexOf("UL 3") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
                       <Footer />
                     </tbody>
                   </div>
                 )}
+
+
+                
                 <div
                   className={
                     checkIsProductiPad(allPriceArr) && !isProductiPad
@@ -2608,6 +2106,753 @@ const Apple = ({ double, dataUnimtrn }) => {
                     </tbody>
                   </div>
                 )}
+                <div
+                  className={
+                    checkIsProductiPhone1(allPriceArr) && !isProductiPhone1
+                      ? style.titleCategoryNotFound
+                      : isOpeniPhone1
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
+                  }
+                  onClick={() => setIsOpeniPhone1(!isOpeniPhone1)}
+                >
+                  {isOpeniPhone1 ? "iPhone 11-15 ▲" : "iPhone 11-15 ▼"}
+                </div>
+                {isOpeniPhone1 && (
+                  <div
+                    className={
+                      isOpeniPhone1 ? style.openAppleCategory : style.closed
+                    }
+                  >
+                    <h4
+                      onClick={() => {
+                        copyTable();
+                      }}
+                    >
+                      ❐ Copy
+                    </h4>
+                    <tbody>
+                      <div>__🇨🇳🇭🇰🇸🇬 ( 2 sim ) 🇸🇬 бывает sim + e sim__</div>
+                      <div>__🇺🇸 от 14 Модели - e sim ( нет лотка sim )__</div>
+                      <div> __Остальные страны sim + e sim__</div>
+                      {isXR && <div>📱 **iPhone XR**</div>}                     
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("XR 64") != -1 ||
+                                el.name.indexOf("XR 128") != -1) &&
+                              (isXR || setIsXR(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("XR 64") != -1 ||
+                                  el.name.indexOf("XR 128") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {isSE && <br />}
+                      {isSE && <div>📱 **iPhone SE**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("SE 3") != -1 ||
+                                el.name.indexOf("SE 64") != -1 ||
+                                el.name.indexOf("SE 128") != -1 ||
+                                el.name.indexOf("SE 256") != -1) &&
+                              (isSE || setIsSE(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("SE 3") != -1 ||
+                                  el.name.indexOf("SE 64") != -1 ||
+                                  el.name.indexOf("SE 128") != -1 ||
+                                  el.name.indexOf("SE 256") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is11 && <br />}
+                      {is11 && <div>📱 **iPhone 11**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              el.name.indexOf("Air") === -1 &&
+                              el.name.indexOf("iPad") === -1 &&
+                              (el.name.indexOf("11 64") != -1 ||
+                                el.name.indexOf("11 128") != -1) &&
+                              (is11 || setIs11(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                el.name.indexOf("Air") === -1 &&
+                                el.name.indexOf("iPad") === -1 &&
+                                (el.name.indexOf("11 64") != -1 ||
+                                  el.name.indexOf("11 128") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is12 && <br />}
+                      {is12 && <div>📱 **iPhone 12**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("12 64") != -1 ||
+                                el.name.indexOf("12 128") != -1 ||
+                                el.name.indexOf("12 256") != -1 ||
+                                el.name.indexOf("12 Pro Max") != -1) &&
+                              (is12 || setIs12(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("12 64") != -1 ||
+                                  el.name.indexOf("12 128") != -1 ||
+                                  el.name.indexOf("12 256") != -1 ||
+                                  el.name.indexOf("12 Pro Max") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is13Mini && <br />}
+                      {is13Mini && <div>📱 **iPhone 13 Mini**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("13 Mini 128") != -1 ||
+                                el.name.indexOf("13 Mini 256") != -1 ||
+                                el.name.indexOf("13 Mini 512") != -1) &&
+                              (is13Mini || setIs13Mini(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("13 Mini 128") != -1 ||
+                                  el.name.indexOf("13 Mini 256") != -1 ||
+                                  el.name.indexOf("13 Mini 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is13 && <br />}
+                      {is13 && <div>📱 **iPhone 13**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              el.name.indexOf("Air") === -1 &&
+                              (el.name.indexOf("13 128") != -1 ||
+                                el.name.indexOf("13 256") != -1 ||
+                                el.name.indexOf("13 512") != -1) &&
+                              (is13 || setIs13(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                el.name.indexOf("Air") === -1 &&
+                                (el.name.indexOf("13 128") != -1 ||
+                                  el.name.indexOf("13 256") != -1 ||
+                                  el.name.indexOf("13 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is14 && <br />}
+                      {is14 && <div>📱 **iPhone 14**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("14 128") != -1 ||
+                                el.name.indexOf("14 256") != -1 ||
+                                el.name.indexOf("14 512") != -1 ||
+                                el.name.indexOf("14 Plus") != -1) &&
+                              (is14 || setIs14(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("14 128") != -1 ||
+                                  el.name.indexOf("14 256") != -1 ||
+                                  el.name.indexOf("14 512") != -1 ||
+                                  el.name.indexOf("14 Plus") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is14Pro && <br />}
+                      {is14Pro && <div>📱 **iPhone 14 Pro**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("14 Pro 128") != -1 ||
+                                el.name.indexOf("14 Pro 256") != -1 ||
+                                el.name.indexOf("14 Pro 512") != -1 ||
+                                el.name.indexOf("14 Pro 1TB") != -1) &&
+                              (is14Pro || setIs14Pro(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("14 Pro 128") != -1 ||
+                                  el.name.indexOf("14 Pro 256") != -1 ||
+                                  el.name.indexOf("14 Pro 512") != -1 ||
+                                  el.name.indexOf("14 Pro 1TB") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is15 && <br />}
+                      {is15 && <div>📱 **iPhone 15**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 128") != -1 ||
+                                el.name.indexOf("15 256") != -1 ||
+                                el.name.indexOf("15 512") != -1) &&
+                              (is15 || setIs15(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 128") != -1 ||
+                                  el.name.indexOf("15 256") != -1 ||
+                                  el.name.indexOf("15 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is15Plus && <br />}
+                      {is15Plus && <div>📱 **iPhone 15 Plus**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 Plus 128") != -1 ||
+                                el.name.indexOf("15 Plus 256") != -1 ||
+                                el.name.indexOf("15 Plus 512") != -1) &&
+                              (is15Plus || setIs15Plus(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 Plus 128") != -1 ||
+                                  el.name.indexOf("15 Plus 256") != -1 ||
+                                  el.name.indexOf("15 Plus 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is15Pro && <br />}
+                      {is15Pro && <div>📱 **iPhone 15 Pro**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 Pro 128") != -1 ||
+                                el.name.indexOf("15 Pro 256") != -1 ||
+                                el.name.indexOf("15 Pro 512") != -1 ||
+                                el.name.indexOf("15 Pro 1Tb") != -1) &&
+                              (is15Pro || setIs15Pro(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 Pro 128") != -1 ||
+                                  el.name.indexOf("15 Pro 256") != -1 ||
+                                  el.name.indexOf("15 Pro 512") != -1 ||
+                                  el.name.indexOf("15 Pro 1Tb") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is15ProMax && <br />}
+                      {is15ProMax && <div>📱 **iPhone 15 Pro Max**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("15 ProMax 256") != -1 ||
+                                el.name.indexOf("15 ProMax 512") != -1 ||
+                                el.name.indexOf("15 ProMax 1Tb") != -1 ||
+                                el.name.indexOf("15 Pro Max 256") != -1 ||
+                                el.name.indexOf("15 Pro Max 512") != -1 ||
+                                el.name.indexOf("15 Pro Max 1Tb") != -1 ||
+                                el.name.indexOf("15 Pro Max 1TB") != -1 ||
+                                el.name.indexOf("15 Pro Max 1Tb") != -1) &&
+                              (is15ProMax || setIs15ProMax(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("15 ProMax 256") != -1 ||
+                                  el.name.indexOf("15 ProMax 512") != -1 ||
+                                  el.name.indexOf("15 ProMax 1Tb") != -1 ||
+                                  el.name.indexOf("15 Pro Max 256") != -1 ||
+                                  el.name.indexOf("15 Pro Max 512") != -1 ||
+                                  el.name.indexOf("15 Pro Max 1Tb") != -1 ||
+                                  el.name.indexOf("15 Pro Max 1TB") != -1 ||
+                                  el.name.indexOf("15 Pro Max 1Tb") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      <Footer />
+                    </tbody>
+                  </div>
+                )}
+
+                <div
+                  className={
+                    checkIsProductiPhone2(allPriceArr) && !isProductiPhone2
+                      ? style.titleCategoryNotFound
+                      : isOpeniPhone2
+                      ? style.titlecategoryOpen
+                      : style.titlecategory
+                  }
+                  onClick={() => setIsOpeniPhone2(!isOpeniPhone2)}
+                >
+                  {isOpeniPhone2 ? "iPhone 16-17 ▲" : "iPhone 16-17 ▼"}
+                </div>
+
+                {isOpeniPhone2 && (
+                  <div
+                    className={
+                      isOpeniPhone2 ? style.openAppleCategory : style.closed
+                    }
+                  >
+                    <h4
+                      onClick={() => {
+                        copyTable();
+                      }}
+                    >
+                      ❐ Copy
+                    </h4>
+                    <tbody>
+                      {is16e && <br />}
+                      {is16e && <div>📱 **iPhone 16e**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16e 128") != -1 ||
+                                el.name.indexOf("16e 256") != -1 ||
+                                el.name.indexOf("16e 512") != -1 ||
+                                el.name.indexOf("16Е 128") != -1 ||
+                                el.name.indexOf("16E 256") != -1 ||
+                                el.name.indexOf("16E 512") != -1) &&
+                              (is16e || setIs16e(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16e 128") != -1 ||
+                                  el.name.indexOf("16e 256") != -1 ||
+                                  el.name.indexOf("16e 512") != -1 ||
+                                  el.name.indexOf("16Е 128") != -1 ||
+                                  el.name.indexOf("16E 256") != -1 ||
+                                  el.name.indexOf("16E 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16 && <br />}
+                      {is16 && <div>📱 **iPhone 16**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16 128") != -1 ||
+                                el.name.indexOf("16 256") != -1 ||
+                                el.name.indexOf("16 512") != -1) &&
+                              (is16 || setIs16(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16 128") != -1 ||
+                                  el.name.indexOf("16 256") != -1 ||
+                                  el.name.indexOf("16 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16Plus && <br />}
+                      {is16Plus && <div>📱 **iPhone 16 Plus**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16 Plus 128") != -1 ||
+                                el.name.indexOf("16 Plus 256") != -1 ||
+                                el.name.indexOf("16 Plus 512") != -1) &&
+                              (is16Plus || setIs16Plus(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16 Plus 128") != -1 ||
+                                  el.name.indexOf("16 Plus 256") != -1 ||
+                                  el.name.indexOf("16 Plus 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16Pro && <br />}
+                      {is16Pro && <div>📱 **iPhone 16 Pro**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("16 Pro 128") != -1 ||
+                                el.name.indexOf("16 Pro 256") != -1 ||
+                                el.name.indexOf("16 Pro 512") != -1 ||
+                                el.name.indexOf("16 Pro 1Tb") != -1) &&
+                              (is16Pro || setIs16Pro(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("16 Pro 128") != -1 ||
+                                  el.name.indexOf("16 Pro 256") != -1 ||
+                                  el.name.indexOf("16 Pro 512") != -1 ||
+                                  el.name.indexOf("16 Pro 1Tb") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is16ProMax && <br />}
+                      {is16ProMax && <div>📱 **iPhone 16 Pro Max**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((iPhone16PM, index) => (
+                          <div key={index}>
+                            {baseFix(iPhone16PM) &&
+                              iPhone16PM.name.indexOf("ASIS") === -1 &&
+                              iPhone16PM.name.indexOf("Asis") === -1 &&
+                              (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
+                                iPhone16PM.name.indexOf("16 Pro Max") != -1) &&
+                              (is16ProMax || setIs16ProMax(true)) &&
+                              "` " + returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
+                                (iPhone16PM.provider !== "База"
+                                  ? additionalCost(iPhone16PM.stockPrice)
+                                  : iPhone16PM.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(iPhone16PM) &&
+                                iPhone16PM.name.indexOf("ASIS") === -1 &&
+                                iPhone16PM.name.indexOf("Asis") === -1 &&
+                                (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
+                                  iPhone16PM.name.indexOf("16 Pro Max") !=
+                                    -1) && (
+                                  <span>{" - " + iPhone16PM.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {isAir && <br />}
+                      {isAir && <div>📱 **🔥iPhone Air🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("Air 1tb") != -1 ||
+                                el.name.indexOf("Air 256") != -1 ||
+                                el.name.indexOf("Air 512") != -1) &&
+                              (isAir || setIsAir(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("Air 1tb") != -1 ||
+                                  el.name.indexOf("Air 256") != -1 ||
+                                  el.name.indexOf("Air 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
+                      {is17 && <br />}
+                      {is17 && <div>📱 **🔥iPhone 17🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("17 256") != -1 ||
+                                el.name.indexOf("17 512") != -1) &&
+                              (is17 || setIs17(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("17 256") != -1 ||
+                                  el.name.indexOf("17 512") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
+                      {is17Pro && <br />}
+                      {is17Pro && <div>📱 **🔥iPhone 17 Pro🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((el, index) => (
+                          <div key={index}>
+                            {baseFix(el) &&
+                              el.name.indexOf("ASIS") === -1 &&
+                              el.name.indexOf("Asis") === -1 &&
+                              (el.name.indexOf("17 Pro 256") != -1 ||
+                                el.name.indexOf("17 Pro 512") != -1 ||
+                                el.name.indexOf("17 Pro 1Tb") != -1) &&
+                              (is17Pro || setIs17Pro(true)) &&
+                              "` " + returnFixPrice(el, fixName(el)) +
+                                (el.provider !== "База"
+                                  ? additionalCost(el.stockPrice)
+                                  : el.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(el) &&
+                                el.name.indexOf("ASIS") === -1 &&
+                                el.name.indexOf("Asis") === -1 &&
+                                (el.name.indexOf("17 Pro 256") != -1 ||
+                                  el.name.indexOf("17 Pro 512") != -1 ||
+                                  el.name.indexOf("17 Pro 1Tb") != -1) && (
+                                  <span>{" - " + el.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+                      {is17ProMax && <br />}
+                      {is17ProMax && <div>📱 **🔥iPhone 17 Pro Max🔥**</div>}
+                      {allPriceArr.length ? (
+                        allPriceArr.map((iPhone17PM, index) => (
+                          <div key={index}>
+                            {baseFix(iPhone17PM) &&
+                              iPhone17PM.name.indexOf("ASIS") === -1 &&
+                              iPhone17PM.name.indexOf("Asis") === -1 &&
+                              (iPhone17PM.name.indexOf("17 ProMax") != -1 ||
+                                iPhone17PM.name.indexOf("17 Pro Max") != -1) &&
+                              (is17ProMax || setIs17ProMax(true)) &&
+                              "` " + returnFixPrice(iPhone17PM, fixName(iPhone17PM)) +
+                                (iPhone17PM.provider !== "База"
+                                  ? additionalCost(iPhone17PM.stockPrice)
+                                  : iPhone17PM.stockPrice) + "`"}
+                            <h3 className="del">
+                              {baseFix(iPhone17PM) &&
+                                iPhone17PM.name.indexOf("ASIS") === -1 &&
+                                iPhone17PM.name.indexOf("Asis") === -1 &&
+                                (iPhone17PM.name.indexOf("17 ProMax") != -1 ||
+                                  iPhone17PM.name.indexOf("17 Pro Max") !=
+                                    -1) && (
+                                  <span>{" - " + iPhone17PM.provider}</span>
+                                )}
+                            </h3>
+                          </div>
+                        ))
+                      ) : (
+                        <tr></tr>
+                      )}
+
+                      <Footer />
+                    </tbody>
+                  </div>
+                )}
+
+                
+                
               </div>
             </table>
           </div>

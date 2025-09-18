@@ -3120,6 +3120,48 @@ export const returnIDOtherBrand = (name) => {
     name.indexOf("moonstone") != -1
   ) {
     return 40471;
+    } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("41") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 40492;
+  } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("41") != -1 &&
+    name.indexOf("silver") != -1
+  ) {
+    return 40494;
+  } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("41") != -1 &&
+    name.indexOf("gold") != -1
+  ) {
+    return 40495;
+  } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("45") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 40498;
+  } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("45") != -1 &&
+    name.indexOf("silver") != -1
+  ) {
+    return 40499;
+  } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("41") != -1 &&
+    name.indexOf("moon") != -1
+  ) {
+    return 40500;
+  } else if (
+    name.indexOf("pixel watch 4 ") != -1 &&
+    name.indexOf("45") != -1 &&
+    name.indexOf("moon") != -1
+  ) {
+    return 40501;
   } else {
     return returnIDOtherBrand2(name) || "No match";
   }
