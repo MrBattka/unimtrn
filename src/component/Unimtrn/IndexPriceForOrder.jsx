@@ -144,6 +144,7 @@ const IndexPriceForOrder = ({
         returnIDSamsung(fixNameMiOpts(miopts.name)) !== "No match" &&
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(miopts.name) &&
+        returnStockPriceMiOpts(fixNameMiOpts(miopts.name)) > 1000 &&
         allPriceArr.push({
           id: returnIDSamsung(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),

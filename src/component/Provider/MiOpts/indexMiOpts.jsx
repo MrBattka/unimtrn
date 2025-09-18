@@ -28,6 +28,7 @@ const IndexMiHonor = ({ el, mihonorData }) => {
         returnIDApple(fixNameMihonor(mihonor.name)) !== 'No match' &&
         returnExtraPriceMihonor(mihonor.name) &&
         returnStockPriceMihonor(mihonor.name) &&
+        returnStockPriceMihonor(fixNameMihonor(mihonor.name)) > 1000 &&
         resultArr.push({
           id: returnIDApple(returnNameInArrMihonor(fixNameMihonor(mihonor.name))),
           name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
