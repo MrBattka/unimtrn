@@ -1,16 +1,13 @@
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import { read, utils } from "xlsx";
 import "./App.css";
-import Header from "./component/Header/Header";
-import IndexFromBase from "./component/PriceFromBase/IndexPriceFromBase";
 import IndexPriceForOrder from "./component/Unimtrn/IndexPriceForOrder";
 import icon from "./source/icon/icon.png";
 
 const App = () => {
   const [dataUnimtrn, setDataUnimtrn] = useState([]);
   const [dataHi, setDataHi] = useState([]);
-  const [dataMihonor, setDataMihonor] = useState([]);
+  const [dataSunrise, setDataSunrise] = useState([]);
   const [dataMiOpts, setDataMiOpts] = useState([]);
   const [dataSuperprice, setDataSuperprice] = useState([]);
   const [dataBase, setDataBase] = useState([]);
@@ -19,7 +16,7 @@ const App = () => {
 
   const unimtrn = [];
   const hi = [];
-  const mihonor = [];
+  const sunrise = [];
   const miopts = [];
   const superprice = [];
   const base = [];
@@ -39,11 +36,11 @@ const App = () => {
       hi.push({ name: hiEl.Hi });
   });
 
-  dataMihonor.map((mihonorEl) => {
-    mihonorEl.MiHonor &&
-      mihonorEl.MiHonor.length > 3 &&
-      typeof mihonorEl.MiHonor === "string" &&
-      mihonor.push({ name: mihonorEl.MiHonor });
+  dataSunrise.map((sunriseEl) => {
+    sunriseEl.Sunrise &&
+      sunriseEl.Sunrise.length > 3 &&
+      typeof sunriseEl.Sunrise === "string" &&
+      sunrise.push({ name: sunriseEl.Sunrise });
   });
 
   dataMiOpts.map((mioptsEl) => {
@@ -94,8 +91,8 @@ const App = () => {
           setDataUnimtrn(unimtrnSheet);
           const hiSheet = utils.sheet_to_json(wb.Sheets[sheets[1]]);
           setDataHi(hiSheet);
-          const mihonorSheet = utils.sheet_to_json(wb.Sheets[sheets[2]]);
-          setDataMihonor(mihonorSheet);
+          const sunriseSheet = utils.sheet_to_json(wb.Sheets[sheets[2]]);
+          setDataSunrise(sunriseSheet);
           const mioptsSheet = utils.sheet_to_json(wb.Sheets[sheets[3]]);
           setDataMiOpts(mioptsSheet);
           const superpriceSheet = utils.sheet_to_json(wb.Sheets[sheets[4]]);
@@ -134,7 +131,7 @@ const App = () => {
                 dataUnimtrn={unimtrn}
                 hi={hi}
                 el={dataHi}
-                mihonorData={mihonor}
+                sunriseData={sunrise}
                 mioptsData={miopts}
                 superpriceData={superprice}
                 baseData={deleteDoubleProduct}

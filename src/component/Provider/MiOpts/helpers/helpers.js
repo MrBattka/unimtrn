@@ -1,19 +1,4 @@
-const fixFlags = (str) => {
-  const result = [];
 
-  let current = str;
-  for (let i = 1; i < str.length; i++) {
-    current =
-      current.slice(4) +
-      " " +
-      current[0] +
-      current[1] +
-      current[2] +
-      current[3];
-    result.push(current);
-  }
-  return result[0];
-};
 
 export const returnNameInArrMiOpts = (name) => {
   let sliceFlags = name.indexOf("₽") != -1 ? name.split("₽", 2) : name;
@@ -30,7 +15,6 @@ export const returnNameInArrMiOpts = (name) => {
     splitStick.indexOf(" ") !== -1 ? /\s(.+)/.exec(splitStick)[1] : splitStick;
 
   let reverseBackStrName = splitPrice.split("").reverse().join("");
-  console.log(reverseBackStrName);
 
   return reverseBackStrName + sliceFlags[1];
 };

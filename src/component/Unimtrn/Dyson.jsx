@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { baseFix } from "../../helpers/baseFix";
 import { copyTable } from "../../helpers/copy";
-import { returnFixPrice1 } from "../../helpers/fixPrice";
-import { additionalCost } from "../../helpers/newPrice";
+import { returnFixPrice } from "../../helpers/fixPrice";
+import {
+  returnFixNameSunrise,
+  returnNameInArrSunrise,
+  returnStockPriceSunrise,
+} from "../Provider/Sunrise/helpers/helpers";
 import Footer from "./Footer";
 import style from "./styles.module.css";
+import { additionalCost } from "../../helpers/newPrice";
 
-const Dyson = ({ double, dataUnimtrn }) => {
+const Dyson = ({ sunriseData }) => {
   const res = [];
 
   let dyson = /Dyson/gi;
@@ -60,10 +65,10 @@ const Dyson = ({ double, dataUnimtrn }) => {
     <div>
       <div>
         <div>
-          {dataUnimtrn.length > 1 && (
+          {sunriseData.length > 1 && (
             <span
               className={
-                checkIsDyson(dataUnimtrn) && !isDyson
+                checkIsDyson(sunriseData) && !isDyson
                   ? style.titleNotFound
                   : isOpen
                   ? style.titleOpen
@@ -93,12 +98,15 @@ const Dyson = ({ double, dataUnimtrn }) => {
               </h4>
               <tbody>
                 {isDyson && <div>✂**Dyson**🪒</div>}
-                {dataUnimtrn.length ? (
-                  dataUnimtrn.map((dysonEl, index) => (
+                {sunriseData.length ? (
+                  sunriseData.map((dysonEl, index) => (
                     <div key={index}>
                       {baseFix(dysonEl) &&
                         (dysonEl.name.indexOf("Airwrap") != -1 ||
+                          dysonEl.name.indexOf("V8") != -1 ||
+                          dysonEl.name.indexOf("V9") != -1 ||
                           dysonEl.name.indexOf("V12") != -1 ||
+                          dysonEl.name.indexOf("V15") != -1 ||
                           dysonEl.name.indexOf("V-12") != -1 ||
                           dysonEl.name.indexOf("Vented") != -1 ||
                           dysonEl.name.indexOf("HD0") != -1 ||
@@ -123,10 +131,13 @@ const Dyson = ({ double, dataUnimtrn }) => {
                           dysonEl.name.indexOf("Air Purifier") != -1 ||
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
                         "` " +
-                          returnFixPrice1(dysonEl, fixName(dysonEl.name)) +
-                          (dysonEl.provider !== "База"
-                            ? additionalCost(dysonEl.price)
-                            : dysonEl.price) +
+                          returnFixPrice(
+                            dysonEl,
+                            returnNameInArrSunrise(
+                              returnFixNameSunrise(dysonEl.name)
+                            )
+                          ) +
+                          additionalCost(returnStockPriceSunrise(dysonEl.name)) +
                           "`"}
                     </div>
                   ))

@@ -3,7 +3,7 @@ import {
   baseFix,
   baseFixBase,
   baseFixHi,
-  baseFixMiHonor,
+  baseFixSunrise,
   baseFixMiOpts,
   baseFixSuperPrice,
 } from "../../helpers/baseFix";
@@ -17,12 +17,6 @@ import {
   returnNameInArrHi,
   returnStockPriceHi,
 } from "../Provider/Hi/helpers/helpers";
-import {
-  fixNameMihonor,
-  returnExtraPriceMihonor,
-  returnNameInArrMihonor,
-  returnStockPriceMihonor,
-} from "../Provider/MiHonor/helpers/helpers";
 import {
   fixNameMiOpts,
   returnExtraPriceMiOpts,
@@ -51,12 +45,13 @@ import style from "./indexPicrForOrder.module.css";
 import { changeFlag } from "../PriceFromBase/helpers/fixFlags";
 import ProductNotID from "./ProductNotID";
 import { returnFixPriceHi } from "../../helpers/fixFlags";
+import { returnFixNameSunrise, returnNameInArrSunrise, returnStockPriceSunrise } from "../Provider/Sunrise/helpers/helpers";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
   hi,
   handleImport,
-  mihonorData,
+  sunriseData,
   mioptsData,
   superpriceData,
   baseData,
@@ -79,7 +74,9 @@ const IndexPriceForOrder = ({
         returnOtherProduct(unimtrnEl))
     ) {
       allPriceArr.push({
-        id: returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
+        id: returnIDSamsung(
+          returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))
+        ),
         name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
@@ -89,44 +86,67 @@ const IndexPriceForOrder = ({
   });
 
   hi.map((hiEl) => {
-      return (
-        
-        baseFixHi(hiEl) &&
-        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
-        
-        allPriceArr.push({
-          id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
-          name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
-          extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
-          stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
-          provider: "Hi",
-        })
-      );
+    return (
+      baseFixHi(hiEl) &&
+      returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
+      allPriceArr.push({
+        id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+        name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
+        extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
+        stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
+        provider: "Hi",
+      })
+    );
   });
-  
 
-  mihonorData.map((mihonor) => {
-    baseFixMiHonor(mihonor) &&
-      returnStockPriceMihonor(fixNameMihonor(mihonor.name));
-    baseFixMiHonor(mihonor) &&
-      returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
+  // sunrise.map((sunrise) => {
+  //   baseFixsunrise(sunrise) &&
+  //     returnStockPricesunrise(fixNamesunrise(sunrise.name));
+  //   baseFixsunrise(sunrise) &&
+  //     returnExtraPricesunrise(fixNamesunrise(sunrise.name));
+  //   if (
+  //     sunrise.name &&
+  //     typeof sunrise.name === "string" &&
+  //     baseFixsunrise(sunrise)
+  //   ) {
+  //     return (
+  //       returnIDSamsung(fixNamesunrise(sunrise.name)) !== "No match" &&
+  //       returnStockPricesunrise(sunrise.name) &&
+  //       allPriceArr.push({
+  //         id: returnIDSamsung(
+  //           returnNameInArrsunrise(fixNamesunrise(sunrise.name))
+  //         ),
+  //         name: returnNameInArrsunrise(fixNamesunrise(sunrise.name)),
+  //         extraPrice: returnExtraPricesunrise(fixNamesunrise(sunrise.name)),
+  //         stockPrice: returnStockPricesunrise(fixNamesunrise(sunrise.name)),
+  //         condition: " - от 3шт.",
+  //         provider: "sunrise",
+  //       })
+  //     );
+  //   }
+  // });
+
+  sunriseData.map((sunrise) => {
+    baseFixSunrise(sunrise) &&
+      returnStockPriceSunrise(returnFixNameSunrise(sunrise.name));
     if (
-      mihonor.name &&
-      typeof mihonor.name === "string" &&
-      baseFixMiHonor(mihonor)
+      sunrise.name &&
+      typeof sunrise.name === "string" &&
+      baseFixSunrise(sunrise) &&
+      isOpen
     ) {
       return (
-        returnIDSamsung(fixNameMihonor(mihonor.name)) !== "No match" &&
-        returnStockPriceMihonor(mihonor.name) &&
+        returnIDSamsung(returnFixNameSunrise(sunrise.name)) !== "No match" &&
+        returnStockPriceSunrise(sunrise.name) &&
         allPriceArr.push({
           id: returnIDSamsung(
-            returnNameInArrMihonor(fixNameMihonor(mihonor.name))
+            returnNameInArrSunrise(returnFixNameSunrise(sunrise.name))
           ),
-          name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
-          extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
-          stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
-          condition: " - от 3шт.",
-          provider: "MiHonor",
+          name: returnNameInArrSunrise(returnFixNameSunrise(sunrise.name)),
+          stockPrice: returnStockPriceSunrise(
+            returnFixNameSunrise(sunrise.name)
+          ),
+          provider: "Sunrise",
         })
       );
     }
@@ -145,9 +165,10 @@ const IndexPriceForOrder = ({
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(fixNameMiOpts(miopts.name)) > 1000 &&
-        
         allPriceArr.push({
-          id: returnIDSamsung(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
+          id: returnIDSamsung(
+            returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
+          ),
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
           extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
           stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
@@ -194,9 +215,6 @@ const IndexPriceForOrder = ({
     }
   });
 
-
-
-
   dataUnimtrn.map((unimtrnEl) => {
     if (
       unimtrnEl.name &&
@@ -211,7 +229,9 @@ const IndexPriceForOrder = ({
         returnOtherProduct(unimtrnEl))
     ) {
       allPriceArrNotID.push({
-        id: returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
+        id: returnIDSamsung(
+          returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))
+        ),
         name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
@@ -221,14 +241,11 @@ const IndexPriceForOrder = ({
   });
 
   hi.map((hiEl) => {
-    
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
-      
       return (
-        
         baseFixHi(hiEl) &&
-        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) === "No match" &&
-        
+        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) ===
+          "No match" &&
         allPriceArrNotID.push({
           id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
@@ -240,32 +257,32 @@ const IndexPriceForOrder = ({
     }
   });
 
-  mihonorData.map((mihonor) => {
-    baseFixMiHonor(mihonor) &&
-      returnStockPriceMihonor(fixNameMihonor(mihonor.name));
-    baseFixMiHonor(mihonor) &&
-      returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
-    if (
-      mihonor.name &&
-      typeof mihonor.name === "string" &&
-      baseFixMiHonor(mihonor)
-    ) {
-      return (
-        returnIDSamsung(fixNameMihonor(mihonor.name)) === "No match" &&
-        returnStockPriceMihonor(mihonor.name) &&
-        allPriceArrNotID.push({
-          id: returnIDSamsung(
-            returnNameInArrMihonor(fixNameMihonor(mihonor.name))
-          ),
-          name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
-          extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
-          stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
-          condition: " - от 3шт.",
-          provider: "MiHonor",
-        })
-      );
-    }
-  });
+  // sunrise.map((sunrise) => {
+  //   baseFixsunrise(sunrise) &&
+  //     returnStockPricesunrise(fixNamesunrise(sunrise.name));
+  //   baseFixsunrise(sunrise) &&
+  //     returnExtraPricesunrise(fixNamesunrise(sunrise.name));
+  //   if (
+  //     sunrise.name &&
+  //     typeof sunrise.name === "string" &&
+  //     baseFixsunrise(sunrise)
+  //   ) {
+  //     return (
+  //       returnIDSamsung(fixNamesunrise(sunrise.name)) === "No match" &&
+  //       returnStockPricesunrise(sunrise.name) &&
+  //       allPriceArrNotID.push({
+  //         id: returnIDSamsung(
+  //           returnNameInArrsunrise(fixNamesunrise(sunrise.name))
+  //         ),
+  //         name: returnNameInArrsunrise(fixNamesunrise(sunrise.name)),
+  //         extraPrice: returnExtraPricesunrise(fixNamesunrise(sunrise.name)),
+  //         stockPrice: returnStockPricesunrise(fixNamesunrise(sunrise.name)),
+  //         condition: " - от 3шт.",
+  //         provider: "sunrise",
+  //       })
+  //     );
+  //   }
+  // });
 
   mioptsData.map((miopts) => {
     baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
@@ -280,7 +297,9 @@ const IndexPriceForOrder = ({
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(miopts.name) &&
         allPriceArrNotID.push({
-          id: returnIDSamsung(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
+          id: returnIDSamsung(
+            returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
+          ),
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
           extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
           stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
@@ -366,11 +385,26 @@ const IndexPriceForOrder = ({
             
           </div>
         ))} */}
-        <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} />
-        <GarminGoProDji double={allPriceArr} superprice={superpriceData} dataUnimtrn={dataUnimtrn} />
-        <NoName double={allPriceArr} dataUnimtrn={dataUnimtrn} mihonorData={mihonorData} />
-        <GoogleSonyAsusLenovo double={allPriceArr} dataUnimtrn={dataUnimtrn} superprice={superpriceData} />
-        <OnePlusZTENothingHonor double={allPriceArr} dataUnimtrn={dataUnimtrn} />
+        <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} sunriseData={sunriseData} />
+        <GarminGoProDji
+          double={allPriceArr}
+          superprice={superpriceData}
+          dataUnimtrn={dataUnimtrn}
+        />
+        <NoName
+          double={allPriceArr}
+          dataUnimtrn={dataUnimtrn}
+          sunrise={sunriseData}
+        />
+        <GoogleSonyAsusLenovo
+          double={allPriceArr}
+          dataUnimtrn={dataUnimtrn}
+          superprice={superpriceData}
+        />
+        <OnePlusZTENothingHonor
+          double={allPriceArr}
+          dataUnimtrn={dataUnimtrn}
+        />
         <GameConsoles double={allPriceArr} />
         <Samsung double={allPriceArr} />
         <Xiaomi double={allPriceArr} />
