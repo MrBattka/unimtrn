@@ -1059,7 +1059,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               "` " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
-                                  : asis.stockPrice) + "'"}
+                                  : asis.stockPrice) + "`"}
                             <h3 className="del">
                               {baseFix(asis) &&
                                 (asis.name.indexOf("ASIS") != -1 ||
@@ -2561,6 +2561,12 @@ const Apple = ({ double, dataUnimtrn }) => {
                     </h4>
                     <tbody>
                       {is16e && <br />}
+                      <div>**Поддержка сим-карт на iPhone 17 / Pro / Pro Max**</div>
+                      <div>__Только eSim - 🇧🇭🇨🇦🇬🇺🇯🇵🇰🇼🇲🇽🇴🇲🇶🇦🇸🇦🇦🇪🇺🇸🇻🇮__</div>
+                      <div>__Nano-Sim + eSim - 🇪🇺🇮🇳🇻🇳🇦🇺🇳🇿🇰🇷🇸🇬🇭🇰__</div>
+                      <div>__Dual Nano-Sim - 🇨🇳__</div>
+                      <div>**17 Air** - __только eSim__</div>
+                      <br />
                       {is16e && <div>📱 **iPhone 16e**</div>}
                       {allPriceArr.length ? (
                         allPriceArr.map((el, index) => (
