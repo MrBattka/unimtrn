@@ -245,8 +245,8 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
 
                 {isInfinix && <br />}
                 {isInfinix && <div>📱 **Infinix**</div>}
-                {mihonorData.length ? (
-                  mihonorData.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFixMiHonor(el) &&
                         el.name.indexOf("INFINIX") != -1 &&

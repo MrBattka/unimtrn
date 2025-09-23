@@ -37,7 +37,7 @@ export const checkFixPrice = (el) => {
 };
 export const returnFixPrice = (el, prod) => {
   // console.log(prod + "prod");
-  if (checkFixPrice(el)) {
+  if (checkFixPrice(el) || prod.indexOf("Sim") !== -1) {
     return prod + ' - ';
   } else {
     return prod;
