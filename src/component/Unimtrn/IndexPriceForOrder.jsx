@@ -80,7 +80,7 @@ const IndexPriceForOrder = ({
     ) {
       allPriceArr.push({
         id: returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))),
-        name: returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)),
+        name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
         stockPrice: unimtrnEl.price,
         provider: "Unimtrn",
@@ -145,6 +145,7 @@ const IndexPriceForOrder = ({
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(fixNameMiOpts(miopts.name)) > 1000 &&
+        
         allPriceArr.push({
           id: returnIDSamsung(returnNameInArrMiOpts(fixNameMiOpts(miopts.name))),
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),

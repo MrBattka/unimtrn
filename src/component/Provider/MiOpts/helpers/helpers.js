@@ -19,11 +19,18 @@ export const returnNameInArrMiOpts = (name) => {
   let sliceFlags = name.indexOf("₽") != -1 ? name.split("₽", 2) : name;
   let reverseStrName = name.split("").reverse().join("");
 
-  let removeRUB =
-    reverseStrName[0] === "-" ? reverseStrName.slice(1) : reverseStrName;
-  let splitStick = removeRUB.indexOf("-") !== -1 ? removeRUB.split("-")[1] : removeRUB
+  // let removeRUB =
+  //   reverseStrName[0] === "-" ? reverseStrName.slice(1) : reverseStrName;
+  let splitStick =
+    reverseStrName.indexOf("-") !== -1
+      ? reverseStrName.split("-")[1]
+      : reverseStrName;
 
-  let reverseBackStrName = splitStick.split("").reverse().join("");
+  let splitPrice =
+    splitStick.indexOf(" ") !== -1 ? /\s(.+)/.exec(splitStick)[1] : splitStick;
+
+  let reverseBackStrName = splitPrice.split("").reverse().join("");
+  console.log(reverseBackStrName);
 
   return reverseBackStrName + sliceFlags[1];
 };
@@ -38,7 +45,11 @@ export const returnExtraPriceMiOpts = (name) => {
     sliceFlags[1].indexOf("-") != -1 && sliceFlags[1].indexOf("Wi-Fi") == -1
       ? sliceFlags[1].split("-", 2)
       : sliceFlags[1];
-  let reverseBackStrName = slicePrice[0].split("").reverse().join("");
+  let slicePrice1 =
+    slicePrice.indexOf(" ") != -1
+      ? slicePrice.split(" ", 2)
+      : slicePrice;
+  let reverseBackStrName = slicePrice1[0].split("").reverse().join("");
   let extraPrice = Number(reverseBackStrName) + 700;
 
   return extraPrice;
@@ -50,14 +61,14 @@ export const returnStockPriceMiOpts = (name) => {
     reverseStrName.indexOf("₽") != -1
       ? reverseStrName.split("₽", 2)
       : reverseStrName;
-      
+
   let slicePrice =
     sliceFlags[1].indexOf("-") != -1 && sliceFlags[1].indexOf("Wi-Fi") == -1
       ? sliceFlags[1].split("-", 2)
       : sliceFlags[1].split(" ", 2);
   let reverseBackStrName = slicePrice[0].split("").reverse().join("");
+
   let extraPrice = Number(reverseBackStrName) + 400;
-  
   return extraPrice;
 };
 
@@ -86,8 +97,14 @@ export const fixNameMiOpts = (name) => {
       ? replaceGB.replace("5G", "")
       : replaceGB;
   const fixS24FE = replace5G.replace("S24FE", "S24 FE");
-  const fixNote13ProPlus = fixS24FE.replace("Note 13 Pro Plus", "Note 13 Pro +");
-  const fixNote14ProPlus = fixNote13ProPlus.replace("Note 14 Pro Plus", "Note 14 Pro +");
+  const fixNote13ProPlus = fixS24FE.replace(
+    "Note 13 Pro Plus",
+    "Note 13 Pro +"
+  );
+  const fixNote14ProPlus = fixNote13ProPlus.replace(
+    "Note 14 Pro Plus",
+    "Note 14 Pro +"
+  );
 
   return fixNote14ProPlus;
 };

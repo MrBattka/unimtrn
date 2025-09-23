@@ -38,7 +38,7 @@ export const checkFixPrice = (el) => {
 export const returnFixPrice = (el, prod) => {
   // console.log(prod + "prod");
   if (checkFixPrice(el)) {
-    return `${prod} - `;
+    return prod + ' - ';
   } else {
     return prod;
   }

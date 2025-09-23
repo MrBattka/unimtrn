@@ -125,7 +125,7 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
             productEl.name.indexOf("JBL") != -1 ||
             productEl.name.indexOf("Marshall") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          "` " + returnFixPrice(productEl, productEl.name) + productEl.stockPrice
+          "` " + productEl.name + productEl.stockPrice
       )
     );
   };
