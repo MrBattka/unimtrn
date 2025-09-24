@@ -211,7 +211,7 @@ const Samsung = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Galaxy Ring") !== -1 &&
                         (isRings || setIsRings(true)) &&
-                        "` " + returnFixPrice(el, el.name) +
+                        "` • " + returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -244,7 +244,7 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Buds") !== -1 ||
                           el.name.indexOf("Galaxy Smart Tag") !== -1) &&
                         (isBuds || setIsBuds(true)) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
@@ -279,7 +279,7 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Watch 6") != -1 ||
                           el.name.indexOf("Watch 7") != -1) &&
                         (isWatch || setIsWatch(true)) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
@@ -332,7 +332,7 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("M54 ") != -1 ||
                           el.name.indexOf("A55 ") != -1) &&
                         (isPhonesA || setIsPhonesA(true)) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
@@ -427,7 +427,7 @@ const Samsung = ({ double }) => {
                           el.name.indexOf("S25 ") != -1 ||
                           el.name.indexOf("S25+") != -1) &&
                         (isPhonesS || setIsPhonesS(true)) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
@@ -469,7 +469,7 @@ const Samsung = ({ double }) => {
                         (el.name.indexOf("Z Flip") != -1 ||
                           el.name.indexOf("Z Fold") != -1) &&
                         (isPhonesZ || setIsPhonesZ(true)) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
@@ -503,7 +503,7 @@ const Samsung = ({ double }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Tab S") != -1 &&
                         (isTab || setIsTab(true)) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(el, el.name) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${

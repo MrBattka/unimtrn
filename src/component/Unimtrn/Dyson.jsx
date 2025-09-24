@@ -130,7 +130,7 @@ const Dyson = ({ sunriseData }) => {
                           dysonEl.name.indexOf("Supersonic Hair") != -1 ||
                           dysonEl.name.indexOf("Air Purifier") != -1 ||
                           dysonEl.name.indexOf("Vacuum Cleaner Micro") != -1) &&
-                        "` " +
+                        "` • " +
                           returnFixPrice(
                             dysonEl,
                             returnNameInArrSunrise(

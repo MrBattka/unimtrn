@@ -268,7 +268,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("15 Pro Max 1TB") != -1 ||
             el.name.indexOf("15 Pro Max 1Tb") != -1) &&
           (isProductiPhone1 || setIsProductiPhone1(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
+          "` • " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -312,7 +312,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("17 ProMax") != -1 ||
             el.name.indexOf("17 Pro Max") != -1) &&
           (isProductiPhone2 || setIsProductiPhone2(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
+          "` • " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -331,7 +331,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("Magic Keyboard") != -1 ||
             el.name.indexOf("Magic Mouse") != -1) &&
           (isProductAirPods || setIsProductAirPods(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
+          "` • " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -377,7 +377,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("Ultra 2") != -1 ||
             el.name.indexOf("UL 2") != -1) &&
           (isProductAW || setIsProductAW(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
+          "` • " + returnFixPrice(el, fixName(el)) + additionalCost(el.stockPrice)
       )
     );
   };
@@ -400,7 +400,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("iPad Air 13") != -1 ||
             el.name.indexOf("iPad Pro 1") != -1) &&
           (isProductiPad || setIsProductiPad(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + newPrice(el.name, el.price)
+          "` • " + returnFixPrice(el, fixName(el)) + newPrice(el.name, el.price)
       )
     );
   };
@@ -562,7 +562,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("MC7C4") != -1 ||
             el.name.indexOf("MW1K3") != -1) &&
           (isProductMac || setIsProductMac(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + newPrice(el.name, el.price)
+          "` • " + returnFixPrice(el, fixName(el)) + newPrice(el.name, el.price)
       )
     );
   };
@@ -812,7 +812,7 @@ const Apple = ({ double, dataUnimtrn }) => {
             el.name.indexOf("Z133IMAC01") != -1 ||
             el.name.indexOf("MXNF2") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          "` " + returnFixPrice(el, fixName(el)) + newPrice(el.name, el.price)
+          "` • " + returnFixPrice(el, fixName(el)) + newPrice(el.name, el.price)
       )
     );
   };
@@ -877,7 +877,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("Air Pods") != -1) &&
                               el.name.indexOf("AirPods Max") == -1 &&
                               (isAirPods || setIsAirPods(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -906,7 +906,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               el.name.indexOf("USB-C") == -1 &&
                               el.name.indexOf("2") == -1 &&
                               (isAirPodsMax || setIsAirPodsMax(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -932,7 +932,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               el.name.indexOf("AirPods Max") != -1 &&
                               el.name.indexOf("USB-C") != -1 &&
                               (isAirPodsMax2024 || setIsAirPodsMax2024(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -956,7 +956,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                             {baseFix(el) &&
                               el.name.indexOf("Pencil") != -1 &&
                               (isPencil || setIsPencil(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -980,7 +980,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("Magic Keyboard") != -1 ||
                                 el.name.indexOf("Magic Mouse") != -1) &&
                               (isMagic || setIsMagic(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1014,7 +1014,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("13 256") != -1 ||
                                 asis.name.indexOf("13 512") != -1) &&
                               (isAsIs13 || setIsAsIs13(true)) &&
-                              "` " + returnFixPrice(asis, fixName(asis)) +
+                              "` • " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice) + "`"}
@@ -1056,7 +1056,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("14 Pro Max 512") != -1 ||
                                 asis.name.indexOf("14 Pro Max 1TB") != -1) &&
                               (isAsIs14 || setIsAsIs14(true)) &&
-                              "` " + returnFixPrice(asis, fixName(asis)) +
+                              "` • " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice) + "`"}
@@ -1102,7 +1102,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("15 Pro Max 512") != -1 ||
                                 asis.name.indexOf("15 Pro Max 1TB") != -1) &&
                               (isAsIs15 || setIsAsIs15(true)) &&
-                              "` " + returnFixPrice(asis, fixName(asis)) +
+                              "` • " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice) + "`"}
@@ -1150,7 +1150,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 asis.name.indexOf("16 Pro Max 512") != -1 ||
                                 asis.name.indexOf("16 Pro Max 1TB") != -1) &&
                               (isAsIs16 || setIsAsIs16(true)) &&
-                              "` " + returnFixPrice(asis, fixName(asis)) +
+                              "` • " + returnFixPrice(asis, fixName(asis)) +
                                 (asis.provider !== "База"
                                   ? additionalCost(asis.stockPrice)
                                   : asis.stockPrice) + "'"}
@@ -1226,7 +1226,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("SE (2022) 256") != -1) &&
                               el.name.indexOf("OnePlus") === -1 &&
                               (isSEWatch || setIsSEWatch(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1262,7 +1262,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                   el.name.indexOf("SE3 256") === -1 &&
                                 el.name.indexOf("OnePlus") === -1 &&
                               (isSE3Watch || setIsSE3Watch(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1294,7 +1294,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("AW 8") != -1 ||
                                 el.name.indexOf("AW  8") != -1) &&
                               (isS8 || setIsS8(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1325,7 +1325,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("S9 4") != -1 ||
                                 el.name.indexOf("AW  9") != -1) &&
                               (isS9 || setIsS9(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1356,7 +1356,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("S10 4") != -1 ||
                                 el.name.indexOf("AW  10") != -1) &&
                               (isS10 || setIsS10(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1388,7 +1388,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("S11 4") != -1 ||
                                 el.name.indexOf("AW  11") != -1) &&
                               (isS11 || setIsS11(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1418,7 +1418,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("UL 2") != -1) &&
                               el.name.indexOf("2024") == -1 &&
                               (isUltra || setIsUltra(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1446,7 +1446,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 (el.name.indexOf("UL 2") != -1 &&
                                   el.name.indexOf("2024") != -1)) &&
                               (isUltra2024 || setIsUltra2024(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1474,7 +1474,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("Ultra 3") != -1 ||
                                 el.name.indexOf("UL 3") != -1) &&
                               (isUltra3 || setIsUltra3(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1531,7 +1531,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("iPad 9") != -1 ||
                                 el.name.indexOf("IPad 9") != -1) &&
                               (isiPad9 || setIsiPad9(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1556,7 +1556,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("iPad 10") != -1 ||
                                 el.name.indexOf("IPad 10") != -1) &&
                               (isiPad10 || setIsiPad10(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1581,7 +1581,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("iPad 11") != -1 ||
                                 el.name.indexOf("IPad 11") != -1) &&
                               (isiPad11 || setIsiPad11(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1609,7 +1609,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("Mini 7") != -1 ||
                                 el.name.indexOf("MINI 7") != -1) &&
                               (isiPadMini || setIsiPadMini(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1639,7 +1639,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("iPad Air 13") != -1 ||
                                 el.name.indexOf("IPad Air 11") != -1) &&
                               (isiPadAir || setIsiPadAir(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1666,7 +1666,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               el.name.indexOf("Magic Keyboard") == -1 &&
                               el.name.indexOf("iPad Pro 11") != -1 &&
                               (isiPadPro11 || setIsiPadPro11(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1690,7 +1690,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                             {baseFix(el) &&
                               el.name.indexOf("iPad Pro 12") != -1 &&
                               (isiPadPro12 || setIsiPadPro12(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1714,7 +1714,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               el.name.indexOf("iPad Pro 13") != -1 &&
                               el.name.indexOf("Magic Keyboard") == -1 &&
                               (isiPadPro13 || setIsiPadPro13(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1802,7 +1802,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("Z133IMAC01") != -1 ||
                                 el.name.indexOf("MXNF2") != -1) &&
                               (isiMac || setIsiMac(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -1973,7 +1973,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("MC7C4") != -1 ||
                                 el.name.indexOf("MW1K3") != -1) &&
                               (isMacBook || setIsMacBook(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2145,7 +2145,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("XR 64") != -1 ||
                                 el.name.indexOf("XR 128") != -1) &&
                               (isXR || setIsXR(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2176,7 +2176,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("SE 128") != -1 ||
                                 el.name.indexOf("SE 256") != -1) &&
                               (isSE || setIsSE(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2209,7 +2209,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("11 64") != -1 ||
                                 el.name.indexOf("11 128") != -1) &&
                               (is11 || setIs11(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2242,7 +2242,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("12 256") != -1 ||
                                 el.name.indexOf("12 Pro Max") != -1) &&
                               (is12 || setIs12(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2274,7 +2274,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("13 Mini 256") != -1 ||
                                 el.name.indexOf("13 Mini 512") != -1) &&
                               (is13Mini || setIs13Mini(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2306,7 +2306,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("13 256") != -1 ||
                                 el.name.indexOf("13 512") != -1) &&
                               (is13 || setIs13(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2339,7 +2339,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("14 512") != -1 ||
                                 el.name.indexOf("14 Plus") != -1) &&
                               (is14 || setIs14(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2372,7 +2372,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("14 Pro 512") != -1 ||
                                 el.name.indexOf("14 Pro 1TB") != -1) &&
                               (is14Pro || setIs14Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2404,7 +2404,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("15 256") != -1 ||
                                 el.name.indexOf("15 512") != -1) &&
                               (is15 || setIs15(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2435,7 +2435,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("15 Plus 256") != -1 ||
                                 el.name.indexOf("15 Plus 512") != -1) &&
                               (is15Plus || setIs15Plus(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2467,7 +2467,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("15 Pro 512") != -1 ||
                                 el.name.indexOf("15 Pro 1Tb") != -1) &&
                               (is15Pro || setIs15Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2504,7 +2504,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("15 Pro Max 1TB") != -1 ||
                                 el.name.indexOf("15 Pro Max 1Tb") != -1) &&
                               (is15ProMax || setIs15ProMax(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2581,7 +2581,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("16E 256") != -1 ||
                                 el.name.indexOf("16E 512") != -1) &&
                               (is16e || setIs16e(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2615,7 +2615,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("16 256") != -1 ||
                                 el.name.indexOf("16 512") != -1) &&
                               (is16 || setIs16(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2646,7 +2646,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("16 Plus 256") != -1 ||
                                 el.name.indexOf("16 Plus 512") != -1) &&
                               (is16Plus || setIs16Plus(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2678,7 +2678,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("16 Pro 512") != -1 ||
                                 el.name.indexOf("16 Pro 1Tb") != -1) &&
                               (is16Pro || setIs16Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2709,7 +2709,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (iPhone16PM.name.indexOf("16 ProMax") != -1 ||
                                 iPhone16PM.name.indexOf("16 Pro Max") != -1) &&
                               (is16ProMax || setIs16ProMax(true)) &&
-                              "` " + returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
+                              "` • " + returnFixPrice(iPhone16PM, fixName(iPhone16PM)) +
                                 (iPhone16PM.provider !== "База"
                                   ? additionalCost(iPhone16PM.stockPrice)
                                   : iPhone16PM.stockPrice) + "`"}
@@ -2740,7 +2740,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("Air 256") != -1 ||
                                 el.name.indexOf("Air 512") != -1) &&
                               (isAir || setIsAir(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2771,7 +2771,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (el.name.indexOf("17 256") != -1 ||
                                 el.name.indexOf("17 512") != -1) &&
                               (is17 || setIs17(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2802,7 +2802,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                                 el.name.indexOf("17 Pro 512") != -1 ||
                                 el.name.indexOf("17 Pro 1Tb") != -1) &&
                               (is17Pro || setIs17Pro(true)) &&
-                              "` " + returnFixPrice(el, fixName(el)) +
+                              "` • " + returnFixPrice(el, fixName(el)) +
                                 (el.provider !== "База"
                                   ? additionalCost(el.stockPrice)
                                   : el.stockPrice) + "`"}
@@ -2832,7 +2832,7 @@ const Apple = ({ double, dataUnimtrn }) => {
                               (iPhone17PM.name.indexOf("17 ProMax") != -1 ||
                                 iPhone17PM.name.indexOf("17 Pro Max") != -1) &&
                               (is17ProMax || setIs17ProMax(true)) &&
-                              "` " + returnFixPrice(iPhone17PM, fixName(iPhone17PM)) +
+                              "` • " + returnFixPrice(iPhone17PM, fixName(iPhone17PM)) +
                                 (iPhone17PM.provider !== "База"
                                   ? additionalCost(iPhone17PM.stockPrice)
                                   : iPhone17PM.stockPrice) + "`"}

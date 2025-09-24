@@ -128,7 +128,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
             productEl.name.indexOf("Яндекс") != -1 ||
             productEl.name.indexOf("Spark ") != -1) &&
           (isProduct || setIsProduct(true)) &&
-          "` " + returnFixPrice(productEl, fixName(productEl)) +
+          "` • " + returnFixPrice(productEl, fixName(productEl)) +
             additionalCost(productEl.stockPrice)
       )
     );
@@ -177,7 +177,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         BeatsEl.price &&
                         BeatsEl.name.indexOf("Beats") != -1 &&
                         (isBeats || setIsBeats(true)) &&
-                        "` " + returnFixPrice(BeatsEl, BeatsEl.name) +
+                        "` • " + returnFixPrice(BeatsEl, BeatsEl.name) +
                           additionalCost(BeatsEl.price) + "`"}
                     </div>
                   ))
@@ -193,7 +193,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Blackview") != -1 &&
                         (isBlackview || setIsBlackview(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -222,7 +222,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                       {baseFix(el) &&
                         el.name.indexOf("AGM") != -1 &&
                         (isAGM || setIsAGM(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -252,7 +252,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         el.name.indexOf("INFINIX") != -1 &&
                         el.name.indexOf("*INFINIX*") == -1 &&
                         (isInfinix || setIsInfinix(true)) &&
-                        "` " + returnNameInArrMihonor(fixNameMihonor(el.name)) +
+                        "` • " + returnNameInArrMihonor(fixNameMihonor(el.name)) +
                           `${additionalCost(
                             returnExtraPriceMihonor(fixNameMihonor(el.name))
                           ) + "`"} 👉 (${
@@ -274,7 +274,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Oppo") != -1 &&
                         (isOppo || setIsOppo(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -304,7 +304,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (el.name.indexOf("Huawei") != -1 ||
                           el.name.indexOf("HUAWEI") != -1) &&
                         (isHuawei || setIsHuawei(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -336,7 +336,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                         (el.name.indexOf("Huawei Watch") != -1 ||
                           el.name.indexOf("HUAWEI WATCH") != -1) &&
                         (isHuaweiWatch || setIsHuaweiWatch(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           additionalCost(el.price) + "`"}
                       <h3 className="del">
                         {baseFix(el) &&
@@ -359,7 +359,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Realme") != -1 &&
                         (isRealme || setIsRealme(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -390,7 +390,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                           el.name.indexOf("Camon ") != -1 ||
                           el.name.indexOf("Spark ") != -1) &&
                         (isTecno || setIsTecno(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           (el.condition
                             ? `${additionalCost(el.extraPrice)} 👉 (${
                                 additionalCost(el.stockPrice) + el.condition
@@ -422,7 +422,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                       {baseFix(el) &&
                         el.name.indexOf("Яндекс") != -1 &&
                         (isYandex || setIsYandex(true)) &&
-                        "` " + returnFixPrice(el, fixName(el)) +
+                        "` • " + returnFixPrice(el, fixName(el)) +
                           additionalCost(el.price) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Яндекс") != -1 && (
