@@ -478,7 +478,9 @@ export const fixNameUnimtrn = (el) => {
   const fixTabS10FEPlus = fixTabS10Plus.replace("Tab S10 FE Plus", "Tab S10 FE +");
   const replaceMacBook = fixTabS10FEPlus.replace("MacBook ", "");
   const replacecheck = replaceMacBook.replace("📌", " ");
-  const replaceAW = replacecheck.replace("AW ", "");
+  const replaceAW = replacecheck.replace("AW 1", "S1");
+  const replaceS1 = replaceAW.replace("Series 1", "S1");
+  const replaceSE1 = replaceS1.replace("SEries 1", "S1");
 
-  return replaceAW;
+  return replaceSE1;
 };

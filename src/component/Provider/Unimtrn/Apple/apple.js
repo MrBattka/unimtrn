@@ -113,6 +113,8 @@ export const returnApple = (name) => {
     el.indexOf("17 Pro Max 2Tb") != -1 ||
     el.indexOf("17 ProMax 512") != -1 ||
     el.indexOf("17 ProMax 1Tb") != -1 ||
+    el.indexOf("17 ProMax 256") != -1 ||
+    el.indexOf("17 ProMax 2Tb") != -1 ||
     el.indexOf("17 Pro Max 256") != -1 ||
     el.indexOf("17 Pro Max 512") != -1 ||
     el.indexOf("17 Pro Max 1Tb") != -1 ||
