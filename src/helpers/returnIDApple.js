@@ -413,9 +413,16 @@ export const returnIDApple = (name) => {
     name.indexOf("s10") != -1 &&
     name.indexOf("42") != -1 &&
     name.indexOf("rose") != -1 &&
-    name.indexOf("milanese") == -1
+    name.indexOf("s/m") != -1
   ) {
     return 36601;
+    } else if (
+    name.indexOf("s10") != -1 &&
+    name.indexOf("42") != -1 &&
+    name.indexOf("rose") != -1 &&
+    name.indexOf("m/l") != -1
+  ) {
+    return 944605;
   } else if (
     name.indexOf("s10") != -1 &&
     name.indexOf("42") != -1 &&
@@ -455,9 +462,16 @@ export const returnIDApple = (name) => {
     name.indexOf("s10") != -1 &&
     name.indexOf("46") != -1 &&
     name.indexOf("rose") != -1 &&
-    name.indexOf("milanese") == -1
+    name.indexOf("s/m") != -1
   ) {
     return 36602;
+    } else if (
+    name.indexOf("s10") != -1 &&
+    name.indexOf("46") != -1 &&
+    name.indexOf("rose") != -1 &&
+    name.indexOf("m/l") != -1
+  ) {
+    return 255732;
   } else if (
     name.indexOf("s10") != -1 &&
     name.indexOf("46") != -1 &&

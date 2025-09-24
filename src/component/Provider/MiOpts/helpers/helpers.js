@@ -89,6 +89,10 @@ export const fixNameMiOpts = (name) => {
     "Note 14 Pro Plus",
     "Note 14 Pro +"
   );
+  const fix1 = fixNote14ProPlus.replace(
+    " 1шт",
+    ""
+  );
 
-  return fixNote14ProPlus;
+  return fix1;
 };
