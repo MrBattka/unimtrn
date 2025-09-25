@@ -45,7 +45,11 @@ import style from "./indexPicrForOrder.module.css";
 import { changeFlag } from "../PriceFromBase/helpers/fixFlags";
 import ProductNotID from "./ProductNotID";
 import { returnFixPriceHi } from "../../helpers/fixFlags";
-import { returnFixNameSunrise, returnNameInArrSunrise, returnStockPriceSunrise } from "../Provider/Sunrise/helpers/helpers";
+import {
+  returnFixNameSunrise,
+  returnNameInArrSunrise,
+  returnStockPriceSunrise,
+} from "../Provider/Sunrise/helpers/helpers";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -59,6 +63,33 @@ const IndexPriceForOrder = ({
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
   const allPriceArrNotID = [];
+
+  const allItems = [];
+
+  const returnNewMiopt = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      const item = arr[i];
+      if (
+        item.name.includes("₽") &&
+        (item.name.includes("GB") || item.name.includes("TRB"))
+      ) {
+        allItems.push({ name: item.name });
+      } else if (!item.name.includes("GB") || !item.name.includes("TRB")) {
+        const priceItem = arr[i + 1];
+        if (
+          priceItem &&
+          priceItem.name.includes("₽") &&
+          (item.name.includes("GB") || item.name.includes("TRB"))
+        ) {
+          allItems.push({ name: item.name + priceItem.name });
+        } else {
+          allItems.push({ name: item.name });
+        }
+      }
+    }
+  };
+
+  returnNewMiopt(mioptsData);
 
   dataUnimtrn.map((unimtrnEl) => {
     if (
@@ -152,7 +183,7 @@ const IndexPriceForOrder = ({
     }
   });
 
-  mioptsData.map((miopts) => {
+  allItems.map((miopts) => {
     baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
     baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
     if (
@@ -284,7 +315,7 @@ const IndexPriceForOrder = ({
   //   }
   // });
 
-  mioptsData.map((miopts) => {
+  allItems.map((miopts) => {
     baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
     baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
     if (
@@ -385,7 +416,11 @@ const IndexPriceForOrder = ({
             
           </div>
         ))} */}
-        <Dyson double={allPriceArr} dataUnimtrn={dataUnimtrn} sunriseData={sunriseData} />
+        <Dyson
+          double={allPriceArr}
+          dataUnimtrn={dataUnimtrn}
+          sunriseData={sunriseData}
+        />
         <GarminGoProDji
           double={allPriceArr}
           superprice={superpriceData}
