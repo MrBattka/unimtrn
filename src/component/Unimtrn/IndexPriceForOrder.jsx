@@ -81,7 +81,7 @@ const IndexPriceForOrder = ({
           priceItem.name.includes("₽") &&
           (item.name.includes("GB") || item.name.includes("TRB"))
         ) {
-          allItems.push({ name: item.name + priceItem.name });
+          allItems.push({ name: item.name + " " + priceItem.name });
         } else {
           allItems.push({ name: item.name });
         }

@@ -1,31 +1,69 @@
+const checkFlags = (str, str2) => {
+  let checkSpace1 = str[str.length - 1] === " " ? str.slice(0, -1) : str;
+  let checkSpace2 =
+    checkSpace1[checkSpace1.length - 1] === " "
+      ? checkSpace1.slice(0, -1)
+      : checkSpace1;
+  let checkSpace3 =
+    checkSpace2[checkSpace2.length - 1] === " "
+      ? checkSpace2.slice(0, -1)
+      : checkSpace2;
+  let checkSpace4 =
+    checkSpace3[checkSpace3.length - 1] === " "
+      ? checkSpace3.slice(0, -1)
+      : checkSpace3;
+console.log(checkSpace4.substring(0, checkSpace4.length - 4));
+  if (
+    checkSpace4.slice(-4) === `🇯🇵` ||
+    checkSpace4.slice(-4) === "🇮🇳" ||
+    checkSpace4.slice(-4) === "🇪🇺" ||
+    checkSpace4.slice(-4) === "🇦🇪" ||
+    checkSpace4.slice(-4) === "🇧🇷" ||
+    checkSpace4.slice(-4) === "🇻🇳" ||
+    checkSpace4.slice(-4) === "🇰🇼" ||
+    checkSpace4.slice(-4) === "🇺🇸" ||
+    checkSpace4.slice(-4) === "🇭🇰" ||
+    checkSpace4.slice(-4) === "🇬🇧" ||
+    checkSpace4.slice(-4) === "🇨🇳" ||
+    checkSpace4.slice(-4) === "🇹🇼" ||
+    checkSpace4.slice(-4) === "🇷🇺" ||
+    checkSpace4.slice(-4) === "🇦🇺" ||
+    checkSpace4.slice(-4) === "🇨🇦" ||
+    checkSpace4.slice(-4) === "🇨🇱" ||
+    checkSpace4.slice(-4) === "🇹🇭" ||
+    checkSpace4.slice(-4) === "🇸🇬" ||
+    checkSpace4.slice(-4) === "🇲🇾" ||
+    checkSpace4.slice(-4) === "🇨🇫" ||
+    checkSpace4.slice(-4) === "🇰🇿" ||
+    checkSpace4.slice(-4) === "🇰🇷" ||
+    checkSpace4.slice(-4) === "🇬🇺"
+  ) {
+    return (
+      str2 + checkSpace4.slice(-4)
+    );
+  } else {
+    return str2;
+  }
+};
+
 export const returnNameInArrMiOpts = (name) => {
   const removeDoubleSpace = name.replace(/\s+/g, " ");
-  // const replaceSpace4 = removeDoubleSpace.replace("    ", " ");
-  // const replaceSpace3 = replaceSpace4.replace("   ", " ");
-  // const replaceSpace2 = replaceSpace3.replace("  ", " ");
-  // let sliceFlags = removeDoubleSpace.indexOf("₽") != -1 ? removeDoubleSpace.split("₽", 2) : removeDoubleSpace;
+
   let stickToSpace =
     removeDoubleSpace.indexOf("-") != -1
       ? removeDoubleSpace.replace("-", " ")
       : removeDoubleSpace;
   let reverseStrName = stickToSpace.split("").reverse().join("");
-  // let removeRUB =
-  //   reverseStrName[0] === "-" ? reverseStrName.slice(1) : reverseStrName;
-  // let splitStick =
-  //   reverseStrName.indexOf("-") !== -1
-  //     ? reverseStrName.split("-")[1]
-  //     : reverseStrName;
-
-  console.log(stickToSpace);
+  
   let splitPrice =
     reverseStrName.indexOf(" ") !== -1 && reverseStrName !== null
       ? /\s(.+)/.exec(reverseStrName)[1]
       : removeDoubleSpace;
 
   let reverseBackStrName = splitPrice.split("").reverse().join("");
+  const reverseFlags = checkFlags(removeDoubleSpace, reverseBackStrName);
 
-  //  + sliceFlags[1]
-  return reverseBackStrName;
+  return reverseFlags;
 };
 
 export const returnExtraPriceMiOpts = (name) => {
@@ -73,7 +111,7 @@ export const fixNameMiOpts = (name) => {
   const removeNewIcon = removeDoubleSpace.replace("🆕", "");
 
   const fixMI = removeNewIcon.replace("Xiaomi", "Mi");
-  
+
   const fixMI2 = fixMI.replace("iaomi Mi", "Mi");
 
   const fixPoco = fixMI2.replace("Poco", "POCO");

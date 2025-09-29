@@ -3939,6 +3939,101 @@ export const returnIDXiaomi = (name) => {
     name.indexOf("blue") !== -1
   ) {
     return 37112;
+
+    } else if (name.indexOf("redmi 15 ") != -1 &&
+  name.indexOf("purple") != -1 &&
+name.indexOf("4/128") != -1 &&
+name.indexOf("5g") === -1) {
+    return 40311;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("black") != -1 &&
+name.indexOf("5g") === -1) {
+    return 40313;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("gray") != -1 &&
+name.indexOf("5g") === -1) {
+    return 40312;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("8/256") != -1 &&
+  name.indexOf("purple") != -1 &&
+name.indexOf("5g") === -1) {
+    return 40310;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("8/256") != -1 &&
+  name.indexOf("black") != -1 &&
+name.indexOf("5g") === -1) {
+    return 40256;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("8/256") != -1 &&
+  name.indexOf("gray") != -1 &&
+name.indexOf("5g") === -1) {
+    return 40309;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("green") != -1 &&
+name.indexOf("5g") !== -1) {
+    return 40305;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("black") != -1 &&
+name.indexOf("5g") !== -1) {
+    return 40258;
+  } else if (
+name.indexOf("redmi 15 ") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("gray") != -1 &&
+name.indexOf("5g") !== -1) {
+    return 40304;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("gray") != -1) {
+    return 40299;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("green") != -1) {
+    return 40298;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("blue") != -1) {
+    return 40297;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/128") != -1 &&
+  name.indexOf("orange") != -1) {
+    return 40302;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/256") != -1 &&
+  name.indexOf("gray") != -1) {
+    return 40300;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/256") != -1 &&
+  name.indexOf("green") != -1) {
+    return 40296;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/256") != -1 &&
+  name.indexOf("blue") != -1) {
+    return 40295;
+  } else if (
+name.indexOf("redmi 15c") != -1 &&
+name.indexOf("4/256") != -1 &&
+  name.indexOf("orange") != -1) {
+    return 40301;
+
   } else if (name.indexOf("redmi 13 6/128 midnight black") !== -1) {
     return 36688;
   } else if (name.indexOf("redmi 13 6/128 black") !== -1) {
