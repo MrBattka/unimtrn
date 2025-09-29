@@ -1,7 +1,14 @@
 
 
 export const returnNameInArrMiOpts = (name) => {
-  let sliceFlags = name.indexOf("₽") != -1 ? name.split("₽", 2) : name;
+  
+  const removeDoubleSpace = name.replace(/\s+/g, " ");
+  const replaceSpace4 = removeDoubleSpace.replace("    ", " ");
+  const replaceSpace3 = replaceSpace4.replace("   ", " ");
+  const replaceSpace2 = replaceSpace3.replace("  ", " ");
+  const stickToSpace = replaceSpace2.replace("-", " ")
+  console.log(stickToSpace);
+  let sliceFlags = stickToSpace.indexOf("₽") != -1 ? stickToSpace.split("₽", 2) : stickToSpace;
   let reverseStrName = name.split("").reverse().join("");
 
   // let removeRUB =
@@ -15,12 +22,15 @@ export const returnNameInArrMiOpts = (name) => {
     splitStick.indexOf(" ") !== -1 ? /\s(.+)/.exec(splitStick)[1] : splitStick;
 
   let reverseBackStrName = splitPrice.split("").reverse().join("");
+  
 
   return reverseBackStrName + sliceFlags[1];
 };
 
 export const returnExtraPriceMiOpts = (name) => {
-  let reverseStrName = name.split("").reverse().join("");
+  const removeDoubleSpace = name.replace(/\s+/g, " ");
+  const stickToSpace = removeDoubleSpace.replace("-", " ")
+  let reverseStrName = stickToSpace.split("").reverse().join("");
   let sliceFlags =
     reverseStrName.indexOf("₽") != -1
       ? reverseStrName.split("₽", 2)
@@ -40,7 +50,10 @@ export const returnExtraPriceMiOpts = (name) => {
 };
 
 export const returnStockPriceMiOpts = (name) => {
-  let reverseStrName = name.split("").reverse().join("");
+  
+  const stickToSpace = name.replace("-", " ")
+  const removeDoubleSpace = stickToSpace.replace(/\s+/g, " ");
+  let reverseStrName = removeDoubleSpace.split("").reverse().join("");
   let sliceFlags =
     reverseStrName.indexOf("₽") != -1
       ? reverseStrName.split("₽", 2)

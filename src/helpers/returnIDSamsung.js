@@ -105,7 +105,8 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("a07 4/128 green") != -1
   ) {
     return 40628;
-  } else if (name.indexOf("a07 4/128 gray") != -1) {
+  } else if (name.indexOf("a07 4/128 gray") != -1 ||
+name.indexOf("a07 4/128 black") != -1) {
     return 40619;
   } else if (
     name.indexOf("a07 4/128 light violet") != -1 ||
@@ -117,7 +118,8 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("a07 4/64 green") != -1
   ) {
     return 40627;
-  } else if (name.indexOf("a07 4/64 gray") != -1) {
+  } else if (name.indexOf("a07 4/64 gray") != -1 ||
+name.indexOf("a07 4/64 black") != -1) {
     return 40605;
   } else if (
     name.indexOf("a07 4/64 light violet") != -1 ||
@@ -129,7 +131,8 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("a07 6/128 green") != -1
   ) {
     return 40631;
-  } else if (name.indexOf("a07 6/128 gray") != -1) {
+  } else if (name.indexOf("a07 6/128 gray") != -1 ||
+name.indexOf("a07 6/128 black") != -1) {
     return 40620;
   } else if (
     name.indexOf("a07 6/128 light violet") != -1 ||
@@ -141,7 +144,8 @@ export const returnIDSamsung = (nameStock) => {
     name.indexOf("a07 8/256 green") != -1
   ) {
     return 40630;
-  } else if (name.indexOf("a07 8/256 gray") != -1) {
+  } else if (name.indexOf("a07 8/256 gray") != -1 ||
+name.indexOf("a07 8/256 black") != -1) {
     return 40621;
   } else if (
     name.indexOf("a07 8/256 light violet") != -1 ||

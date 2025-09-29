@@ -81,7 +81,7 @@ const IndexPriceForOrder = ({
           priceItem.name.includes("₽") &&
           (item.name.includes("GB") || item.name.includes("TRB"))
         ) {
-          allItems.push({ name: item.name + priceItem.name });
+          allItems.push({ name: item.name + " " + priceItem.name });
         } else {
           allItems.push({ name: item.name });
         }
@@ -90,6 +90,8 @@ const IndexPriceForOrder = ({
   };
 
   returnNewMiopt(mioptsData);
+  console.log(allItems);
+  
 
   dataUnimtrn.map((unimtrnEl) => {
     if (
@@ -194,7 +196,6 @@ const IndexPriceForOrder = ({
       return (
         returnIDSamsung(fixNameMiOpts(miopts.name)) !== "No match" &&
         returnExtraPriceMiOpts(miopts.name) &&
-        returnStockPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(fixNameMiOpts(miopts.name)) > 1000 &&
         allPriceArr.push({
           id: returnIDSamsung(
