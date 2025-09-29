@@ -1,35 +1,36 @@
-
-
 export const returnNameInArrMiOpts = (name) => {
-  
   const removeDoubleSpace = name.replace(/\s+/g, " ");
-  const replaceSpace4 = removeDoubleSpace.replace("    ", " ");
-  const replaceSpace3 = replaceSpace4.replace("   ", " ");
-  const replaceSpace2 = replaceSpace3.replace("  ", " ");
-  const stickToSpace = replaceSpace2.replace("-", " ")
-  console.log(stickToSpace);
-  let sliceFlags = stickToSpace.indexOf("₽") != -1 ? stickToSpace.split("₽", 2) : stickToSpace;
-  let reverseStrName = name.split("").reverse().join("");
-
+  // const replaceSpace4 = removeDoubleSpace.replace("    ", " ");
+  // const replaceSpace3 = replaceSpace4.replace("   ", " ");
+  // const replaceSpace2 = replaceSpace3.replace("  ", " ");
+  // let sliceFlags = removeDoubleSpace.indexOf("₽") != -1 ? removeDoubleSpace.split("₽", 2) : removeDoubleSpace;
+  let stickToSpace =
+    removeDoubleSpace.indexOf("-") != -1
+      ? removeDoubleSpace.replace("-", " ")
+      : removeDoubleSpace;
+  let reverseStrName = stickToSpace.split("").reverse().join("");
   // let removeRUB =
   //   reverseStrName[0] === "-" ? reverseStrName.slice(1) : reverseStrName;
-  let splitStick =
-    reverseStrName.indexOf("-") !== -1
-      ? reverseStrName.split("-")[1]
-      : reverseStrName;
+  // let splitStick =
+  //   reverseStrName.indexOf("-") !== -1
+  //     ? reverseStrName.split("-")[1]
+  //     : reverseStrName;
 
+  console.log(stickToSpace);
   let splitPrice =
-    splitStick.indexOf(" ") !== -1 ? /\s(.+)/.exec(splitStick)[1] : splitStick;
+    reverseStrName.indexOf(" ") !== -1 && reverseStrName !== null
+      ? /\s(.+)/.exec(reverseStrName)[1]
+      : removeDoubleSpace;
 
   let reverseBackStrName = splitPrice.split("").reverse().join("");
-  
 
-  return reverseBackStrName + sliceFlags[1];
+  //  + sliceFlags[1]
+  return reverseBackStrName;
 };
 
 export const returnExtraPriceMiOpts = (name) => {
   const removeDoubleSpace = name.replace(/\s+/g, " ");
-  const stickToSpace = removeDoubleSpace.replace("-", " ")
+  const stickToSpace = removeDoubleSpace.replace("-", " ");
   let reverseStrName = stickToSpace.split("").reverse().join("");
   let sliceFlags =
     reverseStrName.indexOf("₽") != -1
@@ -40,9 +41,7 @@ export const returnExtraPriceMiOpts = (name) => {
       ? sliceFlags[1].split("-", 2)
       : sliceFlags[1];
   let slicePrice1 =
-    slicePrice.indexOf(" ") != -1
-      ? slicePrice.split(" ", 2)
-      : slicePrice;
+    slicePrice.indexOf(" ") != -1 ? slicePrice.split(" ", 2) : slicePrice;
   let reverseBackStrName = slicePrice1[0].split("").reverse().join("");
   let extraPrice = Number(reverseBackStrName) + 700;
 
@@ -50,8 +49,7 @@ export const returnExtraPriceMiOpts = (name) => {
 };
 
 export const returnStockPriceMiOpts = (name) => {
-  
-  const stickToSpace = name.replace("-", " ")
+  const stickToSpace = name.replace("-", " ");
   const removeDoubleSpace = stickToSpace.replace(/\s+/g, " ");
   let reverseStrName = removeDoubleSpace.split("").reverse().join("");
   let sliceFlags =
@@ -75,8 +73,10 @@ export const fixNameMiOpts = (name) => {
   const removeNewIcon = removeDoubleSpace.replace("🆕", "");
 
   const fixMI = removeNewIcon.replace("Xiaomi", "Mi");
+  
+  const fixMI2 = fixMI.replace("iaomi Mi", "Mi");
 
-  const fixPoco = fixMI.replace("Poco", "POCO");
+  const fixPoco = fixMI2.replace("Poco", "POCO");
   const replaceGB = fixPoco.replace("GB", "");
   const replace5G =
     replaceGB.indexOf("M55 ") !== -1 ||
@@ -102,10 +102,7 @@ export const fixNameMiOpts = (name) => {
     "Note 14 Pro Plus",
     "Note 14 Pro +"
   );
-  const fix1 = fixNote14ProPlus.replace(
-    " 1шт",
-    ""
-  );
+  const fix1 = fixNote14ProPlus.replace(" 1шт", "");
 
   return fix1;
 };

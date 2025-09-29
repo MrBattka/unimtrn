@@ -81,7 +81,7 @@ const IndexPriceForOrder = ({
           priceItem.name.includes("₽") &&
           (item.name.includes("GB") || item.name.includes("TRB"))
         ) {
-          allItems.push({ name: item.name + " " + priceItem.name });
+          allItems.push({ name: item.name + priceItem.name });
         } else {
           allItems.push({ name: item.name });
         }
@@ -91,7 +91,6 @@ const IndexPriceForOrder = ({
 
   returnNewMiopt(mioptsData);
   console.log(allItems);
-  
 
   dataUnimtrn.map((unimtrnEl) => {
     if (
@@ -197,6 +196,8 @@ const IndexPriceForOrder = ({
         returnIDSamsung(fixNameMiOpts(miopts.name)) !== "No match" &&
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(fixNameMiOpts(miopts.name)) > 1000 &&
+        (returnNameInArrMiOpts(miopts.name).indexOf("GB") !== -1 ||
+          returnNameInArrMiOpts(miopts.name).indexOf("TRB") !== -1) &&
         allPriceArr.push({
           id: returnIDSamsung(
             returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
@@ -316,31 +317,31 @@ const IndexPriceForOrder = ({
   //   }
   // });
 
-  allItems.map((miopts) => {
-    baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
-    baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
-    if (
-      miopts.name &&
-      typeof miopts.name === "string" &&
-      baseFixMiOpts(miopts)
-    ) {
-      return (
-        returnIDSamsung(fixNameMiOpts(miopts.name)) === "No match" &&
-        returnExtraPriceMiOpts(miopts.name) &&
-        returnStockPriceMiOpts(miopts.name) &&
-        allPriceArrNotID.push({
-          id: returnIDSamsung(
-            returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
-          ),
-          name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
-          extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
-          stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
-          condition: " - от 3шт.",
-          provider: "MiOpts",
-        })
-      );
-    }
-  });
+  // allItems.map((miopts) => {
+  //   baseFixMiOpts(miopts) && returnStockPriceMiOpts(fixNameMiOpts(miopts.name));
+  //   baseFixMiOpts(miopts) && returnExtraPriceMiOpts(fixNameMiOpts(miopts.name));
+  //   if (
+  //     miopts.name &&
+  //     typeof miopts.name === "string" &&
+  //     baseFixMiOpts(miopts)
+  //   ) {
+  //     return (
+  //       returnIDSamsung(fixNameMiOpts(miopts.name)) === "No match" &&
+  //       returnExtraPriceMiOpts(miopts.name) &&
+  //       returnStockPriceMiOpts(miopts.name) &&
+  //       allPriceArrNotID.push({
+  //         id: returnIDSamsung(
+  //           returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
+  //         ),
+  //         name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
+  //         extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
+  //         stockPrice: returnStockPriceMiOpts(fixNameMiOpts(miopts.name)),
+  //         condition: " - от 3шт.",
+  //         provider: "MiOpts",
+  //       })
+  //     );
+  //   }
+  // });
 
   superpriceData.map((superprice) => {
     if (
