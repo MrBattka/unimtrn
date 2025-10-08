@@ -4253,6 +4253,213 @@ name.indexOf("4/256") != -1 &&
     name.indexOf("purple") !== -1
   ) {
     return 186230;
+    
+  } else if (
+    name.indexOf("redmi 15 ") != -1 &&
+    name.indexOf("5g") != -1 &&
+    name.indexOf("8/128") != -1 &&
+    name.indexOf("green") != -1
+  ) {
+    return 40409;
+  } else if (
+    name.indexOf("redmi 15 ") != -1 &&
+    name.indexOf("5g") != -1 &&
+    name.indexOf("8/128") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 40413;
+  } else if (
+    name.indexOf("redmi 15 ") != -1 &&
+    name.indexOf("5g") != -1 &&
+    name.indexOf("8/128") != -1 &&
+    name.indexOf("gray") != -1
+  ) {
+    return 40414;
+  } else if (
+    name.indexOf("redmi 15 ") != -1 &&
+    name.indexOf("5g") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("green") != -1
+  ) {
+    return 40410;
+  } else if (
+    name.indexOf("redmi 15 ") != -1 &&
+    name.indexOf("5g") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("black") != -1
+  ) {
+    return 40412;
+  } else if (
+    name.indexOf("redmi 15 ") != -1 &&
+    name.indexOf("5g") != -1 &&
+    name.indexOf("8/256") != -1 &&
+    name.indexOf("gray") != -1
+  ) {
+    return 40415;
+  } else if (name.indexOf("mi 15t 12/256 black") !== -1) {
+    return 41003;
+  } else if (name.indexOf("mi 15t 12/256 gray") !== -1) {
+    return 41019;
+  } else if (
+    name.indexOf("mi 15t 12/256 rose gold") !== -1 ||
+    name.indexOf("mi 15t 12/256 gold") !== -1
+  ) {
+    return 41020;
+  } else if (name.indexOf("mi 15t 12/512 black") !== -1) {
+    return 41017;
+  } else if (name.indexOf("mi 15t 12/512 gray") !== -1) {
+    return 41018;
+  } else if (
+    name.indexOf("mi 15t 12/512 rose gold") !== -1 ||
+    name.indexOf("mi 15t 12/512 gold") !== -1
+  ) {
+    return 41021;
+  } else if (name.indexOf("mi 17 12/256 black") !== -1) {
+    return 41005;
+  } else if (name.indexOf("mi 17 12/256 blue") !== -1) {
+    return 41036;
+  } else if (name.indexOf("mi 17 12/256 pink") !== -1) {
+    return 41037;
+  } else if (name.indexOf("mi 17 12/256 white") !== -1) {
+    return 41044;
+  } else if (name.indexOf("mi 17 12/512 black") !== -1) {
+    return 41032;
+  } else if (name.indexOf("mi 17 12/512 blue") !== -1) {
+    return 41042;
+  } else if (name.indexOf("mi 17 12/512 pink") !== -1) {
+    return 41038;
+  } else if (name.indexOf("mi 17 12/512 white") !== -1) {
+    return 41043;
+  } else if (name.indexOf("mi 17 16/512 black") !== -1) {
+    return 41033;
+  } else if (name.indexOf("mi 17 16/512 blue") !== -1) {
+    return 41040;
+  } else if (name.indexOf("mi 17 16/512 pink") !== -1) {
+    return 41039;
+  } else if (name.indexOf("mi 17 16/512 white") !== -1) {
+    return 41041;
+  } else if (name.indexOf("mi 17 pro 12/256 black") !== -1) {
+    return 41006;
+  } else if (name.indexOf("mi 17 pro 12/256 green") !== -1) {
+    return 41061;
+  } else if (name.indexOf("mi 17 pro 12/256 purple") !== -1) {
+    return 41053;
+  } else if (name.indexOf("mi 17 pro 12/256 white") !== -1) {
+    return 41052;
+  } else if (name.indexOf("mi 17 pro 12/512 black") !== -1) {
+    return 41046;
+  } else if (name.indexOf("mi 17 pro 12/512 green") !== -1) {
+    return 41060;
+  } else if (name.indexOf("mi 17 pro 12/512 purple") !== -1) {
+    return 41054;
+  } else if (name.indexOf("mi 17 pro 12/512 white") !== -1) {
+    return 41051;
+  } else if (name.indexOf("mi 17 pro 16/1tb black") !== -1) {
+    return 41048;
+  } else if (name.indexOf("mi 17 pro 16/1tb green") !== -1) {
+    return 41058;
+  } else if (name.indexOf("mi 17 pro 16/1tb purple") !== -1) {
+    return 41056;
+  } else if (name.indexOf("mi 17 pro 16/1tb white") !== -1) {
+    return 41049;
+  } else if (name.indexOf("mi 17 pro 16/512 black") !== -1) {
+    return 41151;
+  } else if (name.indexOf("mi 17 pro 16/512 green") !== -1) {
+    return 41059;
+  } else if (name.indexOf("mi 17 pro 16/512 purple") !== -1) {
+    return 41055;
+  } else if (name.indexOf("mi 17 pro 16/512 white") !== -1) {
+    return 41050;
+  } else if (name.indexOf("mi 17 pro max 12/512 black") !== -1) {
+    return 41007;
+  } else if (name.indexOf("mi 17 pro max 12/512 green") !== -1) {
+    return 41105;
+  } else if (name.indexOf("mi 17 pro max 12/512 purple") !== -1) {
+    return 41100;
+  } else if (name.indexOf("mi 17 pro max 12/512 white") !== -1) {
+    return 41099;
+  } else if (name.indexOf("mi 17 pro max 16/1tb black") !== -1) {
+    return 41095;
+  } else if (name.indexOf("mi 17 pro max 16/1tb green") !== -1) {
+    return 41103;
+  } else if (name.indexOf("mi 17 pro max 16/1tb purple") !== -1) {
+    return 41102;
+  } else if (name.indexOf("mi 17 pro max 16/1tb white") !== -1) {
+    return 41097;
+  } else if (name.indexOf("mi 17 pro max 16/512 black") !== -1) {
+    return 41094;
+  } else if (name.indexOf("mi 17 pro max 16/512 green") !== -1) {
+    return 41104;
+  } else if (name.indexOf("mi 17 pro max 16/512 purple") !== -1) {
+    return 41101;
+  } else if (name.indexOf("mi 17 pro max 16/512 white") !== -1) {
+    return 41098;
+  } else if (name.indexOf("mi pad 8 12/256 black") !== -1) {
+    return 41091;
+  } else if (name.indexOf("mi pad 8 12/256 blue") !== -1) {
+    return 41090;
+  } else if (name.indexOf("mi pad 8 12/256 green") !== -1) {
+    return 41092;
+  } else if (name.indexOf("mi pad 8 8/128 black") !== -1) {
+    return 41069;
+  } else if (name.indexOf("mi pad 8 8/128 blue") !== -1) {
+    return 41068;
+  } else if (name.indexOf("mi pad 8 8/128 green") !== -1) {
+    return 41074;
+  } else if (name.indexOf("mi pad 8 8/256 black") !== -1) {
+    return 41070;
+  } else if (name.indexOf("mi pad 8 8/256 blue") !== -1) {
+    return 41067;
+  } else if (name.indexOf("mi pad 8 8/256 green") !== -1) {
+    return 41073;
+  } else if (name.indexOf("mi pad 8 pro 12/256 blue") !== -1) {
+    return 41012;
+  } else if (name.indexOf("mi pad 8 pro 12/256 gray") !== -1) {
+    return 41082;
+  } else if (name.indexOf("mi pad 8 pro 12/256 green") !== -1) {
+    return 41087;
+  } else if (name.indexOf("mi pad 8 pro 12/512 blue") !== -1) {
+    return 41076;
+  } else if (name.indexOf("mi pad 8 pro 12/512 gray") !== -1) {
+    return 41083;
+  } else if (name.indexOf("mi pad 8 pro 12/512 green") !== -1) {
+    return 41086;
+  } else if (name.indexOf("mi pad 8 pro 16/512 blue") !== -1) {
+    return 41077;
+  } else if (name.indexOf("mi pad 8 pro 16/512 gray") !== -1) {
+    return 41084;
+  } else if (name.indexOf("mi pad 8 pro 16/512 green") !== -1) {
+    return 41085;
+  } else if (name.indexOf("mi pad 8 pro 8/128 blue") !== -1) {
+    return 41079;
+  } else if (name.indexOf("mi pad 8 pro 8/128 gray") !== -1) {
+    return 41080;
+  } else if (name.indexOf("mi pad 8 pro 8/128 green") !== -1) {
+    return 41089;
+  } else if (name.indexOf("mi pad 8 pro 8/256 blue") !== -1) {
+    return 41078;
+  } else if (name.indexOf("mi pad 8 pro 8/256 gray") !== -1) {
+    return 41081;
+  } else if (name.indexOf("mi pad 8 pro 8/256 green") !== -1) {
+    return 41088;
+  } else if (name.indexOf("mi 15t pro 12/1tb black") !== -1) {
+    return 41024;
+  } else if (name.indexOf("mi 15t pro 12/1tb gray") !== -1) {
+    return 41025;
+  } else if (name.indexOf("mi 15t pro 12/1tb mocha gold") !== -1) {
+    return 41022;
+  } else if (name.indexOf("mi 15t pro 12/256 black") !== -1) {
+    return 41004;
+  } else if (name.indexOf("mi 15t pro 12/256 gray") !== -1) {
+    return 41027;
+  } else if (name.indexOf("mi 15t pro 12/256 mocha gold") !== -1) {
+    return 41028;
+  } else if (name.indexOf("mi 15t pro 12/512 black") !== -1) {
+    return 41023;
+  } else if (name.indexOf("mi 15t pro 12/512 gray") !== -1) {
+    return 41026;
+  } else if (name.indexOf("mi 15t pro 12/512 mocha gold") !== -1) {
+    return 41030;
   } else {
     return returnIDGarmin(name) || "No match";
   }
