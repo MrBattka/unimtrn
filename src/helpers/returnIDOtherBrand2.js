@@ -32,6 +32,14 @@ export const returnIDOtherBrand2 = (name) => {
     (name.indexOf("ps5") !== -1 ||
       name.indexOf("playstation 5") !== -1 ||
       name.indexOf("ps 5") !== -1) &&
+    name.indexOf("slim") !== -1 &&
+    name.indexOf("digital") !== -1
+  ) {
+    return 30946;
+  } else if (
+    (name.indexOf("ps5") !== -1 ||
+      name.indexOf("playstation 5") !== -1 ||
+      name.indexOf("ps 5") !== -1) &&
     name.indexOf("pro") !== -1 &&
     name.indexOf("ray") == -1
   ) {
@@ -44,16 +52,10 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("ray") !== -1
   ) {
     return 36835;
-
-} else if (
-    name.indexOf("dualsense edge") !== -1
-  ) {
+  } else if (name.indexOf("dualsense edge") !== -1) {
     return 560722;
-    } else if (
-    name.indexOf("dualsense edge black") !== -1
-  ) {
+  } else if (name.indexOf("dualsense edge black") !== -1) {
     return 612071;
-
   } else if (
     (name.indexOf("dualsense black") !== -1 ||
       name.indexOf("dual sense black") !== -1 ||
@@ -65,49 +67,40 @@ export const returnIDOtherBrand2 = (name) => {
   ) {
     return 19661;
   } else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("red") !== -1
   ) {
     return 36796;
   } else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("purple") !== -1
   ) {
     return 36799;
   } else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("black") !== -1
   ) {
     return 36801;
   } else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("pink") !== -1
   ) {
     return 36798;
   } else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("blue") !== -1
   ) {
     return 36797;
-
-} else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+  } else if (
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("gray") !== -1
   ) {
     return 506332;
-    } else if (
-    (name.indexOf("dualsense") !== -1 ||
-    name.indexOf("dual sense") !== -1) &&
+  } else if (
+    (name.indexOf("dualsense") !== -1 || name.indexOf("dual sense") !== -1) &&
     name.indexOf("silver") !== -1
   ) {
     return 604696;
-
   } else if (
     name.indexOf("ps portal") !== -1 ||
     name.indexOf("portal remote") !== -1
@@ -269,13 +262,13 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("blue") !== -1
   ) {
     return 19102;
-    } else if (
+  } else if (
     name.indexOf("switch 2") !== -1 &&
     name.indexOf("256") !== -1 &&
     name.indexOf("mario") !== -1
   ) {
     return 39887;
-    } else if (
+  } else if (
     name.indexOf("switch 2") !== -1 &&
     name.indexOf("256") !== -1 &&
     name.indexOf("mario") === -1
@@ -283,7 +276,7 @@ export const returnIDOtherBrand2 = (name) => {
     return 39886;
 
     // Sony
-    } else if (
+  } else if (
     name.indexOf("xperia 1 vii ") != -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("black") != -1
@@ -761,45 +754,40 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("black") !== -1
   ) {
     return 36080;
-
-
-} else if (
+  } else if (
     name.indexOf("nubia neo 3") !== -1 &&
     name.indexOf(" gt ") === -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("silver") != -1
   ) {
     return 943173;
-    } else if (
+  } else if (
     name.indexOf("nubia neo 3") !== -1 &&
     name.indexOf(" gt ") === -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("black") != -1
   ) {
     return 823260;
-    } else if (
+  } else if (
     name.indexOf("nubia neo 3") !== -1 &&
     name.indexOf(" gt ") === -1 &&
     name.indexOf("8/256") != -1 &&
     name.indexOf("gold") != -1
   ) {
     return 512929;
-
-    } else if (
+  } else if (
     name.indexOf("nubia neo 3 gt") !== -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("gray") != -1
   ) {
     return 461092;
-    } else if (
+  } else if (
     name.indexOf("nubia neo 3 gt") !== -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("gold") != -1
   ) {
     return 134830;
-
-
-    } else if (
+  } else if (
     name.indexOf("nubia z70s ultra") != -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("brown") != -1
@@ -875,7 +863,7 @@ export const returnIDOtherBrand2 = (name) => {
     return 28512;
   } else if (name.indexOf("nubia redmagic 8s pro 12/256 graphite") !== -1) {
     return 28513;
-    } else if (
+  } else if (
     name.indexOf("honor 200") != -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("lite") === -1 &&
@@ -1103,7 +1091,7 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("blue") != -1
   ) {
     return 39072;
-    } else if (
+  } else if (
     name.indexOf("honor magic 6 pro") != -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("black") != -1
@@ -1596,7 +1584,7 @@ export const returnIDOtherBrand2 = (name) => {
     (name.indexOf("sleet") !== -1 || name.indexOf("black") !== -1)
   ) {
     return 36685;
-} else if (
+  } else if (
     (name.indexOf("red magic 10s pro") !== -1 ||
       name.indexOf("redmagic 10s pro") !== -1) &&
     name.indexOf("12/256") !== -1 &&
@@ -1659,31 +1647,30 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("nightfall") !== -1
   ) {
     return 39834;
-} else if (
+  } else if (
     name.indexOf("redmagic 10 air") !== -1 &&
     name.indexOf("12/256") !== -1 &&
     (name.indexOf("twilight") !== -1 || name.indexOf("black") !== -1)
   ) {
     return 551274;
-    } else if (
+  } else if (
     name.indexOf("redmagic 10 air") !== -1 &&
     name.indexOf("12/256") !== -1 &&
     (name.indexOf("hailstone") !== -1 || name.indexOf("white") !== -1)
   ) {
     return 432899;
-    } else if (
+  } else if (
     name.indexOf("redmagic 10 air") !== -1 &&
     name.indexOf("16/512") !== -1 &&
     (name.indexOf("twilight") !== -1 || name.indexOf("black") !== -1)
   ) {
     return 197682;
-    } else if (
+  } else if (
     name.indexOf("redmagic 10 air") !== -1 &&
     name.indexOf("16/512") !== -1 &&
     (name.indexOf("hailstone") !== -1 || name.indexOf("white") !== -1)
   ) {
     return 442069;
-
   } else if (
     (name.indexOf("redmagic 10 pro") !== -1 ||
       name.indexOf("red magic 10 pro") !== -1) &&
@@ -2146,20 +2133,11 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("black") !== -1
   ) {
     return 111050;
-  } else if (
-    name.indexOf("jbl wind 3") !== -1 &&
-    name.indexOf("blue") !== -1
-  ) {
+  } else if (name.indexOf("jbl wind 3") !== -1 && name.indexOf("blue") !== -1) {
     return 248514;
-  } else if (
-    name.indexOf("jbl wind 3") !== -1 &&
-    name.indexOf("gray") !== -1
-  ) {
+  } else if (name.indexOf("jbl wind 3") !== -1 && name.indexOf("gray") !== -1) {
     return 273444;
-  } else if (
-    name.indexOf("jbl wind 3") !== -1 &&
-    name.indexOf("red") !== -1
-  ) {
+  } else if (name.indexOf("jbl wind 3") !== -1 && name.indexOf("red") !== -1) {
     return 444283;
   } else if (name.indexOf("jbl xtreme 4 black") !== -1) {
     return 38000;
@@ -2872,7 +2850,7 @@ export const returnIDOtherBrand2 = (name) => {
     name.indexOf("goggle") !== -1
   ) {
     return 26204;
-    } else if (
+  } else if (
     name.indexOf("nothing phone cmf") != -1 &&
     name.indexOf("2") != -1 &&
     name.indexOf("pro") != -1 &&
@@ -3282,7 +3260,7 @@ export const returnIDOtherBrand2 = (name) => {
   ) {
     return 24581;
     // Huawei
-    } else if (
+  } else if (
     name.indexOf("mate x6") != -1 &&
     name.indexOf("12/256") != -1 &&
     name.indexOf("black") != -1
