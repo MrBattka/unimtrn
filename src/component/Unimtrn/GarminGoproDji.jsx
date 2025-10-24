@@ -178,8 +178,10 @@ const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
                           DJIEl.name.indexOf("DJi ") != -1 ||
                           DJIEl.name.indexOf("Dji ") != -1) &&
                         (isDJI || setIsDJI(true)) &&
-                        "` • " + returnFixPrice(DJIEl, DJIEl.name) +
-                          additionalCost(DJIEl.price) + "`"}
+                        "` • " +
+                          returnFixPrice(DJIEl, DJIEl.name) +
+                          additionalCost(DJIEl.price) +
+                          "`"}
                     </div>
                   ))
                 ) : (
@@ -191,7 +193,11 @@ const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
                 {dataGarmin.length ? (
                   dataGarmin.map((garminEl, index) => (
                     <div key={index}>
-                        {"` • " + garminEl.name + "-" + additionalCost(garminEl.stockPrice) + 1000 + "`"}
+                      {"` • " +
+                        garminEl.name +
+                        "-" +
+                        (additionalCost(garminEl.stockPrice) + 1000) +
+                        "`"}
                     </div>
                   ))
                 ) : (
@@ -208,8 +214,10 @@ const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
                         (goproEl.name.indexOf("GoPro") != -1 ||
                           goproEl.name.indexOf("Hero") != -1) &&
                         (isGoPro || setIsGoPro(true)) &&
-                        "` • " + returnFixPrice(goproEl, fixNameUnimtrn(goproEl)) +
-                          additionalCost(goproEl.price) + "`"}
+                        "` • " +
+                          returnFixPrice(goproEl, fixNameUnimtrn(goproEl)) +
+                          additionalCost(goproEl.price) +
+                          "`"}
                     </div>
                   ))
                 ) : (
@@ -224,10 +232,12 @@ const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
                       {baseFix(jblEl) &&
                         jblEl.name.indexOf("JBL") != -1 &&
                         (isJBL || setIsJBL(true)) &&
-                        "` • " + returnFixPrice(jblEl, jblEl.name) +
+                        "` • " +
+                          returnFixPrice(jblEl, jblEl.name) +
                           (jblEl.provider !== "База"
                             ? additionalCost(jblEl.stockPrice)
-                            : jblEl.stockPrice) + "`"}
+                            : jblEl.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(jblEl) && jblEl.name.indexOf("JBL") != -1 && (
                           <span>{" - " + jblEl.provider}</span>
@@ -247,10 +257,12 @@ const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
                       {baseFix(marshsalEl) &&
                         marshsalEl.name.indexOf("Marshall") != -1 &&
                         (isMarshall || setIsMarshall(true)) &&
-                        "` • " + returnFixPrice(marshsalEl, marshsalEl.name) +
+                        "` • " +
+                          returnFixPrice(marshsalEl, marshsalEl.name) +
                           (marshsalEl.provider !== "База"
                             ? additionalCost(marshsalEl.stockPrice)
-                            : marshsalEl.stockPrice) + "`"}
+                            : marshsalEl.stockPrice) +
+                          "`"}
                       <h3 className="del">
                         {baseFix(marshsalEl) &&
                           marshsalEl.name.indexOf("Marshall") != -1 && (
