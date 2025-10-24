@@ -191,7 +191,7 @@ const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
                 {dataGarmin.length ? (
                   dataGarmin.map((garminEl, index) => (
                     <div key={index}>
-                        {`${garminEl.name} - ${additionalCost(garminEl.stockPrice) + 1000}`}
+                        {"` • " + garminEl.name + "-" + additionalCost(garminEl.stockPrice) + 1000 + "`"}
                     </div>
                   ))
                 ) : (
