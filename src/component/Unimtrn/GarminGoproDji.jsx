@@ -7,7 +7,7 @@ import { fixNameUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
 import Footer from "./Footer";
 import style from "./styles.module.css";
 
-const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
+const GarminGoProDji = ({ double, dataGarmin, dataUnimtrn }) => {
   const res = [];
 
   let gb = /Gb/gi;
@@ -186,18 +186,12 @@ const GarminGoProDji = ({ double, superprice, dataUnimtrn }) => {
                   <tr></tr>
                 )}
 
-                {isGarmin && <br />}
-                {isGarmin && <div>⌚ **Garmin**</div>}
-                {dataUnimtrn.length ? (
-                  dataUnimtrn.map((garminEl, index) => (
+                {<br />}
+                {<div>⌚ **Garmin**</div>}
+                {dataGarmin.length ? (
+                  dataGarmin.map((garminEl, index) => (
                     <div key={index}>
-                      {baseFix(garminEl) &&
-                        garminEl.price &&
-                        (garminEl.name.indexOf("Garmin") != -1 ||
-                          garminEl.name.indexOf("GARMIN") != -1) &&
-                        (isGarmin || setIsGarmin(true)) &&
-                        "` • " + returnFixPrice(garminEl, fixNameUnimtrn(garminEl)) +
-                          additionalCost(garminEl.price) + "`"}
+                        {`${garminEl.name} - ${additionalCost(garminEl.stockPrice) + 1000}`}
                     </div>
                   ))
                 ) : (

@@ -1,37 +1,37 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { baseFixMiHonor } from "../../helpers/baseFix";
-import { returnIDApple } from "../../helpers/returnIDApple";
+import { defaultFixName } from "../../helpers/defaultFixName";
+import { getIdByName } from "../../helpers/returnIDByName";
 import BasicTable from "../Create Table/Table";
+import style from "../styles.module.css";
 import {
   fixNameMihonor,
-  returnExtraPriceMihonor,
   returnNameInArrMihonor,
-  returnStockPriceMihonor
+  returnStockPriceMihonor,
 } from "./helpers/helpers";
-import style from "./styles.module.css";
 
 const IndexMiHonor = ({ el, mihonorData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const resultArr = [];
 
   mihonorData.map((mihonor) => {
-    baseFixMiHonor(mihonor) && returnStockPriceMihonor(fixNameMihonor(mihonor.name));
-    baseFixMiHonor(mihonor) && returnExtraPriceMihonor(fixNameMihonor(mihonor.name));
+    // baseFixMiHonor(mihonor) && returnStockPriceMihonor(fixNameMihonor(mihonor.name));
     if (
       mihonor.name &&
       typeof mihonor.name === "string" &&
+      mihonor.name.indexOf("₽") !== -1 &&
       baseFixMiHonor(mihonor) &&
       isOpen
-    )
-     {
+    ) {
       return (
-        returnIDApple(fixNameMihonor(mihonor.name)) !== 'No match' &&
-        returnExtraPriceMihonor(mihonor.name) &&
+        mihonor.name.indexOf("₽") !== -1 &&
+        getIdByName(defaultFixName(fixNameMihonor(mihonor.name))) !== "No match" &&
         returnStockPriceMihonor(mihonor.name) &&
         resultArr.push({
-          id: returnIDApple(returnNameInArrMihonor(fixNameMihonor(mihonor.name))),
+          id: getIdByName(defaultFixName(
+            returnNameInArrMihonor(fixNameMihonor(mihonor.name)))
+          ),
           name: returnNameInArrMihonor(fixNameMihonor(mihonor.name)),
-          extraPrice: returnExtraPriceMihonor(fixNameMihonor(mihonor.name)),
           stockPrice: returnStockPriceMihonor(fixNameMihonor(mihonor.name)),
           provider: "MiHonor",
         })
@@ -52,7 +52,6 @@ const IndexMiHonor = ({ el, mihonorData }) => {
       {isOpen && (
         <div className={style.row}>
           <BasicTable resultArr={resultArr} />
-          
         </div>
       )}
     </div>

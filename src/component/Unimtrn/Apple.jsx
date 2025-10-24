@@ -6,7 +6,7 @@ import { additionalCost, newPrice } from "../../helpers/newPrice";
 import Footer from "./Footer";
 import style from "./styles.module.css";
 
-const Apple = ({ double, dataUnimtrn }) => {
+const Apple = ({ double, hi }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -1211,8 +1211,8 @@ const Apple = ({ double, dataUnimtrn }) => {
                     </h4>
                     <tbody>
                       {isSEWatch && <div>⌚ **AW SE**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Watch SE") != -1 ||
@@ -1250,10 +1250,10 @@ const Apple = ({ double, dataUnimtrn }) => {
                       ) : (
                         <tr></tr>
                       )}
-
+                    {isSE3Watch && <br />}
                     {isSE3Watch && <div>⌚ **🔥AW SE 3🔥**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("SE 3") != -1 ||
@@ -1284,8 +1284,8 @@ const Apple = ({ double, dataUnimtrn }) => {
 
                       {isS8 && <br />}
                       {isS8 && <div>⌚ **AW S8**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Watch S8") != -1 ||
@@ -1315,8 +1315,8 @@ const Apple = ({ double, dataUnimtrn }) => {
                       )}
                       {isS9 && <br />}
                       {isS9 && <div>⌚ **AW S9**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Watch S9") != -1 ||
@@ -1346,8 +1346,8 @@ const Apple = ({ double, dataUnimtrn }) => {
                       )}
                       {isS10 && <br />}
                       {isS10 && <div>⌚ **AW S10**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Watch S10") != -1 ||
@@ -1378,8 +1378,8 @@ const Apple = ({ double, dataUnimtrn }) => {
 
                       {isS11 && <br />}
                       {isS11 && <div>⌚ **🔥AW S11🔥**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Watch S11") != -1 ||
@@ -1410,8 +1410,8 @@ const Apple = ({ double, dataUnimtrn }) => {
 
                       {isUltra && <br />}
                       {isUltra && <div>⌚ **AW Ultra**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Ultra 2") != -1 ||
@@ -1437,8 +1437,8 @@ const Apple = ({ double, dataUnimtrn }) => {
                       )}
                       {isUltra2024 && <br />}
                       {isUltra2024 && <div>⌚ **AW Ultra 2024**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Ultra 2 2024") != -1 ||
@@ -1467,8 +1467,8 @@ const Apple = ({ double, dataUnimtrn }) => {
 
                       {isUltra3 && <br />}
                       {isUltra3 && <div>⌚ **🔥AW Ultra 3🔥**</div>}
-                      {allPriceArr.length ? (
-                        allPriceArr.map((el, index) => (
+                      {hi.length ? (
+                        hi.map((el, index) => (
                           <div key={index}>
                             {baseFix(el) &&
                               (el.name.indexOf("Ultra 3") != -1 ||

@@ -11,6 +11,7 @@ const App = () => {
   const [dataMiOpts, setDataMiOpts] = useState([]);
   const [dataSuperprice, setDataSuperprice] = useState([]);
   const [dataBase, setDataBase] = useState([]);
+  const [dataGarmin, setDataGarmin] = useState([]);
 
   const [fullList, setFullList] = useState([]);
 
@@ -20,6 +21,7 @@ const App = () => {
   const miopts = [];
   const superprice = [];
   const base = [];
+  const garmin = [];
 
   dataUnimtrn.map((unimtrnEl) => {
     (unimtrnEl.Товар || unimtrnEl.Модификация) &&
@@ -71,6 +73,13 @@ const App = () => {
       });
   });
 
+  dataGarmin.map((garminEl) => {
+    garminEl.garmin &&
+      garminEl.garmin.length > 3 &&
+      typeof garminEl.garmin === "string" &&
+      garmin.push({ name: garminEl.garmin });
+  });
+
   const deleteDoubleProduct = base.filter(
     (value, index, self) =>
       index ===
@@ -99,6 +108,8 @@ const App = () => {
           setDataSuperprice(superpriceSheet);
           const baseSheet = utils.sheet_to_json(wb.Sheets[sheets[5]]);
           setDataBase(baseSheet);
+          const garminSheet = utils.sheet_to_json(wb.Sheets[sheets[6]]);
+          setDataGarmin(garminSheet);
         }
       };
       reader.readAsArrayBuffer(file);
@@ -135,6 +146,7 @@ const App = () => {
                 mioptsData={miopts}
                 superpriceData={superprice}
                 baseData={deleteDoubleProduct}
+                garminData={garmin}
                 handleImport={handleImportForOrder}
               />
       </div>

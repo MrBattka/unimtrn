@@ -276,6 +276,13 @@ export const baseFixHi = (el) => {
   );
 };
 
+export const baseFixGarmin = (garmin) => {
+  return (
+    garmin.name.indexOf("налич") == -1 &&
+    garmin.name.indexOf("пост") == -1
+  );
+};
+
 export const baseFixMiHonor = (el) => {
   let toLowerCase = el.name?.toLowerCase();
   return (

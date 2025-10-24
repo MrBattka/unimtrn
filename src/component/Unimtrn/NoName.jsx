@@ -1,18 +1,12 @@
 import { useState } from "react";
-import { baseFix, baseFixMiHonor } from "../../helpers/baseFix";
+import { baseFix } from "../../helpers/baseFix";
 import { copyTable } from "../../helpers/copy";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { additionalCost } from "../../helpers/newPrice";
-import {
-  fixNameMihonor,
-  returnExtraPriceMihonor,
-  returnNameInArrMihonor,
-  returnStockPriceMihonor,
-} from "../Provider/MiHonor/helpers/helpers";
 import Footer from "./Footer";
 import style from "./styles.module.css";
 
-const NoName = ({ double, dataUnimtrn, mihonorData }) => {
+const NoName = ({ double, dataUnimtrn }) => {
   const sort = double.sort(
     (a, b) =>
       (a.id > b.id ? 1 : b.id > a.id ? -1 : 0) &&
@@ -242,7 +236,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                 ) : (
                   <tr></tr>
                 )}
-
+{/* 
                 {isInfinix && <br />}
                 {isInfinix && <div>📱 **Infinix**</div>}
                 {allPriceArr.length ? (
@@ -264,7 +258,7 @@ const NoName = ({ double, dataUnimtrn, mihonorData }) => {
                   ))
                 ) : (
                   <tr></tr>
-                )}
+                )} */}
 
                 {isOppo && <br />}
                 {isOppo && <div>📱 **Oppo**</div>}

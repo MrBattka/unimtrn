@@ -6,6 +6,7 @@ import {
   baseFixSunrise,
   baseFixMiOpts,
   baseFixSuperPrice,
+  baseFixGarmin,
 } from "../../helpers/baseFix";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
@@ -50,6 +51,7 @@ import {
   returnNameInArrSunrise,
   returnStockPriceSunrise,
 } from "../Provider/Sunrise/helpers/helpers";
+import { fixNameMihonor, returnExtraPriceMihonor, returnNameInArrMihonor, returnStockPriceMihonor } from "../Provider/MiHonor/helpers/helpers";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -59,10 +61,13 @@ const IndexPriceForOrder = ({
   mioptsData,
   superpriceData,
   baseData,
+  garminData
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
   const allPriceArrNotID = [];
+  const hiArr = []
+  const garminArr = []
 
   const allItems = [];
 
@@ -90,7 +95,6 @@ const IndexPriceForOrder = ({
   };
 
   returnNewMiopt(mioptsData);
-  console.log(allItems);
 
   dataUnimtrn.map((unimtrnEl) => {
     if (
@@ -122,6 +126,20 @@ const IndexPriceForOrder = ({
       baseFixHi(hiEl) &&
       returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
       allPriceArr.push({
+        id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+        name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
+        extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
+        stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
+        provider: "Hi",
+      })
+    );
+  });
+
+  hi.map((hiEl) => {
+    return (
+      baseFixHi(hiEl) &&
+      // returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
+      hiArr.push({
         id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
         name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
         extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
@@ -379,6 +397,19 @@ const IndexPriceForOrder = ({
     }
   });
 
+  garminData.map((garminEl) => {
+    return (
+      baseFixGarmin(garminEl) &&
+      garminArr.push({
+        id: returnIDSamsung(returnNameInArrMihonor(fixNameMihonor(garminEl.name))),
+        name: returnNameInArrMihonor(fixNameMihonor(garminEl.name)),
+        extraPrice: returnExtraPriceMihonor(fixNameMihonor(garminEl.name)),
+        stockPrice: returnStockPriceMihonor(fixNameMihonor(garminEl.name)),
+        provider: "Garmin",
+      })
+    );
+  });
+
   return (
     <div className={style.wrapper}>
       <div className={style.flexbox}>
@@ -427,6 +458,7 @@ const IndexPriceForOrder = ({
           double={allPriceArr}
           superprice={superpriceData}
           dataUnimtrn={dataUnimtrn}
+          dataGarmin={garminArr}
         />
         <NoName
           double={allPriceArr}
@@ -445,7 +477,7 @@ const IndexPriceForOrder = ({
         <GameConsoles double={allPriceArr} />
         <Samsung double={allPriceArr} />
         <Xiaomi double={allPriceArr} />
-        <Apple double={allPriceArr} dataUnimtrn={dataUnimtrn} />
+        <Apple double={allPriceArr} dataUnimtrn={dataUnimtrn} hi={hiArr} />
         <ProductNotID allPriceArr={allPriceArrNotID} />
       </div>
     </div>

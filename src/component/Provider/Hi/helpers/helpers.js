@@ -512,8 +512,7 @@ export const fixNameHi = (name) => {
   const fixPRO13 = fixPRO129.replace("PRO 13", "iPad Pro 13");
   const fixHS0 = fixPRO13.replace("HS-0", "HS0");
   const fixWatch7 = fixHS0.replace("Watch7", "Watch 7");
-  const fixUltra2 = fixWatch7.replace("UL 2", "Ultra 2");
-  const fixOB = fixUltra2.replace("OB", "Ocean Band");
+  const fixOB = fixWatch7.replace("OB", "Ocean Band");
   const fixAL = fixOB.replace("AL", "Alpine Loop");
   const fixTL = fixAL.replace("TL", "Trail Loop");
   const fixMini7 = fixTL.replace("MINI 7", "iPad Mini 7");
