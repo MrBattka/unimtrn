@@ -400,6 +400,7 @@ const IndexPriceForOrder = ({
   garminData.map((garminEl) => {
     return (
       baseFixGarmin(garminEl) &&
+      /^[a-zA-Z]/.test(garminEl.name) &&
       garminArr.push({
         id: returnIDSamsung(returnNameInArrMihonor(fixNameMihonor(garminEl.name))),
         name: returnNameInArrMihonor(fixNameMihonor(garminEl.name)),

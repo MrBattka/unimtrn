@@ -23,7 +23,7 @@ export const returnNameInArrMihonor = (name) => {
   let reverseStrName = removeRub.split("").reverse().join("");
 
   let splitPrice =
-    reverseStrName.indexOf(" ") !== -1
+    reverseStrName.indexOf(" ") !== -1 && /^[a-zA-Z]/.test(name)
       ? /\s(.+)/.exec(reverseStrName)[1]
       : reverseStrName;
   let reverseBackStrName = splitPrice.split("").reverse().join("");
@@ -47,7 +47,7 @@ export const returnExtraPriceMihonor = (name) => {
 export const returnStockPriceMihonor = (name) => {
   let removeRub1 = name.indexOf("₽") !== -1 ? name.split("₽")[0] : name;
   let reverseStrName = removeRub1.split("").reverse().join("");
-  let removeRub = reverseStrName.indexOf(" ") !== -1 ? reverseStrName.split(" ")[0] : reverseStrName;
+  let removeRub = reverseStrName.indexOf(" ") !== -1 && /^[a-zA-Z]/.test(name) ? reverseStrName.split(" ")[0] : reverseStrName;
   let reverseBackStrName = removeRub.split("").reverse().join("");
   let replaceDot = reverseBackStrName.replace(".", "")
 

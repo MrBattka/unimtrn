@@ -12,7 +12,6 @@ const checkFlags = (str, str2) => {
     checkSpace3[checkSpace3.length - 1] === " "
       ? checkSpace3.slice(0, -1)
       : checkSpace3;
-console.log(checkSpace4.substring(0, checkSpace4.length - 4));
   if (
     checkSpace4.slice(-4) === `🇯🇵` ||
     checkSpace4.slice(-4) === "🇮🇳" ||

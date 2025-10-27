@@ -58,11 +58,11 @@ export const returnFixNameSunrise = (name) => {
 
 
 export const returnNameInArrSunrise = (name) => {
-   
+   let  removeDoubleSpace = name.replace(/\s+/g, " ");
   let checkSpace2 =
-    name[name.length - 1] === " "
-      ? name.slice(0, -1)
-      : name;
+    removeDoubleSpace[removeDoubleSpace.length - 1] === " "
+      ? removeDoubleSpace.slice(0, -1)
+      : removeDoubleSpace;
   let checkSpace3 =
     checkSpace2[checkSpace2.length - 1] === " "
       ? checkSpace2.slice(0, -1)
@@ -71,7 +71,6 @@ export const returnNameInArrSunrise = (name) => {
     checkSpace3[checkSpace3.length - 1] === " "
       ? checkSpace3.slice(0, -1)
       : checkSpace3;
- 
 
   let splitPrice =
     checkSpace4.indexOf("(https") !== -1
@@ -80,7 +79,9 @@ export const returnNameInArrSunrise = (name) => {
   let addNotCaseName = checkSpace4.indexOf("[без кейса]") !== -1 ? splitPrice + " [без кейса]" : splitPrice
   let addWithCaseName = checkSpace4.indexOf("[с кейсом]") !== -1 ? addNotCaseName + " [с кейсом]" : addNotCaseName
   
-  return checkFlags(addWithCaseName);
+  let addWithRoadCaseName = checkSpace4.indexOf("[с дорожным чехлом]") !== -1 ? addWithCaseName + " [с дорожным чехлом]" : addWithCaseName
+  
+  return checkFlags(addWithRoadCaseName);
 };
 
 export const returnStockPriceSunrise = (name) => {
@@ -100,6 +101,7 @@ export const returnStockPriceSunrise = (name) => {
   let reverseBackStrName = removeStick.split("").reverse().join("");
   let replaceCase = reverseBackStrName.replace(" [без кейса]", "");
   let replaceWithCase = replaceCase.replace(" [с кейсом]", "");
+  let replaceWithRoadCase = replaceWithCase.replace(" [с дорожным чехлом]", "");
 
-  return returnFixNameSunrise(replaceWithCase).indexOf("00") !== -1 && returnFixNameSunrise(replaceWithCase);
+  return returnFixNameSunrise(replaceWithRoadCase).indexOf("00") !== -1 && returnFixNameSunrise(replaceWithRoadCase);
 };
