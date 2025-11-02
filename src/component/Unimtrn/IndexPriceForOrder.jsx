@@ -51,7 +51,14 @@ import {
   returnNameInArrSunrise,
   returnStockPriceSunrise,
 } from "../Provider/Sunrise/helpers/helpers";
-import { fixNameMihonor, returnExtraPriceMihonor, returnNameInArrMihonor, returnStockPriceMihonor } from "../Provider/MiHonor/helpers/helpers";
+import {
+  fixNameMihonor,
+  returnExtraPriceMihonor,
+  returnNameInArrMihonor,
+  returnStockPriceMihonor,
+} from "../Provider/MiHonor/helpers/helpers";
+import { defaultFixName } from "../../helpers/defaultFixName";
+import { getIdByName } from "../../helpers/returnIDByName";
 
 const IndexPriceForOrder = ({
   dataUnimtrn,
@@ -61,13 +68,13 @@ const IndexPriceForOrder = ({
   mioptsData,
   superpriceData,
   baseData,
-  garminData
+  garminData,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const allPriceArr = [];
   const allPriceArrNotID = [];
-  const hiArr = []
-  const garminArr = []
+  const hiArr = [];
+  const garminArr = [];
 
   const allItems = [];
 
@@ -99,8 +106,9 @@ const IndexPriceForOrder = ({
   dataUnimtrn.map((unimtrnEl) => {
     if (
       unimtrnEl.name &&
-      returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))) !==
-        "No match" &&
+      getIdByName(
+        defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
+      ) !== "No match" &&
       baseFix(unimtrnEl) &&
       (returnApple(unimtrnEl) ||
         returnDyson(unimtrnEl) ||
@@ -110,8 +118,8 @@ const IndexPriceForOrder = ({
         returnOtherProduct(unimtrnEl))
     ) {
       allPriceArr.push({
-        id: returnIDSamsung(
-          returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))
+        id: getIdByName(
+          defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
         ),
         name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
@@ -124,9 +132,12 @@ const IndexPriceForOrder = ({
   hi.map((hiEl) => {
     return (
       baseFixHi(hiEl) &&
-      returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
+      getIdByName(defaultFixName(returnNameInArrHi(fixNameHi(hiEl.name)))) !==
+        "No match" &&
       allPriceArr.push({
-        id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+        id: getIdByName(
+          defaultFixName(returnNameInArrHi(fixNameHi(hiEl.name)))
+        ),
         name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
         extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
         stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
@@ -138,9 +149,11 @@ const IndexPriceForOrder = ({
   hi.map((hiEl) => {
     return (
       baseFixHi(hiEl) &&
-      // returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
+      // getIdByName(defaultFixName(returnNameInArrHi(fixNameHi(hiEl.name))) !== "No match" &&
       hiArr.push({
-        id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+        id: getIdByName(
+          defaultFixName(returnNameInArrHi(fixNameHi(hiEl.name)))
+        ),
         name: returnFixPriceHi(hiEl, returnNameInArrHi(fixNameHi(hiEl.name))),
         extraPrice: returnExtraPriceHi(fixNameHi(hiEl.name)),
         stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
@@ -160,10 +173,10 @@ const IndexPriceForOrder = ({
   //     baseFixsunrise(sunrise)
   //   ) {
   //     return (
-  //       returnIDSamsung(fixNamesunrise(sunrise.name)) !== "No match" &&
+  //       getIdByName(defaultFixName(fixNamesunrise(sunrise.name)) !== "No match" &&
   //       returnStockPricesunrise(sunrise.name) &&
   //       allPriceArr.push({
-  //         id: returnIDSamsung(
+  //         id: getIdByName(defaultFixName(
   //           returnNameInArrsunrise(fixNamesunrise(sunrise.name))
   //         ),
   //         name: returnNameInArrsunrise(fixNamesunrise(sunrise.name)),
@@ -186,11 +199,14 @@ const IndexPriceForOrder = ({
       isOpen
     ) {
       return (
-        returnIDSamsung(returnFixNameSunrise(sunrise.name)) !== "No match" &&
+        getIdByName(defaultFixName(returnFixNameSunrise(sunrise.name))) !==
+          "No match" &&
         returnStockPriceSunrise(sunrise.name) &&
         allPriceArr.push({
-          id: returnIDSamsung(
-            returnNameInArrSunrise(returnFixNameSunrise(sunrise.name))
+          id: getIdByName(
+            defaultFixName(
+              returnNameInArrSunrise(returnFixNameSunrise(sunrise.name))
+            )
           ),
           name: returnNameInArrSunrise(returnFixNameSunrise(sunrise.name)),
           stockPrice: returnStockPriceSunrise(
@@ -211,14 +227,15 @@ const IndexPriceForOrder = ({
       baseFixMiOpts(miopts)
     ) {
       return (
-        returnIDSamsung(fixNameMiOpts(miopts.name)) !== "No match" &&
+        getIdByName(defaultFixName(fixNameMiOpts(miopts.name))) !==
+          "No match" &&
         returnExtraPriceMiOpts(miopts.name) &&
         returnStockPriceMiOpts(fixNameMiOpts(miopts.name)) > 1000 &&
         (returnNameInArrMiOpts(miopts.name).indexOf("GB") !== -1 ||
           returnNameInArrMiOpts(miopts.name).indexOf("TRB") !== -1) &&
         allPriceArr.push({
-          id: returnIDSamsung(
-            returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
+          id: getIdByName(
+            defaultFixName(returnNameInArrMiOpts(fixNameMiOpts(miopts.name)))
           ),
           name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
           extraPrice: returnExtraPriceMiOpts(fixNameMiOpts(miopts.name)),
@@ -237,11 +254,12 @@ const IndexPriceForOrder = ({
       baseFixSuperPrice(superprice)
     ) {
       return (
-        returnIDSamsung(fixNameSuperPrice(superprice.name)) !== "No match" &&
+        getIdByName(defaultFixName(fixNameSuperPrice(superprice.name))) !==
+          "No match" &&
         newPrice(superprice.name, superprice.price) &&
         superprice.price &&
         allPriceArr.push({
-          id: returnIDSamsung(fixNameSuperPrice(superprice.name)),
+          id: getIdByName(defaultFixName(fixNameSuperPrice(superprice.name))),
           name: fixNameSuperPrice(superprice.name),
           stockPrice: superprice.price,
           provider: "SuperPrice",
@@ -253,11 +271,12 @@ const IndexPriceForOrder = ({
   baseData.map((base) => {
     if (base.name && typeof base.name === "string" && baseFixBase(base)) {
       return (
-        returnIDSamsung(returnFixNameBase(base.name)) !== "No match" &&
+        getIdByName(defaultFixName(returnFixNameBase(base.name))) !==
+          "No match" &&
         base.price &&
         baseFixBase(base) &&
         allPriceArr.push({
-          id: returnIDSamsung(returnFixNameBase(base.name)),
+          id: getIdByName(defaultFixName(returnFixNameBase(base.name))),
           name: returnFixNameBase(changeFlag(base.name)),
           stockPrice: base.extra,
           provider: "База",
@@ -269,8 +288,9 @@ const IndexPriceForOrder = ({
   dataUnimtrn.map((unimtrnEl) => {
     if (
       unimtrnEl.name &&
-      returnIDSamsung(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))) ===
-        "No match" &&
+      getIdByName(
+        defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
+      ) === "No match" &&
       baseFix(unimtrnEl) &&
       (returnApple(unimtrnEl) ||
         returnDyson(unimtrnEl) ||
@@ -280,8 +300,8 @@ const IndexPriceForOrder = ({
         returnOtherProduct(unimtrnEl))
     ) {
       allPriceArrNotID.push({
-        id: returnIDSamsung(
-          returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl))
+        id: getIdByName(
+          defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
         ),
         name: fixNameUnimtrn(unimtrnEl),
         extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
@@ -295,10 +315,12 @@ const IndexPriceForOrder = ({
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {
       return (
         baseFixHi(hiEl) &&
-        returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))) ===
+        getIdByName(defaultFixName(returnNameInArrHi(fixNameHi(hiEl.name)))) ===
           "No match" &&
         allPriceArrNotID.push({
-          id: returnIDSamsung(returnNameInArrHi(fixNameHi(hiEl.name))),
+          id: getIdByName(
+            defaultFixName(returnNameInArrHi(fixNameHi(hiEl.name)))
+          ),
           name: returnNameInArrHi(fixNameHi(hiEl.name)),
           extraPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
           stockPrice: returnStockPriceHi(fixNameHi(hiEl.name)),
@@ -319,10 +341,10 @@ const IndexPriceForOrder = ({
   //     baseFixsunrise(sunrise)
   //   ) {
   //     return (
-  //       returnIDSamsung(fixNamesunrise(sunrise.name)) === "No match" &&
+  //       getIdByName(defaultFixName(fixNamesunrise(sunrise.name)) === "No match" &&
   //       returnStockPricesunrise(sunrise.name) &&
   //       allPriceArrNotID.push({
-  //         id: returnIDSamsung(
+  //         id: getIdByName(defaultFixName(
   //           returnNameInArrsunrise(fixNamesunrise(sunrise.name))
   //         ),
   //         name: returnNameInArrsunrise(fixNamesunrise(sunrise.name)),
@@ -344,11 +366,11 @@ const IndexPriceForOrder = ({
   //     baseFixMiOpts(miopts)
   //   ) {
   //     return (
-  //       returnIDSamsung(fixNameMiOpts(miopts.name)) === "No match" &&
+  //       getIdByName(defaultFixName(fixNameMiOpts(miopts.name)) === "No match" &&
   //       returnExtraPriceMiOpts(miopts.name) &&
   //       returnStockPriceMiOpts(miopts.name) &&
   //       allPriceArrNotID.push({
-  //         id: returnIDSamsung(
+  //         id: getIdByName(defaultFixName(
   //           returnNameInArrMiOpts(fixNameMiOpts(miopts.name))
   //         ),
   //         name: returnNameInArrMiOpts(fixNameMiOpts(miopts.name)),
@@ -368,11 +390,12 @@ const IndexPriceForOrder = ({
       baseFixSuperPrice(superprice)
     ) {
       return (
-        returnIDSamsung(fixNameSuperPrice(superprice.name)) === "No match" &&
+        getIdByName(defaultFixName(fixNameSuperPrice(superprice.name))) ===
+          "No match" &&
         newPrice(superprice.name, superprice.price) &&
         superprice.price &&
         allPriceArrNotID.push({
-          id: returnIDSamsung(fixNameSuperPrice(superprice.name)),
+          id: getIdByName(defaultFixName(fixNameSuperPrice(superprice.name))),
           name: fixNameSuperPrice(superprice.name),
           stockPrice: superprice.price,
           provider: "SuperPrice",
@@ -384,11 +407,12 @@ const IndexPriceForOrder = ({
   baseData.map((base) => {
     if (base.name && typeof base.name === "string" && baseFixBase(base)) {
       return (
-        returnIDSamsung(returnFixNameBase(base.name)) === "No match" &&
+        getIdByName(defaultFixName(returnFixNameBase(base.name))) ===
+          "No match" &&
         base.price &&
         baseFixBase(base) &&
         allPriceArrNotID.push({
-          id: returnIDSamsung(returnFixNameBase(base.name)),
+          id: getIdByName(defaultFixName(returnFixNameBase(base.name))),
           name: returnFixNameBase(changeFlag(base.name)),
           stockPrice: base.extra,
           provider: "База",
@@ -402,7 +426,9 @@ const IndexPriceForOrder = ({
       baseFixGarmin(garminEl) &&
       /^[a-zA-Z]/.test(garminEl.name) &&
       garminArr.push({
-        id: returnIDSamsung(returnNameInArrMihonor(fixNameMihonor(garminEl.name))),
+        id: getIdByName(
+          defaultFixName(returnNameInArrMihonor(fixNameMihonor(garminEl.name)))
+        ),
         name: returnNameInArrMihonor(fixNameMihonor(garminEl.name)),
         extraPrice: returnExtraPriceMihonor(fixNameMihonor(garminEl.name)),
         stockPrice: returnStockPriceMihonor(fixNameMihonor(garminEl.name)),
@@ -446,7 +472,7 @@ const IndexPriceForOrder = ({
       <div className={style.wrapper_cat}>
         {/* {hi.map((hiel) => (
           <div>
-            {baseFixHi(hiel) && returnIDSamsung(returnNameInArrHi(hiel.name))}
+            {baseFixHi(hiel) && getIdByName(defaultFixName(returnNameInArrHi(hiel.name))}
             
           </div>
         ))} */}
