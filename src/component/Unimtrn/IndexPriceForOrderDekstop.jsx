@@ -2,15 +2,14 @@ import { useState } from "react";
 import {
   baseFix,
   baseFixBase,
-  baseFixHi,
-  baseFixSunrise,
-  baseFixMiOpts,
-  baseFixSuperPrice,
   baseFixGarmin,
+  baseFixHi,
+  baseFixMiOpts,
+  baseFixSunrise,
+  baseFixSuperPrice,
 } from "../../helpers/baseFix";
 import { returnFixPrice } from "../../helpers/fixPrice";
 import { newPrice } from "../../helpers/newPrice";
-import { returnIDSamsung } from "../../helpers/returnIDSamsung";
 import { returnFixNameBase } from "../Provider/Base/helpers/helpers";
 import {
   fixNameHi,
@@ -43,24 +42,25 @@ import Samsung from "./Samsung";
 import Xiaomi from "./Xiaomi";
 import style from "./indexPicrForOrder.module.css";
 
-import { changeFlag } from "../PriceFromBase/helpers/fixFlags";
-import ProductNotID from "./ProductNotID";
+import { defaultFixName } from "../../helpers/defaultFixName";
 import { returnFixPriceHi } from "../../helpers/fixFlags";
-import {
-  returnFixNameSunrise,
-  returnNameInArrSunrise,
-  returnStockPriceSunrise,
-} from "../Provider/Sunrise/helpers/helpers";
+import { getIdByName } from "../../helpers/returnIDByName";
+import { changeFlag } from "../PriceFromBase/helpers/fixFlags";
 import {
   fixNameMihonor,
   returnExtraPriceMihonor,
   returnNameInArrMihonor,
   returnStockPriceMihonor,
 } from "../Provider/MiHonor/helpers/helpers";
-import { defaultFixName } from "../../helpers/defaultFixName";
-import { getIdByName } from "../../helpers/returnIDByName";
+import {
+  returnFixNameSunrise,
+  returnNameInArrSunrise,
+  returnStockPriceSunrise,
+} from "../Provider/Sunrise/helpers/helpers";
+import ProductNotID from "./ProductNotID";
+import preloader from "../../source/preloader/preloader.svg"
 
-const IndexPriceForOrder = ({
+const IndexPriceForOrderDekstop = ({
   dataUnimtrn,
   hi,
   handleImport,
@@ -468,14 +468,9 @@ const IndexPriceForOrder = ({
           </div>
         </div>
       </div>
-
+      {!dataUnimtrn && <img className={style.preloader} src={preloader} />}
       <div className={style.wrapper_cat}>
-        {/* {hi.map((hiel) => (
-          <div>
-            {baseFixHi(hiel) && getIdByName(defaultFixName(returnNameInArrHi(hiel.name))}
-            
-          </div>
-        ))} */}
+        
         <Dyson
           double={allPriceArr}
           dataUnimtrn={dataUnimtrn}
@@ -511,4 +506,4 @@ const IndexPriceForOrder = ({
   );
 };
 
-export default IndexPriceForOrder;
+export default IndexPriceForOrderDekstop;

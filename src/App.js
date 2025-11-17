@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { read, utils } from "xlsx";
 import "./App.css";
-import IndexPriceForOrder from "./component/Unimtrn/IndexPriceForOrder";
+import IndexPriceForOrderDekstop from "./component/Unimtrn/IndexPriceForOrderDekstop";
 import icon from "./source/icon/icon.png";
+import { useMediaQuery } from "react-responsive";
 
 const App = () => {
   const [dataUnimtrn, setDataUnimtrn] = useState([]);
@@ -116,40 +117,83 @@ const App = () => {
     }
   };
 
-  const handleImportFromBase = ($event) => {
-    const files = $event.target.files;
-    if (files.length) {
-      const file = files[0];
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const wb = read(event.target.result);
-        const sheets = wb.SheetNames;
+  // const handleImportFromBase = ($event) => {
+  //   const files = $event.target.files;
+  //   if (files.length) {
+  //     const file = files[0];
+  //     const reader = new FileReader();
+  //     reader.onload = (event) => {
+  //       const wb = read(event.target.result);
+  //       const sheets = wb.SheetNames;
 
-        if (sheets.length) {
-          const rows = utils.sheet_to_json(wb.Sheets[sheets[0]]);
-          setFullList(rows);
-        }
-      };
-      reader.readAsArrayBuffer(file);
-    }
-  };
+  //       if (sheets.length) {
+  //         const rows = utils.sheet_to_json(wb.Sheets[sheets[0]]);
+  //         setFullList(rows);
+  //       }
+  //     };
+  //     reader.readAsArrayBuffer(file);
+  //   }
+  // };
+
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 1023px)",
+  });
+
+  const isPortrait = useMediaQuery({
+    query: "(orientation: portrait)",
+  });
+
+  const isRetina = useMediaQuery({
+    query: "(max-resolution: 300dpi)",
+  });
 
   return (
-      <div className="App">
-        <h2 className="title"><span className="title_red">Под</span> заказ</h2>
-        <img className="img" src={icon} alt="Not found" />
-              <IndexPriceForOrder
-                dataUnimtrn={unimtrn}
-                hi={hi}
-                el={dataHi}
-                sunriseData={sunrise}
-                mioptsData={miopts}
-                superpriceData={superprice}
-                baseData={deleteDoubleProduct}
-                garminData={garmin}
-                handleImport={handleImportForOrder}
-              />
-      </div>
+    <div className="App">
+      {(isDesktop && (
+        <div>
+          <h2 className="title">
+            <span className="title_red">Под</span> заказ
+          </h2>
+          <img className="imgDesktop" src={icon} alt="Not found" />
+          <IndexPriceForOrderDekstop
+            dataUnimtrn={unimtrn}
+            hi={hi}
+            el={dataHi}
+            sunriseData={sunrise}
+            mioptsData={miopts}
+            superpriceData={superprice}
+            baseData={deleteDoubleProduct}
+            garminData={garmin}
+            handleImport={handleImportForOrder}
+          />
+        </div>
+      )) ||
+        (isMobile && (
+          <div>
+            <img className="imgMob" src={icon} alt="Not found" />
+            <h2 className="titleMob">
+              <span className="title_red">Под</span> заказ
+            </h2>
+            <div className="wrapperMob">
+            <IndexPriceForOrderDekstop
+              dataUnimtrn={unimtrn}
+              hi={hi}
+              el={dataHi}
+              sunriseData={sunrise}
+              mioptsData={miopts}
+              superpriceData={superprice}
+              baseData={deleteDoubleProduct}
+              garminData={garmin}
+              handleImport={handleImportForOrder}
+            />
+            </div>
+          </div>
+        ))}
+    </div>
   );
 };
 

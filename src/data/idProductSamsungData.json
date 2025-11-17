@@ -615,109 +615,121 @@
   "40262": {
     "include": [
       "a17 4/128",
-      "black"
+      "black",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40290": {
     "include": [
       "a17 4/128",
-      "blue"
+      "blue",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40289": {
     "include": [
       "a17 4/128",
-      "gray"
+      "gray",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40282": {
     "include": [
       "a17 6/128",
-      "black"
+      "black",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40291": {
     "include": [
       "a17 6/128",
-      "blue"
+      "blue",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40288": {
     "include": [
       "a17 6/128",
-      "gray"
+      "gray",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40286": {
     "include": [
       "a17 8/128",
-      "black"
+      "black",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40292": {
     "include": [
       "a17 8/128",
-      "blue"
+      "blue",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40284": {
     "include": [
       "a17 8/128",
-      "gray"
+      "gray",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40287": {
     "include": [
       "a17 8/256",
-      "black"
+      "black",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40293": {
     "include": [
       "a17 8/256",
-      "blue"
+      "blue",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "40285": {
     "include": [
       "a17 8/256",
-      "gray"
+      "gray",
+      "5g"
     ],
     "exclude": [
-      "5g"
+      
     ]
   },
   "31092": {
@@ -9085,6 +9097,129 @@
       "tab a11",
       "8/128",
       "silver"
+    ],
+    "exclude": []
+  },
+  "41580": {
+    "include": [
+      "a17 4/128",
+      "black"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41609": {
+    "include": [
+      "a17 6/128",
+      "black"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41610": {
+    "include": [
+      "a17 8/128",
+      "black"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41611": {
+    "include": [
+      "a17 8/256",
+      "black"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41615": {
+    "include": [
+      "a17 4/128",
+      "gray"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41614": {
+    "include": [
+      "a17 6/128",
+      "gray"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41613": {
+    "include": [
+      "a17 8/128",
+      "gray"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41612": {
+    "include": [
+      "a17 8/256",
+      "gray"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  }
+  ,
+  "41616": {
+    "include": [
+      "a17 4/128",
+      "blue"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41617": {
+    "include": [
+      "a17 6/128",
+      "blue"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41618": {
+    "include": [
+      "a17 8/128",
+      "blue"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  },
+  "41619": {
+    "include": [
+      "a17 8/256",
+      "blue"
+    ],
+    "exclude": [
+      "5g"
+    ]
+  }
+
+  ,
+  "41578": {
+    "include": [
+      "galaxy buds 3 fe black"
+    ],
+    "exclude": []
+  },
+  "41603": {
+    "include": [
+      "galaxy buds 3 fe gray"
     ],
     "exclude": []
   }
