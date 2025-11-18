@@ -30,7 +30,7 @@ import { returnGameConsole } from "../Provider/Unimtrn/GameConsole/gameConsole";
 import { returnOtherProduct } from "../Provider/Unimtrn/OtherProduct/otherProduct";
 import { returnSamsung } from "../Provider/Unimtrn/Samsung/samsung";
 import { returnXiaomi } from "../Provider/Unimtrn/Xiaomi/xiaomi";
-import { fixNameUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
+import { fixNameUnimtrn, returnNameInArrUnimtrn, returnStockPriceUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
 import Apple from "./Apple";
 import Dyson from "./Dyson";
 import GameConsoles from "./GameConsoles";
@@ -103,31 +103,52 @@ const IndexPriceForOrderDekstop = ({
 
   returnNewMiopt(mioptsData);
 
-  dataUnimtrn.map((unimtrnEl) => {
-    if (
-      unimtrnEl.name &&
-      getIdByName(
-        defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
-      ) !== "No match" &&
-      baseFix(unimtrnEl) &&
-      (returnApple(unimtrnEl) ||
-        returnDyson(unimtrnEl) ||
-        returnSamsung(unimtrnEl) ||
-        returnXiaomi(unimtrnEl) ||
-        returnGameConsole(unimtrnEl) ||
-        returnOtherProduct(unimtrnEl))
-    ) {
-      allPriceArr.push({
-        id: getIdByName(
-          defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
-        ),
-        name: fixNameUnimtrn(unimtrnEl),
-        extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
-        stockPrice: unimtrnEl.price,
-        provider: "Unimtrn",
-      });
-    }
-  });
+  // dataUnimtrn.map((unimtrnEl) => {
+  //   if (
+  //     unimtrnEl.name &&
+  //     getIdByName(
+  //       defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
+  //     ) !== "No match" &&
+  //     baseFix(unimtrnEl) &&
+  //     (returnApple(unimtrnEl) ||
+  //       returnDyson(unimtrnEl) ||
+  //       returnSamsung(unimtrnEl) ||
+  //       returnXiaomi(unimtrnEl) ||
+  //       returnGameConsole(unimtrnEl) ||
+  //       returnOtherProduct(unimtrnEl))
+  //   ) {
+  //     allPriceArr.push({
+  //       id: getIdByName(
+  //         defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
+  //       ),
+  //       name: fixNameUnimtrn(unimtrnEl),
+  //       extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
+  //       stockPrice: unimtrnEl.price,
+  //       provider: "Unimtrn",
+  //     });
+  //   }
+  // });
+
+   dataUnimtrn.map((unimtrn) => {
+      if (
+        unimtrn.name &&
+        getIdByName(
+          defaultFixName(returnNameInArrUnimtrn(fixNameUnimtrn(unimtrn.name)))
+        ) !== "No match" &&
+        baseFix(unimtrn)
+      ) {
+        allPriceArr.push({
+          id: getIdByName(
+            defaultFixName(fixNameUnimtrn(unimtrn.name))
+          ),
+          name: returnNameInArrUnimtrn(fixNameUnimtrn(unimtrn.name)),
+          extraPrice: returnStockPriceUnimtrn(fixNameUnimtrn(unimtrn.name)),
+          stockPrice: returnStockPriceUnimtrn(fixNameUnimtrn(unimtrn.name)),
+          provider: "Unimtrn",
+        });
+      }
+    });
+
 
   hi.map((hiEl) => {
     return (
@@ -285,31 +306,25 @@ const IndexPriceForOrderDekstop = ({
     }
   });
 
-  dataUnimtrn.map((unimtrnEl) => {
-    if (
-      unimtrnEl.name &&
-      getIdByName(
-        defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
-      ) === "No match" &&
-      baseFix(unimtrnEl) &&
-      (returnApple(unimtrnEl) ||
-        returnDyson(unimtrnEl) ||
-        returnSamsung(unimtrnEl) ||
-        returnXiaomi(unimtrnEl) ||
-        returnGameConsole(unimtrnEl) ||
-        returnOtherProduct(unimtrnEl))
-    ) {
-      allPriceArrNotID.push({
-        id: getIdByName(
-          defaultFixName(returnFixPrice(unimtrnEl, fixNameUnimtrn(unimtrnEl)))
-        ),
-        name: fixNameUnimtrn(unimtrnEl),
-        extraPrice: newPrice(unimtrnEl.name, unimtrnEl.price),
-        stockPrice: unimtrnEl.price,
-        provider: "Unimtrn",
-      });
-    }
-  });
+  dataUnimtrn.map((unimtrn) => {
+      if (
+        unimtrn.name &&
+        getIdByName(
+          defaultFixName(returnNameInArrUnimtrn(fixNameUnimtrn(unimtrn.name)))
+        ) === "No match" &&
+        isOpen &&
+        baseFix(unimtrn)
+      ) {
+        allPriceArrNotID.push({
+          id: getIdByName(
+            defaultFixName(fixNameUnimtrn(unimtrn.name))
+          ),
+          name: returnNameInArrUnimtrn(fixNameUnimtrn(unimtrn.name)),
+          stockPrice: returnStockPriceUnimtrn(fixNameUnimtrn(unimtrn.name)),
+          provider: "Метреон",
+        });
+      }
+    });
 
   hi.map((hiEl) => {
     if (hiEl.name && typeof hiEl.name === "string" && baseFixHi(hiEl)) {

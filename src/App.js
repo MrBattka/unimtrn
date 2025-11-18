@@ -25,10 +25,9 @@ const App = () => {
   const garmin = [];
 
   dataUnimtrn.map((unimtrnEl) => {
-    (unimtrnEl.Товар || unimtrnEl.Модификация) &&
+    (unimtrnEl.name) &&
       unimtrn.push({
-        name: unimtrnEl.Товар || unimtrnEl.Модификация,
-        price: unimtrnEl.Стоимость || unimtrnEl.Cтоимость || unimtrnEl.Цена,
+        name: unimtrnEl.name
       });
   });
 

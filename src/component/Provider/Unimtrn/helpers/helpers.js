@@ -51,7 +51,7 @@ let tecno = /T.Tecno/gi;
 let realme = /T.Realme/gi;
 
 export const fixNameUnimtrn = (el) => {
-  const fixGb = el.name?.replace(gb, "");
+  const fixGb = el.replace(gb, "");
   const removeDoubleSpace = fixGb.replace(/\s+/g, " ");
   const removeFirstDoubleSpace =
     removeDoubleSpace[0] === " "
@@ -483,4 +483,70 @@ export const fixNameUnimtrn = (el) => {
   const replaceSE1 = replaceS1.replace("SEries 1", "S1");
 
   return replaceSE1;
+};
+
+
+export const returnNameInArrUnimtrn = (name) => {
+  let removeStick1 = name.replace("-", " ");
+  let reverseStrName = removeStick1.split("").reverse().join("");
+  let checkSpace =
+    reverseStrName[0] === " "
+      ? reverseStrName.replace(" ", "")
+      : reverseStrName;
+  let checkSpace1 =
+    checkSpace[0] === " " ? checkSpace.replace(" ", "") : checkSpace;
+  let checkSpace2 =
+    checkSpace1[0] === " " ? checkSpace1.replace(" ", "") : checkSpace1;
+
+  let checkSpace3 =
+    checkSpace2[0] === " " ? checkSpace2.replace(" ", "") : checkSpace2;
+
+  let splitPrice =
+    checkSpace3.indexOf(" ") !== -1
+      ? /\s(.+)/.exec(checkSpace3)[1]
+      : checkSpace3;
+
+  let removeStick =
+    checkSpace3.indexOf(" ") !== -1 ? checkSpace3.split(" ")[1] : checkSpace3;
+
+  let reverseBackStrName = splitPrice.split("").reverse().join("");
+  
+
+  return reverseBackStrName;
+};
+
+export const returnStockPriceUnimtrn = (name) => {
+  
+  const removeDoubleSpace = name.replace(/\s+/g, " ");
+  
+  let removeStick1 = removeDoubleSpace.replace("-", " ");
+  let replaceCar = removeStick1.replace(" 🏎️", "");
+  let fixZero = replaceCar.replace("🛩️", "");
+
+  let reverseStrName = fixZero.split("").reverse().join("");
+  let checkSpace =
+    reverseStrName[0] === " "
+      ? reverseStrName.replace(" ", "")
+      : reverseStrName;
+  let checkSpace1 =
+    checkSpace[0] === " " ? checkSpace.replace(" ", "") : checkSpace;
+  let checkSpace2 =
+    checkSpace1[0] === " " ? checkSpace1.replace(" ", "") : checkSpace1;
+  let checkSpace3 =
+    checkSpace1[0] === " " ? checkSpace2.replace(" ", "") : checkSpace2;
+  let splitPrice = checkSpace3.split(" ")[0];
+  const removeDoubleSpace2 = splitPrice.replace(" ", "");
+  
+
+  let slicePrice =
+    removeDoubleSpace2.indexOf(" ") !== -1
+      ? removeDoubleSpace2.split(" ")[0]
+      : removeDoubleSpace2;
+
+  let reverseBackStrName = slicePrice.split("").reverse().join("");
+
+  let replaceEU = reverseBackStrName.replace("🇪🇺", "");
+  let replaceCA = replaceEU.replace("🇨🇦", "");
+
+  return replaceCA.replace(" ", "");
 };

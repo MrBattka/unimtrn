@@ -380,14 +380,22 @@ const OnePlusZTENothingHonor = ({ double, dataUnimtrn }) => {
 
                 {isHonor && <br />}
                 {isHonor && <div>📱 **Honor**</div>}
-                {dataUnimtrn.length ? (
-                  dataUnimtrn.map((el, index) => (
+                {allPriceArr.length ? (
+                  allPriceArr.map((el, index) => (
                     <div key={index}>
                       {baseFix(el) &&
                         el.name.indexOf("Honor") != -1 &&
                         (isHonor || setIsHonor(true)) &&
                         "` • " + returnFixPrice(el, fixName(el)) +
-                          additionalCost(el.price) + "`"}
+                          (el.condition
+                            ? `${additionalCost(el.extraPrice)} 👉 (${
+                                additionalCost(el.stockPrice) + el.condition
+                              })`
+                            : el.provider !== "База"
+                            ? additionalCost(
+                                el.condition ? el.extraPrice : el.stockPrice
+                              )
+                            : el.stockPrice) + "`"}
                       <h3 className="del">
                         {baseFix(el) && el.name.indexOf("Honor") != -1 && (
                           <span>{" - Unimtrn"}</span>
