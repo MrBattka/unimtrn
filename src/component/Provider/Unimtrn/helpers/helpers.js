@@ -437,17 +437,17 @@ export const fixNameUnimtrn = (el) => {
       : fixAir11M4;
   const fixNote13ProPurple =
     fixAir11Gray.indexOf("Note 13 Pro") != -1 &&
-    fixAir11Gray.indexOf("Aurora") != -1
+      fixAir11Gray.indexOf("Aurora") != -1
       ? fixAir11Gray.replace("Aurora ", "")
       : fixAir11Gray;
   const fixNote13ProOlive =
     fixNote13ProPurple.indexOf("Note 13 Pro") != -1 &&
-    fixNote13ProPurple.indexOf("Olive") != -1
+      fixNote13ProPurple.indexOf("Olive") != -1
       ? fixNote13ProPurple.replace("Olive ", "")
       : fixNote13ProPurple;
   const fixNote12Sky =
     fixNote13ProOlive.indexOf("Note 12 Pro") != -1 &&
-    fixNote13ProOlive.indexOf("Sky") != -1
+      fixNote13ProOlive.indexOf("Sky") != -1
       ? fixNote13ProOlive.replace("Sky ", "")
       : fixNote13ProOlive;
   const fixMi12Gray =
@@ -510,15 +510,15 @@ export const returnNameInArrUnimtrn = (name) => {
     checkSpace3.indexOf(" ") !== -1 ? checkSpace3.split(" ")[1] : checkSpace3;
 
   let reverseBackStrName = splitPrice.split("").reverse().join("");
-  
+
 
   return reverseBackStrName;
 };
 
 export const returnStockPriceUnimtrn = (name) => {
-  
+
   const removeDoubleSpace = name.replace(/\s+/g, " ");
-  
+
   let removeStick1 = removeDoubleSpace.replace("-", " ");
   let replaceCar = removeStick1.replace(" 🏎️", "");
   let fixZero = replaceCar.replace("🛩️", "");
@@ -536,7 +536,7 @@ export const returnStockPriceUnimtrn = (name) => {
     checkSpace1[0] === " " ? checkSpace2.replace(" ", "") : checkSpace2;
   let splitPrice = checkSpace3.split(" ")[0];
   const removeDoubleSpace2 = splitPrice.replace(" ", "");
-  
+
 
   let slicePrice =
     removeDoubleSpace2.indexOf(" ") !== -1
@@ -550,3 +550,38 @@ export const returnStockPriceUnimtrn = (name) => {
 
   return replaceCA.replace(" ", "");
 };
+
+
+export function splitNamePrice(items = []) {
+  return (items || [])
+    .map((it) => {
+      const parsed = parseNamePrice(it);
+      return parsed ? { original: it.name, name: parsed.name, price: parsed.price } : null;
+    })
+    .filter(Boolean);
+}
+
+export const parseNamePrice = (item) => {
+  const s = item && typeof item.name === "string" ? item.name.trim() : "";
+  if (!s) return null;
+  // Берём последнюю последовательность цифр (возможны пробелы внутри числа)
+  const m = s.match(/(\d[\d\s]*)\s*$/);
+  const price = m ? parseInt(m[1].replace(/\s+/g, ""), 10) : null;
+  // Обрезаем только найденную ценовую часть — эмодзи перед ценой останутся в name
+  const name = m ? s.slice(0, s.length - m[0].length).trim() : s;
+  if (!name) return null;
+  return name;
+}
+
+export const parsePrice = (item) => {
+  const s = (item && item.name) ? item.name.toString().trim() : "";
+  if (!s) return null;
+  // Берём последнюю последовательность цифр (возможно с пробелами)
+  const priceMatch = s.match(/(\d[\d\s]*)\s*$/);
+  const price = priceMatch ? parseInt(priceMatch[1].replace(/\s+/g, ""), 10) : null;
+  // Удаляем цену и возможные флаги/эмодзи в конце
+  let name = priceMatch ? s.slice(0, s.length - priceMatch[0].length).trim() : s;
+  name = name.replace(/[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1F6FF}]+$/u, "").trim();
+  if (!name) return null;
+  return price;
+}

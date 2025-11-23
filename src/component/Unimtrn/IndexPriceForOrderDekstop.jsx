@@ -30,7 +30,7 @@ import { returnGameConsole } from "../Provider/Unimtrn/GameConsole/gameConsole";
 import { returnOtherProduct } from "../Provider/Unimtrn/OtherProduct/otherProduct";
 import { returnSamsung } from "../Provider/Unimtrn/Samsung/samsung";
 import { returnXiaomi } from "../Provider/Unimtrn/Xiaomi/xiaomi";
-import { fixNameUnimtrn, returnNameInArrUnimtrn, returnStockPriceUnimtrn } from "../Provider/Unimtrn/helpers/helpers";
+import { fixNameUnimtrn, parseNamePrice, parsePrice, returnNameInArrUnimtrn, returnStockPriceUnimtrn, splitNamePrice } from "../Provider/Unimtrn/helpers/helpers";
 import Apple from "./Apple";
 import Dyson from "./Dyson";
 import GameConsoles from "./GameConsoles";
@@ -133,7 +133,7 @@ const IndexPriceForOrderDekstop = ({
       if (
         unimtrn.name &&
         getIdByName(
-          defaultFixName(returnNameInArrUnimtrn(fixNameUnimtrn(unimtrn.name)))
+          defaultFixName(fixNameUnimtrn(unimtrn.name))
         ) !== "No match" &&
         baseFix(unimtrn)
       ) {
@@ -141,9 +141,9 @@ const IndexPriceForOrderDekstop = ({
           id: getIdByName(
             defaultFixName(fixNameUnimtrn(unimtrn.name))
           ),
-          name: returnNameInArrUnimtrn(fixNameUnimtrn(unimtrn.name)),
-          extraPrice: returnStockPriceUnimtrn(fixNameUnimtrn(unimtrn.name)),
-          stockPrice: returnStockPriceUnimtrn(fixNameUnimtrn(unimtrn.name)),
+          name: parseNamePrice(unimtrn),
+          extraPrice: parsePrice(unimtrn),
+          stockPrice: parsePrice(unimtrn),
           provider: "Unimtrn",
         });
       }
