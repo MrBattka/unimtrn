@@ -206,6 +206,7 @@ export const baseFixHi = (el) => {
     el.name?.indexOf("🎧airpods 🎧") == -1 &&
     el.name?.indexOf("a03s") == -1 &&
     el.name?.indexOf("≪se 2≫") == -1 &&
+    el.name?.indexOf("CPO") == -1 &&
     el.name?.indexOf("s20 ") == -1 &&
     el.name?.indexOf("s21 ") == -1 &&
     el.name?.indexOf("s22 ") == -1 &&
